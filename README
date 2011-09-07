@@ -1,0 +1,16 @@
+netpd2-patches
+==============
+
+This is the place where I work on imported patches
+from the old netpd framework, trying to adapt them
+for the new netpd2
+
+This is very much work in progress at this state.
+Consider it not even alpha yet.
+
+Please refer also to the netpd2 repository:
+https://github.com/reduzent/netpd2
+
+Authors: Several
+License: Undefined (probably different for each 
+         imported patch or abstraction)
