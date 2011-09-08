@@ -1,7 +1,7 @@
-#N canvas 385 338 387 320 10;
+#N canvas 383 319 387 320 10;
 #X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 0 165 195 236 jx.preferences 0;
+#N canvas 0 249 195 236 jx.preferences 0;
 #X obj 18 16 loadbang;
 #X msg 18 156 16;
 #X msg 28 106 1;
@@ -21,7 +21,7 @@
 #X connect 2 0 7 0;
 #X connect 3 0 8 0;
 #X restore 12 162 pd jx.preferences;
-#N canvas 361 296 410 439 jx-gui.code 0;
+#N canvas 358 296 410 439 jx-gui.code 0;
 #N canvas 503 53 541 682 jx-radios 0;
 #X obj 9 13 r \$0-n1;
 #X obj 19 53 r \$0-n2;
@@ -742,8 +742,7 @@
 #X connect 10 0 2 0;
 #X connect 13 0 3 0;
 #X restore 215 319 pd c-label;
-#N canvas 273 165 209 326 jx.load 0;
-#X obj 14 283 s \$2_jx.c.pos;
+#N canvas 270 193 209 326 jx.load 0;
 #X obj 44 133 spigot;
 #X obj 14 53 t b b;
 #X obj 44 73 f \$3;
@@ -755,20 +754,21 @@
 #X msg 44 193 resize 16 \$1;
 #X obj 14 33 del 0;
 #X obj 44 173 clip 2 9;
-#X obj 44 220 netpd-s /\$2/\$2_jx l;
-#X connect 1 0 7 0;
-#X connect 2 0 6 0;
-#X connect 2 1 3 0;
-#X connect 3 0 4 0;
-#X connect 4 0 1 0;
-#X connect 4 1 5 0;
-#X connect 5 0 1 1;
-#X connect 6 0 0 0;
-#X connect 7 0 11 0;
-#X connect 8 0 10 0;
-#X connect 9 0 12 0;
-#X connect 10 0 2 0;
-#X connect 11 0 9 0;
+#X obj 14 283 s \$1-\$2_jx.c.pos;
+#X obj 44 220 netpd-s /\$1/\$2/\$2_jx l;
+#X connect 0 0 6 0;
+#X connect 1 0 5 0;
+#X connect 1 1 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 1 4 0;
+#X connect 4 0 0 1;
+#X connect 5 0 11 0;
+#X connect 6 0 10 0;
+#X connect 7 0 9 0;
+#X connect 8 0 12 0;
+#X connect 9 0 1 0;
+#X connect 10 0 8 0;
 #X restore 13 58 pd jx.load;
 #X obj 198 238 r \$0-mtx-2;
 #X obj 72 318 s \$0-mtxoutput;
@@ -1490,11 +1490,10 @@
 #X text 10 210 [jamx <id> <name>];
 #X obj 12 142 outlet;
 #X obj 12 82 inlet;
-#X text 115 190 pre0.2.0;
 #X obj 9 32 declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix
 ;
 #X obj 9 10 declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 712 430 342 209 \$1-\$2-jamx 1;
+#N canvas 709 430 342 209 \$1-\$2-jamx 1;
 #X obj 7 -2 cnv 15 311 177 empty empty empty 20 12 0 14 -195573 -66577
 0;
 #X obj 10 114 cnv 8 304 57 empty \$0-bg-r empty 20 12 0 14 -16645 -66577
@@ -1562,24 +1561,24 @@
 ;
 #X obj 178 114 cnv 8 8 13 empty empty empty 20 12 0 14 -1 -66577 0
 ;
-#X obj 10 1 hradio 8 1 0 25 \$0-n1 \$0-n1-r empty 0 -6 0 8 -262144
--62784 -262144 0;
+#X obj 10 1 hradio 8 1 0 25 \$0-n1 \$0-n1-r empty 0 -6 0 8 -228862
+-258699 -228862 0;
 #X obj 10 8 hradio 8 1 0 25 \$0-n2 \$0-n2-r empty 0 -6 0 8 -262144
 -62784 -262144 0;
 #X obj 10 15 hradio 8 1 0 25 \$0-n3 \$0-n3-r empty 0 -6 0 8 -262144
 -62784 -262144 0;
 #X obj 10 22 hradio 8 1 0 25 \$0-n4 \$0-n4-r empty 0 -6 0 8 -262144
--62784 -262144 0;
+-62784 -262144 17;
 #X obj 10 29 hradio 8 1 0 25 \$0-n5 \$0-n5-r empty 0 -6 0 8 -228862
 -62784 -228862 0;
 #X obj 10 36 hradio 8 1 0 25 \$0-n6 \$0-n6-r empty 0 -6 0 8 -228862
--62784 -228862 6;
+-62784 -228862 8;
 #X obj 10 43 hradio 8 1 0 25 \$0-n7 \$0-n7-r empty 0 -6 0 8 -228862
--62784 -228862 0;
+-62784 -228862 16;
 #X obj 10 50 hradio 8 1 0 25 \$0-n8 \$0-n8-r empty 0 -6 0 8 -228862
--62784 -228862 13;
-#X obj 213 1 hsl 99 8 0 1 0 0 \$0-c1 \$0-c1-r empty -2 -6 0 8 -262144
--62784 -262144 0 0;
+-62784 -228862 0;
+#X obj 213 1 hsl 99 8 0 1 0 0 \$0-c1 \$0-c1-r empty -2 -6 0 8 -228862
+-258699 -228862 0 0;
 #X obj 213 8 hsl 99 8 0 1 0 0 \$0-c2 \$0-c2-r empty -2 -6 0 8 -262144
 -62784 -262144 0 0;
 #X obj 213 15 hsl 99 8 0 1 0 0 \$0-c3 \$0-c3-r empty -2 -6 0 8 -262144
@@ -1599,13 +1598,13 @@
 #X obj 213 57 hsl 99 8 0 1 0 0 \$0-c9 \$0-c9-r empty -2 -6 0 8 -262144
 -62784 -262144 0 0;
 #X obj 10 64 hradio 8 1 0 25 \$0-n10 \$0-n10-r empty 0 -6 0 8 -262144
--62784 -262144 0;
+-62784 -262144 12;
 #X obj 10 71 hradio 8 1 0 25 \$0-n11 \$0-n11-r empty 0 -6 0 8 -262144
 -62784 -262144 13;
 #X obj 10 78 hradio 8 1 0 25 \$0-n12 \$0-n12-r empty 0 -6 0 8 -262144
 -62784 -262144 0;
 #X obj 10 85 hradio 8 1 0 25 \$0-n13 \$0-n13-r empty 0 -6 0 8 -228862
--62784 -228862 20;
+-62784 -228862 0;
 #X obj 10 92 hradio 8 1 0 25 \$0-n14 \$0-n14-r empty 0 -6 0 8 -228862
 -62784 -228862 0;
 #X obj 10 99 hradio 8 1 0 25 \$0-n15 \$0-n15-r empty 0 -6 0 8 -228862
@@ -1638,10 +1637,10 @@
 -62784 -228862 0 0;
 #X obj 64 137 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_jx.offset \$1-\$2_jx.offset
 empty 0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 138 137 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_jx.repeat \$1-\$2_jx.repeat
-empty 0 -8 0 10 -262144 -1 -1 16 256;
-#X obj 138 154 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_transpose \$1-\$2_transpose
+#X obj 138 137 nbx 2 14 0 1e+37 0 0 \$1-\$2_jx.repeat \$1-\$2_jx.repeat
 empty 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 138 154 nbx 2 14 -12 12 0 0 \$1-\$2_transpose \$1-\$2_transpose
+empty 0 -8 0 10 -262144 -1 -1 6 256;
 #X obj 180 154 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_speed \$1-\$2_speed
 empty 0 -8 0 10 -262144 -1 -1 16 256;
 #X obj 209 123 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_jx.cnr \$1-\$2_jx.cnr
@@ -1655,6 +1654,9 @@ empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X msg 13 13 netpd-mtx;
 #X restore 221 93 pd abslist;
 #X msg 12 191 version 0 2 0;
+#X obj 205 156 netpd_r \$1 \$2_jx;
+#X obj 205 178 print GAGGI;
 #X connect 2 0 8 0;
 #X connect 3 0 5 0;
 #X connect 9 0 1 0;
+#X connect 15 0 16 0;
