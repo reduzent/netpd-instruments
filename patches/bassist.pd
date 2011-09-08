@@ -1,4 +1,4 @@
-#N canvas 495 429 446 383 10;
+#N canvas 491 417 446 383 10;
 #X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
 #X obj 89 114 exp;
@@ -9,12 +9,12 @@
 #X obj 89 89 + 5;
 #X obj 89 66 * 3;
 #X obj 59 74 * 30;
-#N canvas 750 242 184 85 jamx-labels 0;
-#X obj 8 48 s bassist_jx.c.label;
+#N canvas 747 270 184 85 jamx-labels 0;
 #X obj 8 3 loadbang;
 #X msg 8 26 drive decay attack;
+#X obj 8 48 s \$1-bassist_jx.c.label;
+#X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X connect 2 0 0 0;
 #X restore 172 96 pd jamx-labels;
 #X obj 33 1 r bassist;
 #N canvas 141 496 291 137 bassist-netpd-fs 0;
@@ -687,7 +687,7 @@
 #X restore 33 269 pd dsp_________________;
 #X obj 33 24 unpack f f f f;
 #X obj 119 138 * 200;
-#N canvas 601 207 166 122 \$1-bassist 0;
+#N canvas 598 235 166 122 \$1-bassist 1;
 #X obj 3 2 cnv 15 151 99 empty empty empty 20 12 0 14 -174784 -66577
 0;
 #X obj 5 4 cnv 15 147 95 empty empty empty 15 38 1 12 -74944 -216384
@@ -707,7 +707,7 @@
 #X obj 7 75 hradio 20 1 0 5 \$1-dwnsmpl \$1-dwnsmpl downsampling 2
 7 1 7 -212224 -1 -1 0;
 #X obj 109 52 tgl 20 0 \$1-open-jam \$0-bli jamx 2 6 1 7 -212223 -1
--1 0 1;
+-1 1 1;
 #X restore 172 136 pd \$1-bassist;
 #X obj 241 268 jamx \$1 bassist 3;
 #X obj 32 337 dac~;
