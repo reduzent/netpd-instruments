@@ -1,4 +1,4 @@
-#N canvas 498 429 446 383 10;
+#N canvas 495 429 446 383 10;
 #X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
 #X obj 89 114 exp;
@@ -687,13 +687,13 @@
 #X restore 33 269 pd dsp_________________;
 #X obj 33 24 unpack f f f f;
 #X obj 119 138 * 200;
-#N canvas 601 207 166 122 \$1-bassist 1;
+#N canvas 601 207 166 122 \$1-bassist 0;
 #X obj 3 2 cnv 15 151 99 empty empty empty 20 12 0 14 -174784 -66577
 0;
 #X obj 5 4 cnv 15 147 95 empty empty empty 15 38 1 12 -74944 -216384
 0;
 #X obj 10 8 hsl 95 20 0 1 0 0 \$1-volume \$1-volume volume 0 7 1 7
--212223 -1 -1 7120 1;
+-212223 -1 -1 7520 1;
 #X obj 10 52 hsl 95 20 0 1 0 0 \$1-boes \$1-boes boesartigkeit 0 7
 1 7 -212224 -1 -1 0 1;
 #X obj 109 8 cnv 4 40 42 empty empty empty 20 12 0 14 -220544 -66577
@@ -703,7 +703,7 @@
 #X coords 0 1 60 0 40 42 1;
 #X restore 109 8 graph;
 #X obj 10 30 hsl 95 20 0 1 0 0 \$1-detune \$1-detune detune 0 7 1 7
--212224 -1 -1 2000 1;
+-212224 -1 -1 0 1;
 #X obj 7 75 hradio 20 1 0 5 \$1-dwnsmpl \$1-dwnsmpl downsampling 2
 7 1 7 -212224 -1 -1 0;
 #X obj 109 52 tgl 20 0 \$1-open-jam \$0-bli jamx 2 6 1 7 -212223 -1
@@ -711,9 +711,9 @@
 #X restore 172 136 pd \$1-bassist;
 #X obj 241 268 jamx \$1 bassist 3;
 #X obj 32 337 dac~;
-#X msg 172 56 version 0.4.0;
 #X obj 289 66 netpd_head \$1 bassist;
 #X obj 175 173 netpd_f \$1 dwnsmpl 0;
+#X msg 172 56 version 0 4 0;
 #X connect 0 0 12 2;
 #X connect 1 0 12 1;
 #X connect 3 0 0 0;
@@ -728,4 +728,4 @@
 #X connect 13 2 4 0;
 #X connect 13 3 14 0;
 #X connect 14 0 12 3;
-#X connect 20 0 11 0;
+#X connect 19 0 11 0;
