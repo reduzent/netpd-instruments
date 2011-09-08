@@ -1,4 +1,4 @@
-#N canvas 673 224 751 462 10;
+#N canvas 667 224 751 462 10;
 #X obj 9 12 inlet;
 #X obj 191 12 inlet;
 #X obj 191 393 outlet;
@@ -51,10 +51,10 @@
 #X obj 42 393 s \$2-mtx.i2;
 #X obj 74 112 route resize matrix;
 #X obj 138 132 t a b;
-#N canvas 316 303 390 400 broadcast___ 0;
+#N canvas 313 303 390 400 broadcast___ 0;
 #X obj 55 23 inlet;
 #X obj 17 314 outlet;
-#X obj 14 227 spigot;
+#X obj 14 225 spigot;
 #X obj 109 227 spigot;
 #X obj 37 197 f 1;
 #X obj 65 197 f 0;
@@ -107,10 +107,10 @@
 #X restore 86 119 pd bc-elements;
 #X text 125 27 broadcast-check;
 #X text 125 42 - no read/write support;
-#X obj 200 357 outlet;
+#X obj 254 338 outlet;
 #X obj 131 157 b;
 #X obj 14 250 netpd_s \$1 \$2;
-#X obj 17 286 netpd_r \$2 \$2;
+#X obj 17 286 netpd_r \$1 \$2;
 #X connect 0 0 10 0;
 #X connect 2 0 17 0;
 #X connect 3 0 1 0;
@@ -137,11 +137,11 @@
 #X obj 138 152 list prepend matrix;
 #X obj 138 172 list trim;
 #X obj 357 102 mtx \$3 \$4;
-#X msg 479 34 version 0.5.0;
 #X obj 565 157 r \$1.NETPD;
 #X obj 565 179 route dump;
 #X obj 565 201 route 5;
 #X obj 565 223 b;
+#X msg 479 33 version 0 5 0;
 #X obj 591 392 netpd_s \$1 \$2;
 #X connect 0 0 10 0;
 #X connect 1 0 16 0;
@@ -186,7 +186,7 @@
 #X connect 37 0 38 0;
 #X connect 38 0 19 0;
 #X connect 39 0 15 0;
+#X connect 40 0 41 0;
 #X connect 41 0 42 0;
 #X connect 42 0 43 0;
-#X connect 43 0 44 0;
-#X connect 44 0 5 0;
+#X connect 43 0 5 0;
