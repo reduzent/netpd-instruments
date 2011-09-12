@@ -1,0 +1,15 @@
+#N canvas 432 282 336 210 10;
+#X obj 191 115 table \$0.ref 2;
+#X obj 190 84 s \$0.ref;
+#X msg 190 53 0 -1 1;
+#X obj 40 62 +~ 1;
+#X obj 40 87 tabread~ \$0.ref;
+#X obj 190 26 loadbang;
+#X obj 40 23 inlet~;
+#X obj 41 146 outlet~;
+#X msg 189 157 version 0 0 1;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 5 0 2 0;
+#X connect 6 0 3 0;

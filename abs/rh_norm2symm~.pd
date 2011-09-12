@@ -1,0 +1,13 @@
+#N canvas 576 275 380 147 10;
+#X obj 20 18 inlet~;
+#X obj 20 116 outlet~;
+#X text 102 75 scales from 0 to 1 -> -1 to 1;
+#X text 111 98 (normalized to symmetric);
+#X obj 20 42 -~ 0.5;
+#X obj 20 66 *~ 2;
+#X obj 20 90 hip~ 5;
+#X msg 140 43 vesion 0 0 1;
+#X connect 0 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;

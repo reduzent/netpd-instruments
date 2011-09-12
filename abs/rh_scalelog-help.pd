@@ -1,0 +1,13 @@
+#N canvas 287 101 435 179 10;
+#X obj 45 88 rh_scalelog 1 100;
+#X floatatom 45 118 5 0 0 0 - - -;
+#X obj 48 57 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 45 35 0.5;
+#X text 191 58 <- input: 0 to 1;
+#X text 187 116 <- input: 1 to 100 (log);
+#X obj 45 9 loadbang;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 6 0 3 0;
