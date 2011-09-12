@@ -1,4 +1,5 @@
 #N canvas 664 224 751 462 10;
+#X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
 #X obj 9 12 inlet;
 #X obj 191 12 inlet;
 #X obj 191 393 outlet;
@@ -143,6 +144,8 @@
 #X obj 565 269 s \$1-\$2-mtx.i1;
 #X obj 564 302 r \$1-\$2-mtx.o;
 #X obj 191 32 s \$1-\$2-mtx.i2;
+#X obj 128 436 declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix
+;
 #X connect 0 0 10 0;
 #X connect 1 0 45 0;
 #X connect 3 0 15 0;
