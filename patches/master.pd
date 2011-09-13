@@ -1,4 +1,4 @@
-#N canvas 608 225 161 119 10;
+#N canvas 608 253 161 119 10;
 #N canvas 257 247 694 553 master 0;
 #X obj 342 118 /;
 #X obj 342 192 /;
@@ -218,10 +218,7 @@
 #X connect 44 0 41 0;
 #X connect 46 0 47 0;
 #X restore 17 36 pd master;
-#N canvas 986 204 454 304 abslist 0;
-#X restore 18 77 pd abslist;
-#X msg 17 56 version 0 3 0;
-#N canvas 587 53 343 72 \$1-master 1;
+#N canvas 590 44 343 72 \$1-master 1;
 #X obj 4 5 cnv 15 323 58 empty empty empty 18 10 0 14 -195568 -66577
 0;
 #X obj 7 8 cnv 15 71 52 empty empty MASTER 5 11 1 11 -241339 -166441
@@ -248,7 +245,7 @@
 0;
 #X obj 96 50 cnv 10 10 10 empty empty 5 0 5 1 9 -233017 -66577 0;
 #X obj 90 24 hsl 148 10 60 240 0 0 \$0-bpm-slider \$0-bpm-slider-r
-empty -2 -6 0 8 -262144 -37450 -1 5962 1;
+empty -2 -6 0 8 -262144 -37450 -1 5635 1;
 #X obj 90 37 hsl 148 10 0.5 0.75 0 0 \$1-master.shuffle \$1-master.shuffle
 empty -2 -6 0 8 -262144 -37450 -1 0 0;
 #X obj 222 50 cnv 10 10 10 empty empty 75 0 5 1 9 -233017 -66577 0
@@ -260,9 +257,9 @@ empty -2 -6 0 8 -262144 -37450 -1 0 0;
 #X obj 285 42 cnv 10 10 10 empty empty [16th] 0 6 1 9 -233017 -66577
 0;
 #X obj 244 24 nbx 4 12 1 9600 0 0 \$0-bpm-number \$0-bpm-number-r empty
-0 -6 1 9 -262144 -260488 -1 133 256;
+0 -6 1 9 -262144 -260488 -1 129 256;
 #X obj 244 41 nbx 4 12 1 1200 0 0 \$0-16th-number \$0-16th-number-r
-empty 0 -6 1 9 -262144 -260488 -1 112.782 256;
+empty 0 -6 1 9 -262144 -260488 -1 116.279 256;
 #X obj 90 52 cnv 1 1 6 empty empty empty 20 12 0 14 -33289 -66577 0
 ;
 #X obj 189 52 cnv 1 1 6 empty empty empty 20 12 0 14 -33289 -66577
@@ -270,3 +267,8 @@ empty 0 -6 1 9 -262144 -260488 -1 112.782 256;
 #X obj 237 52 cnv 1 1 6 empty empty empty 20 12 0 14 -33289 -66577
 0;
 #X restore 17 16 pd \$1-master;
+#N canvas 930 72 206 171 NETPD 0;
+#N canvas 986 204 454 304 abslist 0;
+#X restore 18 52 pd abslist;
+#X msg 17 31 version 0 3 0;
+#X restore 17 58 pd NETPD;
