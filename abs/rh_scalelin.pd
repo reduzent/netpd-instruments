@@ -1,4 +1,4 @@
-#N canvas 225 165 282 233 10;
+#N canvas 225 193 282 233 10;
 #X obj 69 36 t b f;
 #X obj 28 106 - \$1;
 #X obj 206 18 loadbang;
@@ -9,7 +9,9 @@
 #X obj 12 131 *;
 #X obj 12 172 + \$1;
 #X obj 12 196 outlet;
-#X msg 130 176 version 0 0 1;
+#N canvas 696 356 161 103 NETPD 0;
+#X msg 7 12 version 0 0 1;
+#X restore 191 149 pd NETPD;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 0 1 8 1;

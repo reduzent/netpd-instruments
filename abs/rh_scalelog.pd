@@ -13,7 +13,9 @@
 #X obj 256 24 loadbang;
 #X obj 117 62 \$1;
 #X obj 213 59 \$2;
-#X msg 219 176 version 0 0 1;
+#N canvas 696 356 161 103 NETPD 0;
+#X msg 7 12 version 0 0 1;
+#X restore 191 149 pd NETPD;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;

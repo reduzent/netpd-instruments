@@ -6,7 +6,9 @@
 #X obj 20 42 -~ 0.5;
 #X obj 20 66 *~ 2;
 #X obj 20 90 hip~ 5;
-#X msg 140 43 vesion 0 0 1;
+#N canvas 696 356 161 103 NETPD 0;
+#X msg 7 12 version 0 0 1;
+#X restore 128 34 pd NETPD;
 #X connect 0 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;

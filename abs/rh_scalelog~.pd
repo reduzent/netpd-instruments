@@ -13,7 +13,9 @@
 #X obj 20 183 outlet~;
 #X obj 20 19 inlet~;
 #X obj 20 155 expr~ exp($v1);
-#X msg 219 176 version 0 0 1;
+#N canvas 696 356 161 103 NETPD 0;
+#X msg 7 12 version 0 0 1;
+#X restore 191 149 pd NETPD;
 #X connect 0 0 2 0;
 #X connect 0 0 10 1;
 #X connect 1 0 3 0;
