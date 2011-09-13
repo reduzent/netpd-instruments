@@ -139,6 +139,6 @@
 #N canvas 647 5 291 900 lookup-tables-nsquare 0;
 #X restore 20 86 pd lookup-tables-nsquare;
 #X text 21 177 Author: Roman Haefeli;
-#N canvas 776 167 165 117 NETPD 0;
-#X msg -10 22 version 0.2.0;
+#N canvas 776 195 165 117 NETPD 0;
+#X msg -10 22 version 0 3 0;
 #X restore 21 123 pd NETPD;
