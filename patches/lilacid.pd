@@ -1,4 +1,4 @@
-#N canvas 549 388 242 284 10;
+#N canvas 549 472 245 287 10;
 #X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
 #X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
@@ -142,9 +142,7 @@
 #X connect 18 0 17 0;
 #X connect 18 1 17 1;
 #X restore 346 365 pd trg_amp_flr_att_hld_rel;
-#X obj 346 231 r lilacid;
 #X obj 346 257 b;
-#X obj 80 384 r lilacid;
 #X obj 80 410 b;
 #X obj 94 110 0;
 #X obj 94 67 b;
@@ -160,7 +158,7 @@
 #X obj 213 89 netpd_f \$1 filterq 0.6;
 #X obj 279 146 netpd_f \$1 overdrive 0.51;
 #X obj 21 609 dac~ 1 2;
-#N canvas 382 234 283 124 a-level 0;
+#N canvas 382 290 283 124 a-level 0;
 #X obj 9 38 pow 2;
 #X obj 9 59 rmstodb;
 #X obj 9 81 outlet;
@@ -171,7 +169,6 @@
 #X restore 115 413 pd a-level;
 #N canvas 22 68 342 234 a-attack 0;
 #X obj 35 206 outlet;
-#X obj 173 51 r lilacid;
 #X msg 173 75 \$2;
 #X obj 35 158 +;
 #X obj 46 137 t b f;
@@ -179,19 +176,19 @@
 #X obj 35 101 rh_scalelog 20 200;
 #X obj 173 101 rh_scalelog 20 200;
 #X obj 35 22 netpd_f \$1 a-attack 0.01;
-#X connect 1 0 2 0;
-#X connect 2 0 7 0;
-#X connect 3 0 5 0;
-#X connect 4 0 3 0;
-#X connect 4 1 3 1;
-#X connect 5 0 0 0;
+#X obj 173 51 r \$1-lilacid;
+#X connect 1 0 6 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 3 1 2 1;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
 #X connect 6 0 3 0;
-#X connect 7 0 4 0;
-#X connect 8 0 6 0;
+#X connect 7 0 5 0;
+#X connect 8 0 1 0;
 #X restore 186 430 pd a-attack;
 #N canvas 22 68 342 234 a-hold 0;
 #X obj 35 206 outlet;
-#X obj 187 51 r lilacid;
 #X obj 35 158 +;
 #X obj 46 137 t b f;
 #X obj 35 180 - 200;
@@ -199,19 +196,19 @@
 #X obj 35 101 rh_scalelog 100 1000;
 #X obj 187 101 rh_scalelog 100 1000;
 #X obj 35 22 netpd_f \$1 a-hold 0.01;
-#X connect 1 0 5 0;
-#X connect 2 0 4 0;
-#X connect 3 0 2 0;
-#X connect 3 1 2 1;
-#X connect 4 0 0 0;
-#X connect 5 0 7 0;
+#X obj 187 51 r \$1-lilacid;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
 #X connect 6 0 2 0;
-#X connect 7 0 3 0;
-#X connect 8 0 6 0;
+#X connect 7 0 5 0;
+#X connect 8 0 4 0;
 #X restore 221 452 pd a-hold;
 #N canvas 22 68 342 234 a-release 0;
 #X obj 35 206 outlet;
-#X obj 191 50 r lilacid;
 #X obj 35 158 +;
 #X obj 46 137 t b f;
 #X obj 35 180 - 200;
@@ -219,105 +216,108 @@
 #X obj 35 101 rh_scalelog 100 3000;
 #X obj 191 100 rh_scalelog 100 3000;
 #X obj 35 22 netpd_f \$1 a-release 0.51;
-#X connect 1 0 5 0;
-#X connect 2 0 4 0;
-#X connect 3 0 2 0;
-#X connect 3 1 2 1;
-#X connect 4 0 0 0;
-#X connect 5 0 7 0;
+#X obj 191 51 r \$1-lilacid;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
 #X connect 6 0 2 0;
-#X connect 7 0 3 0;
-#X connect 8 0 6 0;
+#X connect 7 0 5 0;
+#X connect 8 0 4 0;
 #X restore 257 474 pd a-release;
 #N canvas 22 68 329 276 f-ceil 0;
 #X obj 35 227 outlet;
-#X obj 164 50 r lilacid;
 #X obj 35 142 +;
 #X obj 46 121 t b f;
 #X msg 164 74 \$5;
 #X obj 35 199 min 130;
 #X obj 35 171 rh_scalelin 40 120;
 #X obj 35 22 netpd_f \$1 f-ceil 0.8;
-#X connect 1 0 4 0;
-#X connect 2 0 6 0;
+#X obj 164 50 r \$1-lilacid;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
 #X connect 3 0 2 0;
-#X connect 3 1 2 1;
-#X connect 4 0 3 0;
-#X connect 5 0 0 0;
-#X connect 6 0 5 0;
-#X connect 7 0 2 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 6 0 1 0;
+#X connect 7 0 3 0;
 #X restore 381 255 pd f-ceil;
 #N canvas 22 68 344 195 f-floor 0;
 #X obj 35 135 outlet;
 #X obj 35 110 min 130;
 #X obj 35 66 rh_scalelin 20 110;
-#X obj 35 22 netpd-fx \$0 lila_f-flr lila_f-flr-r 0.2;
+#X obj 35 22 netpd_f \$1 f-floor 0.2;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
 #X restore 416 278 pd f-floor;
 #N canvas 22 68 342 234 f-attack 0;
 #X obj 35 206 outlet;
-#X obj 177 49 r lilacid;
 #X obj 35 158 +;
 #X obj 46 137 t b f;
 #X obj 35 182 - 40;
 #X msg 177 73 \$6;
 #X obj 35 100 rh_scalelog 20 300;
 #X obj 177 99 rh_scalelog 20 300;
-#X obj 35 22 netpd-fx \$0 lila_f-att lila_f-att-r 0.01;
-#X connect 1 0 5 0;
-#X connect 2 0 4 0;
-#X connect 3 0 2 0;
-#X connect 3 1 2 1;
-#X connect 4 0 0 0;
-#X connect 5 0 7 0;
+#X obj 35 22 netpd_f \$1 f-attack 0.01;
+#X obj 177 49 r \$1-lilacid;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
 #X connect 6 0 2 0;
-#X connect 7 0 3 0;
-#X connect 8 0 6 0;
+#X connect 7 0 5 0;
+#X connect 8 0 4 0;
 #X restore 452 298 pd f-attack;
 #N canvas 22 68 342 234 f-hold 0;
 #X obj 35 206 outlet;
-#X obj 187 50 r lilacid;
 #X obj 35 158 +;
 #X obj 46 137 t b f;
 #X obj 35 180 - 200;
 #X msg 187 74 \$7;
 #X obj 35 101 rh_scalelog 100 1000;
 #X obj 187 100 rh_scalelog 100 1000;
-#X obj 35 22 netpd-fx \$0 lila_f-hld lila_f-hld-r 0.01;
-#X connect 1 0 5 0;
-#X connect 2 0 4 0;
-#X connect 3 0 2 0;
-#X connect 3 1 2 1;
-#X connect 4 0 0 0;
-#X connect 5 0 7 0;
+#X obj 35 22 netpd_f \$1 f-hold 0.01;
+#X obj 187 50 r \$1-lilacid;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
 #X connect 6 0 2 0;
-#X connect 7 0 3 0;
-#X connect 8 0 6 0;
+#X connect 7 0 5 0;
+#X connect 8 0 4 0;
 #X restore 487 318 pd f-hold;
 #N canvas 22 68 342 234 f-release 0;
 #X obj 35 206 outlet;
-#X obj 189 50 r lilacid;
 #X obj 35 158 +;
 #X obj 46 137 t b f;
 #X obj 35 180 - 200;
 #X msg 189 74 \$8;
 #X obj 35 101 rh_scalelog 100 3000;
 #X obj 189 100 rh_scalelog 100 3000;
-#X obj 35 22 netpd-fx \$0 lila_f-rel lila_f-rel-r 0.51;
-#X connect 1 0 5 0;
-#X connect 2 0 4 0;
-#X connect 3 0 2 0;
-#X connect 3 1 2 1;
-#X connect 4 0 0 0;
-#X connect 5 0 7 0;
+#X obj 35 22 netpd_f \$1 f-release 0.51;
+#X obj 189 50 r \$1-lilacid;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
 #X connect 6 0 2 0;
-#X connect 7 0 3 0;
-#X connect 8 0 6 0;
+#X connect 7 0 5 0;
+#X connect 8 0 4 0;
 #X restore 523 339 pd f-release;
-#X connect 0 0 29 0;
-#X connect 0 0 29 1;
+#X obj 80 384 r \$1-lilacid;
+#X obj 346 231 r \$1-lilacid;
+#X connect 0 0 27 0;
+#X connect 0 0 27 1;
 #X connect 1 0 8 0;
 #X connect 2 0 0 0;
 #X connect 3 0 1 0;
@@ -326,39 +326,39 @@
 #X connect 6 0 0 1;
 #X connect 7 0 1 1;
 #X connect 8 0 2 0;
-#X connect 9 0 16 0;
+#X connect 9 0 14 0;
 #X connect 10 0 6 0;
-#X connect 10 1 21 0;
+#X connect 10 1 19 0;
 #X connect 11 0 7 0;
-#X connect 12 0 13 0;
-#X connect 13 0 11 0;
-#X connect 14 0 15 0;
-#X connect 15 0 10 0;
-#X connect 16 0 3 1;
-#X connect 16 0 4 1;
-#X connect 17 0 9 0;
-#X connect 18 0 19 0;
-#X connect 18 0 17 0;
-#X connect 19 0 24 0;
-#X connect 20 0 1 2;
-#X connect 22 0 8 1;
-#X connect 23 0 20 0;
-#X connect 24 0 3 0;
-#X connect 24 0 4 0;
-#X connect 25 0 9 1;
-#X connect 26 0 5 0;
-#X connect 26 0 4 2;
-#X connect 27 0 23 0;
-#X connect 28 0 22 0;
-#X connect 30 0 10 1;
-#X connect 31 0 10 3;
-#X connect 32 0 10 4;
-#X connect 33 0 10 5;
-#X connect 34 0 11 1;
-#X connect 35 0 11 2;
-#X connect 36 0 11 3;
-#X connect 37 0 11 4;
-#X connect 38 0 11 5;
+#X connect 12 0 11 0;
+#X connect 13 0 10 0;
+#X connect 14 0 3 1;
+#X connect 14 0 4 1;
+#X connect 15 0 9 0;
+#X connect 16 0 17 0;
+#X connect 16 0 15 0;
+#X connect 17 0 22 0;
+#X connect 18 0 1 2;
+#X connect 20 0 8 1;
+#X connect 21 0 18 0;
+#X connect 22 0 3 0;
+#X connect 22 0 4 0;
+#X connect 23 0 9 1;
+#X connect 24 0 5 0;
+#X connect 24 0 4 2;
+#X connect 25 0 21 0;
+#X connect 26 0 20 0;
+#X connect 28 0 10 1;
+#X connect 29 0 10 3;
+#X connect 30 0 10 4;
+#X connect 31 0 10 5;
+#X connect 32 0 11 1;
+#X connect 33 0 11 2;
+#X connect 34 0 11 3;
+#X connect 35 0 11 4;
+#X connect 36 0 11 5;
+#X connect 37 0 13 0;
+#X connect 38 0 12 0;
 #X restore 7 26 pd dsp;
 #N canvas 750 242 413 120 jamx-labels 0;
 #X obj 8 3 loadbang;
@@ -433,38 +433,38 @@
 #X text 12 245 http://www.netpd.org/lilacid;
 #X text 9 221 Author: Roman Haefeli;
 #X obj 103 79 netpd_head \$1 lilacid;
-#N canvas 936 291 91 295 \$1-lilacid 0;
-#X obj 9 20 hsl 75 15 0 1 0 0 lila_lev lila_lev-r volume 3 8 0 10 -250685
--1 -1 0 1;
-#X obj 9 50 hsl 75 15 0 1 0 0 lila_a-att lila_a-att-r attack 3 8 0
-10 -250685 -1 -1 0 1;
-#X obj 9 65 hsl 75 15 0 1 0 0 lila_a-hld lila_a-hld-r hold 3 8 0 10
--250685 -1 -1 0 1;
-#X obj 9 80 hsl 75 15 0 1 0 0 lila_a-rel lila_a-rel-r release 3 8 0
-10 -250685 -1 -1 0 1;
-#X obj 9 113 hsl 75 15 0 1 0 0 lila_f-cil lila_f-cil-r env_ceiling
-3 8 0 10 -250685 -1 -1 0 1;
-#X obj 9 128 hsl 75 15 0 1 0 0 lila_f-flr lila_f-flr-r env_floor 3
-8 0 10 -250685 -1 -1 0 1;
-#X obj 9 158 hsl 75 15 0 1 0 0 lila_f-att lila_f-att-r attack 3 8 0
-10 -250685 -1 -1 0 1;
-#X obj 9 173 hsl 75 15 0 1 0 0 lila_f-hld lila_f-hld-r hold 3 8 0 10
--250685 -1 -1 0 1;
-#X obj 9 188 hsl 75 15 0 1 0 0 lila_f-rel lila_f-rel-r release 3 8
-0 10 -250685 -1 -1 0 1;
-#X obj 9 143 hsl 75 15 0 1 0 0 lila_f-q lila_f-q-r q 3 8 0 10 -250685
--1 -1 0 1;
-#X obj 9 35 hsl 75 15 0 1 0 0 lila_od lila_od-r overdrive 3 8 0 10
--250685 -1 -1 0 1;
+#N canvas 936 347 91 295 \$1-lilacid 0;
+#X obj 9 20 hsl 75 15 0 1 0 0 \$1-a-level \$1-a-level volume 3 8 0
+10 -250685 -1 -1 4440 1;
+#X obj 9 50 hsl 75 15 0 1 0 0 \$1-a-attack \$1-a-attack attack 3 8
+0 10 -250685 -1 -1 74 1;
+#X obj 9 65 hsl 75 15 0 1 0 0 \$1-a-hold \$1-a-hold hold 3 8 0 10 -250685
+-1 -1 74 1;
+#X obj 9 80 hsl 75 15 0 1 0 0 \$1-a-release \$1-a-release release 3
+8 0 10 -250685 -1 -1 3774 1;
+#X obj 9 113 hsl 75 15 0 1 0 0 \$1-f-ceil \$1-f-ceil env_ceiling 3
+8 0 10 -250685 -1 -1 5920 1;
+#X obj 9 128 hsl 75 15 0 1 0 0 \$1-f-floor \$1-f-floor env_floor 3
+8 0 10 -250685 -1 -1 1480 1;
+#X obj 9 158 hsl 75 15 0 1 0 0 \$1-f-attack \$1-f-attack attack 3 8
+0 10 -250685 -1 -1 74 1;
+#X obj 9 173 hsl 75 15 0 1 0 0 \$1-f-hold \$1-f-hold hold 3 8 0 10
+-250685 -1 -1 74 1;
+#X obj 9 188 hsl 75 15 0 1 0 0 \$1-f-release \$1-f-release release
+3 8 0 10 -250685 -1 -1 3774 1;
+#X obj 9 143 hsl 75 15 0 1 0 0 \$1-filterq \$1-filterq q 3 8 0 10 -250685
+-1 -1 4440 1;
+#X obj 9 35 hsl 75 15 0 1 0 0 \$1-overdrive \$1-overdrive overdrive
+3 8 0 10 -250685 -1 -1 3774 1;
 #X obj 6 5 cnv 15 80 15 empty empty amplitude 3 8 0 10 -1 -250685 0
 ;
 #X obj 9 269 hsl 35 15 1 1 0 0 \$0-jamx-gui \$0-jamx-gui-r jamx 3 8
 0 10 -250685 -250685 -1 0 1;
 #X obj 49 269 hsl 35 15 1 1 0 0 \$0-pad-gui \$0-pad-gui-r pad 3 8 0
 10 -250685 -250685 -1 0 1;
-#X obj 9 221 hsl 75 15 1 1 0 0 \$0-wf \$0-wf-r waveform 3 8 0 10 -250685
+#X obj 9 221 hsl 75 15 0 0 0 0 \$0-wf \$0-wf-r waveform 3 8 0 10 -250685
 -250685 -1 0 1;
-#X obj 9 236 hsl 75 15 1 1 0 0 \$0-syph \$0-syph-r sync_phase 3 8 0
+#X obj 9 236 hsl 75 15 0 0 0 0 \$0-syph \$0-syph-r sync_phase 3 8 0
 10 -250685 -250685 -1 0 1;
 #X obj 6 98 cnv 15 80 15 empty empty filter 3 8 0 10 -1 -250685 0;
 #X obj 6 206 cnv 15 80 15 empty empty oscillator 3 8 0 10 -1 -250685
@@ -475,7 +475,7 @@
 -250685 0;
 #X restore 103 25 pd \$1-lilacid;
 #X obj 104 129 jamx \$1 lilacid 7;
-#N canvas 702 214 178 164 NETPD 0;
+#N canvas 702 242 178 164 NETPD 0;
 #N canvas 644 305 310 195 abslist 0;
 #X msg 8 46 roman_helpers;
 #X msg 9 89 jamx;
