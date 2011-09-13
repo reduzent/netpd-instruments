@@ -1,4 +1,5 @@
 #N canvas 374 319 387 320 10;
+#X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
 #X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
 #N canvas 0 249 195 236 jx.preferences 0;
@@ -1505,7 +1506,7 @@
 #X obj 19 155 cnv 11 146 15 empty \$0-parm2-r Octave 4 8 1 8 -262144
 -33289 0;
 #X obj 66 159 hradio 9 1 0 8 \$1-\$2_jx.octave \$1-\$2_jx.octave empty
-2 -4 0 8 -262144 -62784 -1 4;
+2 -4 0 8 -262144 -62784 -1 0;
 #X obj 19 138 cnv 12 72 15 empty \$0-parm-r Offset 4 8 1 8 -262144
 -33289 0;
 #X obj 167 155 cnv 10 72 15 empty \$0-parm-r /16th 43 8 1 8 -262144
@@ -1638,11 +1639,11 @@
 #X obj 64 137 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_jx.offset \$1-\$2_jx.offset
 empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 138 137 nbx 2 14 0 1e+37 0 0 \$1-\$2_jx.repeat \$1-\$2_jx.repeat
-empty 0 -8 0 10 -262144 -1 -1 16 256;
+empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 138 154 nbx 2 14 -12 12 0 0 \$1-\$2_transpose \$1-\$2_transpose
 empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 180 154 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_speed \$1-\$2_speed
-empty 0 -8 0 10 -262144 -1 -1 16 256;
+empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 209 123 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_jx.cnr \$1-\$2_jx.cnr
 empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 212 137 nbx 2 14 1 1e+37 0 0 \$0_jx.view \$1-\$2_jx.viewpage-r
@@ -1650,10 +1651,12 @@ empty 0 -8 0 10 -262144 -1 -1 1 256;
 #X obj 286 137 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_jx.length \$1-\$2_jx.length
 empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X restore 12 62 pd \$1-\$2-jamx;
+#N canvas 653 358 183 170 NETPD 0;
 #N canvas 675 358 322 173 abslist 0;
 #X msg 13 13 netpd-mtx;
-#X restore 221 93 pd abslist;
-#X msg 12 191 version 0 2 0;
+#X restore 15 23 pd abslist;
+#X msg 15 45 version 0 2 0;
+#X restore 193 77 pd NETPD;
 #X connect 2 0 8 0;
 #X connect 3 0 5 0;
 #X connect 9 0 1 0;
