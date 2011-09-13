@@ -1,0 +1,10 @@
+#N canvas 501 290 385 74 10;
+#X text 8 44 bandlimited oscillators for netpd. by roman haefeli;
+#N canvas 898 237 193 82 NETPD 0;
+#N canvas 690 202 154 104 abslist 0;
+#X msg 20 37 nblsquare~;
+#X msg 19 11 nblsaw~;
+#X msg 20 65 nbltriangle~;
+#X restore 11 12 pd abslist;
+#X msg 11 37 version 0 2 0;
+#X restore 9 12 pd NETPD;

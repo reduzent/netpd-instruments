@@ -1,0 +1,87 @@
+#N canvas 405 44 642 599 10;
+#X obj 31 200 *~;
+#X obj 32 229 dac~;
+#X obj 111 219 pow 2;
+#X obj 114 164 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 111 260 line~;
+#X obj 111 239 pack f 20;
+#X obj 278 247 cnv 15 350 130 empty empty empty 20 12 0 14 -24198 -66577
+0;
+#X text 285 258 synopsis:;
+#X text 284 313 inlet1: signal (frequency);
+#X text 284 333 inlet2: float (set phase);
+#X obj 178 389 cnv 15 450 120 empty empty empty 20 12 0 14 -241291
+-66577 0;
+#X floatatom 255 443 7 0 0 0 - - -;
+#X text 308 445 Hz;
+#X text 188 443 border @;
+#X text 14 539 copyright by Roman Haefeli;
+#X text 14 560 published under the GNU Public License;
+#X obj 239 521 cnv 15 390 25 empty empty empty 20 12 0 14 -258699 -66577
+0;
+#X text 246 527 due to bandlimitation peaks above/below +/-1 may occur
+;
+#X obj 34 37 hsl 128 15 20 17000 1 0 empty empty frequency -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 31 59 pack f 100;
+#X obj 31 80 line~;
+#X text 254 396 try different values for <number of tables>:;
+#N canvas 573 67 190 308 compute_bandlimited_range 0;
+#X msg 21 34 get_num_of_tables;
+#X obj 21 97 route num_of_tables;
+#X obj 21 12 loadbang;
+#X obj 21 128 t b f;
+#X obj 21 152 samplerate~;
+#X obj 21 174 / 2;
+#X obj 21 203 /;
+#X obj 21 229 outlet;
+#X obj 51 177 + 1;
+#X obj 21 56 s NBLSQUARE;
+#X obj 21 76 r NBLSQUARE;
+#X connect 0 0 9 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 3 1 8 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 6 1;
+#X connect 10 0 1 0;
+#X restore 255 414 pd compute_bandlimited_range;
+#X obj 32 127 nblsquare~ 40;
+#X text 214 92 the patch [nblsquare_tables] stays open until pd is
+closed (needs some ram \, but no computation).;
+#X msg 21 332 vis \$1;
+#X obj 21 357 s pd-nblsquare_tables.pd;
+#X obj 21 305 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 42 305 <- show [nblsquare_tables];
+#X text 215 31 the first instantiation of [nblsquare~] loads the patch
+[nblsquare_tables] invisibly. the first argument of [nblsquare~] is
+passed to [nblsquare_tables] \, which creates a number of tables accordingly.
+;
+#X text 285 285 [nblsquare~ <number of tables>];
+#X text 216 129 if more than one [nblsquare~] are instantiated \, the
+highest number of tables is created.;
+#X text 216 182 the number of tables is at the same time the number
+of harmonics of the table with the highest number of harmonics. this
+value defines also the frequency \, below which [nblsquare~] switches
+to a raw square.;
+#X text 285 354 outlet: signal (bandlimited square at given f);
+#X text 253 466 if frequency above border -> bandlimited square;
+#X text 253 482 if frequency below border -> raw square;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 1;
+#X connect 5 0 4 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 23 0;
+#X connect 22 0 11 0;
+#X connect 23 0 0 0;
+#X connect 25 0 26 0;
+#X connect 27 0 25 0;
