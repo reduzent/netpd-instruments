@@ -1,8 +1,8 @@
-#N canvas 549 472 245 287 10;
+#N canvas 546 500 245 287 10;
 #X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
 #X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 0 53 623 696 dsp 0;
+#N canvas 0 76 623 696 dsp 0;
 #X obj 22 561 *~;
 #X obj 22 237 peakfilter~;
 #N canvas 835 399 450 300 bl_clip~ 0;
@@ -146,7 +146,6 @@
 #X obj 80 410 b;
 #X obj 94 110 0;
 #X obj 94 67 b;
-#X obj 22 18 r lilacid;
 #X msg 22 57 \$1;
 #X obj 213 140 - 20;
 #X obj 233 557 switch~;
@@ -316,8 +315,9 @@
 #X restore 523 339 pd f-release;
 #X obj 80 384 r \$1-lilacid;
 #X obj 346 231 r \$1-lilacid;
-#X connect 0 0 27 0;
-#X connect 0 0 27 1;
+#X obj 22 18 r \$1-lilacid;
+#X connect 0 0 26 0;
+#X connect 0 0 26 1;
 #X connect 1 0 8 0;
 #X connect 2 0 0 0;
 #X connect 3 0 1 0;
@@ -328,37 +328,37 @@
 #X connect 8 0 2 0;
 #X connect 9 0 14 0;
 #X connect 10 0 6 0;
-#X connect 10 1 19 0;
+#X connect 10 1 18 0;
 #X connect 11 0 7 0;
 #X connect 12 0 11 0;
 #X connect 13 0 10 0;
 #X connect 14 0 3 1;
 #X connect 14 0 4 1;
 #X connect 15 0 9 0;
-#X connect 16 0 17 0;
-#X connect 16 0 15 0;
-#X connect 17 0 22 0;
-#X connect 18 0 1 2;
-#X connect 20 0 8 1;
-#X connect 21 0 18 0;
-#X connect 22 0 3 0;
-#X connect 22 0 4 0;
-#X connect 23 0 9 1;
-#X connect 24 0 5 0;
-#X connect 24 0 4 2;
-#X connect 25 0 21 0;
-#X connect 26 0 20 0;
-#X connect 28 0 10 1;
-#X connect 29 0 10 3;
-#X connect 30 0 10 4;
-#X connect 31 0 10 5;
-#X connect 32 0 11 1;
-#X connect 33 0 11 2;
-#X connect 34 0 11 3;
-#X connect 35 0 11 4;
-#X connect 36 0 11 5;
-#X connect 37 0 13 0;
-#X connect 38 0 12 0;
+#X connect 16 0 21 0;
+#X connect 17 0 1 2;
+#X connect 19 0 8 1;
+#X connect 20 0 17 0;
+#X connect 21 0 3 0;
+#X connect 21 0 4 0;
+#X connect 22 0 9 1;
+#X connect 23 0 5 0;
+#X connect 23 0 4 2;
+#X connect 24 0 20 0;
+#X connect 25 0 19 0;
+#X connect 27 0 10 1;
+#X connect 28 0 10 3;
+#X connect 29 0 10 4;
+#X connect 30 0 10 5;
+#X connect 31 0 11 1;
+#X connect 32 0 11 2;
+#X connect 33 0 11 3;
+#X connect 34 0 11 4;
+#X connect 35 0 11 5;
+#X connect 36 0 13 0;
+#X connect 37 0 12 0;
+#X connect 38 0 16 0;
+#X connect 38 0 15 0;
 #X restore 7 26 pd dsp;
 #N canvas 750 242 413 120 jamx-labels 0;
 #X obj 8 3 loadbang;
@@ -433,9 +433,9 @@
 #X text 12 245 http://www.netpd.org/lilacid;
 #X text 9 221 Author: Roman Haefeli;
 #X obj 103 79 netpd_head \$1 lilacid;
-#N canvas 936 347 91 295 \$1-lilacid 0;
+#N canvas 933 431 91 295 \$1-lilacid 1;
 #X obj 9 20 hsl 75 15 0 1 0 0 \$1-a-level \$1-a-level volume 3 8 0
-10 -250685 -1 -1 4440 1;
+10 -250685 -1 -1 1440 1;
 #X obj 9 50 hsl 75 15 0 1 0 0 \$1-a-attack \$1-a-attack attack 3 8
 0 10 -250685 -1 -1 74 1;
 #X obj 9 65 hsl 75 15 0 1 0 0 \$1-a-hold \$1-a-hold hold 3 8 0 10 -250685
@@ -458,7 +458,7 @@
 3 8 0 10 -250685 -1 -1 3774 1;
 #X obj 6 5 cnv 15 80 15 empty empty amplitude 3 8 0 10 -1 -250685 0
 ;
-#X obj 9 269 hsl 35 15 1 1 0 0 \$0-jamx-gui \$0-jamx-gui-r jamx 3 8
+#X obj 9 269 hsl 35 15 0 0 0 0 \$0-jamx-gui \$0-jamx-gui-r jamx 3 8
 0 10 -250685 -250685 -1 0 1;
 #X obj 49 269 hsl 35 15 1 1 0 0 \$0-pad-gui \$0-pad-gui-r pad 3 8 0
 10 -250685 -250685 -1 0 1;
