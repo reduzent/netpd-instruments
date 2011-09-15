@@ -1,4 +1,4 @@
-#N canvas 546 500 245 287 10;
+#N canvas 543 528 245 287 10;
 #X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
 #X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
@@ -316,6 +316,11 @@
 #X obj 80 384 r \$1-lilacid;
 #X obj 346 231 r \$1-lilacid;
 #X obj 22 18 r \$1-lilacid;
+#X obj 356 440 loadbang;
+#X obj 356 462 t b b;
+#X obj 383 485 delay 1000;
+#X msg 383 507 0;
+#X msg 356 492 1;
 #X connect 0 0 26 0;
 #X connect 0 0 26 1;
 #X connect 1 0 8 0;
@@ -359,6 +364,12 @@
 #X connect 37 0 12 0;
 #X connect 38 0 16 0;
 #X connect 38 0 15 0;
+#X connect 39 0 40 0;
+#X connect 40 0 43 0;
+#X connect 40 1 41 0;
+#X connect 41 0 42 0;
+#X connect 42 0 18 0;
+#X connect 43 0 18 0;
 #X restore 7 26 pd dsp;
 #N canvas 750 242 413 120 jamx-labels 0;
 #X obj 8 3 loadbang;
@@ -433,9 +444,9 @@
 #X text 12 245 http://www.netpd.org/lilacid;
 #X text 9 221 Author: Roman Haefeli;
 #X obj 103 79 netpd_head \$1 lilacid;
-#N canvas 933 431 91 295 \$1-lilacid 1;
+#N canvas 933 431 91 295 \$1-lilacid 0;
 #X obj 9 20 hsl 75 15 0 1 0 0 \$1-a-level \$1-a-level volume 3 8 0
-10 -250685 -1 -1 1440 1;
+10 -250685 -1 -1 4440 1;
 #X obj 9 50 hsl 75 15 0 1 0 0 \$1-a-attack \$1-a-attack attack 3 8
 0 10 -250685 -1 -1 74 1;
 #X obj 9 65 hsl 75 15 0 1 0 0 \$1-a-hold \$1-a-hold hold 3 8 0 10 -250685
