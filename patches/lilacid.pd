@@ -1,4 +1,4 @@
-#N canvas 543 528 245 287 10;
+#N canvas 590 453 245 287 10;
 #X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
 #X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
@@ -375,20 +375,14 @@
 #X obj 8 3 loadbang;
 #X msg 8 26 a_attack a_hold a_release f_ceiling f_atttack f_hold f_release
 ;
-#X obj 8 69 s lilacid_jx.c.label;
+#X obj 8 69 s \$1-lilacid_jx.c.label;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 103 103 pd jamx-labels;
 #N canvas 155 241 626 344 guistuff 0;
-#X obj 26 88 s \$0-jamx-gui-r;
 #X obj 18 19 r \$0-jamx-gui;
-#X obj 26 44 ==;
-#X msg 26 66 range \$1 \$1;
-#X msg 164 72 range \$1 \$1;
 #X obj 156 117 s \$0-open-pad;
 #X obj 156 25 r \$0-pad-gui;
-#X obj 164 94 s \$0-pad-gui-r;
-#X obj 164 52 ==;
 #X msg 302 71 range \$1 \$1;
 #X obj 302 51 ==;
 #X obj 296 28 r \$0-wf;
@@ -412,39 +406,35 @@
 #X obj 296 132 s \$1-waveform;
 #X obj 423 134 s \$1-syncphase;
 #X obj 18 111 s \$1-open-jam;
-#X connect 1 0 2 0;
-#X connect 1 0 31 0;
-#X connect 2 0 3 0;
-#X connect 3 0 0 0;
-#X connect 4 0 7 0;
-#X connect 6 0 5 0;
-#X connect 6 0 8 0;
-#X connect 8 0 4 0;
-#X connect 9 0 12 0;
-#X connect 10 0 9 0;
-#X connect 11 0 10 0;
-#X connect 11 0 29 0;
-#X connect 13 0 14 0;
-#X connect 13 1 15 0;
-#X connect 14 0 16 0;
-#X connect 15 0 16 0;
-#X connect 16 0 17 0;
-#X connect 18 0 23 0;
-#X connect 19 0 18 0;
-#X connect 20 0 26 0;
-#X connect 20 1 25 0;
-#X connect 21 0 24 0;
-#X connect 22 0 19 0;
-#X connect 22 0 30 0;
-#X connect 25 0 21 0;
-#X connect 26 0 21 0;
-#X connect 27 0 13 0;
-#X connect 28 0 20 0;
+#X msg 18 41 1;
+#X connect 0 0 26 0;
+#X connect 2 0 1 0;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 5 0 23 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 12 0 17 0;
+#X connect 13 0 12 0;
+#X connect 14 0 20 0;
+#X connect 14 1 19 0;
+#X connect 15 0 18 0;
+#X connect 16 0 13 0;
+#X connect 16 0 24 0;
+#X connect 19 0 15 0;
+#X connect 20 0 15 0;
+#X connect 21 0 7 0;
+#X connect 22 0 14 0;
+#X connect 26 0 25 0;
 #X restore 7 48 pd guistuff;
 #X text 12 245 http://www.netpd.org/lilacid;
 #X text 9 221 Author: Roman Haefeli;
 #X obj 103 79 netpd_head \$1 lilacid;
-#N canvas 933 431 91 295 \$1-lilacid 0;
+#N canvas 933 599 99 292 \$1-lilacid 1;
 #X obj 9 20 hsl 75 15 0 1 0 0 \$1-a-level \$1-a-level volume 3 8 0
 10 -250685 -1 -1 4440 1;
 #X obj 9 50 hsl 75 15 0 1 0 0 \$1-a-attack \$1-a-attack attack 3 8
@@ -471,11 +461,11 @@
 ;
 #X obj 9 269 hsl 35 15 0 0 0 0 \$0-jamx-gui \$0-jamx-gui-r jamx 3 8
 0 10 -250685 -250685 -1 0 1;
-#X obj 49 269 hsl 35 15 1 1 0 0 \$0-pad-gui \$0-pad-gui-r pad 3 8 0
-10 -250685 -250685 -1 0 1;
-#X obj 9 221 hsl 75 15 0 0 0 0 \$0-wf \$0-wf-r waveform 3 8 0 10 -250685
+#X obj 49 269 hsl 35 15 1 1 0 0 \$0-pad-gui \$0-pad-gui-r empty 3 8
+0 10 -250685 -250685 -1 0 1;
+#X obj 9 221 hsl 75 15 1 1 0 0 \$0-wf \$0-wf-r waveform 3 8 0 10 -250685
 -250685 -1 0 1;
-#X obj 9 236 hsl 75 15 0 0 0 0 \$0-syph \$0-syph-r sync_phase 3 8 0
+#X obj 9 236 hsl 75 15 1 1 0 0 \$0-syph \$0-syph-r sync_phase 3 8 0
 10 -250685 -250685 -1 0 1;
 #X obj 6 98 cnv 15 80 15 empty empty filter 3 8 0 10 -1 -250685 0;
 #X obj 6 206 cnv 15 80 15 empty empty oscillator 3 8 0 10 -1 -250685
