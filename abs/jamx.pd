@@ -1466,7 +1466,7 @@
 #X restore 12 122 pd jx.code;
 #X msg 15 246 bang;
 #X text 48 248 <- before save;
-#N canvas 0 137 230 246 resetgui 0;
+#N canvas 0 193 230 246 resetgui 0;
 #X obj 13 17 inlet;
 #X msg 43 47 number 1 \, pos 306 113;
 #X msg 33 87 0;
@@ -1494,19 +1494,19 @@
 #X obj 9 32 declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix
 ;
 #X obj 9 10 declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 722 351 342 209 \$1-\$2-jamx 0;
+#N canvas 722 351 342 209 \$1-\$2-jamx 1;
 #X obj 7 -2 cnv 15 311 177 empty empty empty 20 12 0 14 -195573 -66577
 0;
 #X obj 10 114 cnv 8 304 57 empty \$0-bg-r empty 20 12 0 14 -16645 -66577
 0;
-#X obj 210 114 cnv 15 103 22 empty \$2_jx.ctrl.cnv-r empty 24 15 1
-8 -262144 -33289 0;
+#X obj 210 115 cnv 15 103 22 empty \$1-\$2_jx.ctrl.cnv-r f_release
+50 15 1 8 -262144 -33289 0;
 #X obj 93 138 cnv 11 72 15 empty \$0-parm-r Repeat 4 8 1 8 -262144
 -33289 0;
 #X obj 19 155 cnv 11 146 15 empty \$0-parm2-r Octave 4 8 1 8 -262144
 -33289 0;
 #X obj 66 159 hradio 9 1 0 8 \$1-\$2_jx.octave \$1-\$2_jx.octave empty
-2 -4 0 8 -262144 -62784 -1 0;
+2 -4 0 8 -262144 -62784 -1 4;
 #X obj 19 138 cnv 12 72 15 empty \$0-parm-r Offset 4 8 1 8 -262144
 -33289 0;
 #X obj 167 155 cnv 10 72 15 empty \$0-parm-r /16th 43 8 1 8 -262144
@@ -1622,8 +1622,8 @@
 -262144 -262144 0 1;
 #X obj 166 154 tgl 14 0 \$2_runmode \$2_runmode-r + 4 7 0 8 -262144
 -262144 -1 0 1;
-#X obj 290 114 hradio 8 1 0 3 \$1-\$2_jx.c.pos \$1-\$2_jx.c.pos-r empty
-2 -4 0 8 -262144 -62784 -1 0;
+#X obj 258 114 hradio 8 1 0 7 \$1-\$2_jx.c.pos \$1-\$2_jx.c.pos-r empty
+2 -4 0 8 -262144 -62784 -1 6;
 #X obj 213 71 hsl 99 8 0 1 0 0 \$0-c11 \$0-c11-r empty -2 -6 0 8 -262144
 -62784 -262144 0 0;
 #X obj 213 78 hsl 99 8 0 1 0 0 \$0-c12 \$0-c12-r empty -2 -6 0 8 -262144
@@ -1639,11 +1639,11 @@
 #X obj 64 137 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_jx.offset \$1-\$2_jx.offset
 empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 138 137 nbx 2 14 0 1e+37 0 0 \$1-\$2_jx.repeat \$1-\$2_jx.repeat
-empty 0 -8 0 10 -262144 -1 -1 0 256;
+empty 0 -8 0 10 -262144 -1 -1 16 256;
 #X obj 138 154 nbx 2 14 -12 12 0 0 \$1-\$2_transpose \$1-\$2_transpose
 empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 180 154 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_speed \$1-\$2_speed
-empty 0 -8 0 10 -262144 -1 -1 0 256;
+empty 0 -8 0 10 -262144 -1 -1 16 256;
 #X obj 209 123 nbx 2 14 -1e+37 1e+37 0 0 \$1-\$2_jx.cnr \$1-\$2_jx.cnr
 empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 212 137 nbx 2 14 1 1e+37 0 0 \$0_jx.view \$1-\$2_jx.viewpage-r
