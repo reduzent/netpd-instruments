@@ -1,5 +1,5 @@
-#N canvas 390 64 634 539 10;
-#N canvas 160 461 664 317 \$1-qseq3 0;
+#N canvas 392 69 634 539 10;
+#N canvas 162 466 664 317 \$1-qseq3 0;
 #X restore 12 16 pd \$1-qseq3;
 #N canvas 647 382 450 300 NETPD 0;
 #X msg 15 15 version 0 0 0;
@@ -18,54 +18,88 @@
 #X obj 450 60 r \$0.reset;
 #X obj 450 103 \$1;
 #X msg 450 81 bang;
-#N canvas 653 169 413 470 element.toggler 0;
-#X obj 128 336 netpd-rgb2iem;
+#N canvas 661 245 269 426 element.toggler 0;
+#X obj 9 312 netpd-rgb2iem;
 #X obj -70 19 r \$1.global.s;
 #X obj -70 41 t a a;
 #X obj -36 107 == 0;
-#X obj -70 63 qseq3-id2path \$1;
 #X obj -9 152 tabwrite \$1.value/id;
 #X obj -70 85 list split 3;
 #X obj -36 130 t a a;
 #X obj -70 175 list append;
-#X obj 94 251 list split 3;
-#X obj 128 274 sel 0 1;
-#X msg 128 314 220 220 220;
-#X obj 94 359 list append;
-#X obj 94 381 list prepend \$1;
-#X msg 94 403 \; \$1.\$2.\$3.\$4.r color \$5 \$5 -1;
-#X msg 147 295 180 180 180;
+#X obj -25 227 list split 3;
+#X obj 9 250 sel 0 1;
+#X msg 9 290 220 220 220;
+#X obj -25 335 list append;
+#X obj -25 357 list prepend \$1;
+#X msg -25 379 \; \$1.\$2.\$3.\$4.r color \$5 \$5 -1;
+#X msg 28 271 180 180 180;
 #X obj -70 197 t a a;
-#X obj -70 219 list prepend element;
-#X obj -70 241 list trim;
 #X obj -70 263 outlet;
-#X connect 0 0 12 1;
+#X obj -70 63 qseq3-id2path \$1;
+#X connect 0 0 11 1;
 #X connect 1 0 2 0;
-#X connect 2 0 4 0;
-#X connect 2 1 5 1;
-#X connect 3 0 7 0;
-#X connect 4 0 6 0;
-#X connect 6 0 8 0;
-#X connect 6 1 3 0;
-#X connect 7 0 8 1;
-#X connect 7 1 5 0;
-#X connect 8 0 16 0;
-#X connect 9 0 12 0;
-#X connect 9 1 10 0;
-#X connect 10 0 11 0;
-#X connect 10 1 15 0;
-#X connect 11 0 0 0;
+#X connect 2 0 17 0;
+#X connect 2 1 4 1;
+#X connect 3 0 6 0;
+#X connect 5 0 7 0;
+#X connect 5 1 3 0;
+#X connect 6 0 7 1;
+#X connect 6 1 4 0;
+#X connect 7 0 15 0;
+#X connect 8 0 11 0;
+#X connect 8 1 9 0;
+#X connect 9 0 10 0;
+#X connect 9 1 14 0;
+#X connect 10 0 0 0;
+#X connect 11 0 12 0;
 #X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 15 0 0 0;
-#X connect 16 0 17 0;
-#X connect 16 1 9 0;
-#X connect 17 0 18 0;
-#X connect 18 0 19 0;
+#X connect 14 0 0 0;
+#X connect 15 0 16 0;
+#X connect 15 1 8 0;
+#X connect 17 0 5 0;
 #X restore 295 95 pd element.toggler;
 #X obj 295 117 print -n;
 #N canvas 2 52 1200 780 groups.guis 0;
-#N canvas 67 440 450 300 \$1-group-1 1;
+#N canvas 69 445 450 300 \$1-group-1 1;
+#X obj 3 20 vsl 70 18 0 0 0 0 1.global.s nuet empty 3 7 0 10 -261234
+-261234 -66577 0 1;
+#X obj 4 19 cnv 10 68 10 empty 1.1.0.-1.r bbdrum 2 6 1 9 -233017 -66577
+0;
+#X obj 4 30 cnv 10 68 10 empty 1.1.0.-1.r hihat 2 6 1 9 -233017 -66577
+0;
+#X obj 74 20 vsl 20 18 1 1 0 0 1.global.s 1.1.0.0.r empty 0 -9 0 10
+-228856 -228856 -228856 0 1;
+#X obj 94 20 vsl 20 18 2 2 0 0 1.global.s 1.1.0.1.r empty 0 -9 0 10
+-228856 -228856 -228856 0 1;
+#X obj 114 20 vsl 20 18 3 3 0 0 1.global.s 1.1.0.2.r empty 0 -9 0 10
+-228856 -228856 -228856 0 1;
+#X obj 134 20 vsl 20 18 4 4 0 0 1.global.s 1.1.0.3.r empty 0 -9 0 10
+-228856 -228856 -228856 0 1;
+#X obj 154 20 vsl 20 18 5 5 0 0 1.global.s 1.1.0.4.r empty 0 -9 0 10
+-228856 -228856 -228856 0 1;
+#X obj 174 20 vsl 20 18 6 6 0 0 1.global.s 1.1.0.5.r empty 0 -9 0 10
+-228856 -228856 -228856 0 1;
+#X obj 194 20 vsl 20 18 7 7 0 0 1.global.s 1.1.0.6.r empty 0 -9 0 10
+-228856 -228856 -228856 0 1;
+#X obj 214 20 vsl 20 18 8 8 0 0 1.global.s 1.1.0.7.r empty 0 -9 0 10
+-228856 -228856 -228856 0 1;
+#X obj 234 20 vsl 20 18 9 9 0 0 1.global.s 1.1.0.8.r empty 0 -9 0 10
+-228856 -228856 -228856 0 1;
+#X obj 254 20 vsl 20 18 10 10 0 0 1.global.s 1.1.0.9.r empty 0 -9 0
+10 -228856 -228856 -228856 0 1;
+#X obj 274 20 vsl 20 18 11 11 0 0 1.global.s 1.1.0.10.r empty 0 -9
+0 10 -228856 -228856 -228856 0 1;
+#X obj 294 20 vsl 20 18 12 12 0 0 1.global.s 1.1.0.11.r empty 0 -9
+0 10 -228856 -228856 -228856 0 1;
+#X obj 314 20 vsl 20 18 13 13 0 0 1.global.s 1.1.0.12.r empty 0 -9
+0 10 -228856 -228856 -228856 0 1;
+#X obj 334 20 vsl 20 18 14 14 0 0 1.global.s 1.1.0.13.r empty 0 -9
+0 10 -228856 -228856 -228856 0 1;
+#X obj 354 20 vsl 20 18 15 15 0 0 1.global.s 1.1.0.14.r empty 0 -9
+0 10 -228856 -228856 -228856 100 1;
+#X obj 374 20 vsl 20 18 16 16 0 0 1.global.s 1.1.0.15.r empty 0 -9
+0 10 -228856 -228856 -228856 0 1;
 #X restore 9 11 pd \$1-group-1;
 #N canvas 2 751 450 300 \$1-group-2 0;
 #X restore 9 33 pd \$1-group-2;
@@ -235,9 +269,9 @@ empty 0 -9 0 10 -228856 -228856 -228856 0 1;
 #X connect 11 0 8 0;
 #X connect 12 0 0 0;
 #X restore 15 216 pd element.creator;
-#N canvas 496 149 258 383 seq.creator 1;
+#N canvas 500 215 222 200 seq.creator 1;
 #X obj 19 28 inlet;
-#N canvas 301 186 463 448 ypos.for.each.element 0;
+#N canvas 303 191 463 448 ypos.for.each.element 0;
 #X obj 7 110 t a a a;
 #X obj 7 197 t a a a;
 #X obj 7 133 + 10;
@@ -250,18 +284,18 @@ empty 0 -9 0 10 -228856 -228856 -228856 0 1;
 #X obj 7 87 + 20;
 #X obj 7 20 t a a;
 #X msg 7 42 \$2;
-#X msg 7 222 obj 4 \$1 cnv 10 68 10 empty \$8.\$3.\$5.r \$7 2 6 1 9
--233017 -66577 0;
-#X msg 26 256 obj 4 \$2 cnv 10 68 10 empty \$8.\$4.\$5.r \$6 2 6 1
-9 -233017 -66577 0;
 #X msg 46 291 obj 3 \$3 vsl 70 18 \$9 \$9 0 0 \$8.global.s nuet empty
 3 7 0 10 -261234 -261234 -66577 0 1;
+#X msg 7 222 obj 4 \$1 cnv 10 68 10 empty \$8.\$4.\$5.-1.r \$7 2 6
+1 9 -233017 -66577 0;
+#X msg 26 256 obj 4 \$2 cnv 10 68 10 empty \$8.\$4.\$5.-1.r \$6 2 6
+1 9 -233017 -66577 0;
 #X connect 0 0 2 0;
 #X connect 0 1 4 0;
 #X connect 0 2 3 2;
-#X connect 1 0 12 0;
-#X connect 1 1 13 0;
-#X connect 1 2 14 0;
+#X connect 1 0 13 0;
+#X connect 1 1 14 0;
+#X connect 1 2 12 0;
 #X connect 2 0 3 0;
 #X connect 3 0 6 0;
 #X connect 4 0 3 1;
@@ -275,9 +309,9 @@ empty 0 -9 0 10 -228856 -228856 -228856 0 1;
 #X connect 12 0 7 0;
 #X connect 13 0 7 0;
 #X connect 14 0 7 0;
-#X restore 19 300 pd ypos.for.each.element;
+#X restore 19 135 pd ypos.for.each.element;
 #X obj 19 72 t a a;
-#X obj 19 322 s;
+#X obj 19 157 s;
 #X obj 19 49 list append \$1;
 #N canvas 836 259 450 300 add.object.id 0;
 #X obj 15 15 inlet;
@@ -310,8 +344,8 @@ empty 0 -9 0 10 -228856 -228856 -228856 0 1;
 #X connect 10 0 4 0;
 #X connect 11 0 5 0;
 #X connect 12 0 6 0;
-#X restore 19 205 pd add.object.id;
-#X msg 46 140 symbol pd-\$5-group-\$1;
+#X restore 19 115 pd add.object.id;
+#X msg 46 94 symbol pd-\$5-group-\$1;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 5 0;
