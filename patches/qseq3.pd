@@ -1,4 +1,4 @@
-#N canvas 392 69 634 539 10;
+#N canvas 394 74 634 539 10;
 #N canvas 162 466 664 317 \$1-qseq3 0;
 #X restore 12 16 pd \$1-qseq3;
 #N canvas 647 382 450 300 NETPD 0;
@@ -8,7 +8,7 @@
 #X msg 10 17 qseq3-id2path;
 #X restore 21 88 pd abslist;
 #X restore 11 42 pd NETPD;
-#X obj 451 227 table \$1.pattern/id 10000;
+#X obj 451 227 table \$1.set/id 10000;
 #X obj 451 248 table \$1.seq/id 10000;
 #X obj 451 269 table \$1.element/id 10000;
 #X obj 451 290 table \$1.value/id 10000;
@@ -60,54 +60,6 @@
 #X connect 17 0 5 0;
 #X restore 295 95 pd element.toggler;
 #X obj 295 117 print -n;
-#N canvas 2 52 1200 780 groups.guis 0;
-#N canvas 69 445 450 300 \$1-group-1 1;
-#X obj 3 20 vsl 70 18 0 0 0 0 1.global.s nuet empty 3 7 0 10 -261234
--261234 -66577 0 1;
-#X obj 4 19 cnv 10 68 10 empty 1.1.0.-1.r bbdrum 2 6 1 9 -233017 -66577
-0;
-#X obj 4 30 cnv 10 68 10 empty 1.1.0.-1.r hihat 2 6 1 9 -233017 -66577
-0;
-#X obj 74 20 vsl 20 18 1 1 0 0 1.global.s 1.1.0.0.r empty 0 -9 0 10
--228856 -228856 -228856 0 1;
-#X obj 94 20 vsl 20 18 2 2 0 0 1.global.s 1.1.0.1.r empty 0 -9 0 10
--228856 -228856 -228856 0 1;
-#X obj 114 20 vsl 20 18 3 3 0 0 1.global.s 1.1.0.2.r empty 0 -9 0 10
--228856 -228856 -228856 0 1;
-#X obj 134 20 vsl 20 18 4 4 0 0 1.global.s 1.1.0.3.r empty 0 -9 0 10
--228856 -228856 -228856 0 1;
-#X obj 154 20 vsl 20 18 5 5 0 0 1.global.s 1.1.0.4.r empty 0 -9 0 10
--228856 -228856 -228856 0 1;
-#X obj 174 20 vsl 20 18 6 6 0 0 1.global.s 1.1.0.5.r empty 0 -9 0 10
--228856 -228856 -228856 0 1;
-#X obj 194 20 vsl 20 18 7 7 0 0 1.global.s 1.1.0.6.r empty 0 -9 0 10
--228856 -228856 -228856 0 1;
-#X obj 214 20 vsl 20 18 8 8 0 0 1.global.s 1.1.0.7.r empty 0 -9 0 10
--228856 -228856 -228856 0 1;
-#X obj 234 20 vsl 20 18 9 9 0 0 1.global.s 1.1.0.8.r empty 0 -9 0 10
--228856 -228856 -228856 0 1;
-#X obj 254 20 vsl 20 18 10 10 0 0 1.global.s 1.1.0.9.r empty 0 -9 0
-10 -228856 -228856 -228856 0 1;
-#X obj 274 20 vsl 20 18 11 11 0 0 1.global.s 1.1.0.10.r empty 0 -9
-0 10 -228856 -228856 -228856 0 1;
-#X obj 294 20 vsl 20 18 12 12 0 0 1.global.s 1.1.0.11.r empty 0 -9
-0 10 -228856 -228856 -228856 0 1;
-#X obj 314 20 vsl 20 18 13 13 0 0 1.global.s 1.1.0.12.r empty 0 -9
-0 10 -228856 -228856 -228856 0 1;
-#X obj 334 20 vsl 20 18 14 14 0 0 1.global.s 1.1.0.13.r empty 0 -9
-0 10 -228856 -228856 -228856 0 1;
-#X obj 354 20 vsl 20 18 15 15 0 0 1.global.s 1.1.0.14.r empty 0 -9
-0 10 -228856 -228856 -228856 100 1;
-#X obj 374 20 vsl 20 18 16 16 0 0 1.global.s 1.1.0.15.r empty 0 -9
-0 10 -228856 -228856 -228856 0 1;
-#X restore 9 11 pd \$1-group-1;
-#N canvas 2 751 450 300 \$1-group-2 0;
-#X restore 9 33 pd \$1-group-2;
-#N canvas 2 751 450 300 \$1-group-3 0;
-#X restore 9 56 pd \$1-group-3;
-#N canvas 2 751 450 300 \$1-group-4 0;
-#X restore 9 78 pd \$1-group-4;
-#X restore 313 40 pd groups.guis;
 #X obj 428 360 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 428 392 1 \$1;
@@ -121,18 +73,18 @@
 #X msg 515 388 3 \$1;
 #X msg 553 388 4 \$1;
 #X obj 428 430 list prepend \$1;
-#X msg 428 452 \; pd-\$1-group-\$2 vis \$3;
-#X text 18 79 group num_of_elemnts width instr subinst;
-#X obj 451 311 table \$1.nos/group 1000;
-#X msg 450 126 \; \$1.pattern/id const 0 \; \$1.seq/id const 0 \; \$1.element/id
-const 0 \; \$1.value/id const 0 \; \$1.nos/group const 0 \;;
+#X msg 428 452 \; pd-\$1-set-\$2 vis \$3;
+#X text 18 79 set num_of_elemnts width instr subinst;
+#X obj 451 311 table \$1.nos/set 1000;
+#X msg 450 126 \; \$1.set/id const 0 \; \$1.seq/id const 0 \; \$1.element/id
+const 0 \; \$1.value/id const 0 \; \$1.nos/set const 0 \;;
 #N canvas 181 302 272 442 meta.constructor 0;
-#X obj 38 97 tabread \$1.nos/group;
+#X obj 38 97 tabread \$1.nos/set;
 #X msg 38 54 \$1;
 #X obj 65 141 + 1;
 #X obj 38 119 t a a;
 #X obj 11 190 list append;
-#X obj 65 164 tabwrite \$1.nos/group;
+#X obj 65 164 tabwrite \$1.nos/set;
 #X obj 11 33 t a a;
 #X obj 38 76 t a a;
 #X msg 11 234 \$2;
@@ -143,10 +95,10 @@ const 0 \; \$1.value/id const 0 \; \$1.nos/group const 0 \;;
 #X obj 11 303 list append;
 #X obj 11 212 t a b a a;
 #X msg 101 295 seq \$1 \$6 \$4 \$5;
-#X text 108 270 group row inst subinst;
+#X text 108 270 set row inst subinst;
 #X obj 11 11 inlet;
 #X obj 11 385 outlet;
-#X text 53 329 group row xpos width;
+#X text 53 329 set row xpos width;
 #X msg 11 346 element \$2 \$7 \$1 \$4;
 #X connect 0 0 3 0;
 #X connect 1 0 7 0;
@@ -194,7 +146,7 @@ const 0 \; \$1.value/id const 0 \; \$1.nos/group const 0 \;;
 #X connect 7 0 4 1;
 #X restore -268 141 pd x-pos-by-elemnt-id;
 #X obj -268 92 list prepend \$1;
-#X text -166 116 patch-id pattern-id seq-id element-id width;
+#X text -166 116 patch-id set-id seq-id element-id width;
 #N canvas 572 344 172 230 y-pos-by-seq-id 0;
 #X obj -271 28 inlet;
 #X obj -271 182 outlet;
@@ -217,7 +169,7 @@ const 0 \; \$1.value/id const 0 \; \$1.nos/group const 0 \;;
 #X obj 15 271 outlet;
 #X obj 15 239 list append;
 #X obj 184 60 + 1;
-#X obj 62 126 tabwrite \$1.pattern/id;
+#X obj 62 126 tabwrite \$1.set/id;
 #X obj 46 174 tabwrite \$1.seq/id;
 #X obj 30 217 tabwrite \$1.element/id;
 #X obj 78 84 t a a;
@@ -252,7 +204,7 @@ const 0 \; \$1.value/id const 0 \; \$1.nos/group const 0 \;;
 empty 0 -9 0 10 -228856 -228856 -228856 0 1;
 #X obj -268 315 send;
 #X obj -231 267 list prepend \$1;
-#X msg -231 289 symbol pd-\$1-group-\$2;
+#X msg -231 289 symbol pd-\$1-set-\$2;
 #X obj -268 46 t a a;
 #X msg -230 69 \$1;
 #X msg -268 118 \$1 \$2 \$3 \$4 \$5;
@@ -269,7 +221,7 @@ empty 0 -9 0 10 -228856 -228856 -228856 0 1;
 #X connect 11 0 8 0;
 #X connect 12 0 0 0;
 #X restore 15 216 pd element.creator;
-#N canvas 500 215 222 200 seq.creator 1;
+#N canvas 500 215 222 200 seq.creator 0;
 #X obj 19 28 inlet;
 #N canvas 303 191 463 448 ypos.for.each.element 0;
 #X obj 7 110 t a a a;
@@ -318,7 +270,7 @@ empty 0 -9 0 10 -228856 -228856 -228856 0 1;
 #X obj 15 271 outlet;
 #X obj 15 239 list append;
 #X obj 184 60 + 1;
-#X obj 62 126 tabwrite \$1.pattern/id;
+#X obj 62 126 tabwrite \$1.set/id;
 #X obj 46 174 tabwrite \$1.seq/id;
 #X obj 30 217 tabwrite \$1.element/id;
 #X obj 78 84 t a a;
@@ -345,7 +297,7 @@ empty 0 -9 0 10 -228856 -228856 -228856 0 1;
 #X connect 11 0 5 0;
 #X connect 12 0 6 0;
 #X restore 19 115 pd add.object.id;
-#X msg 46 94 symbol pd-\$5-group-\$1;
+#X msg 46 94 symbol pd-\$5-set-\$1;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 5 0;
@@ -356,29 +308,39 @@ empty 0 -9 0 10 -228856 -228856 -228856 0 1;
 #X restore 64 185 pd seq.creator;
 #X obj 15 157 route element seq;
 #X msg 302 266 clear;
-#X obj 302 288 s pd-\$1-group-1;
+#X obj 302 288 s pd-\$1-set-1;
 #X obj 293 209 value \$1.uniq.id;
 #X obj 293 161 r \$0.reset;
 #X msg 293 183 0;
 #X msg 15 98 1 16 20 bbdrum hihat;
+#N canvas 98 127 154 181 set.guis 0;
+#N canvas 2 751 450 300 \$1-set-2 0;
+#X restore 9 33 pd \$1-set-2;
+#N canvas 2 751 450 300 \$1-set-3 0;
+#X restore 9 56 pd \$1-set-3;
+#N canvas 2 751 450 300 \$1-set-4 0;
+#X restore 9 78 pd \$1-set-4;
+#N canvas 71 450 450 300 \$1-set-1 0;
+#X restore 9 11 pd \$1-set-1;
+#X restore 313 40 pd set.guis;
 #X connect 6 0 7 0;
 #X connect 8 0 10 0;
-#X connect 9 0 26 0;
+#X connect 9 0 25 0;
 #X connect 10 0 9 0;
 #X connect 11 0 12 0;
-#X connect 14 0 15 0;
-#X connect 15 0 22 0;
+#X connect 13 0 14 0;
+#X connect 14 0 21 0;
+#X connect 15 0 18 0;
 #X connect 16 0 19 0;
 #X connect 17 0 20 0;
 #X connect 18 0 21 0;
-#X connect 19 0 22 0;
-#X connect 20 0 22 0;
+#X connect 19 0 21 0;
+#X connect 20 0 21 0;
 #X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 27 0 30 0;
-#X connect 30 0 28 0;
-#X connect 30 1 29 0;
-#X connect 31 0 32 0;
-#X connect 34 0 35 0;
-#X connect 35 0 33 0;
-#X connect 36 0 27 0;
+#X connect 26 0 29 0;
+#X connect 29 0 27 0;
+#X connect 29 1 28 0;
+#X connect 30 0 31 0;
+#X connect 33 0 34 0;
+#X connect 34 0 32 0;
+#X connect 35 0 26 0;
