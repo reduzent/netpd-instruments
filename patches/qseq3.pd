@@ -35,33 +35,33 @@
 #X msg 428 492 \; pd-\$1-set-\$2 vis \$3;
 #X text 14 66 set num_of_elemnts width instr subinst;
 #X obj 451 330 table \$1.nos/set 1000;
-#N canvas 244 173 351 658 meta.constructor 0;
-#X obj 38 117 tabread \$1.nos/set;
-#X msg 38 74 \$1;
-#X obj 65 161 + 1;
-#X obj 38 139 t a a;
-#X obj 11 210 list append;
-#X obj 65 184 tabwrite \$1.nos/set;
-#X obj 11 53 t a a;
-#X obj 38 96 t a a;
-#X msg 11 277 \$2;
-#X obj 11 301 until;
-#X obj 11 323 f;
-#X obj 42 323 + 1;
-#X msg 40 279 0;
-#X obj 11 425 list append;
-#X obj 11 255 t a b a a;
-#X text 122 395 set row inst subinst;
+#N canvas 258 90 347 675 meta.constructor 0;
+#X obj 38 147 tabread \$1.nos/set;
+#X msg 38 104 \$1;
+#X obj 65 191 + 1;
+#X obj 38 169 t a a;
+#X obj 11 240 list append;
+#X obj 65 214 tabwrite \$1.nos/set;
+#X obj 11 83 t a a;
+#X obj 38 126 t a a;
+#X msg 11 307 \$2;
+#X obj 11 331 until;
+#X obj 11 353 f;
+#X obj 42 353 + 1;
+#X msg 40 309 0;
+#X obj 11 455 list append;
+#X obj 11 285 t a b a a;
+#X text 122 425 set row inst subinst;
 #X obj 11 11 inlet;
-#X obj 11 614 outlet;
-#X obj 11 232 list append ________;
-#X msg 119 413 seq \$1 \$6 \$4 \$5;
-#X obj 11 32 list split 5;
-#X obj 11 347 t a a;
-#X obj 138 523 list append;
-#X msg 65 347 \$7;
-#X obj 38 394 mod 2;
-#X obj 38 371 div 4;
+#X obj 11 644 outlet;
+#X obj 11 262 list append ________;
+#X msg 119 443 seq \$1 \$6 \$4 \$5;
+#X obj 11 62 list split 5;
+#X obj 11 377 t a a;
+#X obj 138 553 list append;
+#X msg 65 377 \$7;
+#X obj 38 424 mod 2;
+#X obj 38 401 div 4;
 #N canvas 836 343 253 399 add.object.id 0;
 #X obj 15 15 inlet;
 #X obj 15 351 outlet;
@@ -103,14 +103,14 @@
 #X connect 16 4 9 0;
 #X connect 16 5 8 0;
 #X connect 16 6 7 0;
-#X restore 187 585 pd add.object.id;
-#X obj 119 435 t a a;
-#X obj 11 508 t a a;
-#X obj 11 545 list append;
-#X obj 11 568 list trim;
-#X msg 11 486 element \$2 \$7 \$1 \$4;
-#X msg 138 496 \$1 \$2 \$3;
-#X text 15 469 set row xpos width;
+#X restore 187 615 pd add.object.id;
+#X obj 119 465 t a a;
+#X obj 11 538 t a a;
+#X obj 11 575 list append;
+#X obj 11 598 list trim;
+#X msg 11 516 element \$2 \$7 \$1 \$4;
+#X msg 138 526 \$1 \$2 \$3;
+#X text 15 499 set row xpos width;
 #N canvas 797 72 203 192 set.color 0;
 #X obj 5 15 inlet;
 #X obj 5 37 t a a;
@@ -127,9 +127,32 @@
 #X connect 3 1 5 0;
 #X connect 4 0 7 0;
 #X connect 5 0 7 0;
-#X restore 11 590 pd set.color;
-#X msg 255 527 \$1 \$2 -1 1 1;
-#X obj 138 545 list append 0;
+#X restore 11 620 pd set.color;
+#X msg 255 557 \$1 \$2 -1 1 1;
+#X obj 138 575 list append 0;
+#N canvas 733 101 444 276 insert.button.width 0;
+#X obj -2128 16 inlet;
+#X obj -2128 231 outlet;
+#X obj -2128 96 list split 2;
+#X obj -2128 126 list append;
+#X obj -2128 148 list append;
+#X obj -2128 38 t a a;
+#X obj -2039 82 /;
+#X msg -2039 60 \$7 \$6;
+#X obj -2039 104 * 16;
+#X text -2081 230 set num_of_elemnts width instr subinst clrsect poly
+poly;
+#X connect 0 0 5 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 5 1 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 3 1;
+#X restore 11 34 pd insert.button.width;
 #X connect 0 0 3 0;
 #X connect 1 0 7 0;
 #X connect 2 0 5 0;
@@ -152,7 +175,7 @@
 #X connect 14 2 13 1;
 #X connect 14 3 19 0;
 #X connect 14 3 23 0;
-#X connect 16 0 20 0;
+#X connect 16 0 37 0;
 #X connect 18 0 14 0;
 #X connect 19 0 27 0;
 #X connect 20 0 6 0;
@@ -175,6 +198,7 @@
 #X connect 34 0 17 0;
 #X connect 35 0 26 0;
 #X connect 36 0 26 0;
+#X connect 37 0 20 0;
 #X restore 15 135 pd meta.constructor;
 #N canvas 264 399 387 337 element.creator 0;
 #N canvas 520 114 325 437 x-pos-by-elemnt-id 0;
@@ -331,6 +355,196 @@ empty 0 -9 0 10 -228856 -228856 -228856 0 1;
 #N canvas 2 751 450 300 \$1-set-4 0;
 #X restore 9 78 pd \$1-set-4;
 #N canvas 83 439 751 471 \$1-set-1 0;
+#X obj 3 6 vsl 70 16 0 0 0 0 1.global.s nuet empty 3 7 0 10 -261234
+-261234 -66577 0 1;
+#X obj 4 5 cnv 9 68 9 empty 1.1.0.-1.r 5-drum-delta 2 5 1 9 -166116
+-1 0;
+#X obj 4 15 cnv 9 68 9 empty 1.1.0.-1.r snare 2 5 1 9 -166116 -1 0
+;
+#X obj 74 6 vsl 21 16 1 1 0 0 1.global.s 1.1.0.0.r empty 0 -9 0 10
+-253822 -253822 -1 0 1;
+#X obj 95 6 vsl 21 16 2 2 0 0 1.global.s 1.1.0.1.r empty 0 -9 0 10
+-253822 -253822 -1 0 1;
+#X obj 116 6 vsl 22 16 3 3 0 0 1.global.s 1.1.0.2.r empty 0 -9 0 10
+-253822 -253822 -1 0 1;
+#X obj 138 6 vsl 21 16 4 4 0 0 1.global.s 1.1.0.3.r empty 0 -9 0 10
+-228856 -228856 -1 0 1;
+#X obj 159 6 vsl 21 16 5 5 0 0 1.global.s 1.1.0.4.r empty 0 -9 0 10
+-228856 -228856 -1 0 1;
+#X obj 180 6 vsl 22 16 6 6 0 0 1.global.s 1.1.0.5.r empty 0 -9 0 10
+-228856 -228856 -1 0 1;
+#X obj 202 6 vsl 21 16 7 7 0 0 1.global.s 1.1.0.6.r empty 0 -9 0 10
+-253822 -253822 -1 0 1;
+#X obj 223 6 vsl 21 16 8 8 0 0 1.global.s 1.1.0.7.r empty 0 -9 0 10
+-253822 -253822 -1 0 1;
+#X obj 244 6 vsl 22 16 9 9 0 0 1.global.s 1.1.0.8.r empty 0 -9 0 10
+-253822 -253822 -1 0 1;
+#X obj 266 6 vsl 21 16 10 10 0 0 1.global.s 1.1.0.9.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 287 6 vsl 21 16 11 11 0 0 1.global.s 1.1.0.10.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 308 6 vsl 22 16 12 12 0 0 1.global.s 1.1.0.11.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 330 6 vsl 21 16 13 13 0 0 1.global.s 1.1.0.12.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 351 6 vsl 21 16 14 14 0 0 1.global.s 1.1.0.13.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 372 6 vsl 22 16 15 15 0 0 1.global.s 1.1.0.14.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 394 6 vsl 21 16 16 16 0 0 1.global.s 1.1.0.15.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 415 6 vsl 21 16 17 17 0 0 1.global.s 1.1.0.16.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 436 6 vsl 22 16 18 18 0 0 1.global.s 1.1.0.17.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 458 6 vsl 21 16 19 19 0 0 1.global.s 1.1.0.18.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 479 6 vsl 21 16 20 20 0 0 1.global.s 1.1.0.19.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 500 6 vsl 22 16 21 21 0 0 1.global.s 1.1.0.20.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 522 6 vsl 21 16 22 22 0 0 1.global.s 1.1.0.21.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 543 6 vsl 21 16 23 23 0 0 1.global.s 1.1.0.22.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 564 6 vsl 22 16 24 24 0 0 1.global.s 1.1.0.23.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 3 27 vsl 70 16 25 25 0 0 1.global.s nuet empty 3 7 0 10 -261234
+-261234 -66577 0 1;
+#X obj 4 26 cnv 9 68 9 empty 1.1.1.-1.r 5-drum-delta 2 5 1 9 -166116
+-1 0;
+#X obj 4 36 cnv 9 68 9 empty 1.1.1.-1.r snare 2 5 1 9 -166116 -1 0
+;
+#X obj 74 27 vsl 16 16 26 26 0 0 1.global.s 1.1.1.0.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 90 27 vsl 16 16 27 27 0 0 1.global.s 1.1.1.1.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 106 27 vsl 16 16 28 28 0 0 1.global.s 1.1.1.2.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 122 27 vsl 16 16 29 29 0 0 1.global.s 1.1.1.3.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 138 27 vsl 16 16 30 30 0 0 1.global.s 1.1.1.4.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 154 27 vsl 16 16 31 31 0 0 1.global.s 1.1.1.5.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 170 27 vsl 16 16 32 32 0 0 1.global.s 1.1.1.6.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 186 27 vsl 16 16 33 33 0 0 1.global.s 1.1.1.7.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 202 27 vsl 16 16 34 34 0 0 1.global.s 1.1.1.8.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 218 27 vsl 16 16 35 35 0 0 1.global.s 1.1.1.9.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 234 27 vsl 16 16 36 36 0 0 1.global.s 1.1.1.10.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 250 27 vsl 16 16 37 37 0 0 1.global.s 1.1.1.11.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 266 27 vsl 16 16 38 38 0 0 1.global.s 1.1.1.12.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 282 27 vsl 16 16 39 39 0 0 1.global.s 1.1.1.13.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 298 27 vsl 16 16 40 40 0 0 1.global.s 1.1.1.14.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 314 27 vsl 16 16 41 41 0 0 1.global.s 1.1.1.15.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 330 27 vsl 16 16 42 42 0 0 1.global.s 1.1.1.16.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 346 27 vsl 16 16 43 43 0 0 1.global.s 1.1.1.17.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 362 27 vsl 16 16 44 44 0 0 1.global.s 1.1.1.18.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 378 27 vsl 16 16 45 45 0 0 1.global.s 1.1.1.19.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 394 27 vsl 16 16 46 46 0 0 1.global.s 1.1.1.20.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 410 27 vsl 16 16 47 47 0 0 1.global.s 1.1.1.21.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 426 27 vsl 16 16 48 48 0 0 1.global.s 1.1.1.22.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 442 27 vsl 16 16 49 49 0 0 1.global.s 1.1.1.23.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 458 27 vsl 16 16 50 50 0 0 1.global.s 1.1.1.24.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 474 27 vsl 16 16 51 51 0 0 1.global.s 1.1.1.25.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 490 27 vsl 16 16 52 52 0 0 1.global.s 1.1.1.26.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 506 27 vsl 16 16 53 53 0 0 1.global.s 1.1.1.27.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 522 27 vsl 16 16 54 54 0 0 1.global.s 1.1.1.28.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 538 27 vsl 16 16 55 55 0 0 1.global.s 1.1.1.29.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 3 48 vsl 70 16 56 56 0 0 1.global.s nuet empty 3 7 0 10 -261234
+-261234 -66577 0 1;
+#X obj 4 47 cnv 9 68 9 empty 1.1.2.-1.r 5-drum-delta 2 5 1 9 -166116
+-1 0;
+#X obj 4 57 cnv 9 68 9 empty 1.1.2.-1.r snare 2 5 1 9 -166116 -1 0
+;
+#X obj 74 48 vsl 16 16 57 57 0 0 1.global.s 1.1.2.0.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 90 48 vsl 16 16 58 58 0 0 1.global.s 1.1.2.1.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 106 48 vsl 16 16 59 59 0 0 1.global.s 1.1.2.2.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 122 48 vsl 16 16 60 60 0 0 1.global.s 1.1.2.3.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 138 48 vsl 16 16 61 61 0 0 1.global.s 1.1.2.4.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 154 48 vsl 16 16 62 62 0 0 1.global.s 1.1.2.5.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 170 48 vsl 16 16 63 63 0 0 1.global.s 1.1.2.6.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 186 48 vsl 16 16 64 64 0 0 1.global.s 1.1.2.7.r empty 0 -9 0
+10 -228856 -228856 -1 0 1;
+#X obj 202 48 vsl 16 16 65 65 0 0 1.global.s 1.1.2.8.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 218 48 vsl 16 16 66 66 0 0 1.global.s 1.1.2.9.r empty 0 -9 0
+10 -253822 -253822 -1 0 1;
+#X obj 234 48 vsl 16 16 67 67 0 0 1.global.s 1.1.2.10.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 250 48 vsl 16 16 68 68 0 0 1.global.s 1.1.2.11.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 266 48 vsl 16 16 69 69 0 0 1.global.s 1.1.2.12.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 282 48 vsl 16 16 70 70 0 0 1.global.s 1.1.2.13.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 298 48 vsl 16 16 71 71 0 0 1.global.s 1.1.2.14.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 314 48 vsl 16 16 72 72 0 0 1.global.s 1.1.2.15.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 330 48 vsl 16 16 73 73 0 0 1.global.s 1.1.2.16.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 346 48 vsl 16 16 74 74 0 0 1.global.s 1.1.2.17.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 362 48 vsl 16 16 75 75 0 0 1.global.s 1.1.2.18.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 378 48 vsl 16 16 76 76 0 0 1.global.s 1.1.2.19.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 394 48 vsl 16 16 77 77 0 0 1.global.s 1.1.2.20.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 410 48 vsl 16 16 78 78 0 0 1.global.s 1.1.2.21.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 426 48 vsl 16 16 79 79 0 0 1.global.s 1.1.2.22.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 442 48 vsl 16 16 80 80 0 0 1.global.s 1.1.2.23.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 458 48 vsl 16 16 81 81 0 0 1.global.s 1.1.2.24.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 474 48 vsl 16 16 82 82 0 0 1.global.s 1.1.2.25.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 490 48 vsl 16 16 83 83 0 0 1.global.s 1.1.2.26.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 506 48 vsl 16 16 84 84 0 0 1.global.s 1.1.2.27.r empty 0 -9
+0 10 -253822 -253822 -1 0 1;
+#X obj 522 48 vsl 16 16 85 85 0 0 1.global.s 1.1.2.28.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 538 48 vsl 16 16 86 86 0 0 1.global.s 1.1.2.29.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 554 48 vsl 16 16 87 87 0 0 1.global.s 1.1.2.30.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
+#X obj 570 48 vsl 16 16 88 88 0 0 1.global.s 1.1.2.31.r empty 0 -9
+0 10 -228856 -228856 -1 0 1;
 #X restore 9 11 pd \$1-set-1;
 #X restore 313 40 pd set.guis;
 #N canvas 605 321 221 255 button.toggler 0;
@@ -424,7 +638,7 @@ const 0 \;;
 #X restore 298 168 pd update.color;
 #X obj 288 326 r \$0.reset;
 #X floatatom 16 78 5 0 0 0 - - -;
-#X msg 15 98 1 16 8 5-drum-delta snare 4 16 16;
+#X msg 16 98 1 32 5-drum-delta snare 4 4 4;
 #X connect 6 0 7 0;
 #X connect 8 0 10 0;
 #X connect 9 0 37 0;
