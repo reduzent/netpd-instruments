@@ -1,4 +1,4 @@
-#N canvas 641 79 632 550 10;
+#N canvas 461 77 632 550 10;
 #N canvas 647 382 450 300 NETPD 0;
 #X msg 15 15 version 0 0 0;
 #X msg 14 38 singleton;
@@ -459,7 +459,7 @@ const 0 \;;
 #X obj 16 279 list append;
 #X obj 301 173 s \$1.qseq3;
 #X text 14 66 set length instr subinst clrsect poly poly;
-#N canvas 440 44 305 430 seq.instantiator 0;
+#N canvas 442 49 305 430 seq.instantiator 0;
 #X obj -2381 215 list trim;
 #X msg -2355 119 \$1 \$8 \$2 \$3 \$4 \$6 \$7;
 #X obj -2380 29 t a a;
@@ -509,7 +509,7 @@ const 0 \;;
 #X obj 294 36 qseq3-containers \$1;
 #X obj 283 370 s pd-\$1.set.displays;
 #X obj 293 390 s pd-\$1.set.containers;
-#N canvas 483 44 320 251 create.new.sets 0;
+#N canvas 487 82 267 279 create.new.sets 0;
 #X obj 12 12 inlet;
 #X obj 55 12 r \$0.reset;
 #X obj 12 55 f;
@@ -533,20 +533,43 @@ vis 0 \;;
 #X connect 3 0 4 1;
 #X connect 4 0 0 0;
 #X connect 5 0 1 0;
-#X restore 39 121 pd create.containers;
-#X obj 12 99 t a a;
-#X obj 12 151 outlet;
+#X restore 51 123 pd create.containers;
+#N canvas 45 239 220 208 create.set.ui 0;
+#X obj 16 -29 inlet;
+#X obj 16 138 s pd-\$1-qseq3;
+#X obj 16 -4 t a a;
+#X obj 43 19 * 32;
+#X obj 43 41 + 6;
+#X obj 16 89 list prepend \$1;
+#X obj 16 67 list append;
+#X msg 16 112 obj 5 \$3 qseq3-set-ui \$1 \$2;
 #X connect 0 0 2 0;
+#X connect 2 0 6 0;
+#X connect 2 1 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 1;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 0;
+#X restore 31 154 pd create.set.ui;
+#X obj 12 99 t a a a;
+#N canvas 102 241 450 300 init.set 0;
+#X obj 31 18 inlet;
+#X restore 12 198 pd init.set;
+#X obj 48 251 outlet;
+#X obj 12 33 b;
+#X connect 0 0 11 0;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 2 1;
-#X connect 3 0 7 0;
+#X connect 3 0 8 0;
 #X connect 4 0 2 1;
-#X connect 7 0 8 0;
-#X connect 7 1 6 0;
+#X connect 8 0 9 0;
+#X connect 8 0 10 0;
+#X connect 8 1 7 0;
+#X connect 8 2 6 0;
+#X connect 11 0 2 0;
 #X restore 23 392 pd create.new.sets;
-#X obj 23 370 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
 #X text 87 279 seq_id;
 #X floatatom 23 413 5 0 0 0 - - -;
 #N canvas 864 335 660 452 TEST 0;
@@ -607,64 +630,8 @@ vis 0 \;;
 #X connect 23 0 27 0;
 #X connect 24 0 25 0;
 #X connect 25 0 23 0;
-#X restore 66 346 pd TEST;
-#N canvas 641 317 390 405 big_message 0;
-#X obj -89 336 outlet;
-#X obj -89 17 inlet;
-#X msg -89 42 obj 5 \$1 cnv 15 215 34 empty empty empty 20 12 0 14
--33289 -1 0 \, obj 7 \$2 vsl 30 25 33 33 0 0 \$5.global.s \$5.\$6.switch.r
-\$6 4 5 1 8 -228856 -228856 -1 0 1 \, obj 39 \$2 vsl 30 25 33 33 0
-0 \$5.global.s \$5.\$6.display.r show 4 5 1 8 -228856 -228856 -1 0
-1 \, obj 71 \$2 vsl 15 25 33 33 0 0 \$5.global.s \$5.\$6.create.r empty
-4 5 1 8 -228856 -228856 -1 0 1 \, obj 86 \$2 vsl 70 10 33 33 0 0 \$5.global.s
-\$5.\$6.instr.r <empty> 3 6 1 8 -228856 -228856 -1 0 1 \, obj 86 \$3
-vsl 70 10 33 33 0 0 \$5.global.s \$5.\$6.subinstr.r <empty> 3 6 1 8
--228856 -228856 -1 0 1 \, obj 156 \$2 vsl 20 10 33 33 0 0 \$5.global.s
-\$5.\$6.length.r 16 4 7 1 9 -228856 -228856 -1 0 1 \, obj 156 \$3 vsl
-20 10 33 33 0 0 \$5.global.s \$5.\$6.color.r 19 4 6 1 9 -228856 -228856
--1 0 1 \, obj 178 \$2 vsl 40 10 33 33 0 0 \$5.global.s \$5.\$6.poly.r
-poly 3 6 1 8 -228856 -228856 -1 0 1 \, obj 178 \$3 vsl 20 10 33 33
-0 0 \$5.global.s \$5.\$6.dend.r 27 5 6 1 9 -228856 -228856 -1 0 1 \,
-obj 198 \$3 vsl 20 10 33 33 0 0 \$5.global.s \$5.\$6.sor.r 15 5 6 1
-9 -228856 -228856 -1 0 1 \, obj 197 \$4 cnv 2 2 13 empty \$5.\$6.divid.r
-/ 0 7 1 10 -228856 -1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 0 0;
-#X restore 162 415 pd big_message;
-#X obj 183 501 s pd-\$1-qseq3;
-#X msg 202 468 clear;
-#N canvas 834 128 191 237 prepend.x-pos 0;
-#X obj 31 144 + 4;
-#X obj 58 144 + 19;
-#X obj 90 144 + 18;
-#X obj 14 170 pack f f f f;
-#X obj 14 118 t a a a a a;
-#X obj 14 192 list append;
-#X obj 14 28 t a a;
-#X obj 14 7 inlet;
-#X obj 14 214 outlet;
-#X msg 14 49 \$2;
-#X obj 14 71 * 32;
-#X obj 14 94 + 6;
-#X connect 0 0 3 1;
-#X connect 1 0 3 2;
-#X connect 2 0 3 3;
-#X connect 3 0 5 0;
-#X connect 4 0 3 0;
-#X connect 4 1 0 0;
-#X connect 4 2 1 0;
-#X connect 4 3 2 0;
-#X connect 5 0 8 0;
-#X connect 6 0 9 0;
-#X connect 6 1 5 1;
-#X connect 7 0 6 0;
-#X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 11 0 4 0;
-#X restore 162 394 pd prepend.x-pos;
-#X floatatom 195 258 5 0 0 0 - - -;
-#X obj 162 374 list prepend \$1;
-#N canvas 823 44 434 299 INIT 0;
+#X restore 198 271 pd TEST;
+#N canvas 544 49 434 299 INIT 0;
 #X msg 21 -3 obj 5 10 cnv 15 215 21 empty empty empty 90 10 1 14 -1
 -228856 0 \, obj 7 14 vsl 51 12 33 33 0 0 \$1.new.set \$1.new.set.r
 \$2 3 7 1 12 -228856 -228856 -1 0 1 \, obj 180 14 vsl 38 12 33 33 0
@@ -689,6 +656,7 @@ obj 198 \$3 vsl 20 10 33 33 0 0 \$5.global.s \$5.\$6.sor.r 15 5 6 1
 #X connect 8 0 2 0;
 #X connect 9 0 7 0;
 #X restore 70 10 pd INIT;
+#X obj 23 366 r \$1.new.set;
 #X connect 5 0 6 0;
 #X connect 7 0 9 0;
 #X connect 8 0 32 0;
@@ -718,10 +686,5 @@ obj 198 \$3 vsl 20 10 33 33 0 0 \$5.global.s \$5.\$6.sor.r 15 5 6 1
 #X connect 37 0 40 0;
 #X connect 41 0 36 0;
 #X connect 44 0 36 0;
-#X connect 48 0 51 0;
-#X connect 49 0 48 0;
-#X connect 53 0 54 0;
-#X connect 55 0 54 0;
-#X connect 56 0 53 0;
-#X connect 57 0 58 0;
-#X connect 58 0 56 0;
+#X connect 48 0 50 0;
+#X connect 53 0 48 0;
