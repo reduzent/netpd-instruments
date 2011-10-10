@@ -1,4 +1,4 @@
-#N canvas 787 44 450 300 10;
+#N canvas 477 77 446 382 10;
 #N canvas 823 94 172 89 NETPD 0;
 #X msg 1 7 version 0 0 1;
 #X restore 389 14 pd NETPD;
@@ -11,13 +11,13 @@
 #X obj 76 14 vsl 15 25 0 0 0 0 \$1.\$2.create \$1.\$2.create.r empty
 4 5 1 8 -228856 -228856 -1 0 1;
 #X obj 91 14 vsl 70 10 -4.5 4.5 0 0 \$1.\$2.instr \$1.\$2.instr.r <empty>
-3 6 1 8 -228856 -228856 -1 900 1;
+3 6 1 8 -228856 -228856 -1 0 1;
 #X obj 91 29 vsl 70 10 -4.5 4.5 0 0 \$1.\$2.subinstr \$1.\$2.subinstr.r
-<empty> 3 6 1 8 -228856 -228856 -1 100 1;
+<empty> 3 6 1 8 -228856 -228856 -1 0 1;
 #X obj 161 14 vsl 20 10 1 10 0 0 \$1.\$2.length \$1.\$2.length.r 10
-4 7 1 9 -228856 -228856 -1 900 1;
-#X obj 161 29 vsl 20 10 33 33 0 0 \$1.\$2.color \$1.\$2.color.r 19
-4 6 1 9 -228856 -228856 -1 900 1;
+4 7 1 9 -228856 -228856 -1 0 1;
+#X obj 161 29 vsl 20 10 1 10 0 0 \$1.\$2.color \$1.\$2.color.r 19 4
+6 1 9 -228856 -228856 -1 0 1;
 #X obj 183 14 vsl 40 10 1 1 0 0 \$1.\$2.poly \$1.\$2.poly.r poly 3
 6 1 8 -228856 -228856 -1 0 1;
 #X obj 183 29 vsl 20 10 1 10 0 0 \$1.\$2.dend \$1.\$2.dend.r 27 5 6
@@ -26,16 +26,52 @@
 9 -228856 -228856 -1 0 1;
 #X obj 202 28 cnv 2 2 13 empty 1.3.divid.r / 0 7 1 10 -228856 -1 0
 ;
-#X obj 68 99 r \$1.\$2.instr;
-#X floatatom 96 139 5 0 0 0 - - -;
-#X obj 183 109 r \$1.\$2.length;
-#X floatatom 183 131 5 0 0 0 - - -;
-#X msg 183 176 label \$1;
-#X obj 183 199 s \$1.\$2.length.r;
-#X obj 183 154 makefilename %2d;
-#X connect 13 0 14 0;
-#X connect 15 0 16 0;
-#X connect 16 0 19 0;
-#X connect 17 0 18 0;
-#X connect 19 0 17 0;
+#X obj 17 76 r \$1.\$2.switch;
+#X obj 33 121 r \$1.\$2.display;
+#X msg 33 143 display \$1;
+#X obj 59 165 r \$1.\$2.create;
+#X msg 59 187 create \$1;
+#X obj 72 213 r \$1.\$2.instr;
+#X msg 72 235 instr \$1;
+#X obj 147 77 r \$1.\$2.subinstr;
+#X msg 17 98 switch \$1;
+#X msg 147 99 subinstr \$1;
+#X obj 163 122 r \$1.\$2.length;
+#X msg 163 144 length \$1;
+#X obj 189 166 r \$1.\$2.color;
+#X msg 189 188 color \$1;
+#X obj 202 214 r \$1.\$2.poly;
+#X msg 202 236 poly \$1;
+#X obj 287 77 r \$1.\$2.dend;
+#X msg 287 99 dend \$1;
+#X obj 303 122 r \$1.\$2.sor;
+#X msg 303 144 sor \$1;
+#X obj 17 345 s \$1.qseq3;
+#X obj 17 279 list;
+#X obj 17 300 list prepend \$2;
+#X msg 17 322 set \$2 \$1 \$3;
+#X text 105 321 set <command> <set_id> <value>;
+#X connect 13 0 21 0;
+#X connect 14 0 15 0;
+#X connect 15 0 34 0;
+#X connect 16 0 17 0;
+#X connect 17 0 34 0;
+#X connect 18 0 19 0;
+#X connect 19 0 34 0;
+#X connect 20 0 22 0;
+#X connect 21 0 34 0;
+#X connect 22 0 34 0;
+#X connect 23 0 24 0;
+#X connect 24 0 34 0;
+#X connect 25 0 26 0;
+#X connect 26 0 34 0;
+#X connect 27 0 28 0;
+#X connect 28 0 34 0;
+#X connect 29 0 30 0;
+#X connect 30 0 34 0;
+#X connect 31 0 32 0;
+#X connect 32 0 34 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 33 0;
 #X coords 0 -1 1 1 215 34 2 10 10;
