@@ -1,29 +1,4 @@
-#N canvas 641 79 634 539 10;
-#N canvas 448 380 232 266 \$1-qseq3 1;
-#X obj 5 38 cnv 15 215 34 empty empty empty 20 12 0 14 -33289 -1 0
-;
-#X obj 7 42 vsl 30 25 33 33 0 0 1.global.s \$1.\$2.-1.0.r on/off 4
-5 1 8 -228856 -228856 -1 0 1;
-#X obj 39 42 vsl 30 25 33 33 0 0 1.global.s \$1.\$2.-1.1.r show 4 5
-1 8 -228856 -228856 -1 0 1;
-#X obj 71 42 vsl 15 25 33 33 0 0 1.global.s \$1.\$2.-1.2.r empty 4
-5 1 8 -228856 -228856 -1 0 1;
-#X obj 86 42 vsl 70 10 33 33 0 0 1.global.s \$1.\$2.-1.3.r 5-drum-delta
-3 6 1 8 -228856 -228856 -1 0 1;
-#X obj 86 57 vsl 70 10 33 33 0 0 1.global.s \$1.\$2.-1.4.r snare 3
-6 1 8 -228856 -228856 -1 0 1;
-#X obj 156 42 vsl 20 10 33 33 0 0 1.global.s \$1.\$2.-1.5.r 16 4 7
-1 9 -228856 -228856 -1 0 1;
-#X obj 156 57 vsl 20 10 33 33 0 0 1.global.s size 19 4 6 1 9 -228856
--228856 -1 0 1;
-#X obj 178 42 vsl 40 10 33 33 0 0 1.global.s poly poly 3 6 1 8 -228856
--228856 -1 0 1;
-#X obj 178 57 vsl 20 10 33 33 0 0 1.global.s dividend 27 5 6 1 9 -228856
--228856 -1 0 1;
-#X obj 198 57 vsl 20 10 33 33 0 0 1.global.s divisor 15 5 6 1 9 -228856
--228856 -1 0 1;
-#X obj 197 56 cnv 2 2 13 empty empty / 0 7 1 10 -228856 -1 0;
-#X restore 12 16 pd \$1-qseq3;
+#N canvas 641 79 632 550 10;
 #N canvas 647 382 450 300 NETPD 0;
 #X msg 15 15 version 0 0 0;
 #X msg 14 38 singleton;
@@ -33,7 +8,7 @@
 #X msg 10 59 qseq3-seq-poly;
 #X msg 10 81 qseq3-containers;
 #X restore 14 63 pd abslist;
-#X restore 11 42 pd NETPD;
+#X restore 12 10 pd NETPD;
 #X obj 451 227 table \$1.set/id 10000;
 #X obj 451 248 table \$1.seq/id 10000;
 #X obj 451 269 table \$1.element/id 10000;
@@ -574,7 +549,7 @@ vis 0 \;;
 -1;
 #X text 87 279 seq_id;
 #X floatatom 23 413 5 0 0 0 - - -;
-#N canvas 864 335 450 300 TEST 0;
+#N canvas 864 335 660 452 TEST 0;
 #X obj 5 78 cnv 15 215 34 empty empty empty 20 12 0 14 -33289 -1 0
 ;
 #X obj 39 82 vsl 30 25 33 33 0 0 1.global.s show show 4 5 1 8 -228856
@@ -614,6 +589,12 @@ vis 0 \;;
 #X obj 350 176 makefilename %d;
 #X obj 220 235 s dividend;
 #X obj 324 233 s divisor;
+#X obj 5 10 cnv 15 215 21 empty empty empty 90 10 1 14 -1 -228856 0
+;
+#X obj 7 14 vsl 51 12 33 33 0 0 \$1.new.set \$1.new.set.r new-set 3
+7 1 12 -228856 -228856 -1 0 1;
+#X obj 180 14 vsl 38 12 33 33 0 0 \$1.new.set \$1.new.set.r erase 3
+7 1 12 -228856 -228856 -1 0 1;
 #X connect 13 0 12 0;
 #X connect 14 0 15 0;
 #X connect 15 0 13 0;
@@ -626,35 +607,121 @@ vis 0 \;;
 #X connect 23 0 27 0;
 #X connect 24 0 25 0;
 #X connect 25 0 23 0;
-#X restore 154 372 pd TEST;
-#X connect 6 0 7 0;
-#X connect 8 0 10 0;
-#X connect 9 0 33 0;
-#X connect 10 0 9 0;
-#X connect 12 0 13 0;
-#X connect 13 0 20 0;
+#X restore 66 346 pd TEST;
+#N canvas 641 317 390 405 big_message 0;
+#X obj -89 336 outlet;
+#X obj -89 17 inlet;
+#X msg -89 42 obj 5 \$1 cnv 15 215 34 empty empty empty 20 12 0 14
+-33289 -1 0 \, obj 7 \$2 vsl 30 25 33 33 0 0 \$5.global.s \$5.\$6.switch.r
+\$6 4 5 1 8 -228856 -228856 -1 0 1 \, obj 39 \$2 vsl 30 25 33 33 0
+0 \$5.global.s \$5.\$6.display.r show 4 5 1 8 -228856 -228856 -1 0
+1 \, obj 71 \$2 vsl 15 25 33 33 0 0 \$5.global.s \$5.\$6.create.r empty
+4 5 1 8 -228856 -228856 -1 0 1 \, obj 86 \$2 vsl 70 10 33 33 0 0 \$5.global.s
+\$5.\$6.instr.r <empty> 3 6 1 8 -228856 -228856 -1 0 1 \, obj 86 \$3
+vsl 70 10 33 33 0 0 \$5.global.s \$5.\$6.subinstr.r <empty> 3 6 1 8
+-228856 -228856 -1 0 1 \, obj 156 \$2 vsl 20 10 33 33 0 0 \$5.global.s
+\$5.\$6.length.r 16 4 7 1 9 -228856 -228856 -1 0 1 \, obj 156 \$3 vsl
+20 10 33 33 0 0 \$5.global.s \$5.\$6.color.r 19 4 6 1 9 -228856 -228856
+-1 0 1 \, obj 178 \$2 vsl 40 10 33 33 0 0 \$5.global.s \$5.\$6.poly.r
+poly 3 6 1 8 -228856 -228856 -1 0 1 \, obj 178 \$3 vsl 20 10 33 33
+0 0 \$5.global.s \$5.\$6.dend.r 27 5 6 1 9 -228856 -228856 -1 0 1 \,
+obj 198 \$3 vsl 20 10 33 33 0 0 \$5.global.s \$5.\$6.sor.r 15 5 6 1
+9 -228856 -228856 -1 0 1 \, obj 197 \$4 cnv 2 2 13 empty \$5.\$6.divid.r
+/ 0 7 1 10 -228856 -1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X restore 162 415 pd big_message;
+#X obj 183 501 s pd-\$1-qseq3;
+#X msg 202 468 clear;
+#N canvas 834 128 191 237 prepend.x-pos 0;
+#X obj 31 144 + 4;
+#X obj 58 144 + 19;
+#X obj 90 144 + 18;
+#X obj 14 170 pack f f f f;
+#X obj 14 118 t a a a a a;
+#X obj 14 192 list append;
+#X obj 14 28 t a a;
+#X obj 14 7 inlet;
+#X obj 14 214 outlet;
+#X msg 14 49 \$2;
+#X obj 14 71 * 32;
+#X obj 14 94 + 6;
+#X connect 0 0 3 1;
+#X connect 1 0 3 2;
+#X connect 2 0 3 3;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 4 1 0 0;
+#X connect 4 2 1 0;
+#X connect 4 3 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 6 1 5 1;
+#X connect 7 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 4 0;
+#X restore 162 394 pd prepend.x-pos;
+#X floatatom 195 258 5 0 0 0 - - -;
+#X obj 162 374 list prepend \$1;
+#N canvas 823 44 434 299 INIT 0;
+#X msg 21 -3 obj 5 10 cnv 15 215 21 empty empty empty 90 10 1 14 -1
+-228856 0 \, obj 7 14 vsl 51 12 33 33 0 0 \$1.new.set \$1.new.set.r
+\$2 3 7 1 12 -228856 -228856 -1 0 1 \, obj 180 14 vsl 38 12 33 33 0
+0 \$1.erase \$1.erase.r erase 3 7 1 12 -228856 -228856 -1 0 1;
+#X obj 21 71 s pd-\$1-qseq3;
+#X obj 21 -23 list prepend \$1;
+#X obj 84 -91 makefilename %c;
+#X msg 84 -113 32;
+#X obj 21 -66 list append;
+#X obj 21 -135 t a b;
+#X msg 21 -157 list new set;
+#X msg 21 -44 symbol \$1\$3\$2;
+#X obj 21 -180 loadbang;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 6 1 4 0;
+#X connect 7 0 6 0;
+#X connect 8 0 2 0;
+#X connect 9 0 7 0;
+#X restore 70 10 pd INIT;
+#X connect 5 0 6 0;
+#X connect 7 0 9 0;
+#X connect 8 0 32 0;
+#X connect 9 0 8 0;
+#X connect 11 0 12 0;
+#X connect 12 0 19 0;
+#X connect 13 0 16 0;
 #X connect 14 0 17 0;
 #X connect 15 0 18 0;
 #X connect 16 0 19 0;
-#X connect 17 0 20 0;
-#X connect 18 0 20 0;
+#X connect 17 0 19 0;
+#X connect 18 0 19 0;
 #X connect 19 0 20 0;
-#X connect 20 0 21 0;
-#X connect 23 0 34 0;
-#X connect 23 1 38 1;
-#X connect 26 0 47 0;
-#X connect 26 0 48 0;
-#X connect 28 0 29 0;
-#X connect 29 0 27 0;
-#X connect 30 0 31 0;
-#X connect 31 0 39 0;
-#X connect 34 0 24 0;
-#X connect 34 1 25 0;
-#X connect 36 0 26 0;
-#X connect 37 0 38 0;
-#X connect 37 1 23 0;
-#X connect 38 0 41 0;
-#X connect 42 0 37 0;
-#X connect 45 0 37 0;
-#X connect 49 0 52 0;
-#X connect 50 0 49 0;
+#X connect 22 0 33 0;
+#X connect 22 1 37 1;
+#X connect 25 0 46 0;
+#X connect 25 0 47 0;
+#X connect 27 0 28 0;
+#X connect 28 0 26 0;
+#X connect 29 0 30 0;
+#X connect 30 0 38 0;
+#X connect 33 0 23 0;
+#X connect 33 1 24 0;
+#X connect 35 0 25 0;
+#X connect 36 0 37 0;
+#X connect 36 1 22 0;
+#X connect 37 0 40 0;
+#X connect 41 0 36 0;
+#X connect 44 0 36 0;
+#X connect 48 0 51 0;
+#X connect 49 0 48 0;
+#X connect 53 0 54 0;
+#X connect 55 0 54 0;
+#X connect 56 0 53 0;
+#X connect 57 0 58 0;
+#X connect 58 0 56 0;
