@@ -1,0 +1,7 @@
+#N canvas 472 44 450 300 10;
+#X obj 40 42 vsl 70 10 -4.5 4.5 0 0 \$1.\$2.\$3 \$1.\$2.\$3.r <empty>
+3 6 1 8 -228856 -228856 -1 0 1;
+#N canvas 608 118 174 129 NETPD 0;
+#X msg 16 14 version 0 0 1;
+#X restore 376 9 pd NETPD;
+#X coords 0 -1 1 1 70 15 2 40 40;
