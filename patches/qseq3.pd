@@ -1,4 +1,4 @@
-#N canvas 754 77 632 550 10;
+#N canvas 772 89 632 550 10;
 #N canvas 647 382 450 300 NETPD 0;
 #X msg 15 15 version 0 0 0;
 #X msg 14 38 singleton;
@@ -509,7 +509,7 @@ const 0 \;;
 #X obj 294 36 qseq3-containers \$1;
 #X obj 283 370 s pd-\$1.set.displays;
 #X obj 293 390 s pd-\$1.set.containers;
-#N canvas 495 410 267 307 create.new.sets 0;
+#N canvas 495 438 267 307 create.new.sets 0;
 #X obj 12 12 inlet;
 #X obj 55 12 r \$0.reset;
 #X obj 12 55 f;
@@ -578,7 +578,7 @@ vis 0 \;;
 #X obj 8 102 t b a;
 #X msg 89 178 symbol \$1.\$2.\$3;
 #X msg 8 333 \; \$3.gop obj 78 11 cnv 1 1 1 empty \$3.field.\$1.r empty
-20 12 0 14 \$2 -1 0;
+2 7 1 8 \$2 -1 0;
 #X connect 0 0 1 0;
 #X connect 0 1 3 0;
 #X connect 1 0 2 0;
