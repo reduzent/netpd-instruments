@@ -1,9 +1,6 @@
 #N canvas 497 65 391 276 10;
-#N canvas 658 121 172 152 NETPD 0;
+#N canvas 658 149 172 152 NETPD 0;
 #X msg 9 13 version 0 0 1;
-#N canvas 585 215 264 187 ablist 0;
-#X msg 16 10 master-poly;
-#X restore 9 37 pd ablist;
 #X restore 15 6 pd NETPD;
 #X obj 91 7 table \$0.seq.data \$4;
 #X obj 232 194 route \$2;

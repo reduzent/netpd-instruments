@@ -7,6 +7,8 @@
 #X msg 10 38 qseq3-seq;
 #X msg 10 59 qseq3-seq-poly;
 #X msg 10 81 qseq3-containers;
+#X msg 10 103 qseq3-instr-list;
+#X msg 10 124 qseq3-set-ui;
 #X restore 14 63 pd abslist;
 #X restore 12 10 pd NETPD;
 #X obj 451 227 table \$1.set/id 10000;
