@@ -460,7 +460,7 @@ const 0 \;;
 #X obj 16 141 t a a;
 #X obj 16 279 list append;
 #X obj 301 173 s \$1.qseq3;
-#X text 14 66 set length instr subinst clrsect poly poly;
+#X text 33 72 set length instr subinst clrsect poly poly;
 #N canvas 442 49 305 430 seq.instantiator 0;
 #X obj -2381 215 list trim;
 #X msg -2355 119 \$1 \$8 \$2 \$3 \$4 \$6 \$7;
@@ -504,10 +504,10 @@ const 0 \;;
 #X connect 17 0 11 0;
 #X connect 18 0 11 1;
 #X restore 16 309 pd seq.instantiator;
-#X msg 29 107 1 32 5-drum-delta hh 4;
-#X text 215 83 poly;
-#X text 166 107 non-poly;
-#X msg 16 84 1 32 5-drum-delta snare 4 16 16;
+#X msg 48 113 1 32 5-drum-delta hh 4;
+#X text 234 89 poly;
+#X text 185 113 non-poly;
+#X msg 35 90 1 32 5-drum-delta snare 4 16 16;
 #X obj 294 36 qseq3-containers \$1;
 #X obj 283 370 s pd-\$1.set.displays;
 #X obj 293 390 s pd-\$1.set.containers;
@@ -673,67 +673,8 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X connect 8 1 7 0;
 #X connect 8 2 6 0;
 #X connect 11 0 2 0;
-#X restore 23 392 pd create.new.sets;
+#X restore 28 382 pd create.new.sets;
 #X text 87 279 seq_id;
-#N canvas 864 335 660 452 TEST 0;
-#X obj 5 78 cnv 15 215 34 empty empty empty 20 12 0 14 -33289 -1 0
-;
-#X obj 39 82 vsl 30 25 33 33 0 0 1.global.s show show 4 5 1 8 -228856
--228856 -1 0 1;
-#X obj 86 82 vsl 70 10 33 33 0 0 1.global.s inst 5-drum-delta 3 6 1
-8 -228856 -228856 -1 0 1;
-#X obj 7 82 vsl 30 25 33 33 0 0 1.global.s onoff on/off 4 5 1 8 -191407
--191407 -1 0 1;
-#X obj 86 97 vsl 70 10 33 33 0 0 1.global.s subinst snare 3 6 1 8 -228856
--228856 -1 0 1;
-#X obj 178 82 vsl 40 10 33 33 0 0 1.global.s poly poly 3 6 1 8 -228856
--228856 -128992 0 1;
-#X obj 178 97 vsl 20 10 33 33 0 0 1.global.s dividend 27 5 6 1 9 -228856
--228856 -128992 0 1;
-#X obj 198 97 vsl 20 10 33 33 0 0 1.global.s divisor 15 5 6 1 9 -228856
--228856 -128992 0 1;
-#X obj 197 96 cnv 2 2 13 empty empty / 0 7 1 10 -228856 -1 0;
-#X obj 156 82 vsl 20 10 33 33 0 0 1.global.s length 16 4 7 1 9 -228856
--228856 -1 0 1;
-#X obj 156 97 vsl 20 10 33 33 0 0 1.global.s size 19 4 6 1 9 -228856
--228856 -1 0 1;
-#X obj 71 82 vsl 15 25 33 33 0 0 1.global.s show empty 4 5 1 8 -228856
--228856 -1 0 1;
-#X obj 4 235 s length;
-#X msg 29 202 label \$1;
-#X floatatom 11 159 5 0 0 0 - - -;
-#X obj 30 178 makefilename %d;
-#X msg 134 200 label \$1;
-#X floatatom 116 157 5 0 0 0 - - -;
-#X obj 135 176 makefilename %d;
-#X obj 109 233 s size;
-#X msg 244 202 label \$1;
-#X floatatom 226 159 5 0 0 0 - - -;
-#X obj 245 178 makefilename %d;
-#X msg 349 200 label \$1;
-#X floatatom 331 157 5 0 0 0 - - -;
-#X obj 350 176 makefilename %d;
-#X obj 220 235 s dividend;
-#X obj 324 233 s divisor;
-#X obj 5 10 cnv 15 215 21 empty empty empty 90 10 1 14 -1 -228856 0
-;
-#X obj 7 14 vsl 51 12 33 33 0 0 \$1.new.set \$1.new.set.r new-set 3
-7 1 12 -228856 -228856 -1 0 1;
-#X obj 180 14 vsl 38 12 33 33 0 0 \$1.new.set \$1.new.set.r erase 3
-7 1 12 -228856 -228856 -1 0 1;
-#X connect 13 0 12 0;
-#X connect 14 0 15 0;
-#X connect 15 0 13 0;
-#X connect 16 0 19 0;
-#X connect 17 0 18 0;
-#X connect 18 0 16 0;
-#X connect 20 0 26 0;
-#X connect 21 0 22 0;
-#X connect 22 0 20 0;
-#X connect 23 0 27 0;
-#X connect 24 0 25 0;
-#X connect 25 0 23 0;
-#X restore 198 271 pd TEST;
 #N canvas 544 49 434 299 INIT 0;
 #X msg 21 -3 obj 5 10 cnv 15 215 21 empty empty empty 90 10 1 14 -1
 -228856 0 \, obj 7 14 vsl 51 12 33 33 0 0 \$1.new.set \$1.new.set.r
@@ -759,7 +700,7 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X connect 8 0 2 0;
 #X connect 9 0 7 0;
 #X restore 70 10 pd INIT;
-#X obj 23 366 r \$1.new.set;
+#X obj 28 356 r \$1.new.set;
 #X obj 174 416 r \$1.qseq3;
 #X obj 174 480 print QSEQ3;
 #X obj 174 458 spigot;
@@ -847,9 +788,9 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X connect 10 0 4 0;
 #X connect 11 0 4 0;
 #X restore 108 130 pd slider.values;
-#N canvas 670 69 455 456 instr.selectors 0;
+#N canvas 670 69 520 468 instr.selectors 0;
 #X obj 7 6 inlet;
-#N canvas 276 284 498 302 slider.wrapper 0;
+#N canvas 276 284 492 311 slider.wrapper 0;
 #X obj 30 214 pack f f f;
 #X obj 30 192 - 1;
 #X obj 30 126 change;
@@ -870,7 +811,7 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X obj 30 35 max 5;
 #X obj 232 193 list append;
 #X obj 232 168 t b a;
-#X msg 232 217 label \$1;
+#X msg 232 217 label \$3;
 #X msg 307 195 set label \, adddollar \$1;
 #X obj 232 126 t a a;
 #X obj 259 146 outlet;
@@ -883,6 +824,9 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X obj 244 101 t a b;
 #X msg 315 102 set -1;
 #X obj 315 80 del 500;
+#X obj 232 238 route label;
+#X obj 232 260 symbol;
+#X obj 232 282 s \$1.last.label;
 #X connect 0 0 28 0;
 #X connect 1 0 0 0;
 #X connect 2 0 4 0;
@@ -909,6 +853,7 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X connect 19 0 18 0;
 #X connect 19 1 21 0;
 #X connect 20 0 10 0;
+#X connect 20 0 33 0;
 #X connect 21 0 20 0;
 #X connect 22 0 19 0;
 #X connect 22 1 23 0;
@@ -923,6 +868,8 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X connect 30 1 32 0;
 #X connect 31 0 29 0;
 #X connect 32 0 31 0;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
 #X restore 7 336 pd slider.wrapper;
 #X obj 34 245 list prepend \$1;
 #X obj 7 357 s;
@@ -1147,7 +1094,6 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X obj 9 40 t b b b b;
 #X msg 60 63 0;
 #X msg 9 63 1;
-#X obj 189 229 print GAGGI;
 #X connect 0 0 9 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -1156,7 +1102,6 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X connect 5 0 3 1;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X connect 6 0 12 0;
 #X connect 9 0 11 0;
 #X connect 9 1 1 0;
 #X connect 9 2 4 0;
@@ -1182,7 +1127,7 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X connect 13 0 14 0;
 #X connect 13 1 1 0;
 #X restore 262 109 pd refresh.instr.list;
-#N canvas 705 237 272 406 set.respective.subinstr.list 0;
+#N canvas 705 293 245 421 set.respective.subinstr.list 0;
 #X msg 12 29 \$1;
 #X obj 46 100 list prepend \$1;
 #X msg 46 123 \; \$1.\$2.instr.r bang;
@@ -1223,11 +1168,13 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X connect 9 0 5 0;
 #X connect 10 0 2 1;
 #X restore 12 272 pd get.main.name.from.id;
-#X msg 12 294 get.instr \$1;
-#X obj 12 316 s qseq3;
-#X obj 12 338 r qseq3;
-#X obj 12 360 route set.instr;
-#X obj 12 382 outlet;
+#X msg 12 315 get.instr \$1;
+#X obj 12 336 s qseq3;
+#X obj 12 358 r qseq3;
+#X obj 12 380 route set.instr;
+#X obj 12 402 outlet;
+#X obj 12 294 t a a;
+#X obj 145 366 outlet;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 3 0 5 0;
@@ -1242,13 +1189,15 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X connect 10 0 7 1;
 #X connect 11 0 0 0;
 #X connect 12 0 13 1;
-#X connect 13 0 14 0;
+#X connect 13 0 19 0;
 #X connect 14 0 15 0;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
+#X connect 19 0 14 0;
+#X connect 19 1 20 0;
 #X restore 250 177 pd set.respective.subinstr.list;
 #X obj 7 83 t a a;
-#N canvas 247 209 241 215 strange.change 0;
+#N canvas 247 237 241 215 strange.change 0;
 #X obj 30 7 inlet;
 #X obj 30 194 outlet;
 #X msg 30 29 \$1 \$2;
@@ -1311,7 +1260,37 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X obj 7 200 t a a a;
 #X obj 106 369 spigot 1;
 #X obj 151 343 r \$0.no.fx;
-#X obj 291 383 print YOYOYOYO;
+#N canvas 937 83 273 310 set.create.get.instr.names 0;
+#X obj 14 187 symbol;
+#X obj 48 128 list prepend \$1;
+#X msg 48 150 \; \$1.\$2.subinstr.r bang;
+#X obj 14 58 t b b a b;
+#X obj 42 105 s \$0.no.fx;
+#X msg 65 81 0;
+#X msg 31 81 1;
+#X obj 65 186 r \$1.last.label;
+#X obj 14 209 pack s s;
+#X obj 14 13 r \$1.set.create;
+#X obj 14 35 route get.instr;
+#X obj 14 231 list prepend set.instr;
+#X obj 14 253 list trim;
+#X obj 14 275 s \$1.set.create;
+#X obj 145 42 inlet;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X connect 3 1 6 0;
+#X connect 3 2 1 0;
+#X connect 3 3 5 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 8 1;
+#X connect 8 0 11 0;
+#X connect 9 0 10 0;
+#X connect 10 0 3 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X restore 325 231 pd set.create.get.instr.names;
 #X connect 0 0 20 0;
 #X connect 1 0 3 0;
 #X connect 1 1 23 0;
@@ -1331,6 +1310,7 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X connect 15 0 12 1;
 #X connect 15 0 16 1;
 #X connect 16 0 13 1;
+#X connect 16 1 25 0;
 #X connect 17 0 22 0;
 #X connect 17 1 18 0;
 #X connect 18 0 19 0;
@@ -1475,7 +1455,66 @@ color \$4 \$4 \$3 \; \$1.\$2.divid.r color \$4 \$3;
 #X connect 3 0 5 0;
 #X connect 3 0 6 0;
 #X restore 24 467 pd set.ui.stuff;
-#X obj 23 414 value \$1.qseq3.sets;
+#X obj 28 404 value \$1.qseq3.sets;
+#N canvas 864 335 660 452 TEST 0;
+#X obj 5 78 cnv 15 215 34 empty empty empty 20 12 0 14 -33289 -1 0
+;
+#X obj 39 82 vsl 30 25 33 33 0 0 1.global.s show show 4 5 1 8 -228856
+-228856 -1 0 1;
+#X obj 86 82 vsl 70 10 33 33 0 0 1.global.s inst 5-drum-delta 3 6 1
+8 -228856 -228856 -1 0 1;
+#X obj 7 82 vsl 30 25 33 33 0 0 1.global.s onoff on/off 4 5 1 8 -191407
+-191407 -1 0 1;
+#X obj 86 97 vsl 70 10 33 33 0 0 1.global.s subinst snare 3 6 1 8 -228856
+-228856 -1 0 1;
+#X obj 178 82 vsl 40 10 33 33 0 0 1.global.s poly poly 3 6 1 8 -228856
+-228856 -128992 0 1;
+#X obj 178 97 vsl 20 10 33 33 0 0 1.global.s dividend 27 5 6 1 9 -228856
+-228856 -128992 0 1;
+#X obj 198 97 vsl 20 10 33 33 0 0 1.global.s divisor 15 5 6 1 9 -228856
+-228856 -128992 0 1;
+#X obj 197 96 cnv 2 2 13 empty empty / 0 7 1 10 -228856 -1 0;
+#X obj 156 82 vsl 20 10 33 33 0 0 1.global.s length 16 4 7 1 9 -228856
+-228856 -1 0 1;
+#X obj 156 97 vsl 20 10 33 33 0 0 1.global.s size 19 4 6 1 9 -228856
+-228856 -1 0 1;
+#X obj 71 82 vsl 15 25 33 33 0 0 1.global.s show empty 4 5 1 8 -228856
+-228856 -1 0 1;
+#X obj 4 235 s length;
+#X msg 29 202 label \$1;
+#X floatatom 11 159 5 0 0 0 - - -;
+#X obj 30 178 makefilename %d;
+#X msg 134 200 label \$1;
+#X floatatom 116 157 5 0 0 0 - - -;
+#X obj 135 176 makefilename %d;
+#X obj 109 233 s size;
+#X msg 244 202 label \$1;
+#X floatatom 226 159 5 0 0 0 - - -;
+#X obj 245 178 makefilename %d;
+#X msg 349 200 label \$1;
+#X floatatom 331 157 5 0 0 0 - - -;
+#X obj 350 176 makefilename %d;
+#X obj 220 235 s dividend;
+#X obj 324 233 s divisor;
+#X obj 5 10 cnv 15 215 21 empty empty empty 90 10 1 14 -1 -228856 0
+;
+#X obj 7 14 vsl 51 12 33 33 0 0 \$1.new.set \$1.new.set.r new-set 3
+7 1 12 -228856 -228856 -1 0 1;
+#X obj 180 14 vsl 38 12 33 33 0 0 \$1.new.set \$1.new.set.r erase 3
+7 1 12 -228856 -228856 -1 0 1;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 0;
+#X connect 16 0 19 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 20 0 26 0;
+#X connect 21 0 22 0;
+#X connect 22 0 20 0;
+#X connect 23 0 27 0;
+#X connect 24 0 25 0;
+#X connect 25 0 23 0;
+#X restore 198 271 pd TEST;
 #X connect 5 0 6 0;
 #X connect 7 0 9 0;
 #X connect 8 0 32 0;
@@ -1505,8 +1544,8 @@ color \$4 \$4 \$3 \; \$1.\$2.divid.r color \$4 \$3;
 #X connect 37 0 40 0;
 #X connect 41 0 36 0;
 #X connect 44 0 36 0;
-#X connect 48 0 58 0;
-#X connect 52 0 48 0;
-#X connect 53 0 55 0;
-#X connect 55 0 54 0;
-#X connect 56 0 55 1;
+#X connect 48 0 57 0;
+#X connect 51 0 48 0;
+#X connect 52 0 54 0;
+#X connect 54 0 53 0;
+#X connect 55 0 54 1;
