@@ -614,7 +614,7 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X connect 11 0 2 0;
 #X restore 12 76 pd create.new.sets;
 #X text 83 429 seq_id;
-#N canvas 544 77 174 121 INIT 0;
+#N canvas 544 105 174 121 INIT 0;
 #N canvas 520 60 432 301 create.title.bar 0;
 #X msg 21 -3 obj 5 10 cnv 15 215 21 empty empty empty 90 10 1 14 -1
 -228856 0 \, obj 7 14 vsl 51 12 33 33 0 0 \$1.new.set \$1.new.set.r
@@ -655,6 +655,13 @@ const 4 \;;
 #X connect 2 0 1 0;
 #X connect 4 0 2 0;
 #X restore -52 -144 pd init.tables;
+#N canvas 1105 223 167 115 instr.list.refresh 0;
+#X obj 14 18 loadbang;
+#X msg 14 41 instr refresh;
+#X obj 14 63 s qseq3;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore -52 -123 pd instr.list.refresh;
 #X restore 75 10 pd INIT;
 #X obj 320 439 r \$1.qseq3;
 #X obj 320 503 print QSEQ3;
@@ -1527,8 +1534,8 @@ color \$4 \$4 \$3 \; \$1.\$2.divid.r color \$4 \$3;
 #X obj 451 330 table \$1.set.poly 1000;
 #X obj 451 350 table \$1.set.dend 1000;
 #X obj 451 370 table \$1.set.sor 1000;
-#N canvas 477 122 260 173 instr.subinstr.comm 0;
-#N canvas 790 153 230 393 instr.list 0;
+#N canvas 477 178 260 173 instr.subinstr.comm 0;
+#N canvas 790 209 230 393 instr.list 0;
 #X obj 38 131 s qseq3;
 #X msg 19 81 get.main;
 #X obj 38 153 r qseq3;
