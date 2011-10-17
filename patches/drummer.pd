@@ -1,0 +1,12 @@
+#N canvas 585 44 450 300 10;
+#N canvas 305 260 450 300 NETPD 0;
+#X msg 11 12 version 0 0 1;
+#N canvas 950 44 450 300 abslist 0;
+#X msg 11 11 qseq3-instr-list;
+#X restore 12 37 pd abslist;
+#X restore 384 13 pd NETPD;
+#X obj 20 75 qseq3-instr-list \$1 drummer kick snare hihat lotom mitom
+hitom;
+#N canvas 755 207 184 85 \$1-drummer 0;
+#X msg 24 19 nuet;
+#X restore 298 13 pd \$1-drummer;
