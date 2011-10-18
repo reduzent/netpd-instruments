@@ -1,0 +1,12 @@
+qseq3
+  
+  * sub- / instr selectors are not init'ed on instr list change
+  
+  * subinstr list selector doesn't update on instr list selection
+
+  * tiny dot in wrong color from list selectors
+
+  * seq erase button and functionality is missing
+
+  * erase all functionality is missing
+
