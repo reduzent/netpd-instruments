@@ -16,15 +16,3 @@ master-poly
   * doesn't get master tempo on loadbang
 
 
-unpatch
-
-  * strange stack overflow bug
-    In order to reproduce:
-     - load drummer, drimmer and qseq3
-     - start another instance of netpd2
-     - make sure all patches and abs are there
-       but these two: qseq3, rh_scalelin.pd
-     - start unpatch on second instance
-     -> stack overflow
-
-
