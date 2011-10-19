@@ -1,28 +1,28 @@
-#N canvas 481 87 446 382 10;
+#N canvas 481 87 480 370 10;
 #N canvas 823 122 172 89 NETPD 0;
 #X msg 1 7 version 0 0 1;
 #N canvas 508 122 202 144 abslist 0;
 #X msg 15 11 qseq3-list-selector;
 #X restore 2 30 pd abslist;
-#X restore 389 14 pd NETPD;
-#X obj 10 10 cnv 15 215 34 empty empty empty 20 12 0 14 -33289 -1 0
+#X restore 409 13 pd NETPD;
+#X obj 10 10 cnv 15 232 34 empty empty empty 20 12 0 14 -33289 -1 0
 ;
 #X obj 12 14 vsl 30 25 0 0 0 0 \$1.\$2.switch \$1.\$2.switch.r \$2
 4 5 1 8 -166116 -166116 -1 0 1;
 #X obj 44 14 vsl 30 25 1 1 0 0 \$1.\$2.display \$1.\$2.display.r show
 4 5 1 8 -228856 -228856 -1 0 1;
-#X obj 76 14 vsl 15 25 0 0 0 0 \$1.\$2.create \$1.\$2.create.r empty
-4 5 1 8 -228856 -228856 -1 0 1;
+#X obj 76 14 vsl 15 25 0 0 0 0 \$1.\$2.create \$1.\$2.create.r + 4
+13 1 12 -228856 -228856 -1 0 1;
 #X obj 161 14 vsl 20 10 47 56 0 0 \$1.\$2.length \$1.\$2.length.r 16
-4 7 1 9 -228856 -228856 -1 100 1;
-#X obj 161 29 vsl 20 10 7 16 0 0 \$1.\$2.color \$1.\$2.color.r  4 4
-6 1 9 -228856 -228856 -1 500 1;
+4 7 1 9 -228856 -228856 -1 0 1;
+#X obj 161 29 vsl 20 10 7 16 0 0 \$1.\$2.color \$1.\$2.color.r 4 4
+6 1 9 -228856 -228856 -1 0 1;
 #X obj 183 14 vsl 40 10 1 1 0 0 \$1.\$2.poly \$1.\$2.poly.r poly 3
 6 1 8 -228856 -228856 -1 0 1;
-#X obj 183 29 vsl 20 10 7 16 0 0 \$1.\$2.dend \$1.\$2.dend.r  4 5 6
-1 9 -228856 -228856 -166441 500 1;
-#X obj 203 29 vsl 20 10 7 16 0 0 \$1.\$2.sor \$1.\$2.sor.r  4 5 6 1
-9 -228856 -228856 -166441 500 1;
+#X obj 183 29 vsl 20 10 7 16 0 0 \$1.\$2.dend \$1.\$2.dend.r 4 5 6
+1 9 -228856 -228856 -166441 0 1;
+#X obj 203 29 vsl 20 10 7 16 0 0 \$1.\$2.sor \$1.\$2.sor.r 4 5 6 1
+9 -228856 -228856 -166441 0 1;
 #X obj 202 28 cnv 2 2 13 empty \$1.\$2.divid.r / 0 7 1 10 -228856 -166441
 0;
 #X obj 17 76 r \$1.\$2.switch;
@@ -52,9 +52,11 @@
 #X msg 17 322 local set \$1 \$2 \$3;
 #X obj 287 121 spigot;
 #X obj 311 206 spigot;
-#X obj 242 14 namecanvas \$1.\$2.set.ui;
+#X obj 256 14 namecanvas \$1.\$2.set.ui;
 #X obj 91 12 qseq3-list-selector \$1.\$2.instr;
 #X obj 91 27 qseq3-list-selector \$1.\$2.subinstr;
+#X obj 225 14 vsl 15 25 0 0 0 0 \$1.\$2.clear \$1.\$2.clear.r X 4 14
+1 12 -228856 -228856 -1 0 1;
 #X connect 11 0 19 0;
 #X connect 12 0 13 0;
 #X connect 13 0 31 0;
@@ -82,4 +84,4 @@
 #X connect 35 0 34 0;
 #X connect 36 0 31 0;
 #X connect 37 0 31 0;
-#X coords 0 -1 1 1 215 34 2 10 10;
+#X coords 0 -1 1 1 232 34 2 10 10;
