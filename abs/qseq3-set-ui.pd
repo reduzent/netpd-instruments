@@ -43,20 +43,22 @@
 #X msg 201 236 poly \$1;
 #X obj 287 77 r \$1.\$2.dend;
 #X msg 287 99 dend \$1;
-#X obj 311 161 r \$1.\$2.sor;
-#X msg 311 183 sor \$1;
+#X obj 311 151 r \$1.\$2.sor;
+#X msg 311 173 sor \$1;
 #X obj 17 279 list;
 #X obj 17 300 list prepend \$2;
 #X text 149 320 set <command> <set_id> <value>;
 #X obj 17 345 s \$1.qseq3;
 #X msg 17 322 local set \$1 \$2 \$3;
 #X obj 287 121 spigot;
-#X obj 311 206 spigot;
+#X obj 311 196 spigot;
 #X obj 256 14 namecanvas \$1.\$2.set.ui;
 #X obj 91 12 qseq3-list-selector \$1.\$2.instr;
 #X obj 91 27 qseq3-list-selector \$1.\$2.subinstr;
 #X obj 225 14 vsl 15 25 0 0 0 0 \$1.\$2.clear \$1.\$2.clear.r X 4 14
 1 12 -228856 -228856 -1 0 1;
+#X obj 326 225 r \$1.\$2.clear;
+#X msg 326 247 clear \$1;
 #X connect 11 0 19 0;
 #X connect 12 0 13 0;
 #X connect 13 0 31 0;
@@ -84,4 +86,6 @@
 #X connect 35 0 34 0;
 #X connect 36 0 31 0;
 #X connect 37 0 31 0;
+#X connect 42 0 43 0;
+#X connect 43 0 31 0;
 #X coords 0 -1 1 1 232 34 2 10 10;
