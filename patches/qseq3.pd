@@ -618,7 +618,7 @@ range 7 16 \, set 12 \, bang \; \$1.\$2.instr.r range 8 -1 \, set 5
 #X msg 21 -3 obj 5 10 cnv 15 232 21 empty empty empty 90 10 1 14 -1
 -228856 0 \, obj 7 14 vsl 51 12 33 33 0 0 \$1.new.set \$1.new.set.r
 \$2 3 7 1 12 -228856 -228856 -1 0 1 \, obj 197 14 vsl 38 12 33 33 0
-0 \$1.erase \$1.erase.r erase 3 7 1 12 -228856 -228856 -1 0 1;
+0 \$1.erase \$1.erase.r reset 4 7 1 12 -228856 -228856 -1 0 1;
 #X obj 125 -179 r \$0.reset;
 #X obj 125 -157 del 0;
 #X connect 1 0 9 0;
