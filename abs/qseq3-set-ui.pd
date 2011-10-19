@@ -1,6 +1,6 @@
 #N canvas 481 87 480 370 10;
 #N canvas 823 122 172 89 NETPD 0;
-#X msg 1 7 version 0 0 1;
+#X msg 1 7 version 0 0 2;
 #N canvas 508 122 202 144 abslist 0;
 #X msg 15 11 qseq3-list-selector;
 #X restore 2 30 pd abslist;
