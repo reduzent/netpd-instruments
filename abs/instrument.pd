@@ -27,11 +27,12 @@
 #X msg 113 110 \; \$1 loadbang;
 #N canvas 911 537 271 298 \$0-instrument 0;
 #X restore 145 8 pd \$0-instrument;
-#X msg 174 43 version 0.0.3;
-#N canvas 599 303 192 169 abslist 0;
-#X msg 15 19 instr-param;
-#X msg 15 42 instr-instance;
-#X restore 174 62 pd abslist;
+#N canvas 696 128 245 180 NETPD 0;
+#N canvas 599 359 192 169 abslist 0;
+#X msg 15 42 instr-param;
+#X restore 30 32 pd abslist;
+#X msg 30 13 version 0 1 0;
+#X restore 228 48 pd NETPD;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 9 0;
