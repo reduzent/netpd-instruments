@@ -684,10 +684,6 @@
 #X obj 17 20 qseq3-instr-list \$1 drum-delta kick1 kick2 kick3 kick4
 snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X restore 285 137 pd qseq.list;
-#N canvas 1062 541 218 220 abslist 0;
-#X msg 17 21 instrument;
-#X msg 16 96 qseq3-instr-list;
-#X restore 285 69 pd abslist;
 #N canvas 0 231 384 484 loaddefault 0;
 #X obj 9 12 loadbang;
 #X obj 162 12 s netpd-receive;
@@ -1060,7 +1056,7 @@ kick-afq-3 3307.63 \, kick-afq-2 1467.49 \, kick-afq-1 516.172 \,;
 #X connect 8 0 7 0;
 #X restore 131 222 pd switch;
 #X obj 131 251 switch~;
-#N canvas 108 412 568 263 kick-datactrl 1;
+#N canvas 108 412 568 263 kick-datactrl 0;
 #X obj 119 92 r kick-instance;
 #X obj 106 218 s kick1;
 #X obj 121 198 s kick2;
@@ -1319,7 +1315,7 @@ kick-afq-3 3307.63 \, kick-afq-2 1467.49 \, kick-afq-1 516.172 \,;
 #X connect 15 0 10 0;
 #X restore 661 16 pd label vol;
 #X restore 295 77 pd display;
-#X obj 72 21 instrument \$0 kick 11 4 afq efq tim att dec cur dis lop
+#X obj 72 21 instrument \$1 kick 11 4 afq efq tim att dec cur dis lop
 vol fxl setfx;
 #X connect 0 0 5 1;
 #X connect 5 0 7 0;
@@ -1552,7 +1548,7 @@ vol fxl setfx;
 #X connect 15 0 4 0;
 #X restore 439 31 pd label vol;
 #X restore 164 87 pd display;
-#X obj 13 14 instrument \$0 snare 8 4 tun nos mix dec pan vol fxl setfx
+#X obj 13 14 instrument \$1 snare 8 4 tun nos mix dec pan vol fxl setfx
 ;
 #X connect 0 0 1 0;
 #X connect 1 0 7 0;
@@ -1704,7 +1700,7 @@ vol fxl setfx;
 #X connect 15 0 4 0;
 #X restore 259 32 pd label vol;
 #X restore 152 93 pd display;
-#X obj 18 17 instrument \$0 hihat 6 4 vol crh dec pan fxl setfx;
+#X obj 18 17 instrument \$1 hihat 6 4 vol crh dec pan fxl setfx;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 1 1 7 0;
@@ -1714,28 +1710,27 @@ vol fxl setfx;
 #X connect 3 0 0 1;
 #X restore 122 90 pd hihat-datactrl;
 #X obj 22 242 dac~;
-#X msg 130 128 version 0 3 0;
-#N canvas 1028 72 180 602 \$1-drum-delta 1;
+#N canvas 1028 100 180 602 \$1-drum-delta 1;
 #X obj 10 3 cnv 7 160 583 empty empty empty 20 12 0 14 -99865 -66577
 0;
 #X obj 12 5 cnv 15 156 205 empty empty k_i_c_k_______________________
 4 7 1 7 -244200 -184581 0;
-#X obj 20 23 hsl 140 14 20 20000 1 0 kick-afq-s kick-afq-r anfangsfrequenz
-4 7 1 7 -261689 -258699 -1 6600 1;
-#X obj 20 37 hsl 140 14 20 20000 1 0 kick-efq-s kick-efq-r endfrequenz 
-4 7 1 7 -261689 -258699 -1 5869 1;
-#X obj 20 51 hsl 140 14 1 1000 1 0 kick-tim-s kick-tim-r zeit
-4 7 1 7 -261689 -258699 -1 4789 1;
-#X obj 20 65 hsl 140 14 1 1000 1 0 kick-att-s kick-att-r attack
-4 7 1 7 -261689 -258699 -1 117 1;
-#X obj 20 79 hsl 80 14 10 10000 1 0 kick-dec-s kick-dec-r decay
-4 7 1 7 -261689 -258699 -1 4780 1;
-#X obj 20 93 hsl 140 14 1 50 1 0 kick-dis-s kick-dis-r distortion 
-4 7 1 7 -261689 -258699 -1 0 1;
-#X obj 20 107 hsl 140 14 20000 20 1 0 kick-lop-s kick-lop-r lowpass
-4 7 1 7 -261689 -258699 -1 117 1;
-#X obj 20 121 hsl 140 14 0 1 0 0 kick-vol-s kick-vol-r volume  4 7
-1 7 -261689 -258699 -1 13900 1;
+#X obj 20 23 hsl 140 14 20 20000 1 0 kick-afq-s kick-afq-r empty 4
+7 1 7 -261689 -258699 -1 0 1;
+#X obj 20 37 hsl 140 14 20 20000 1 0 kick-efq-s kick-efq-r empty 4
+7 1 7 -261689 -258699 -1 0 1;
+#X obj 20 51 hsl 140 14 1 1000 1 0 kick-tim-s kick-tim-r empty 4 7
+1 7 -261689 -258699 -1 0 1;
+#X obj 20 65 hsl 140 14 1 1000 1 0 kick-att-s kick-att-r empty 4 7
+1 7 -261689 -258699 -1 0 1;
+#X obj 20 79 hsl 80 14 10 10000 1 0 kick-dec-s kick-dec-r empty 4 7
+1 7 -261689 -258699 -1 0 1;
+#X obj 20 93 hsl 140 14 1 50 1 0 kick-dis-s kick-dis-r empty 4 7 1
+7 -261689 -258699 -1 0 1;
+#X obj 20 107 hsl 140 14 20000 20 1 0 kick-lop-s kick-lop-r empty 4
+7 1 7 -261689 -258699 -1 0 1;
+#X obj 20 121 hsl 140 14 0 1 0 0 kick-vol-s kick-vol-r empty 4 7 1
+7 -261689 -258699 -1 0 1;
 #X obj 12 560 cnv 5 156 24 empty empty empty 20 12 0 14 -261689 -66577
 0;
 #X obj 53 168 hradio 14 1 0 4 kick-instance kick-instance-r instance
@@ -1744,36 +1739,36 @@ vol fxl setfx;
 -261689 -244200 -1;
 #X obj 12 222 cnv 15 156 172 empty empty s_n_a_r_e____________________
 4 7 1 7 -130593 -10435 0;
-#X obj 20 240 hsl 140 14 220 7000 1 0 snare-tun-s snare-tun-r tune
-4 7 1 7 -225271 -258699 -1 2103 1;
-#X obj 20 254 hsl 140 14 0 5.5 0 0 snare-nos-s snare-nos-r knack
-4 7 1 7 -225271 -258699 -1 6191 1;
-#X obj 20 268 hsl 140 14 0 1 0 0 snare-mix-s snare-mix-r mix_fell<>kette
-4 7 1 7 -225271 -258699 -1 3738 1;
-#X obj 20 282 hsl 140 14 100 1000 0 0 snare-dec-s snare-dec-r decay
-4 7 1 7 -225271 -258699 -1 7242 1;
-#X obj 20 296 hsl 140 14 0 1 0 0 snare-pan-s snare-pan-r panorama 4
-7 1 7 -225271 -258699 -1 6308 1;
+#X obj 20 240 hsl 140 14 220 7000 1 0 snare-tun-s snare-tun-r empty
+4 7 1 7 -225271 -258699 -1 0 1;
+#X obj 20 254 hsl 140 14 0 5.5 0 0 snare-nos-s snare-nos-r empty 4
+7 1 7 -225271 -258699 -1 0 1;
+#X obj 20 268 hsl 140 14 0 1 0 0 snare-mix-s snare-mix-r empty 4 7
+1 7 -225271 -258699 -1 0 1;
+#X obj 20 282 hsl 140 14 100 1000 0 0 snare-dec-s snare-dec-r empty
+4 7 1 7 -225271 -258699 -1 0 1;
+#X obj 20 296 hsl 140 14 0 1 0 0 snare-pan-s snare-pan-r empty 4 7
+1 7 -225271 -258699 -1 0 1;
 #X obj 54 358 hradio 14 1 0 4 snare-instance snare-instance-r instance
 0 -6 1 7 -225271 -130593 -1 0;
 #X obj 17 358 bng 14 250 50 0 snare-prelisten snare-prelisten-r play
 0 -6 1 7 -225271 -130593 -1;
-#X obj 20 310 hsl 140 14 0 1 0 0 snare-vol-s snare-vol-r volume 4
-7 1 7 -225271 -258699 -1 13900 1;
+#X obj 20 310 hsl 140 14 0 1 0 0 snare-vol-s snare-vol-r empty 4 7
+1 7 -225271 -258699 -1 0 1;
 #X obj 12 408 cnv 15 156 140 empty empty h_i_h_a_t____________________
 4 7 1 7 -20025 -10143 0;
-#X obj 20 426 hsl 140 14 220 12000 1 0 hihat-crh-s hihat-crh-r crashyness
+#X obj 20 426 hsl 140 14 220 12000 1 0 hihat-crh-s hihat-crh-r empty
 4 7 1 7 -225280 -258699 -1 0 1;
-#X obj 20 440 hsl 140 14 50 5000 1 0 hihat-dec-s hihat-dec-r decay
-4 7 1 7 -225280 -258699 -1 2687 1;
-#X obj 20 454 hsl 140 14 0 1 0 0 hihat-pan-s hihat-pan-r panorama 4
-7 1 7 -225280 -258699 -1 4789 1;
+#X obj 20 440 hsl 140 14 50 5000 1 0 hihat-dec-s hihat-dec-r empty
+4 7 1 7 -225280 -258699 -1 0 1;
+#X obj 20 454 hsl 140 14 0 1 0 0 hihat-pan-s hihat-pan-r empty 4 7
+1 7 -225280 -258699 -1 0 1;
 #X obj 49 516 hradio 14 1 0 4 hihat-instance hihat-instance-r instance
 0 -6 1 7 -225280 -20025 -1 0;
 #X obj 17 516 bng 14 250 50 0 hihat-prelisten hihat-prelisten-r play
 0 -6 1 7 -225280 -20025 -1;
-#X obj 20 468 hsl 140 14 0 1 0 0 hihat-vol-s hihat-vol-r volume  4
-7 1 7 -225280 -258699 -1 13900 1;
+#X obj 20 468 hsl 140 14 0 1 0 0 hihat-vol-s hihat-vol-r empty 4 7
+1 7 -225280 -258699 -1 0 1;
 #X obj 97 145 vsl 20 5 -1 1 0 0 kik-fx.select-s kik-fx.select-r 0_nofx
 24 3 1 7 -261689 -258699 -1 200 1;
 #X obj 20 143 hsl 40 10 0 1 0 0 kick-fxl-s kick-fxl-r fx-gain 44 5
@@ -1792,7 +1787,14 @@ vol fxl setfx;
 1 7 -261689 -258699 -1 0 1;
 #X restore 285 49 pd \$1-drum-delta;
 #X obj 284 184 netpd_head \$1 drum-delta;
+#N canvas 585 44 450 300 NETPD 0;
+#X msg 11 37 version 0 3 0;
+#N canvas 1062 569 218 220 abslist 0;
+#X msg 17 21 instrument;
+#X msg 16 96 qseq3-instr-list;
+#X restore 12 16 pd abslist;
+#X restore 202 165 pd NETPD;
 #X connect 0 0 1 0;
-#X connect 10 0 17 0;
-#X connect 11 0 17 1;
-#X connect 12 0 13 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 1;
+#X connect 11 0 12 0;
