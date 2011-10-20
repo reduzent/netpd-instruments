@@ -29,10 +29,6 @@
 #X obj 110 352 t b f;
 #X obj 110 375 symbol;
 #N canvas 858 482 389 303 \$0-instr-param 1;
-#X obj 10 10 instr-instance 1 kick-afq kick kick1 kick-afq-1 0;
-#X obj 10 30 instr-instance 1 kick-afq kick kick2 kick-afq-2 1;
-#X obj 10 50 instr-instance 1 kick-afq kick kick3 kick-afq-3 2;
-#X obj 10 70 instr-instance 1 kick-afq kick kick4 kick-afq-4 3;
 #X restore 143 4 pd \$0-instr-param;
 #X obj 12 446 makesymbol pd-%s-instr-param;
 #X obj 121 55 \$0;
