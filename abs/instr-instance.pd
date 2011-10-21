@@ -1,4 +1,4 @@
-#N canvas 547 341 429 400 10;
+#N canvas 547 341 593 404 10;
 #X obj 12 79 f;
 #X obj 48 58 r \$3-instance;
 #X obj 169 60 b;
@@ -96,12 +96,11 @@
 #X obj 222 29 route \$5 \$5-nogui;
 #X obj 287 66 route float;
 #X obj 348 88 symbol;
-#X obj 12 354 route bang;
 #N canvas 826 255 193 110 NETPD 0;
 #X msg 21 21 version 0 1 0;
 #X restore 298 272 pd NETPD;
 #X obj 12 332 netpd_a \$1 \$3/\$8/\$7;
-#X msg 69 377 \$1;
+#X obj 12 354 route bang;
 #X connect 0 0 12 0;
 #X connect 1 0 0 1;
 #X connect 1 0 22 0;
@@ -118,7 +117,7 @@
 #X connect 13 0 0 0;
 #X connect 13 1 14 1;
 #X connect 14 0 7 0;
-#X connect 14 0 30 0;
+#X connect 14 0 29 0;
 #X connect 15 0 4 0;
 #X connect 16 0 23 0;
 #X connect 17 0 16 0;
@@ -139,6 +138,5 @@
 #X connect 26 1 27 0;
 #X connect 27 0 16 1;
 #X connect 27 0 15 1;
-#X connect 28 1 31 0;
-#X connect 30 0 28 0;
-#X connect 31 0 18 0;
+#X connect 29 0 30 0;
+#X connect 30 1 18 0;
