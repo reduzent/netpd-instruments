@@ -1,4 +1,4 @@
-#N canvas 643 267 457 314 10;
+#N canvas 633 246 457 314 10;
 #X obj 278 240 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X obj 278 259 s \$0-resetlabels;
@@ -683,8 +683,24 @@
 #N canvas 0 542 408 203 qseq.list 0;
 #X obj 17 20 qseq3-instr-list \$1 drum-delta kick1 kick2 kick3 kick4
 snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
+#X obj 225 71 r qseq3;
+#X obj 225 93 route \$1-drum-delta;
+#X obj 225 115 list;
+#X msg 225 137 \; \$1 bang;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
 #X restore 285 137 pd qseq.list;
 #N canvas 401 44 526 503 loaddefault 0;
+#X obj 394 465 s \$1.NETPD;
+#X obj 394 422 list prepend send;
+#X obj 394 444 list trim;
+#X obj 393 21 r \$1.NETPD;
+#X obj 393 43 route dump;
+#X obj 393 87 spigot 1;
+#X obj 393 109 t b b;
+#X msg 468 98 0;
+#X obj 393 65 sel 10;
 #X msg 13 17 /hihat/setfx/4 0 \, /hihat/setfx/3 0 \, /hihat/setfx/2
 0 \, /hihat/setfx/1 0 \, /hihat/fxl/4 0 \, /hihat/fxl/3 0 \, /hihat/fxl/2
 0 \, /hihat/fxl/1 0 \, /hihat/pan/4 0.487395 \, /hihat/pan/3 0.605042
@@ -708,28 +724,24 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 \, /kick/vol/1 1 \, /kick/lop/4 20000 \, /kick/lop/3 288.864 \, /kick/lop/2
 18872.1 \, /kick/lop/1 18872.1 \, /kick/dis/4 1 \, /kick/dis/3 4.53675
 \, /kick/dis/2 1 \, /kick/dis/1 1 \, /kick/cur/1 0 \, /kick/cur/2 0
-\, /kick/cur/3 0 \, /kick/cur/4 0 \, kick/dec/4 28.4303 \, /kick/dec/3
+\, /kick/cur/3 0 \, /kick/cur/4 0 \, /kick/dec/4 28.4303 \, /kick/dec/3
 461.175 \, /kick/dec/2 40.2756 \, /kick/dec/1 653.32 \, /kick/att/4
-1.19023 \, /kick/att/3 1 \, /kick/att/2 1.1231 \, kick/att/1 1.05977
+1.19023 \, /kick/att/3 1 \, /kick/att/2 1.1231 \, /kick/att/1 1.05977
 \, /kick/tim/4 5.70562 \, /kick/tim/3 6.408 \, /kick/tim/2 20.4609
 \, /kick/tim/1 10.8047 \, /kick/efq/4 1555.2 \, /kick/efq/3 63.8604
 \, /kick/efq/2 76.0085 \, /kick/efq/1 50.6281 \, /kick/afq/4 15855.9
-\, kick/afq/3 3307.63 \, /kick/afq/2 1467.49 \, /kick/afq/1 516.172
+\, /kick/afq/3 3307.63 \, /kick/afq/2 1467.49 \, /kick/afq/1 516.172
 ;
-#X obj 394 465 s \$1.NETPD;
-#X obj 404 31 r \$1.NETPD;
-#X obj 404 53 route dump;
-#X obj 404 97 b;
-#X obj 394 422 list prepend send;
-#X obj 394 444 list trim;
-#X obj 404 75 route 8;
-#X connect 0 0 5 0;
-#X connect 2 0 3 0;
-#X connect 3 0 7 0;
-#X connect 4 0 0 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 8 0;
 #X connect 5 0 6 0;
-#X connect 6 0 1 0;
-#X connect 7 0 4 0;
+#X connect 6 0 9 0;
+#X connect 6 1 7 0;
+#X connect 7 0 5 1;
+#X connect 8 0 5 0;
+#X connect 9 0 1 0;
 #X restore 285 89 pd loaddefault;
 #N canvas 470 282 816 264 fx.list 0;
 #N canvas 712 265 188 271 getfxname 0;
@@ -1722,27 +1734,27 @@ vol fxl setfx;
 #X connect 3 0 0 1;
 #X restore 122 90 pd hihat-datactrl;
 #X obj 22 242 dac~;
-#N canvas 1028 156 180 602 \$1-drum-delta 1;
+#N canvas 1028 240 180 602 \$1-drum-delta 1;
 #X obj 10 3 cnv 7 160 583 empty empty empty 20 12 0 14 -99865 -66577
 0;
 #X obj 12 5 cnv 15 156 205 empty empty k_i_c_k_______________________
 4 7 1 7 -244200 -184581 0;
 #X obj 20 23 hsl 140 14 20 20000 1 0 kick-afq-s kick-afq-r empty 4
-7 1 7 -261689 -258699 -1 0 1;
+7 1 7 -261689 -258699 -1 6541 1;
 #X obj 20 37 hsl 140 14 20 20000 1 0 kick-efq-s kick-efq-r empty 4
-7 1 7 -261689 -258699 -1 0 1;
+7 1 7 -261689 -258699 -1 1869 1;
 #X obj 20 51 hsl 140 14 1 1000 1 0 kick-tim-s kick-tim-r empty 4 7
-1 7 -261689 -258699 -1 0 1;
+1 7 -261689 -258699 -1 4789 1;
 #X obj 20 65 hsl 140 14 1 1000 1 0 kick-att-s kick-att-r empty 4 7
-1 7 -261689 -258699 -1 0 1;
+1 7 -261689 -258699 -1 117 1;
 #X obj 20 79 hsl 80 14 10 10000 1 0 kick-dec-s kick-dec-r empty 4 7
-1 7 -261689 -258699 -1 0 1;
+1 7 -261689 -258699 -1 4780 1;
 #X obj 20 93 hsl 140 14 1 50 1 0 kick-dis-s kick-dis-r empty 4 7 1
 7 -261689 -258699 -1 0 1;
 #X obj 20 107 hsl 140 14 20000 20 1 0 kick-lop-s kick-lop-r empty 4
-7 1 7 -261689 -258699 -1 13900 1;
+7 1 7 -261689 -258699 -1 117 1;
 #X obj 20 121 hsl 140 14 0 1 0 0 kick-vol-s kick-vol-r empty 4 7 1
-7 -261689 -258699 -1 0 1;
+7 -261689 -258699 -1 13900 1;
 #X obj 12 560 cnv 5 156 24 empty empty empty 20 12 0 14 -261689 -66577
 0;
 #X obj 53 168 hradio 14 1 0 4 kick-instance kick-instance-r instance
@@ -1752,35 +1764,35 @@ vol fxl setfx;
 #X obj 12 222 cnv 15 156 172 empty empty s_n_a_r_e____________________
 4 7 1 7 -130593 -10435 0;
 #X obj 20 240 hsl 140 14 220 7000 1 0 snare-tun-s snare-tun-r empty
-4 7 1 7 -225271 -258699 -1 0 1;
+4 7 1 7 -225271 -258699 -1 2103 1;
 #X obj 20 254 hsl 140 14 0 5.5 0 0 snare-nos-s snare-nos-r empty 4
-7 1 7 -225271 -258699 -1 0 1;
+7 1 7 -225271 -258699 -1 6191 1;
 #X obj 20 268 hsl 140 14 0 1 0 0 snare-mix-s snare-mix-r empty 4 7
-1 7 -225271 -258699 -1 0 1;
+1 7 -225271 -258699 -1 3738 1;
 #X obj 20 282 hsl 140 14 100 1000 0 0 snare-dec-s snare-dec-r empty
-4 7 1 7 -225271 -258699 -1 0 1;
+4 7 1 7 -225271 -258699 -1 7242 1;
 #X obj 20 296 hsl 140 14 0 1 0 0 snare-pan-s snare-pan-r empty 4 7
-1 7 -225271 -258699 -1 0 1;
+1 7 -225271 -258699 -1 6308 1;
 #X obj 54 358 hradio 14 1 0 4 snare-instance snare-instance-r instance
 0 -6 1 7 -225271 -130593 -1 0;
 #X obj 17 358 bng 14 250 50 0 snare-prelisten snare-prelisten-r play
 0 -6 1 7 -225271 -130593 -1;
 #X obj 20 310 hsl 140 14 0 1 0 0 snare-vol-s snare-vol-r empty 4 7
-1 7 -225271 -258699 -1 0 1;
+1 7 -225271 -258699 -1 13900 1;
 #X obj 12 408 cnv 15 156 140 empty empty h_i_h_a_t____________________
 4 7 1 7 -20025 -10143 0;
 #X obj 20 426 hsl 140 14 220 12000 1 0 hihat-crh-s hihat-crh-r empty
 4 7 1 7 -225280 -258699 -1 0 1;
 #X obj 20 440 hsl 140 14 50 5000 1 0 hihat-dec-s hihat-dec-r empty
-4 7 1 7 -225280 -258699 -1 0 1;
+4 7 1 7 -225280 -258699 -1 2687 1;
 #X obj 20 454 hsl 140 14 0 1 0 0 hihat-pan-s hihat-pan-r empty 4 7
-1 7 -225280 -258699 -1 0 1;
+1 7 -225280 -258699 -1 4789 1;
 #X obj 49 516 hradio 14 1 0 4 hihat-instance hihat-instance-r instance
 0 -6 1 7 -225280 -20025 -1 0;
 #X obj 17 516 bng 14 250 50 0 hihat-prelisten hihat-prelisten-r play
 0 -6 1 7 -225280 -20025 -1;
 #X obj 20 468 hsl 140 14 0 1 0 0 hihat-vol-s hihat-vol-r empty 4 7
-1 7 -225280 -258699 -1 0 1;
+1 7 -225280 -258699 -1 13900 1;
 #X obj 97 145 vsl 20 5 -1 1 0 0 kik-fx.select-s kik-fx.select-r 0_nofx
 24 3 1 7 -261689 -258699 -1 200 1;
 #X obj 20 143 hsl 40 10 0 1 0 0 kick-fxl-s kick-fxl-r fx-gain 44 5
