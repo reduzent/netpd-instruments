@@ -1,7 +1,4 @@
 #N canvas 538 374 424 257 10;
-#X obj 6 -3 instrument \$0 oxy 19 6 fr1 fr2 fr3 fr4 fxl setfx oc1 oc2
-oc3 oc4 ffr fqu aph pik dur att dec sus rel;
-#X obj 270 196 list2symbol;
 #N canvas 0 0 260 185 qseq.list 0;
 #X obj 6 15 loadbang;
 #X obj 6 36 s qseq.listbang;
@@ -12,95 +9,6 @@ oc3 oc4 ffr fqu aph pik dur att dec sus rel;
 #X connect 2 0 4 0;
 #X connect 4 0 3 0;
 #X restore 269 82 pd qseq.list;
-#N canvas 861 502 175 186 abslist 0;
-#X msg 12 15 i2mx~;
-#X msg 11 40 instrument;
-#X msg 13 64 pad;
-#X restore 269 62 pd abslist;
-#N canvas 900 247 158 341 oxygen-gui 0;
-#X obj 7 -1 cnv 15 150 340 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 17 7 hsl 129 10 1 100 1 0 oxy-aph-s oxy-aph-r empty -1 5 1 7
--262144 -1 -1 719 0;
-#X obj 17 53 hsl 129 10 0 1 0 0 oxy-pik-s oxy-pik-r empty -1 5 1 7
--262144 -1 -1 9204 0;
-#X obj 17 66 hsl 129 10 20 4000 1 0 oxy-dur-s oxy-dur-r empty -1 5
-1 7 -262144 -1 -1 0 0;
-#X obj 17 92 hsl 129 10 10 1000 1 0 oxy-dec-s oxy-dec-r empty -1 5
-1 7 -262144 -1 -1 8629 0;
-#X obj 17 79 hsl 129 10 3 300 1 0 oxy-att-s oxy-att-r empty -1 5 1
-7 -262144 -1 -1 0 0;
-#X obj 17 118 hsl 129 10 50 5000 1 0 oxy-rel-s oxy-rel-r empty -1 5
-1 7 -262144 -1 -1 7766 0;
-#X obj 17 105 hsl 129 10 0 1 0 0 oxy-sus-s oxy-sus-r empty -1 5 1 7
--262144 -1 -1 7910 0;
-#X obj 14 138 vradio 10 1 0 12 oxy-fr1-s oxy-fr1-r empty 0 -6 0 8 -262144
--1 -1 10;
-#X obj 24 138 vradio 15 1 0 8 oxy-oc1-s oxy-oc1-r empty 0 -6 0 8 -262144
--1 -1 5;
-#X obj 57 294 hradio 15 1 0 6 oxy-instance \$0-bli instance 0 -6 1
-7 -262144 -1 -1 0;
-#X obj 17 20 hsl 129 10 1 10 1 0 oxy-fqu-s oxy-fqu-r empty -1 5 1 7
--262144 -1 -1 5034 0;
-#X obj 17 33 hsl 129 10 20 20000 1 0 oxy-ffr-s oxy-ffr-r empty -1 5
-1 7 -262144 -1 -1 4890 0;
-#X obj 14 294 bng 14 250 50 0 oxy-prelisten \$0-bli play 0 -6 1 7 -262144
--1 -1;
-#X text 15 243 c;
-#X text 15 224 d;
-#X text 15 203 e;
-#X text 15 194 f;
-#X text 15 172 g;
-#X text 15 154 a;
-#X text 15 134 h;
-#X text 27 136 +;
-#X text 28 241 -;
-#X obj 50 138 vradio 10 1 0 12 oxy-fr2-s oxy-fr2-r empty 0 -6 0 8 -262144
--1 -1 6;
-#X obj 60 138 vradio 15 1 0 8 oxy-oc2-s oxy-oc2-r empty 0 -6 0 8 -262144
--1 -1 5;
-#X text 51 243 c;
-#X text 51 224 d;
-#X text 51 203 e;
-#X text 51 194 f;
-#X text 51 172 g;
-#X text 51 154 a;
-#X text 51 134 h;
-#X text 63 136 +;
-#X text 64 241 -;
-#X obj 87 138 vradio 10 1 0 12 oxy-fr3-s oxy-fr3-r empty 0 -6 0 8 -262144
--1 -1 5;
-#X obj 97 138 vradio 15 1 0 8 oxy-oc3-s oxy-oc3-r empty 0 -6 0 8 -262144
--1 -1 5;
-#X text 88 243 c;
-#X text 88 224 d;
-#X text 88 203 e;
-#X text 88 194 f;
-#X text 88 172 g;
-#X text 88 154 a;
-#X text 88 134 h;
-#X text 100 136 +;
-#X text 101 241 -;
-#X obj 123 138 vradio 10 1 0 12 oxy-fr4-s oxy-fr4-r empty 0 -6 0 8
--262144 -1 -1 1;
-#X obj 133 138 vradio 15 1 0 8 oxy-oc4-s oxy-oc4-r empty 0 -6 0 8 -262144
--1 -1 5;
-#X text 124 243 c;
-#X text 124 224 d;
-#X text 124 203 e;
-#X text 124 194 f;
-#X text 124 172 g;
-#X text 124 154 a;
-#X text 124 134 h;
-#X text 136 136 +;
-#X text 137 241 -;
-#X obj 83 269 vsl 20 5 -1 1 0 0 \$0-fx.select-s \$0-fx.select-r 0_nofx
-24 3 1 7 -262144 -1 -1 200 1;
-#X obj 17 267 hsl 30 10 0 1 0 0 oxy-fxl-s oxy-fxl-r fx-gain 34 5 1
-7 -262144 -1 -1 0 1;
-#X obj 14 315 tgl 14 0 \$0-open-pad \$0-bli pad 20 7 1 7 -262144 -1
--1 0 1;
-#X restore 269 42 pd oxygen-gui;
 #N canvas 1001 281 355 259 fx.list 0;
 #N canvas 712 265 188 271 getfxname 0;
 #X obj 8 214 outlet;
@@ -571,8 +479,6 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore 270 145 pd loaddefault;
-#X obj 19 123 pad \$0 oxygen;
-#X obj 19 145 netpd-x \$0 oxygen;
 #N canvas 611 192 419 364 dsp 0;
 #X obj 67 254 *~;
 #X obj 35 255 *~;
@@ -997,8 +903,7 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X connect 12 0 6 0;
 #X restore 181 81 pd tone;
 #X obj 250 34 f;
-#X obj 36 308 i2mx~ \$0 oxygen;
-#X obj 37 331 switch~;
+#X obj 345 249 switch~;
 #N canvas 1003 458 248 251 fx.level 0;
 #X obj 14 17 inlet~;
 #X obj 16 185 outlet~;
@@ -1019,13 +924,14 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X connect 8 0 2 0;
 #X restore 190 311 pd fx.level;
 #X obj 348 224 change;
+#X obj 36 308 dac~;
 #X connect 0 0 27 0;
 #X connect 1 0 26 0;
 #X connect 2 0 13 0;
 #X connect 3 0 2 0;
 #X connect 4 0 1 1;
 #X connect 4 0 0 1;
-#X connect 4 1 35 0;
+#X connect 4 1 34 0;
 #X connect 5 0 6 0;
 #X connect 6 0 4 0;
 #X connect 6 1 4 1;
@@ -1051,10 +957,10 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X connect 23 0 28 0;
 #X connect 24 0 29 0;
 #X connect 25 0 30 0;
-#X connect 26 0 32 0;
-#X connect 26 0 34 0;
-#X connect 27 0 32 1;
-#X connect 27 0 34 1;
+#X connect 26 0 33 0;
+#X connect 26 0 35 0;
+#X connect 27 0 33 1;
+#X connect 27 0 35 1;
 #X connect 28 0 14 0;
 #X connect 29 0 13 0;
 #X connect 30 0 14 0;
@@ -1062,16 +968,105 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X connect 31 0 28 1;
 #X connect 31 0 29 1;
 #X connect 31 0 30 1;
-#X connect 32 0 33 0;
-#X connect 34 0 15 0;
-#X connect 34 1 15 1;
-#X connect 35 0 32 2;
+#X connect 33 0 15 0;
+#X connect 33 1 15 1;
+#X connect 34 0 32 0;
 #X restore 15 77 pd dsp;
 #X obj 19 195 s \$0-resetlabels;
 #X obj 19 172 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X text 45 174 before saving;
-#X msg 13 43 version 0.2.14;
-#X connect 9 0 10 0;
-#X connect 9 1 10 1;
-#X connect 13 0 12 0;
+#N canvas 900 247 158 341 \$1-oxygen 0;
+#X obj 7 -1 cnv 15 150 340 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 17 7 hsl 129 10 1 100 1 0 oxy-aph-s oxy-aph-r empty -1 5 1 7
+-262144 -1 -1 0 0;
+#X obj 17 53 hsl 129 10 0 1 0 0 oxy-pik-s oxy-pik-r empty -1 5 1 7
+-262144 -1 -1 0 0;
+#X obj 17 66 hsl 129 10 20 4000 1 0 oxy-dur-s oxy-dur-r empty -1 5
+1 7 -262144 -1 -1 0 0;
+#X obj 17 92 hsl 129 10 10 1000 1 0 oxy-dec-s oxy-dec-r empty -1 5
+1 7 -262144 -1 -1 0 0;
+#X obj 17 79 hsl 129 10 3 300 1 0 oxy-att-s oxy-att-r empty -1 5 1
+7 -262144 -1 -1 0 0;
+#X obj 17 118 hsl 129 10 50 5000 1 0 oxy-rel-s oxy-rel-r empty -1 5
+1 7 -262144 -1 -1 0 0;
+#X obj 17 105 hsl 129 10 0 1 0 0 oxy-sus-s oxy-sus-r empty -1 5 1 7
+-262144 -1 -1 0 0;
+#X obj 14 138 vradio 10 1 0 12 oxy-fr1-s oxy-fr1-r empty 0 -6 0 8 -262144
+-1 -1 0;
+#X obj 24 138 vradio 15 1 0 8 oxy-oc1-s oxy-oc1-r empty 0 -6 0 8 -262144
+-1 -1 0;
+#X obj 57 294 hradio 15 1 0 6 oxy-instance \$0-bli instance 0 -6 1
+7 -262144 -1 -1 0;
+#X obj 17 20 hsl 129 10 1 10 1 0 oxy-fqu-s oxy-fqu-r empty -1 5 1 7
+-262144 -1 -1 0 0;
+#X obj 17 33 hsl 129 10 20 20000 1 0 oxy-ffr-s oxy-ffr-r empty -1 5
+1 7 -262144 -1 -1 0 0;
+#X obj 14 294 bng 14 250 50 0 oxy-prelisten \$0-bli play 0 -6 1 7 -262144
+-1 -1;
+#X text 15 243 c;
+#X text 15 224 d;
+#X text 15 203 e;
+#X text 15 194 f;
+#X text 15 172 g;
+#X text 15 154 a;
+#X text 15 134 h;
+#X text 27 136 +;
+#X text 28 241 -;
+#X obj 50 138 vradio 10 1 0 12 oxy-fr2-s oxy-fr2-r empty 0 -6 0 8 -262144
+-1 -1 0;
+#X obj 60 138 vradio 15 1 0 8 oxy-oc2-s oxy-oc2-r empty 0 -6 0 8 -262144
+-1 -1 0;
+#X text 51 243 c;
+#X text 51 224 d;
+#X text 51 203 e;
+#X text 51 194 f;
+#X text 51 172 g;
+#X text 51 154 a;
+#X text 51 134 h;
+#X text 63 136 +;
+#X text 64 241 -;
+#X obj 87 138 vradio 10 1 0 12 oxy-fr3-s oxy-fr3-r empty 0 -6 0 8 -262144
+-1 -1 0;
+#X obj 97 138 vradio 15 1 0 8 oxy-oc3-s oxy-oc3-r empty 0 -6 0 8 -262144
+-1 -1 0;
+#X text 88 243 c;
+#X text 88 224 d;
+#X text 88 203 e;
+#X text 88 194 f;
+#X text 88 172 g;
+#X text 88 154 a;
+#X text 88 134 h;
+#X text 100 136 +;
+#X text 101 241 -;
+#X obj 123 138 vradio 10 1 0 12 oxy-fr4-s oxy-fr4-r empty 0 -6 0 8
+-262144 -1 -1 0;
+#X obj 133 138 vradio 15 1 0 8 oxy-oc4-s oxy-oc4-r empty 0 -6 0 8 -262144
+-1 -1 0;
+#X text 124 243 c;
+#X text 124 224 d;
+#X text 124 203 e;
+#X text 124 194 f;
+#X text 124 172 g;
+#X text 124 154 a;
+#X text 124 134 h;
+#X text 136 136 +;
+#X text 137 241 -;
+#X obj 83 269 vsl 20 5 -1 1 0 0 \$0-fx.select-s \$0-fx.select-r 0_nofx
+24 3 1 7 -262144 -1 -1 200 1;
+#X obj 17 267 hsl 30 10 0 1 0 0 oxy-fxl-s oxy-fxl-r fx-gain 34 5 1
+7 -262144 -1 -1 0 1;
+#X obj 14 315 tgl 14 0 \$0-open-pad \$0-bli pad 20 7 1 7 -262144 -1
+-1 0 1;
+#X restore 269 42 pd \$1-oxygen;
+#N canvas 631 44 450 300 NETPD 0;
+#N canvas 861 530 175 186 abslist 0;
+#X msg 11 40 instrument;
+#X restore 14 12 pd abslist;
+#X msg 13 44 version 0 3 0;
+#X restore 123 63 pd NETPD;
+#X obj 13 130 netpd_head \$1 oxygen;
+#X obj 6 -3 instrument \$1 oxy 19 6 fr1 fr2 fr3 fr4 fxl setfx oc1 oc2
+oc3 oc4 ffr fqu aph pik dur att dec sus rel;
+#X connect 7 0 6 0;
