@@ -448,33 +448,33 @@
 #N canvas 290 0 371 319 loaddefault 0;
 #X obj 9 12 loadbang;
 #X obj 142 13 s netpd-receive;
-#X msg 9 34 oxy-rel-6 50 \, oxy-rel-5 699.902 \, oxy-rel-4 815.771
-\, oxy-rel-3 50 \, oxy-rel-2 50 \, oxy-rel-1 817.435 \, oxy-sus-6 1
-\, oxy-sus-5 0.483146 \, oxy-sus-4 0.505618 \, oxy-sus-3 1 \, oxy-sus-2
-1 \, oxy-sus-1 0.617977 \, oxy-dec-6 10 \, oxy-dec-5 42.5808 \, oxy-dec-4
-44.842 \, oxy-dec-3 10 \, oxy-dec-2 10 \, oxy-dec-1 223.005 \, oxy-att-6
-3 \, oxy-att-5 3 \, oxy-att-4 3 \, oxy-att-3 300 \, oxy-att-2 3 \,
-oxy-att-1 3 \, oxy-dur-6 4000 \, oxy-dur-5 69.2398 \, oxy-dur-4 59.3569
-\, oxy-dur-3 920.346 \, oxy-dur-2 50.7603 \, oxy-dur-1 20 \, oxy-pik-6
-0.269663 \, oxy-pik-5 1 \, oxy-pik-4 1 \, oxy-pik-3 0.984252 \, oxy-pik-2
-0.460674 \, oxy-pik-1 0.719101 \, oxy-aph-6 1.67772 \, oxy-aph-5 1.36405
-\, oxy-aph-4 1.95945 \, oxy-aph-3 1.36405 \, oxy-aph-2 2.06351 \, oxy-aph-1
-1.29527 \, oxy-fqu-6 2.01081 \, oxy-fqu-5 2.06351 \, oxy-fqu-3 4.4842
-\, oxy-fqu-2 3.37357 \, oxy-fqu-1 2.4732 \, oxy-ffr-6 1322.07 \, oxy-ffr-5
-969.222 \, oxy-ffr-4 520.907 \, oxy-ffr-3 562.948 \, oxy-ffr-2 6243.27
-\, oxy-ffr-1 279.961 \, oxy-oc4-6 6 \, oxy-oc4-5 4 \, oxy-oc4-4 3 \,
-oxy-oc4-3 2 \, oxy-oc4-2 6 \, oxy-oc4-1 5 \, oxy-oc3-6 4 \, oxy-oc3-5
-3 \, oxy-oc3-4 3 \, oxy-oc3-3 2 \, oxy-oc3-2 6 \, oxy-oc3-1 5 \, oxy-oc2-6
-2 \, oxy-oc2-5 3 \, oxy-oc2-4 3 \, oxy-oc2-3 2 \, oxy-oc2-2 5 \, oxy-oc2-1
-5 \, oxy-oc1-6 2 \, oxy-oc1-5 3 \, oxy-oc1-4 3 \, oxy-oc1-3 2 \, oxy-oc1-2
-5 \, oxy-oc1-1 5 \, oxy-setfx-6 0 \, oxy-setfx-5 0 \, oxy-setfx-4 0
-\, oxy-setfx-3 0 \, oxy-setfx-2 0 \, oxy-setfx-1 0 \, oxy-fxl-6 0 \,
-oxy-fxl-5 0 \, oxy-fxl-4 0 \, oxy-fxl-3 0 \, oxy-fxl-2 0 \, oxy-fxl-1
-0 \, oxy-fr4-6 3 \, oxy-fr4-5 9 \, oxy-fr4-4 11 \, oxy-fr4-3 10 \,
-oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
-3 \, oxy-fr3-3 1 \, oxy-fr3-2 7 \, oxy-fr3-1 5 \, oxy-fr2-6 7 \, oxy-fr2-5
-2 \, oxy-fr2-4 4 \, oxy-fr2-3 6 \, oxy-fr2-2 4 \, oxy-fr2-1 6 \, oxy-fr1-6
-4 \, oxy-fr1-5 6 \, oxy-fr1-4 8 \, oxy-fr1-3 7 \, oxy-fr1-2 0 \, oxy-fr1-1
+#X msg 9 34 /oxy/rel/6 50 \, /oxy/rel/5 699.902 \, /oxy/rel/4 815.771
+\, /oxy/rel/3 50 \, /oxy/rel/2 50 \, /oxy/rel/1 817.435 \, /oxy/sus/6 1
+\, /oxy/sus/5 0.483146 \, /oxy/sus/4 0.505618 \, /oxy/sus/3 1 \, /oxy/sus/2
+1 \, /oxy/sus/1 0.617977 \, /oxy/dec/6 10 \, /oxy/dec/5 42.5808 \, /oxy/dec/4
+44.842 \, /oxy/dec/3 10 \, /oxy/dec/2 10 \, /oxy/dec/1 223.005 \, /oxy/att/6
+3 \, /oxy/att/5 3 \, /oxy/att/4 3 \, /oxy/att/3 300 \, /oxy/att/2 3 \,
+/oxy/att/1 3 \, /oxy/dur/6 4000 \, /oxy/dur/5 69.2398 \, /oxy/dur/4 59.3569
+\, /oxy/dur/3 920.346 \, /oxy/dur/2 50.7603 \, /oxy/dur/1 20 \, /oxy/pik/6
+0.269663 \, /oxy/pik/5 1 \, /oxy/pik/4 1 \, /oxy/pik/3 0.984252 \, /oxy/pik/2
+0.460674 \, /oxy/pik/1 0.719101 \, /oxy/aph/6 1.67772 \, /oxy/aph/5 1.36405
+\, /oxy/aph/4 1.95945 \, /oxy/aph/3 1.36405 \, /oxy/aph/2 2.06351 \, /oxy/aph/1
+1.29527 \, /oxy/fqu/6 2.01081 \, /oxy/fqu/5 2.06351 \, /oxy/fqu/3 4.4842
+\, /oxy/fqu/2 3.37357 \, /oxy/fqu/1 2.4732 \, /oxy/ffr/6 1322.07 \, /oxy/ffr/5
+969.222 \, /oxy/ffr/4 520.907 \, /oxy/ffr/3 562.948 \, /oxy/ffr/2 6243.27
+\, /oxy/ffr/1 279.961 \, /oxy/oc4/6 6 \, /oxy/oc4/5 4 \, /oxy/oc4/4 3 \,
+/oxy/oc4/3 2 \, /oxy/oc4/2 6 \, /oxy/oc4/1 5 \, /oxy/oc3/6 4 \, /oxy/oc3/5
+3 \, /oxy/oc3/4 3 \, /oxy/oc3/3 2 \, /oxy/oc3/2 6 \, /oxy/oc3/1 5 \, /oxy/oc2/6
+2 \, /oxy/oc2/5 3 \, /oxy/oc2/4 3 \, /oxy/oc2/3 2 \, /oxy/oc2/2 5 \, /oxy/oc2/1
+5 \, /oxy/oc1/6 2 \, /oxy/oc1/5 3 \, /oxy/oc1/4 3 \, /oxy/oc1/3 2 \, /oxy/oc1/2
+5 \, /oxy/oc1/1 5 \, /oxy/setfx/6 0 \, /oxy/setfx/5 0 \, /oxy/setfx/4 0
+\, /oxy/setfx/3 0 \, /oxy/setfx/2 0 \, /oxy/setfx/1 0 \, /oxy/fxl/6 0 \,
+/oxy/fxl/5 0 \, /oxy/fxl/4 0 \, /oxy/fxl/3 0 \, /oxy/fxl/2 0 \, /oxy/fxl/1
+0 \, /oxy/fr4/6 3 \, /oxy/fr4/5 9 \, /oxy/fr4/4 11 \, /oxy/fr4/3 10 \,
+/oxy/fr4/2 11 \, /oxy/fr4/1 1 \, /oxy/fr3/6 7 \, /oxy/fr3/5 1 \, /oxy/fr3/4
+3 \, /oxy/fr3/3 1 \, /oxy/fr3/2 7 \, /oxy/fr3/1 5 \, /oxy/fr2/6 7 \, /oxy/fr2/5
+2 \, /oxy/fr2/4 4 \, /oxy/fr2/3 6 \, /oxy/fr2/2 4 \, /oxy/fr2/1 6 \, /oxy/fr1/6
+4 \, /oxy/fr1/5 6 \, /oxy/fr1/4 8 \, /oxy/fr1/3 7 \, /oxy/fr1/2 0 \, /oxy/fr1/1
 10 \,;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
