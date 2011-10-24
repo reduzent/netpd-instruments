@@ -482,7 +482,7 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #N canvas 611 192 419 364 dsp 0;
 #X obj 67 254 *~;
 #X obj 35 255 *~;
-#N canvas 535 143 162 254 tone 0;
+#N canvas 535 199 162 254 tone 0;
 #X obj 24 83 phasor~;
 #X obj 24 105 -~ 0.5;
 #X obj 24 127 sgn~;
@@ -513,9 +513,7 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X connect 11 0 3 1;
 #X connect 12 0 6 0;
 #X restore 32 81 pd tone;
-#N canvas 978 126 149 217 freq 0;
-#X obj 17 12 r oxy-fr1;
-#X obj 62 37 r oxy-oc1;
+#N canvas 978 154 149 217 freq 0;
 #X obj 17 104 +;
 #X obj 17 126 mtof;
 #X obj 17 151 outlet;
@@ -523,14 +521,16 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X obj 62 84 + 108;
 #X obj 17 45 * -1;
 #X obj 17 69 + 11;
-#X connect 0 0 7 0;
-#X connect 1 0 5 0;
-#X connect 2 0 3 0;
+#X obj 17 12 r \$1-oxy-fr1;
+#X obj 62 37 r \$1-oxy-oc1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
 #X connect 3 0 4 0;
+#X connect 4 0 0 1;
 #X connect 5 0 6 0;
-#X connect 6 0 2 1;
-#X connect 7 0 8 0;
-#X connect 8 0 2 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 3 0;
 #X restore 34 25 pd freq;
 #N canvas 345 33 673 705 tpd-adsr 0;
 #X obj 35 97 inlet;
@@ -668,14 +668,7 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X connect 60 0 32 0;
 #X connect 60 1 9 0;
 #X restore 276 202 pd tpd-adsr;
-#X obj 262 73 r oxy-pik;
 #X obj 261 94 t b f;
-#X obj 296 95 r oxy-dur;
-#X obj 306 115 r oxy-att;
-#X obj 316 135 r oxy-dec;
-#X obj 326 156 r oxy-sus;
-#X obj 337 176 r oxy-rel;
-#X obj 250 7 r oxy-aph;
 #X obj 36 205 bp~;
 #X obj 68 205 bp~;
 #N canvas 651 141 344 358 route2fx 0;
@@ -748,9 +741,7 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X obj 171 201 * 0.5;
 #X obj 146 161 t f f;
 #X obj 171 181 + 1;
-#X obj 143 115 r oxy-ffr;
-#X obj 146 138 r oxy-fqu;
-#N canvas 978 126 145 213 freq 0;
+#N canvas 978 182 145 213 freq 0;
 #X obj 17 104 +;
 #X obj 17 126 mtof;
 #X obj 17 151 outlet;
@@ -758,8 +749,8 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X obj 62 84 + 108;
 #X obj 17 45 * -1;
 #X obj 17 69 + 11;
-#X obj 17 12 r oxy-fr2;
-#X obj 62 37 r oxy-oc2;
+#X obj 17 12 r \$1-oxy-fr2;
+#X obj 62 37 r \$1-oxy-oc2;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
@@ -769,7 +760,7 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X connect 7 0 5 0;
 #X connect 8 0 3 0;
 #X restore 82 25 pd freq;
-#N canvas 978 126 141 209 freq 0;
+#N canvas 978 182 141 209 freq 0;
 #X obj 17 104 +;
 #X obj 17 126 mtof;
 #X obj 17 151 outlet;
@@ -777,8 +768,8 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X obj 62 84 + 108;
 #X obj 17 45 * -1;
 #X obj 17 69 + 11;
-#X obj 17 12 r oxy-fr3;
-#X obj 62 37 r oxy-oc3;
+#X obj 17 12 r \$1-oxy-fr3;
+#X obj 62 37 r \$1-oxy-oc3;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
@@ -788,7 +779,7 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X connect 7 0 5 0;
 #X connect 8 0 3 0;
 #X restore 129 25 pd freq;
-#N canvas 978 126 137 205 freq 0;
+#N canvas 978 238 137 205 freq 0;
 #X obj 17 104 +;
 #X obj 17 126 mtof;
 #X obj 17 151 outlet;
@@ -796,8 +787,8 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X obj 62 84 + 108;
 #X obj 17 45 * -1;
 #X obj 17 69 + 11;
-#X obj 17 12 r oxy-fr4;
-#X obj 62 37 r oxy-oc4;
+#X obj 17 12 r \$1-oxy-fr4;
+#X obj 62 37 r \$1-oxy-oc4;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
@@ -809,7 +800,7 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X restore 177 25 pd freq;
 #X obj 35 279 hip~ 20;
 #X obj 101 281 hip~ 20;
-#N canvas 535 143 166 287 tone 0;
+#N canvas 535 171 166 287 tone 0;
 #X obj 24 83 phasor~;
 #X obj 24 105 -~ 0.5;
 #X obj 24 127 sgn~;
@@ -925,74 +916,83 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X restore 190 311 pd fx.level;
 #X obj 348 224 change;
 #X obj 36 308 dac~;
-#X connect 0 0 27 0;
-#X connect 1 0 26 0;
-#X connect 2 0 13 0;
+#X obj 250 7 r \$1-oxy-aph;
+#X obj 262 73 r \$1-oxy-pik;
+#X obj 296 95 r \$1-oxy-dur;
+#X obj 306 115 r \$1-oxy-att;
+#X obj 315 135 r \$1-oxy-dec;
+#X obj 326 156 r \$1-oxy-sus;
+#X obj 337 176 r \$1-oxy-rel;
+#X obj 143 115 r \$1-oxy-ffr;
+#X obj 146 138 r \$1-oxy-fqu;
+#X connect 0 0 18 0;
+#X connect 1 0 17 0;
+#X connect 2 0 6 0;
 #X connect 3 0 2 0;
 #X connect 4 0 1 1;
 #X connect 4 0 0 1;
-#X connect 4 1 34 0;
-#X connect 5 0 6 0;
-#X connect 6 0 4 0;
-#X connect 6 1 4 1;
-#X connect 7 0 4 2;
-#X connect 8 0 4 3;
-#X connect 9 0 4 4;
-#X connect 10 0 4 5;
-#X connect 11 0 4 6;
-#X connect 12 0 31 0;
-#X connect 13 0 16 0;
-#X connect 14 0 17 0;
-#X connect 16 0 1 0;
-#X connect 17 0 0 0;
-#X connect 18 0 16 1;
-#X connect 18 0 17 1;
-#X connect 19 0 14 2;
-#X connect 19 0 13 2;
-#X connect 19 1 20 0;
-#X connect 20 0 18 0;
-#X connect 21 0 14 1;
-#X connect 21 0 13 1;
-#X connect 22 0 19 0;
-#X connect 23 0 28 0;
-#X connect 24 0 29 0;
-#X connect 25 0 30 0;
-#X connect 26 0 33 0;
-#X connect 26 0 35 0;
-#X connect 27 0 33 1;
-#X connect 27 0 35 1;
-#X connect 28 0 14 0;
-#X connect 29 0 13 0;
-#X connect 30 0 14 0;
-#X connect 31 0 2 1;
-#X connect 31 0 28 1;
-#X connect 31 0 29 1;
-#X connect 31 0 30 1;
-#X connect 33 0 15 0;
-#X connect 33 1 15 1;
-#X connect 34 0 32 0;
+#X connect 4 1 25 0;
+#X connect 5 0 4 0;
+#X connect 5 1 4 1;
+#X connect 6 0 9 0;
+#X connect 7 0 10 0;
+#X connect 9 0 1 0;
+#X connect 10 0 0 0;
+#X connect 11 0 9 1;
+#X connect 11 0 10 1;
+#X connect 12 0 7 2;
+#X connect 12 0 6 2;
+#X connect 12 1 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 19 0;
+#X connect 15 0 20 0;
+#X connect 16 0 21 0;
+#X connect 17 0 24 0;
+#X connect 17 0 26 0;
+#X connect 18 0 24 1;
+#X connect 18 0 26 1;
+#X connect 19 0 7 0;
+#X connect 20 0 6 0;
+#X connect 21 0 7 0;
+#X connect 22 0 2 1;
+#X connect 22 0 19 1;
+#X connect 22 0 20 1;
+#X connect 22 0 21 1;
+#X connect 24 0 8 0;
+#X connect 24 1 8 1;
+#X connect 25 0 23 0;
+#X connect 27 0 22 0;
+#X connect 28 0 5 0;
+#X connect 29 0 4 2;
+#X connect 30 0 4 3;
+#X connect 31 0 4 4;
+#X connect 32 0 4 5;
+#X connect 33 0 4 6;
+#X connect 34 0 7 1;
+#X connect 34 0 6 1;
+#X connect 35 0 12 0;
 #X restore 15 77 pd dsp;
 #X obj 19 195 s \$0-resetlabels;
 #X obj 19 172 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X text 45 174 before saving;
-#N canvas 900 247 158 341 \$1-oxygen 0;
+#N canvas 901 228 170 348 \$1-oxygen 1;
 #X obj 7 -1 cnv 15 150 340 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 17 7 hsl 129 10 1 100 1 0 oxy-aph-s oxy-aph-r empty -1 5 1 7
--262144 -1 -1 0 0;
+-262144 -1 -1 1900 0;
 #X obj 17 53 hsl 129 10 0 1 0 0 oxy-pik-s oxy-pik-r empty -1 5 1 7
--262144 -1 -1 0 0;
+-262144 -1 -1 5100 0;
 #X obj 17 66 hsl 129 10 20 4000 1 0 oxy-dur-s oxy-dur-r empty -1 5
-1 7 -262144 -1 -1 0 0;
+1 7 -262144 -1 -1 5100 0;
 #X obj 17 92 hsl 129 10 10 1000 1 0 oxy-dec-s oxy-dec-r empty -1 5
-1 7 -262144 -1 -1 0 0;
+1 7 -262144 -1 -1 4700 0;
 #X obj 17 79 hsl 129 10 3 300 1 0 oxy-att-s oxy-att-r empty -1 5 1
-7 -262144 -1 -1 0 0;
+7 -262144 -1 -1 5200 0;
 #X obj 17 118 hsl 129 10 50 5000 1 0 oxy-rel-s oxy-rel-r empty -1 5
-1 7 -262144 -1 -1 0 0;
+1 7 -262144 -1 -1 5600 0;
 #X obj 17 105 hsl 129 10 0 1 0 0 oxy-sus-s oxy-sus-r empty -1 5 1 7
--262144 -1 -1 0 0;
+-262144 -1 -1 4800 0;
 #X obj 14 138 vradio 10 1 0 12 oxy-fr1-s oxy-fr1-r empty 0 -6 0 8 -262144
 -1 -1 0;
 #X obj 24 138 vradio 15 1 0 8 oxy-oc1-s oxy-oc1-r empty 0 -6 0 8 -262144
@@ -1000,9 +1000,9 @@ oxy-fr4-2 11 \, oxy-fr4-1 1 \, oxy-fr3-6 7 \, oxy-fr3-5 1 \, oxy-fr3-4
 #X obj 57 294 hradio 15 1 0 6 oxy-instance \$0-bli instance 0 -6 1
 7 -262144 -1 -1 0;
 #X obj 17 20 hsl 129 10 1 10 1 0 oxy-fqu-s oxy-fqu-r empty -1 5 1 7
--262144 -1 -1 0 0;
+-262144 -1 -1 3000 0;
 #X obj 17 33 hsl 129 10 20 20000 1 0 oxy-ffr-s oxy-ffr-r empty -1 5
-1 7 -262144 -1 -1 0 0;
+1 7 -262144 -1 -1 4600 0;
 #X obj 14 294 bng 14 250 50 0 oxy-prelisten \$0-bli play 0 -6 1 7 -262144
 -1 -1;
 #X text 15 243 c;
