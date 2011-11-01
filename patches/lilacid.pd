@@ -484,4 +484,4 @@
 #X msg 9 67 netpd_bandlimited_oscillators;
 #X restore 13 29 pd abslist;
 #X msg 13 56 version 0 3 0;
-#X restore 105 177 pd NETPD;
+#X restore 105 177 pd NETPD 2 0;
