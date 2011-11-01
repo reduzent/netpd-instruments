@@ -290,5 +290,5 @@ empty 0 -6 1 9 -262144 -260488 -1 125 256;
 #X restore 9 33 pd abslist;
 #X msg 9 12 version 0 3 0;
 #X msg 9 54 singleton;
-#X restore 17 58 pd NETPD;
+#X restore 17 58 pd NETPD 2 0;
 #X text 96 16 GUI;
