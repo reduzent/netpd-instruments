@@ -1981,7 +1981,7 @@ play 0 -6 1 7 -225280 -20025 -1;
 #X msg 16 96 qseq3-instr-list;
 #X restore 12 16 pd abslist;
 #X msg 11 37 version 0 3 2;
-#X restore 201 169 pd NETPD;
+#X restore 201 169 pd NETPD 2 0;
 #X connect 0 0 1 0;
 #X connect 9 0 16 0;
 #X connect 10 0 16 1;
