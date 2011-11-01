@@ -10,7 +10,7 @@
 #X msg 10 124 qseq3-set-ui;
 #X restore 14 63 pd abslist;
 #X msg 15 15 version 0 0 1;
-#X restore 12 10 pd NETPD;
+#X restore 12 10 pd NETPD 2 0;
 #X obj 451 87 table \$1.set/id 10000;
 #X obj 451 108 table \$1.seq/id 10000;
 #X obj 451 129 table \$1.element/id 10000;
