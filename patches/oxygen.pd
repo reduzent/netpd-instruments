@@ -1077,7 +1077,7 @@
 #X msg 11 40 instrument;
 #X restore 14 12 pd abslist;
 #X msg 13 44 version 0 3 0;
-#X restore 123 63 pd NETPD;
+#X restore 123 63 pd NETPD 2 0;
 #X obj 13 130 netpd_head \$1 oxygen;
 #X obj 6 -3 instrument \$1 oxy 19 6 fr1 fr2 fr3 fr4 fxl setfx oc1 oc2
 oc3 oc4 ffr fqu aph pik dur att dec sus rel;
