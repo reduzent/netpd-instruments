@@ -563,7 +563,7 @@ read starts at index 1;
 #X msg 17 58 roman_helpers;
 #X restore 10 32 pd abslist;
 #X msg 10 11 version 0 4 0;
-#X restore 171 62 pd NETPD;
+#X restore 171 62 pd NETPD 2 0;
 #N canvas 138 552 291 137 bassist-netpd-fs 0;
 #X obj 12 40 netpd_f \$1 detune 0;
 #X obj 12 19 netpd_f \$1 volume 0.8;
