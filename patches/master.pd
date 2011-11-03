@@ -1,4 +1,4 @@
-#N canvas 591 340 161 119 10;
+#N canvas 591 281 161 119 10;
 #N canvas 345 68 674 607 master 0;
 #X obj 342 118 /;
 #X obj 342 192 /;
@@ -48,7 +48,7 @@
 #X obj 410 73 random 20;
 #X obj 410 93 + 115;
 #X msg 410 113 set \$1;
-#N canvas 280 232 214 184 bpm.color 0;
+#N canvas 280 260 214 184 bpm.color 0;
 #X obj 13 145 s \$0-bpm-slider-r;
 #X obj 13 55 b;
 #X obj 13 75 del 1500;
@@ -106,25 +106,25 @@
 #X connect 32 0 27 0;
 #X connect 32 0 31 0;
 #X restore 342 58 pd netpd-mixed_master.bpm;
-#N canvas 359 352 281 159 switch.color 0;
+#N canvas 359 380 281 159 switch.color 0;
 #X obj 13 55 sel 0 1;
 #X msg 35 75 color -65281 -65281 -65281;
 #X msg 13 95 color 0 -1.51324e+07 -1.51324e+07;
 #X obj 13 30 inlet;
-#X obj 13 125 s \$1-master.switch;
+#X obj 13 125 s \$1-switch;
 #X connect 0 0 2 0;
 #X connect 0 1 1 0;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
 #X connect 3 0 0 0;
 #X restore 36 90 pd switch.color;
-#N canvas 290 303 215 195 shuffle.color 0;
+#N canvas 290 331 215 195 shuffle.color 0;
 #X obj 13 55 b;
 #X obj 13 75 del 1500;
 #X msg 35 95 color 0 -65281 -1;
 #X msg 13 115 color 0 -2.36855e+06 -1;
 #X obj 21 27 inlet;
-#X obj 13 144 s \$1-master.shuffle;
+#X obj 13 144 s \$1-shuffle;
 #X connect 0 0 2 0;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
@@ -263,7 +263,7 @@
 0;
 #X obj 96 50 cnv 10 10 10 empty empty 5 0 5 1 9 -233017 -66577 0;
 #X obj 90 24 hsl 148 10 60 240 0 0 \$0-bpm-slider \$0-bpm-slider-r
-empty -2 -6 0 8 -262144 -37450 -1 5635 1;
+empty -2 -6 0 8 -262144 -37450 -1 5472 1;
 #X obj 90 37 hsl 148 10 0.5 0.75 0 0 \$1-shuffle \$1-shuffle empty
 -2 -6 0 8 -262144 -37450 -1 0 0;
 #X obj 222 50 cnv 10 10 10 empty empty 75 0 5 1 9 -233017 -66577 0
@@ -275,9 +275,9 @@ empty -2 -6 0 8 -262144 -37450 -1 5635 1;
 #X obj 285 42 cnv 10 10 10 empty empty [16th] 0 6 1 9 -233017 -66577
 0;
 #X obj 244 24 nbx 4 12 1 9600 0 0 \$0-bpm-number \$0-bpm-number-r empty
-0 -6 1 9 -262144 -260488 -1 129 256;
+0 -6 1 9 -262144 -260488 -1 127 256;
 #X obj 244 41 nbx 4 12 1 1200 0 0 \$0-16th-number \$0-16th-number-r
-empty 0 -6 1 9 -262144 -260488 -1 116.279 256;
+empty 0 -6 1 9 -262144 -260488 -1 118.11 256;
 #X obj 90 52 cnv 1 1 6 empty empty empty 20 12 0 14 -33289 -66577 0
 ;
 #X obj 189 52 cnv 1 1 6 empty empty empty 20 12 0 14 -33289 -66577
