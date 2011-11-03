@@ -4,9 +4,3 @@ qseq3
   
   * subinstr list selector doesn't update on instr list selection
 
-
-master-poly
-
-  * doesn't get master tempo on loadbang
-
-
