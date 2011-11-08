@@ -1,7 +1,4 @@
 #N canvas 520 283 446 383 10;
-#X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
-#X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
 #X obj 89 114 exp;
 #X obj 59 100 + 90;
 #X obj 89 89 + 5;
