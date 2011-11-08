@@ -1,5 +1,4 @@
 #N canvas 374 319 387 320 10;
-#X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
 #X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
 #N canvas 0 249 195 236 jx.preferences 0;
