@@ -8,7 +8,10 @@
 #X msg 16 63 singleton;
 #X restore 232 5 pd NETPD 2 0;
 #N canvas 590 392 450 300 \$1-mx 1;
-#X msg 192 106 2 refresh;
-#X obj 192 128 s mx;
-#X connect 0 0 1 0;
+#X msg 174 156 \; \$1-i2mx-gui loadbang;
+#X msg 181 101 2;
+#X obj 226 120 s pd-\$1-mx;
+#X msg 221 68 obj 30 30 mx-i2mx-gui 2;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
 #X restore 231 27 pd \$1-mx;
