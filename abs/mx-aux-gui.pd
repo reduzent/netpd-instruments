@@ -1,0 +1,42 @@
+#N canvas 469 91 450 300 10;
+#X obj 23 32 hsl 35 10 0 1 0 0 \$1-mx/aux/\$2/level \$1-mx/pan empty
+-2 -8 0 10 -99865 -99865 -1 1700 1;
+#X obj 23 20 hsl 15 12 1 1 0 0 \$1-mx/aux/\$2/pp \$0.pp.r pst 0 6 1
+10 -99865 -99865 -4034 0 1;
+#N canvas 831 67 261 231 NETPD 0;
+#X msg 18 12 version 0 0 0;
+#X restore 279 17 pd NETPD 2 0;
+#X obj 116 179 s \$0.ch.r;
+#X msg 116 154 label \$1;
+#X obj 155 114 makefilename %2d;
+#X obj 116 93 route 0;
+#X msg 116 133 symbol empty;
+#X msg 293 198 label \$1;
+#X obj 293 131 sel 0 1;
+#X msg 293 155 pst;
+#X msg 320 155 pre;
+#X obj 293 177 symbol;
+#X obj 293 109 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 293 222 s \$0.pp.r;
+#X obj 40 20 nbx 3 12 0 30 0 0 \$0.ch.s empty empty 0 -8 0 4 -262144
+-1 -1 0 256;
+#X obj 43 20 hsl 15 12 1 1 0 0 \$1-mx/aux/\$2/ch \$0.ch.r empty 2 7
+1 9 -99865 -99865 -4034 0 1;
+#X obj 116 54 div 3;
+#X obj 116 32 r \$0.ch.s;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 6 1 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 14 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 10 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 8 0;
+#X connect 13 0 9 0;
+#X connect 17 0 6 0;
+#X connect 18 0 17 0;
+#X coords 0 -1 1 1 40 22 2 20 20;
