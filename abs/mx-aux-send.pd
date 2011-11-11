@@ -1,6 +1,6 @@
 #N canvas 743 151 450 300 10;
 #X obj 21 32 inlet~;
 #X obj 80 32 inlet~;
-#X obj 155 156 netpd_f \$1 mx/aux/\$2/pp;
-#X obj 156 187 netpd_f \$1 mx/aux/\$2/ch;
-#X obj 158 217 netpd_f \$1 mx/aux/\$2/level;
+#X obj 155 156 netpd_f \$4 mx/aux/\$2/pp;
+#X obj 156 187 netpd_f \$4 mx/aux/\$2/ch;
+#X obj 158 217 netpd_f \$4 mx/aux/\$2/level;
