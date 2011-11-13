@@ -1,0 +1,9 @@
+#N canvas 632 134 450 300 10;
+#N canvas 831 95 261 231 NETPD 0;
+#X msg 18 12 version 0 0 0;
+#X restore 90 21 pd NETPD 2 0;
+#X obj 21 20 nbx 8 12 -1e+37 1e+37 0 0 \$0.selector.ns \$0.selector.nr
+empty 0 -8 0 4 -228856 -228856 -1 0 256;
+#X obj 23 20 hsl 35 12 1 1 0 0 \$0.nirvana \$0.selector.r rodel -1
+7 1 9 -228856 -228856 -1 0 1;
+#X coords 0 -1 1 1 40 12 2 20 20;
