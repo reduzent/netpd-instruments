@@ -105,8 +105,8 @@
 #X restore 228 28 pd talk.to.gui;
 #X obj 228 92 route 1 2 3;
 #X obj 6 148 mx-insert-container \$1 insert/1;
-#X obj 6 179 mx-insert-container \$1 insert/1;
-#X obj 6 210 mx-insert-container \$1 insert/2;
+#X obj 6 179 mx-insert-container \$1 insert/2;
+#X obj 6 210 mx-insert-container \$1 insert/3;
 #X connect 0 0 8 0;
 #X connect 1 0 8 1;
 #X connect 4 0 5 0;
