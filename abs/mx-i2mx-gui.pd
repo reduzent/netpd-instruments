@@ -1,12 +1,12 @@
-#N canvas 531 402 284 306 10;
+#N canvas 531 458 284 306 10;
 #X obj 20 153 vsl 20 100 0 1.3 0 0 \$1-mx/level \$1-mx/level empty
-0 -9 0 10 -66577 -66577 -1 2800 1;
+0 -9 0 10 -66577 -66577 -1 0 1;
 #X obj 23 141 hsl 35 10 0 1 0 0 \$1-mx/pan \$1-mx/pan empty -2 -8 0
-10 -66577 -258113 -1 900 1;
+10 -66577 -258113 -1 1700 1;
 #X obj 43 151 hsl 15 12 1 1 0 0 \$1-mx/solo \$0.solo.r s 4 6 0 12 -66577
 -66577 -262081 0 1;
-#X obj 43 163 hsl 15 12 0 0 0 0 \$1-mx/mute \$0.mute.r m 4 6 0 12 -64
--64 -1 0 1;
+#X obj 43 163 hsl 15 12 1 1 0 0 \$1-mx/mute \$0.mute.r m 4 6 0 12 -66577
+-66577 -64 0 1;
 #N canvas 722 245 607 372 buttons-stuff 0;
 #X obj 320 82 netpd-rgb2iem;
 #X obj 21 228 list;
@@ -117,7 +117,7 @@
 #X connect 10 1 8 0;
 #X connect 11 0 2 0;
 #X restore 106 114 pd level-slider-stuff;
-#X obj 21 224 cnv 1 18 31 empty \$0.level.top.r empty 20 12 0 14 -258113
+#X obj 21 253 cnv 1 18 2 empty \$0.level.top.r empty 20 12 0 14 -258113
 -66577 0;
 #N canvas 590 44 294 326 double-click-reset 0;
 #X obj 15 10 r \$1-mx/level;
@@ -189,7 +189,7 @@
 #X connect 27 0 15 0;
 #X connect 29 0 28 0;
 #X restore 106 136 pd double-click-reset;
-#N canvas 520 100 161 130 INIT 0;
+#N canvas 520 128 161 130 INIT 0;
 #X obj 12 74 s mx;
 #X msg 12 53 \$1 refresh;
 #X obj 12 32 \$1;
@@ -229,4 +229,15 @@
 #X obj 20 33 mx-insert-gui \$1 1;
 #X obj 20 46 mx-insert-gui \$1 2;
 #X obj 20 59 mx-insert-gui \$1 3;
+#N canvas 428 458 162 170 gui.existence.check 0;
+#X obj 22 19 r mx;
+#X obj 22 41 route \$1;
+#X obj 22 66 route ifguiexists;
+#X msg 22 90 guiexists;
+#X obj 22 112 s mx;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X restore 106 179 pd gui.existence.check;
 #X coords 0 -1 1 1 40 236 2 20 20;
