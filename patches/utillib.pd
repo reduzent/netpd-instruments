@@ -1,0 +1,17 @@
+#N canvas 669 135 352 135 10;
+#N canvas 570 320 225 111 NETPD 0;
+#X msg 7 11 version 0 0 0;
+#N canvas 412 216 356 118 abslist 0;
+#X msg 14 9 swapph;
+#X msg 195 11 mx-fx-list;
+#X restore 7 37 pd abslist;
+#X restore 14 11 pd NETPD 2 0;
+#N canvas 643 124 414 198 \$1-utillib 0;
+#X text 9 9 UTILLIB - utilities for mx;
+#X text 9 16 --------------------------;
+#X text 9 34 This is a collection of small helpers for analyzing and
+fixing audio signals.;
+#X text 11 80 Contents:;
+#X text 12 95 swapph: swap phase (left and right);
+#X restore 14 34 pd \$1-utillib;
+#X obj 14 57 mx-fx-list \$1 utillib swapph;
