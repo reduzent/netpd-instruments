@@ -1,0 +1,38 @@
+#N canvas 757 44 403 282 10;
+#X obj 17 28 inlet~;
+#X obj 208 22 inlet~;
+#X obj 17 235 outlet~;
+#X obj 207 235 outlet~;
+#N canvas 908 333 202 65 \$3-swapph 0;
+#X obj 6 15 tgl 30 0 \$1-\$2/left \$1-\$2/left L 8 15 1 20 -261234
+-1 -1 0 1;
+#X obj 157 15 tgl 30 0 \$1-\$2/right \$1-\$2/right R 8 15 1 20 -261234
+-1 -1 0 1;
+#X restore 257 66 pd \$3-swapph;
+#X obj 29 108 sel 0 1;
+#X msg 48 137 -1;
+#X msg 29 137 1;
+#X obj 29 85 netpd_f \$1 \$2/left 0;
+#X obj 202 99 netpd_f \$1 \$2/right 0;
+#X obj 233 133 sel 0 1;
+#X msg 252 162 -1;
+#X msg 233 162 1;
+#N canvas 780 193 225 119 NETPD 0;
+#X msg 24 13 version 0 0 1;
+#X restore 275 32 pd NETPD 2 0;
+#X obj 18 198 *~ 1;
+#X obj 207 194 *~ 1;
+#X connect 0 0 14 0;
+#X connect 1 0 15 0;
+#X connect 5 0 7 0;
+#X connect 5 1 6 0;
+#X connect 6 0 14 1;
+#X connect 7 0 14 1;
+#X connect 8 0 5 0;
+#X connect 9 0 10 0;
+#X connect 10 0 12 0;
+#X connect 10 1 11 0;
+#X connect 11 0 15 1;
+#X connect 12 0 15 1;
+#X connect 14 0 2 0;
+#X connect 15 0 3 0;
