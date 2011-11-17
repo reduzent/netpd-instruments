@@ -1,4 +1,4 @@
-#N canvas 604 351 243 211 10;
+#N canvas 604 379 243 211 10;
 #N canvas 804 392 450 300 NETPD 0;
 #X msg 15 7 version 0 0 0;
 #N canvas 653 44 450 300 abslist 0;
@@ -83,7 +83,7 @@
 #X connect 22 1 21 0;
 #X restore 8 51 pd create.channel.guis;
 #X obj 8 95 mx-containers \$1;
-#N canvas 335 150 255 364 fxlist 0;
+#N canvas 335 206 255 364 fxlist 0;
 #X obj 12 -67 r mx;
 #X obj 12 -45 route refreshfxlist;
 #X obj 12 -23 b;
@@ -101,6 +101,7 @@
 #X obj 12 220 list prepend fxlist;
 #X obj 12 242 list trim;
 #X obj 12 264 s mx;
+#X obj 40 -23 loadbang;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -121,6 +122,7 @@
 #X connect 13 0 10 0;
 #X connect 14 0 15 0;
 #X connect 15 0 16 0;
+#X connect 17 0 3 0;
 #X restore 8 73 pd fxlist;
 #N canvas 763 211 345 284 main-out 0;
 #X obj 7 9 inlet~;
