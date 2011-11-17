@@ -1,4 +1,4 @@
-#N canvas 604 323 243 211 10;
+#N canvas 604 351 243 211 10;
 #N canvas 804 392 450 300 NETPD 0;
 #X msg 15 7 version 0 0 0;
 #N canvas 653 44 450 300 abslist 0;
@@ -51,9 +51,11 @@
 #X obj 17 274 * 41;
 #X msg 44 361 obj \$1 5 mx-i2mx-gui \$2;
 #X obj 17 30 t b b;
-#X obj 106 73 s pd-\$1-mx;
-#X obj 106 30 list append \$1;
-#X msg 106 51 obj 13 5 mx-master-gui \$1;
+#X obj 172 82 s pd-\$1-mx;
+#X obj 145 17 list append \$1;
+#X msg 172 61 obj 13 5 mx-master-gui \$1;
+#X obj 145 39 t a a;
+#X msg 145 101 \; \$1-master-gui loadbang;
 #X connect 0 0 18 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
@@ -75,8 +77,10 @@
 #X connect 17 0 8 0;
 #X connect 18 0 1 0;
 #X connect 18 1 20 0;
-#X connect 20 0 21 0;
+#X connect 20 0 22 0;
 #X connect 21 0 19 0;
+#X connect 22 0 23 0;
+#X connect 22 1 21 0;
 #X restore 8 51 pd create.channel.guis;
 #X obj 8 95 mx-containers \$1;
 #N canvas 335 150 255 364 fxlist 0;
