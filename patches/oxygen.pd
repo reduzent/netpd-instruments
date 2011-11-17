@@ -989,7 +989,6 @@
 #X connect 8 0 2 0;
 #X restore 190 311 pd fx.level;
 #X obj 348 224 change;
-#X obj 36 308 dac~;
 #X obj 250 7 r \$1-oxy-aph;
 #X obj 262 73 r \$1-oxy-pik;
 #X obj 296 95 r \$1-oxy-dur;
@@ -1000,6 +999,7 @@
 #X obj 143 115 r \$1-oxy-ffr;
 #X obj 146 138 r \$1-oxy-fqu;
 #X obj 242 266 print;
+#X obj 36 329 i2mx \$1 oxygen;
 #X connect 0 0 18 0;
 #X connect 1 0 17 0;
 #X connect 2 0 6 0;
@@ -1023,9 +1023,9 @@
 #X connect 15 0 20 0;
 #X connect 16 0 21 0;
 #X connect 17 0 24 0;
-#X connect 17 0 26 0;
+#X connect 17 0 36 0;
 #X connect 18 0 24 1;
-#X connect 18 0 26 1;
+#X connect 18 0 36 1;
 #X connect 19 0 7 0;
 #X connect 20 0 6 0;
 #X connect 21 0 7 0;
@@ -1036,28 +1036,28 @@
 #X connect 24 0 8 0;
 #X connect 24 1 8 1;
 #X connect 25 0 23 0;
-#X connect 27 0 22 0;
-#X connect 28 0 5 0;
-#X connect 29 0 4 2;
-#X connect 30 0 4 3;
-#X connect 31 0 4 4;
-#X connect 32 0 4 5;
-#X connect 33 0 4 6;
-#X connect 34 0 7 1;
-#X connect 34 0 6 1;
-#X connect 35 0 12 0;
+#X connect 26 0 22 0;
+#X connect 27 0 5 0;
+#X connect 28 0 4 2;
+#X connect 29 0 4 3;
+#X connect 30 0 4 4;
+#X connect 31 0 4 5;
+#X connect 32 0 4 6;
+#X connect 33 0 7 1;
+#X connect 33 0 6 1;
+#X connect 34 0 12 0;
 #X restore 15 77 pd dsp;
 #X obj 19 195 s \$0-resetlabels;
 #X obj 19 172 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X text 45 174 before saving;
-#N canvas 901 480 172 352 \$1-oxygen 0;
+#N canvas 901 508 172 352 \$1-oxygen 1;
 #X obj 7 -1 cnv 15 150 340 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 17 7 hsl 129 10 1 100 1 0 \$1-oxy-aph-s \$1-oxy-aph-r empty
 -1 5 1 7 -262144 -1 -1 719 0;
 #X obj 17 53 hsl 129 10 0 1 0 0 \$1-oxy-pik-s \$1-oxy-pik-r empty -1
-5 1 7 -262144 -1 -1 8400 0;
+5 1 7 -262144 -1 -1 9204 0;
 #X obj 17 66 hsl 129 10 20 4000 1 0 \$1-oxy-dur-s \$1-oxy-dur-r empty
 -1 5 1 7 -262144 -1 -1 0 0;
 #X obj 17 92 hsl 129 10 10 1000 1 0 \$1-oxy-dec-s \$1-oxy-dec-r empty
@@ -1136,8 +1136,10 @@
 -1 0 1;
 #X restore 269 42 pd \$1-oxygen;
 #N canvas 631 44 450 300 NETPD 0;
-#N canvas 861 530 175 186 abslist 0;
+#N canvas 861 586 175 186 abslist 0;
 #X msg 11 40 instrument;
+#X msg 14 67 qseq3-instr-list;
+#X msg 14 93 i2mx;
 #X restore 14 12 pd abslist;
 #X msg 13 44 version 0 3 0;
 #X restore 123 63 pd NETPD 2 0;
