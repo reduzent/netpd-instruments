@@ -1,0 +1,23 @@
+#N canvas 450 387 353 148 10;
+#N canvas 1064 72 185 109 NETPD 0;
+#N canvas 813 209 194 120 abslist 0;
+#X msg 4 11 rodel;
+#X msg 4 33 rphase;
+#X msg 4 55 rflange;
+#X msg 4 77 rchous;
+#X msg 50 77 rchous-voice;
+#X restore 12 40 pd abslist;
+#X msg 11 16 version 0 1 4;
+#X restore 16 18 pd NETPD 2 0;
+#N canvas 882 255 444 258 \$1-rfxlib 0;
+#X text 18 12 This is a collection of Roman's effects. they are made
+to be used in mx [http://www.netpd.org/mx]. yet it contains:;
+#X text 36 65 - rodel [stereo delay];
+#X text 36 81 - rphase [phasor (use it as insert \, not as aux-fx!)]
+;
+#X text 36 96 - rflange [stereo flanger];
+#X text 36 113 - rchous [stereo multivoice-chorus];
+#X text 13 161 for a more detailed description visit:;
+#X text 42 202 http://www.netpd.org/rfxlib;
+#X restore 16 39 pd \$1-rfxlib;
+#X obj 16 60 mx-fx-list \$1 rfxlib rodel rphase rflange rchous;
