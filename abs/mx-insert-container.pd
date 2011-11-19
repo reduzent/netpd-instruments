@@ -39,8 +39,12 @@
 #X obj 17 14 inlet~;
 #X obj 16 48 outlet~;
 #N canvas 633 44 450 300 \$0-insert-container 0;
-#X obj 23 21 catch~ 1365.in.l;
-#X obj 159 21 catch~ 1365.in.r;
+#X obj 23 21 catch~ 2853.in.l;
+#X obj 159 21 catch~ 2853.in.r;
+#X obj 23 235 throw~ 2853.out.l;
+#X obj 159 235 throw~ 2853.out.r;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
 #X restore 93 34 pd \$0-insert-container;
 #X restore 12 97 pd insert-container-container;
 #N canvas 801 44 450 300 NETPD 0;
@@ -56,10 +60,6 @@
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
 #X restore 231 254 pd add-creation-arguments;
-#X msg 231 281 obj 23 21 catch~ \$1.in.l \, obj 159 21 catch~ \$1.in.r
-\, obj 38 128 \$2 \$3 \$4/\$2 \$5 \, obj 23 235 throw~ \$1.out.l \,
-obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
-\, connect 2 0 3 0 \, connect 2 1 4 0;
 #X obj 231 71 route insert bypass clear;
 #N canvas 520 90 279 317 show.fx.gui 0;
 #X obj 23 13 inlet;
@@ -88,10 +88,14 @@ obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
 #X connect 9 1 10 0;
 #X connect 10 0 11 0;
 #X restore 231 24 pd show.fx.gui;
+#X msg 231 281 obj 23 21 catch~ \$1.in.l \, obj 159 21 catch~ \$1.in.r
+\, obj 38 128 \$2 \$3 \$4/\$2 \$5 \, obj 23 235 throw~ \$1.out.l \,
+obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
+\, connect 2 0 3 0 \, connect 2 1 4 0 \, loadbang;
 #X connect 0 0 15 0;
 #X connect 1 0 15 1;
-#X connect 5 0 23 0;
-#X connect 7 0 22 0;
+#X connect 5 0 22 0;
+#X connect 7 0 21 0;
 #X connect 8 0 20 0;
 #X connect 8 1 9 0;
 #X connect 9 0 6 0;
@@ -107,9 +111,9 @@ obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
 #X connect 17 0 16 0;
 #X connect 19 0 14 0;
 #X connect 19 1 9 0;
-#X connect 20 0 21 0;
-#X connect 21 0 6 0;
-#X connect 22 0 8 0;
-#X connect 22 1 10 0;
-#X connect 22 2 19 0;
-#X connect 23 0 7 0;
+#X connect 20 0 23 0;
+#X connect 21 0 8 0;
+#X connect 21 1 10 0;
+#X connect 21 2 19 0;
+#X connect 22 0 7 0;
+#X connect 23 0 6 0;
