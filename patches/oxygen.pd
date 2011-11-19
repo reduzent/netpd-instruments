@@ -553,7 +553,7 @@
 #X connect 8 0 6 1;
 #X connect 9 0 6 0;
 #X restore 270 145 pd loaddefault;
-#N canvas 611 192 419 364 dsp 0;
+#N canvas 611 192 418 403 dsp 0;
 #X obj 67 254 *~;
 #X obj 35 255 *~;
 #N canvas 535 255 162 254 tone 0;
@@ -968,7 +968,7 @@
 #X connect 12 0 3 0;
 #X restore 181 81 pd tone;
 #X obj 250 34 f;
-#X obj 345 249 switch~;
+#X obj 36 357 switch~;
 #N canvas 1003 458 248 251 fx.level 0;
 #X obj 14 17 inlet~;
 #X obj 16 185 outlet~;
@@ -988,7 +988,7 @@
 #X connect 7 0 6 0;
 #X connect 8 0 2 0;
 #X restore 190 311 pd fx.level;
-#X obj 348 224 change;
+#X obj 339 227 change;
 #X obj 250 7 r \$1-oxy-aph;
 #X obj 262 73 r \$1-oxy-pik;
 #X obj 296 95 r \$1-oxy-dur;
@@ -998,7 +998,6 @@
 #X obj 337 176 r \$1-oxy-rel;
 #X obj 143 115 r \$1-oxy-ffr;
 #X obj 146 138 r \$1-oxy-fqu;
-#X obj 242 266 print;
 #X obj 36 329 i2mx \$1 oxygen;
 #X connect 0 0 18 0;
 #X connect 1 0 17 0;
@@ -1023,9 +1022,9 @@
 #X connect 15 0 20 0;
 #X connect 16 0 21 0;
 #X connect 17 0 24 0;
-#X connect 17 0 36 0;
+#X connect 17 0 35 0;
 #X connect 18 0 24 1;
-#X connect 18 0 36 1;
+#X connect 18 0 35 1;
 #X connect 19 0 7 0;
 #X connect 20 0 6 0;
 #X connect 21 0 7 0;
@@ -1035,7 +1034,7 @@
 #X connect 22 0 21 1;
 #X connect 24 0 8 0;
 #X connect 24 1 8 1;
-#X connect 25 0 23 0;
+#X connect 25 0 35 2;
 #X connect 26 0 22 0;
 #X connect 27 0 5 0;
 #X connect 28 0 4 2;
@@ -1046,12 +1045,13 @@
 #X connect 33 0 7 1;
 #X connect 33 0 6 1;
 #X connect 34 0 12 0;
+#X connect 35 0 23 0;
 #X restore 15 77 pd dsp;
 #X obj 19 195 s \$0-resetlabels;
 #X obj 19 172 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X text 45 174 before saving;
-#N canvas 901 508 172 352 \$1-oxygen 1;
+#N canvas 843 375 172 352 \$1-oxygen 1;
 #X obj 7 -1 cnv 15 150 340 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 17 7 hsl 129 10 1 100 1 0 \$1-oxy-aph-s \$1-oxy-aph-r empty
