@@ -1,13 +1,13 @@
-#N canvas 626 197 673 390 10;
+#N canvas 626 197 658 422 10;
 #X obj 12 4 inlet~;
 #X obj 103 4 inlet~;
 #X obj 11 197 outlet~;
 #X obj 108 197 outlet~;
 #X obj 275 2 outlet;
 #X obj 231 2 inlet;
-#X obj 231 348 s pd-\$0-insert-container;
+#X obj 231 351 s pd-\$0-insert-container;
 #X obj 231 48 netpd-dsp-off;
-#X obj 231 93 t a b;
+#X obj 231 128 t a b;
 #X msg 419 258 clear;
 #X obj 280 94 t a b;
 #X msg 248 204 obj 23 21 catch~ \$1.in.l \, obj 159 21 catch~ \$1.in.r
@@ -92,6 +92,11 @@
 \, obj 38 128 \$2 \$3 \$4/\$2 \$5 \, obj 23 235 throw~ \$1.out.l \,
 obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
 \, connect 2 0 3 0 \, connect 2 1 4 0 \, loadbang;
+#X obj 204 106 t b a;
+#X msg 204 373 reinit;
+#X obj 204 395 s \$1.NETPD;
+#X text 248 374 <- needed to make the abs set itself to init values
+;
 #X connect 0 0 15 0;
 #X connect 1 0 15 1;
 #X connect 5 0 22 0;
@@ -112,8 +117,11 @@ obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
 #X connect 19 0 14 0;
 #X connect 19 1 9 0;
 #X connect 20 0 23 0;
-#X connect 21 0 8 0;
+#X connect 21 0 24 0;
 #X connect 21 1 10 0;
 #X connect 21 2 19 0;
 #X connect 22 0 7 0;
 #X connect 23 0 6 0;
+#X connect 24 0 25 0;
+#X connect 24 1 8 0;
+#X connect 25 0 26 0;
