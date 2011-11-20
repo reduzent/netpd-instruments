@@ -1,10 +1,11 @@
 #N canvas 450 387 353 148 10;
-#N canvas 1064 100 185 109 NETPD 0;
-#N canvas 813 237 194 120 abslist 0;
+#N canvas 1064 128 185 109 NETPD 0;
+#N canvas 813 265 194 120 abslist 0;
 #X msg 4 11 rodel;
 #X msg 4 33 rphase;
 #X msg 4 55 rflange;
 #X msg 4 77 rchous;
+#X msg 84 11 mx-fx-list;
 #X restore 12 40 pd abslist;
 #X msg 11 16 version 0 1 4;
 #X restore 16 18 pd NETPD 2 0;
