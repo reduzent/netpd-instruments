@@ -536,22 +536,18 @@
 #X obj 387 437 s \$1.NETPD;
 #X obj 387 394 list prepend send;
 #X obj 387 416 list trim;
-#X obj 387 34 r \$1.NETPD;
-#X obj 387 56 route dump;
-#X obj 387 100 spigot 1;
-#X obj 387 122 t b b;
-#X msg 462 111 0;
-#X obj 387 78 sel 10;
+#X obj 387 58 spigot 1;
+#X obj 387 80 t b b;
+#X msg 462 69 0;
+#X obj 387 34 netpd-dump \$1 10;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X connect 4 0 5 0;
-#X connect 5 0 9 0;
-#X connect 6 0 7 0;
-#X connect 7 0 0 0;
-#X connect 7 1 8 0;
-#X connect 8 0 6 1;
-#X connect 9 0 6 0;
+#X connect 5 0 0 0;
+#X connect 5 1 6 0;
+#X connect 6 0 4 1;
+#X connect 7 0 4 0;
 #X restore 270 145 pd loaddefault;
 #N canvas 611 192 418 403 dsp 0;
 #X obj 67 254 *~;
@@ -1051,7 +1047,7 @@
 #X obj 19 172 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X text 45 174 before saving;
-#N canvas 843 375 172 352 \$1-oxygen 1;
+#N canvas 843 403 172 352 \$1-oxygen 0;
 #X obj 7 -1 cnv 15 150 340 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 17 7 hsl 129 10 1 100 1 0 \$1-oxy-aph-s \$1-oxy-aph-r empty
