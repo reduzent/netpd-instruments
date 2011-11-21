@@ -694,12 +694,9 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X obj 394 465 s \$1.NETPD;
 #X obj 394 422 list prepend send;
 #X obj 394 444 list trim;
-#X obj 393 21 r \$1.NETPD;
-#X obj 393 43 route dump;
-#X obj 393 87 spigot 1;
-#X obj 393 109 t b b;
-#X msg 468 98 0;
-#X obj 393 65 sel 10;
+#X obj 393 44 spigot 1;
+#X obj 393 66 t b b;
+#X msg 468 55 0;
 #X msg 13 17 /hihat/setfx/4 0 \, /hihat/setfx/3 0 \, /hihat/setfx/2
 0 \, /hihat/setfx/1 0 \, /hihat/fxl/4 0 \, /hihat/fxl/3 0 \, /hihat/fxl/2
 0 \, /hihat/fxl/1 0 \, /hihat/pan/4 0.487395 \, /hihat/pan/3 0.605042
@@ -731,16 +728,15 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 \, /kick/efq/2 76.0085 \, /kick/efq/1 50.6281 \, /kick/afq/4 15855.9
 \, /kick/afq/3 3307.63 \, /kick/afq/2 1467.49 \, /kick/afq/1 516.172
 ;
+#X obj 393 17 netpd-dump \$1 10;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;
-#X connect 4 0 8 0;
-#X connect 5 0 6 0;
-#X connect 6 0 9 0;
-#X connect 6 1 7 0;
-#X connect 7 0 5 1;
-#X connect 8 0 5 0;
-#X connect 9 0 1 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 3 1;
+#X connect 6 0 1 0;
+#X connect 7 0 3 0;
 #X restore 285 89 pd loaddefault;
 #N canvas 470 282 816 264 fx.list 0;
 #N canvas 712 293 188 271 getfxname 0;
@@ -1901,7 +1897,7 @@ vol fxl setfx;
 #X connect 3 0 0 0;
 #X connect 4 0 0 1;
 #X restore 122 90 pd hihat-datactrl;
-#N canvas 972 141 147 512 \$1-drum-delta 1;
+#N canvas 972 141 147 512 \$1-drum-delta 0;
 #X obj 10 3 cnv 7 119 498 empty empty empty 20 12 0 14 -99865 -66577
 0;
 #X obj 12 5 cnv 15 115 185 empty empty k_i_c_k___________________ 4
