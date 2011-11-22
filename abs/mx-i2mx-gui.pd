@@ -223,20 +223,20 @@
 #X obj 20 18 cnv 15 42 269 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 20 183 vsl 20 100 0 1.3 0 0 \$1-mx/level \$1-mx/level empty
-0 -9 0 10 -66577 -66577 -1 9900 1;
+0 -9 0 10 -66577 -66577 -1 0 1;
 #X obj 23 171 hsl 35 10 0 1 0 0 \$1-mx/pan \$1-mx/pan empty -2 -8 0
 10 -66577 -258113 -1 1700 1;
 #X obj 43 181 hsl 15 12 1 1 0 0 \$1-mx/solo \$0.solo.r s 4 6 0 12 -66577
 -66577 -262081 0 1;
 #X obj 43 193 hsl 15 12 1 1 0 0 \$1-mx/mute \$0.mute.r m 4 6 0 12 -66577
 -66577 -64 0 1;
-#X obj 21 182 cnv 1 18 103 empty \$0.level.top.r empty 20 12 0 14 -258113
+#X obj 21 283 cnv 1 18 2 empty \$0.level.top.r empty 20 12 0 14 -258113
 -66577 0;
 #X obj 20 102 mx-aux-gui \$1 1;
 #X obj 41 206 cnv 10 18 79 empty empty empty 20 12 0 14 -1 -66577 0
 ;
-#X obj 20 20 cnv 10 40 12 empty \$0.label.r 2-lilacid 1 7 1 8 -262144
--4160 0;
+#X obj 20 20 cnv 10 40 12 empty \$0.label.r empty 1 7 1 8 -262144 -4160
+0;
 #X obj 20 125 mx-aux-gui \$1 2;
 #X obj 20 148 mx-aux-gui \$1 3;
 #X obj 20 33 mx-insert-gui \$1 1;
