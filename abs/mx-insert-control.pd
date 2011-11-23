@@ -1,0 +1,2 @@
+#N canvas 810 157 450 300 10;
+#X obj -5 276 outlet;
