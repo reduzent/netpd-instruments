@@ -2,9 +2,9 @@
 #N canvas 140 288 189 98 NETPD 0;
 #X msg -15 7 version 0 0 1;
 #X restore 13 45 pd NETPD 2 0;
-#N canvas 0 426 423 273 \$1-mx 0;
+#N canvas 0 426 423 290 \$1-mx 0;
 #X restore 13 68 pd \$1-mx;
 #X obj 13 6 inlet~;
-#N canvas 1054 44 450 330 \$3-aux-containers 1;
-#X restore 13 93 pd \$3-aux-containers;
+#N canvas 200 200 450 330 \$1-aux-containers 1;
+#X restore 13 93 pd \$1-aux-containers;
 #X obj 13 165 outlet~;
