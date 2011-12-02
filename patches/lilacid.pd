@@ -1,4 +1,4 @@
-#N canvas 629 430 245 287 10;
+#N canvas 629 458 245 287 10;
 #X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
 #X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
@@ -13,7 +13,6 @@
 #X obj 24 132 lop~ 17000;
 #X obj 24 155 lop~ 17000;
 #X obj 24 177 lop~ 17000;
-#X obj 185 68 block~ 256 1 4;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 3 0 4 0;
