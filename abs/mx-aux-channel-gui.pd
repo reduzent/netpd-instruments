@@ -1,0 +1,33 @@
+#N canvas 423 467 268 206 10;
+#X obj -80 -101 cnv 15 254 28 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 135 -88 hsl 35 13 0 1 0 0 \$1-mx/pan \$1-mx/pan empty -2 -8
+0 10 -66577 -258113 -1 0 1;
+#X obj -4 -88 hsl 134 13 0 100 0 0 empty empty empty -2 -8 0 10 -66577
+-258113 -1 0 1;
+#X obj -58 -85 vsl 50 7 10 4 0 0 \$0.selector.s \$0.selector.r empty
+2 5 1 9 -228856 -228856 -258113 0 1;
+#X obj -58 -97 vsl 20 7 1 1 0 0 \$1-mx/insert/\$2/bypass \$0.bypass.r
+by 5 4 1 8 -233017 -233017 -1 0 1;
+#X obj -38 -97 vsl 30 7 0 0 0 0 \$0.show.s \$0.show.r empty 5 3 1 5
+-233017 -233017 -1 0 1;
+#X obj 15 -99 hsl 35 11 0 1 0 0 \$1-mx/aux/\$2/level \$1-mx/aux/\$2/level
+empty -2 -8 0 10 -99865 -99865 -1 0 1;
+#X obj -4 -99 hsl 14 11 1 1 0 0 \$1-mx/aux/\$2/ch \$0.ch.r 5 2 6 1
+9 -99865 -99865 -4034 0 1;
+#X obj 75 -99 hsl 35 11 0 1 0 0 \$1-mx/aux/\$2/level \$1-mx/aux/\$2/level
+empty -2 -8 0 10 -99865 -99865 -1 0 1;
+#X obj 56 -99 hsl 14 11 1 1 0 0 \$1-mx/aux/\$2/ch \$0.ch.r 5 2 6 1
+9 -99865 -99865 -4034 0 1;
+#X obj 135 -99 hsl 35 11 0 1 0 0 \$1-mx/aux/\$2/level \$1-mx/aux/\$2/level
+empty -2 -8 0 10 -99865 -99865 -1 0 1;
+#X obj 116 -99 hsl 14 11 1 1 0 0 \$1-mx/aux/\$2/ch \$0.ch.r 5 2 6 1
+9 -99865 -99865 -4034 0 1;
+#X obj 133 -98 cnv 9 24 9 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj 73 -98 cnv 1 2 9 empty empty empty 20 12 0 14 -4034 -66577 0
+;
+#X obj -6 -87 cnv 9 100 11 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X obj -77 -98 cnv 15 18 22 empty empty 12 1 11 1 14 -262144 -4160
+0;
