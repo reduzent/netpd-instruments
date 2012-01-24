@@ -1,8 +1,8 @@
-#N canvas 590 72 267 300 10;
-#X obj 10 6 inlet~;
-#X obj 12 271 outlet~;
-#X obj 9 235 throw~ \$1-mx-sum-l;
-#X obj 95 212 throw~ \$1-mx-sum-r;
+#N canvas 590 44 303 322 10;
+#X obj 8 56 inlet~;
+#X obj 9 289 outlet~;
+#X obj 9 265 throw~ \$1-mx-sum-l;
+#X obj 95 242 throw~ \$1-mx-sum-r;
 #N canvas 511 157 387 305 mx.insert___ 0;
 #X obj 6 52 inlet~;
 #X obj 98 52 inlet~;
@@ -15,7 +15,7 @@
 #X connect 4 0 3 0;
 #X connect 4 1 2 0;
 #X connect 5 0 4 2;
-#X restore 7 148 pd mx.insert___;
+#X restore 7 178 pd mx.insert___;
 #N canvas 603 242 273 419 mx.l.p______ 0;
 #X obj 15 306 inlet~;
 #X obj 64 307 inlet~;
@@ -125,9 +125,9 @@
 #X connect 13 0 12 0;
 #X connect 14 0 10 1;
 #X connect 15 0 11 1;
-#X restore 8 177 pd mx.l.p______;
-#X obj 8 43 catch~ mx-aux-\$2-l;
-#X obj 94 63 catch~ mx-aux-\$2-r;
+#X restore 8 207 pd mx.l.p______;
+#X obj 8 80 catch~ mx-aux-\$2-l;
+#X obj 94 100 catch~ mx-aux-\$2-r;
 #N canvas 520 483 531 286 mx.aux.pre__ 0;
 #X obj 17 9 inlet~;
 #X obj 190 9 inlet~;
@@ -144,7 +144,10 @@
 #X connect 1 0 4 1;
 #X connect 1 0 5 1;
 #X connect 1 0 6 1;
-#X restore 8 109 pd mx.aux.pre__;
+#X restore 8 139 pd mx.aux.pre__;
+#X obj 9 19 namecanvas mx-aux-channel-\$1-\$2;
+#X obj 131 150 loadbang;
+#X obj 131 172 print mx-aux-channel-\$1-\$2;
 #X connect 4 0 5 0;
 #X connect 4 1 5 1;
 #X connect 5 0 2 0;
@@ -153,3 +156,4 @@
 #X connect 7 0 8 1;
 #X connect 8 0 4 0;
 #X connect 8 1 4 1;
+#X connect 10 0 11 0;

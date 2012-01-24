@@ -1,4 +1,4 @@
-#N canvas 783 491 243 211 10;
+#N canvas 783 519 243 211 10;
 #N canvas 804 448 175 138 NETPD 0;
 #X msg 15 7 version 0 0 0;
 #N canvas 653 100 190 283 abslist 0;
@@ -311,7 +311,7 @@
 #X connect 14 1 4 1;
 #X restore 8 144 pd main-out;
 #X obj 8 29 netpd_head \$1 mx;
-#N canvas 673 316 219 95 create.aux.channel.gui 0;
+#N canvas 673 344 219 95 create.aux.channel.gui 0;
 #N canvas 890 328 415 306 add.add.button 0;
 #X obj 14 19 loadbang;
 #X obj 14 41 f \$1;
@@ -324,7 +324,7 @@
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X restore 13 19 pd add.add.button;
-#N canvas 832 333 264 192 add.aux.channel 0;
+#N canvas 832 361 264 192 add.aux.channel 0;
 #N canvas 916 289 197 179 create.new.instance.aux.channel 0;
 #X obj 12 12 r \$1-add-aux-channel;
 #X obj 12 35 bang;
@@ -375,7 +375,7 @@
 #X text 126 88 <- index of previous object;
 #X text 99 126 <- y pos;
 #X msg 20 198 obj 10 \$3 mx-aux-channel \$1 \$2 \, connect \$4 0 \$2
-0;
+0 \, loadbang mx-aux-channel-\$1-\$2;
 #X connect 0 0 6 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
