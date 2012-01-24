@@ -1,4 +1,4 @@
-#N canvas 549 232 180 175 10;
+#N canvas 549 288 180 175 10;
 #N canvas 140 288 189 98 NETPD 0;
 #X msg -15 7 version 0 0 1;
 #X restore 13 45 pd NETPD 2 0;
@@ -11,5 +11,4 @@
 #X restore 13 110 pd \$1-aux-containers;
 #X obj 13 131 outlet~;
 #N canvas 423 424 311 290 \$1-mx-aux 1;
-#X obj -2012 -4860 mx-aux-channel-gui \$1 1;
 #X restore 13 89 pd \$1-mx-aux;
