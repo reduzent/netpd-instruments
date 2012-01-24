@@ -346,7 +346,7 @@
 #X obj 10 -805 list append \$1;
 #X obj 10 -745 s pd-\$1-mx-aux;
 #X obj 37 -851 - 3;
-#X msg 10 -780 obj 10 \$2 mx-aux-channel-gui \$3 \$1 \, loadbang mx-aux-channel-\$3-\$1
+#X msg 10 -780 obj 10 \$2 mx-aux-channel-gui \$3 \$1 \, loadbang mx-aux-channel-gui-\$3-\$1
 ;
 #X obj 10 -915 inlet;
 #X connect 0 0 2 0;

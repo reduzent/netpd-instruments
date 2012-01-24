@@ -115,5 +115,5 @@ empty -2 -8 0 10 -66577 -66577 -1 0 1;
 #X msg 2 33 mx-aux-insert-gui;
 #X restore 18 35 pd abslist;
 #X restore 173 66 pd NETPD 2 0;
-#X obj 24 153 namecanvas mx-aux-channel-\$1-\$2;
+#X obj 24 153 namecanvas mx-aux-channel-gui-\$1-\$2;
 #X coords 0 -1 1 1 254 28 2 20 20;
