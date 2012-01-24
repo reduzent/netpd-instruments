@@ -1,4 +1,4 @@
-#N canvas 604 435 243 211 10;
+#N canvas 604 463 243 211 10;
 #N canvas 804 420 175 138 NETPD 0;
 #X msg 15 7 version 0 0 0;
 #N canvas 653 72 190 283 abslist 0;
@@ -89,7 +89,7 @@
 #X connect 22 0 23 0;
 #X connect 22 1 21 0;
 #X restore 8 51 pd create.channel.guis;
-#X obj 8 95 mx-containers \$1;
+#X obj 8 120 mx-containers \$1;
 #N canvas 335 206 255 364 fxlist 0;
 #X obj 12 -67 r mx;
 #X obj 12 -45 route refreshfxlist;
@@ -130,7 +130,7 @@
 #X connect 14 0 15 0;
 #X connect 15 0 16 0;
 #X connect 17 0 3 0;
-#X restore 8 73 pd fxlist;
+#X restore 8 98 pd fxlist;
 #N canvas 763 211 345 284 main-out 0;
 #X obj 7 9 inlet~;
 #X obj 10 233 outlet~;
@@ -307,6 +307,20 @@
 #X connect 13 0 2 1;
 #X connect 14 0 4 0;
 #X connect 14 1 4 1;
-#X restore 8 119 pd main-out;
+#X restore 8 144 pd main-out;
 #X obj 8 29 netpd_head \$1 mx;
+#N canvas 673 204 403 295 create.aux.channel.gui 0;
+#N canvas 890 328 415 306 add.add.button 0;
+#X obj 14 19 loadbang;
+#X obj 14 41 f \$1;
+#X msg 14 64 obj 10 5 cnv 15 72 19 empty empty empty 20 12 0 14 -1
+-66577 0 \, obj 13 8 cnv 13 30 13 empty empty aux 2 6 1 14 -228856
+-66577 0 \, obj 49 7 hsl 29 15 0 127 0 0 \$1-add-aux-channel \$1.NULL
++ 8 6 1 16 -228856 -228856 -1 0 1;
+#X obj 14 139 s pd-\$1-mx-aux;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X restore 13 13 pd add.add.button;
+#X restore 8 75 pd create.aux.channel.gui;
 #X connect 2 0 4 0;
