@@ -1,4 +1,4 @@
-#N canvas 783 519 243 211 10;
+#N canvas 783 659 243 211 10;
 #N canvas 804 448 175 138 NETPD 0;
 #X msg 15 7 version 0 0 0;
 #N canvas 653 100 190 283 abslist 0;
@@ -31,7 +31,7 @@
 #X obj 17 340 t a a;
 #X msg 17 405 \; \$2-i2mx-gui loadbang;
 #X obj 17 230 list prepend;
-#N canvas 735 302 188 265 gui.already.created? 0;
+#N canvas 735 358 188 265 gui.already.created? 0;
 #X obj 27 21 inlet;
 #X obj 27 224 outlet;
 #X obj 27 43 t a a b;
@@ -311,7 +311,7 @@
 #X connect 14 1 4 1;
 #X restore 8 144 pd main-out;
 #X obj 8 29 netpd_head \$1 mx;
-#N canvas 673 344 219 95 create.aux.channel.gui 0;
+#N canvas 923 250 219 95 create.aux.channel.gui 0;
 #N canvas 890 328 415 306 add.add.button 0;
 #X obj 14 19 loadbang;
 #X obj 14 41 f \$1;
@@ -324,7 +324,7 @@
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X restore 13 19 pd add.add.button;
-#N canvas 832 361 264 192 add.aux.channel 0;
+#N canvas 832 417 264 192 add.aux.channel 0;
 #N canvas 916 289 197 179 create.new.instance.aux.channel 0;
 #X obj 12 12 r \$1-add-aux-channel;
 #X obj 12 35 bang;
@@ -344,27 +344,24 @@
 #X obj 37 -872 * 25;
 #X obj 10 -827 list append;
 #X obj 10 -805 list append \$1;
-#X obj 10 -745 s pd-\$1-mx-aux;
 #X obj 37 -851 - 3;
-#X msg 10 -780 obj 10 \$2 mx-aux-channel-gui \$3 \$1 \, loadbang mx-aux-channel-gui-\$3-\$1
-;
 #X obj 10 -915 inlet;
+#X msg 10 -780 \; pd-\$3-mx-aux obj 10 \$2 mx-aux-channel-gui \$3 \$1
+\; mx-aux-channel-gui-\$3-\$1 loadbang;
 #X connect 0 0 2 0;
 #X connect 0 1 1 0;
-#X connect 1 0 5 0;
+#X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 6 0;
-#X connect 5 0 2 1;
-#X connect 6 0 4 0;
-#X connect 7 0 0 0;
+#X connect 4 0 2 1;
+#X connect 5 0 0 0;
 #X restore 38 92 pd create.aux.channel.gui;
 #X obj 11 36 t a a;
-#N canvas 871 429 430 279 create.aux.channel 0;
+#N canvas 721 275 537 329 create.aux.channel 0;
 #X obj 20 11 inlet;
 #X obj 185 13 loadbang;
 #X msg 185 35 obj 10 10 inlet~;
 #X obj 185 58 s pd-\$1-aux-containers;
-#X obj 20 232 s pd-\$1-aux-containers;
 #X obj 20 149 list prepend \$1;
 #X obj 20 56 t a a;
 #X obj 20 126 list append;
@@ -374,21 +371,20 @@
 #X obj 20 171 list append;
 #X text 126 88 <- index of previous object;
 #X text 99 126 <- y pos;
-#X msg 20 198 obj 10 \$3 mx-aux-channel \$1 \$2 \, connect \$4 0 \$2
-0 \, loadbang mx-aux-channel-\$1-\$2;
-#X connect 0 0 6 0;
+#X msg 20 195 \; pd-\$1-aux-containers obj 10 \$3 mx-aux-channel \$1
+\$2 \, connect \$4 0 \$2 0 \; mx-aux-channel-\$1-\$2 loadbang \;;
+#X connect 0 0 5 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
-#X connect 5 0 11 0;
-#X connect 6 0 7 0;
-#X connect 6 1 8 0;
-#X connect 6 1 10 0;
-#X connect 7 0 5 0;
-#X connect 8 0 9 0;
-#X connect 9 0 7 1;
-#X connect 10 0 11 1;
-#X connect 11 0 14 0;
-#X connect 14 0 4 0;
+#X connect 4 0 10 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 5 1 9 0;
+#X connect 6 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 1;
+#X connect 9 0 10 1;
+#X connect 10 0 13 0;
 #X restore 11 137 pd create.aux.channel;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
