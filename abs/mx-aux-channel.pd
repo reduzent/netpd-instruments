@@ -3,13 +3,13 @@
 #X obj 9 289 outlet~;
 #X obj 8 265 throw~ \$1-mx-sum-l;
 #X obj 95 242 throw~ \$1-mx-sum-r;
-#N canvas 511 157 387 305 mx.insert___ 0;
+#N canvas 931 59 387 305 mx.insert___ 0;
 #X obj 6 52 inlet~;
-#X obj 98 52 inlet~;
-#X obj 98 246 outlet~;
+#X obj 111 50 inlet~;
+#X obj 113 243 outlet~;
 #X obj 6 246 outlet~;
-#X obj 6 108 mx-insert-container \$1 insert/1;
-#X obj 189 85 mx-insert-control \$1 1;
+#X obj 6 108 mx-insert-container \$1 aux/\$2/insert;
+#X obj 196 61 mx-aux-insert-control \$1 \$2;
 #X connect 0 0 4 0;
 #X connect 1 0 4 1;
 #X connect 4 0 3 0;
