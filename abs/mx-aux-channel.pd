@@ -108,8 +108,8 @@
 #X msg 31 123 1;
 #X obj 31 100 loadbang;
 #X text 10 1 level / panorama;
-#X obj 108 153 netpd_f \$1 mx/aux/\$2/level 1;
-#X obj 136 174 netpd_f \$1 mx/aux/\$2/pan 0.5;
+#X obj 108 153 netpd_f \$1 aux/\$2/level 1;
+#X obj 136 174 netpd_f \$1 aux/\$2/pan 0.5;
 #X connect 0 0 4 0;
 #X connect 1 0 5 0;
 #X connect 4 0 2 0;
