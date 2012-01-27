@@ -1,12 +1,12 @@
-#N canvas 438 279 284 306 10;
+#N canvas 438 335 320 305 10;
 #N canvas 520 44 409 218 NETPD 0;
 #X msg 21 15 version 0 0 0;
 #N canvas 649 167 233 139 abslist 0;
 #X msg 8 13 mx-aux-gui;
 #X msg 9 42 mx-insert-gui;
 #X restore 24 42 pd abslist;
-#X restore 113 67 pd NETPD 2 0;
-#N canvas 565 490 261 258 level-slider-stuff 0;
+#X restore 128 67 pd NETPD 2 0;
+#N canvas 565 518 261 258 level-slider-stuff 0;
 #X obj 20 228 s \$0.level.top.r;
 #X msg 87 203 vis_size 18 \$1;
 #X obj 87 157 * -1;
@@ -15,24 +15,24 @@
 #X obj 87 179 + 2;
 #X obj 20 88 - 0.5;
 #X obj 20 36 route float set;
-#X msg 20 196 pos 31 \$1;
 #X obj 20 65 * -120.423;
 #X obj 20 14 r \$1-level;
 #X obj 20 153 + 283;
+#X msg 20 196 pos 45 \$1;
 #X connect 1 0 0 0;
 #X connect 2 0 5 0;
-#X connect 3 0 11 0;
+#X connect 3 0 10 0;
 #X connect 3 1 2 0;
 #X connect 4 0 3 0;
 #X connect 5 0 1 0;
 #X connect 6 0 4 0;
-#X connect 7 0 9 0;
-#X connect 7 1 9 0;
-#X connect 8 0 0 0;
-#X connect 9 0 6 0;
-#X connect 10 0 7 0;
-#X connect 11 0 8 0;
-#X restore 113 112 pd level-slider-stuff;
+#X connect 7 0 8 0;
+#X connect 7 1 8 0;
+#X connect 8 0 6 0;
+#X connect 9 0 7 0;
+#X connect 10 0 11 0;
+#X connect 11 0 0 0;
+#X restore 128 112 pd level-slider-stuff;
 #N canvas 590 44 294 326 double-click-reset 0;
 #X obj 15 32 route float;
 #X obj 15 55 list prepend 0;
@@ -102,7 +102,7 @@
 #X connect 25 0 29 0;
 #X connect 26 0 0 0;
 #X connect 27 0 13 0;
-#X restore 113 134 pd double-click-reset;
+#X restore 128 134 pd double-click-reset;
 #N canvas 645 213 161 130 INIT 0;
 #X obj 12 95 s mx;
 #X msg 12 74 \$1 refresh;
@@ -113,21 +113,26 @@
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
-#X restore 113 25 pd INIT;
-#X obj 18 18 cnv 15 44 269 empty empty empty 20 12 0 14 -1 -66577 0
+#X restore 128 25 pd INIT;
+#X obj 18 18 cnv 15 58 269 empty empty empty 20 12 0 14 -1 -66577 0
 ;
-#X obj 30 126 vsl 20 157 0 1.3 0 0 \$1-level \$1-level empty 0 -9 0
+#X obj 44 126 vsl 20 157 0 1.3 0 0 \$1-level \$1-level empty 0 -9 0
 10 -66577 -66577 -1 0 1;
-#X obj 31 283 cnv 1 18 2 empty \$0.level.top.r empty 20 12 0 14 -258089
+#X obj 45 283 cnv 1 18 2 empty \$0.level.top.r empty 20 12 0 14 -258089
 -66577 0;
-#X obj 20 20 cnv 10 40 12 empty \$0.label.r main 3 7 1 10 -262144 -4160
+#X obj 35 20 cnv 10 39 12 empty \$0.label.r main 3 7 1 10 -262144 -4160
 0;
-#X obj 20 33 mx-insert-gui \$1 1;
-#X obj 20 56 mx-insert-gui \$1 2;
-#X obj 20 79 mx-insert-gui \$1 3;
-#X obj 51 125 vu 8 160 \$1-meter-r empty -1 -8 0 10 -66577 -1 0 0;
-#X obj 21 125 vu 8 160 \$1-meter-l empty -1 -8 0 10 -66577 -1 0 0;
-#X obj 23 109 hsl 35 15 0 1 0 0 \$1-pan \$1-pan empty -2 -8 0 10 -66577
+#X obj 34 33 mx-insert-gui \$1 1;
+#X obj 34 56 mx-insert-gui \$1 2;
+#X obj 34 79 mx-insert-gui \$1 3;
+#X obj 65 125 vu 8 160 \$1-meter-r empty -1 -8 0 10 -66577 -1 0 0;
+#X obj 35 125 vu 8 160 \$1-meter-l empty -1 -8 0 10 -66577 -1 0 0;
+#X obj 37 109 hsl 35 15 0 1 0 0 \$1-pan \$1-pan empty -2 -8 0 10 -66577
 -258153 -1 1700 1;
-#X obj 113 46 namecanvas \$1-master-gui;
-#X coords 0 -1 1 1 42 269 2 18 18;
+#X obj 128 46 namecanvas \$1-master-gui;
+#X obj 20 22 vsl 12 260 0 0 0 0 \$1-show-aux-channels \$1.NULL empty
+0 -9 0 10 -228856 -228856 -1 0 1;
+#X obj 21 114 cnv 10 10 11 empty empty a 2 5 1 14 -228856 -1 0;
+#X obj 21 126 cnv 10 10 11 empty empty u 1 5 1 14 -228856 -1 0;
+#X obj 21 138 cnv 10 10 11 empty empty x 2 5 1 14 -228856 -1 0;
+#X coords 0 -1 1 1 58 269 2 18 18;
