@@ -1,4 +1,4 @@
-#N canvas 668 298 253 416 10;
+#N canvas 668 326 253 416 10;
 #X obj 53 10 r \$1-\$2;
 #X obj 12 10 inlet;
 #X obj 12 205 s \$1.NETPD;
@@ -30,7 +30,7 @@
 #X restore 12 79 pd rate.limit;
 #X obj 53 32 route set float;
 #X obj 12 137 f \$3;
-#X obj 88 107 netpd-dump \$1;
+#X obj 88 107 netpd-dump \$1 2;
 #X connect 0 0 16 0;
 #X connect 1 0 12 0;
 #X connect 3 0 4 0;
