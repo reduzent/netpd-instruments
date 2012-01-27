@@ -1,4 +1,4 @@
-#N canvas 755 506 250 230 10;
+#N canvas 755 534 250 230 10;
 #N canvas 804 448 175 138 NETPD 0;
 #X msg 15 7 version 0 0 0;
 #N canvas 653 100 190 283 abslist 0;
@@ -393,19 +393,18 @@
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X restore 8 192 pd show-aux-channels;
-#N canvas 916 289 197 179 auxlist 0;
+#N canvas 828 227 329 220 auxlist 0;
 #X obj 12 12 r \$1-add-aux-channel;
 #X obj 12 35 bang;
 #X obj 12 57 f;
 #X obj 12 79 + 1;
 #X obj 12 101 outlet;
-#X msg 67 84 0;
+#X obj 110 96 mx-early-f \$1 aux/quantity;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 2 1;
 #X connect 3 0 4 0;
-#X connect 5 0 2 1;
 #X restore 8 77 pd auxlist;
 #X connect 2 0 4 0;
 #X connect 8 0 6 0;
