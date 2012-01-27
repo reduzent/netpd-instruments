@@ -134,9 +134,9 @@
 #X obj 231 9 inlet~;
 #X obj 231 224 outlet~;
 #X obj 17 226 outlet~;
-#X obj 41 49 mx-aux-send \$1 aux/\$2/aux/1;
-#X obj 41 96 mx-aux-send \$1 aux/\$2/aux/3;
-#X obj 41 72 mx-aux-send \$1 aux/\$2/aux/2;
+#X obj 41 49 mx-aux-send2 \$1 aux/\$2/aux/1;
+#X obj 41 72 mx-aux-send2 \$1 aux/\$2/aux/2;
+#X obj 41 96 mx-aux-send2 \$1 aux/\$2/aux/3;
 #X connect 0 0 3 0;
 #X connect 0 0 4 0;
 #X connect 0 0 5 0;
