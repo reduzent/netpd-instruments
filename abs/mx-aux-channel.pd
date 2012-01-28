@@ -146,6 +146,14 @@
 #X connect 1 0 5 1;
 #X connect 1 0 6 1;
 #X restore 8 190 pd mx.aux.post_;
+#N canvas 893 221 143 66 NETPD 0;
+#X msg 12 7 version 0 0 0;
+#N canvas 914 316 209 227 abslist 0;
+#X msg 8 59 mx-insert-container;
+#X msg 8 13 mx-aux-insert-control;
+#X msg 8 36 mx-aux-send2;
+#X restore 12 31 pd abslist;
+#X restore 149 149 pd NETPD 2 0;
 #X connect 4 0 5 0;
 #X connect 4 1 5 1;
 #X connect 5 0 9 0;
