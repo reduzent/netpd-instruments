@@ -25,6 +25,12 @@
 #X obj 110 380 s \$1-mx;
 #X obj 110 356 list trim;
 #X obj 110 334 list prepend aux/\$2 insert setlabel;
+#N canvas 1189 239 203 135 NETPD 0;
+#X msg 16 12 version 0 0 0;
+#N canvas 1189 390 162 89 abslist 0;
+#X msg 11 14 mx-early-a;
+#X restore 16 36 pd abslist;
+#X restore 208 34 pd NETPD 2 0;
 #X connect 1 0 14 0;
 #X connect 2 0 9 0;
 #X connect 2 1 10 0;
