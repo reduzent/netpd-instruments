@@ -326,7 +326,7 @@
 #X obj 21 319 list;
 #X obj 21 89 list prepend -------;
 #X obj 20 12 vsl 25 7 1 1 0 0 \$1-aux/\$2/insert/bypass \$0.bypass.r
-by 5 4 1 8 -233017 -233017 -1 0 1;
+m 9 4 1 8 -233017 -233017 -1 0 1;
 #X obj 45 12 vsl 25 7 0 0 0 0 \$0.show.s \$0.show.r [][] 8 4 1 5 -233017
 -233017 -1 0 1;
 #N canvas 928 217 376 209 buttons 0;
@@ -375,6 +375,17 @@ by 5 4 1 8 -233017 -233017 -1 0 1;
 #X obj 172 361 s \$1-mx;
 #X obj 172 317 list prepend aux/\$2 insert;
 #X obj 172 339 list trim;
+#X obj 68 23 cnv 1 1 1 empty 2868.field.3.r empty 1 6 1 9 -1 -1 0;
+#X obj 68 23 cnv 1 1 1 empty 2868.field.-2.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 2868.field.-1.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 2868.field.1.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 2868.field.2.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 2868.field.0.r empty 1 6 1 9 -233017 -1
+0;
 #X connect 3 0 9 0;
 #X connect 5 0 6 0;
 #X connect 7 0 8 0;
