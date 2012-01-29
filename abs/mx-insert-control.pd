@@ -34,8 +34,11 @@
 #X obj 79 151 netpd_f \$1 mx/insert/\$2/bypass 0;
 #X obj 119 59 loadbang;
 #X msg 119 85 set empty;
-#N canvas 1054 304 166 178 NETPD 0;
+#N canvas 1054 332 166 178 NETPD 0;
 #X msg 12 16 version 0 0 0;
+#N canvas 1129 167 178 309 abslist 0;
+#X msg 13 9 mx-early-a;
+#X restore 12 39 pd abslist;
 #X restore 230 24 pd NETPD 2 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
