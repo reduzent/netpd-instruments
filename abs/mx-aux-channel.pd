@@ -10,10 +10,12 @@
 #X obj 6 246 outlet~;
 #X obj 6 108 mx-insert-container \$1 aux/\$2/insert;
 #X obj 196 61 mx-aux-insert-control \$1 \$2;
+#X obj 57 181 outlet;
 #X connect 0 0 4 0;
 #X connect 1 0 4 1;
 #X connect 4 0 3 0;
 #X connect 4 1 2 0;
+#X connect 4 2 6 0;
 #X connect 5 0 4 2;
 #X restore 7 135 pd mx.insert___;
 #N canvas 603 242 349 410 mx.l.p______ 0;
@@ -125,7 +127,7 @@
 #X connect 13 0 12 0;
 #X connect 15 0 11 1;
 #X connect 16 0 10 1;
-#X restore 8 164 pd mx.l.p______;
+#X restore 8 184 pd mx.l.p______;
 #X obj 8 81 catch~ mx-aux-\$2-l;
 #X obj 94 100 catch~ mx-aux-\$2-r;
 #X obj 9 19 namecanvas mx-aux-channel-\$1-\$2;
@@ -145,7 +147,7 @@
 #X connect 1 0 4 1;
 #X connect 1 0 5 1;
 #X connect 1 0 6 1;
-#X restore 8 190 pd mx.aux.post_;
+#X restore 8 210 pd mx.aux.post_;
 #N canvas 893 221 143 66 NETPD 0;
 #X msg 12 7 version 0 0 0;
 #N canvas 914 316 209 227 abslist 0;
@@ -153,9 +155,11 @@
 #X msg 8 13 mx-aux-insert-control;
 #X msg 8 36 mx-aux-send2;
 #X restore 12 31 pd abslist;
-#X restore 149 149 pd NETPD 2 0;
+#X restore 143 146 pd NETPD 2 0;
+#X obj 144 173 switch~;
 #X connect 4 0 5 0;
-#X connect 4 1 5 1;
+#X connect 4 1 11 0;
+#X connect 4 2 5 1;
 #X connect 5 0 9 0;
 #X connect 5 1 9 1;
 #X connect 6 0 4 0;
