@@ -202,7 +202,7 @@ obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
 #X obj 14 35 sel 1 0;
 #X msg 49 124 0;
 #X msg 60 70 stop;
-#X obj 49 102 del 1000;
+#X obj 49 102 del 50;
 #X obj 14 150 change -1;
 #X connect 0 0 3 0;
 #X connect 2 0 7 0;
