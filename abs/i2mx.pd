@@ -22,7 +22,7 @@
 #X connect 8 0 5 2;
 #X connect 9 0 6 2;
 #X restore -25 44 pd mx.insert___;
-#N canvas 520 483 531 286 mx.aux.pre__ 1;
+#N canvas 520 483 531 286 mx.aux.pre__ 0;
 #X obj 17 9 inlet~;
 #X obj 190 9 inlet~;
 #X obj 190 226 outlet~;
@@ -338,7 +338,7 @@
 #X connect 8 1 9 0;
 #X connect 9 0 7 1;
 #X restore 151 5 pd INIT;
-#N canvas 950 128 183 209 label 0;
+#N canvas 950 156 183 209 label 0;
 #X obj 17 18 r mx;
 #X obj 17 40 route \$1;
 #X obj 17 62 route getinstrname;
@@ -346,12 +346,14 @@
 #X obj 17 106 list append \$1 \$2;
 #X msg 17 128 \$1 instrname \$2;
 #X obj 17 150 s mx;
+#X obj 46 83 loadbang;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
+#X connect 7 0 4 0;
 #X restore 151 27 pd label;
 #X obj 150 62 catch~ \$1-dummy-l;
 #X obj 150 84 catch~ \$1-dummy-r;
