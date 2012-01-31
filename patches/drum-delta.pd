@@ -1646,20 +1646,20 @@ vol fxl setfx;
 #X obj 12 5 cnv 15 115 185 empty empty k_i_c_k___________________ 4
 7 1 7 -244200 -184581 0;
 #X obj 20 23 hsl 100 14 20 20000 1 0 \$1-kick-afq-s \$1-kick-afq-r
-anfangsfrequenz 516Hz 4 7 1 7 -261689 -258699 -1 4659 1;
+anfangsfrequenz_516Hz 4 7 1 7 -261689 -258699 -1 4659 1;
 #X obj 20 37 hsl 100 14 20 20000 1 0 \$1-kick-efq-s \$1-kick-efq-r
-endfrequenz 50Hz 4 7 1 7 -261689 -258699 -1 1331 1;
-#X obj 20 51 hsl 100 14 1 1000 1 0 \$1-kick-tim-s \$1-kick-tim-r zeit 10ms
+endfrequenz_50Hz 4 7 1 7 -261689 -258699 -1 1331 1;
+#X obj 20 51 hsl 100 14 1 1000 1 0 \$1-kick-tim-s \$1-kick-tim-r zeit_10ms
 4 7 1 7 -261689 -258699 -1 3411 1;
-#X obj 20 65 hsl 100 14 1 1000 1 0 \$1-kick-att-s \$1-kick-att-r angriff 1ms
+#X obj 20 65 hsl 100 14 1 1000 1 0 \$1-kick-att-s \$1-kick-att-r angriff_1ms
 4 7 1 7 -261689 -258699 -1 83 1;
-#X obj 20 79 hsl 60 14 10 10000 1 0 \$1-kick-dec-s \$1-kick-dec-r loslass 653ms
+#X obj 20 79 hsl 60 14 10 10000 1 0 \$1-kick-dec-s \$1-kick-dec-r loslass_653ms
 4 7 1 7 -261689 -258699 -1 3570 1;
-#X obj 20 93 hsl 100 14 1 50 1 0 \$1-kick-dis-s \$1-kick-dis-r verzerr 10$
+#X obj 20 93 hsl 100 14 1 50 1 0 \$1-kick-dis-s \$1-kick-dis-r verzerr_10$
 4 7 1 7 -261689 -258699 -1 0 1;
 #X obj 20 107 hsl 100 14 20000 20 1 0 \$1-kick-lop-s \$1-kick-lop-r
-tiefpass 18872Hz 4 7 1 7 -261689 -258699 -1 83 1;
-#X obj 20 121 hsl 100 14 0 1 0 0 \$1-kick-vol-s \$1-kick-vol-r lautstaerke 1
+tiefpass_18872Hz 4 7 1 7 -261689 -258699 -1 83 1;
+#X obj 20 121 hsl 100 14 0 1 0 0 \$1-kick-vol-s \$1-kick-vol-r lautstaerke_1
 4 7 1 7 -261689 -258699 -1 9900 1;
 #X obj 53 168 hradio 14 1 0 4 \$1-kick-instance \$1-kick-instance-r
 instance 0 -6 1 7 -261689 -244200 -1 0;
@@ -1668,34 +1668,34 @@ play 0 -6 1 7 -261689 -244200 -1;
 #X obj 12 201 cnv 15 115 157 empty empty s_n_a_r_e_________________
 4 7 1 7 -130593 -10435 0;
 #X obj 20 219 hsl 100 14 220 7000 1 0 \$1-snare-tun-s \$1-snare-tun-r
-tonhoehe 371Hz 4 7 1 7 -225271 -258699 -1 1497 1;
+tonhoehe_371Hz 4 7 1 7 -225271 -258699 -1 1497 1;
 #X obj 20 233 hsl 100 14 0 5.5 0 0 \$1-snare-nos-s \$1-snare-nos-r
-knack 2.4 4 7 1 7 -225271 -258699 -1 4409 1;
-#X obj 20 247 hsl 100 14 0 1 0 0 \$1-snare-mix-s \$1-snare-mix-r mix_fell<>kette 74:26
+knack_2.4 4 7 1 7 -225271 -258699 -1 4409 1;
+#X obj 20 247 hsl 100 14 0 1 0 0 \$1-snare-mix-s \$1-snare-mix-r mix_fell<>kette_74:26
 4 7 1 7 -225271 -258699 -1 2662 1;
 #X obj 20 261 hsl 100 14 100 1000 0 0 \$1-snare-dec-s \$1-snare-dec-r
-loslass 568ms 4 7 1 7 -225271 -258699 -1 5158 1;
-#X obj 20 275 hsl 100 14 0 1 0 0 \$1-snare-pan-s \$1-snare-pan-r panorama 0.1L
+loslass_568ms 4 7 1 7 -225271 -258699 -1 5158 1;
+#X obj 20 275 hsl 100 14 0 1 0 0 \$1-snare-pan-s \$1-snare-pan-r panorama_0.1L
 4 7 1 7 -225271 -258699 -1 4492 1;
 #X obj 54 337 hradio 14 1 0 4 \$1-snare-instance \$1-snare-instance-r
 instance 0 -6 1 7 -225271 -130593 -1 0;
 #X obj 17 337 bng 14 250 50 0 \$1-snare-prelisten \$1-snare-prelisten-r
 play 0 -6 1 7 -225271 -130593 -1;
-#X obj 20 289 hsl 100 14 0 1 0 0 \$1-snare-vol-s \$1-snare-vol-r lautstaerke 1
+#X obj 20 289 hsl 100 14 0 1 0 0 \$1-snare-vol-s \$1-snare-vol-r lautstaerke_1
 4 7 1 7 -225271 -258699 -1 9900 1;
 #X obj 12 369 cnv 15 115 130 empty empty h_i_h_a_t_________________
 4 7 1 7 -20025 -10143 0;
 #X obj 20 387 hsl 100 14 220 12000 1 0 \$1-hihat-crh-s \$1-hihat-crh-r
-schaerfe 220Hz 4 7 1 7 -225280 -258699 -1 0 1;
+schaerfe_220Hz 4 7 1 7 -225280 -258699 -1 0 1;
 #X obj 20 401 hsl 100 14 50 5000 1 0 \$1-hihat-dec-s \$1-hihat-dec-r
-loslass 121ms 4 7 1 7 -225280 -258699 -1 1913 1;
-#X obj 20 415 hsl 100 14 0 1 0 0 \$1-hihat-pan-s \$1-hihat-pan-r panorama 0.4L
+loslass_121ms 4 7 1 7 -225280 -258699 -1 1913 1;
+#X obj 20 415 hsl 100 14 0 1 0 0 \$1-hihat-pan-s \$1-hihat-pan-r panorama_0.4L
 4 7 1 7 -225280 -258699 -1 3411 1;
 #X obj 49 477 hradio 14 1 0 4 \$1-hihat-instance \$1-hihat-instance-r
 instance 0 -6 1 7 -225280 -20025 -1 0;
 #X obj 17 477 bng 14 250 50 0 \$1-hihat-prelisten \$1-hihat-prelisten-r
 play 0 -6 1 7 -225280 -20025 -1;
-#X obj 20 429 hsl 100 14 0 1 0 0 \$1-hihat-vol-s \$1-hihat-vol-r lautstaerke 1
+#X obj 20 429 hsl 100 14 0 1 0 0 \$1-hihat-vol-s \$1-hihat-vol-r lautstaerke_1
 4 7 1 7 -225280 -258699 -1 9900 1;
 #X obj 89 145 vsl 20 5 -1 1 0 0 \$1-kik-fx.select-s \$1-kik-fx.select-r
 0_nofx 24 3 1 7 -261689 -258699 -1 0 1;
