@@ -962,19 +962,19 @@
 #N canvas 843 403 172 352 \$1-oxygen 0;
 #X obj 7 -1 cnv 15 150 340 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 17 7 hsl 129 10 1 100 1 0 \$1-oxy-aph-s \$1-oxy-aph-r giftig 1.2
+#X obj 17 7 hsl 129 10 1 100 1 0 \$1-oxy-aph-s \$1-oxy-aph-r giftig_1.2
 -1 5 1 7 -262144 -1 -1 719 0;
-#X obj 17 53 hsl 129 10 0 1 0 0 \$1-oxy-pik-s \$1-oxy-pik-r level 0.71
+#X obj 17 53 hsl 129 10 0 1 0 0 \$1-oxy-pik-s \$1-oxy-pik-r level_0.71
 -1 5 1 7 -262144 -1 -1 9204 0;
-#X obj 17 66 hsl 129 10 20 4000 1 0 \$1-oxy-dur-s \$1-oxy-dur-r duration 20ms
+#X obj 17 66 hsl 129 10 20 4000 1 0 \$1-oxy-dur-s \$1-oxy-dur-r duration_20ms
 -1 5 1 7 -262144 -1 -1 0 0;
-#X obj 17 92 hsl 129 10 10 1000 1 0 \$1-oxy-dec-s \$1-oxy-dec-r decay 223ms
+#X obj 17 92 hsl 129 10 10 1000 1 0 \$1-oxy-dec-s \$1-oxy-dec-r decay_223ms
 -1 5 1 7 -262144 -1 -1 8629 0;
-#X obj 17 79 hsl 129 10 3 300 1 0 \$1-oxy-att-s \$1-oxy-att-r attack 3ms
+#X obj 17 79 hsl 129 10 3 300 1 0 \$1-oxy-att-s \$1-oxy-att-r attack_3ms
 -1 5 1 7 -262144 -1 -1 0 0;
-#X obj 17 118 hsl 129 10 50 5000 1 0 \$1-oxy-rel-s \$1-oxy-rel-r release 817ms
+#X obj 17 118 hsl 129 10 50 5000 1 0 \$1-oxy-rel-s \$1-oxy-rel-r release_817ms
 -1 5 1 7 -262144 -1 -1 7766 0;
-#X obj 17 105 hsl 129 10 0 1 0 0 \$1-oxy-sus-s \$1-oxy-sus-r sustain 0.61
+#X obj 17 105 hsl 129 10 0 1 0 0 \$1-oxy-sus-s \$1-oxy-sus-r sustain_0.61
 -1 5 1 7 -262144 -1 -1 7910 0;
 #X obj 14 138 vradio 10 1 0 12 \$1-oxy-fr1-s \$1-oxy-fr1-r empty 0
 -6 0 8 -262144 -1 -1 10;
@@ -982,9 +982,9 @@
 0 8 -262144 -1 -1 5;
 #X obj 57 294 hradio 15 1 0 6 \$1-oxy-instance \$0-bli instance 0 -6
 1 7 -262144 -1 -1 0;
-#X obj 17 20 hsl 129 10 1 10 1 0 \$1-oxy-fqu-s \$1-oxy-fqu-r filter_q 2.4
+#X obj 17 20 hsl 129 10 1 10 1 0 \$1-oxy-fqu-s \$1-oxy-fqu-r filter_q_2.4
 -1 5 1 7 -262144 -1 -1 5034 0;
-#X obj 17 33 hsl 129 10 20 20000 1 0 \$1-oxy-ffr-s \$1-oxy-ffr-r filter_frequency 279Hz
+#X obj 17 33 hsl 129 10 20 20000 1 0 \$1-oxy-ffr-s \$1-oxy-ffr-r filter_frequency_279Hz
 -1 5 1 7 -262144 -1 -1 4890 0;
 #X obj 14 294 bng 14 250 50 0 \$1-oxy-prelisten \$0-bli play 0 -6 1
 7 -262144 -1 -1;
