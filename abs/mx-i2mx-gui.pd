@@ -76,13 +76,13 @@
 #X connect 31 0 30 0;
 #X restore 110 98 pd buttons-stuff;
 #N canvas 520 44 409 218 NETPD 0;
-#X msg 21 15 version 0 0 0;
 #N canvas 649 167 233 139 abslist 0;
 #X msg 8 13 mx-aux-gui;
 #X msg 9 42 mx-insert-gui;
 #X restore 24 42 pd abslist;
+#X msg 21 15 version 0 0 1;
 #X restore 110 75 pd NETPD 2 0;
-#N canvas 520 380 261 258 level-slider-stuff 0;
+#N canvas 520 408 261 258 level-slider-stuff 0;
 #X obj 20 14 r \$1-mx/level;
 #X obj 20 228 s \$0.level.top.r;
 #X msg 20 196 pos 21 \$1;
@@ -189,7 +189,7 @@
 #X connect 3 0 2 0;
 #X restore 110 33 pd INIT;
 #X obj 110 54 namecanvas \$1-i2mx-gui;
-#N canvas 950 212 138 261 set-label 0;
+#N canvas 950 268 138 261 set-label 0;
 #X obj 21 14 loadbang;
 #X obj 21 36 \$1;
 #X msg 21 58 \$1 getinstrname;
@@ -209,7 +209,7 @@
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X restore 110 163 pd set-label;
-#N canvas 428 458 162 170 gui.existence.check 0;
+#N canvas 428 486 162 170 gui.existence.check 0;
 #X obj 22 19 r mx;
 #X obj 22 41 route \$1;
 #X obj 22 66 route ifguiexists;
@@ -227,7 +227,7 @@
 #X obj 23 171 hsl 35 10 0 1 0 0 \$1-mx/pan \$1-mx/pan empty -2 -8 0
 10 -66577 -258113 -1 1700 1;
 #X obj 43 181 hsl 15 12 1 1 0 0 \$1-mx/solo \$0.solo.r s 4 6 0 12 -66577
--66577 -262081 1000 1;
+-66577 -262081 0 1;
 #X obj 43 193 hsl 15 12 1 1 0 0 \$1-mx/mute \$0.mute.r m 4 6 0 12 -66577
 -66577 -64 0 1;
 #X obj 21 283 cnv 1 18 2 empty \$0.level.top.r empty 20 12 0 14 -258113
@@ -244,18 +244,36 @@
 #X obj 20 79 mx-insert-gui \$1 3;
 #X obj 41 284 cnv 1 1 1 empty \$0.cover empty 20 12 0 14 -1 -262144
 0;
-#N canvas 517 529 285 296 hide-gui 0;
+#N canvas 517 585 285 296 hide-gui 0;
 #X obj 11 264 s \$0.cover;
 #X msg 11 223 vis_size 38 251 \, pos 21 34 \, color 10;
 #X msg 30 199 vis_size 1 1 \, pos 41 284 \, color -1;
 #X obj 11 167 sel 0 1;
 #X obj 105 267 s \$0.label.r;
 #X msg 105 245 label empty;
+#X obj 11 27 r UNPATCH;
+#X obj 11 49 route closing;
+#X obj 11 72 route \$1;
+#X obj 11 94 b;
+#X msg 11 133 0;
+#X obj 132 49 r mx;
+#X obj 132 71 route \$1;
+#X obj 132 93 route instrname;
+#X msg 132 120 1;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 1 0;
 #X connect 3 0 5 0;
 #X connect 3 1 2 0;
 #X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 3 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 3 0;
 #X restore 110 207 pd hide-gui;
 #X coords 0 -1 1 1 40 269 2 20 18;
