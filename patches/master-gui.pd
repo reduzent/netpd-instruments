@@ -54,10 +54,9 @@
 #X connect 25 0 8 0;
 #X connect 26 0 18 0;
 #X restore 141 185 pd bpm-gui;
-#N canvas 312 549 502 295 switch-gui 0;
+#N canvas 305 435 502 295 switch-gui 0;
 #X msg 55 185 -65281 -1;
 #X msg 55 210 color \$1 \$1 \$2;
-#X msg 76 161 2 -65281;
 #X obj 31 125 sel 1 0;
 #X obj 31 21 r \$1-switch;
 #X obj 31 43 route 0;
@@ -75,29 +74,57 @@
 #X obj 244 100 + 1;
 #X obj 246 33 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
+#X msg 76 161 -1 -65281;
 #X connect 0 0 1 0;
+#X connect 1 0 12 0;
 #X connect 1 0 13 0;
-#X connect 1 0 14 0;
-#X connect 2 0 1 0;
-#X connect 3 0 0 0;
-#X connect 3 1 2 0;
+#X connect 2 0 0 0;
+#X connect 2 1 18 0;
+#X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X connect 7 0 8 0;
-#X connect 7 0 3 0;
-#X connect 7 0 18 0;
-#X connect 8 0 7 1;
-#X connect 9 0 10 0;
-#X connect 10 0 12 0;
-#X connect 12 0 11 0;
+#X connect 6 0 2 0;
+#X connect 6 0 17 0;
+#X connect 7 0 6 1;
+#X connect 8 0 9 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 14 0 15 0;
 #X connect 15 0 16 0;
-#X connect 16 0 17 0;
-#X connect 17 0 16 1;
-#X connect 17 0 9 0;
-#X connect 18 0 15 0;
+#X connect 16 0 15 1;
+#X connect 16 0 8 0;
+#X connect 17 0 14 0;
+#X connect 18 0 1 0;
 #X restore 141 156 pd switch-gui;
-#N canvas 95 266 259 244 bpm-gui 0;
+#X obj 126 69 cnv 15 372 48 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 129 72 cnv 15 366 42 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 132 75 cnv 15 360 36 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 138 78 hsl 50 30 0 0 0 0 \$1-switch empty empty 5 15 0 14 -66577
+-66577 -4033 0 1;
+#X obj 213 78 hsl 200 15 60 240 1 0 \$1-bpm \$1-bpm empty 30 8 0 11
+-1 -4034 -4034 12000 1;
+#X obj 213 93 hsl 200 15 50 75 1 0 \$1-shuffle \$1-shuffle empty 30
+8 0 11 -1 -4034 -4034 9900 1;
+#X obj 429 78 cnv 15 60 30 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 415 78 nbx 5 15 1 500 0 0 \$1-bpm-nb \$1-bpm-nb BPM 49 8 0 11
+-1 -4034 -4034 138.4 256;
+#X obj 415 93 nbx 5 15 50 75 0 0 \$1-shuffle-nb \$1-shuffle-nb % 49
+8 0 11 -1 -4034 -4034 61 256;
+#X obj 415 78 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 135 78 cnv 14 55 15 empty \$1-switch-top master 3 8 0 11 -1
+-4033 0;
+#X obj 135 94 cnv 14 55 14 empty \$1-switch-bottom 0000303 3 7 0 11
+-1 -4033 0;
+#X obj 191 80 vsl 18 25 0 0 0 0 \$1-mode empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 191 78 cnv 15 18 30 empty \$1-mode-cover R 5 15 0 11 -1 -4033
+0;
+#N canvas 95 294 259 244 shuffle-gui 0;
 #X obj 16 40 route float;
 #X obj 16 86 int;
 #X msg 16 110 set \$1;
@@ -114,27 +141,27 @@
 #X connect 4 0 8 0;
 #X connect 5 0 0 0;
 #X connect 7 0 3 0;
-#X restore 143 212 pd bpm-gui;
-#X obj 126 69 cnv 15 352 48 empty empty empty 20 12 0 14 -228856 -66577
-0;
-#X obj 129 72 cnv 15 346 42 empty empty empty 20 12 0 14 -191407 -66577
-0;
-#X obj 132 75 cnv 15 340 36 empty empty empty 20 12 0 14 -128992 -66577
-0;
-#X obj 138 78 hsl 50 30 0 0 0 0 \$1-switch empty empty 5 15 0 14 -66577
--66577 -4033 0 1;
-#X obj 193 78 hsl 200 15 60 240 1 0 \$1-bpm \$1-bpm empty 30 8 0 11
--1 -4034 -4034 13700 1;
-#X obj 193 93 hsl 200 15 50 75 1 0 \$1-shuffle \$1-shuffle empty 30
-8 0 11 -1 -4034 -4034 7200 1;
-#X obj 409 78 cnv 15 60 30 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 395 78 nbx 5 15 1 500 0 0 \$1-bpm-nb \$1-bpm-nb BPM 49 8 0 11
--1 -4034 -4034 155.8 256;
-#X obj 395 93 nbx 5 15 50 75 0 0 \$1-shuffle-nb \$1-shuffle-nb % 49
-8 0 11 -1 -4034 -4034 57 256;
-#X obj 395 78 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 135 78 cnv 14 54 15 empty \$1-switch-top master 3 8 0 11 -66577
--4033 0;
-#X obj 135 94 cnv 14 54 14 empty \$1-switch-bottom 0000395 3 8 0 11
--66577 -4033 0;
+#X restore 143 212 pd shuffle-gui;
+#N canvas 305 435 502 295 mode-gui 0;
+#X msg 55 185 -65281 -1;
+#X msg 55 210 color \$1 \$1 \$2;
+#X obj 31 125 sel 1 0;
+#X obj 31 43 route 0;
+#X obj 31 65 b;
+#X obj 29 101 ==;
+#X obj 85 94 t a;
+#X msg 76 161 -1 -65281;
+#X obj 70 240 s \$1-mode-cover;
+#X obj 32 21 r \$1-mode;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 2 0 0 0;
+#X connect 2 1 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 1;
+#X connect 7 0 1 0;
+#X connect 9 0 3 0;
+#X restore 140 252 pd mode-gui;
