@@ -364,8 +364,8 @@
 #X obj 53 240 route 1;
 #X msg 53 261 step \$1;
 #X obj 26 123 sel 1;
-#X obj 120 58 r \$0.SYN;
-#X obj 120 80 route step;
+#X obj 186 119 r \$0.SYN;
+#X obj 186 141 route step;
 #X obj 86 593 r \$0.SYN;
 #X obj 26 616 t a a;
 #X obj 26 27 route startstop interval mode;
@@ -383,6 +383,9 @@
 #X obj 67 102 sel 0 1;
 #X msg 67 123 -1;
 #X obj 105 126 f;
+#X obj 140 48 netpd_f \$1 \$2/mode;
+#X msg 140 69 mode \$1;
+#X obj 140 90 s \$0.SYN;
 #X connect 1 0 4 0;
 #X connect 2 0 6 0;
 #X connect 3 0 2 0;
@@ -414,7 +417,7 @@
 #X connect 32 1 22 0;
 #X connect 33 0 42 0;
 #X connect 33 1 34 0;
-#X connect 33 2 43 1;
+#X connect 33 2 47 0;
 #X connect 35 0 36 0;
 #X connect 36 0 2 0;
 #X connect 37 0 1 0;
@@ -430,3 +433,6 @@
 #X connect 44 1 46 0;
 #X connect 45 0 39 1;
 #X connect 46 0 39 1;
+#X connect 47 0 43 1;
+#X connect 47 0 48 0;
+#X connect 48 0 49 0;
