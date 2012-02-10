@@ -1,4 +1,4 @@
-#N canvas 604 294 232 112 10;
+#N canvas 604 322 232 112 10;
 #N canvas 345 68 674 607 master 0;
 #X obj 342 71 /;
 #X obj 344 215 /;
@@ -136,14 +136,15 @@
 #X connect 66 0 0 0;
 #X connect 67 0 66 0;
 #X restore 10 38 pd master;
-#N canvas 932 357 206 171 NETPD 0;
-#N canvas 986 316 184 194 abslist 0;
+#N canvas 932 385 206 171 NETPD 0;
+#N canvas 986 344 184 194 abslist 0;
 #X msg 11 36 master-poly;
 #X msg 11 14 synmetro;
 #X msg 11 58 roman_helpers;
+#X msg 11 82 master-gui-bar;
 #X restore 9 33 pd abslist;
 #X msg 9 54 singleton;
-#X msg 9 12 version 0 3 6;
+#X msg 9 12 version 0 3 7;
 #X restore 10 59 pd NETPD 2 0;
 #X text 91 11 GUI;
 #N canvas 585 44 410 57 \$1-master 1;
@@ -154,21 +155,21 @@
 #X obj 13 6 cnv 15 385 34 empty empty empty 20 12 0 14 -99865 -66577
 0;
 #X obj 18 8 hsl 50 30 0 1 0 0 \$1-switch-sl \$1-switch-sl empty 5 15
-0 14 -262144 -237180 -237180 2350 1;
+0 14 -262144 -237180 -237180 2450 1;
 #X obj 120 8 hsl 200 15 60 240 1 0 \$1-bpm-sl-s \$1-bpm-sl-r empty
-30 8 0 11 -1 -4034 -4034 7200 1;
+30 8 0 11 -1 -4034 -4034 19800 1;
 #X obj 120 23 hsl 200 15 50 75 1 0 \$1-shuffle \$1-shuffle empty 30
-8 0 11 -1 -4034 -1 6600 1;
+8 0 11 -1 -4034 -1 0 1;
 #X obj 336 8 cnv 15 60 30 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 322 8 nbx 5 15 1 500 0 0 \$1-bpm-nb-s \$1-bpm-nb-r BPM 49 8
-0 11 -1 -4034 -4034 99.0791 256;
+0 11 -1 -4034 -4034 238.334 256;
 #X obj 322 23 nbx 5 15 50 75 0 0 \$1-shuffle-nb \$1-shuffle-nb % 49
-8 0 11 -1 -4034 -4034 57 256;
+8 0 11 -1 -4034 -4034 50 256;
 #X obj 322 8 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -1 -4033
 0;
-#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000051 3 7 0 11
+#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000405 3 7 0 11
 -1 -4033 0;
 #X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 -9 0
 10 -262144 -1 -1 1200 1;
