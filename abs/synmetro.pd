@@ -363,7 +363,7 @@
 #X obj 251 322 route init;
 #X obj 251 387 del 1000;
 #X obj 26 5 inlet;
-#X obj 250 652 outlet;
+#X obj 255 652 outlet;
 #X obj 26 174 netpd_s \$1 \$2/startstop;
 #X obj 26 196 netpd_r \$1 \$2/startstop;
 #X obj 53 240 route 1;
@@ -393,9 +393,7 @@
 #X obj 181 214 t a b;
 #X obj 208 236 f;
 #X msg 208 257 notown \$1;
-#X obj 150 541 route step latency interval notown;
-#X obj 250 565 spigot;
-#X msg 250 587 interval;
+#X obj 150 541 route step latency;
 #X connect 1 0 4 0;
 #X connect 2 0 6 0;
 #X connect 3 0 2 0;
@@ -449,8 +447,4 @@
 #X connect 49 1 50 0;
 #X connect 50 0 51 0;
 #X connect 51 0 2 0;
-#X connect 52 2 53 0;
-#X connect 52 3 53 1;
-#X connect 52 4 22 0;
-#X connect 53 0 54 0;
-#X connect 54 0 22 0;
+#X connect 52 2 22 0;
