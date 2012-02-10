@@ -38,7 +38,7 @@
 #X obj 191 164 t b a;
 #X obj 446 81 r master;
 #X obj 446 103 route refresh;
-#X obj 163 18 netpd_f \$1 shuffle 0.5;
+#X obj 163 18 netpd_f \$1 shuffle 50;
 #X msg 342 97 interval \$1;
 #X obj 185 331 >> 1;
 #X obj 185 353 << 1;
