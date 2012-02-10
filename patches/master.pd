@@ -1,4 +1,4 @@
-#N canvas 604 238 232 112 10;
+#N canvas 604 294 232 112 10;
 #N canvas 345 68 674 607 master 0;
 #X obj 342 71 /;
 #X obj 344 215 /;
@@ -146,7 +146,7 @@
 #X msg 9 12 version 0 3 6;
 #X restore 10 59 pd NETPD 2 0;
 #X text 91 11 GUI;
-#N canvas 585 44 414 57 \$1-master 1;
+#N canvas 585 44 410 57 \$1-master 1;
 #X obj 9 2 cnv 15 393 42 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 11 4 cnv 15 389 38 empty empty empty 20 12 0 14 -191407 -66577
@@ -154,25 +154,25 @@
 #X obj 13 6 cnv 15 385 34 empty empty empty 20 12 0 14 -99865 -66577
 0;
 #X obj 18 8 hsl 50 30 0 1 0 0 \$1-switch-sl \$1-switch-sl empty 5 15
-0 14 -262144 -237180 -237180 2550 1;
+0 14 -262144 -237180 -237180 2350 1;
 #X obj 120 8 hsl 200 15 60 240 1 0 \$1-bpm-sl-s \$1-bpm-sl-r empty
-30 8 0 11 -1 -4034 -4034 9000 1;
+30 8 0 11 -1 -4034 -4034 7200 1;
 #X obj 120 23 hsl 200 15 50 75 1 0 \$1-shuffle \$1-shuffle empty 30
-8 0 11 -1 -4034 -1 9300 1;
+8 0 11 -1 -4034 -1 6600 1;
 #X obj 336 8 cnv 15 60 30 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 322 8 nbx 5 15 1 500 0 0 \$1-bpm-nb-s \$1-bpm-nb-r BPM 49 8
-0 11 -1 -4034 -4034 112.315 256;
+0 11 -1 -4034 -4034 99.0791 256;
 #X obj 322 23 nbx 5 15 50 75 0 0 \$1-shuffle-nb \$1-shuffle-nb % 49
-8 0 11 -1 -4034 -4034 60 256;
+8 0 11 -1 -4034 -4034 57 256;
 #X obj 322 8 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -1 -4033
 0;
-#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000000 3 7 0 11
+#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000051 3 7 0 11
 -1 -4033 0;
 #X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 -9 0
 10 -262144 -1 -1 1200 1;
-#X obj 71 8 cnv 15 18 30 empty \$1-mode-cover R 5 15 0 11 -1 -4033
+#X obj 71 8 cnv 15 18 30 empty \$1-mode-cover R 5 15 0 11 -4033 -1
 0;
 #X obj 90 8 cnv 15 26 30 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 103 8 master-gui-bar 6;
@@ -185,7 +185,7 @@
 #X obj 112 8 master-gui-bar 9;
 #X obj 115 8 master-gui-bar 10;
 #X restore 10 14 pd \$1-master;
-#N canvas 713 454 210 184 guistuff 0;
+#N canvas 713 510 210 184 guistuff 0;
 #N canvas 849 237 322 281 bpm-gui 0;
 #X msg 21 103 set \$1;
 #X obj 21 139 s \$1-bpm-sl-r;
@@ -260,23 +260,22 @@
 #X connect 23 0 2 0;
 #X connect 23 1 3 1;
 #X restore 16 16 pd switch-gui;
-#N canvas 95 322 259 244 shuffle-gui 0;
-#X obj 16 40 route float;
-#X obj 16 86 int;
-#X msg 16 110 set \$1;
-#X obj 110 32 route float;
-#X msg 111 77 set \$1;
+#N canvas 899 300 237 157 shuffle-gui 0;
+#X obj 16 66 int;
+#X msg 16 90 set \$1;
 #X obj 16 18 r \$1-shuffle;
-#X obj 16 137 s \$1-shuffle-nb;
-#X obj 110 10 r \$1-shuffle-nb;
-#X obj 111 99 s \$1-shuffle;
+#X obj 16 117 s \$1-shuffle-nb;
+#X obj 116 50 r \$1-shuffle-nb;
+#X obj 116 98 s \$1-shuffle;
+#X obj 16 44 route float set;
+#X obj 116 72 route float;
 #X connect 0 0 1 0;
-#X connect 1 0 2 0;
+#X connect 1 0 3 0;
 #X connect 2 0 6 0;
-#X connect 3 0 4 0;
-#X connect 4 0 8 0;
-#X connect 5 0 0 0;
-#X connect 7 0 3 0;
+#X connect 4 0 7 0;
+#X connect 6 0 0 0;
+#X connect 6 1 0 0;
+#X connect 7 0 5 0;
 #X restore 16 72 pd shuffle-gui;
 #N canvas 602 303 322 345 mode-gui 0;
 #X msg 94 210 -65281 -1;
