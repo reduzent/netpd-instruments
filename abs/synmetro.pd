@@ -201,7 +201,7 @@
 #X obj 26 660 s \$0.SYN;
 #X obj 41 481 r \$0.SYN;
 #X obj 41 503 route step;
-#N canvas 950 296 217 422 update_state 0;
+#N canvas 950 324 250 422 update_state 0;
 #X msg 123 162 step \$1;
 #X obj 109 210 s \$0.SYN;
 #N canvas 500 195 353 335 request_current_state 0;
@@ -282,7 +282,7 @@
 #X obj 12 382 s \$0.SYN;
 #X obj 12 69 t b a;
 #X obj 12 91 del 0;
-#X msg 109 185 interval \$3;
+#X msg 109 185 notown 1 \, interval \$3;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 3 0 9 0;
