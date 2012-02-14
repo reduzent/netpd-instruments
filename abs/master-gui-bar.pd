@@ -1,4 +1,4 @@
-#N canvas 683 224 339 299 10;
+#N canvas 598 175 339 299 10;
 #X obj 10 10 cnv 1 1 30 empty \$0.meter empty 20 12 0 14 -1 -1 0;
 #X obj 87 251 s \$0.meter;
 #X obj 87 15 r master;
@@ -11,6 +11,9 @@
 #X msg 108 153 -32769;
 #X msg 129 127 -16385;
 #X obj 87 80 route 0 1 2;
+#N canvas 764 198 312 227 NETPD 0;
+#X msg 9 8 version 0 0 1;
+#X restore 232 14 pd NETPD 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 11 0;
