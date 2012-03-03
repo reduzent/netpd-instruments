@@ -1,0 +1,48 @@
+#N canvas 821 503 184 144 10;
+#X text 17 97 by Enrique Erne;
+#X msg 17 78 version 0.1.0;
+#N canvas 875 313 105 51 \$2-e-s2fx-gui 1;
+#X obj 7 8 cnv 15 90 32 empty empty empty 0 0 0 9 -133153 -66577 0
+;
+#X obj 9 10 cnv 9 86 11 empty empty send2fx 1 5 1 9 -262144 -66577
+0;
+#X obj 9 21 cnv 12 86 17 empty empty empty 20 12 0 9 -233017 -66577
+0;
+#X obj 11 23 nbx 2 12 0 2 0 0 \$2_s2f.na1 \$2_s2f.na1-r empty 0 -6
+0 9 -241339 -53312 -1 0 256;
+#X obj 84 11 tgl 10 0 \$0-vis empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X restore 17 18 pd \$2-e-s2fx-gui;
+#N canvas 310 22 388 250 e-s2fx-code 0;
+#X obj 64 166 r~ \$2-l;
+#X obj 240 166 r~ \$2-r;
+#X obj 64 186 throw~ \$2-l;
+#X obj 240 186 throw~ \$2-r;
+#X obj 78 73 catch~ \$0-z;
+#X obj 200 52 r \$0-vis;
+#X obj 11 33 sel 0;
+#X obj 11 53 f \$0;
+#X obj 11 206 throw~ \$0-z;
+#X obj 181 206 throw~ \$0-z;
+#X obj 56 96 f;
+#X msg 11 73 set \$1-z;
+#X msg 33 126 set \$1f-2-l;
+#X msg 154 126 set \$1f-2-r;
+#X msg 200 72 \; pd-e-s2fx.pd vis \$1;
+#X obj 11 13 netpd-fx \$1 \$2_s3f.na1 \$2_s3f.na1-r 0;
+#X connect 0 0 2 0;
+#X connect 0 0 8 0;
+#X connect 1 0 3 0;
+#X connect 1 0 9 0;
+#X connect 5 0 14 0;
+#X connect 6 0 7 0;
+#X connect 6 1 10 0;
+#X connect 7 0 11 0;
+#X connect 10 0 12 0;
+#X connect 10 0 13 0;
+#X connect 11 0 8 0;
+#X connect 11 0 9 0;
+#X connect 12 0 8 0;
+#X connect 13 0 9 0;
+#X connect 15 0 6 0;
+#X restore 17 38 pd e-s2fx-code;

@@ -1,0 +1,19 @@
+#N canvas 47 89 283 212 10;
+#X text 14 168 by Enrique Erne;
+#N canvas 159 335 439 121 \$2-e-mx2mMm-gui 0;
+#X text 13 17 this sends data to mMm. use it with the mMm-module (4m-)
+mx2mMm and mMm2mx;
+#X restore 15 17 pd \$2-e-mx2mMm-gui;
+#X msg 15 37 version 0.1.0;
+#X obj 15 67 r~ \$2-l;
+#X obj 15 137 throw~ \$2-l;
+#X obj 149 68 r~ \$2-r;
+#X obj 149 138 throw~ \$2-r;
+#X obj 15 87 s~ mx2mMm-L;
+#X obj 149 88 s~ mx2mMm-R;
+#X obj 15 117 catch~ mMm2mx-L;
+#X obj 149 118 catch~ mMm2mx-R;
+#X connect 3 0 7 0;
+#X connect 5 0 8 0;
+#X connect 9 0 4 0;
+#X connect 10 0 6 0;

@@ -1,0 +1,14 @@
+#N canvas 820 409 182 147 10;
+#X text 13 78 by Enrique Erne;
+#N canvas 667 22 254 201 am 0;
+#X obj 20 21 r~ \$2-l;
+#X obj 154 22 r~ \$2-r;
+#X obj 20 133 dac~ 3 4;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X restore 14 57 pd am;
+#X msg 14 37 version 0.1.0;
+#N canvas 615 456 409 103 \$2-monitor-gui 1;
+#X text 21 31 no gui yet it just sends incoming signal to [dac~ 3 4]
+;
+#X restore 14 17 pd \$2-monitor-gui;
