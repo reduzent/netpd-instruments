@@ -1,9 +1,5 @@
 #N canvas 634 70 535 265 10;
 #X text 95 152 by Enrique Erne;
-#N canvas 196 276 346 133 \$1-elib 0;
-#X text 29 25 maybe there will be a description...;
-#X msg 250 63 eN!;
-#X restore 18 17 pd \$1-elib;
 #N canvas 882 127 307 123 NETPD 0;
 #N canvas 1199 44 481 299 abslist 0;
 #X msg 28 45 e-del;
@@ -40,3 +36,7 @@ e-bitcrush e-vamp e-amp e-mMmFX e-vocoder e-crs4 e-flanger e-pitchshifter
 e-rev1 e-rev2 e-rev3 e-am e-ssb e-d2fx e-monitor e-mp3stream e-stop
 e-3sends e-3ins e-s2fx;
 #X text 18 170 netpd2-ified by Roman Haefeli;
+#N canvas 196 276 346 133 \$1-e-lib 0;
+#X text 29 25 maybe there will be a description...;
+#X msg 250 63 eN!;
+#X restore 18 17 pd \$1-e-lib;
