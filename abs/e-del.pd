@@ -217,7 +217,7 @@
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X restore 130 125 pd write-4;
-#N canvas 12 199 330 160 repeat-1 0;
+#N canvas 12 199 330 160 repeat-1 1;
 #X obj 19 101 outlet~;
 #X obj 171 101 outlet~;
 #X obj 19 45 * 1;
@@ -247,11 +247,11 @@
 #N canvas 237 393 517 293 netpd-mixed_dp.rep 0;
 #X obj 219 29 r \$0_rep-slider;
 #X obj 29 29 r \$0_rep-radio;
-#X msg 29 188 set \$1;
-#X msg 249 188 set \$1;
-#X obj 29 167 int;
-#X obj 29 209 s \$0_rep-radio-r;
-#X obj 249 209 s \$0_rep-slider-r;
+#X msg 38 223 set \$1;
+#X msg 282 192 set \$1;
+#X obj 38 202 int;
+#X obj 38 244 s \$0_rep-radio-r;
+#X obj 282 213 s \$0_rep-slider-r;
 #X obj 219 50 t f b;
 #X obj 354 82 del 500;
 #X obj 410 87 loadbang;
@@ -263,6 +263,8 @@
 #X obj 177 270 outlet;
 #X obj 151 240 netpd_a \$1 \$2/dp.rep;
 #X obj 288 51 netpd_r \$1 \$2/dp.rep;
+#X floatatom 370 151 5 0 0 0 - - -;
+#X obj 288 166 route float;
 #X connect 0 0 7 0;
 #X connect 1 0 11 0;
 #X connect 2 0 5 0;
@@ -274,8 +276,8 @@
 #X connect 7 1 13 0;
 #X connect 8 0 14 0;
 #X connect 9 0 14 0;
-#X connect 10 0 3 0;
 #X connect 10 0 4 0;
+#X connect 10 0 19 0;
 #X connect 11 0 3 0;
 #X connect 11 0 16 0;
 #X connect 11 1 8 0;
@@ -284,25 +286,26 @@
 #X connect 14 0 10 1;
 #X connect 17 0 10 0;
 #X connect 17 0 15 0;
+#X connect 19 0 3 0;
 #X restore 209 65 pd netpd-mixed_dp.rep;
 #X text 16 21 by Enrique Erne;
-#N canvas 341 321 288 126 NETPD 0;
+#N canvas 341 349 288 126 NETPD 0;
 #X msg 16 12 version 0 2 1;
 #X restore 13 43 pd NETPD 2 0;
-#N canvas 1041 72 167 112 \$3-e-del 1;
+#N canvas 1041 27 167 104 \$3-e-del 1;
 #X obj 16 58 hsl 130 15 0 0.99 0 0 \$1-\$2/dp.feed \$1-\$2/dp.feed
-___feedback 7 7 1 9 -262144 -1 -183085 0 0;
+___feedback 7 7 1 9 -262144 -1 -183085 8470 0;
 #X obj 16 26 hsl 130 15 0 1 0 0 \$1-\$2/dp.time \$1-\$2/dp.time _+_16th
 7 7 1 9 -262144 -1 -183085 0 0;
 #X obj 13 12 hradio 15 1 0 9 \$1-\$2/dp.16 \$1-\$2/dp.16 empty 10 -7
-1 9 -262144 -1 -183085 0;
+1 9 -262144 -1 -183085 2;
 #X obj 88 42 hradio 15 1 0 4 \$0_rep-radio \$0_rep-radio-r empty 0
--6 1 9 -262144 -1 -1 1;
-#X obj 16 74 hsl 129 15 0 1 0 0 \$1-\$2/dp.mix \$1-\$2/dp.mix _original_|><|_d-play_
-7 7 1 9 -262144 -1 -183085 0 0;
+-6 1 9 -262144 -1 -1 2;
+#X obj 16 74 hsl 130 15 0 1 0 0 \$1-\$2/dp.mix \$1-\$2/dp.mix _original_|><|_d-play_
+7 7 1 9 -262144 -1 -183085 5900 0;
 #X obj 16 42 hsl 70 15 0 3 0 0 \$0_rep-slider \$0_rep-slider-r ___repeat
-7 7 1 9 -262144 -1 -183085 2300 0;
-#X restore 298 25 pd \$3-e-del;
+7 7 1 9 -262144 -1 -183085 6400 0;
+#X restore 297 25 pd \$3-e-del;
 #X obj 89 530 outlet~;
 #X obj 250 532 outlet~;
 #X obj 132 367 inlet~;
