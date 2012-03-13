@@ -62,9 +62,9 @@ empty 2 7 0 10 -90133 -90133 -4033 0 1;
 -1 -1 0 1;
 #X obj 20 20 tgl 14 0 \$0.record.toggle \$0.record.toggle.r empty 2
 6 0 17 -262144 -1 -1 0 1;
-#X obj 21 21 cnv 12 13 12 empty \$0.record.display ● 2 5 0 17 -90133
+#X obj 21 21 cnv 12 13 12 empty \$0.record.display o 2 5 0 17 -90133
 -143491 0;
-#X obj 35 21 cnv 12 13 12 empty \$0.play.display ▶ 2 5 0 17 -90133
+#X obj 35 21 cnv 12 13 12 empty \$0.play.display > 2 5 0 17 -90133
 -2241 0;
 #N canvas 135 355 579 229 gui.stuff 0;
 #X msg 53 82 13;
@@ -287,10 +287,10 @@ empty 0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 266 44 r \$1.notown;
 #X obj 197 89 route 1 0;
 #X obj 197 255 == 0;
-#X obj 355 21 r \$0.count;
-#X obj 355 43 sel 0;
-#X msg 355 65 set 0;
-#X obj 355 87 s \$1-\$2/length;
+#X obj 365 31 r \$0.count;
+#X obj 365 53 sel 0;
+#X msg 365 95 set 0;
+#X obj 365 117 s \$1-\$2/length;
 #X obj 511 55 r \$0.param;
 #X obj 578 29 r \$0.count;
 #X obj 578 59 sel 0;
@@ -307,6 +307,8 @@ empty 0 -8 0 10 -262144 -1 -1 100 256;
 #X msg 511 83 label \$1;
 #X msg 578 81 label empty;
 #X obj 511 114 s \$0.param.display;
+#X obj 411 83 s \$0.length;
+#X msg 411 59 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 4 0 31 0;
@@ -320,6 +322,7 @@ empty 0 -8 0 10 -262144 -1 -1 100 256;
 #X connect 14 0 22 0;
 #X connect 15 0 16 0;
 #X connect 16 0 17 0;
+#X connect 16 0 36 0;
 #X connect 17 0 18 0;
 #X connect 19 0 32 0;
 #X connect 20 0 21 0;
@@ -336,5 +339,6 @@ empty 0 -8 0 10 -262144 -1 -1 100 256;
 #X connect 31 0 5 0;
 #X connect 32 0 34 0;
 #X connect 33 0 34 0;
+#X connect 36 0 35 0;
 #X restore 22 104 pd control.logic;
 #X coords 0 -1 1 1 249 14 2 20 20;
