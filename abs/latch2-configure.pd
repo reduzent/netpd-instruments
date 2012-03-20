@@ -1,4 +1,4 @@
-#N canvas 702 227 198 203 10;
+#N canvas 702 255 198 203 10;
 #N canvas 887 364 306 316 save.load.config 0;
 #X obj 14 182 textfile;
 #X msg 41 67 set RecordKey \$1 \, write latch2.conf cr;
@@ -160,16 +160,18 @@
 #X obj 24 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 43 144 clear before save;
-#N canvas 1230 239 208 206 send.command 0;
+#N canvas 1230 267 209 232 send.command 0;
 #X obj 42 105 r \$0.current.key;
 #X obj 15 19 keyname;
 #X obj 15 42 pack f s;
 #X obj 15 64 route 1;
 #X obj 15 86 symbol;
-#X obj 15 127 sel _;
-#X msg 15 151 record;
-#X obj 15 173 s latch2;
+#X obj 15 148 sel _;
+#X msg 15 172 record;
+#X obj 15 194 s latch2;
+#X msg 69 169 pause 1;
 #X connect 0 0 5 1;
+#X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
 #X connect 2 0 3 0;
@@ -177,6 +179,7 @@
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
+#X connect 8 0 7 0;
 #X restore 22 115 pd send.command;
 #X connect 8 0 7 0;
 #X coords 0 -1 1 1 100 14 2 20 20;
