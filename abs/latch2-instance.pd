@@ -71,9 +71,9 @@ empty 2 7 0 10 -90133 -90133 -4033 0 1;
 -1 -1 0 1;
 #X obj 20 20 tgl 14 0 \$0.record.toggle \$0.record.toggle.r empty 2
 6 0 17 -262144 -1 -1 0 1;
-#X obj 21 21 cnv 12 13 12 empty \$0.record.display o 2 5 0 17 -90133
+#X obj 21 21 cnv 12 13 12 empty \$0.record.display ● 2 5 0 17 -90133
 -143491 0;
-#X obj 35 21 cnv 12 13 12 empty \$0.play.display > 2 5 0 17 -90133
+#X obj 35 21 cnv 12 13 12 empty \$0.play.display ▶ 2 5 0 17 -90133
 -2241 0;
 #N canvas 135 355 684 235 gui.stuff 0;
 #X msg 53 82 13;
