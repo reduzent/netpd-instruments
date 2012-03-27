@@ -28,8 +28,9 @@
 #X msg 292 272 e-mp3stream;
 #X msg 22 277 e-vocoder;
 #X msg 42 15 mx-fx-list;
+#X msg 275 120 e-fltr;
 #X restore 18 37 pd abslist;
-#X msg 19 13 version 0 2 0;
+#X msg 19 13 version 0 2 1;
 #X restore 18 46 pd NETPD 2 0;
 #X text 17 158 netpd2-ified by Roman Haefeli;
 #N canvas 196 276 346 133 \$1-e-lib 0;
