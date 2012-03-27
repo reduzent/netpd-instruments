@@ -66,7 +66,7 @@
 #N canvas 897 259 286 128 abslist 0;
 #X msg 13 24 netpd_bandlimited_oscillators;
 #X restore -193 32 pd abslist;
-#X msg -197 4 version 0 1 7;
+#X msg -197 4 version 0 1 8;
 #X restore 755 535 pd NETPD 2 0;
 #X obj 446 431 t a b;
 #X obj 601 478 t a a;
