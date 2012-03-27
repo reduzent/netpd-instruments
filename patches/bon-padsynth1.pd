@@ -1,4 +1,4 @@
-#N canvas 702 424 450 386 10;
+#N canvas 530 376 450 386 10;
 #X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
 #X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
@@ -70,6 +70,7 @@
 #X obj 302 335 netpd_r \$1 lowpass;
 #X obj 277 415 netpd_r \$1 highpass;
 #X obj 19 47 r \$1-bon-padsynth1;
+#X obj 277 479 + 5;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 1 1 11 0;
@@ -92,7 +93,7 @@
 #X connect 5 0 9 0;
 #X connect 6 0 10 0;
 #X connect 7 0 8 0;
-#X connect 8 0 9 1;
+#X connect 8 0 23 0;
 #X connect 9 0 19 1;
 #X connect 9 0 19 0;
 #X connect 10 0 5 0;
@@ -107,6 +108,7 @@
 #X connect 20 0 3 0;
 #X connect 21 0 7 0;
 #X connect 22 0 0 0;
+#X connect 23 0 9 1;
 #X restore 28 265 pd dsp-guts;
 #N canvas 32 209 855 423 gui-code 0;
 #X obj 86 214 int;
@@ -227,7 +229,7 @@
 #X restore 27 21 pd abslist;
 #X msg 26 45 version 0 2 2;
 #X restore 28 12 pd NETPD 2 0;
-#N canvas 346 720 194 207 \$1-bon-padsynth1 1;
+#N canvas 980 440 171 183 \$1-bon-padsynth1 1;
 #X obj 47 29 cnv 15 83 144 empty empty empty 20 12 0 14 -253822 -66577
 0;
 #X obj 45 31 cnv 15 87 140 empty empty empty 20 12 0 14 -253822 -66577
@@ -241,52 +243,52 @@
 #X obj 51 32 cnv 15 75 136 empty empty empty 20 12 0 14 -195568 -66577
 0;
 #X obj 54 38 hsl 70 16 0 1 0 0 \$1-stages \$1-stages empty -2 -6 0
-8 -233017 -233017 -1 4830 0;
+8 -233017 -233017 -1 6100 0;
 #X obj 52 39 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 46 cnv 1 54 7 empty \$1-cnv-stages stages:5 4 -4 1 4 -179584
+#X obj 52 46 cnv 1 73 7 empty \$1-cnv-stages stages:6 4 -4 1 4 -179584
 -262144 0;
-#X obj 52 39 cnv 1 54 7 empty \$1-cnv-stages stages:5 4 6 1 10 -237376
+#X obj 52 39 cnv 1 73 7 empty \$1-cnv-stages stages:6 4 6 1 10 -237376
 -1970 0;
 #X obj 54 54 hsl 70 16 0 1 0 0 \$1-detune \$1-detune empty -2 -6 0
-8 -233017 -233017 -1 5175 0;
+8 -233017 -233017 -1 1000 0;
 #X obj 52 55 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 62 cnv 1 54 7 empty \$1-cnv-detune empty 4 -4 1 4 -179584
+#X obj 52 62 cnv 1 10 7 empty \$1-cnv-detune empty 4 -4 1 4 -179584
 -262144 0;
-#X obj 52 55 cnv 1 54 7 empty \$1-cnv-detune detune 4 6 1 10 -237376
+#X obj 52 55 cnv 1 10 7 empty \$1-cnv-detune detune 4 6 1 10 -237376
 -1970 0;
 #X obj 54 70 hsl 70 16 0 1 0 0 \$1-attack \$1-attack empty -2 -6 0
-8 -233017 -233017 -1 3450 0;
+8 -233017 -233017 -1 5300 0;
 #X obj 52 71 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 78 cnv 1 36 7 empty \$1-cnv-attack empty 4 -4 1 4 -179584
+#X obj 52 78 cnv 1 56 7 empty \$1-cnv-attack empty 4 -4 1 4 -179584
 -262144 0;
-#X obj 52 71 cnv 1 36 7 empty \$1-cnv-attack attack 4 6 1 10 -237376
+#X obj 52 71 cnv 1 56 7 empty \$1-cnv-attack attack 4 6 1 10 -237376
 -1970 0;
 #X obj 54 86 hsl 70 16 0 1 0 0 \$1-hold \$1-hold empty -2 -6 0 8 -233017
--233017 -1 4140 0;
+-233017 -1 5800 0;
 #X obj 52 87 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 94 cnv 1 43 7 empty \$1-cnv-hold empty 4 -4 1 4 -179584 -262144
+#X obj 52 94 cnv 1 61 7 empty \$1-cnv-hold empty 4 -4 1 4 -179584 -262144
 0;
-#X obj 52 87 cnv 1 43 7 empty \$1-cnv-hold hold 4 6 1 10 -237376 -1970
+#X obj 52 87 cnv 1 61 7 empty \$1-cnv-hold hold 4 6 1 10 -237376 -1970
 0;
 #X obj 54 102 hsl 70 16 0 1 0 0 \$1-release \$1-release empty -2 -6
-0 8 -233017 -233017 -1 5520 0;
+0 8 -233017 -233017 -1 6200 0;
 #X obj 52 103 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 110 cnv 1 58 7 empty \$1-cnv-release empty 4 -4 1 4 -179584
+#X obj 52 110 cnv 1 65 7 empty \$1-cnv-release empty 4 -4 1 4 -179584
 -262144 0;
-#X obj 52 103 cnv 1 58 7 empty \$1-cnv-release release 4 6 1 10 -237376
+#X obj 52 103 cnv 1 65 7 empty \$1-cnv-release release 4 6 1 10 -237376
 -1970 0;
 #X obj 54 134 hsl 70 16 0 1 0 0 \$1-highpass \$1-highpass empty -2
--6 0 8 -233017 -233017 -1 690 0;
+-6 0 8 -233017 -233017 -1 200 0;
 #X obj 52 135 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 142 cnv 1 7 7 empty \$1-cnv-highpass empty 4 -4 1 4 -179584
+#X obj 52 142 cnv 1 2 7 empty \$1-cnv-highpass empty 4 -4 1 4 -179584
 -262144 0;
-#X obj 52 135 cnv 1 7 7 empty \$1-cnv-highpass highpass 4 6 1 10 -237376
+#X obj 52 135 cnv 1 2 7 empty \$1-cnv-highpass highpass 4 6 1 10 -237376
 -1970 0;
 #X obj 51 21 cnv 15 75 16 empty empty empty 20 12 0 14 -1 -66577 0
 ;
@@ -295,12 +297,12 @@
 #X obj 52 151 cnv 7 73 7 empty empty empty 4 6 1 10 -262144 -1970 0
 ;
 #X obj 54 118 hsl 70 16 0 1 0 0 \$1-lowpass \$1-lowpass empty -2 -6
-0 8 -233017 -233017 -1 3864 0;
+0 8 -233017 -233017 -1 1600 0;
 #X obj 52 119 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 126 cnv 1 40 7 empty \$1-cnv-lowpass empty 4 -4 1 4 -179584
+#X obj 52 126 cnv 1 16 7 empty \$1-cnv-lowpass empty 4 -4 1 4 -179584
 -262144 0;
-#X obj 52 119 cnv 1 40 7 empty \$1-cnv-lowpass lowpass 4 6 1 10 -237376
+#X obj 52 119 cnv 1 16 7 empty \$1-cnv-lowpass lowpass 4 6 1 10 -237376
 -1970 0;
 #X obj 52 158 cnv 7 73 7 empty empty empty 4 6 1 10 -233017 -1970 0
 ;
