@@ -27,8 +27,9 @@
 #X msg 292 272 e-mp3stream;
 #X msg 22 277 e-vocoder;
 #X msg 42 15 mx-fx-list;
+#X msg 30 165 e-tanh;
 #X restore 18 37 pd abslist;
-#X msg 19 13 version 0 2 2;
+#X msg 19 13 version 0 2 3;
 #X restore 18 46 pd NETPD 2 0;
 #X text 17 158 netpd2-ified by Roman Haefeli;
 #N canvas 196 276 346 133 \$1-e-lib 0;
@@ -36,4 +37,4 @@
 #X msg 250 63 eN!;
 #X restore 18 17 pd \$1-e-lib;
 #X obj 18 78 mx-fx-list \$1 e-lib e-2rect e-bitcrush e-del e-loop e-pitchshifter
-e-rev1 e-rev2 e-rev3 e-spect;
+e-rev1 e-rev2 e-rev3 e-spect e-tanh;

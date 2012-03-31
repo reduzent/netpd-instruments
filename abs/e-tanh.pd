@@ -1,0 +1,21 @@
+#N canvas 734 262 315 292 10;
+#N canvas 1064 100 231 103 NETPD 0;
+#X msg 14 17 version 0 0 1;
+#X restore 111 12 pd NETPD 2 0;
+#X obj 20 136 inlet~;
+#X obj 154 137 inlet~;
+#X obj 20 247 outlet~;
+#X obj 155 249 outlet~;
+#X obj 86 99 netpd_f \$1 \$2/amount 1;
+#X obj 20 177 expr~ tanh($v1*$f2);
+#X obj 155 201 expr~ tanh($v1*$f2);
+#N canvas 1062 275 165 47 \$3-e-tanh 1;
+#X obj 13 13 hsl 128 15 1 1000 1 0 \$1-\$2/amount \$1-\$2/amount saturation
+15 7 1 9 -262144 -1 -1 0 1;
+#X restore 7 12 pd \$3-e-tanh;
+#X connect 1 0 6 0;
+#X connect 2 0 7 0;
+#X connect 5 0 6 1;
+#X connect 5 0 7 1;
+#X connect 6 0 3 0;
+#X connect 7 0 4 0;
