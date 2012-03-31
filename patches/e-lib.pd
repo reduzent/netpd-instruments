@@ -24,7 +24,6 @@
 #X msg 157 238 e-d2fx;
 #X msg 31 228 e-mMmFX;
 #X msg 31 188 e-vamp;
-#X msg 309 164 e-stop;
 #X msg 292 272 e-mp3stream;
 #X msg 22 277 e-vocoder;
 #X msg 42 15 mx-fx-list;
@@ -36,5 +35,5 @@
 #X text 29 25 maybe there will be a description...;
 #X msg 250 63 eN!;
 #X restore 18 17 pd \$1-e-lib;
-#X obj 18 78 mx-fx-list \$1 elib e-2rect e-bitcrush e-del e-pitchshifter
+#X obj 18 78 mx-fx-list \$1 e-lib e-2rect e-bitcrush e-del e-loop e-pitchshifter
 e-rev1 e-rev2 e-rev3 e-spect;
