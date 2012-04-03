@@ -37,5 +37,5 @@
 #X msg 250 63 eN!;
 #X restore 18 17 pd \$1-e-lib;
 #X obj 18 78 mx-fx-list \$1 e-lib e-2rect e-am e-bitcrush e-crs4 e-del
-e-loop e-monitor e-pitchshifter e-rev1 e-rev2 e-rev3 e-ssb e-spect
-e-tanh;
+e-flanger e-loop e-monitor e-pitchshifter e-rev1 e-rev2 e-rev3 e-ssb
+e-spect e-tanh;
