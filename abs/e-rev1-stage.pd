@@ -1,4 +1,4 @@
-#N canvas 86 133 729 452 10;
+#N canvas 86 133 727 467 10;
 #X obj 27 238 inlet~;
 #X obj 347 28 loadbang;
 #X obj 171 281 * -1;
@@ -7,17 +7,17 @@
 #X obj 69 424 outlet~;
 #X obj 409 96 pow;
 #X obj 372 118 *;
-#X floatatom 372 159;
+#X floatatom 372 159 0 0 0 0 - - -;
 #X obj 37 262 *~ 0;
 #X obj 177 175 pow;
 #X text 408 162 delay \, msec;
-#X floatatom 177 238;
+#X floatatom 177 238 0 0 0 0 - - -;
 #X obj 190 150 * 0.001;
 #X text 182 221 gain for this stage;
 #X obj 49 332 *~ 0;
 #X obj 47 375 *~ 0;
 #X obj 177 203 *;
-#X floatatom 409 119;
+#X floatatom 409 119 0 0 0 0 - - -;
 #X text 25 13 Allpass filter for mono reverberator. Arg 1 = delay name
 \, arg2 = stage number \, arg 3 = delay time;
 #X obj 373 76 8;
@@ -47,7 +47,10 @@
 #X obj 207 321 1;
 #X obj 79 301 *~ 1;
 #X obj 207 188 sqrt;
-#X floatatom 35 148;
+#X floatatom 35 148 0 0 0 0 - - -;
+#N canvas 512 624 216 121 NETPD 0;
+#X msg 19 15 version 0 0 1;
+#X restore 446 331 pd NETPD 2 0;
 #X connect 0 0 9 0;
 #X connect 1 0 23 0;
 #X connect 2 0 16 1;

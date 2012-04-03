@@ -6,11 +6,11 @@
 #X obj 52 437 outlet~;
 #X obj 409 96 pow;
 #X obj 372 118 *;
-#X floatatom 372 159;
+#X floatatom 372 159 0 0 0 0 - - -;
 #X obj 82 264 *~ 0;
 #X obj 177 175 pow;
 #X text 386 140 delay \, msec;
-#X floatatom 201 237;
+#X floatatom 201 237 0 0 0 0 - - -;
 #X obj 190 150 * 0.001;
 #X text 206 220 gain for this stage;
 #X obj 103 327 *~ 0;
@@ -50,6 +50,9 @@
 #X obj 41 258 * -1;
 #X obj 11 297 *~ 0;
 #X obj 214 181 sqrt;
+#N canvas 512 624 216 121 NETPD 0;
+#X msg 19 15 version 0 0 1;
+#X restore 446 331 pd NETPD 2 0;
 #X connect 0 0 8 0;
 #X connect 1 0 20 0;
 #X connect 2 0 37 0;
