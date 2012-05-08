@@ -36,16 +36,16 @@
 #X connect 3 0 1 0;
 #X connect 4 0 3 1;
 #X restore 71 335 pd pluckdelay;
-#N canvas 0 0 450 300 pluckdelay 0;
+#N canvas 0 440 450 300 pluckdelay 0;
 #X obj 223 113 inlet~;
 #X obj 231 263 outlet~;
-#N canvas 0 0 450 300 write 0;
+#N canvas 1230 44 450 300 write 0;
 #X obj 223 113 inlet~;
 #X obj 231 263 outlet~;
 #X obj 232 166 delwrite~ \$0-del-r 50;
 #X connect 0 0 2 0;
 #X restore 147 159 pd write;
-#N canvas 0 0 450 300 read 0;
+#N canvas 1230 44 450 300 read 0;
 #X obj 223 113 inlet~;
 #X obj 231 263 outlet~;
 #X obj 370 123 inlet;
@@ -101,9 +101,11 @@
 #X obj 258 541 / 350;
 #X obj 616 691 change;
 #X obj 506 641 > -90;
-#X msg 791 339 version 0.0.1;
 #X text 763 367 corrected switch~ing part and added version tag. by
 roman;
+#N canvas 962 334 284 91 NETPD 0;
+#X msg -86 3 version 0 0 1;
+#X restore 821 249 pd NETPD 2 0;
 #X connect 0 0 18 0;
 #X connect 1 0 15 0;
 #X connect 3 0 14 0;
