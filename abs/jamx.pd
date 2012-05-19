@@ -1,6 +1,7 @@
 #N canvas 374 319 387 320 10;
-#X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
+#X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
 #X declare -stdpath extra/zexy -stdlib extra/zexy;
+#X declare -stdpath extra/iemmatrix -stdlib extra/iemmatrix;
 #N canvas 0 249 195 236 jx.preferences 0;
 #X obj 18 16 loadbang;
 #X msg 18 156 16;
@@ -1485,16 +1486,14 @@
 #X text 10 210 [jamx <id> <name>];
 #X obj 12 142 outlet;
 #X obj 12 82 inlet;
-#X obj 9 32 declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix
-;
 #X obj 9 10 declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 722 351 342 209 \$1-\$2-jamx 1;
+#N canvas 722 351 342 209 \$1-\$2-jamx 0;
 #X obj 7 -2 cnv 15 311 177 empty empty empty 20 12 0 14 -195573 -66577
 0;
 #X obj 10 114 cnv 8 304 57 empty \$0-bg-r empty 20 12 0 14 -16645 -66577
 0;
-#X obj 210 115 cnv 15 103 22 empty \$1-\$2_jx.ctrl.cnv-r a_attack 50
-15 1 8 -262144 -33289 0;
+#X obj 210 115 cnv 15 103 22 empty \$1-\$2_jx.ctrl.cnv-r empty 50 15
+1 8 -262144 -33289 0;
 #X obj 93 138 cnv 11 72 15 empty \$0-parm-r Repeat 4 8 1 8 -262144
 -33289 0;
 #X obj 19 155 cnv 11 146 15 empty \$0-parm2-r Octave 4 8 1 8 -262144
@@ -1557,17 +1556,17 @@
 #X obj 178 114 cnv 8 8 13 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 10 1 hradio 8 1 0 25 \$0-n1 \$0-n1-r empty 0 -6 0 8 -262144
--62784 -262144 5;
+-62784 -262144 0;
 #X obj 10 8 hradio 8 1 0 25 \$0-n2 \$0-n2-r empty 0 -6 0 8 -262144
 -62784 -262144 0;
 #X obj 10 15 hradio 8 1 0 25 \$0-n3 \$0-n3-r empty 0 -6 0 8 -262144
--62784 -262144 5;
+-62784 -262144 0;
 #X obj 10 22 hradio 8 1 0 25 \$0-n4 \$0-n4-r empty 0 -6 0 8 -262144
--62784 -262144 6;
+-62784 -262144 0;
 #X obj 10 29 hradio 8 1 0 25 \$0-n5 \$0-n5-r empty 0 -6 0 8 -228862
 -62784 -228862 0;
 #X obj 10 36 hradio 8 1 0 25 \$0-n6 \$0-n6-r empty 0 -6 0 8 -228862
--62784 -228862 7;
+-62784 -228862 0;
 #X obj 10 43 hradio 8 1 0 25 \$0-n7 \$0-n7-r empty 0 -6 0 8 -228862
 -62784 -228862 0;
 #X obj 10 50 hradio 8 1 0 25 \$0-n8 \$0-n8-r empty 0 -6 0 8 -228862
@@ -1593,19 +1592,19 @@
 #X obj 213 57 hsl 99 8 0 1 0 0 \$0-c9 \$0-c9-r empty -2 -6 0 8 -262144
 -62784 -262144 0 0;
 #X obj 10 64 hradio 8 1 0 25 \$0-n10 \$0-n10-r empty 0 -6 0 8 -262144
--62784 -262144 20;
+-62784 -262144 0;
 #X obj 10 71 hradio 8 1 0 25 \$0-n11 \$0-n11-r empty 0 -6 0 8 -262144
--62784 -262144 20;
+-62784 -262144 0;
 #X obj 10 78 hradio 8 1 0 25 \$0-n12 \$0-n12-r empty 0 -6 0 8 -262144
--62784 -262144 12;
+-62784 -262144 0;
 #X obj 10 85 hradio 8 1 0 25 \$0-n13 \$0-n13-r empty 0 -6 0 8 -228862
--62784 -228862 13;
+-62784 -228862 0;
 #X obj 10 92 hradio 8 1 0 25 \$0-n14 \$0-n14-r empty 0 -6 0 8 -228862
--62784 -228862 10;
+-62784 -228862 0;
 #X obj 10 99 hradio 8 1 0 25 \$0-n15 \$0-n15-r empty 0 -6 0 8 -228862
 -62784 -228862 0;
 #X obj 10 106 hradio 8 1 0 25 \$0-n16 \$0-n16-r empty 0 -6 0 8 -228862
--62784 -228862 10;
+-62784 -228862 0;
 #X obj 213 64 hsl 99 8 0 1 0 0 \$0-c10 \$0-c10-r empty -2 -6 0 8 -262144
 -62784 -262144 0 0;
 #X obj 11 2 cnv 6 6 168 empty \$0-l-r empty 20 12 0 14 -262144 -66577
@@ -1639,18 +1638,20 @@ empty 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 180 154 nbx 2 14 1 99 0 0 \$1-\$2_speed \$1-\$2_speed empty
 0 -8 0 10 -262144 -1 -1 16 256;
 #X obj 209 114 nbx 2 14 0 8 0 0 \$1-\$2_jx.cnr \$1-\$2_jx.cnr empty
-0 -8 0 10 -262144 -1 -1 1 256;
+0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 212 137 nbx 2 14 1 1e+37 0 0 \$0_jx.view \$1-\$2_jx.viewpage-r
 empty 0 -8 0 10 -262144 -1 -1 1 256;
 #X obj 286 137 nbx 2 14 1 8 0 0 \$1-\$2_jx.length \$1-\$2_jx.length
 empty 0 -8 0 10 -262144 -1 -1 1 256;
 #X restore 12 62 pd \$1-\$2-jamx;
-#N canvas 653 386 183 170 NETPD 0;
+#X obj 9 32 declare -stdpath extra/iemmatrix -stdlib extra/iemmatrix
+;
+#N canvas 653 414 183 170 NETPD 0;
 #N canvas 675 358 322 173 abslist 0;
 #X msg 13 13 netpd-mtx;
 #X restore 15 23 pd abslist;
-#X msg 15 45 version 0 2 0;
-#X restore 194 76 pd NETPD;
+#X msg 15 45 version 0 2 1;
+#X restore 194 76 pd NETPD 2 0;
 #X connect 2 0 8 0;
 #X connect 3 0 5 0;
 #X connect 9 0 1 0;
