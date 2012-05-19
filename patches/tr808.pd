@@ -1,24 +1,25 @@
 #N canvas 628 332 364 338 10;
 #X declare -stdpath extra/iemlib;
-#N canvas 716 160 168 171 \$1-tr808 1;
+#N canvas 716 188 168 171 \$1-tr808 1;
 #X obj 19 94 hsl 128 15 0 1 0 0 \$1-clap/gain \$1-clap/gain gain 2
-7 0 10 -204786 -1 -1 10100 1;
+7 0 10 -204786 -1 -1 7150 1;
 #X obj 19 24 hsl 128 15 0 1 0 0 \$1-bassdrum/gain \$1-bassdrum/gain
-gain 2 7 0 10 -262130 -1 -1 5300 1;
+gain 2 7 0 10 -262130 -1 -1 12700 1;
 #X obj 19 39 hsl 128 15 0 1 0 0 \$1-bassdrum/click \$1-bassdrum/click
-click 2 7 0 10 -262130 -1 -1 5700 1;
+click 2 7 0 10 -262130 -1 -1 0 1;
 #X obj 19 54 hsl 128 15 0 1 0 0 \$1-bassdrum/decay \$1-bassdrum/decay
-decay 2 7 0 10 -262130 -1 -1 6200 1;
+decay 2 7 0 10 -262130 -1 -1 8980 1;
 #X text 14 8 bassdrum;
 #X text 14 78 clap;
 #X restore 14 12 pd \$1-tr808;
 #N canvas 509 502 298 114 NETPD 0;
-#N canvas 509 632 240 93 abslist 0;
+#N canvas 509 660 240 93 abslist 0;
 #X msg 17 12 tr808-cp~;
 #X msg 107 12 i2mx;
 #X msg 17 34 tr808-bd~;
+#X msg 99 37 qseq3-instr-list;
 #X restore 31 36 pd abslist;
-#X msg 30 13 version 0 0 6;
+#X msg 30 13 version 0 0 7;
 #X restore 14 31 pd NETPD 2 0;
 #X obj 14 77 netpd_head \$1 tr808;
 #N canvas 325 666 347 282 clap 0;
