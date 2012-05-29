@@ -1,5 +1,8 @@
-#N canvas 232 298 219 179 10;
-#N canvas 716 22 501 427 daisy.code 0;
+#N canvas 589 383 218 159 10;
+#X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
+#X declare -stdpath extra/zexy -stdlib extra/zexy;
+#X declare -stdpath extra/iemmatrix -stdlib extra/iemmatrix;
+#N canvas 330 44 501 427 daisy.code 0;
 #X obj 228 60 *~;
 #X obj 17 159 int;
 #X obj 17 139 * 127;
@@ -17,23 +20,23 @@
 #X obj 244 40 catch~ \$0-l.dco;
 #X obj 386 260 *~ 0.63;
 #X obj 228 259 *~ 0.63;
-#N canvas 0 22 562 526 dcf 0;
+#N canvas 418 44 562 526 dcf 0;
 #X obj 31 456 outlet~;
 #X obj 141 236 osc~;
-#X obj 282 126 r \$0-base;
+#X obj 283 126 r \$0-base;
 #X obj 141 32 t f f;
 #X obj 141 52 *;
 #X obj 141 72 t f f;
 #X obj 141 92 *;
 #X obj 141 297 *~ 12;
 #X obj 141 340 mtof~;
-#X obj 164 174 r \$0-n.t;
+#X obj 162 174 r \$0-n.t;
 #X obj 171 276 * 24;
 #X obj 141 153 * 1000;
 #X obj 141 112 t f f;
 #X obj 141 132 *;
-#X obj 287 229 t b f;
-#X obj 287 167 * 48;
+#X obj 291 228 t b f;
+#X obj 291 166 * 48;
 #X obj 283 249 + 9;
 #X obj 283 269 max 1;
 #X obj 283 290 min 127;
@@ -43,22 +46,22 @@
 #X obj 55 355 * 100;
 #X obj 55 314 t f f;
 #X obj 55 334 *;
-#X obj 82 405 * 0.158;
+#X obj 76 405 * 0.158;
 #X obj 31 427 *~ 0.158;
 #X obj 31 234 inlet~;
-#X obj 287 188 - 24;
-#X obj 287 208 int;
-#X obj 164 195 f 0.5;
+#X obj 291 187 - 24;
+#X obj 291 207 int;
+#X obj 162 195 f 0.5;
 #X text 169 214 range aendern;
 #X obj 283 332 line~;
 #X obj 283 311 pack \$1 1000;
-#X obj 362 290 r \$0-glide;
+#X obj 352 290 r \$0-glide;
 #X obj 141 319 +~;
-#X obj 141 11 netpd-fx \$0 dsy.fv dsy.fv-r 0;
-#X obj 273 50 netpd-fx \$0 dsy.fp dsy.fp-r 0.5;
-#X obj 279 81 netpd-fx \$0 dsy.fs dsy.fs-r 0;
-#X obj 287 147 netpd-fx \$0 dsy.fb dsy.fb-r 0.5;
-#X obj 55 255 netpd-fx \$0 dsy.fq dsy.fq-r 0.5;
+#X obj 141 11 netpd_f \$1 fv 0;
+#X obj 273 50 netpd_f \$1 fp 0.5;
+#X obj 279 81 netpd_f \$1 fs 0;
+#X obj 291 146 netpd_f \$1 fb 0.5;
+#X obj 55 255 netpd_f \$1 fq 0.5;
 #X connect 1 0 7 0;
 #X connect 2 0 16 0;
 #X connect 3 0 4 0;
@@ -106,7 +109,7 @@
 #X connect 39 0 15 0;
 #X connect 40 0 20 0;
 #X restore 386 220 pd dcf;
-#N canvas 67 22 988 358 dco 0;
+#N canvas 656 153 988 358 dco 0;
 #X obj 19 226 osc~;
 #X obj 177 236 osc~;
 #X obj 177 76 + 3;
@@ -279,9 +282,8 @@
 #X connect 83 0 82 0;
 #X connect 84 0 83 1;
 #X restore 17 209 pd dco;
-#X obj 25 39 r daisy;
 #X obj 17 119 f 0.5;
-#N canvas 38 60 447 439 audio.envelope-ds 0;
+#N canvas 858 72 447 439 audio.envelope-ds 0;
 #X obj 200 372 dbtorms~;
 #X obj 217 33 moses 0.5;
 #X obj 200 272 pack \$1 \$2;
@@ -303,16 +305,19 @@
 #X obj 142 232 r \$0-hzms;
 #X obj 258 292 r \$0-hzms;
 #X obj 261 133 r \$0-hzms;
-#X obj 49 252 pack 100 1.452;
+#X obj 46 252 pack 100 1.452;
 #X obj 19 138 t b b;
 #X obj 200 392 s~ \$0-ds;
 #X obj 65 185 s \$0-n.t;
-#X obj 19 108 r daisy;
-#X obj 10 88 netpd-f daisy.t daisy.t-r;
-#X obj 217 13 netpd-fx \$0 dsy.e dsy.e-r 0.2;
-#X obj 200 332 lister;
 #X obj 247 192 f 20;
 #X obj 305 73 f 1000;
+#X obj 69 63 r \$1-daisy;
+#X obj 217 13 netpd_f \$1 e 0.2;
+#X obj 200 332 list append;
+#X obj 19 65 r \$1-t;
+#X obj 79 90 r qseq3;
+#X obj 79 112 route \$1-daisy;
+#X obj 79 134 route daisy;
 #X connect 0 0 23 0;
 #X connect 1 0 15 0;
 #X connect 1 1 9 0;
@@ -326,17 +331,17 @@
 #X connect 7 0 16 0;
 #X connect 8 0 4 0;
 #X connect 9 0 10 0;
-#X connect 9 1 30 0;
+#X connect 9 1 26 0;
 #X connect 10 0 13 0;
 #X connect 11 0 2 0;
 #X connect 12 0 8 1;
-#X connect 12 1 29 0;
+#X connect 12 1 25 0;
 #X connect 13 0 11 1;
 #X connect 14 0 17 0;
-#X connect 14 1 28 1;
+#X connect 14 1 29 1;
 #X connect 15 0 5 0;
 #X connect 16 0 12 0;
-#X connect 17 0 28 0;
+#X connect 17 0 29 0;
 #X connect 18 0 21 1;
 #X connect 19 0 17 1;
 #X connect 20 0 16 1;
@@ -344,14 +349,17 @@
 #X connect 22 0 8 0;
 #X connect 22 1 21 0;
 #X connect 22 1 24 0;
-#X connect 25 0 22 0;
-#X connect 26 0 22 0;
-#X connect 27 0 1 0;
-#X connect 28 0 3 0;
-#X connect 29 0 11 1;
-#X connect 30 0 8 1;
+#X connect 25 0 11 1;
+#X connect 26 0 8 1;
+#X connect 27 0 22 0;
+#X connect 28 0 1 0;
+#X connect 29 0 3 0;
+#X connect 30 0 22 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 22 0;
 #X restore 17 229 pd audio.envelope-ds;
-#N canvas 0 22 286 301 mix.osc-noise 0;
+#N canvas 1394 238 286 301 mix.osc-noise 0;
 #X obj 19 247 outlet;
 #X obj 201 247 outlet;
 #X obj 20 36 select 0.5;
@@ -364,7 +372,7 @@
 #X obj 83 113 * 1.26;
 #X obj 143 112 * -1.26;
 #X obj 142 132 + 1.26;
-#X obj 20 16 netpd-fx \$0 dsy.m dsy.m-r 0.25;
+#X obj 20 16 netpd_f \$1 m 0.25;
 #X connect 2 0 7 0;
 #X connect 2 1 3 0;
 #X connect 3 0 8 0;
@@ -382,7 +390,7 @@
 #X connect 11 0 0 0;
 #X connect 12 0 2 0;
 #X restore 272 239 pd mix.osc-noise;
-#N canvas 0 22 252 221 additive-2 0;
+#N canvas 589 100 252 221 additive-2 0;
 #X obj 14 39 moses 0.5;
 #X obj 72 99 - 0.5;
 #X obj 72 159 s \$0-dismidi;
@@ -396,8 +404,8 @@
 #X obj 14 159 * 40;
 #X obj 72 119 * 48;
 #X obj 72 139 int;
-#X obj 14 19 netpd-fx \$0 dsy.a2 dsy.a2-r 0.5;
 #X obj 14 119 f 0.5;
+#X obj 14 19 netpd_f \$1 a2 0.5;
 #X connect 0 0 4 0;
 #X connect 0 1 6 0;
 #X connect 1 0 11 0;
@@ -408,24 +416,24 @@
 #X connect 6 1 7 0;
 #X connect 7 0 3 0;
 #X connect 8 0 10 0;
-#X connect 9 0 14 0;
+#X connect 9 0 13 0;
 #X connect 9 1 8 1;
 #X connect 10 0 3 0;
 #X connect 11 0 12 0;
 #X connect 12 0 2 0;
-#X connect 13 0 0 0;
-#X connect 14 0 8 0;
+#X connect 13 0 8 0;
+#X connect 14 0 0 0;
 #X restore 17 249 pd additive-2;
-#N canvas 0 22 277 130 additive-3 0;
+#N canvas 589 72 277 130 additive-3 0;
 #X obj 20 38 * 2;
 #X obj 20 80 s \$0-unf;
 #X obj 20 59 - 1;
-#X obj 20 18 netpd-fx \$0 dsy.a3 dsy.a3-r 0.5;
+#X obj 20 18 netpd_f \$1 a3 0.5;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 3 0 0 0;
 #X restore 17 269 pd additive-3;
-#N canvas 607 75 110 169 hzms 0;
+#N canvas 607 131 110 169 hzms 0;
 #X obj 17 14 r \$0-base;
 #X obj 17 34 mtof;
 #X obj 17 54 t b f;
@@ -443,17 +451,7 @@
 #X restore 116 249 pd hzms;
 #X obj 25 99 / 127;
 #X obj 25 59 unpack f f f;
-#N canvas 120 316 154 183 qup.list 0;
-#X obj 6 15 loadbang;
-#X obj 6 36 s qup.listbang;
-#X obj 5 79 r qup.getlist;
-#X obj 5 119 s qup.list;
-#X msg 5 99 daisy;
-#X connect 0 0 1 0;
-#X connect 2 0 4 0;
-#X connect 4 0 3 0;
-#X restore 371 40 pd qup.list;
-#N canvas 174 497 134 139 checkmidi 0;
+#N canvas 174 553 134 139 checkmidi 0;
 #X obj 16 18 inlet;
 #X obj 16 102 outlet;
 #X obj 16 38 moses 1.00001;
@@ -463,42 +461,31 @@
 #X connect 2 1 1 0;
 #X connect 3 0 1 0;
 #X restore 25 79 pd checkmidi;
-#N canvas 120 316 162 191 qseq.list 0;
-#X obj 6 15 loadbang;
-#X msg 5 99 daisy;
-#X obj 6 37 s qseq.listbang;
-#X obj 5 79 r qseq.getlist;
-#X obj 5 118 s qseq.list;
-#X connect 0 0 2 0;
-#X connect 1 0 4 0;
-#X connect 3 0 1 0;
-#X restore 371 20 pd qseq.list;
-#N canvas 705 282 229 151 glide 0;
+#N canvas 705 310 229 151 glide 0;
 #X obj 21 105 s \$0-glide;
 #X obj 21 42 t f f;
 #X obj 21 63 *;
 #X obj 21 84 * 1000;
-#X obj 21 20 netpd-fx \$0 dsy.g dsy.g-r 0;
+#X obj 21 20 netpd_f \$1 g 0;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
 #X connect 4 0 1 0;
 #X restore 17 289 pd glide;
-#X obj 17 19 netpd-fx \$0 dsy.b dsy.b-r 0.5;
 #X obj 279 123 f 0.251;
-#X obj 308 298 i2mx~ \$0 daisy;
-#X obj 17 359 r \$0-pad-open;
-#X msg 17 379 \; pd-daisy-pad-gui vis 1;
-#X obj 17 319 pad \$0 daisy;
-#X obj 164 312 jamx \$0 daisy;
-#X obj 17 339 netpd-x \$0 daisy;
 #X obj 308 318 switch~;
+#X obj 164 312 jamx \$1 daisy;
+#X obj 308 298 i2mx \$1 daisy;
+#X obj 17 19 netpd_f \$1 b 0.5;
+#X obj 25 39 r \$1-daisy;
+#X obj 17 339 netpd_head \$1 daisy;
+#X obj 16 362 qseq3-instr-list \$1 daisy daisy;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 4 0 13 0;
-#X connect 5 0 33 0;
+#X connect 5 0 29 0;
 #X connect 5 1 7 0;
 #X connect 6 0 4 1;
 #X connect 7 0 6 1;
@@ -509,69 +496,65 @@
 #X connect 12 0 10 0;
 #X connect 13 0 9 0;
 #X connect 14 0 0 1;
-#X connect 15 0 34 0;
-#X connect 15 0 34 1;
-#X connect 16 0 34 0;
-#X connect 16 0 34 1;
+#X connect 15 0 32 0;
+#X connect 15 0 32 1;
+#X connect 16 0 32 0;
+#X connect 16 0 32 1;
 #X connect 17 0 15 0;
-#X connect 19 0 27 0;
-#X connect 20 0 2 0;
-#X connect 20 0 5 0;
-#X connect 22 0 16 1;
-#X connect 22 1 15 1;
-#X connect 26 0 20 0;
-#X connect 27 0 29 0;
-#X connect 29 0 26 0;
-#X connect 32 0 20 0;
-#X connect 33 0 6 0;
-#X connect 34 0 40 0;
-#X connect 35 0 36 0;
-#X connect 37 0 39 0;
-#X connect 37 1 39 1;
+#X connect 19 0 2 0;
+#X connect 19 0 5 0;
+#X connect 21 0 16 1;
+#X connect 21 1 15 1;
+#X connect 25 0 19 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 29 0 6 0;
+#X connect 32 0 30 0;
+#X connect 33 0 19 0;
+#X connect 34 0 26 0;
 #X restore 18 38 pd daisy.code;
-#N canvas 704 22 189 366 daisy-gui 0;
+#X text 18 108 daisy by enrique erne;
+#N canvas 808 327 149 100 NETPD 0;
+#N canvas 589 240 160 124 abslist 0;
+#X msg 13 15 jamx;
+#X msg 13 36 i2mx;
+#X msg 13 57 qseq3-instr-list;
+#X restore 7 10 pd abslist;
+#X msg 7 34 version 0 2 6;
+#X restore 18 58 pd NETPD 2 0;
+#N canvas 957 184 161 343 \$1-daisy 1;
 #X obj 6 6 cnv 15 142 94 empty empty daisy 3 6 1 18 -233017 -262144
 0;
-#X obj 13 43 hsl 129 15 0 1 0 0 dsy.e dsy.e-r audio.envelope-ds 3 6
-1 10 -262144 -1 -87382 2560 1;
-#X obj 13 24 hsl 129 15 0 1 0 0 dsy.b dsy.b-r frequency.base 3 6 1
-10 -262144 -1 -87382 6400 1;
-#X obj 13 81 hsl 129 15 0 1 0 0 dsy.m dsy.m-r mix.osc-noise 3 6 1 10
+#X obj 13 43 hsl 129 15 0 1 0 0 \$1-e \$1-e audio.envelope-ds 3 6 1
+10 -262144 -1 -87382 3660 1;
+#X obj 13 24 hsl 129 15 0 1 0 0 \$1-b \$1-b frequency.base 3 6 1 10
+-262144 -1 -87382 6400 1;
+#X obj 13 81 hsl 129 15 0 1 0 0 \$1-m \$1-m mix.osc-noise 3 6 1 10
 -262144 -1 -87382 3200 1;
 #X obj 6 106 cnv 10 142 54 empty empty osc 3 6 1 18 -233017 -262144
 0;
-#X obj 13 122 hsl 129 15 0 1 0 0 dsy.a2 dsy.a2-r additive-2 3 6 1 10
--262144 -1 -87382 6400 1;
-#X obj 13 141 hsl 129 15 0 1 0 0 dsy.a3 dsy.a3-r additive-3 3 6 1 10
--262144 -1 -87382 6400 1;
+#X obj 13 122 hsl 129 15 0 1 0 0 \$1-a2 \$1-a2 additive-2 3 6 1 10
+-262144 -1 -87382 4800 1;
+#X obj 13 141 hsl 129 15 0 1 0 0 \$1-a3 \$1-a3 additive-3 3 6 1 10
+-262144 -1 -87382 8700 1;
 #X obj 6 166 cnv 10 142 112 empty empty noise 3 6 1 18 -233017 -262144
 0;
-#X obj 13 240 hsl 129 15 0 1 0 0 dsy.fp dsy.fp-r lfo.phase 3 6 1 10
+#X obj 13 240 hsl 129 15 0 1 0 0 \$1-fp \$1-fp lfo.phase 3 6 1 10 -262144
+-1 -87382 6400 1;
+#X obj 13 221 hsl 129 15 0 1 0 0 \$1-fv \$1-fv lfo.velocity 3 6 1 10
+-262144 -1 -87382 0 1;
+#X obj 13 202 hsl 129 15 0 1 0 0 \$1-fs \$1-fs lfo.strength 3 6 1 10
+-262144 -1 -87382 0 1;
+#X obj 13 259 hsl 129 15 0 1 0 0 \$1-fq \$1-fq filter-q 3 6 1 10 -262144
+-1 -87382 6400 1;
+#X obj 13 183 hsl 129 15 0 1 0 0 \$1-fb \$1-fb filter.base 3 6 1 10
 -262144 -1 -87382 6400 1;
-#X obj 13 221 hsl 129 15 0 1 0 0 dsy.fv dsy.fv-r lfo.velocity 3 6 1
-10 -262144 -1 -87382 0 1;
-#X obj 13 202 hsl 129 15 0 1 0 0 dsy.fs dsy.fs-r lfo.strength 3 6 1
-10 -262144 -1 -87382 0 1;
-#X obj 13 259 hsl 129 15 0 1 0 0 dsy.fq dsy.fq-r filter-q 3 6 1 10
--262144 -1 -87382 6400 1;
-#X obj 13 183 hsl 129 15 0 1 0 0 dsy.fb dsy.fb-r filter.base 3 6 1
-10 -262144 -1 -87382 6400 1;
-#X obj 11 299 cnv 14 98 14 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X obj 13 62 hsl 129 15 0 1 0 0 dsy.g dsy.g-r glide 3 6 1 10 -262144
+#X obj 13 62 hsl 129 15 0 1 0 0 \$1-g \$1-g glide 3 6 1 10 -262144
 -1 -87382 0 1;
 #X obj 6 284 cnv 10 142 45 empty empty empty 3 6 1 18 -233017 -262144
 0;
-#X obj 128 288 bng 16 250 50 0 daisy.t \$0-n01 empty 0 -6 0 8 -3918
--1 -1;
-#X obj 12 289 bng 15 250 50 0 daisy-open-pad empty PAD 18 7 1 9 -262144
--1 -1;
-#X msg 19 311 \; daisy-open-jam 1;
-#X restore 18 18 pd daisy-gui;
-#N canvas 0 22 130 138 abslist 0;
-#X msg 32 19 pad;
-#X msg 32 39 jamx;
-#X msg 32 59 i2mx~;
-#X restore 18 58 pd abslist;
-#X text 18 108 daisy by enrique erne;
-#X msg 17 78 version 0.2.6;
+#X obj 128 288 bng 16 250 50 0 \$1-t \$0-n01 empty 0 -6 0 8 -3918 -1
+-1;
+#X obj 10 289 tgl 16 0 \$1-open-jam \$0-bli jamx 19 7 1 10 -262144
+-1 -1 1 1;
+#X restore 18 18 pd \$1-daisy;
