@@ -3,7 +3,7 @@
 #N canvas 882 127 307 123 NETPD 0;
 #N canvas 1168 127 481 299 abslist 0;
 #X msg 28 45 e-del;
-#X msg 28 65 e-spect;
+#X msg 28 65 e-spectdel;
 #X msg 39 174 e-2rect;
 #X msg 39 194 e-bitcrush;
 #X msg 113 45 e-crs4;
@@ -29,4 +29,4 @@
 #X restore 18 17 pd \$1-e-lib;
 #X obj 18 78 mx-fx-list \$1 e-lib e-2rect e-am e-bitcrush e-crs4 e-del
 e-flanger e-loop e-monitor e-pitchshifter e-rev1 e-rev2 e-rev3 e-ssb
-e-spect e-spectfilt e-tanh;
+e-spectdel e-spectfilt e-tanh;

@@ -152,7 +152,7 @@ the file smaller (it doesn't have to be saved with the array.);
 #X text 18 125 code borrowed from spectral_delay.pd by Johannes Kreidler
 and Orm Finnendahl 2006 slightly corrected by Roman Haefeli addapted
 for netpd by Enrique Erne;
-#N canvas 590 245 305 166 \$3-e-spect 1;
+#N canvas 590 245 305 166 \$3-e-spectdel 1;
 #X obj 273 -17 vsl 15 55 0 128 0 0 \$0-delay-const \$0-delay-const-r
 empty 0 -8 0 8 -262130 -1 -1 0 0;
 #X obj 273 59 vsl 15 55 0 1 0 0 \$0-feedback-const \$0-feedback-const-r
@@ -169,7 +169,7 @@ empty 0 -8 0 8 -262130 -1 -1 0 0;
 #X array \$1-\$2/feedback 256 float 2;
 #X coords 0 1.06 256 -0.06 256 60 1 0 0;
 #X restore 17 57 graph;
-#X restore 299 20 pd \$3-e-spect;
+#X restore 299 20 pd \$3-e-spectdel;
 #N canvas 945 128 292 252 NETPD 0;
 #X msg -3 9 version 0 1 5;
 #X restore 299 42 pd NETPD 2 0;
