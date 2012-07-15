@@ -82,7 +82,7 @@
 #X obj 403 116 t b a;
 #X obj 34 88 inlet~;
 #X obj 137 89 inlet~;
-#N canvas 625 270 307 98 \$3-e-spectfilt 1;
+#N canvas 625 270 308 94 \$3-e-spectfilt 1;
 #X obj 18 3 cnv 15 256 60 empty empty empty 20 12 0 14 -261888 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -156,11 +156,11 @@
 #X obj 403 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 425 63 recalculate;
-#N canvas 1019 112 225 110 NETPD 0;
-#X msg 7 15 version 0 1 1;
+#N canvas 1019 140 225 110 NETPD 0;
+#X msg 7 15 version 0 1 2;
 #X restore 34 21 pd NETPD 2 0;
 #X obj 220 59 netpd_t \$1 \$2/gain 256;
-#N canvas 1237 296 208 303 gain-const 0;
+#N canvas 1237 380 270 294 gain-const 0;
 #X msg 17 55 const \$1;
 #X obj 17 192 route const;
 #X msg 17 214 set \$1;
@@ -170,6 +170,11 @@
 #X obj 17 89 s \$1-\$2/gain;
 #X obj 50 144 r \$1.notown;
 #X obj 17 168 spigot;
+#X obj 119 23 r \$1.NETPD;
+#X obj 119 45 route init;
+#X obj 119 67 route 5;
+#X msg 119 88 1;
+#X obj 119 110 s \$0-gain-const-r;
 #X connect 0 0 6 0;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
@@ -177,6 +182,10 @@
 #X connect 5 0 8 0;
 #X connect 7 0 8 1;
 #X connect 8 0 1 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
 #X restore 220 83 pd gain-const;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
