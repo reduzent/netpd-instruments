@@ -1,6 +1,6 @@
 #N canvas 356 315 331 236 10;
 #N canvas 334 143 590 361 lookup-table-creation 0;
-#X obj 128 69 + 1;
+#X obj 138 70 + 1;
 #X obj 77 206 pack f s;
 #X obj 12 127 t b f f;
 #X obj 12 268 f;
@@ -59,8 +59,9 @@
 #X obj 299 138 f;
 #X obj 299 92 r NBLSAW;
 #X obj 299 182 s NBLSAW;
-#X obj 93 91 t f f;
+#X obj 93 90 t f f;
 #X connect 0 0 12 1;
+#X connect 0 0 19 0;
 #X connect 1 0 5 0;
 #X connect 2 0 3 0;
 #X connect 2 1 11 0;
@@ -70,7 +71,6 @@
 #X connect 5 0 15 0;
 #X connect 10 0 4 0;
 #X connect 11 0 1 0;
-#X connect 12 0 0 0;
 #X connect 12 0 22 0;
 #X connect 13 0 16 0;
 #X connect 14 0 1 1;
@@ -80,7 +80,7 @@
 #X connect 18 0 21 0;
 #X connect 19 0 18 0;
 #X connect 20 0 17 0;
-#X connect 22 0 19 0;
+#X connect 22 0 0 0;
 #X connect 22 1 2 0;
 #X restore 20 49 pd lookup-table-creation;
 #N canvas 406 58 398 466 communication 0;
@@ -118,6 +118,6 @@
 #X restore 20 77 pd lookup-tables-nsaw;
 #X text 22 200 published under the GNU Public License.;
 #X text 21 177 Author: Roman Haefeli;
-#N canvas 486 198 234 133 NETPD 0;
+#N canvas 486 226 234 133 NETPD 0;
 #X msg 9 16 version 0 3 2;
 #X restore 21 112 pd NETPD;
