@@ -5,8 +5,8 @@ This is the place where I work on imported patches
 from the old netpd framework, trying to adapt them
 for the new netpd2
 
-This is very much work in progress at this state.
-Consider it not even alpha yet.
+This is very much work in progress, though many 
+instruments have already been ported.
 
 Please refer also to the netpd2 repository:
 https://github.com/reduzent/netpd2
