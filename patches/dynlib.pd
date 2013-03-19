@@ -1,13 +1,14 @@
 #N canvas 590 192 405 94 10;
-#N canvas 668 156 164 91 NETPD 0;
-#N canvas 813 265 214 147 abslist 0;
+#N canvas 668 184 164 91 NETPD 0;
+#N canvas 813 293 214 147 abslist 0;
 #X msg 12 15 rcomp;
 #X msg 13 42 rlimit;
 #X msg 14 66 zlimit;
 #X msg 13 90 zcomplim;
 #X msg 15 121 mx-fx-list;
+#X msg 74 16 r4mbc;
 #X restore 18 16 pd abslist;
-#X msg 18 41 version 0 2 4;
+#X msg 18 41 version 0 3 0;
 #X restore 14 12 pd NETPD 2 0;
 #N canvas 618 339 453 138 \$1-dynlib 0;
 #X text 21 6 DYNLIB;
@@ -18,4 +19,5 @@ with mx.;
 #X text 22 60 Author: Roman Haefeli;
 #X text 22 12 ------;
 #X restore 14 33 pd \$1-dynlib;
-#X obj 14 54 mx-fx-list \$1 dynlib rcomp rlimit zcomplim zlimit;
+#X obj 14 54 mx-fx-list \$1 dynlib r4mbc rcomp rlimit zcomplim zlimit
+;
