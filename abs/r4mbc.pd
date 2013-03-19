@@ -1,4 +1,4 @@
-#N canvas 303 91 520 483 10;
+#N canvas 159 330 520 483 10;
 #X obj 10 12 inlet~;
 #X obj 10 420 outlet~;
 #X obj 207 422 outlet~;
@@ -9,21 +9,21 @@
 #X restore 11 34 pd abslist;
 #X msg 11 7 version 0 0 0;
 #X restore 401 33 pd NETPD 2 0;
-#N canvas 567 361 545 271 \$3-r4mbc 0;
+#N canvas 809 171 545 271 \$3-r4mbc 0;
 #N canvas 546 121 580 335 frequency.separator 0;
-#X obj 13 10 hsl 105 10 1 105 0 0 \$0.slider1 \$0.slider1.r empty -2
--8 0 10 -262144 -1 -1 0 1;
-#X obj 13 10 hsl 255 10 1 255 0 0 \$0.slider2 \$0.slider2.r empty -2
--8 0 10 -262144 -1 -1 0 1;
-#X obj 13 10 hsl 405 10 1 405 0 0 \$0.slider3 \$0.slider3.r empty -2
--8 0 10 -262144 -1 -1 0 1;
+#X obj 13 10 hsl 104 10 1 104.447 0 0 \$0.slider1 \$0.slider1.r empty
+-2 -8 0 10 -262144 -1 -1 9802 1;
+#X obj 13 10 hsl 260 10 1 260.644 0 0 \$0.slider2 \$0.slider2.r empty
+-2 -8 0 10 -262144 -1 -1 25401 1;
+#X obj 13 10 hsl 333 10 1 333.769 0 0 \$0.slider3 \$0.slider3.r empty
+-2 -8 0 10 -262144 -1 -1 32701 1;
 #X obj 10 10 cnv 10 500 10 empty \$0.segment4 empty 20 12 0 14 -228856
 -66577 0;
-#X obj 10 10 cnv 10 405 10 empty \$0.segment3 empty 20 12 0 14 -191407
+#X obj 10 10 cnv 10 333 10 empty \$0.segment3 empty 20 12 0 14 -191407
 -66577 0;
-#X obj 10 10 cnv 10 255 10 empty \$0.segment2 empty 20 12 0 14 -162280
+#X obj 10 10 cnv 10 260 10 empty \$0.segment2 empty 20 12 0 14 -162280
 -66577 0;
-#X obj 10 10 cnv 10 105 10 empty \$0.segment1 empty 20 12 0 14 -128992
+#X obj 10 10 cnv 10 104 10 empty \$0.segment1 empty 20 12 0 14 -128992
 -66577 0;
 #X coords 0 -1 1 1 500 10 2 10 10;
 #X restore 13 16 pd frequency.separator;
@@ -35,7 +35,7 @@
 #X obj 260 308 dynlib_comp;
 #X obj 100 12 inlet~;
 #X obj 99 99 dynlib_4bfs;
-#N canvas 776 396 392 228 gui.stuff 0;
+#N canvas 776 396 422 444 gui.stuff 0;
 #N canvas 340 170 953 289 frequency.separator.logic 0;
 #X obj 20 41 + 5;
 #X msg 39 160 vis_size \$1 10;
@@ -80,10 +80,11 @@
 #X obj 480 90 min 470;
 #X obj 20 64 max 25;
 #X obj 719 59 \$0;
-#X msg 719 81 \; \$1.margin 50 \; \$1.slider1 100 \; \$1.slider2 250
-\; \$1.slider3 400 \;;
-#X obj 792 40 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 796 30 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
+#X msg 719 81 \; \$1.margin 65 \; \$1.slider3 400 \; \$1.slider2 250
+\; \$1.slider1 100 \; \$1.slider3.r set 400 \; \$1.slider2.r set 250
+\; \$1.slider1.r set 100 \;;
 #X connect 0 0 41 0;
 #X connect 1 0 6 0;
 #X connect 3 0 0 0;
@@ -124,8 +125,8 @@
 #X connect 39 0 20 1;
 #X connect 40 0 23 0;
 #X connect 41 0 7 0;
-#X connect 42 0 43 0;
-#X connect 44 0 42 0;
+#X connect 42 0 44 0;
+#X connect 43 0 42 0;
 #X restore 23 15 pd frequency.separator.logic;
 #X obj 23 115 mtof;
 #X obj 23 49 r \$0.seg1;
@@ -142,18 +143,75 @@
 #X obj 98 137 s \$0.freq2;
 #X obj 173 49 r \$0.seg3;
 #X obj 173 137 s \$0.freq3;
+#X floatatom 38 192 5 0 0 0 - - -;
+#X obj 38 239 ftom;
+#X obj 38 261 - 25;
+#X obj 38 283 / 0.21;
+#X obj 38 325 t a a;
+#X obj 65 347 s \$0.slider1;
+#X msg 38 368 set \$1;
+#X obj 38 390 s \$0.slider1.r;
+#X floatatom 37 160 10 0 0 0 - - -;
+#X obj 38 305 - 5;
+#X floatatom 154 198 5 0 0 0 - - -;
+#X obj 154 245 ftom;
+#X obj 154 267 - 25;
+#X obj 154 289 / 0.21;
+#X obj 154 331 t a a;
+#X msg 154 374 set \$1;
+#X obj 154 311 - 5;
+#X floatatom 264 198 5 0 0 0 - - -;
+#X obj 264 245 ftom;
+#X obj 264 267 - 25;
+#X obj 264 289 / 0.21;
+#X obj 264 331 t a a;
+#X msg 264 374 set \$1;
+#X obj 264 311 - 5;
+#X obj 181 353 s \$0.slider2;
+#X obj 154 396 s \$0.slider2.r;
+#X obj 291 353 s \$0.slider3;
+#X obj 264 396 s \$0.slider3.r;
+#X floatatom 109 161 10 0 0 0 - - -;
+#X floatatom 181 160 10 0 0 0 - - -;
 #X connect 1 0 5 0;
+#X connect 1 0 24 0;
 #X connect 2 0 4 0;
 #X connect 3 0 1 0;
 #X connect 4 0 3 0;
 #X connect 6 0 13 0;
+#X connect 6 0 44 0;
 #X connect 7 0 6 0;
 #X connect 8 0 7 0;
 #X connect 9 0 15 0;
+#X connect 9 0 45 0;
 #X connect 10 0 9 0;
 #X connect 11 0 10 0;
 #X connect 12 0 8 0;
 #X connect 14 0 11 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 25 0;
+#X connect 20 0 22 0;
+#X connect 20 1 21 0;
+#X connect 22 0 23 0;
+#X connect 25 0 20 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 32 0;
+#X connect 30 0 31 0;
+#X connect 30 1 40 0;
+#X connect 31 0 41 0;
+#X connect 32 0 30 0;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 39 0;
+#X connect 37 0 38 0;
+#X connect 37 1 42 0;
+#X connect 38 0 43 0;
+#X connect 39 0 37 0;
 #X restore 401 58 pd gui.stuff;
 #X obj 33 39 r \$0.freq1;
 #X obj 108 39 r \$0.freq2;
