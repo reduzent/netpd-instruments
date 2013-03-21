@@ -9,24 +9,175 @@
 #X restore 11 34 pd abslist;
 #X msg 11 7 version 0 0 0;
 #X restore 401 33 pd NETPD 2 0;
-#N canvas 809 171 545 271 \$3-r4mbc 0;
+#N canvas 668 173 763 443 \$3-r4mbc 1;
 #N canvas 546 121 580 335 frequency.separator 0;
 #X obj 13 10 hsl 25 10 1 25 0 0 \$0.slider1 \$0.slider1.r empty -2
 -8 0 10 -262144 -1 -1 0 1;
-#X obj 13 10 hsl 255 10 1 255 0 0 \$0.slider2 \$0.slider2.r empty -2
--8 0 10 -262144 -1 -1 24900 1;
+#X obj 13 10 hsl 250 10 1 250.267 0 0 \$0.slider2 \$0.slider2.r empty
+-2 -8 0 10 -262144 -1 -1 24400 1;
 #X obj 13 10 hsl 470 10 1 470 0 0 \$0.slider3 \$0.slider3.r empty -2
 -8 0 10 -262144 -1 -1 46900 1;
 #X obj 10 10 cnv 10 500 10 empty \$0.segment4 empty 20 12 0 14 -228856
 -66577 0;
 #X obj 10 10 cnv 10 470 10 empty \$0.segment3 empty 20 12 0 14 -191407
 -66577 0;
-#X obj 10 10 cnv 10 255 10 empty \$0.segment2 empty 20 12 0 14 -162280
+#X obj 10 10 cnv 10 250 10 empty \$0.segment2 empty 20 12 0 14 -162280
 -66577 0;
 #X obj 10 10 cnv 10 25 10 empty \$0.segment1 empty 20 12 0 14 -128992
 -66577 0;
 #X coords 0 -1 1 1 500 10 2 10 10;
 #X restore 13 16 pd frequency.separator;
+#N canvas 897 44 457 352 gui.stuff 0;
+#X obj 15 22 r \$0.damp1;
+#X obj 15 199 s \$0.damp.gui.1;
+#X msg 15 176 vis_size 3 \$1;
+#X obj 15 45 - 80;
+#X obj 15 67 * 6;
+#X msg 15 89 120 \$1;
+#X obj 15 111 -;
+#X obj 15 156 + 3;
+#X obj 15 135 min 120;
+#X obj 130 164 s \$0.threshold.gui;
+#X obj 130 23 r \$1-\$2/threshold1;
+#X msg 130 140 vis_size 8 \$1;
+#X obj 130 116 + 3;
+#X obj 130 93 * -2;
+#X obj 130 45 route float set;
+#X obj 270 173 s \$0.level.gui.1;
+#X obj 270 20 r \$0.env1;
+#X obj 270 62 - 40;
+#X obj 270 83 * 2;
+#X msg 270 105 120 \$1;
+#X obj 270 127 -;
+#X obj 270 42 max 40;
+#X msg 270 150 vis_size 3 \$1;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 7 0 2 0;
+#X connect 8 0 7 0;
+#X connect 10 0 14 0;
+#X connect 11 0 9 0;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 14 1 13 0;
+#X connect 16 0 21 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 22 0;
+#X connect 21 0 17 0;
+#X connect 22 0 15 0;
+#X restore 176 82 pd gui.stuff;
+#X obj 157 232 s \$0.threshold.display;
+#X msg 312 206 label 1:\$1;
+#X obj 312 228 s \$0.ratio.display;
+#X msg 436 210 label \$1ms;
+#X obj 436 232 s \$0.attack.display;
+#X msg 565 209 label \$1ms;
+#X obj 565 231 s \$0.release.display;
+#X obj 250 390 s \$0.gain.display;
+#X obj 18 106 nbx 5 18 -60 0 0 0 \$1-\$2/threshold1 \$1-\$2/threshold1
+empty 0 -8 0 9 -262144 -1 -1 -20.6723 256;
+#X obj 157 115 r \$1-\$2/threshold1;
+#X obj 157 137 route float set;
+#X msg 157 209 label \$1;
+#X obj 157 162 int;
+#X obj 18 126 nbx 5 18 1 10 1 0 \$1-\$2/ratio1 \$1-\$2/ratio1 empty
+0 -8 0 9 -262144 -1 -1 1.51356 200;
+#X obj 312 116 route float set;
+#X obj 312 94 r \$1-\$2/ratio1;
+#X obj 157 185 makefilename %4ddB;
+#X obj 18 146 nbx 5 18 1 1000 1 0 \$1-\$2/attack1 \$1-\$2/attack1 empty
+0 -8 0 9 -262144 -1 -1 41.4179 256;
+#X obj 436 140 route float set;
+#X obj 436 118 r \$1-\$2/attack1;
+#X obj 436 167 int;
+#X obj 436 187 makefilename %4d;
+#X obj 18 166 nbx 5 18 10 9999 1 0 \$1-\$2/release1 \$1-\$2/release1
+empty 0 -8 0 9 -262144 -1 -1 27.1386 256;
+#X obj 565 139 route float set;
+#X obj 565 166 int;
+#X obj 565 186 makefilename %4d;
+#X obj 565 117 r \$1-\$2/release1;
+#X obj 312 138 * 10;
+#X obj 312 160 int;
+#X obj 312 182 * 0.1;
+#X obj 18 186 nbx 5 18 -24 24 0 0 \$1-\$2/gain1 \$1-\$2/gain1 empty
+0 -8 0 9 -262144 -1 -1 0 256;
+#X obj 250 296 route float set;
+#X obj 250 321 int;
+#X obj 250 274 r \$1-\$2/gain1;
+#X obj 250 343 makefilename %4ddB;
+#X msg 250 367 label \$1;
+#X obj -4 105 vsl 10 120 -60 0 0 0 \$1-\$2/threshold1 \$1-\$2/threshold1
+empty 0 -9 0 10 -262144 -1 -1 7800 1;
+#X obj -5 89 cnv 6 74 154 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 7 106 cnv 3 3 120 empty empty empty 20 12 0 14 -261057 -66577
+0;
+#X obj 7 102 cnv 3 3 46 empty \$0.level.gui.1 empty 20 12 0 14 -99865
+-66577 0;
+#X obj 12 106 cnv 3 3 120 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 12 102 cnv 3 3 9 empty \$0.damp.gui.1 empty 20 12 0 14 -258113
+-66577 0;
+#X obj -3 228 cnv 5 70 13 empty \$0.level.display -99dB 0 7 0 10 -99865
+-261441 0;
+#X obj -3 106 cnv 3 8 120 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj -3 102 cnv 3 8 44 empty \$0.threshold.gui empty 20 12 0 14 -99865
+-66577 0;
+#X obj -3 102 cnv 3 18 3 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj -3 91 cnv 5 70 13 empty \$0.damp.display -99dB 0 7 0 10 -99865
+-258113 0;
+#X obj 17 106 cnv 5 50 18 empty \$0.threshold.display  -20dB 4 9 0
+10 -99865 -4034 0;
+#X obj 17 126 cnv 5 50 18 empty \$0.ratio.display 1:1.5 4 9 0 10 -99865
+-4034 0;
+#X obj 17 146 cnv 5 50 18 empty \$0.attack.display   41ms 4 9 0 10
+-99865 -4034 0;
+#X obj 17 166 cnv 5 50 18 empty \$0.release.display   27ms 4 9 0 10
+-99865 -4034 0;
+#X obj 17 186 cnv 5 50 18 empty \$0.gain.display    0dB 4 9 0 10 -99865
+-4034 0;
+#X obj 17 206 cnv 5 50 20 empty \$0.solo.display S 21 9 0 10 -99865
+-257985 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
+#X connect 12 1 14 0;
+#X connect 13 0 2 0;
+#X connect 14 0 18 0;
+#X connect 16 0 29 0;
+#X connect 16 1 29 0;
+#X connect 17 0 16 0;
+#X connect 18 0 13 0;
+#X connect 20 0 22 0;
+#X connect 20 1 22 0;
+#X connect 21 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 5 0;
+#X connect 25 0 26 0;
+#X connect 25 1 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 7 0;
+#X connect 28 0 25 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 0;
+#X connect 31 0 3 0;
+#X connect 33 0 34 0;
+#X connect 33 1 34 0;
+#X connect 34 0 36 0;
+#X connect 35 0 33 0;
+#X connect 36 0 37 0;
+#X connect 37 0 9 0;
 #X restore 401 14 pd \$3-r4mbc;
 #X obj 10 308 dynlib_comp;
 #X obj 9 119 dynlib_4bfs;
@@ -247,30 +398,55 @@
 #X connect 16 0 13 0;
 #X restore 386 15 pd netpd_freq3;
 #X restore 401 58 pd gui.stuff;
-#X obj 30 37 netpd_f \$1 \$2/freq1 123;
-#X obj 67 58 netpd_f \$1 \$2/freq2 763;
-#X obj 110 78 netpd_f \$1 \$2/freq3 4712;
+#X floatatom 338 378 5 0 0 0 - - -;
+#X floatatom 267 384 5 0 0 0 - - -;
+#X floatatom 178 366 5 0 0 0 - - -;
+#X obj 30 37 netpd_f \$1 \$2/xfreq1 123;
+#X obj 67 58 netpd_f \$1 \$2/xfreq2 763;
+#X obj 110 78 netpd_f \$1 \$2/xfreq3 4712;
+#X obj 372 202 +~;
+#X obj 373 223 env~ 4096;
+#X obj 203 182 netpd_f \$1 \$2/threshold1 0;
+#X obj 373 245 s \$0.env1;
+#X obj 70 374 s \$0.damp1;
+#X obj 204 162 netpd_f \$1 \$2/ratio1 0;
+#X obj 203 202 netpd_f \$1 \$2/attack1 0;
+#X obj 203 222 netpd_f \$1 \$2/release1 0;
+#X obj 204 142 netpd_f \$1 \$2/gain1 0;
 #X connect 0 0 6 0;
 #X connect 5 0 1 0;
 #X connect 5 1 2 0;
+#X connect 5 2 23 0;
 #X connect 6 0 5 0;
+#X connect 6 0 19 0;
 #X connect 6 1 7 0;
 #X connect 6 2 8 0;
 #X connect 6 3 9 0;
 #X connect 7 0 1 0;
 #X connect 7 1 2 0;
+#X connect 7 2 15 0;
 #X connect 8 0 1 0;
 #X connect 8 1 2 0;
+#X connect 8 2 14 0;
 #X connect 9 0 1 0;
 #X connect 9 1 2 0;
+#X connect 9 2 13 0;
 #X connect 10 0 11 0;
 #X connect 11 0 5 1;
+#X connect 11 0 19 1;
 #X connect 11 1 7 1;
 #X connect 11 2 8 1;
 #X connect 11 3 9 1;
-#X connect 13 0 6 1;
-#X connect 13 0 11 1;
-#X connect 14 0 6 2;
-#X connect 14 0 11 2;
-#X connect 15 0 6 3;
-#X connect 15 0 11 3;
+#X connect 16 0 6 1;
+#X connect 16 0 11 1;
+#X connect 17 0 6 2;
+#X connect 17 0 11 2;
+#X connect 18 0 6 3;
+#X connect 18 0 11 3;
+#X connect 19 0 20 0;
+#X connect 20 0 22 0;
+#X connect 21 0 5 4;
+#X connect 24 0 5 3;
+#X connect 25 0 5 5;
+#X connect 26 0 5 6;
+#X connect 27 0 5 2;
