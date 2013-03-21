@@ -11,31 +11,31 @@
 #X restore 401 33 pd NETPD 2 0;
 #N canvas 809 171 545 271 \$3-r4mbc 0;
 #N canvas 546 121 580 335 frequency.separator 0;
-#X obj 13 10 hsl 128 10 1 128 0 0 \$0.slider1 \$0.slider1.r empty -2
--8 0 10 -262144 -1 -1 12200 1;
-#X obj 13 10 hsl 274 10 1 274 0 0 \$0.slider2 \$0.slider2.r empty -2
--8 0 10 -262144 -1 -1 26800 1;
-#X obj 13 10 hsl 401 10 1 401 0 0 \$0.slider3 \$0.slider3.r empty -2
--8 0 10 -262144 -1 -1 39500 1;
+#X obj 13 10 hsl 25 10 1 25 0 0 \$0.slider1 \$0.slider1.r empty -2
+-8 0 10 -262144 -1 -1 0 1;
+#X obj 13 10 hsl 255 10 1 255 0 0 \$0.slider2 \$0.slider2.r empty -2
+-8 0 10 -262144 -1 -1 24900 1;
+#X obj 13 10 hsl 470 10 1 470 0 0 \$0.slider3 \$0.slider3.r empty -2
+-8 0 10 -262144 -1 -1 46900 1;
 #X obj 10 10 cnv 10 500 10 empty \$0.segment4 empty 20 12 0 14 -228856
 -66577 0;
-#X obj 10 10 cnv 10 401 10 empty \$0.segment3 empty 20 12 0 14 -191407
+#X obj 10 10 cnv 10 470 10 empty \$0.segment3 empty 20 12 0 14 -191407
 -66577 0;
-#X obj 10 10 cnv 10 274 10 empty \$0.segment2 empty 20 12 0 14 -162280
+#X obj 10 10 cnv 10 255 10 empty \$0.segment2 empty 20 12 0 14 -162280
 -66577 0;
-#X obj 10 10 cnv 10 128 10 empty \$0.segment1 empty 20 12 0 14 -128992
+#X obj 10 10 cnv 10 25 10 empty \$0.segment1 empty 20 12 0 14 -128992
 -66577 0;
 #X coords 0 -1 1 1 500 10 2 10 10;
 #X restore 13 16 pd frequency.separator;
 #X restore 401 14 pd \$3-r4mbc;
 #X obj 10 308 dynlib_comp;
-#X obj 9 99 dynlib_4bfs;
+#X obj 9 119 dynlib_4bfs;
 #X obj 93 308 dynlib_comp;
 #X obj 176 308 dynlib_comp;
 #X obj 260 308 dynlib_comp;
 #X obj 100 12 inlet~;
-#X obj 99 99 dynlib_4bfs;
-#N canvas 776 396 422 444 gui.stuff 0;
+#X obj 99 119 dynlib_4bfs;
+#N canvas 762 300 577 322 gui.stuff 0;
 #N canvas 340 170 953 289 frequency.separator.logic 0;
 #X obj 20 41 + 5;
 #X msg 39 160 vis_size \$1 10;
@@ -82,9 +82,7 @@
 #X obj 719 59 \$0;
 #X obj 796 30 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 719 81 \; \$1.margin 65 \; \$1.slider3 400 \; \$1.slider2 250
-\; \$1.slider1 100 \; \$1.slider3.r set 400 \; \$1.slider2.r set 250
-\; \$1.slider1.r set 100 \;;
+#X msg 719 81 \; \$1.margin 65 \;;
 #X connect 0 0 41 0;
 #X connect 1 0 6 0;
 #X connect 3 0 0 0;
@@ -128,12 +126,11 @@
 #X connect 42 0 44 0;
 #X connect 43 0 42 0;
 #X restore 23 15 pd frequency.separator.logic;
-#N canvas 451 297 291 496 netpd_freq1 0;
+#N canvas 451 325 314 327 netpd_freq1 0;
 #X obj 23 115 mtof;
 #X obj 23 49 r \$0.seg1;
 #X obj 23 93 + 25;
 #X obj 23 71 * 0.21;
-#X obj 23 229 s \$0.freq1;
 #X obj 156 122 ftom;
 #X obj 156 144 - 25;
 #X obj 156 166 / 0.21;
@@ -142,7 +139,6 @@
 #X msg 156 251 set \$1;
 #X obj 156 273 s \$0.slider1.r;
 #X obj 156 188 - 5;
-#X obj 23 204 netpd_f \$1 \$2/freq1;
 #X obj 23 138 spigot 1;
 #X obj 137 72 t b a b;
 #X msg 176 94 0;
@@ -150,31 +146,110 @@
 #X obj 137 27 r \$1-\$2/freq1;
 #X obj 137 49 route set;
 #X obj 23 159 s \$1-\$2/freq1;
-#X connect 0 0 14 0;
+#X connect 0 0 12 0;
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;
 #X connect 3 0 2 0;
+#X connect 4 0 5 0;
 #X connect 5 0 6 0;
-#X connect 6 0 7 0;
-#X connect 7 0 12 0;
-#X connect 8 0 10 0;
-#X connect 8 1 9 0;
-#X connect 10 0 11 0;
-#X connect 12 0 8 0;
-#X connect 13 0 4 0;
-#X connect 14 0 20 0;
-#X connect 15 0 17 0;
-#X connect 15 1 5 0;
-#X connect 15 2 16 0;
-#X connect 16 0 14 1;
-#X connect 17 0 14 1;
-#X connect 18 0 19 0;
-#X connect 19 0 15 0;
+#X connect 6 0 11 0;
+#X connect 7 0 9 0;
+#X connect 7 1 8 0;
+#X connect 9 0 10 0;
+#X connect 11 0 7 0;
+#X connect 12 0 18 0;
+#X connect 13 0 15 0;
+#X connect 13 1 4 0;
+#X connect 13 2 14 0;
+#X connect 14 0 12 1;
+#X connect 15 0 12 1;
+#X connect 16 0 17 0;
+#X connect 17 0 13 0;
 #X restore 201 15 pd netpd_freq1;
+#N canvas 451 325 319 316 netpd_freq2 0;
+#X obj 23 115 mtof;
+#X obj 23 93 + 25;
+#X obj 23 71 * 0.21;
+#X obj 156 122 ftom;
+#X obj 156 144 - 25;
+#X obj 156 166 / 0.21;
+#X obj 156 208 t a a;
+#X msg 156 251 set \$1;
+#X obj 156 188 - 5;
+#X obj 23 138 spigot 1;
+#X obj 137 72 t b a b;
+#X msg 176 94 0;
+#X msg 137 94 1;
+#X obj 137 49 route set;
+#X obj 23 49 r \$0.seg2;
+#X obj 23 159 s \$1-\$2/freq2;
+#X obj 137 27 r \$1-\$2/freq2;
+#X obj 183 230 s \$0.slider2;
+#X obj 156 273 s \$0.slider2.r;
+#X connect 0 0 9 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 6 1 17 0;
+#X connect 7 0 18 0;
+#X connect 8 0 6 0;
+#X connect 9 0 15 0;
+#X connect 10 0 12 0;
+#X connect 10 1 3 0;
+#X connect 10 2 11 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 10 0;
+#X connect 14 0 2 0;
+#X connect 16 0 13 0;
+#X restore 294 15 pd netpd_freq2;
+#N canvas 451 297 293 341 netpd_freq3 0;
+#X obj 23 115 mtof;
+#X obj 23 93 + 25;
+#X obj 23 71 * 0.21;
+#X obj 156 122 ftom;
+#X obj 156 144 - 25;
+#X obj 156 166 / 0.21;
+#X obj 156 208 t a a;
+#X msg 156 251 set \$1;
+#X obj 156 188 - 5;
+#X obj 23 138 spigot 1;
+#X obj 137 72 t b a b;
+#X msg 176 94 0;
+#X msg 137 94 1;
+#X obj 137 49 route set;
+#X obj 23 49 r \$0.seg3;
+#X obj 23 159 s \$1-\$2/freq3;
+#X obj 137 27 r \$1-\$2/freq3;
+#X obj 183 230 s \$0.slider3;
+#X obj 156 273 s \$0.slider3.r;
+#X connect 0 0 9 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 6 1 17 0;
+#X connect 7 0 18 0;
+#X connect 8 0 6 0;
+#X connect 9 0 15 0;
+#X connect 10 0 12 0;
+#X connect 10 1 3 0;
+#X connect 10 2 11 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;
+#X connect 13 0 10 0;
+#X connect 14 0 2 0;
+#X connect 16 0 13 0;
+#X restore 386 15 pd netpd_freq3;
 #X restore 401 58 pd gui.stuff;
-#X obj 33 39 r \$0.freq1;
-#X obj 108 39 r \$0.freq2;
-#X obj 183 39 r \$0.freq3;
+#X obj 30 37 netpd_f \$1 \$2/freq1 123;
+#X obj 67 58 netpd_f \$1 \$2/freq2 763;
+#X obj 110 78 netpd_f \$1 \$2/freq3 4712;
 #X connect 0 0 6 0;
 #X connect 5 0 1 0;
 #X connect 5 1 2 0;
