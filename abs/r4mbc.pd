@@ -9,22 +9,22 @@
 #X msg 10 54 r4mbc-sbcg;
 #X restore 11 34 pd abslist;
 #X msg 11 7 version 0 0 0;
-#X restore 401 33 pd NETPD 2 0;
+#X restore 688 38 pd NETPD 2 0;
 #N canvas 668 173 529 190 \$3-r4mbc 1;
 #N canvas 546 121 580 335 frequency.separator 0;
-#X obj 13 10 hsl 180 10 1 180 0 0 \$0.slider1 \$0.slider1.r empty -2
--8 0 10 -262144 -1 -1 17400 1;
-#X obj 13 10 hsl 331 10 1 331 0 0 \$0.slider2 \$0.slider2.r empty -2
--8 0 10 -262144 -1 -1 33000 1;
-#X obj 13 10 hsl 396 10 1 396 0 0 \$0.slider3 \$0.slider3.r empty -2
--8 0 10 -262144 -1 -1 39000 1;
+#X obj 13 10 hsl 104 10 1 104.447 0 0 \$0.slider1 \$0.slider1.r empty
+-2 -8 0 10 -262144 -1 -1 9802 1;
+#X obj 13 10 hsl 254 10 1 254.905 0 0 \$0.slider2 \$0.slider2.r empty
+-2 -8 0 10 -262144 -1 -1 24802 1;
+#X obj 13 10 hsl 404 10 1 404.996 0 0 \$0.slider3 \$0.slider3.r empty
+-2 -8 0 10 -262144 -1 -1 39801 1;
 #X obj 10 10 cnv 10 500 10 empty \$0.segment4 empty 20 12 0 14 -228856
 -66577 0;
-#X obj 10 10 cnv 10 396 10 empty \$0.segment3 empty 20 12 0 14 -191407
+#X obj 10 10 cnv 10 404 10 empty \$0.segment3 empty 20 12 0 14 -191407
 -66577 0;
-#X obj 10 10 cnv 10 331 10 empty \$0.segment2 empty 20 12 0 14 -162280
+#X obj 10 10 cnv 10 254 10 empty \$0.segment2 empty 20 12 0 14 -162280
 -66577 0;
-#X obj 10 10 cnv 10 180 10 empty \$0.segment1 empty 20 12 0 14 -128992
+#X obj 10 10 cnv 10 104 10 empty \$0.segment1 empty 20 12 0 14 -128992
 -66577 0;
 #X coords 0 -1 1 1 500 10 2 10 10;
 #X restore -32 -37 pd frequency.separator;
@@ -32,7 +32,7 @@
 #X obj 109 -23 r4mbc-sbcg \$1 \$2 \$0 2;
 #X obj 258 -23 r4mbc-sbcg \$1 \$2 \$0 3;
 #X obj 394 -23 r4mbc-sbcg \$1 \$2 \$0 4;
-#X restore 401 14 pd \$3-r4mbc;
+#X restore 688 19 pd \$3-r4mbc;
 #X obj 10 308 dynlib_comp;
 #X obj 9 119 dynlib_4bfs;
 #X obj 198 308 dynlib_comp;
@@ -251,7 +251,7 @@
 #X connect 14 0 2 0;
 #X connect 17 0 13 0;
 #X restore 386 15 pd netpd_freq3;
-#X restore 401 54 pd gui.stuff;
+#X restore 688 59 pd gui.stuff;
 #X obj 30 37 netpd_f \$1 \$2/xfreq1 123;
 #X obj 67 58 netpd_f \$1 \$2/xfreq2 763;
 #X obj 110 78 netpd_f \$1 \$2/xfreq3 4712;
@@ -596,23 +596,23 @@
 #X connect 9 0 6 0;
 #X restore 562 364 pd solo;
 #X obj 88 196 netpd_f \$1 \$2/ratio1 1;
-#X obj 88 236 netpd_f \$1 \$2/attack1 50;
-#X obj 88 256 netpd_f \$1 \$2/release1 200;
 #X obj 266 171 netpd_f \$1 \$2/gain2 0;
 #X obj 266 191 netpd_f \$1 \$2/ratio2 1;
 #X obj 266 211 netpd_f \$1 \$2/threshold2 0;
-#X obj 266 251 netpd_f \$1 \$2/release2 200;
-#X obj 266 231 netpd_f \$1 \$2/attack2 50;
 #X obj 456 171 netpd_f \$1 \$2/gain3 0;
 #X obj 456 191 netpd_f \$1 \$2/ratio3 1;
 #X obj 456 211 netpd_f \$1 \$2/threshold3 0;
-#X obj 456 231 netpd_f \$1 \$2/attack3 50;
-#X obj 456 251 netpd_f \$1 \$2/release3 200;
 #X obj 636 171 netpd_f \$1 \$2/gain4 0;
 #X obj 636 191 netpd_f \$1 \$2/ratio4 1;
 #X obj 636 211 netpd_f \$1 \$2/threshold4 0;
-#X obj 636 231 netpd_f \$1 \$2/attack4 50;
-#X obj 636 251 netpd_f \$1 \$2/release4 200;
+#X obj 266 231 netpd_f \$1 \$2/attack2 15;
+#X obj 88 236 netpd_f \$1 \$2/attack1 30;
+#X obj 456 231 netpd_f \$1 \$2/attack3 8;
+#X obj 636 231 netpd_f \$1 \$2/attack4 4;
+#X obj 636 251 netpd_f \$1 \$2/release4 40;
+#X obj 88 256 netpd_f \$1 \$2/release1 60;
+#X obj 266 251 netpd_f \$1 \$2/release2 60;
+#X obj 456 251 netpd_f \$1 \$2/release3 40;
 #X connect 0 0 6 0;
 #X connect 5 0 23 0;
 #X connect 5 1 23 1;
@@ -660,20 +660,20 @@
 #X connect 26 0 1 0;
 #X connect 26 1 2 0;
 #X connect 27 0 5 3;
-#X connect 28 0 5 5;
-#X connect 29 0 5 6;
-#X connect 30 0 7 2;
-#X connect 31 0 7 3;
-#X connect 32 0 7 4;
-#X connect 33 0 7 6;
-#X connect 34 0 7 5;
-#X connect 35 0 8 2;
-#X connect 36 0 8 3;
-#X connect 37 0 8 4;
-#X connect 38 0 8 5;
-#X connect 39 0 8 6;
-#X connect 40 0 9 2;
-#X connect 41 0 9 3;
-#X connect 42 0 9 4;
-#X connect 43 0 9 5;
-#X connect 44 0 9 6;
+#X connect 28 0 7 2;
+#X connect 29 0 7 3;
+#X connect 30 0 7 4;
+#X connect 31 0 8 2;
+#X connect 32 0 8 3;
+#X connect 33 0 8 4;
+#X connect 34 0 9 2;
+#X connect 35 0 9 3;
+#X connect 36 0 9 4;
+#X connect 37 0 7 5;
+#X connect 38 0 5 5;
+#X connect 39 0 8 5;
+#X connect 40 0 9 5;
+#X connect 41 0 9 6;
+#X connect 42 0 5 6;
+#X connect 43 0 7 6;
+#X connect 44 0 8 6;
