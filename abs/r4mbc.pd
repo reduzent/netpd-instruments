@@ -10,68 +10,63 @@
 #X restore 11 34 pd abslist;
 #X msg 11 7 version 0 0 0;
 #X restore 688 38 pd NETPD 2 0;
-#N canvas 606 465 531 199 \$3-r4mbc 1;
-#X obj 8 -30 cnv 15 510 182 empty empty empty 20 12 0 14 -99865 -66577
+#N canvas 606 465 431 216 \$3-r4mbc 1;
+#X obj 8 -30 cnv 15 410 202 empty empty empty 20 12 0 14 -99865 -66577
 0;
-#X obj 11 -27 cnv 14 504 14 empty empty empty 20 12 0 14 -1 -66577
+#X obj 11 -27 cnv 14 404 14 empty empty empty 20 12 0 14 -1 -66577
 0;
-#X obj 11 -5 r4mbc-sbcg \$1 \$2 \$0 1;
-#X obj 154 -5 r4mbc-sbcg \$1 \$2 \$0 2;
-#X obj 297 -5 r4mbc-sbcg \$1 \$2 \$0 3;
-#X obj 441 -5 r4mbc-sbcg \$1 \$2 \$0 4;
+#X obj 11 15 r4mbc-sbcg \$1 \$2 \$0 1;
+#X obj 96 15 r4mbc-sbcg \$1 \$2 \$0 2;
+#X obj 181 15 r4mbc-sbcg \$1 \$2 \$0 3;
+#X obj 266 15 r4mbc-sbcg \$1 \$2 \$0 4;
 #N canvas 546 121 540 150 frequency.separator 0;
-#X obj 13 10 hsl 104 10 1 104.447 0 0 \$0.slider1 \$0.slider1.r empty
+#X obj 13 20 hsl 104 10 1 104.447 0 0 \$0.slider1 \$0.slider1.r empty
 -2 -8 0 10 -262144 -1 -1 9802 1;
-#X obj 13 10 hsl 254 10 1 254.905 0 0 \$0.slider2 \$0.slider2.r empty
+#X obj 13 30 hsl 254 10 1 254.905 0 0 \$0.slider2 \$0.slider2.r empty
 -2 -8 0 10 -262144 -1 -1 24802 1;
-#X obj 13 10 hsl 404 10 1 404.996 0 0 \$0.slider3 \$0.slider3.r empty
+#X obj 13 40 hsl 404 10 1 404.996 0 0 \$0.slider3 \$0.slider3.r empty
 -2 -8 0 10 -262144 -1 -1 39801 1;
-#X obj 10 10 cnv 10 500 10 empty \$0.segment4 empty 20 12 0 14 -261056
+#X obj 10 50 cnv 10 500 10 empty \$0.segment4 empty 20 12 0 14 -261056
 -66577 0;
-#X obj 10 10 cnv 10 404 10 empty \$0.segment3 empty 20 12 0 14 -235706
+#X obj 10 60 cnv 10 404 10 empty \$0.segment3 empty 20 12 0 14 -235706
 -66577 0;
-#X obj 10 10 cnv 10 254 10 empty \$0.segment2 empty 20 12 0 14 -198129
+#X obj 10 70 cnv 10 254 10 empty \$0.segment2 empty 20 12 0 14 -198129
 -66577 0;
 #X obj 10 10 cnv 10 104 10 empty \$0.segment1 empty 20 12 0 14 -144676
 -66577 0;
-#X coords 0 -1 1 1 500 10 2 10 10;
+#X coords 0 -1 1 1 400 10 2 10 10;
 #X restore 13 -25 pd frequency.separator;
-#X obj 86 13 cnv 15 60 15 empty empty ----thr---- 2 7 0 10 -99865 -257025
-0;
-#X obj 86 33 cnv 15 60 15 empty empty ----rat---- 2 7 0 10 -99865 -257025
-0;
-#X obj 86 53 cnv 15 60 15 empty empty ----att---- 2 7 0 10 -99865 -257025
-0;
-#X obj 86 73 cnv 15 60 15 empty empty ----rel---- 2 7 0 10 -99865 -257025
-0;
-#X obj 86 93 cnv 15 60 15 empty empty ----gai---- 2 7 0 10 -99865 -257025
-0;
-#X obj 229 13 cnv 15 60 15 empty empty ----thr---- 2 7 0 10 -99865
+#X obj 341 33 cnv 15 74 16 empty empty --threshold 2 7 0 10 -86853
 -257025 0;
-#X obj 229 33 cnv 15 60 15 empty empty ----rat---- 2 7 0 10 -99865
+#X obj 341 53 cnv 15 74 16 empty empty ------ratio 2 7 0 10 -86853
 -257025 0;
-#X obj 229 53 cnv 15 60 15 empty empty ----att---- 2 7 0 10 -99865
+#X obj 341 73 cnv 15 74 16 empty empty -----attack 2 7 0 10 -86853
 -257025 0;
-#X obj 229 73 cnv 15 60 15 empty empty ----rel---- 2 7 0 10 -99865
+#X obj 341 93 cnv 15 74 16 empty empty ----release 2 7 0 10 -86853
 -257025 0;
-#X obj 229 93 cnv 15 60 15 empty empty ----gai---- 2 7 0 10 -99865
+#X obj 341 113 cnv 15 74 16 empty empty -------gain 2 7 0 10 -86853
 -257025 0;
-#X obj 372 13 cnv 15 60 15 empty empty ----thr---- 2 7 0 10 -99865
--257025 0;
-#X obj 372 33 cnv 15 60 15 empty empty ----rat---- 2 7 0 10 -99865
--257025 0;
-#X obj 372 53 cnv 15 60 15 empty empty ----att---- 2 7 0 10 -99865
--257025 0;
-#X obj 372 73 cnv 15 60 15 empty empty ----rel---- 2 7 0 10 -99865
--257025 0;
-#X obj 372 93 cnv 15 60 15 empty empty ----gai---- 2 7 0 10 -99865
--257025 0;
-#X obj 86 -8 cnv 15 60 15 empty \$0.xfreq1.display   123Hz 2 7 0 10
+#X obj 56 -8 cnv 15 60 15 empty \$0.xfreq1.display    123Hz 2 7 0 10
 -99865 -259712 0;
-#X obj 229 -8 cnv 15 60 15 empty \$0.xfreq2.display   763Hz 2 7 0 10
--99865 -259712 0;
-#X obj 372 -8 cnv 15 60 15 empty \$0.xfreq3.display  4712Hz 2 7 0 10
--99865 -259712 0;
+#X obj 142 -8 cnv 15 60 15 empty \$0.xfreq2.display    763Hz 2 7 0
+10 -99865 -259712 0;
+#X obj 229 -8 cnv 15 60 15 empty \$0.xfreq3.display   4712Hz 2 7 0
+10 -99865 -259712 0;
+#X obj 86 33 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 86 53 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 86 73 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 86 93 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 86 113 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 171 33 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 171 53 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 171 73 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 171 93 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 171 113 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 256 33 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 256 53 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 256 73 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 256 93 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
+#X obj 256 113 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
 #X restore 688 19 pd \$3-r4mbc;
 #X obj 10 308 dynlib_comp;
 #X obj 9 119 dynlib_4bfs;
