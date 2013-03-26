@@ -4,8 +4,9 @@ qseq3
   
   * subinstr list selector doesn't update on instr list selection
 
+  * in rare cases subinstr list selector can't be changed (reported by sqgl)
 
-master
 
-  * when two clients start simultaneously, one of the two new
-    master instances (or both?) overwrites current settings
+rfxlib->rchous
+
+  * does not work with two voices (silent)
