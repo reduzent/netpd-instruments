@@ -72,6 +72,9 @@
 #X obj 139 194 outlet~;
 #X obj 288 20 inlet;
 #X obj 340 28 inlet;
+#N canvas 779 118 264 116 NETPD 0;
+#X msg 17 22 version 0 1 0;
+#X restore 316 229 pd NETPD 2 0;
 #X connect 0 0 6 1;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
