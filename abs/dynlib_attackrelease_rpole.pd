@@ -12,7 +12,7 @@
 #X obj 43 97 -~;
 #X text 7 33 vgl.: "soll" mit "ist";
 #X text 33 218 Attack / Release;
-#X obj 43 121 /home/roman/netpd/abs/rh_sgn~;
+#X obj 43 121 rh_sgn~;
 #X connect 0 0 8 1;
 #X connect 3 0 4 1;
 #X connect 3 0 1 0;
