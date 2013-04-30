@@ -1,6 +1,5 @@
-#N canvas 749 494 250 230 10;
-#N canvas 804 616 175 138 NETPD 0;
-#X msg 15 7 version 0 0 0;
+#N canvas 749 522 250 230 10;
+#N canvas 804 672 175 138 NETPD 0;
 #N canvas 653 268 188 295 abslist 0;
 #X msg 28 21 i2mx;
 #X msg 28 147 mx-i2mx-gui;
@@ -16,6 +15,7 @@
 #X msg 27 254 roman_helpers;
 #X restore 17 36 pd abslist;
 #X msg 16 63 singleton;
+#X msg 15 7 version 0 0 1;
 #X restore 8 7 pd NETPD 2 0;
 #N canvas 603 106 348 450 create.channel.guis 0;
 #X obj 17 10 loadbang;
@@ -297,6 +297,8 @@
 #X restore 8 160 pd mx.meter____;
 #X obj 12 273 catch~ \$1-dummy-l;
 #X obj 122 273 catch~ \$1-dummy-r;
+#X obj 64 203 s~ mx.1;
+#X obj 114 203 s~ mx.2;
 #X connect 2 0 3 0;
 #X connect 2 1 3 1;
 #X connect 3 0 14 0;
@@ -310,7 +312,9 @@
 #X connect 12 0 6 0;
 #X connect 13 0 2 1;
 #X connect 14 0 4 0;
+#X connect 14 0 17 0;
 #X connect 14 1 4 1;
+#X connect 14 1 18 0;
 #X restore 8 169 pd main-out;
 #X obj 8 29 netpd_head \$1 mx;
 #N canvas 923 390 219 95 create.aux.channel.gui 0;
