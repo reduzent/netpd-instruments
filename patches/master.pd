@@ -144,7 +144,7 @@
 #X msg 11 82 master-gui-bar;
 #X restore 9 33 pd abslist;
 #X msg 9 54 singleton;
-#X msg 9 12 version 0 3 7;
+#X msg 9 12 version 0 3 8;
 #X restore 10 59 pd NETPD 2 0;
 #X text 91 11 GUI;
 #N canvas 585 44 410 57 \$1-master 1;
