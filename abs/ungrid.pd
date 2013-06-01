@@ -269,10 +269,11 @@
 #X msg 19 256 hit \$1;
 #X obj 19 60 list append \$1;
 #X msg 19 84 traverse pd-\$1;
+#X obj 97 137 t b b;
 #X connect 0 0 3 0;
 #X connect 1 0 4 0;
 #X connect 2 0 13 0;
-#X connect 2 1 15 0;
+#X connect 2 1 17 0;
 #X connect 3 0 15 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
@@ -287,6 +288,8 @@
 #X connect 14 0 12 0;
 #X connect 15 0 16 0;
 #X connect 16 0 2 0;
+#X connect 17 0 7 0;
+#X connect 17 1 15 0;
 #X restore 23 246 pd sequencer;
 #X obj 248 183 t a;
 #X obj 23 317 t a;
@@ -367,7 +370,7 @@
 #X obj 44 347 filledpolygon color 666 1 posx posy posx posy(0:1000)(10:1010)
 posx(0:1000)(10:1010) posy(0:1000)(10:1010) posx(0:1000)(10:1010) posy
 ;
-#N canvas 0 44 335 417 \$1 0;
+#N canvas 0 44 335 417 \$1 1;
 #X restore 297 52 pd \$1;
 #X obj 173 120 s pd-\$1;
 #X msg 210 95 vis \$1;
