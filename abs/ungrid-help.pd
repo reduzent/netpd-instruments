@@ -1,39 +1,38 @@
-#N struct 1102.button float posx float posy float color;
-#N canvas 335 44 829 513 10;
-#X obj 392 167 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
+#N canvas 335 44 824 475 10;
+#X obj 412 167 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
 1;
-#X msg 392 187 cell 2 3 \$1;
-#X obj 15 135 cnv 15 100 90 empty empty empty 20 12 0 14 -200689 -66577
+#X msg 412 187 cell 2 3 \$1;
+#X obj 15 45 cnv 15 100 90 empty empty empty 20 12 0 14 -200689 -66577
 0;
-#X obj 15 167 cnv 15 100 25 empty empty empty 20 12 0 14 -4034 -66577
+#X obj 15 76 cnv 15 100 25 empty empty empty 20 12 0 14 -4034 -66577
 0;
-#X obj 19 170 ungrid \$0.seq;
-#X obj 19 137 r \$0.ungrid.in;
-#X obj 19 202 s \$0.ungrid.out;
-#X obj 392 100 s \$0.ungrid.in;
-#X text 387 27 ---- create -------------------;
-#X msg 392 78 create \$1 40;
-#X obj 392 209 s \$0.ungrid.in;
-#X msg 598 57 rewind;
-#X obj 598 80 s \$0.ungrid.in;
-#X text 387 137 ---- cell ---------------------;
-#X text 593 27 ---- rewind -------------------;
-#X obj 598 173 s \$0.ungrid.in;
-#X text 593 120 ---- next ---------------------;
-#X msg 598 150 next;
-#X obj 602 422 s \$0.ungrid.in;
-#X text 597 348 ---- vis ---------------------;
-#X msg 602 399 vis \$1;
-#X obj 602 378 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
+#X obj 19 80 ungrid \$0.seq;
+#X obj 19 47 r \$0.ungrid.in;
+#X obj 19 112 s \$0.ungrid.out;
+#X obj 412 100 s \$0.ungrid.in;
+#X text 407 27 ---- create -------------------;
+#X msg 412 78 create \$1 40;
+#X obj 412 209 s \$0.ungrid.in;
+#X msg 618 57 rewind;
+#X obj 618 80 s \$0.ungrid.in;
+#X text 407 137 ---- cell ---------------------;
+#X text 613 27 ---- rewind -------------------;
+#X obj 618 173 s \$0.ungrid.in;
+#X text 613 120 ---- next ---------------------;
+#X msg 618 150 next;
+#X obj 622 422 s \$0.ungrid.in;
+#X text 617 348 ---- vis ---------------------;
+#X msg 622 399 vis \$1;
+#X obj 622 378 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
 1;
-#X text 482 77 size (x \, y);
-#X text 438 56 <- create new ungrid;
-#X text 477 185 x \, y \, 0|1;
-#X text 420 166 <- change single cell;
-#X text 644 151 <- output next column;
-#X text 651 57 <- go to start;
-#X obj 185 407 r \$0.ungrid.out;
-#X obj 185 358 s \$0.ungrid.in;
+#X text 502 77 size (x \, y);
+#X text 458 56 <- create new ungrid;
+#X text 497 185 x \, y \, 0|1;
+#X text 440 166 <- change single cell;
+#X text 664 151 <- output next column;
+#X text 671 57 <- go to start;
+#X obj 205 407 r \$0.ungrid.out;
+#X obj 205 358 s \$0.ungrid.in;
 #N canvas 545 211 343 354 pling.synth 0;
 #X obj 10 85 t a b;
 #X obj 37 107 f;
@@ -213,10 +212,10 @@
 #X connect 14 0 8 0;
 #X connect 15 0 7 1;
 #X coords 0 354 1 353 130 17 0;
-#X restore 185 434 pd pling.synth;
-#X obj 185 287 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
+#X restore 205 434 pd pling.synth;
+#X obj 205 287 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
 1;
-#X text 205 286 <- play tune;
+#X text 225 286 <- play tune;
 #N canvas 567 44 449 204 INIT 0;
 #X msg 44 65 create 32 40 2 11 3 14 3 18 3 19 3 23 3 33 5 6 10 7 11
 14 11 18 11 21 11 25 11 35 12 9 14 2 18 16 18 20 18 23 18 27 18 30
@@ -231,48 +230,53 @@
 #X connect 3 0 4 0;
 #X connect 3 1 0 0;
 #X connect 4 0 5 0;
-#X restore 15 409 pd INIT;
-#X obj 185 310 metro 150;
-#X msg 185 333 next;
-#X obj 287 434 nbx 3 17 0 100 0 0 empty empty empty 0 -8 0 10 -204786
+#X restore 15 377 pd INIT;
+#X obj 205 310 metro 150;
+#X msg 205 333 next;
+#X obj 307 434 nbx 3 17 0 100 0 0 empty empty empty 0 -8 0 10 -204786
 -1 -1 100 256;
-#X text 592 7 ==== SEQUENCING ===============;
-#X text 387 7 ==== DATA MANAGEMENT ==========;
-#X obj 392 55 nbx 3 17 0 100 0 0 empty empty empty 0 -8 0 10 -204786
+#X text 612 7 ==== SEQUENCING ===============;
+#X text 407 7 ==== DATA MANAGEMENT ==========;
+#X obj 412 55 nbx 3 17 0 100 0 0 empty empty empty 0 -8 0 10 -204786
 -1 -1 0 256;
-#X obj 392 300 s \$0.ungrid.in;
-#X text 387 247 ---- dump ---------------------;
-#X msg 392 277 dump;
-#X text 430 277 <- dump state to outlet;
-#X obj 185 37 r \$0.ungrid.out;
-#X obj 185 59 spigot;
-#X obj 185 82 print \$0.ungrid;
-#X obj 235 61 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
+#X obj 412 300 s \$0.ungrid.in;
+#X text 407 247 ---- dump ---------------------;
+#X msg 412 277 dump;
+#X text 450 277 <- dump state to outlet;
+#X obj 205 37 r \$0.ungrid.out;
+#X obj 205 59 spigot;
+#X obj 205 82 print \$0.ungrid;
+#X obj 255 61 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
 1;
-#X text 255 60 <- print;
-#X text 623 375 <- show/hide ungrid GUI;
-#X msg 392 402 clear;
-#X obj 392 427 s \$0.ungrid.in;
-#X text 691 167 (check output);
-#X text 391 323 output may be used for later;
-#X text 391 338 state restore;
-#X text 387 372 ---- clear --------------------;
-#X text 13 476 2013 \, Roman Haefeli;
-#X obj 598 266 s \$0.ungrid.in;
-#X text 593 213 ---- skip ---------------------;
-#X text 691 260 (no output);
-#X msg 598 243 skip;
-#X text 644 244 <- skip next column;
-#X text 436 400 <- clear ungrid;
-#X text 180 7 ---- PRINT OUTPUT -------------;
-#X text 180 257 ---- EXAMPLE ------------------;
-#X text 285 417 vol(dB);
+#X text 275 60 <- print;
+#X msg 412 402 clear;
+#X obj 412 427 s \$0.ungrid.in;
+#X text 711 167 (check output);
+#X text 411 323 output may be used for later;
+#X text 411 338 state restore;
+#X text 407 372 ---- clear --------------------;
+#X text 13 446 2013 \, Roman Haefeli;
+#X obj 618 266 s \$0.ungrid.in;
+#X text 613 213 ---- skip ---------------------;
+#X text 711 260 (no output);
+#X msg 618 243 skip;
+#X text 664 244 <- skip next column;
+#X text 456 400 <- clear ungrid;
+#X text 305 417 vol(dB);
 #N canvas 467 499 306 58 NETPD 0;
 #X msg 16 13 version 0 1 0;
-#X restore 15 451 pd NETPD 2 0;
-#N canvas 467 499 306 58 META 0;
-#X msg 16 13 version 0 1 0;
-#X restore 15 430 pd META;
+#X restore 15 421 pd NETPD 2 0;
+#X text 200 257 ==== EXAMPLE ==================;
+#X text 200 7 ==== PRINT OUTPUT =============;
+#X text 14 184 contains ungrid data:;
+#X obj 15 201 cnv 15 100 25 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#N canvas 0 44 335 417 \$0.seq 0;
+#X restore 19 205 pd \$0.seq;
+#X text 643 375 <- show/hide ungrid data;
+#X text 677 388 canvas;
+#X text 14 8 [ungrid] - a DS sequencer;
+#X text 14 142 arg1: name of data canvas;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
 #X connect 4 0 6 0;
@@ -292,5 +296,5 @@
 #X connect 44 0 45 0;
 #X connect 45 0 46 0;
 #X connect 47 0 45 1;
-#X connect 50 0 51 0;
-#X connect 60 0 57 0;
+#X connect 49 0 50 0;
+#X connect 59 0 56 0;
