@@ -1,0 +1,54 @@
+#N struct automation float yshift array variy automation-element;
+#N struct automation-element float y;
+#N canvas 682 154 511 315 10;
+#N canvas 0 44 501 374 data 1;
+#X scalar automation 20 \; 0 \; 0 \; 53 \; 53 \; 53 \; 53 \; 52 \;
+52 \; 51 \; 51 \; 51 \; 51 \; 52 \; 53.5 \; 55 \; 59 \; 60 \; 61 \;
+61 \; 61 \; 61 \; 61 \; 61 \; 61 \; 61 \; 61 \; 61 \; 60 \; 59 \; 58.3333
+\; 57.6667 \; 57 \; 54 \; 52 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; \;;
+#X scalar automation 140 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+5 \; 9 \; 13 \; 19 \; 28 \; 62 \; 60 \; 58 \; 56 \; 53 \; 52 \; 48
+\; 46 \; 42 \; 41 \; 39 \; 39 \; 38 \; 37 \; 36.5 \; 36 \; 34 \; 32
+\; 30 \; 30 \; 30 \; 30 \; 30 \; 30 \; 30 \; 30 \; 30 \; 30 \; 31 \;
+32 \; 33 \; 36 \; \;;
+#X scalar automation 260 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; \;;
+#X restore 49 88 pd data;
+#N canvas 623 540 450 300 automation 0;
+#X obj 70 62 print AUTOMATION;
+#X obj 78 159 plot variy 0 0 20 yshift 10;
+#X obj 70 27 struct automation float yshift array variy automation-element
+;
+#X connect 2 0 0 0;
+#X restore 49 115 pd automation;
+#N canvas 520 248 450 300 automation-element 0;
+#X obj 56 20 struct automation-element float y;
+#X obj 72 53 print ELEMENT;
+#X obj 52 150 filledpolygon 766 766 0 0 0 0 y(0:100)(100:0) 7 y(0:100)(100:0)
+7 0;
+#X connect 0 0 1 0;
+#X restore 50 142 pd automation-element;
+#X obj 316 88 s pd-data;
+#X obj 298 178 pointer;
+#X obj 216 230 setsize automation variy;
+#X floatatom 216 196 5 0 0 0 - - -, f 5;
+#X obj 225 29 t b b b;
+#X obj 225 5 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 303 32 5 0 0 0 - - -, f 5;
+#X msg 315 62 scalar automation \$1;
+#X msg 426 92 clear;
+#X msg 290 124 traverse pd-data;
+#X msg 392 146 next;
+#X connect 4 0 5 1;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 3 0;
+#X connect 11 0 3 0;
+#X connect 12 0 4 0;
+#X connect 13 0 4 0;
