@@ -7,9 +7,9 @@
 #X obj 391 45 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 437 32 5 0 0 0 - - -, f 5;
-#X obj 402 205 ungrid pd-\$1/xmaj;
-#N canvas 554 135 171 303 \$1/xmaj 1;
-#X restore 38 7 pd \$1/xmaj;
+#X obj 402 205 ungrid pd-\$1-\$2-unstep;
+#N canvas 554 135 171 303 \$1-\$2-unstep 1;
+#X restore 38 7 pd \$1-\$2-unstep;
 #X obj 402 227 s \$0.ungrid;
 #X obj 75 263 table \$0.automation.data;
 #X obj 41 106 f;
@@ -17,7 +17,7 @@
 #X obj 402 183 r \$0.ungrid.r;
 #X obj 41 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 435 407 s pd-\$1/xmaj;
+#X obj 435 407 s pd-\$1-\$2-unstep;
 #X msg 435 375 clear;
 #N canvas 0 44 1680 985 automation.label 0;
 #X obj 21 6 inlet;
@@ -88,11 +88,11 @@ float track;
 #X msg 385 234 0;
 #X obj 21 93 t b a b;
 #X msg 21 349 scalar autolabel \$3 \$1 \$2 \$4 \$5;
-#X obj 21 372 s pd-\$1/xmaj;
+#X obj 21 372 s pd-\$1-\$2-unstep;
 #N canvas 1074 627 272 321 set.pointer.to.active.label 0;
 #X obj 28 79 until;
 #X msg 28 58 10000;
-#X obj 86 79 list append pd-\$1/xmaj;
+#X obj 86 79 list append pd-\$1-\$2-unstep;
 #X msg 86 101 traverse \$1;
 #X obj 28 15 r \$0.length;
 #X obj 28 37 t b b;
@@ -177,7 +177,7 @@ float track;
 #X obj 21 321 route set;
 #X obj 43 211 loadbang;
 #X msg 43 233 autoclear 0;
-#X obj 21 300 unrail pd-\$1/xmaj;
+#X obj 21 300 unrail pd-\$1-\$2-unstep;
 #X obj 21 15 inlet;
 #X obj 21 467 s \$0.automation.data;
 #X obj 21 343 list split 1;
