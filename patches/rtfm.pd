@@ -9,20 +9,20 @@
 #X restore 12 33 pd abslist;
 #X msg 12 8 version 0 0 4;
 #X restore 10 14 pd NETPD 2 0;
-#N canvas 704 370 402 141 \$1-rtfm 1;
+#N canvas 704 370 402 141 \$1-rtfm 0;
 #X obj 97 37 nbx 5 14 -1e+37 1e+37 0 0 \$1-x2 \$1-x2 x2 0 -8 0 10 -262144
 -1 -1 2 256;
 #X obj 39 37 nbx 5 14 -1e+37 1e+37 0 0 \$1-x1 \$1-x1 x1 0 -8 0 10 -262144
 -1 -1 3 256;
 #X obj 40 102 hsl 110 15 0 0.5 0 0 \$1-stereo \$1-stereo stereo -2
--8 0 10 -262144 -1 -1 10900 1;
+-8 0 10 -262144 -1 -1 0 1;
 #X text 211 78 RTFM (there is no manual);
 #X obj 163 102 nbx 5 14 -1e+37 1e+37 0 0 \$1-phmod \$1-phmod phmod
 0 -8 0 10 -262144 -1 -1 1 256;
 #X obj 271 36 bng 15 250 50 0 \$1-open-jam empty jamx 17 7 0 10 -262144
 -1 -1;
 #X obj 41 70 hsl 110 15 0 1 0 0 \$1-index \$1-index index -2 -8 0 10
--262144 -1 -1 3090 1;
+-262144 -1 -1 1090 1;
 #X restore 10 66 pd \$1-rtfm;
 #X obj 10 40 netpd_head \$1 rtfm;
 #N canvas 585 92 487 468 dsp 0;
@@ -58,7 +58,7 @@
 #X obj 160 98 netpd_f \$1 phmod 1;
 #X obj 249 123 netpd_f \$1 stereo 0;
 #X obj 121 305 loadbang;
-#X floatatom 111 133 5 0 0 0 - - -;
+#X floatatom 111 133 5 0 0 0 - - -, f 5;
 #X obj 274 203 netpd_f \$1 index 0.1;
 #X msg 274 224 \$1 30;
 #X obj 274 246 line~;
@@ -110,6 +110,7 @@
 #X obj 19 226 switch~;
 #X text 169 246 Author: Roman Haefeli;
 #X obj 11 93 jamx \$1 rtfm 3;
+#X obj 145 45 unstep \$1 rtfm attack decay sustain release;
 #X connect 3 0 4 0;
 #X connect 3 1 4 1;
 #X connect 3 2 4 2;
