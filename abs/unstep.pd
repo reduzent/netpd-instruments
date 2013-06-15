@@ -1,6 +1,6 @@
 #N canvas 782 88 547 447 10;
 #X obj 400 110 ungrid pd-\$1-\$2-unstep;
-#N canvas 429 210 213 537 \$1-\$2-unstep 1;
+#N canvas 429 238 213 537 \$1-\$2-unstep 1;
 #X restore 21 9 pd \$1-\$2-unstep;
 #X obj 400 132 s \$0.ungrid;
 #X obj 85 182 s \$0.ungrid.r;
@@ -185,7 +185,8 @@ float track;
 #X obj 184 146 t b b a;
 #N canvas 293 171 466 266 messagebox 0;
 #X obj 41 36 inlet;
-#X msg 41 58 set 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X msg 41 58 set 0 0.25 0.37 0.75 0.8 0.9 1 0.83 0.98 0.98 1 1 0.64
+0.715 0.79 0.91 0.57;
 #X obj 41 230 outlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -501,13 +502,9 @@ float track;
 #X obj 26 66 s \$0.ungrid.r;
 #X msg 26 44 dump;
 #X obj 26 110 r \$0.ungrid;
-#X obj 26 132 route hit;
-#X obj 26 154 netpd_s \$1 unstep/\$2/ungrid;
-#X obj 26 176 netpd_r \$1 unstep/\$2/ungrid;
-#X obj 95 221 s \$0.ungrid.r;
+#X obj 26 250 s \$0.ungrid.r;
 #X text 26 1 -- ungrid --;
-#X obj 26 198 route create;
-#X obj 26 246 s \$0.reinit;
+#X obj 75 298 s \$0.reinit;
 #X obj 336 21 netpd-dump \$1 5;
 #X text 340 2 -- automation --;
 #X obj 351 45 r \$1-unstep/\$2/automation;
@@ -520,9 +517,11 @@ float track;
 #X msg 39 168 add2 \$1;
 #N canvas 293 171 466 266 messagebox 0;
 #X obj 41 36 inlet;
-#X msg 41 58 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0;
+#X msg 41 58 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.835 0.765 0.685 0.475
+0.075 0.005 0.065 0.635 0.665 0.725 0.755 0.755 0.755 0.755 0.735 0.625
+0.41 0.41 0.41 0.41 0.41 0.41 0.41 0.44 0.46 0.47 0.5 0.51 0.51 0.51
+0.51 0.6 0.25 0.37 0.75 0.8 0.9 1 0.83 0.98 0.98 1 1 0.64 0.715 0.79
+0.91 0.57;
 #X obj 41 230 outlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -553,19 +552,26 @@ float track;
 #X obj 336 141 netpd_s \$1 unstep/\$2/automation;
 #X obj 336 170 netpd_r \$1 unstep/\$2/automation;
 #X obj 336 193 s \$1-unstep/\$2/automation;
+#X obj 26 174 netpd_s \$1 unstep/\$2/cell;
+#X obj 26 132 route cell create;
+#X obj 75 154 netpd_s \$1 unstep/\$2/create;
+#X obj 26 206 netpd_r \$1 unstep/\$2/cell;
+#X msg 26 228 cell \$1 \$2 \$3;
+#X obj 75 274 netpd_r \$1 unstep/\$2/create;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
-#X connect 3 0 4 0;
-#X connect 4 1 5 0;
-#X connect 6 0 9 0;
+#X connect 3 0 17 0;
+#X connect 7 0 11 0;
 #X connect 9 0 10 0;
-#X connect 9 1 7 0;
-#X connect 11 0 15 0;
-#X connect 13 0 14 0;
-#X connect 14 0 15 1;
-#X connect 15 0 16 0;
-#X connect 16 0 17 0;
-#X connect 18 0 19 0;
+#X connect 10 0 11 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 17 0 16 0;
+#X connect 17 1 18 0;
+#X connect 19 0 20 0;
+#X connect 20 0 4 0;
+#X connect 21 0 6 0;
 #X restore 440 33 pd netpdization;
 #X obj 21 139 t a a a;
 #X obj 21 84 t a a;
