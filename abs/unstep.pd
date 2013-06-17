@@ -1,7 +1,5 @@
 #N canvas 782 88 547 447 10;
 #X obj 400 110 ungrid pd-\$1-\$2-unstep;
-#N canvas 429 238 213 537 \$1-\$2-unstep 1;
-#X restore 21 9 pd \$1-\$2-unstep;
 #X obj 400 132 s \$0.ungrid;
 #X obj 85 182 s \$0.ungrid.r;
 #X obj 400 88 r \$0.ungrid.r;
@@ -185,8 +183,8 @@ float track;
 #X obj 184 146 t b b a;
 #N canvas 293 171 466 266 messagebox 0;
 #X obj 41 36 inlet;
-#X msg 41 58 set 0 0.25 0.37 0.75 0.8 0.9 1 0.83 0.98 0.98 1 1 0.64
-0.715 0.79 0.91 0.57;
+#X msg 41 58 set 0 0.8 0.77 0.065 0.015 0.015 0.005 0.015 0.015 0.015
+0.015 0.22 0.22 0.2 0.18 0.15 0.11;
 #X obj 41 230 outlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -357,9 +355,10 @@ float track;
 #X obj 254 145 s \$0.args;
 #N canvas 779 312 311 68 NETPD 0;
 #X msg 17 9 version 0 1 0;
-#N canvas 872 293 304 66 abslist 0;
+#N canvas 872 293 303 100 abslist 0;
 #X msg 14 8 ungrid;
 #X msg 14 30 unrail;
+#X msg 14 51 unstep-gui;
 #X restore 17 32 pd abslist;
 #X restore 456 10 pd NETPD 2 0;
 #N canvas 837 479 450 372 automation.output 0;
@@ -517,11 +516,9 @@ float track;
 #X msg 39 168 add2 \$1;
 #N canvas 293 171 466 266 messagebox 0;
 #X obj 41 36 inlet;
-#X msg 41 58 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0.835 0.765 0.685 0.475
-0.075 0.005 0.065 0.635 0.665 0.725 0.755 0.755 0.755 0.755 0.735 0.625
-0.41 0.41 0.41 0.41 0.41 0.41 0.41 0.44 0.46 0.47 0.5 0.51 0.51 0.51
-0.51 0.6 0.25 0.37 0.75 0.8 0.9 1 0.83 0.98 0.98 1 1 0.64 0.715 0.79
-0.91 0.57;
+#X msg 41 58 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0;
 #X obj 41 230 outlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -580,21 +577,22 @@ float track;
 #X obj 85 138 list prepend create;
 #X obj 85 160 list trim;
 #X obj 227 191 s \$0.reinit;
-#X connect 0 0 2 0;
-#X connect 4 0 0 0;
-#X connect 6 0 5 0;
-#X connect 8 0 9 0;
-#X connect 11 0 21 0;
-#X connect 16 0 17 0;
-#X connect 19 0 30 0;
-#X connect 21 0 19 0;
-#X connect 21 1 12 0;
-#X connect 24 0 8 0;
-#X connect 24 1 7 0;
-#X connect 24 2 10 0;
-#X connect 25 0 27 0;
-#X connect 25 1 28 0;
-#X connect 26 0 25 0;
-#X connect 27 0 24 0;
-#X connect 28 0 29 0;
-#X connect 29 0 3 0;
+#X obj 21 9 unstep-gui \$1 \$2;
+#X connect 0 0 1 0;
+#X connect 3 0 0 0;
+#X connect 5 0 4 0;
+#X connect 7 0 8 0;
+#X connect 10 0 20 0;
+#X connect 15 0 16 0;
+#X connect 18 0 29 0;
+#X connect 20 0 18 0;
+#X connect 20 1 11 0;
+#X connect 23 0 7 0;
+#X connect 23 1 6 0;
+#X connect 23 2 9 0;
+#X connect 24 0 26 0;
+#X connect 24 1 27 0;
+#X connect 25 0 24 0;
+#X connect 26 0 23 0;
+#X connect 27 0 28 0;
+#X connect 28 0 2 0;
