@@ -1,10 +1,3 @@
-#N struct 3940.button float posx float posy float color;
-#N struct 3940.cursor float cx float cy;
-#N struct 3941-automation float yshift array variy 3941-automation-element
-;
-#N struct 3941-automation-element float y;
-#N struct autolabel float x float y symbol lbl float color float track
-;
 #N canvas 782 88 549 463 10;
 #X obj 400 110 ungrid pd-\$1-\$2-unstep;
 #X obj 400 132 s \$0.ungrid;
