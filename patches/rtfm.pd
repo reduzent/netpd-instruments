@@ -1,10 +1,3 @@
-#N struct 1978.button float posx float posy float color;
-#N struct 1978.cursor float cx float cy;
-#N struct 1979-automation float yshift array variy 1979-automation-element
-;
-#N struct 1979-automation-element float y;
-#N struct autolabel float x float y symbol lbl float color float track
-;
 #N canvas 585 170 426 287 10;
 #N canvas 624 75 373 157 NETPD 0;
 #N canvas 954 441 236 127 abslist 0;
@@ -13,29 +6,45 @@
 #X restore 12 33 pd abslist;
 #X msg 12 8 version 0 0 4;
 #X restore 10 14 pd NETPD 2 0;
-#N canvas 704 370 402 141 \$1-rtfm 0;
+#N canvas 704 370 392 298 \$1-rtfm 0;
 #X obj 97 37 nbx 5 14 -1e+37 1e+37 0 0 \$1-x2 \$1-x2 x2 0 -8 0 10 -262144
 -1 -1 2 256;
 #X obj 39 37 nbx 5 14 -1e+37 1e+37 0 0 \$1-x1 \$1-x1 x1 0 -8 0 10 -262144
--1 -1 3 256;
-#X obj 40 102 hsl 110 15 0 0.5 0 0 \$1-stereo \$1-stereo stereo -2
--8 0 10 -262144 -1 -1 0 1;
+-1 -1 1 256;
 #X text 211 78 RTFM (there is no manual);
-#X obj 163 102 nbx 5 14 -1e+37 1e+37 0 0 \$1-phmod \$1-phmod phmod
-0 -8 0 10 -262144 -1 -1 1 256;
+#X obj 157 36 nbx 5 14 -1e+37 1e+37 0 0 \$1-phmod \$1-phmod phmod 0
+-8 0 10 -262144 -1 -1 0 256;
 #X obj 271 36 bng 15 250 50 0 \$0.show.unstep empty unstep 17 7 0 10
 -262144 -1 -1;
-#X obj 41 70 hsl 110 15 0 1 0 0 \$1-index \$1-index index -2 -8 0 10
--262144 -1 -1 1090 1;
+#X obj 34 63 cnv 15 80 200 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 39 78 hsl 70 11 0 0.5 0 0 \$1-stereo \$1-stereo stereo 0 6 0
+10 -262144 -1 -260097 0 1;
+#X obj 39 67 hsl 70 11 0 1 0 0 \$1-index \$1-index index 0 6 0 10 -262144
+-1 -260097 0 1;
+#X obj 39 95 hsl 70 11 0 1 0 0 \$1-attack \$1-attack attack 0 6 0 10
+-262144 -1 -258113 0 1;
+#X obj 39 117 hsl 70 11 0 1 0 0 \$1-decay \$1-decay decay 0 6 0 10
+-262144 -1 -258113 0 1;
+#X obj 39 106 hsl 70 11 0 1 0 0 \$1-amplitude \$1-amplitude amplitude
+0 6 0 10 -262144 -1 -258113 0 1;
+#X obj 39 146 hsl 70 11 0 1 0 0 \$1-i-attack \$1-i-attack i-attack
+0 6 0 10 -262144 -1 -159808 0 1;
+#X obj 39 168 hsl 70 11 0 1 0 0 \$1-i-decay \$1-i-decay i-decay 0 6
+0 10 -262144 -1 -159808 0 1;
+#X obj 39 135 hsl 70 11 0 1 0 0 \$1-index1 \$1-index1 index1 0 6 0
+10 -262144 -1 -159808 0 1;
+#X obj 39 157 hsl 70 11 0 1 0 0 \$1-index2 \$1-index2 index2 0 6 0
+10 -262144 -1 -159808 0 1;
+#X obj 39 179 hsl 70 11 0 1 0 0 \$1-index3 \$1-index3 index3 0 6 0
+10 -262144 -1 -159808 0 1;
 #X restore 10 66 pd \$1-rtfm;
 #X obj 10 40 netpd_head \$1 rtfm;
 #N canvas 585 92 487 468 dsp 0;
 #X obj 8 410 outlet~;
 #X obj 63 410 outlet~;
 #X obj 207 410 outlet;
-#X obj 11 12 r \$1-rtfm;
-#X msg 11 34 \$1;
-#X obj 11 87 phasor~;
+#X obj 11 107 phasor~;
 #X obj 81 196 *~;
 #X obj 8 338 cos~;
 #X obj 25 263 cos~;
@@ -43,7 +52,7 @@
 #X obj 9 310 +~;
 #X obj 24 287 *~;
 #X obj 26 240 +~;
-#X obj 11 65 mtof;
+#X obj 11 85 mtof;
 #X obj 24 164 samphold~;
 #X obj 96 164 samphold~;
 #X obj 9 376 *~;
@@ -61,54 +70,129 @@
 #X obj 96 75 netpd_f \$1 x2 2;
 #X obj 160 98 netpd_f \$1 phmod 1;
 #X obj 249 123 netpd_f \$1 stereo 0;
-#X obj 121 305 loadbang;
-#X floatatom 111 133 5 0 0 0 - - -, f 5;
-#X obj 274 203 netpd_f \$1 index 0.1;
-#X msg 274 224 \$1 30;
-#X obj 274 246 line~;
-#X msg 128 338 0.5;
-#X connect 3 0 4 0;
-#X connect 4 0 13 0;
+#X obj 11 12 inlet;
+#X obj 11 34 route note;
+#X obj 302 301 netpd_f \$1 attack 0.1;
+#X obj 349 337 netpd_f \$1 decay 0.3;
+#X obj 284 276 netpd_f \$1 amplitude 0.8;
+#N canvas 1045 196 160 293 att-dec 0;
+#X obj 36 244 outlet~;
+#X obj 36 105 vline~;
+#X obj 36 16 inlet;
+#X obj 36 127 dbtorms~;
+#X msg 36 76 \$1 \$2 \, 0 \$3 \$2;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X restore 194 374 pd att-dec;
+#X obj 194 350 pack f f f;
+#X obj 194 329 f;
+#X obj 209 255 t a a;
+#X obj 209 277 *;
+#X obj 302 324 t a a;
+#X obj 302 346 *;
+#X obj 302 368 * 1000;
+#X obj 349 359 t a a;
+#X obj 349 381 *;
+#X obj 349 403 * 5000;
+#X obj 11 56 t a b;
+#X obj 209 299 rmstodb;
+#N canvas 887 68 372 339 index 0;
+#X obj 11 256 outlet~;
+#X obj 193 90 netpd_f \$1 index1 0.1;
+#X obj 194 114 netpd_f \$1 index2 0.1;
+#X obj 196 138 netpd_f \$1 index3 0.1;
+#X obj 61 31 t a a;
+#X obj 61 53 *;
+#X obj 61 75 * 1000;
+#X obj 119 65 t a a;
+#X obj 119 87 *;
+#X obj 119 109 * 5000;
+#X obj 11 63 inlet;
+#X obj 11 101 f;
+#X obj 11 186 pack f f f f f;
+#X obj 61 8 netpd_f \$1 i-attack 0.1;
+#X obj 119 43 netpd_f \$1 i-decay 0.3;
+#X obj 11 230 vline~;
+#X msg 11 208 \$3 \, \$4 \$1 \, \$5 \$2 \$1;
+#X connect 1 0 12 2;
+#X connect 2 0 12 3;
+#X connect 3 0 12 4;
+#X connect 4 0 5 0;
+#X connect 4 1 5 1;
 #X connect 5 0 6 0;
-#X connect 5 0 9 0;
-#X connect 5 0 14 1;
-#X connect 5 0 15 1;
-#X connect 6 0 12 0;
-#X connect 6 0 22 0;
-#X connect 7 0 16 0;
-#X connect 8 0 11 0;
-#X connect 9 0 10 0;
-#X connect 9 0 20 0;
-#X connect 10 0 7 0;
-#X connect 11 0 10 1;
-#X connect 12 0 8 0;
-#X connect 13 0 5 0;
-#X connect 14 0 9 1;
-#X connect 15 0 6 1;
-#X connect 16 0 0 0;
-#X connect 17 0 12 1;
-#X connect 17 0 26 0;
-#X connect 18 0 23 0;
-#X connect 19 0 21 0;
-#X connect 20 0 18 0;
-#X connect 21 0 20 1;
-#X connect 22 0 19 0;
-#X connect 23 0 1 0;
-#X connect 24 0 25 0;
-#X connect 25 0 26 1;
-#X connect 26 0 22 1;
-#X connect 27 0 14 0;
-#X connect 28 0 15 0;
-#X connect 28 0 32 0;
-#X connect 29 0 17 0;
-#X connect 30 0 24 0;
-#X connect 31 0 36 0;
-#X connect 33 0 34 0;
-#X connect 34 0 35 0;
-#X connect 35 0 21 1;
-#X connect 35 0 11 1;
-#X connect 36 0 23 1;
-#X connect 36 0 16 1;
+#X connect 6 0 11 1;
+#X connect 7 0 8 0;
+#X connect 7 1 8 1;
+#X connect 8 0 9 0;
+#X connect 9 0 12 1;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 16 0;
+#X connect 13 0 4 0;
+#X connect 14 0 7 0;
+#X connect 15 0 0 0;
+#X connect 16 0 15 0;
+#X restore 199 223 pd index;
+#X connect 3 0 4 0;
+#X connect 3 0 7 0;
+#X connect 3 0 12 1;
+#X connect 3 0 13 1;
+#X connect 4 0 10 0;
+#X connect 4 0 20 0;
+#X connect 5 0 14 0;
+#X connect 6 0 9 0;
+#X connect 7 0 8 0;
+#X connect 7 0 18 0;
+#X connect 8 0 5 0;
+#X connect 9 0 8 1;
+#X connect 10 0 6 0;
+#X connect 11 0 3 0;
+#X connect 12 0 7 1;
+#X connect 13 0 4 1;
+#X connect 14 0 0 0;
+#X connect 15 0 10 1;
+#X connect 15 0 24 0;
+#X connect 16 0 21 0;
+#X connect 17 0 19 0;
+#X connect 18 0 16 0;
+#X connect 19 0 18 1;
+#X connect 20 0 17 0;
+#X connect 21 0 1 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 1;
+#X connect 24 0 20 1;
+#X connect 25 0 12 0;
+#X connect 26 0 13 0;
+#X connect 27 0 15 0;
+#X connect 28 0 22 0;
+#X connect 29 0 30 0;
+#X connect 30 0 45 0;
+#X connect 31 0 39 0;
+#X connect 32 0 42 0;
+#X connect 33 0 37 0;
+#X connect 34 0 21 1;
+#X connect 34 0 14 1;
+#X connect 35 0 34 0;
+#X connect 36 0 35 0;
+#X connect 37 0 38 0;
+#X connect 37 1 38 1;
+#X connect 38 0 46 0;
+#X connect 39 0 40 0;
+#X connect 39 1 40 1;
+#X connect 40 0 41 0;
+#X connect 41 0 35 1;
+#X connect 42 0 43 0;
+#X connect 42 1 43 1;
+#X connect 43 0 44 0;
+#X connect 44 0 35 2;
+#X connect 45 0 11 0;
+#X connect 45 1 36 0;
+#X connect 45 1 47 0;
+#X connect 46 0 36 1;
+#X connect 47 0 19 1;
+#X connect 47 0 9 1;
 #X restore 10 198 pd dsp;
 #X obj 9 234 i2mx \$1 rtfm;
 #X obj 9 256 switch~;
@@ -122,3 +206,4 @@
 #X connect 4 0 5 0;
 #X connect 7 0 9 0;
 #X connect 8 0 7 0;
+#X connect 9 0 3 0;
