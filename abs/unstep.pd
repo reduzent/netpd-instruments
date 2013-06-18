@@ -1,3 +1,10 @@
+#N struct 1452.button float posx float posy float color;
+#N struct 1452.cursor float cx float cy;
+#N struct 1453-automation float yshift array variy 1453-automation-element
+;
+#N struct 1453-automation-element float y;
+#N struct autolabel float x float y symbol lbl float color float track
+;
 #N canvas 782 88 549 463 10;
 #X obj 400 110 ungrid pd-\$1-\$2-unstep;
 #X obj 400 132 s \$0.ungrid;
@@ -354,12 +361,12 @@ float track;
 #X restore 227 101 pd parse.arg.list;
 #X obj 254 145 s \$0.args;
 #N canvas 779 312 311 68 NETPD 0;
-#X msg 17 9 version 0 1 0;
 #N canvas 872 293 303 100 abslist 0;
 #X msg 14 8 ungrid;
 #X msg 14 30 unrail;
 #X msg 14 51 unstep-gui;
 #X restore 17 32 pd abslist;
+#X msg 17 9 version 0 1 1;
 #X restore 456 10 pd NETPD 2 0;
 #N canvas 837 479 450 372 automation.output 0;
 #X obj 39 35 r \$0.ungrid;
@@ -615,7 +622,7 @@ float track;
 #X obj 21 9 unstep-gui \$1 \$2;
 #X obj 227 257 inlet;
 #X obj 227 279 route vis;
-#N canvas 585 149 334 70 \$1-\$2-unstep-settings 1;
+#N canvas 585 149 334 70 \$1-\$2-unstep-settings 0;
 #X obj 11 25 nbx 3 14 1 999 0 0 \$0.xsize \$0.xsize.r x 40 10 0 10
 -262144 -1 -1 32 256;
 #X obj 11 39 nbx 3 14 1 999 0 0 \$0.ysize \$0.ysize.r y 40 10 0 10
