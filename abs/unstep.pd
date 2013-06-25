@@ -358,6 +358,7 @@ float track;
 #X msg 14 8 ungrid;
 #X msg 14 30 unrail;
 #X msg 14 51 unstep-gui;
+#X msg 14 72 master-poly;
 #X restore 17 32 pd abslist;
 #X msg 17 9 version 0 1 1;
 #X restore 456 10 pd NETPD 2 0;
@@ -440,10 +441,8 @@ float track;
 #X restore 227 39 pd note.output;
 #X obj 21 396 r \$0.outlet;
 #X obj 21 418 outlet;
-#N canvas 782 88 503 391 master->ungrid 0;
+#N canvas 782 88 507 423 master->ungrid 1;
 #X obj 19 349 s \$0.ungrid.r;
-#X obj 19 14 r master;
-#X obj 19 36 route step;
 #X obj 19 177 mod 32;
 #X obj 19 231 +;
 #X obj 19 138 +;
@@ -529,35 +528,61 @@ float track;
 #X connect 20 1 1 0;
 #X connect 22 0 20 0;
 #X restore 19 313 pd stepnumber->commands;
+#N canvas 135 299 514 307 master.poly.switch 0;
+#X obj 19 14 r master;
+#X obj 19 36 route step;
+#X obj 136 117 master-poly 4 4;
+#X obj 136 94 pack;
+#X obj 163 67 t b a;
+#X obj 19 245 outlet;
+#X obj 19 204 spigot;
+#X obj 163 43 netpd_r \$1 unstep/\$2/polyrhythm/divisor;
+#X obj 136 21 netpd_r \$1 unstep/\$2/polyrhythm/dividend;
+#X obj 256 130 netpd_r \$1 unstep/\$2/polyrhythm/switch;
+#X obj 136 206 spigot;
+#X obj 52 181 ==;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 10 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 4 1 3 1;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 3 0;
+#X connect 9 0 11 0;
+#X connect 9 0 10 1;
+#X connect 10 0 5 0;
+#X connect 11 0 6 1;
+#X restore 19 22 pd master.poly.switch;
 #X connect 1 0 2 0;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 4 0 6 0;
-#X connect 5 0 3 0;
-#X connect 6 0 22 0;
-#X connect 8 0 7 0;
-#X connect 9 0 13 0;
-#X connect 10 0 12 0;
-#X connect 10 0 11 0;
-#X connect 13 0 10 0;
-#X connect 13 1 8 0;
-#X connect 14 0 5 1;
-#X connect 15 0 3 1;
-#X connect 16 0 4 1;
-#X connect 17 0 11 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 20 0;
+#X connect 6 0 5 0;
+#X connect 7 0 11 0;
+#X connect 8 0 10 0;
+#X connect 8 0 9 0;
+#X connect 11 0 8 0;
+#X connect 11 1 6 0;
+#X connect 12 0 3 1;
+#X connect 13 0 1 1;
+#X connect 14 0 2 1;
+#X connect 15 0 9 0;
+#X connect 16 0 17 0;
+#X connect 16 0 1 1;
+#X connect 17 0 2 1;
+#X connect 17 0 3 1;
 #X connect 18 0 19 0;
-#X connect 18 0 3 1;
-#X connect 19 0 4 1;
-#X connect 19 0 5 1;
-#X connect 20 0 21 0;
-#X connect 21 0 17 0;
-#X connect 21 1 17 0;
-#X connect 22 0 0 0;
+#X connect 19 0 15 0;
+#X connect 19 1 15 0;
+#X connect 20 0 0 0;
+#X connect 21 0 3 0;
 #X restore 227 17 pd master->ungrid;
 #X text 270 167 init size;
 #X obj 227 124 t b a;
 #X obj 60 233 table \$1-unstep/\$2/automation;
-#N canvas 642 116 610 503 netpdization 0;
+#N canvas 642 116 635 501 netpdization 0;
 #X obj 26 22 netpd-dump \$1 4;
 #X obj 26 66 s \$0.ungrid.r;
 #X msg 26 44 dump;
@@ -637,6 +662,9 @@ float track;
 #X obj 338 333 netpd_f \$1 unstep/\$2/repeat 32;
 #X obj 338 313 netpd_f \$1 unstep/\$2/offset 0;
 #X obj 338 353 netpd_f \$1 unstep/\$2/shift 0;
+#X obj 338 413 netpd_f \$1 unstep/\$2/polyrhythm/switch 0;
+#X obj 338 373 netpd_f \$1 unstep/\$2/polyrhythm/dividend 4 500;
+#X obj 338 393 netpd_f \$1 unstep/\$2/polyrhythm/divisor 4 500;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 3 0 17 0;
@@ -673,23 +701,31 @@ float track;
 #X obj 21 9 unstep-gui \$1 \$2;
 #X obj 227 257 inlet;
 #X obj 227 279 route vis;
-#N canvas 585 149 335 70 \$1-\$2-unstep-settings 1;
+#N canvas 585 149 344 68 \$1-\$2-unstep-settings 1;
 #X obj 11 25 nbx 3 14 1 999 0 0 \$0.xsize \$0.xsize.r x 40 10 0 10
 -262144 -1 -1 32 256;
 #X obj 11 39 nbx 3 14 1 999 0 0 \$0.ysize \$0.ysize.r y 40 10 0 10
 -262144 -1 -1 40 256;
 #X obj 11 11 bng 14 250 50 0 \$0.doit \$0.doit.r reset 16 7 0 10 -262144
 -1 -1;
-#X obj 77 39 nbx 3 14 -12 12 0 0 \$1-unstep/\$2/semitone \$1-unstep/\$2/semitone
+#X obj 66 39 nbx 3 14 -12 12 0 0 \$1-unstep/\$2/semitone \$1-unstep/\$2/semitone
 semi 40 10 0 10 -262144 -1 -1 0 256;
-#X obj 77 25 nbx 3 14 -8 8 0 0 \$1-unstep/\$2/octave \$1-unstep/\$2/octave
+#X obj 66 25 nbx 3 14 -8 8 0 0 \$1-unstep/\$2/octave \$1-unstep/\$2/octave
 oct 40 10 0 10 -262144 -1 -1 0 256;
-#X obj 154 22 nbx 3 14 1 999 0 0 \$1-unstep/\$2/repeat \$1-unstep/\$2/repeat
+#X obj 134 25 nbx 3 14 1 999 0 0 \$1-unstep/\$2/repeat \$1-unstep/\$2/repeat
 repeat 40 10 0 10 -262144 -1 -1 32 256;
-#X obj 154 8 nbx 3 14 0 32 0 0 \$1-unstep/\$2/offset \$1-unstep/\$2/offset
+#X obj 134 11 nbx 3 14 0 32 0 0 \$1-unstep/\$2/offset \$1-unstep/\$2/offset
 offset 40 10 0 10 -262144 -1 -1 0 256;
-#X obj 154 36 nbx 3 14 -999 999 0 0 \$1-unstep/\$2/shift \$1-unstep/\$2/shift
+#X obj 134 39 nbx 3 14 -999 999 0 0 \$1-unstep/\$2/shift \$1-unstep/\$2/shift
 shift 40 10 0 10 -262144 -1 -1 0 256;
+#X obj 220 10 tgl 15 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
+poly 19 7 0 10 -262144 -1 -1 0 1;
+#X obj 220 25 nbx 3 14 1 999 0 0 \$1-unstep/\$2/polyrhythm/dividend
+\$1-unstep/\$2/polyrhythm/dividend dend 40 10 0 10 -262144 -1 -1 1
+256;
+#X obj 220 39 nbx 3 14 -999 999 0 0 \$1-unstep/\$2/polyrhythm/divisor
+\$1-unstep/\$2/polyrhythm/divisor sor 40 10 0 10 -262144 -1 -1 0 256
+;
 #X restore 227 432 pd \$1-\$2-unstep-settings;
 #X obj 227 367 s pd-\$1-\$2-unstep;
 #X obj 254 345 s pd-\$1-\$2-unstep-settings;
