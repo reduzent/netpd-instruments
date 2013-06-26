@@ -1,0 +1,31 @@
+#N canvas 1025 276 385 164 10;
+#X obj 20 20 cnv 15 320 49 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 24 38 nbx 3 14 1 999 0 0 \$3.xsize \$3.xsize.r empty 40 10 0
+10 -262144 -1 -1 32 256;
+#X obj 24 52 nbx 3 14 1 999 0 0 \$3.ysize \$3.ysize.r y 40 10 0 10
+-262144 -1 -1 40 256;
+#X obj 24 24 bng 14 250 50 0 \$3.doit \$3.doit.r reset 16 7 0 10 -262144
+-1 -1;
+#X obj 79 52 nbx 3 14 -12 12 0 0 \$1-unstep/\$2/semitone \$1-unstep/\$2/semitone
+semi 40 10 0 10 -262144 -1 -1 0 256;
+#X obj 79 38 nbx 3 14 -8 8 0 0 \$1-unstep/\$2/octave \$1-unstep/\$2/octave
+oct 40 10 0 10 -262144 -1 -1 0 256;
+#X obj 147 38 nbx 3 14 1 999 0 0 \$1-unstep/\$2/repeat \$1-unstep/\$2/repeat
+repeat 40 10 0 10 -262144 -1 -1 32 256;
+#X obj 147 24 nbx 3 14 0 32 0 0 \$1-unstep/\$2/offset \$1-unstep/\$2/offset
+offset 40 10 0 10 -262144 -1 -1 0 256;
+#X obj 147 52 nbx 3 14 -999 999 0 0 \$1-unstep/\$2/shift \$1-unstep/\$2/shift
+shift 40 10 0 10 -262144 -1 -1 0 256;
+#X obj 233 24 tgl 14 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
+poly 19 7 0 10 -262144 -1 -1 0 1;
+#X obj 233 38 nbx 3 14 1 999 0 0 \$1-unstep/\$2/polyrhythm/dividend
+\$1-unstep/\$2/polyrhythm/dividend dend 40 10 0 10 -262144 -1 -1 4
+256;
+#X obj 233 52 nbx 3 14 -999 999 0 0 \$1-unstep/\$2/polyrhythm/divisor
+\$1-unstep/\$2/polyrhythm/divisor sor 40 10 0 10 -262144 -1 -1 4 256
+;
+#N canvas 619 400 356 36 NETPD 0;
+#X msg 15 12 version 0 0 0;
+#X restore 22 134 pd NETPD 2 0;
+#X coords 0 -1 1 1 320 49 2 20 20;
