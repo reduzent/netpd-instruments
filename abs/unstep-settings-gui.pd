@@ -1,31 +1,63 @@
-#N canvas 1025 276 385 164 10;
-#X obj 20 20 cnv 15 320 49 empty empty empty 20 12 0 14 -262144 -66577
+#N canvas 162 246 416 252 10;
+#X obj 20 18 cnv 15 320 49 empty empty empty 20 12 0 14 -262144 -66577
 0;
-#X obj 24 38 nbx 3 14 1 999 0 0 \$3.xsize \$3.xsize.r empty 40 10 0
-10 -262144 -1 -1 32 256;
-#X obj 24 52 nbx 3 14 1 999 0 0 \$3.ysize \$3.ysize.r y 40 10 0 10
--262144 -1 -1 40 256;
-#X obj 24 24 bng 14 250 50 0 \$3.doit \$3.doit.r reset 16 7 0 10 -262144
+#X obj 62 21 nbx 3 15 1 999 0 0 \$3.xsize \$3.xsize.r empty 40 10 0
+8 -262144 -1 -1 160 256;
+#X obj 99 21 nbx 3 15 1 999 0 0 \$3.ysize \$3.ysize.r empty 40 10 0
+8 -262144 -1 -1 19 256;
+#X obj 21 20 bng 17 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 -262144
 -1 -1;
-#X obj 79 52 nbx 3 14 -12 12 0 0 \$1-unstep/\$2/semitone \$1-unstep/\$2/semitone
+#X obj 125 177 nbx 3 14 -12 12 0 0 \$1-unstep/\$2/semitone \$1-unstep/\$2/semitone
 semi 40 10 0 10 -262144 -1 -1 0 256;
-#X obj 79 38 nbx 3 14 -8 8 0 0 \$1-unstep/\$2/octave \$1-unstep/\$2/octave
+#X obj 125 163 nbx 3 14 -8 8 0 0 \$1-unstep/\$2/octave \$1-unstep/\$2/octave
 oct 40 10 0 10 -262144 -1 -1 0 256;
-#X obj 147 38 nbx 3 14 1 999 0 0 \$1-unstep/\$2/repeat \$1-unstep/\$2/repeat
+#X obj 193 163 nbx 3 14 1 999 0 0 \$1-unstep/\$2/repeat \$1-unstep/\$2/repeat
 repeat 40 10 0 10 -262144 -1 -1 32 256;
-#X obj 147 24 nbx 3 14 0 32 0 0 \$1-unstep/\$2/offset \$1-unstep/\$2/offset
-offset 40 10 0 10 -262144 -1 -1 0 256;
-#X obj 147 52 nbx 3 14 -999 999 0 0 \$1-unstep/\$2/shift \$1-unstep/\$2/shift
+#X obj 193 149 nbx 3 14 0 32 0 0 \$1-unstep/\$2/offset \$1-unstep/\$2/offset
+offset 40 10 0 10 -262144 -1 -1 32 256;
+#X obj 193 177 nbx 3 14 -999 999 0 0 \$1-unstep/\$2/shift \$1-unstep/\$2/shift
 shift 40 10 0 10 -262144 -1 -1 0 256;
-#X obj 233 24 tgl 14 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
-poly 19 7 0 10 -262144 -1 -1 0 1;
-#X obj 233 38 nbx 3 14 1 999 0 0 \$1-unstep/\$2/polyrhythm/dividend
+#X obj 279 149 tgl 14 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
+poly 19 7 0 10 -262144 -1 -1 1 1;
+#X obj 279 163 nbx 3 14 1 999 0 0 \$1-unstep/\$2/polyrhythm/dividend
 \$1-unstep/\$2/polyrhythm/dividend dend 40 10 0 10 -262144 -1 -1 4
 256;
-#X obj 233 52 nbx 3 14 -999 999 0 0 \$1-unstep/\$2/polyrhythm/divisor
+#X obj 279 177 nbx 3 14 -999 999 0 0 \$1-unstep/\$2/polyrhythm/divisor
 \$1-unstep/\$2/polyrhythm/divisor sor 40 10 0 10 -262144 -1 -1 4 256
 ;
 #N canvas 619 400 356 36 NETPD 0;
 #X msg 15 12 version 0 0 0;
-#X restore 22 134 pd NETPD 2 0;
-#X coords 0 -1 1 1 320 49 2 20 20;
+#X restore 23 203 pd NETPD 2 0;
+#X obj 39 20 bng 17 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 -262144
+-1 -1;
+#X obj 20 20 cnv 7 111 17 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 58 21 cnv 15 35 15 empty \$3.xsize.label x:141 2 7 0 10 -261949
+-131106 0;
+#X obj 95 21 cnv 15 35 15 empty \$3.ysize.label y:110 2 7 0 10 -261949
+-131106 0;
+#X obj 21 21 cnv 15 35 15 empty \$3.doit.label redim 2 7 0 10 -261949
+-131106 0;
+#X obj 239 42 cnv 7 101 17 empty empty empty 3 8 0 10 -228856 -131105
+0;
+#X obj 240 43 cnv 15 42 15 empty \$3.oct.label oct:-8 2 7 0 10 -261949
+-131106 0;
+#X obj 284 43 cnv 15 55 15 empty \$3.semi.label semi:-12 2 7 0 10 -261949
+-131106 0;
+#X obj 146 20 cnv 7 194 17 empty empty empty 3 8 0 10 -228856 -131105
+0;
+#X obj 214 21 cnv 15 65 15 empty \$3.offset.label offset:999 2 7 0
+10 -261949 -131106 0;
+#X obj 147 21 cnv 15 65 15 empty \$3.repeat.label repeat:999 2 7 0
+10 -261949 -131106 0;
+#X obj 281 21 cnv 15 58 15 empty \$3.shift.label shift:999 2 7 0 10
+-261949 -131106 0;
+#X obj 20 42 cnv 7 184 17 empty empty empty 3 8 0 10 -228856 -131105
+0;
+#X obj 131 43 cnv 15 72 15 empty \$3.divisor.label divisor:999 2 7
+0 10 -261949 -131106 0;
+#X obj 21 43 cnv 15 28 15 empty \$3.switch.label poly 2 7 0 10 -261949
+-131106 0;
+#X obj 51 43 cnv 15 78 15 empty \$3.dividend.label dividend:999 2 7
+0 10 -261949 -131106 0;
+#X coords 0 -1 1 1 320 39 2 20 20;
