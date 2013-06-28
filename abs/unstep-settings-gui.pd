@@ -1,0 +1,62 @@
+#N canvas 162 246 368 118 10;
+#N canvas 619 400 356 36 NETPD 0;
+#X msg 15 12 version 0 0 1;
+#X restore 20 74 pd NETPD 2 0;
+#X obj 20 20 cnv 4 320 34 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 62 21 nbx 3 15 1 999 0 0 \$3.xsize \$3.xsize.r empty 40 10 0
+8 -262144 -1 -1 32 256;
+#X obj 99 21 nbx 3 15 1 999 0 0 \$3.ysize \$3.ysize.r empty 40 10 0
+8 -262144 -1 -1 40 256;
+#X obj 21 21 bng 15 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 -262144
+-1 -1;
+#X obj 287 21 nbx 6 15 -12 12 0 0 \$1-unstep/\$2/semitone \$1-unstep/\$2/semitone
+empty 40 10 0 8 -262144 -1 -1 0 256;
+#X obj 244 21 nbx 4 15 -8 8 0 0 \$1-unstep/\$2/octave \$1-unstep/\$2/octave
+empty 40 10 0 8 -262144 -1 -1 0 256;
+#X obj 153 38 nbx 7 15 1 999 0 0 \$1-unstep/\$2/repeat \$1-unstep/\$2/repeat
+empty 40 10 0 8 -262144 -1 -1 32 256;
+#X obj 220 38 nbx 7 15 0 32 0 0 \$1-unstep/\$2/offset \$1-unstep/\$2/offset
+empty 40 10 0 8 -262144 -1 -1 0 256;
+#X obj 287 38 nbx 6 15 -999 999 0 0 \$1-unstep/\$2/shift \$1-unstep/\$2/shift
+empty 40 10 0 8 -262144 -1 -1 0 256;
+#X obj 36 21 bng 15 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 -262144
+-1 -1;
+#X obj 58 21 cnv 15 35 15 empty \$3.xsize.label empty 2 7 0 10 -261949
+-131106 0;
+#X obj 95 21 cnv 15 35 15 empty \$3.ysize.label empty 2 7 0 10 -261949
+-131106 0;
+#X obj 240 21 cnv 15 42 15 empty \$3.oct.label empty 2 7 0 10 -261949
+-131106 0;
+#X obj 284 21 cnv 15 55 15 empty \$3.semi.label empty 2 7 0 10 -261949
+-131106 0;
+#X obj 214 38 cnv 15 65 15 empty \$3.offset.label empty 2 7 0 10 -261949
+-131106 0;
+#X obj 147 38 cnv 15 65 15 empty \$3.repeat.label empty 2 7 0 10 -261949
+-131106 0;
+#X obj 281 38 cnv 15 58 15 empty \$3.shift.label empty 2 7 0 10 -261949
+-131106 0;
+#X obj 21 38 tgl 15 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
+empty 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 34 38 tgl 15 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
+empty 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 48 38 tgl 15 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
+empty 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 65 39 nbx 2 14 1 999 0 0 \$1-unstep/\$2/polyrhythm/dividend
+\$1-unstep/\$2/polyrhythm/dividend empty 40 10 0 8 -262144 -1 -1 4
+256;
+#X obj 92 39 nbx 2 14 1 999 0 0 \$1-unstep/\$2/polyrhythm/divisor \$1-unstep/\$2/polyrhythm/divisor
+empty 40 10 0 8 -262144 -1 -1 4 256;
+#X obj 21 38 cnv 15 42 15 empty \$3.switch.label polyrh 2 7 0 10 -261949
+-233017 0;
+#X obj 65 38 cnv 15 24 15 empty \$3.dividend.label empty 3 7 0 10 -261949
+-233017 0;
+#X obj 89 38 cnv 2 2 15 empty \$3.colon.label : -1 7 0 10 -261949 -233017
+0;
+#X obj 92 38 cnv 15 24 15 empty \$3.divisor.label empty 2 7 0 10 -261949
+-233017 0;
+#X obj 41 21 bng 15 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 -262144
+-1 -1;
+#X obj 21 21 cnv 15 35 15 empty \$3.doit.label redim 2 7 0 10 -261949
+-131105 0;
+#X coords 0 -1 1 1 320 34 2 20 20;
