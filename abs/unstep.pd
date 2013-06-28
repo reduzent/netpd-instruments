@@ -1,9 +1,9 @@
-#N struct 7609.button float posx float posy float color;
-#N struct 7609.cursor float cx float cy float cy2;
-#N struct 7562-automation float yshift array variy 7562-automation-element
+#N struct 8503.button float posx float posy float color;
+#N struct 8503.cursor float cx float cy float cy2;
+#N struct 8456-automation float yshift array variy 8456-automation-element
 ;
-#N struct 7562-automation-element float y;
-#N struct 7561.autolabel float x float y symbol lbl float color float
+#N struct 8456-automation-element float y;
+#N struct 8455.autolabel float x float y symbol lbl float color float
 track;
 #N canvas 782 88 554 465 10;
 #X obj 368 137 s \$0.ungrid;
@@ -369,7 +369,7 @@ color float track;
 #X msg 14 72 master-poly;
 #X msg 111 8 unstep-settings-gui;
 #X restore 17 32 pd abslist;
-#X msg 17 9 version 0 1 2;
+#X msg 17 9 version 0 1 3;
 #X restore 456 10 pd NETPD 2 0;
 #N canvas 837 479 450 372 automation.output 0;
 #X obj 39 35 r \$0.ungrid;
