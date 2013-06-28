@@ -1,4 +1,3 @@
-#N struct 1539.button float posx float posy float color;
 #N canvas 366 44 440 704 10;
 #X obj 48 466 struct \$0.button float posx float posy float color;
 #N canvas 798 145 569 359 manual.edit 0;
