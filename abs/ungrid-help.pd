@@ -181,7 +181,7 @@
 #X obj 12 66 + 80;
 #X obj 12 19 inlet;
 #X obj 12 89 outlet;
-#X floatatom 66 51 5 0 0 0 - - -, f 5;
+#X floatatom 66 51 5 0 0 0 - - -;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;

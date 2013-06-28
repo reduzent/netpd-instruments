@@ -257,7 +257,7 @@
 #X obj 188 329 == 0;
 #X obj 188 363 &&;
 #X obj 188 385 sel 1;
-#X obj 188 407 t b b, f 18;
+#X obj 188 407 t b b;
 #X obj 188 257 t p p;
 #X obj 188 304 div 10;
 #X obj 323 303 div 10;

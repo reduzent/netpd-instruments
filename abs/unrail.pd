@@ -63,7 +63,7 @@
 #X restore 162 346 pd set.to.0;
 #X obj 367 276 r \$0.pointer;
 #N canvas 366 316 307 259 detect.changes 0;
-#X obj 29 -1029 t a a, f 13;
+#X obj 29 -1029 t a a;
 #X obj 44 -953 tabread \$0.ref;
 #X obj 29 -930 sel;
 #X obj 71 -861 tabwrite \$0.ref;

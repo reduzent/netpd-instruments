@@ -39,7 +39,7 @@
 #X restore 242 370 pd att-dec;
 #X obj 242 346 pack f f f;
 #X obj 242 325 f;
-#X obj 11 37 t a b, f 31;
+#X obj 11 37 t a b;
 #N canvas 887 124 292 286 index 0;
 #X obj 11 247 outlet~;
 #X obj 11 13 inlet;

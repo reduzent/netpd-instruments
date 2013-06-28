@@ -169,7 +169,7 @@
 #X obj 207 238 *;
 #X obj 207 260 +;
 #X obj 23 101 unpack f f;
-#X obj 23 123 *, f 5;
+#X obj 23 123 *;
 #X obj 23 167 until;
 #X obj 23 189 f;
 #X obj 66 190 + 1;
@@ -186,7 +186,7 @@
 #X obj 102 145 list append \$1;
 #X obj 23 253 sel -1;
 #X obj 207 92 t b a;
-#X obj 23 43 t a b a, f 41;
+#X obj 23 43 t a b a;
 #X msg 144 64 -1;
 #X obj 483 110 f 1;
 #X obj 483 132 sel 1;
@@ -292,7 +292,7 @@
 #X obj 68 259 + 1;
 #X obj 68 97 route next rewind redraw;
 #X obj 68 199 f;
-#X obj 97 200 + 1, f 4;
+#X obj 97 200 + 1;
 #X msg 115 172 0;
 #X obj 262 207 list prepend \$0;
 #X obj 162 140 t b a;
@@ -375,7 +375,7 @@
 #X obj 72 8 inlet;
 #X msg 72 30 0;
 #X obj 99 146 outlet;
-#X obj 12 99 t b a a, f 15;
+#X obj 12 99 t b a a;
 #X msg 99 123 step \$1;
 #X connect 0 0 2 0;
 #X connect 1 0 3 1;
