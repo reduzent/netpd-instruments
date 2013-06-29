@@ -1,21 +1,18 @@
-#N canvas 520 226 446 383 10;
-#X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
-#X declare -stdpath extra/iemmatrix -stdlib extra/iemmatrix;
-#X obj 113 108 exp;
-#X obj 59 100 + 90;
-#X obj 113 83 + 5;
-#X obj 113 60 * 3;
-#X obj 59 74 * 30;
-#N canvas 911 279 184 85 jamx-labels 0;
-#X obj 8 3 loadbang;
-#X obj 8 48 s \$1-bassist_jx.c.label;
-#X msg 8 26 drive attack decay;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
-#X restore 172 96 pd jamx-labels;
-#X text 123 22 http://www.netpd.org/bassist;
-#X text 121 8 bassist;
+#N struct 4518.button float posx float posy float color;
+#N struct 4518.cursor float cx float cy float cy2;
+#N struct 4471-automation float yshift array variy 4471-automation-element
+;
+#N struct 4471-automation-element float y;
+#N struct 4470.autolabel float x float y symbol lbl float color float
+track;
+#N canvas 520 226 514 449 10;
+#X obj 161 232 exp;
+#X obj 75 213 + 90;
+#X obj 161 207 + 5;
+#X obj 161 184 * 3;
+#X obj 75 187 * 30;
+#X text 273 283 http://www.netpd.org/bassist;
+#X text 273 270 bassist;
 #N canvas 985 531 92 179 downsamplefactor 0;
 #X obj 37 97 pow;
 #X obj 37 69 2;
@@ -32,7 +29,7 @@
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
 #X connect 5 0 2 0;
-#X restore 175 196 pd downsamplefactor;
+#X restore 221 236 pd downsamplefactor;
 #N canvas 830 388 454 358 dsp_________________ 0;
 #N canvas 413 126 471 584 dsp 0;
 #X obj 32 335 osc~;
@@ -531,64 +528,73 @@ read starts at index 1;
 #X connect 3 0 0 3;
 #X connect 4 0 0 4;
 #X connect 5 0 0 2;
-#X restore 33 269 pd dsp_________________;
-#X obj 33 24 unpack f f f f;
-#X obj 90 142 * 200;
-#N canvas 590 360 166 122 \$1-bassist 0;
+#X restore 33 339 pd dsp_________________;
+#X obj 118 195 * 200;
+#N canvas 590 416 166 122 \$1-bassist 1;
 #X obj 3 2 cnv 15 151 99 empty empty empty 20 12 0 14 -174784 -66577
 0;
 #X obj 5 4 cnv 15 147 95 empty empty empty 15 38 1 12 -74944 -216384
 0;
-#X obj 10 8 hsl 95 20 0 1 0 0 \$1-volume \$1-volume volume 0 7 1 7
+#X obj 10 8 hsl 95 20 0 1 0 0 \$1-volume \$1-volume volume 0 7 1 10
 -212223 -1 -1 7520 1;
 #X obj 10 52 hsl 95 20 0 1 0 0 \$1-boes \$1-boes boesartigkeit 0 7
-1 7 -212224 -1 -1 5700 1;
+1 10 -212224 -1 -1 0 1;
 #X obj 109 8 cnv 4 40 42 empty empty empty 20 12 0 14 -220544 -66577
 0;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$1-_ 61 float 0;
 #X coords 0 1 60 0 40 42 1;
 #X restore 109 8 graph;
-#X obj 10 30 hsl 95 20 0 1 0 0 \$1-detune \$1-detune detune 0 7 1 7
+#X obj 10 30 hsl 95 20 0 1 0 0 \$1-detune \$1-detune detune 0 7 1 10
 -212224 -1 -1 0 1;
 #X obj 7 75 hradio 20 1 0 5 \$1-dwnsmpl \$1-dwnsmpl downsampling 2
-7 1 7 -212224 -1 -1 0;
-#X obj 109 52 tgl 20 0 \$1-open-jam \$0-bli jamx 2 6 1 7 -212223 -1
--1 1 1;
-#X restore 172 136 pd \$1-bassist;
-#X obj 241 268 jamx \$1 bassist 3;
-#X obj 289 66 netpd_head \$1 bassist;
-#X obj 175 173 netpd_f \$1 dwnsmpl 0;
-#X obj 33 1 r \$1-bassist;
+7 1 10 -212224 -1 -1 0;
+#X obj 112 52 hsl 35 20 0 1 0 0 \$0.unstep \$0.bla unstep 0 7 1 10
+-212224 -203904 -1 0 1;
+#X restore 266 117 pd \$1-bassist;
+#X obj 264 21 netpd_head \$1 bassist;
+#X obj 221 213 netpd_f \$1 dwnsmpl 0;
 #N canvas 882 44 450 300 NETPD 0;
-#N canvas 1104 788 174 201 abslist 0;
-#X msg 15 25 jamx;
+#N canvas 1104 816 174 201 abslist 0;
 #X msg 17 58 roman_helpers;
 #X msg 17 88 i2mx;
+#X msg 15 25 unstep;
 #X restore 10 32 pd abslist;
-#X msg 10 11 version 0 4 1;
-#X restore 171 62 pd NETPD 2 0;
-#N canvas 138 580 291 137 bassist-netpd-fs 0;
+#X msg 10 11 version 0 5 0;
+#X restore 265 43 pd NETPD 2 0;
+#N canvas 138 608 291 137 bassist-netpd-fs 0;
 #X obj 12 40 netpd_f \$1 detune 0;
 #X obj 12 19 netpd_f \$1 volume 0.8;
 #X obj 13 61 netpd_f \$1 boes 0;
-#X restore 172 117 pd bassist-netpd-fs;
-#X obj 32 321 i2mx \$1 bassist;
-#X obj 32 346 switch~;
-#X connect 0 0 9 3;
-#X connect 1 0 9 1;
+#X restore 266 98 pd bassist-netpd-fs;
+#X obj 32 391 i2mx \$1 bassist;
+#X obj 32 416 switch~;
+#X obj 33 107 unstep \$1 bassist drive attack decay;
+#X obj 33 129 route note drive attack decay;
+#X obj 33 11 r \$0.unstep;
+#X obj 33 33 t a a;
+#X obj 33 62 sel 0;
+#X msg 33 84 vis 1;
+#X text 270 320 2013 \, Roman Haefeli;
+#X connect 0 0 8 3;
+#X connect 1 0 8 1;
 #X connect 2 0 0 0;
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
-#X connect 8 0 9 4;
-#X connect 9 0 19 0;
-#X connect 9 1 19 1;
-#X connect 9 2 19 2;
-#X connect 10 0 9 0;
-#X connect 10 1 4 0;
-#X connect 10 2 11 0;
-#X connect 10 3 3 0;
-#X connect 11 0 9 2;
-#X connect 15 0 8 0;
-#X connect 16 0 10 0;
+#X connect 7 0 8 4;
+#X connect 8 0 15 0;
+#X connect 8 1 15 1;
+#X connect 8 2 15 2;
+#X connect 9 0 8 2;
+#X connect 12 0 7 0;
+#X connect 15 0 16 0;
+#X connect 17 0 18 0;
+#X connect 18 0 8 0;
+#X connect 18 1 4 0;
+#X connect 18 2 9 0;
+#X connect 18 3 3 0;
 #X connect 19 0 20 0;
+#X connect 20 0 21 1;
+#X connect 20 1 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 17 0;
