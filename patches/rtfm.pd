@@ -1,4 +1,9 @@
-#N canvas 585 170 426 287 10;
+#N struct 2442.button float posx float posy float color;
+#N struct 2751.button float posx float posy float color;
+#N struct 2751.cursor float cx float cy float cy2;
+#N struct 2800.button float posx float posy float color;
+#N struct 2800.cursor float cx float cy float cy2;
+#N canvas 594 105 409 323 10;
 #N canvas 624 75 316 64 NETPD 0;
 #N canvas 954 497 236 127 abslist 0;
 #X msg 8 17 i2mx;
@@ -6,40 +11,43 @@
 #X msg 9 62 rtfm-voice;
 #X msg 10 84 unradio;
 #X restore 12 33 pd abslist;
-#X msg 12 8 version 0 0 6;
+#X msg 12 8 version 0 0 8;
 #X restore 10 14 pd NETPD 2 0;
-#N canvas 947 307 178 399 \$1-rtfm 1;
-#X text 7 5 RTFM (there is no manual);
-#X obj 15 25 bng 15 250 50 0 \$0.show.unstep empty unstep 17 7 0 10
--262144 -1 -1;
-#X obj 13 225 cnv 15 107 66 empty empty amplitude 6 8 1 12 -258113
--1 0;
-#X obj 21 242 hsl 93 13 0 1 0 0 \$1-attack \$1-attack attack 0 7 1
-12 -1 -258113 -258113 920 1;
-#X obj 21 274 hsl 93 13 0 1 0 0 \$1-decay \$1-decay decay 0 7 1 12
--1 -258113 -258113 2760 1;
-#X obj 21 258 hsl 93 13 0 1 0 0 \$1-amplitude \$1-amplitude amplitude
-0 7 1 12 -1 -258113 -258113 7360 1;
-#X obj 13 292 cnv 15 107 98 empty empty modindex 6 8 1 12 -159808 -1
+#N canvas 947 363 146 420 \$1-rtfm 0;
+#X obj 9 205 cnv 15 107 66 empty empty amplitude 6 8 1 12 -258113 -1
 0;
-#X obj 20 325 hsl 93 13 0 1 0 0 \$1-i-attack \$1-i-attack i-attack
+#X obj 17 222 hsl 93 13 0 1 0 0 \$1-attack \$1-attack attack 0 7 1
+12 -1 -258113 -258113 920 1;
+#X obj 17 254 hsl 93 13 0 1 0 0 \$1-decay \$1-decay decay 0 7 1 12
+-1 -258113 -258113 2760 1;
+#X obj 17 238 hsl 93 13 0 1 0 0 \$1-amplitude \$1-amplitude amplitude
+0 7 1 12 -1 -258113 -258113 7360 1;
+#X obj 9 272 cnv 15 107 98 empty empty modindex 6 8 1 12 -159808 -1
+0;
+#X obj 16 305 hsl 93 13 0 1 0 0 \$1-i-attack \$1-i-attack i-attack
 0 7 1 12 -1 -159808 -159808 920 1;
-#X obj 20 357 hsl 93 13 0 1 0 0 \$1-i-decay \$1-i-decay i-decay 0 7
+#X obj 16 337 hsl 93 13 0 1 0 0 \$1-i-decay \$1-i-decay i-decay 0 7
 1 12 -1 -159808 -159808 2760 1;
-#X obj 20 309 hsl 93 13 0 1 0 0 \$1-index1 \$1-index1 index1 0 7 1
+#X obj 16 289 hsl 93 13 0 1 0 0 \$1-index1 \$1-index1 index1 0 7 1
 12 -1 -159808 -159808 920 1;
-#X obj 20 341 hsl 93 13 0 1 0 0 \$1-index2 \$1-index2 index2 0 7 1
+#X obj 16 321 hsl 93 13 0 1 0 0 \$1-index2 \$1-index2 index2 0 7 1
 12 -1 -159808 -159808 920 1;
-#X obj 20 373 hsl 93 13 0 1 0 0 \$1-index3 \$1-index3 index3 0 7 0
+#X obj 16 353 hsl 93 13 0 1 0 0 \$1-index3 \$1-index3 index3 0 7 0
 12 -1 -159808 -159808 920 1;
-#X obj 13 174 cnv 15 107 50 empty empty fm 6 8 1 12 -260097 -1 0;
-#X obj 21 207 hsl 93 13 0 1 0 0 \$1-stereo \$1-stereo stereo 0 7 1
+#X obj 9 154 cnv 15 107 50 empty empty fm 6 8 1 12 -260097 -1 0;
+#X obj 17 187 hsl 93 13 0 1 0 0 \$1-stereo \$1-stereo stereo 0 7 1
 12 -1 -260097 -260097 0 1;
-#X obj 21 191 hsl 93 13 0 1 0 0 \$1-phasemod \$1-phasemod phasemod
+#X obj 17 171 hsl 93 13 0 1 0 0 \$1-phasemod \$1-phasemod phasemod
 0 7 1 12 -1 -260097 -260097 0 1;
-#X obj 13 49 cnv 15 107 124 empty empty carrier:modulator 6 8 1 12
--257985 -1 0;
-#X obj 17 69 unradio \$0.x1-x2 0 990;
+#X obj 9 29 cnv 15 107 124 empty empty carrier:modulator 6 8 1 12 -257985
+-1 0;
+#X obj 13 49 unradio \$0.x1-x2 0 990;
+#X obj 9 371 cnv 15 107 36 empty empty unstep 6 8 1 12 -4160 -1 0;
+#X obj 17 388 hsl 42 13 0 1 0 0 \$0.unstep.1 \$0.unste rtfm1 0 7 1
+12 -1 -1 -4160 0 1;
+#X obj 67 388 hsl 42 13 0 1 0 0 \$0.unstep.2 \$0.unste rtfm2 0 7 1
+12 -1 -1 -4160 0 1;
+#X obj 9 5 cnv 15 107 23 empty empty rtfm 6 14 1 20 -257985 -1 0;
 #X restore 10 66 pd \$1-rtfm;
 #X obj 10 40 netpd_head \$1 rtfm;
 #N canvas 469 109 364 447 dsp 0;
@@ -244,17 +252,33 @@
 #X connect 16 1 1 0;
 #X connect 17 0 0 0;
 #X connect 17 1 1 0;
-#X restore 10 198 pd dsp;
-#X obj 9 234 i2mx \$1 rtfm;
-#X obj 9 256 switch~;
-#X text 169 266 Author: Roman Haefeli;
-#X msg 10 127 vis 1;
-#X obj 10 104 r \$0.show.unstep;
-#X obj 10 151 unstep \$1 rtfm attack decay index1 index2 index3;
+#X restore 10 228 pd dsp;
+#X obj 9 264 i2mx \$1 rtfm;
+#X obj 9 286 switch~;
+#X text 236 291 Author: Roman Haefeli;
+#X msg 10 171 vis 1;
+#X obj 11 100 r \$0.unstep.1;
+#X obj 11 122 t f f;
+#X obj 10 149 sel 0;
+#X msg 100 151 vis 1;
+#X obj 101 102 t f f;
+#X obj 100 129 sel 0;
+#X obj 101 80 r \$0.unstep.2;
+#X obj 100 175 unstep \$1 rtfm2 attack decay index1 index2 index3;
+#X obj 10 195 unstep \$1 rtfm1 attack decay index1 index2 index3;
 #X connect 3 0 4 0;
 #X connect 3 1 4 1;
 #X connect 3 2 4 2;
 #X connect 4 0 5 0;
-#X connect 7 0 9 0;
-#X connect 8 0 7 0;
-#X connect 9 0 3 0;
+#X connect 7 0 16 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 1;
+#X connect 9 1 10 0;
+#X connect 10 0 7 0;
+#X connect 11 0 15 0;
+#X connect 12 0 13 1;
+#X connect 12 1 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 12 0;
+#X connect 15 0 3 0;
+#X connect 16 0 3 0;
