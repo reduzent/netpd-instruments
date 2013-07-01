@@ -1,4 +1,4 @@
-#N canvas 585 141 394 334 10;
+#N canvas 585 141 392 387 10;
 #N canvas 624 46 376 72 NETPD 0;
 #N canvas 954 271 330 79 abslist 0;
 #X msg 15 17 solenoiduino;
@@ -6,10 +6,10 @@
 #X msg 145 17 solenoids_instance;
 #X msg 145 41 comport_selector;
 #X restore 12 33 pd abslist;
-#X msg 12 8 version 0 1 0;
+#X msg 12 8 version 0 1 2;
 #X restore 9 14 pd NETPD 2 0;
 #X obj 9 39 netpd_head \$1 solenoids;
-#N canvas 131 411 396 102 \$1-solenoids 1;
+#N canvas 131 411 389 112 \$1-solenoids 1;
 #X obj 12 31 solenoids_instance \$1 1;
 #X obj 58 31 solenoids_instance \$1 2;
 #X obj 104 31 solenoids_instance \$1 3;
@@ -22,27 +22,28 @@
 #X obj 12 12 cnv 12 60 12 empty \$0.ready.label closed 10 6 0 10 -233017
 -1 0;
 #X restore 9 66 pd \$1-solenoids;
-#X obj 9 249 solenoiduino;
+#X obj 9 289 solenoiduino;
+#X obj 185 313 s \$0.ready.label;
+#X msg 185 283 color \$1 -1 \, label \$2;
+#X msg 185 257 10 closed;
+#X msg 256 257 16 ready;
+#X obj 185 187 r \$0.COMPORT.INFO;
+#X obj 185 209 route connection;
+#X obj 185 231 sel 0 1;
+#X obj 9 265 r \$0.COMPORT.TO;
+#X obj 9 317 s \$0.COMPORT.INFO;
+#X obj 9 189 r \$1-solenoids;
+#X obj 9 215 s \$0.COMPORT.TO;
 #X obj 9 91 qseq3-instr-list \$1 solenoids SLND_1 SLND_2 SLND_3 SLND_4
-SLND_5 SLND_6 SLND_7 SLND_8;
-#X obj 185 273 s \$0.ready.label;
-#X msg 185 243 color \$1 -1 \, label \$2;
-#X msg 185 217 10 closed;
-#X msg 256 217 16 ready;
-#X obj 185 147 r \$0.COMPORT.INFO;
-#X obj 185 169 route connection;
-#X obj 185 191 sel 0 1;
-#X obj 9 225 r \$0.COMPORT.TO;
-#X obj 9 277 s \$0.COMPORT.INFO;
-#X obj 9 149 r \$1-solenoids;
-#X obj 9 175 s \$0.COMPORT.TO;
-#X connect 3 0 13 0;
+SLND_5 SLND_6 SLND_7 SLND_8 slnd_1 slnd_2 slnd_3 slnd_4 slnd_5 slnd_6
+slnd_7 slnd_8;
+#X connect 3 0 12 0;
+#X connect 5 0 4 0;
 #X connect 6 0 5 0;
-#X connect 7 0 6 0;
-#X connect 8 0 6 0;
+#X connect 7 0 5 0;
+#X connect 8 0 9 0;
 #X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 11 0 7 0;
-#X connect 11 1 8 0;
-#X connect 12 0 3 0;
-#X connect 14 0 15 0;
+#X connect 10 0 6 0;
+#X connect 10 1 7 0;
+#X connect 11 0 3 0;
+#X connect 13 0 14 0;
