@@ -1,8 +1,3 @@
-#N struct 2442.button float posx float posy float color;
-#N struct 2751.button float posx float posy float color;
-#N struct 2751.cursor float cx float cy float cy2;
-#N struct 2800.button float posx float posy float color;
-#N struct 2800.cursor float cx float cy float cy2;
 #N canvas 594 105 409 323 10;
 #N canvas 624 75 316 64 NETPD 0;
 #N canvas 954 497 236 127 abslist 0;
