@@ -1,24 +1,24 @@
-#N struct 2246.button float posx float posy float color;
-#N struct 2246.cursor float cx float cy float cy2;
-#N struct 2199-automation float yshift array variy 2199-automation-element
+#N struct 2654.button float posx float posy float color;
+#N struct 2654.cursor float cx float cy float cy2;
+#N struct 2607-automation float yshift array variy 2607-automation-element
 ;
-#N struct 2199-automation-element float y;
-#N struct 2198.autolabel float x float y symbol lbl float color float
+#N struct 2607-automation-element float y;
+#N struct 2606.autolabel float x float y symbol lbl float color float
 track;
 #N canvas 585 170 384 494 10;
 #N canvas 624 75 373 157 NETPD 0;
-#X msg 12 8 version 0 0 0;
 #N canvas 954 301 298 107 abslist 0;
 #X msg 8 -8 zupf;
 #X msg 8 15 unstep;
 #X msg 8 40 i2mx;
 #X restore 12 33 pd abslist;
 #X text 106 7 <- update the version of this netpd-patch;
+#X msg 12 8 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 40 netpd_head \$1 zupfr;
-#N canvas 51 440 244 177 \$1-zupfr 0;
+#N canvas 51 468 244 177 \$1-zupfr 1;
 #X obj 42 103 hsl 128 15 0 1 0 0 \$1-pluckpos \$1-pluckpos pluckpos
-2 8 0 10 -262144 -1 -1 0 1;
+2 8 0 10 -262144 -1 -1 12700 1;
 #X obj 41 68 hsl 128 15 0 1 0 0 \$1-damp \$1-damp damp 2 8 0 10 -262144
 -1 -1 2540 1;
 #X obj 42 33 hsl 128 15 0 1 0 0 \$1-magnitude \$1-magnitude magnitude
@@ -116,16 +116,16 @@ track;
 #X msg 110 263 damp \$1;
 #X obj 160 192 +;
 #X msg 160 214 pluckpos \$1;
-#X msg 78 367 phase;
 #X msg 10 220 note \$1;
 #X obj 78 345 netpd_f \$1 phase 0;
+#X msg 78 367 phase \$1;
 #X connect 3 0 8 0;
 #X connect 4 0 5 0;
 #X connect 5 0 3 0;
 #X connect 6 0 7 0;
 #X connect 6 1 7 1;
 #X connect 6 2 7 2;
-#X connect 8 0 19 0;
+#X connect 8 0 18 0;
 #X connect 8 1 12 0;
 #X connect 8 2 13 0;
 #X connect 8 3 16 0;
@@ -139,5 +139,5 @@ track;
 #X connect 16 0 17 0;
 #X connect 17 0 6 0;
 #X connect 18 0 6 0;
-#X connect 19 0 6 0;
-#X connect 20 0 18 0;
+#X connect 19 0 20 0;
+#X connect 20 0 6 0;
