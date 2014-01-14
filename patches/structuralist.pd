@@ -1,6 +1,6 @@
-#N canvas 491 190 895 523 10;
+#N canvas 414 166 895 523 10;
 #N canvas 175 69 519 625 rhythm.generate 0;
-#X obj 49 63 bng 15 250 50 0 empty empty create 17 7 0 10 -262144 -1
+#X obj 48 55 bng 15 250 50 0 empty empty create 17 7 0 10 -262144 -1
 -1;
 #X obj 22 192 f;
 #X obj 221 216 tabread \$0.rhythm;
@@ -217,9 +217,9 @@
 -1 0 256;
 #X msg 239 159 range 0 \$1;
 #X obj 49 96 nbx 3 14 1 30 0 0 empty empty notecount 40 8 0 10 -262144
--1 -1 6 256;
+-1 -1 1 256;
 #X obj 49 112 nbx 3 14 1 999 0 0 empty empty length 40 8 0 10 -262144
--1 -1 8 256;
+-1 -1 1 256;
 #X connect 0 0 10 0;
 #X connect 1 0 12 0;
 #X connect 2 0 4 0;
@@ -747,9 +747,18 @@
 #X connect 25 0 29 0;
 #X connect 29 0 26 0;
 #X restore 122 364 pd player;
+#X msg 237 380 new \$1;
+#X floatatom 237 315 5 0 0 0 - - -, f 5;
+#X obj 147 430 ../abs/struct_container meta1 meta2 meta3;
+#X msg 301 379 alias \$1;
+#X floatatom 301 317 5 0 0 0 - - -, f 5;
 #X connect 2 0 3 0;
 #X connect 4 0 2 0;
 #X connect 5 0 6 0;
 #X connect 11 0 15 0;
 #X connect 12 0 14 0;
 #X connect 15 0 10 0;
+#X connect 21 0 23 0;
+#X connect 22 0 21 0;
+#X connect 24 0 23 0;
+#X connect 25 0 24 0;
