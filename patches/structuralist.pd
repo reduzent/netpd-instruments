@@ -1,5 +1,3 @@
-#N struct 1108.array float number float x;
-#N struct 1109.array float number float x;
 #N canvas 491 190 895 523 10;
 #N canvas 175 69 519 625 rhythm.generate 0;
 #X obj 49 63 bng 15 250 50 0 empty empty create 17 7 0 10 -262144 -1
@@ -215,7 +213,7 @@
 #X obj 316 68 del 0;
 #X obj 316 180 s \$0.rhythm_;
 #X msg 316 158 count \$1;
-#X obj 49 80 nbx 3 14 0 3 0 0 empty empty ref 40 8 0 10 -262144 -1
+#X obj 49 80 nbx 3 14 0 0 0 0 empty empty ref 40 8 0 10 -262144 -1
 -1 0 256;
 #X msg 239 159 range 0 \$1;
 #X obj 49 96 nbx 3 14 1 30 0 0 empty empty notecount 40 8 0 10 -262144
@@ -271,8 +269,8 @@
 #X obj 278 86 s \$0.rhythm;
 #X text 284 44 reset;
 #N canvas 461 54 646 683 rhythm.edit 0;
-#X obj 161 20 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -228856 -1
--1 2;
+#X obj 161 20 hradio 15 1 0 1 empty empty empty 0 -8 0 10 -228856 -1
+-1 0;
 #X msg 55 182 number \$1;
 #X obj 28 71 r \$0.rhythm_;
 #X obj 28 93 route count;
@@ -299,12 +297,6 @@
 #X obj 28 209 t a;
 #X obj 28 517 ../abs/numberarray pd-\$0.rhythm.array;
 #N canvas 0 44 631 256 \$0.rhythm.array 0;
-#X scalar 1108.array 0 3 \;;
-#X scalar 1108.array 1 23 \;;
-#X scalar 1108.array 2 43 \;;
-#X scalar 1108.array 3 63 \;;
-#X scalar 1108.array 4 83 \;;
-#X scalar 1108.array 5 103 \;;
 #X coords 0 0 600 12 600 12 2 0 0;
 #X restore 20 35 pd \$0.rhythm.array;
 #X connect 0 0 7 0;
@@ -493,11 +485,11 @@
 #X msg 316 91 0;
 #X obj 316 68 del 0;
 #X msg 316 158 count \$1;
-#X obj 49 80 nbx 3 14 0 3 0 0 empty empty ref 40 8 0 10 -262144 -1
+#X obj 49 80 nbx 3 14 0 0 0 0 empty empty ref 40 8 0 10 -262144 -1
 -1 0 256;
 #X msg 239 159 range 0 \$1;
-#X obj 49 96 nbx 3 14 1 3 0 0 empty empty rhythm 40 8 0 10 -262144
--1 -1 3 256;
+#X obj 49 96 nbx 3 14 1 0 0 0 empty empty rhythm 40 8 0 10 -262144
+-1 -1 0 256;
 #X obj 49 112 nbx 3 14 0 128 0 0 empty empty pitch 40 8 0 10 -262144
 -1 -1 0 256;
 #X obj 316 24 r \$0.pitch;
@@ -635,8 +627,8 @@
 #X obj 551 355 table \$0.pattern 3000;
 #X obj 543 444 table \$0.structure 3000;
 #N canvas 461 54 646 683 pitch.edit 0;
-#X obj 161 20 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -228856 -1
--1 2;
+#X obj 161 20 hradio 15 1 0 1 empty empty empty 0 -8 0 10 -228856 -1
+-1 0;
 #X msg 55 182 number \$1;
 #X obj 28 93 route count;
 #X obj 28 160 t a a;
@@ -663,12 +655,6 @@
 #X obj 28 614 s \$0.pitch;
 #X obj 28 517 ../abs/numberarray pd-\$0.pitch.array;
 #N canvas 0 44 631 256 \$0.pitch.array 0;
-#X scalar 1109.array 62 3 \;;
-#X scalar 1109.array 63 23 \;;
-#X scalar 1109.array 64 43 \;;
-#X scalar 1109.array 65 63 \;;
-#X scalar 1109.array 66 83 \;;
-#X scalar 1109.array 67 103 \;;
 #X coords 0 0 600 12 600 12 2 0 0;
 #X restore 20 35 pd \$0.pitch.array;
 #X connect 0 0 4 0;
@@ -735,6 +721,8 @@
 #X text 170 406 rhythm;
 #X text 66 200 index;
 #X obj 136 361 tabread \$0.rhythm;
+#X obj 35 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 1 0;
 #X connect 1 0 15 0;
 #X connect 2 0 3 0;
