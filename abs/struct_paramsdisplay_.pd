@@ -31,7 +31,7 @@
 float bgclr symbol bla;
 #X obj 13 57 route add reset;
 #X obj 137 64 loadbang;
-#X obj 13 229 list append 999 555;
+#X obj 13 229 list append 999 245;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;
 #X connect 1 0 13 0;
