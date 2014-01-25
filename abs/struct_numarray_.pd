@@ -51,7 +51,7 @@
 #X restore 13 477 pd impose.range.constraint;
 #X obj 13 412 struct \$0.button float posx float value float fgclr
 float bgclr;
-#N canvas 261 435 291 343 get.data 0;
+#N canvas 261 463 291 343 get.data 0;
 #X obj 34 27 inlet;
 #X obj 34 292 outlet;
 #X obj 34 51 route change click;
@@ -62,7 +62,7 @@ float bgclr;
 #X obj 175 137 change -1000;
 #X obj 175 159 t b a;
 #X msg 55 188 set -1000;
-#X obj 175 108 / 26;
+#X obj 175 108 / 28;
 #X connect 0 0 2 0;
 #X connect 2 0 4 0;
 #X connect 3 0 5 0;
@@ -87,7 +87,7 @@ float bgclr;
 #X obj 92 50 \$0;
 #X msg 92 71 scalar \$1.bg;
 #X obj 92 93 s \$1;
-#X obj 55 138 filledpolygon 999 999 1 0 0 0 14 623 14 623 0;
+#X obj 55 138 filledpolygon 999 999 1 0 0 0 16 671 16 671 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -95,10 +95,10 @@ float bgclr;
 #X obj 13 57 route add reset range;
 #X obj 13 229 list append 999 245;
 #X obj 207 64 loadbang;
-#X obj 82 177 * 26;
-#X obj 13 377 filledpolygon bgclr 999 1 posx 0 posx 14 posx(0:1000)(25:1025)
-14 posx(0:1000)(25:1025) 0;
-#X obj 12 351 drawnumber value posx(0:1000)(2:1002) 0 fgclr;
+#X obj 82 177 * 28;
+#X obj 13 377 filledpolygon bgclr 999 1 posx 0 posx 16 posx(0:1000)(27:1027)
+16 posx(0:1000)(27:1027) 0;
+#X obj 12 351 drawnumber value posx(0:1000)(3:1003) 1 fgclr;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;
 #X connect 1 0 21 0;
