@@ -1,16 +1,16 @@
-#N struct 1131.bg;
-#N struct 1131.button float posx float value float fgclr float bgclr
+#N struct 1093.bg;
+#N struct 1093.button float posx float value float fgclr float bgclr
 ;
-#N struct 1132.bg;
-#N struct 1132.button float posx float value float fgclr float bgclr
+#N struct 1094.bg;
+#N struct 1094.button float posx float value float fgclr float bgclr
 ;
-#N struct 1134.bg;
-#N struct 1134.button float posx symbol param float fgclr float bgclr
+#N struct 1096.bg;
+#N struct 1096.button float posx symbol param float fgclr float bgclr
 symbol bla;
-#N struct 1137.button symbol label float fgclr float bgclr;
-#N struct 1138.number float number float fgclr;
-#N struct 1139.number float number float fgclr;
-#N struct 1140.number float number float fgclr;
+#N struct 1099.button symbol label float fgclr float bgclr;
+#N struct 1100.number float number float fgclr;
+#N struct 1101.number float number float fgclr;
+#N struct 1102.number float number float fgclr;
 #N canvas 424 64 682 498 10;
 #X declare -path ../abs;
 #N canvas 643 64 739 763 rhythm.edit 0;
@@ -277,7 +277,7 @@ range 1 24 \; \$1.length 4 \; \$1.length range 1 999;
 #X connect 52 0 33 0;
 #X connect 55 0 23 0;
 #X coords 0 -1 1 1 671 67 2 20 20;
-#X restore 6 6 pd rhythm.edit;
+#X restore 6 30 pd rhythm.edit;
 #N canvas 991 190 545 550 player 0;
 #X floatatom 157 111 5 0 0 0 - - -, f 5;
 #X obj 157 136 tabread \$0.pitch;
@@ -336,3 +336,5 @@ range 1 24 \; \$1.length 4 \; \$1.length range 1 999;
 #X connect 29 0 26 0;
 #X restore 25 424 pd player;
 #X obj 136 415 declare -path ../abs;
+#X obj 7 -3 cnv 15 669 24 empty empty S|T|R|U|C|T|U|R|A|L|I|S|T -1
+13 0 16 -262144 -67625 0;
