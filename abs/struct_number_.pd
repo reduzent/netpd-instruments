@@ -1,4 +1,4 @@
-#N canvas 130 265 636 459 12;
+#N canvas 130 265 676 547 12;
 #X obj 0 98 struct \$0.number float number float fgclr;
 #X obj 255 41 namecanvas \$0.number.gui;
 #X text 99 1 args: <s/r-symbol> <label> <fgclr> <bgclr> <hlclr>;
@@ -28,12 +28,19 @@
 #X obj 0 188 t a a;
 #X obj 0 359 f;
 #X obj 222 326 t a a;
+#X obj 415 457 set \$0.number fgclr;
+#X obj 415 335 r \$1;
+#X obj 415 359 route disable;
+#X obj 415 383 sel 0 1;
+#X obj 415 421 \$3;
+#X obj 451 423 \$5;
 #X connect 0 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 26 0;
 #X connect 5 0 15 0;
 #X connect 6 0 21 0;
 #X connect 7 0 8 1;
+#X connect 7 0 29 1;
 #X connect 10 0 14 0;
 #X connect 11 0 24 0;
 #X connect 11 1 24 0;
@@ -60,4 +67,10 @@
 #X connect 27 0 9 0;
 #X connect 28 0 27 1;
 #X connect 28 1 8 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 32 1 34 0;
+#X connect 33 0 29 0;
+#X connect 34 0 29 0;
 #X coords 0 0 83 16 83 16 2 0 0;
