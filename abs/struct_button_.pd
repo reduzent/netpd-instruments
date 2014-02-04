@@ -1,4 +1,4 @@
-#N canvas 476 304 610 449 12;
+#N canvas 476 304 598 439 12;
 #X obj 288 139 loadbang;
 #X text 99 1 args: <s/r-symbol> <label> <fgclr> <bgclr> <hlclr>;
 #X obj 241 35 namecanvas \$0.button.gui;
@@ -21,7 +21,7 @@
 #X obj 8 112 route click;
 #X obj 8 145 b;
 #X obj 8 173 s \$1;
-#X obj 158 252 del 100;
+#X obj 158 252 del 200;
 #X connect 0 0 6 0;
 #X connect 6 0 7 0;
 #X connect 6 1 11 0;
