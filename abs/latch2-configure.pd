@@ -33,8 +33,8 @@
 #X restore 22 72 pd save.load.config;
 #X obj 21 21 bng 12 250 50 0 \$0.set empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 21 21 cnv 12 12 12 empty \$0.set.button ○ 2 5 0 17 -90133 -143491
-0;
+#X obj 21 21 cnv 12 12 12 empty \$0.set.button ○ 2 5 0 17 -90133
+-143491 0;
 #X obj 34 21 cnv 12 69 12 empty \$0.help.display empty 2 6 0 10 -90133
 -4034 0;
 #N canvas 766 236 450 300 set.record.key 0;

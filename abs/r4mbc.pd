@@ -46,12 +46,12 @@
 -257025 0;
 #X obj 341 113 cnv 15 74 16 empty empty -------gain 2 7 0 10 -86853
 -257025 0;
-#X obj 56 -8 cnv 15 60 15 empty \$0.xfreq1.display    123Hz 2 7 0 10
--66577 -259712 0;
-#X obj 142 -8 cnv 15 60 15 empty \$0.xfreq2.display    763Hz 2 7 0
-10 -66577 -259712 0;
-#X obj 229 -8 cnv 15 60 15 empty \$0.xfreq3.display   4712Hz 2 7 0
-10 -66577 -259712 0;
+#X obj 56 -8 cnv 15 60 15 empty \$0.xfreq1.display Hz 2 7 0 10 -66577
+-259712 0;
+#X obj 142 -8 cnv 15 60 15 empty \$0.xfreq2.display Hz 2 7 0 10 -66577
+-259712 0;
+#X obj 229 -8 cnv 15 60 15 empty \$0.xfreq3.display Hz 2 7 0 10 -66577
+-259712 0;
 #X obj 86 33 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
 #X obj 86 53 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
 #X obj 86 73 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
