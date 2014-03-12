@@ -1,38 +1,52 @@
-#N canvas 435 44 427 423 10;
-#X obj 20 54 tgl 30 0 empty empty empty 17 7 0 10 -204786 -1 -1 0 1
+#N canvas 435 44 501 425 10;
+#X obj 20 46 tgl 30 0 empty empty empty 17 7 0 10 -204786 -1 -1 0 1
 ;
-#X text 11 11 [vmetro] - a [metro] replacement with intra-interval
-updates;
-#X floatatom 89 70 5 0 0 0 - - -, f 5;
-#X text 167 54 first argument: interval time (ms);
-#X text 215 70 inlet0: start/stop;
-#X text 215 86 inlet1: interval time (ms);
-#X text 210 102 outlet0: bang;
-#X text 210 119 outlet1: time until next tick (ms);
-#X text 264 134 at interval update;
-#X obj 20 149 bng 30 100 50 0 empty empty empty 17 7 0 10 -261234 -1
+#X floatatom 89 121 5 0 0 0 - - -, f 5;
+#X text 228 51 first argument: interval time (ms);
+#X text 276 67 inlet0: start/stop;
+#X text 276 83 inlet1: interval time (ms);
+#X text 271 99 outlet0: bang;
+#X text 271 116 outlet1: time until next tick (ms);
+#X text 325 131 at interval update;
+#X obj 20 169 bng 30 100 50 0 empty empty empty 17 7 0 10 -261234 -1
 -1;
-#X floatatom 89 147 5 0 0 0 - - -, f 5;
-#X obj 20 184 t b b;
-#X obj 20 206 timer;
-#X floatatom 20 228 8 0 0 0 - - -, f 8;
-#X text 290 401 2014 \, Roman Haefeli;
-#X obj 20 116 rh_metro 500;
-#X text 17 259 [rh_metro]'s inlets are accepting the same input as
+#X floatatom 89 167 5 0 0 0 - - -, f 5;
+#X obj 20 204 t b b;
+#X obj 20 226 timer;
+#X floatatom 20 248 8 0 0 0 - - -, f 8;
+#X text 361 407 2014 \, Roman Haefeli;
+#X obj 20 146 rh_metro 500;
+#X text 121 219 [rh_metro]'s inlets are accepting the same input as
 [metro]. Unlike [metro] which schedules interval changes for the next
 tick \, [rh_metro] applies interval changes immediately.;
-#X text 18 311 An example use case is running several metros with different
-intervals in parallel. It's crucial that all instances change the speed
-at the exact same time in order not to lose the relationship between
-the instances.;
+#X text 123 341 An example use case is running several metros with
+different intervals in parallel. It's crucial that all instances change
+the speed at the exact same time in order not to lose the relationship
+between the instances.;
 #N canvas 614 115 327 82 NETPD 0;
 #X msg 15 24 version 0 2 0;
-#X restore 311 207 pd NETPD 2 0;
-#X connect 0 0 15 0;
-#X connect 2 0 15 1;
-#X connect 9 0 11 0;
+#X restore 385 178 pd NETPD 2 0;
+#X text 125 121 interval;
+#X text 127 168 time to next tick;
+#X obj 64 45 hsl 50 15 0 0.999 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 100 1;
+#X obj 20 99 pack;
+#X floatatom 61 65 5 0 0 0 - - -, f 5;
+#X text 99 80 in step fractions 0-1;
+#X text 86 11 a [metro] replacement with intra-interval updates;
+#X text 11 11 [rh_metro] -;
+#X text 99 64 start pos;
+#X text 125 272 [rh_metro] takes an optional argument for the '1' message
+to set a start pos which is set in step fractions. Non-zero values
+cause a start in the middle of an interval.;
+#X connect 0 0 21 0;
+#X connect 1 0 14 1;
+#X connect 8 0 10 0;
+#X connect 10 0 11 0;
+#X connect 10 1 11 1;
 #X connect 11 0 12 0;
-#X connect 11 1 12 1;
-#X connect 12 0 13 0;
-#X connect 15 0 9 0;
-#X connect 15 1 10 0;
+#X connect 14 0 8 0;
+#X connect 14 1 9 0;
+#X connect 20 0 22 0;
+#X connect 21 0 14 0;
+#X connect 22 0 21 1;
