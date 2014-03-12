@@ -1,0 +1,38 @@
+#N canvas 435 44 427 423 10;
+#X obj 20 54 tgl 30 0 empty empty empty 17 7 0 10 -204786 -1 -1 0 1
+;
+#X text 11 11 [vmetro] - a [metro] replacement with intra-interval
+updates;
+#X floatatom 89 70 5 0 0 0 - - -, f 5;
+#X text 167 54 first argument: interval time (ms);
+#X text 215 70 inlet0: start/stop;
+#X text 215 86 inlet1: interval time (ms);
+#X text 210 102 outlet0: bang;
+#X text 210 119 outlet1: time until next tick (ms);
+#X text 264 134 at interval update;
+#X obj 20 149 bng 30 100 50 0 empty empty empty 17 7 0 10 -261234 -1
+-1;
+#X floatatom 89 147 5 0 0 0 - - -, f 5;
+#X obj 20 184 t b b;
+#X obj 20 206 timer;
+#X floatatom 20 228 8 0 0 0 - - -, f 8;
+#X text 290 401 2014 \, Roman Haefeli;
+#X obj 20 116 rh_metro 500;
+#X text 17 259 [rh_metro]'s inlets are accepting the same input as
+[metro]. Unlike [metro] which schedules interval changes for the next
+tick \, [rh_metro] applies interval changes immediately.;
+#X text 18 311 An example use case is running several metros with different
+intervals in parallel. It's crucial that all instances change the speed
+at the exact same time in order not to lose the relationship between
+the instances.;
+#N canvas 614 115 327 82 NETPD 0;
+#X msg 15 24 version 0 2 0;
+#X restore 311 207 pd NETPD 2 0;
+#X connect 0 0 15 0;
+#X connect 2 0 15 1;
+#X connect 9 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 1 12 1;
+#X connect 12 0 13 0;
+#X connect 15 0 9 0;
+#X connect 15 1 10 0;
