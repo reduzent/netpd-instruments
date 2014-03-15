@@ -213,7 +213,7 @@
 #X obj 9 256 pack f f;
 #X obj 9 278 t a b;
 #X msg 48 279 0;
-#N canvas 600 155 468 57 \$1-master 1;
+#N canvas 594 44 468 57 \$1-master 1;
 #X obj 9 2 cnv 15 450 42 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 11 4 cnv 15 446 38 empty empty empty 20 12 0 14 -191407 -66577
@@ -225,18 +225,18 @@
 #X obj 120 8 hsl 200 15 60 240 1 0 \$1-bpm \$1-bpm empty 30 8 0 11
 -1 -4034 -4034 9950 1;
 #X obj 120 23 hsl 200 15 50 75 1 0 \$1-shuffle \$1-shuffle empty 30
-8 0 11 -1 -4034 -1 9759 1;
+8 0 11 -1 -4034 -1 0 1;
 #X obj 337 8 cnv 15 60 30 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 322 8 nbx 5 15 1 500 0 0 \$1-bpm \$1-bpm BPM 49 8 0 11 -1 -4034
 -4034 120 256;
 #X obj 322 23 nbx 5 15 50 75 0 0 \$1-shuffle \$1-shuffle % 49 8 0 11
--1 -4034 -4034 61 256;
+-1 -4034 -4034 50 256;
 #X obj 322 8 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -4033
--1 0;
-#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0002876 3 7 0 11
--4033 -1 0;
+#X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -1 -4033
+0;
+#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000000 3 7 0 11
+-1 -4033 0;
 #X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 -9 0
 10 -262144 -1 -1 0 1;
 #X obj 71 8 cnv 15 18 30 empty \$1-mode-cover R 5 15 0 11 -1 -4033
@@ -255,8 +255,8 @@
 15 0 14 -262144 -237180 -237180 0 1;
 #X obj 398 8 cnv 14 55 15 empty \$1-offset-top OFFSET 3 8 0 11 -1 -4033
 0;
-#X obj 398 24 cnv 14 55 14 empty \$1-offset-bottom     0ms 3 7 0 11
--1 -4033 0;
+#X obj 398 24 cnv 14 55 14 empty \$1-offset-bottom 0ms 3 7 0 11 -1
+-4033 0;
 #X restore 10 42 pd \$1-master;
 #X obj 9 69 netpd_head \$1 master;
 #N canvas 393 158 471 367 examination 0;
