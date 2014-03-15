@@ -235,7 +235,7 @@
 #X obj 322 8 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -4033
 -1 0;
-#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0002035 3 7 0 11
+#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0002876 3 7 0 11
 -4033 -1 0;
 #X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 -9 0
 10 -262144 -1 -1 0 1;
@@ -855,6 +855,7 @@ in a list.;
 #X connect 22 0 24 0;
 #X connect 23 0 22 1;
 #X connect 24 0 25 0;
+#X connect 24 1 27 0;
 #X connect 25 0 27 0;
 #X connect 27 0 28 0;
 #X connect 28 0 26 0;
