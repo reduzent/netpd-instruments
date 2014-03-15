@@ -6,7 +6,7 @@
 #X msg 20 69 master-gui-bar;
 #X restore 13 42 pd abslist;
 #X msg 13 69 singleton;
-#X msg 13 18 version 0 4 0;
+#X msg 13 18 version 0 4 1;
 #X restore 10 14 pd NETPD 2 0;
 #N canvas 0 44 368 170 request 0;
 #X text 128 50 request packet transmission;
@@ -223,20 +223,20 @@
 #X obj 18 8 hsl 50 30 0 1 0 0 \$1-switch-sl \$1-switch-sl empty 5 15
 0 14 -262144 -237180 -237180 0 1;
 #X obj 120 8 hsl 200 15 60 240 1 0 \$1-bpm \$1-bpm empty 30 8 0 11
--1 -4034 -4034 9950 1;
+-1 -4034 -4034 10250 1;
 #X obj 120 23 hsl 200 15 50 75 1 0 \$1-shuffle \$1-shuffle empty 30
-8 0 11 -1 -4034 -1 0 1;
+8 0 11 -1 -4034 -1 10558 1;
 #X obj 337 8 cnv 15 60 30 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 322 8 nbx 5 15 1 500 0 0 \$1-bpm \$1-bpm BPM 49 8 0 11 -1 -4034
--4034 120 256;
+-4034 122.534 256;
 #X obj 322 23 nbx 5 15 50 75 0 0 \$1-shuffle \$1-shuffle % 49 8 0 11
--1 -4034 -4034 50 256;
+-1 -4034 -4034 62 256;
 #X obj 322 8 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -1 -4033
-0;
-#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000000 3 7 0 11
--1 -4033 0;
+#X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -4033
+-1 0;
+#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0015844 3 7 0 11
+-4033 -1 0;
 #X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 -9 0
 10 -262144 -1 -1 0 1;
 #X obj 71 8 cnv 15 18 30 empty \$1-mode-cover R 5 15 0 11 -1 -4033
@@ -255,8 +255,8 @@
 15 0 14 -262144 -237180 -237180 0 1;
 #X obj 398 8 cnv 14 55 15 empty \$1-offset-top OFFSET 3 8 0 11 -1 -4033
 0;
-#X obj 398 24 cnv 14 55 14 empty \$1-offset-bottom 0ms 3 7 0 11 -1
--4033 0;
+#X obj 398 24 cnv 14 55 14 empty \$1-offset-bottom     0ms 3 7 0 11
+-1 -4033 0;
 #X restore 10 42 pd \$1-master;
 #X obj 9 69 netpd_head \$1 master;
 #N canvas 393 158 471 367 examination 0;
@@ -748,7 +748,7 @@ in a list.;
 #X restore 302 30 pd schedule;
 #X obj 116 274 s \$0.interval;
 #X obj 87 342 s \$0.ms.to.tick;
-#X obj 40 451 r \$0.adjust.step;
+#X obj 62 427 r \$0.adjust.step;
 #N canvas 665 424 375 292 application 0;
 #N canvas 414 323 273 220 get.current.pos 0;
 #X obj 62 104 f;
@@ -798,7 +798,7 @@ in a list.;
 #X obj 183 477 r \$0.mode;
 #X obj 168 497 f;
 #X obj 168 519 sel 1;
-#N canvas 235 184 439 290 master.api 0;
+#N canvas 235 184 410 511 master.api 0;
 #X msg 15 168 switch \$1;
 #X msg 198 169 bpm \$1;
 #X msg 110 166 16th \$1;
@@ -820,6 +820,13 @@ in a list.;
 #X obj 287 216 r \$0.stepshuffle;
 #X msg 287 238 stepshuffle \$1;
 #X obj 110 114 change -1;
+#X obj 44 281 r \$0.startstop;
+#X obj 44 331 list append;
+#X obj 107 309 r \$0.step.next;
+#X obj 44 353 route 0;
+#X msg 44 375 0;
+#X msg 44 397 polyswitch \$1;
+#X obj 44 419 s master;
 #X connect 0 0 14 0;
 #X connect 1 0 14 0;
 #X connect 2 0 14 0;
@@ -843,6 +850,13 @@ in a list.;
 #X connect 18 0 19 0;
 #X connect 19 0 14 0;
 #X connect 20 0 6 0;
+#X connect 21 0 22 0;
+#X connect 22 0 24 0;
+#X connect 23 0 22 1;
+#X connect 24 0 25 0;
+#X connect 24 1 26 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
 #X restore 330 453 pd master.api;
 #X obj 92 514 t b b;
 #X msg 168 541 0;
@@ -1028,17 +1042,19 @@ in a list.;
 #X obj 54 361 s \$0.intra.step;
 #X obj 169 316 r \$0.interval.l;
 #X obj 116 295 r \$0.interval;
+#X obj 24 459 t a a;
+#X obj 74 449 s \$0.step.next;
 #X connect 3 0 23 0;
 #X connect 4 0 10 0;
-#X connect 5 0 4 1;
 #X connect 5 0 9 1;
+#X connect 5 0 54 0;
 #X connect 8 0 42 0;
 #X connect 9 0 7 0;
 #X connect 10 0 6 0;
 #X connect 10 1 5 0;
 #X connect 11 0 12 0;
 #X connect 11 1 13 0;
-#X connect 12 0 4 1;
+#X connect 12 0 54 0;
 #X connect 13 0 18 1;
 #X connect 16 0 18 0;
 #X connect 17 0 4 0;
@@ -1070,3 +1086,5 @@ in a list.;
 #X connect 50 1 26 0;
 #X connect 52 0 17 1;
 #X connect 53 0 17 1;
+#X connect 54 0 4 1;
+#X connect 54 1 55 0;
