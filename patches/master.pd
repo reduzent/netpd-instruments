@@ -6,7 +6,7 @@
 #X msg 20 69 master-gui-bar;
 #X restore 13 42 pd abslist;
 #X msg 13 69 singleton;
-#X msg 13 18 version 0 4 1;
+#X msg 13 18 version 0 4 2;
 #X restore 10 14 pd NETPD 2 0;
 #N canvas 0 44 368 170 request 0;
 #X text 128 50 request packet transmission;
@@ -213,7 +213,7 @@
 #X obj 9 256 pack f f;
 #X obj 9 278 t a b;
 #X msg 48 279 0;
-#N canvas 594 44 468 57 \$1-master 1;
+#N canvas 600 155 468 57 \$1-master 1;
 #X obj 9 2 cnv 15 450 42 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 11 4 cnv 15 446 38 empty empty empty 20 12 0 14 -191407 -66577
@@ -223,19 +223,19 @@
 #X obj 18 8 hsl 50 30 0 1 0 0 \$1-switch-sl \$1-switch-sl empty 5 15
 0 14 -262144 -237180 -237180 0 1;
 #X obj 120 8 hsl 200 15 60 240 1 0 \$1-bpm \$1-bpm empty 30 8 0 11
--1 -4034 -4034 10250 1;
+-1 -4034 -4034 9950 1;
 #X obj 120 23 hsl 200 15 50 75 1 0 \$1-shuffle \$1-shuffle empty 30
-8 0 11 -1 -4034 -1 10558 1;
+8 0 11 -1 -4034 -1 9759 1;
 #X obj 337 8 cnv 15 60 30 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 322 8 nbx 5 15 1 500 0 0 \$1-bpm \$1-bpm BPM 49 8 0 11 -1 -4034
--4034 122.534 256;
+-4034 120 256;
 #X obj 322 23 nbx 5 15 50 75 0 0 \$1-shuffle \$1-shuffle % 49 8 0 11
--1 -4034 -4034 62 256;
+-1 -4034 -4034 61 256;
 #X obj 322 8 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -4033
 -1 0;
-#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0015844 3 7 0 11
+#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0002035 3 7 0 11
 -4033 -1 0;
 #X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 -9 0
 10 -262144 -1 -1 0 1;
@@ -825,8 +825,9 @@ in a list.;
 #X obj 107 309 r \$0.step.next;
 #X obj 44 353 route 0;
 #X msg 44 375 0;
-#X msg 44 397 polyswitch \$1;
-#X obj 44 419 s master;
+#X obj 44 440 s master;
+#X obj 44 396 list prepend polyswitch;
+#X obj 44 418 list trim;
 #X connect 0 0 14 0;
 #X connect 1 0 14 0;
 #X connect 2 0 14 0;
@@ -854,9 +855,9 @@ in a list.;
 #X connect 22 0 24 0;
 #X connect 23 0 22 1;
 #X connect 24 0 25 0;
-#X connect 24 1 26 0;
-#X connect 25 0 26 0;
-#X connect 26 0 27 0;
+#X connect 25 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 26 0;
 #X restore 330 453 pd master.api;
 #X obj 92 514 t b b;
 #X msg 168 541 0;
