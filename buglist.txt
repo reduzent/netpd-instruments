@@ -6,7 +6,3 @@ qseq3
 
   * in rare cases subinstr list selector can't be changed (reported by sqgl)
 
-
-rfxlib->rchous
-
-  * does not work with two voices (silent)
