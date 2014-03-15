@@ -2,6 +2,8 @@
 #N canvas 624 75 339 107 NETPD 0;
 #N canvas 315 75 320 105 abslist 0;
 #X msg 19 15 roman_helpers;
+#X msg 19 42 master-poly;
+#X msg 20 69 master-gui-bar;
 #X restore 13 42 pd abslist;
 #X msg 12 18 version 0 0 1;
 #X msg 13 69 singleton;
@@ -34,7 +36,7 @@
 #X obj 28 77 netpd_s \$1 rqpt;
 #X connect 0 0 3 0;
 #X connect 2 0 0 0;
-#X restore 318 43 pd request;
+#X restore 302 54 pd request;
 #N canvas 183 44 357 441 response 0;
 #X obj 23 92 t a b;
 #X obj 23 140 list append;
@@ -129,7 +131,7 @@
 #X connect 19 0 3 0;
 #X connect 20 0 6 0;
 #X connect 21 0 6 1;
-#X restore 318 63 pd response;
+#X restore 302 74 pd response;
 #N canvas 435 149 376 278 evaluation 0;
 #X obj 23 36 t a b;
 #X text 134 59 response packet reception;
@@ -181,7 +183,7 @@
 #X connect 12 0 0 0;
 #X connect 12 1 13 1;
 #X connect 13 0 10 0;
-#X restore 318 83 pd evaluation;
+#X restore 302 94 pd evaluation;
 #X obj 9 488 f;
 #X obj 40 488 + 1;
 #X obj 9 567 s \$0.step;
@@ -241,19 +243,19 @@
 #X obj 18 8 hsl 50 30 0 1 0 0 \$1-switch-sl \$1-switch-sl empty 5 15
 0 14 -262144 -237180 -237180 2450 1;
 #X obj 120 8 hsl 200 15 60 240 1 0 \$1-bpm \$1-bpm empty 30 8 0 11
--1 -4034 -4034 5200 1;
+-1 -4034 -4034 9200 1;
 #X obj 120 23 hsl 200 15 50 75 1 0 \$1-shuffle \$1-shuffle empty 30
-8 0 11 -1 -4034 -1 8200 1;
+8 0 11 -1 -4034 -1 13800 1;
 #X obj 337 8 cnv 15 60 30 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 322 8 nbx 5 15 1 500 0 0 \$1-bpm \$1-bpm BPM 49 8 0 11 -1 -4034
--4034 86.1933 256;
+-4034 113.891 256;
 #X obj 322 23 nbx 5 15 50 75 0 0 \$1-shuffle \$1-shuffle % 49 8 0 11
--1 -4034 -4034 59.0922 256;
+-1 -4034 -4034 66.2344 256;
 #X obj 322 8 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -1 -4033
 0;
-#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0005618 3 7 0 11
+#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000000 3 7 0 11
 -1 -4033 0;
 #X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 -9 0
 10 -262144 -1 -1 1200 1;
@@ -719,7 +721,7 @@ in a list.;
 #X connect 19 0 22 0;
 #X connect 20 0 18 0;
 #X connect 21 0 17 1;
-#X restore 318 107 pd examination;
+#X restore 302 118 pd examination;
 #N canvas 380 135 459 331 schedule 0;
 #X obj 232 195 s \$0.reset.offset.data;
 #X obj 91 228 outlet;
@@ -759,7 +761,7 @@ in a list.;
 #X connect 14 0 0 0;
 #X connect 14 1 15 0;
 #X connect 16 0 11 0;
-#X restore 318 19 pd schedule;
+#X restore 302 30 pd schedule;
 #X obj 116 274 s \$0.interval;
 #X obj 116 295 r \$0.interval;
 #X obj 54 353 s \$0.ms.to.tick;
@@ -813,7 +815,7 @@ in a list.;
 #X connect 6 0 7 0;
 #X connect 7 0 9 0;
 #X connect 8 0 2 1;
-#X restore 318 132 pd application;
+#X restore 302 143 pd application;
 #N canvas 713 566 210 184 guistuff 0;
 #N canvas 398 257 367 392 switch-gui 0;
 #X msg 30 243 -65281 -1;
@@ -950,7 +952,7 @@ empty 0 -8 0 14 -262144 -1 -1 0 256;
 #X connect 17 0 13 0;
 #X connect 18 0 19 0;
 #X connect 19 0 14 0;
-#X restore 330 429 pd master.api;
+#X restore 330 453 pd master.api;
 #X obj 92 514 t b b;
 #X msg 168 541 0;
 #X obj 40 378 netpd_f \$1 step 0;
@@ -1016,7 +1018,8 @@ empty 0 -8 0 14 -262144 -1 -1 0 256;
 #X connect 24 0 25 0;
 #X connect 25 0 26 0;
 #X connect 26 0 13 0;
-#X restore 329 455 pd stepshuffle;
+#X restore 330 427 pd stepshuffle;
+#X text 295 8 offset detection/correction;
 #X connect 3 0 23 0;
 #X connect 4 0 10 0;
 #X connect 5 0 4 1;
