@@ -1,12 +1,13 @@
-#N canvas 935 465 213 114 10;
+#N canvas 935 493 213 114 10;
 #N canvas 624 75 373 157 NETPD 0;
-#N canvas 954 385 183 228 abslist 0;
+#N canvas 954 413 183 228 abslist 0;
 #X msg 13 14 latch2-instance;
 #X msg 13 35 latch2-configure;
 #X restore 12 33 pd abslist;
-#X msg 13 8 version 0 0 3;
+#X msg 13 8 version 0 0 4;
+#X msg 15 54 singleton;
 #X restore 11 13 pd NETPD 2 0;
-#N canvas 641 446 274 230 \$1-latch2 1;
+#N canvas 641 446 274 230 \$1-latch2 0;
 #X obj 12 19 latch2-instance \$1 1;
 #X obj 12 35 latch2-instance \$1 2;
 #X obj 12 51 latch2-instance \$1 3;
