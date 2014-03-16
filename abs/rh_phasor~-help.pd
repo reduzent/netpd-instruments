@@ -1,0 +1,48 @@
+#N canvas 354 44 441 471 10;
+#X obj 29 296 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11548 1;
+#X obj 107 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 95 229 metro 20;
+#X obj 95 206 loadbang;
+#X obj 26 254 vsnapshot~;
+#X floatatom 26 110 5 0 0 0 - - -, f 5;
+#X obj 169 296 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11548 1;
+#X obj 166 254 vsnapshot~;
+#X obj 166 157 phasor~ 0.5;
+#X text 158 57 first argument: frequency (Hz);
+#X text 205 74 inlet0: frequency (Hz);
+#X text 198 92 outlet0: saw tooth signal;
+#X text 198 110 outlet1: bang at wrapping points;
+#X text 295 444 2014 \, Roman Haefeli;
+#X msg 26 61 0.1;
+#X msg 55 61 0.5;
+#X msg 84 61 1;
+#X msg 113 61 2;
+#X text 19 375 Limitations:;
+#X text 27 392 * It only accepts messages as input \, but not signals
+;
+#X obj 26 158 rh_phasor~ 0.5;
+#N canvas 659 72 327 81 NETPD 0;
+#X msg 15 16 version 0 1 0;
+#X restore 304 186 pd NETPD 2 0;
+#X text 21 13 [rh_phasor~] - a message based [phasor~ ] replacement
+;
+#X text 17 334 [rh_phasor~ ] is similar to [phasor~ ] \, but it additionally
+sends a bang at exactly each wrapping point.;
+#X text 27 408 * It only accepts positive frequencies (yet);
+#X connect 2 0 4 0;
+#X connect 2 0 7 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X connect 5 0 8 0;
+#X connect 5 0 20 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 14 0 5 0;
+#X connect 15 0 5 0;
+#X connect 16 0 5 0;
+#X connect 17 0 5 0;
+#X connect 20 0 4 0;
+#X connect 20 1 1 0;
