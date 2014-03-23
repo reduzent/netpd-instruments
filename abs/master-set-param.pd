@@ -3,7 +3,7 @@
 #X msg 9 13 version 0 0 1;
 #X restore 12 8 pd NETPD 2 0;
 #X obj 241 119 list append;
-#X obj 222 61 inlet;
+#X obj 222 10 inlet;
 #X obj 222 83 t a b a;
 #X obj 168 242 s master;
 #X obj 113 120 list append;
@@ -14,8 +14,10 @@
 #X obj 113 26 route get;
 #X obj 113 48 route \$1;
 #X obj 113 70 b;
+#X obj 113 92 spigot 1;
+#X obj 222 32 route onrequest;
 #X connect 1 0 6 0;
-#X connect 2 0 3 0;
+#X connect 2 0 14 0;
 #X connect 3 0 5 1;
 #X connect 3 1 1 0;
 #X connect 3 2 1 1;
@@ -26,4 +28,7 @@
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
-#X connect 12 0 5 0;
+#X connect 12 0 13 0;
+#X connect 13 0 5 0;
+#X connect 14 0 13 1;
+#X connect 14 1 3 0;
