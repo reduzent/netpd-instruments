@@ -1,6 +1,5 @@
 #N canvas 590 44 451 568 10;
 #N canvas 1237 44 324 263 delay.time 0;
-#X obj 207 20 loadbang;
 #X obj 26 57 t b f;
 #X obj 49 131 t b f;
 #X obj 18 173 * 125;
@@ -8,22 +7,16 @@
 #X obj 18 193 s \$0-del.time;
 #X obj 18 17 netpd_f \$1 \$2/dp.16 1;
 #X obj 26 37 netpd_f \$1 \$2/dp.time 0;
-#X obj 207 64 s master;
-#X msg 207 42 refresh;
-#X obj 50 84 r master;
-#X obj 50 106 route 16th;
-#X connect 0 0 9 0;
-#X connect 1 0 4 0;
-#X connect 1 1 4 1;
-#X connect 2 0 3 0;
-#X connect 2 1 3 1;
-#X connect 3 0 5 0;
-#X connect 4 0 3 0;
-#X connect 6 0 4 0;
+#X obj 49 104 master-param 16th;
+#X connect 0 0 3 0;
+#X connect 0 1 3 1;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
 #X connect 7 0 1 0;
-#X connect 9 0 8 0;
-#X connect 10 0 11 0;
-#X connect 11 0 2 0;
 #X restore 209 125 pd delay.time;
 #N canvas 12 199 456 187 repeat-2 0;
 #X obj 19 135 outlet~;
@@ -193,7 +186,7 @@
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X restore 130 85 pd write-2;
-#N canvas 0 22 421 124 write-3 0;
+#N canvas 0 44 421 124 write-3 0;
 #X obj 8 18 catch~ \$0-3l;
 #X obj 200 18 catch~ \$0-3r;
 #X obj 200 48 delwrite~ \$2_dp.3-r 1000;
@@ -209,7 +202,7 @@
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X restore 130 65 pd write-1;
-#N canvas 0 22 411 111 write-4 0;
+#N canvas 0 44 411 111 write-4 0;
 #X obj 16 21 catch~ \$0-4l;
 #X obj 208 21 catch~ \$0-4r;
 #X obj 16 51 delwrite~ \$2_dp.4-l 1000;
@@ -217,7 +210,7 @@
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X restore 130 125 pd write-4;
-#N canvas 12 199 330 160 repeat-1 1;
+#N canvas 12 199 330 160 repeat-1 0;
 #X obj 19 101 outlet~;
 #X obj 171 101 outlet~;
 #X obj 19 45 * 1;
@@ -263,7 +256,7 @@
 #X obj 177 270 outlet;
 #X obj 151 240 netpd_a \$1 \$2/dp.rep;
 #X obj 288 51 netpd_r \$1 \$2/dp.rep;
-#X floatatom 370 151 5 0 0 0 - - -;
+#X floatatom 370 151 5 0 0 0 - - -, f 5;
 #X obj 288 166 route float;
 #X connect 0 0 7 0;
 #X connect 1 0 11 0;
@@ -289,22 +282,25 @@
 #X connect 19 0 3 0;
 #X restore 209 65 pd netpd-mixed_dp.rep;
 #X text 16 21 by Enrique Erne;
-#N canvas 341 349 288 126 NETPD 0;
-#X msg 16 12 version 0 2 1;
+#N canvas 341 405 288 126 NETPD 0;
+#X msg 16 12 version 0 2 2;
+#N canvas 416 185 227 69 ablist 0;
+#X msg 7 9 master-param;
+#X restore 22 37 pd ablist;
 #X restore 13 43 pd NETPD 2 0;
-#N canvas 1041 27 167 104 \$3-e-del 1;
+#N canvas 1041 72 167 104 \$3-e-del 1;
 #X obj 16 58 hsl 130 15 0 0.99 0 0 \$1-\$2/dp.feed \$1-\$2/dp.feed
 ___feedback 7 7 1 9 -262144 -1 -183085 8470 0;
 #X obj 16 26 hsl 130 15 0 1 0 0 \$1-\$2/dp.time \$1-\$2/dp.time _+_16th
 7 7 1 9 -262144 -1 -183085 0 0;
 #X obj 13 12 hradio 15 1 0 9 \$1-\$2/dp.16 \$1-\$2/dp.16 empty 10 -7
-1 9 -262144 -1 -183085 2;
+1 9 -262144 -1 -183085 1;
 #X obj 88 42 hradio 15 1 0 4 \$0_rep-radio \$0_rep-radio-r empty 0
--6 1 9 -262144 -1 -1 2;
+-6 1 9 -262144 -1 -1 0;
 #X obj 16 74 hsl 130 15 0 1 0 0 \$1-\$2/dp.mix \$1-\$2/dp.mix _original_|><|_d-play_
-7 7 1 9 -262144 -1 -183085 5900 0;
+7 7 1 9 -262144 -1 -183085 6450 0;
 #X obj 16 42 hsl 70 15 0 3 0 0 \$0_rep-slider \$0_rep-slider-r ___repeat
-7 7 1 9 -262144 -1 -183085 6400 0;
+7 7 1 9 -262144 -1 -183085 0 0;
 #X restore 297 25 pd \$3-e-del;
 #X obj 89 530 outlet~;
 #X obj 250 532 outlet~;
