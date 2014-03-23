@@ -1,0 +1,5 @@
+#N canvas 612 137 450 300 10;
+#X obj 13 9 inlet;
+#N canvas 383 211 301 108 NETPD 0;
+#X msg 19 10 version 0 0 0;
+#X restore 354 11 pd NETPD 2 0;
