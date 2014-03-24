@@ -1,3 +1,10 @@
+#N struct 1969.button float posx float posy float color;
+#N struct 1969.cursor float cx float cy float cy2;
+#N struct 1910-automation float yshift array variy 1910-automation-element
+;
+#N struct 1910-automation-element float y;
+#N struct 1909.autolabel float x float y symbol lbl float color float
+track;
 #N canvas 782 88 554 465 10;
 #X obj 368 137 s \$0.ungrid;
 #X obj 85 182 s \$0.ungrid.r;
@@ -363,7 +370,7 @@ color float track;
 #X msg 111 8 unstep-settings-gui;
 #X msg 111 29 unstep-midi-control;
 #X restore 17 32 pd abslist;
-#X msg 17 9 version 0 1 9;
+#X msg 17 9 version 0 1 10;
 #X restore 456 10 pd NETPD 2 0;
 #N canvas 837 479 450 372 automation.output 0;
 #X obj 39 35 r \$0.ungrid;
@@ -547,7 +554,7 @@ color float track;
 #X connect 20 0 11 0;
 #X connect 20 1 1 0;
 #X connect 22 0 20 0;
-#X restore 19 343 pd stepnumber->commands;
+#X restore 19 348 pd stepnumber->commands;
 #N canvas 172 109 328 319 master.poly.switch 0;
 #X obj 176 117 master-poly 4 4;
 #X obj 176 94 pack;
@@ -621,7 +628,8 @@ color float track;
 #X connect 9 0 6 0;
 #X connect 10 0 4 0;
 #X restore 19 22 pd master.poly.switch;
-#X obj 41 304 unstep-midi-control \$1 \$2;
+#X obj 39 302 unstep-midi-control \$1 \$2;
+#X obj 39 324 s \$0.outlet;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 3 0 1 0;
@@ -646,6 +654,7 @@ color float track;
 #X connect 19 1 15 0;
 #X connect 20 0 0 0;
 #X connect 21 0 3 0;
+#X connect 22 0 23 0;
 #X restore 227 17 pd master->ungrid;
 #X text 311 166 init size;
 #X obj 227 124 t b a;
@@ -671,8 +680,7 @@ color float track;
 #X msg 41 58 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+0 0;
 #X obj 41 230 outlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
