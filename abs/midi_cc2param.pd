@@ -1,6 +1,6 @@
 #N canvas 605 228 410 374 10;
 #X obj 167 236 list prepend;
-#X obj 285 161 r \$0.address;
+#X obj 285 159 r \$0.address;
 #X obj 167 310 s NETPD;
 #X msg 167 288 to /b\$1 \$2 \, to /l\$1 \$2;
 #X obj 23 21 hsl 280 15 0 127 0 0 \$0.slider empty empty -2 8 0 10
@@ -111,7 +111,7 @@
 #X obj 21 132 s \$0.path;
 #X obj 21 42 route bang;
 #X obj 21 70 list;
-#X obj 21 20 r \$0.address;
+#X obj 21 20 netpd_r \$1 param/\$2;
 #X connect 0 0 21 0;
 #X connect 1 0 15 0;
 #X connect 1 0 16 0;
@@ -227,7 +227,7 @@
 #X connect 14 1 3 1;
 #X connect 15 0 10 0;
 #X restore 167 158 pd soft.take-over;
-#X msg 244 197 1;
+#X msg 285 224 1;
 #X obj 167 180 spigot 0;
 #X obj 216 93 s \$0.receiving;
 #X obj 167 109 * 1;
@@ -239,7 +239,8 @@
 #X msg 17 15 version 0 0 1;
 #X restore 22 213 pd NETPD 2 0;
 #X obj 167 59 ctlin \$3 \$4;
-#X obj 285 230 netpd_a \$1 param/\$2;
+#X obj 285 180 netpd_a \$1 param/\$2;
+#X obj 285 202 t b a;
 #X connect 0 0 3 0;
 #X connect 1 0 22 0;
 #X connect 3 0 2 0;
@@ -252,4 +253,7 @@
 #X connect 17 0 13 0;
 #X connect 21 0 7 0;
 #X connect 21 0 16 0;
+#X connect 22 0 23 0;
+#X connect 23 0 14 0;
+#X connect 23 1 0 1;
 #X coords 0 -1 1 1 285 17 2 20 20;
