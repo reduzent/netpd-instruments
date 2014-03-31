@@ -111,8 +111,8 @@
 #X msg 31 123 1;
 #X obj 31 100 loadbang;
 #X text 10 1 level / panorama;
-#X obj 108 153 netpd_f \$1 aux/\$2/level 1;
 #X obj 136 174 netpd_f \$1 aux/\$2/pan 0.5;
+#X obj 108 153 netpd_f \$1 aux/\$2/level 0.787402;
 #X connect 0 0 4 0;
 #X connect 1 0 5 0;
 #X connect 4 0 2 0;
@@ -126,8 +126,8 @@
 #X connect 11 0 10 0;
 #X connect 12 0 11 0;
 #X connect 13 0 12 0;
-#X connect 15 0 11 1;
-#X connect 16 0 10 1;
+#X connect 15 0 10 1;
+#X connect 16 0 11 1;
 #X restore 8 192 pd mx.l.p______;
 #X obj 8 81 catch~ mx-aux-\$2-l;
 #X obj 94 100 catch~ mx-aux-\$2-r;
