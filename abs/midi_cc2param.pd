@@ -3,7 +3,7 @@
 #X obj 285 161 r \$0.address;
 #X obj 167 310 s NETPD;
 #X msg 167 288 to /b\$1 \$2 \, to /l\$1 \$2;
-#X obj 83 21 hsl 220 15 0 127 0 0 \$0.slider empty empty -2 8 0 10
+#X obj 23 21 hsl 280 15 0 127 0 0 \$0.slider empty empty -2 8 0 10
 -262144 -1 -1 0 1;
 #X obj 80 21 cnv 15 225 15 empty \$0.path <not_set> 5 7 0 10 -262144
 -1 0;
@@ -58,7 +58,7 @@
 #X connect 19 0 15 1;
 #X connect 21 0 5 1;
 #X restore 20 69 pd learn;
-#N canvas 865 384 248 267 one.at.a.time 0;
+#N canvas 865 412 248 267 one.at.a.time 0;
 #X obj 27 21 r \$0.slider;
 #X obj 27 41 sel 0;
 #X obj 66 41 t a;
