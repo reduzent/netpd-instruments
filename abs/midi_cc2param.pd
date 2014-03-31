@@ -231,7 +231,7 @@
 #X obj 167 180 spigot 0;
 #X obj 216 93 s \$0.receiving;
 #X obj 167 109 * 1;
-#X obj 20 21 cnv 15 50 15 empty \$0.label \$3 5 7 0 10 -262144 -1 0
+#X obj 20 21 cnv 15 50 15 empty \$0.label \$2 5 7 0 10 -262144 -1 0
 ;
 #X obj 71 21 cnv 8 8 15 empty \$0.indicator ● 2 7 0 10 -262144 -262144
 0;
@@ -241,8 +241,6 @@
 #X obj 167 59 ctlin \$3 \$4;
 #X obj 285 230 netpd_a \$1 param/\$2;
 #X connect 0 0 3 0;
-#X connect 1 0 14 0;
-#X connect 1 0 0 1;
 #X connect 1 0 22 0;
 #X connect 3 0 2 0;
 #X connect 6 0 0 0;
