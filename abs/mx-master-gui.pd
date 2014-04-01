@@ -4,7 +4,7 @@
 #X msg 8 13 mx-aux-gui;
 #X msg 9 42 mx-insert-gui;
 #X restore 24 42 pd abslist;
-#X msg 21 15 version 0 0 1;
+#X msg 21 15 version 0 0 2;
 #X restore 128 67 pd NETPD 2 0;
 #N canvas 565 546 261 258 level-slider-stuff 0;
 #X obj 20 228 s \$0.level.top.r;
@@ -103,7 +103,7 @@
 #X connect 26 0 12 0;
 #X connect 29 0 27 0;
 #X restore 128 134 pd double-click-reset;
-#N canvas 645 213 161 130 INIT 0;
+#N canvas 645 241 161 130 INIT 0;
 #X obj 12 95 s mx;
 #X msg 12 74 \$1 refresh;
 #X obj 12 53 \$1;
@@ -117,8 +117,8 @@
 #X obj 18 18 cnv 15 58 269 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 44 126 vsl 20 157 0 1 0 0 \$1-level \$1-level empty 0 -9 0 10
--66577 -66577 -1 0 1;
-#X obj 45 283 cnv 1 18 2 empty \$0.level.top.r empty 20 12 0 14 -258089
+-66577 -66577 -1 12283 1;
+#X obj 45 160 cnv 1 18 125 empty \$0.level.top.r empty 20 12 0 14 -258089
 -66577 0;
 #X obj 35 20 cnv 10 39 12 empty \$0.label.r main 3 7 1 10 -262144 -4160
 0;
@@ -130,9 +130,14 @@
 #X obj 37 109 hsl 35 15 0 1 0 0 \$1-pan \$1-pan empty -2 -8 0 10 -66577
 -258153 -1 1700 1;
 #X obj 128 46 namecanvas \$1-master-gui;
-#X obj 20 22 vsl 12 260 0 0 0 0 \$1-show-aux-channels \$1.NULL empty
+#X obj 20 155 vsl 12 127 0 0 0 0 \$1-show-recorder \$1.NULL empty 0
+-9 0 10 -228856 -228856 -1 0 1;
+#X obj 21 201 cnv 10 10 11 empty empty r 2 5 1 14 -228856 -1 0;
+#X obj 21 213 cnv 10 10 11 empty empty e 1 5 1 14 -228856 -1 0;
+#X obj 21 225 cnv 10 10 11 empty empty c 1 5 1 14 -228856 -1 0;
+#X obj 20 22 vsl 12 127 0 0 0 0 \$1-show-aux-channels \$1.NULL empty
 0 -9 0 10 -228856 -228856 -1 0 1;
-#X obj 21 114 cnv 10 10 11 empty empty a 2 5 1 14 -228856 -1 0;
-#X obj 21 126 cnv 10 10 11 empty empty u 1 5 1 14 -228856 -1 0;
-#X obj 21 138 cnv 10 10 11 empty empty x 2 5 1 14 -228856 -1 0;
+#X obj 21 69 cnv 10 10 11 empty empty a 2 5 1 14 -228856 -1 0;
+#X obj 21 81 cnv 10 10 11 empty empty u 1 5 1 14 -228856 -1 0;
+#X obj 21 93 cnv 10 10 11 empty empty x 2 5 1 14 -228856 -1 0;
 #X coords 0 -1 1 1 58 269 2 18 18;
