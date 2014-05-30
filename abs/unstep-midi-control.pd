@@ -4,7 +4,7 @@
 #N canvas 862 172 302 59 abslist 0;
 #X msg 7 10 master-param;
 #X restore 20 34 pd abslist;
-#X msg 19 10 version 0 0 2;
+#X msg 19 10 version 0 0 3;
 #X restore 354 11 pd NETPD 2 0;
 #N canvas 308 149 301 278 note->row 0;
 #X obj 58 65 netpd_r \$1 unstep/\$2/octave;
@@ -34,7 +34,7 @@
 #X connect 12 0 11 1;
 #X restore 11 101 pd note->row;
 #X obj 11 264 netpd_s \$1 unstep/\$2/cell;
-#X obj 59 174 master-param switch;
+#X obj 175 182 master-param switch;
 #X obj 11 174 spigot;
 #X obj 11 220 pack f f;
 #X msg 11 242 \$2 \$1 1;
@@ -67,9 +67,10 @@
 #X obj 11 59 route note record;
 #X obj 11 145 spigot 0;
 #X obj 11 15 r midi2unstep;
+#X msg 175 204 \$1;
 #X connect 0 0 6 1;
 #X connect 2 0 11 0;
-#X connect 4 0 5 1;
+#X connect 4 0 18 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
 #X connect 7 0 3 0;
@@ -84,3 +85,4 @@
 #X connect 15 1 16 1;
 #X connect 16 0 5 0;
 #X connect 17 0 9 0;
+#X connect 18 0 5 1;
