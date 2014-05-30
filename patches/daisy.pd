@@ -1,6 +1,11 @@
-#N struct 4791.button float posx float posy float color;
-#N struct 4791.cursor float cx float cy float cy2;
-#N canvas 957 503 218 159 10;
+#N struct 2070.button float posx float posy float color;
+#N struct 2070.cursor float cx float cy float cy2;
+#N struct 2012-automation float yshift array variy 2012-automation-element
+;
+#N struct 2012-automation-element float y;
+#N struct 2011.autolabel float x float y symbol lbl float color float
+track;
+#N canvas 957 531 218 159 10;
 #N canvas 338 195 497 490 daisy.code 0;
 #X obj 228 60 *~;
 #X obj 17 159 int;
@@ -371,7 +376,7 @@
 #X connect 38 1 37 1;
 #X connect 39 0 1 0;
 #X restore 17 229 pd audio.envelope-ds;
-#N canvas 1251 322 279 320 mix.osc-noise 0;
+#N canvas 1251 350 279 320 mix.osc-noise 0;
 #X obj 19 297 outlet;
 #X obj 201 297 outlet;
 #X obj 20 136 select 0.5;
@@ -385,11 +390,11 @@
 #X obj 143 212 * -1.26;
 #X obj 142 232 + 1.26;
 #X obj 60 77 netpd_f \$1 m 0.25;
-#X obj 20 111 f;
 #X obj 20 7 r \$1-daisy;
 #X obj 20 29 route note mix;
 #X obj 20 51 b;
 #X obj 20 73 f;
+#X obj 20 111 +;
 #X connect 2 0 7 0;
 #X connect 2 1 3 0;
 #X connect 3 0 8 0;
@@ -405,13 +410,13 @@
 #X connect 9 0 1 0;
 #X connect 10 0 11 0;
 #X connect 11 0 0 0;
-#X connect 12 0 13 1;
-#X connect 13 0 2 0;
+#X connect 12 0 17 1;
+#X connect 13 0 14 0;
 #X connect 14 0 15 0;
+#X connect 14 1 16 1;
 #X connect 15 0 16 0;
-#X connect 15 1 17 1;
 #X connect 16 0 17 0;
-#X connect 17 0 13 0;
+#X connect 17 0 2 0;
 #X restore 272 239 pd mix.osc-noise;
 #N canvas 589 100 252 221 additive-2 0;
 #X obj 14 39 moses 0.5;
@@ -513,6 +518,8 @@
 #X msg 17 362 vis 1;
 #X obj 25 59 route note;
 #X obj 17 383 unstep \$1 daisy envelope glide mix;
+#X floatatom 265 317 5 0 0 0 - - -, f 5;
+#X floatatom 407 317 5 0 0 0 - - -, f 5;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -536,7 +543,9 @@
 #X connect 19 0 2 0;
 #X connect 19 0 5 0;
 #X connect 21 0 16 1;
+#X connect 21 0 40 0;
 #X connect 21 1 15 1;
+#X connect 21 1 41 0;
 #X connect 25 0 19 0;
 #X connect 26 0 25 0;
 #X connect 28 0 6 0;
@@ -549,23 +558,23 @@
 #X connect 39 0 35 0;
 #X restore 18 38 pd daisy.code;
 #X text 18 108 daisy by enrique erne;
-#N canvas 808 411 149 100 NETPD 0;
+#N canvas 808 439 149 100 NETPD 0;
 #N canvas 589 296 160 124 abslist 0;
 #X msg 13 36 i2mx;
 #X msg 13 57 qseq3-instr-list;
 #X msg 13 15 unstep;
 #X restore 7 10 pd abslist;
-#X msg 7 34 version 0 2 8;
+#X msg 7 34 version 0 2 9;
 #X restore 18 58 pd NETPD 2 0;
-#N canvas 957 268 161 343 \$1-daisy 1;
+#N canvas 957 296 161 343 \$1-daisy 0;
 #X obj 6 6 cnv 15 142 94 empty empty daisy 3 6 1 18 -233017 -262144
 0;
 #X obj 13 43 hsl 129 15 0 1 0 0 \$1-e \$1-e audio.envelope-ds 3 6 1
-10 -262144 -1 -87382 3700 1;
+10 -262144 -1 -87382 5760 1;
 #X obj 13 24 hsl 129 15 0 1 0 0 \$1-b \$1-b frequency.base 3 6 1 10
 -262144 -1 -87382 6400 1;
 #X obj 13 81 hsl 129 15 0 1 0 0 \$1-m \$1-m mix.osc-noise 3 6 1 10
--262144 -1 -87382 3200 1;
+-262144 -1 -87382 12600 1;
 #X obj 6 106 cnv 10 142 54 empty empty osc 3 6 1 18 -233017 -262144
 0;
 #X obj 13 122 hsl 129 15 0 1 0 0 \$1-a2 \$1-a2 additive-2 3 6 1 10
@@ -575,17 +584,17 @@
 #X obj 6 166 cnv 10 142 112 empty empty noise 3 6 1 18 -233017 -262144
 0;
 #X obj 13 240 hsl 129 15 0 1 0 0 \$1-fp \$1-fp lfo.phase 3 6 1 10 -262144
--1 -87382 6400 1;
+-1 -87382 2800 1;
 #X obj 13 221 hsl 129 15 0 1 0 0 \$1-fv \$1-fv lfo.velocity 3 6 1 10
--262144 -1 -87382 0 1;
+-262144 -1 -87382 3900 1;
 #X obj 13 202 hsl 129 15 0 1 0 0 \$1-fs \$1-fs lfo.strength 3 6 1 10
--262144 -1 -87382 0 1;
+-262144 -1 -87382 3600 1;
 #X obj 13 259 hsl 129 15 0 1 0 0 \$1-fq \$1-fq filter-q 3 6 1 10 -262144
--1 -87382 6400 1;
+-1 -87382 2600 1;
 #X obj 13 183 hsl 129 15 0 1 0 0 \$1-fb \$1-fb filter.base 3 6 1 10
--262144 -1 -87382 6400 1;
+-262144 -1 -87382 5800 1;
 #X obj 13 62 hsl 129 15 0 1 0 0 \$1-g \$1-g glide 3 6 1 10 -262144
--1 -87382 0 1;
+-1 -87382 6900 1;
 #X obj 6 284 cnv 10 142 45 empty empty empty 3 6 1 18 -233017 -262144
 0;
 #X obj 128 288 bng 16 250 50 0 \$1-t \$0-n01 empty 0 -6 0 8 -3918 -1
