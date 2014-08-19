@@ -1,0 +1,74 @@
+#N struct 2013.button float posx float posy float color;
+#N struct 2013.cursor float cx float cy float cy2;
+#N struct 1955-automation float yshift array variy 1955-automation-element
+;
+#N struct 1955-automation-element float y;
+#N struct 2073.button float posx float posy float color;
+#N struct 2073.cursor float cx float cy float cy2;
+#N struct 2015-automation float yshift array variy 2015-automation-element
+;
+#N struct 2015-automation-element float y;
+#N struct 2133.button float posx float posy float color;
+#N struct 2133.cursor float cx float cy float cy2;
+#N struct 2075-automation float yshift array variy 2075-automation-element
+;
+#N struct 2075-automation-element float y;
+#N canvas 585 44 355 462 10;
+#N canvas 621 66 434 290 NETPD 0;
+#X msg 12 8 version 0 0 0;
+#N canvas 312 94 280 134 abslist 0;
+#X msg 17 14 unstep;
+#X restore 17 62 pd abslist;
+#X restore 10 14 pd NETPD 2 0;
+#X obj 11 69 netpd_head \$1 unmenge;
+#N canvas 885 175 312 59 \$1-unmenge 1;
+#X obj 13 14 bng 15 250 50 0 \$0.unstep1 empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 35 15 menge1;
+#X obj 93 14 bng 15 250 50 0 \$0.unstep2 empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 115 15 menge2;
+#X obj 173 14 bng 15 250 50 0 \$0.unstep3 empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 195 15 menge3;
+#X restore 10 42 pd \$1-unmenge;
+#X msg 17 134 vis 1;
+#X obj 17 181 route note;
+#X obj 17 101 r \$0.unstep1;
+#X obj 17 159 unstep \$1 menge1;
+#X msg 134 136 vis 1;
+#X obj 134 183 route note;
+#X obj 134 161 unstep \$1 menge2;
+#X obj 134 103 r \$0.unstep2;
+#X msg 241 135 vis 1;
+#X obj 241 182 route note;
+#X obj 241 160 unstep \$1 menge3;
+#X obj 241 102 r \$0.unstep3;
+#X obj 17 226 t a;
+#X obj 17 253 - 37;
+#X obj 17 275 t a a;
+#X obj 17 301 div 6;
+#X obj 60 279 mod 6;
+#X obj 60 301 + 1;
+#X obj 19 373 s netpd-click-receive;
+#X obj 16 342 pack f f;
+#X connect 3 0 6 0;
+#X connect 4 0 15 0;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X connect 7 0 9 0;
+#X connect 8 0 15 0;
+#X connect 9 0 8 0;
+#X connect 10 0 7 0;
+#X connect 11 0 13 0;
+#X connect 12 0 15 0;
+#X connect 13 0 12 0;
+#X connect 14 0 11 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 17 1 19 0;
+#X connect 18 0 22 0;
+#X connect 19 0 20 0;
+#X connect 20 0 22 1;
+#X connect 22 0 21 0;
