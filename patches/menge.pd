@@ -1,4 +1,4 @@
-#N canvas 56 368 264 110 10;
+#N canvas 53 387 264 110 10;
 #X declare -path . -path include;
 #X declare -stdpath extra/iemlib;
 #X declare -stdpath extra/ggee;
@@ -23,11 +23,11 @@
 #X restore 23 43 pd abslist;
 #X msg 33 76 singleton;
 #X restore 129 11 pd NETPD 2 0;
-#N canvas 0 424 231 322 \$1-menge 1;
-#N canvas 249 647 228 291 Ausgang 1;
+#N canvas 26 384 231 322 \$1-menge 1;
+#N canvas 243 685 228 291 Ausgang 0;
 #X obj 23 34 master.mixer \$0 1;
 #X restore 9 175 pd Ausgang;
-#N canvas 724 335 678 546 klicken 0;
+#N canvas 672 186 678 546 klicken 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array clicks 30 float 1;
 #A 0 0.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -145,9 +145,9 @@
 #X connect 50 0 25 0;
 #X connect 50 0 23 0;
 #X restore 10 135 pd klicken;
-#N canvas 205 109 631 546 Menge 0;
+#N canvas 280 217 631 546 Menge 0;
 #X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam intervall
-20 10 0 11 -204786 -1 -1 8467 1;
+20 10 0 11 -204786 -1 -1 8367 1;
 #X obj 304 17 hsl 128 20 0 1 0 1 individuell individuell random_range
 20 10 0 11 -204786 -1 -1 12700 1;
 #X obj 60 18 tgl 20 0 mitmachen \$0.bli mitmachen 25 10 0 14 -204786
@@ -297,6 +297,14 @@
 #X obj 206 379 Gruppe 0;
 #X obj 24 380 tgl 20 0 \$0.menge.grab empty grab_arduino 23 7 0 10
 -261682 -1 -1 0 1;
+#N canvas 1026 292 450 300 netpd_click_commands 0;
+#X obj 47 60 r netpd-click-send;
+#X obj 50 164 s netpd-click-receive;
+#X obj 47 87 netpd-s /menge/click/address/send b;
+#X obj 50 138 netpd-r /menge/click/address/receive;
+#X connect 0 0 2 0;
+#X connect 3 0 1 0;
+#X restore 314 486 pd netpd_click_commands;
 #X connect 3 0 15 1;
 #X connect 12 0 8 0;
 #X connect 12 0 9 0;
@@ -307,11 +315,13 @@
 #X connect 27 0 30 0;
 #X connect 29 0 27 0;
 #X restore 9 62 pd Menge;
-#N canvas 690 183 741 546 click_forms 0;
+#N canvas 257 238 741 546 click_forms 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array click 30 float 1;
-#A 0 0.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-;
+#A 0 0.391667 0.583333 0.733333 0.775 0.775 0.775 0.766667 0.758333
+0.75 0.745833 0.741667 0.733333 0.716667 -0.658333 -0.691667 -0.7 -0.716667
+-0.733333 -0.658333 -0.575 -0.0416669 -0.0333336 -0.0291669 -0.0250002
+-0.00833357 -0.0041669 -2.33762e-07 0.0083331 0.0249998 0.0249998;
 #X coords 0 1 29 -1 240 240 1 0 0;
 #X restore 22 31 graph;
 #X obj 325 123 s click;
@@ -337,12 +347,12 @@
 #X obj 355 432 *~ 0.3;
 #X text 350 383 random;
 #X obj 27 289 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -204786 -1
--1 0;
+-1 1;
 #X text 68 285 arc;
 #X obj 174 508 tabwrite~ click;
 #X obj 201 485 *~ 0.3;
 #X obj 174 289 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -204786
--1 -1 0;
+-1 -1 3;
 #X obj 174 353 t b a;
 #X obj 174 376 samplerate~;
 #X obj 174 331 + 4;
@@ -374,8 +384,8 @@
 #X obj 526 27 tgl 18 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 527 99 hradio 18 1 0 8 click.restore click.restore empty 0 -8
-0 10 -261682 -1 -1 0;
-#N canvas 640 632 259 202 get.from.group 0;
+0 10 -261682 -1 -1 1;
+#N canvas 637 651 259 202 get.from.group 0;
 #X obj 32 16 r click.restore;
 #X obj 32 152 tabwrite~ click;
 #X obj 59 93 tabplay~;
@@ -477,8 +487,8 @@
 #X connect 59 0 57 0;
 #X connect 59 0 58 0;
 #X restore 9 85 pd click_forms;
-#N canvas 193 108 588 545 presets 0;
-#N canvas 527 720 450 300 state.save.f 0;
+#N canvas 295 173 588 545 presets 0;
+#N canvas 524 711 450 300 state.save.f 0;
 #X restore 331 14 pd state.save.f gemeinsam;
 #N canvas 530 729 450 300 state.save.f 0;
 #X restore 331 38 pd state.save.f individuell;
@@ -492,7 +502,7 @@
 #X restore 331 137 pd state.save.f rolemax;
 #N canvas 530 729 450 300 state.save.f 0;
 #X restore 331 163 pd state.save.f individualmin;
-#N canvas 530 729 450 300 state.save.f 0;
+#N canvas 527 720 450 300 state.save.f 0;
 #X restore 331 187 pd state.save.f individualmax;
 #X text 45 22 save presets;
 #N canvas 277 213 381 286 state.save 0;
@@ -558,7 +568,7 @@
 #X restore 113 85 pd presets;
 #X obj 11 202 recorder;
 #X obj 11 225 player;
-#N canvas 372 193 671 543 sinus 0;
+#N canvas 360 157 671 543 sinus 0;
 #X obj 18 58 r \$0.arduino.sinus;
 #X obj 18 229 osc~;
 #X obj 18 282 *~;

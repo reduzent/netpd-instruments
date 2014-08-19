@@ -1,6 +1,6 @@
-#N canvas 448 460 344 364 10;
+#N canvas 442 442 344 364 10;
 #X obj 194 15 r gemeinsam;
-#N canvas 355 163 363 432 routing 0;
+#N canvas 349 145 363 432 routing 0;
 #X obj 17 19 inlet~;
 #X obj 16 193 throw~ out0;
 #X obj 96 43 loadbang;
@@ -11,7 +11,7 @@
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
 #X restore 33 304 pd routing;
-#N canvas 574 216 450 300 obey 0;
+#N canvas 568 198 450 300 obey 0;
 #X obj 33 18 inlet;
 #X obj 33 262 outlet;
 #X obj 33 228 spigot 0;
@@ -107,8 +107,8 @@
 #X connect 13 0 14 0;
 #X connect 14 0 15 0;
 #X connect 16 0 2 1;
-#X restore 33 218 pd obey;
-#N canvas 477 244 451 268 play.click 0;
+#X restore 33 212 pd obey;
+#N canvas 471 226 451 268 play.click 0;
 #X obj 24 18 inlet;
 #X obj 160 59 route resize;
 #X obj 241 84 loadbang;
@@ -161,9 +161,16 @@
 #X obj 116 145 r verteilung;
 #N canvas 646 524 450 300 NETPD 0;
 #X msg 18 16 version 0 0 1;
-#X restore 182 289 pd NETPD 2 0;
+#X restore 210 310 pd NETPD 2 0;
+#X obj 148 251 r netpd-click-receive;
+#X obj 148 273 route \$1;
+#X obj 148 295 route \$2;
+#X obj 148 317 bang;
+#X obj 167 186 list prepend \$1 \$2;
+#X obj 167 208 s netpd-click-send;
 #X connect 0 0 6 0;
 #X connect 2 0 3 0;
+#X connect 2 0 22 0;
 #X connect 3 0 1 0;
 #X connect 4 0 8 0;
 #X connect 5 0 7 0;
@@ -181,3 +188,8 @@
 #X connect 14 0 10 0;
 #X connect 15 0 14 0;
 #X connect 16 0 15 1;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 3 0;
+#X connect 22 0 23 0;
