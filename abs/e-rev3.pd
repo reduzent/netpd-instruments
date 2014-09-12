@@ -1,18 +1,18 @@
 #N canvas 749 286 580 390 10;
-#N canvas 608 362 283 128 \$3-e-rev3 1;
-#X obj -50 29 nbx 5 14 30 12000 1 0 \$1-\$2/lp \$1-\$2/lp lowpass(Hz)
-60 8 0 10 -262144 -1 -1 30 256;
-#X obj -50 49 nbx 5 14 0 100 0 0 \$1-\$2/liveness \$1-\$2/liveness
-liveness_0-100 60 8 0 10 -262144 -1 -1 0 256;
-#X obj -50 69 nbx 5 14 30 8000 1 0 \$1-\$2/xfreq \$1-\$2/xfreq crossover_frequency(Hz)
-60 8 0 10 -262144 -1 -1 30 256;
-#X obj -50 89 nbx 5 14 0 100 0 0 \$1-\$2/hfdamp \$1-\$2/hfdamp HF_damp(%)
-60 8 0 10 -262144 -1 -1 0 256;
-#X obj -50 9 nbx 5 14 0 99 0 0 \$1-\$2/level \$1-\$2/level level(dB)
-60 8 0 10 -262144 -1 -1 0 256;
+#N canvas 608 362 309 112 \$3-e-rev3 1;
+#X obj 8 29 nbx 5 14 30 12000 1 0 \$1-\$2/lp \$1-\$2/lp lowpass(Hz)
+60 8 0 10 -262144 -1 -1 12000 256;
+#X obj 8 49 nbx 5 14 0 100 0 0 \$1-\$2/liveness \$1-\$2/liveness liveness_0-100
+60 8 0 10 -262144 -1 -1 90 256;
+#X obj 8 69 nbx 5 14 30 8000 1 0 \$1-\$2/xfreq \$1-\$2/xfreq crossover_frequency(Hz)
+60 8 0 10 -262144 -1 -1 8000 256;
+#X obj 8 89 nbx 5 14 0 100 0 0 \$1-\$2/hfdamp \$1-\$2/hfdamp HF_damp(%)
+60 8 0 10 -262144 -1 -1 20 256;
+#X obj 8 9 nbx 5 14 0 99 0 0 \$1-\$2/level \$1-\$2/level level(dB)
+60 8 0 10 -262144 -1 -1 99 256;
 #X restore 16 18 pd \$3-e-rev3;
-#N canvas 1064 72 197 74 NETPD 0;
-#X msg 10 16 version 0 1 4;
+#N canvas 1064 100 197 74 NETPD 0;
+#X msg 10 16 version 0 1 5;
 #X restore 98 17 pd NETPD 2 0;
 #N canvas 0 22 817 556 rev3~ 0;
 #X obj 520 105 inlet;
