@@ -19,8 +19,9 @@
 #X msg 42 15 mx-fx-list;
 #X msg 41 214 e-tanh;
 #X msg 28 85 e-spectfilt;
+#X msg 90 244 e-modf;
 #X restore 18 37 pd abslist;
-#X msg 19 13 version 0 2 5;
+#X msg 19 13 version 0 2 6;
 #X restore 18 46 pd NETPD 2 0;
 #X text 17 158 netpd2-ified by Roman Haefeli;
 #N canvas 196 276 346 133 \$1-e-lib 0;
@@ -28,5 +29,5 @@
 #X msg 250 63 eN!;
 #X restore 18 17 pd \$1-e-lib;
 #X obj 18 78 mx-fx-list \$1 e-lib e-2rect e-am e-bitcrush e-crs4 e-del
-e-flanger e-loop e-monitor e-pitchshifter e-rev1 e-rev2 e-rev3 e-ssb
-e-spectdel e-spectfilt e-tanh;
+e-flanger e-loop e-modf e-monitor e-pitchshifter e-rev1 e-rev2 e-rev3
+e-ssb e-spectdel e-spectfilt e-tanh;

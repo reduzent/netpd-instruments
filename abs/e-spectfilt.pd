@@ -82,14 +82,14 @@
 #X obj 403 116 t b a;
 #X obj 34 88 inlet~;
 #X obj 137 89 inlet~;
-#N canvas 625 270 308 94 \$3-e-spectfilt 1;
-#X obj 18 3 cnv 15 256 60 empty empty empty 20 12 0 14 -261888 -66577
+#N canvas 625 270 298 85 \$3-e-spectfilt 1;
+#X obj 5 17 cnv 15 256 60 empty empty empty 20 12 0 14 -261888 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$1-\$2/gain 256 float 0;
 #X coords 0 1.05 255 -0.05 256 60 1 0 0;
-#X restore 18 3 graph;
-#X obj 274 5 vsl 15 55 0 1 0 0 \$0-gain-const \$0-gain-const-r empty
+#X restore 5 17 graph;
+#X obj 261 19 vsl 15 55 0 1 0 0 \$0-gain-const \$0-gain-const-r empty
 0 -9 0 10 -261234 -1 -1 5400 1;
 #X restore 34 45 pd \$3-e-spectfilt;
 #X obj 33 153 outlet~;
@@ -156,8 +156,8 @@
 #X obj 403 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 425 63 recalculate;
-#N canvas 1019 168 225 110 NETPD 0;
-#X msg 7 15 version 0 1 3;
+#N canvas 1019 196 225 110 NETPD 0;
+#X msg 7 15 version 0 1 4;
 #X restore 34 21 pd NETPD 2 0;
 #X obj 220 59 netpd_t \$1 \$2/gain 256;
 #N canvas 1237 408 270 294 gain-const 0;

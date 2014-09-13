@@ -1,7 +1,9 @@
+#N struct 2826.button float posx float posy float color;
+#N struct 2826.cursor float cx float cy float cy2;
+#N struct 2773-automation float yshift array variy 2773-automation-element
+;
+#N struct 2773-automation-element float y;
 #N canvas 530 376 450 386 10;
-#X declare -stdlib extra/iemmatrix -stdpath extra/iemmatrix;
-#X declare -stdpath extra/iemmatrx -stdlib extra/iemmatrix;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
 #N canvas 545 184 450 563 dsp-guts 0;
 #N canvas 989 64 450 300 simplepoly 0;
 #X obj 253 121 f;
@@ -61,15 +63,7 @@
 #X obj 19 494 i2mx \$1 bon-padsynth1;
 #X obj 280 252 netpd_r \$1 lowpass;
 #X obj 301 328 netpd_r \$1 highpass;
-#X obj 19 47 r \$1-bon-padsynth1;
 #X obj 301 392 + 5;
-#X obj 34 156 bon-padsynth1_voice;
-#X obj 49 179 bon-padsynth1_voice;
-#X obj 64 202 bon-padsynth1_voice;
-#X obj 80 226 bon-padsynth1_voice;
-#X obj 94 249 bon-padsynth1_voice;
-#X obj 110 272 bon-padsynth1_voice;
-#X obj 125 295 bon-padsynth1_voice;
 #X obj 80 416 lop~;
 #X obj 80 448 hip~;
 #N canvas 966 83 357 337 8x|| 0;
@@ -128,63 +122,73 @@
 #X connect 21 1 20 1;
 #X connect 23 0 22 0;
 #X restore 130 458 pd 8x|| . . . . .;
+#X obj 34 156 bon-padsynth1_voice;
+#X obj 49 179 bon-padsynth1_voice;
+#X obj 64 202 bon-padsynth1_voice;
+#X obj 80 226 bon-padsynth1_voice;
+#X obj 94 249 bon-padsynth1_voice;
+#X obj 110 272 bon-padsynth1_voice;
+#X obj 125 295 bon-padsynth1_voice;
+#X obj 19 17 r \$0.unstep;
+#X obj 19 39 route note;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
-#X connect 1 1 16 0;
-#X connect 1 2 17 0;
-#X connect 1 3 18 0;
-#X connect 1 4 19 0;
-#X connect 1 5 20 0;
-#X connect 1 6 21 0;
-#X connect 1 7 22 0;
+#X connect 1 1 18 0;
+#X connect 1 2 19 0;
+#X connect 1 3 20 0;
+#X connect 1 4 21 0;
+#X connect 1 5 22 0;
+#X connect 1 6 23 0;
+#X connect 1 7 24 0;
 #X connect 2 0 6 1;
-#X connect 2 0 16 1;
-#X connect 2 0 17 1;
 #X connect 2 0 18 1;
 #X connect 2 0 19 1;
 #X connect 2 0 20 1;
 #X connect 2 0 21 1;
 #X connect 2 0 22 1;
+#X connect 2 0 23 1;
+#X connect 2 0 24 1;
 #X connect 3 0 4 0;
 #X connect 4 0 5 1;
-#X connect 4 0 23 1;
+#X connect 4 0 15 1;
 #X connect 5 0 9 0;
 #X connect 6 0 5 0;
-#X connect 6 1 23 0;
-#X connect 6 2 25 0;
+#X connect 6 1 15 0;
+#X connect 6 2 17 0;
 #X connect 7 0 8 0;
-#X connect 8 0 15 0;
+#X connect 8 0 14 0;
 #X connect 9 0 11 0;
 #X connect 11 0 10 0;
 #X connect 12 0 3 0;
 #X connect 13 0 7 0;
-#X connect 14 0 0 0;
-#X connect 15 0 9 1;
-#X connect 15 0 24 1;
-#X connect 16 0 5 0;
-#X connect 16 1 23 0;
-#X connect 16 2 25 1;
-#X connect 17 0 5 0;
-#X connect 17 1 23 0;
-#X connect 17 2 25 2;
+#X connect 14 0 9 1;
+#X connect 14 0 16 1;
+#X connect 15 0 16 0;
+#X connect 16 0 11 1;
+#X connect 17 0 11 2;
 #X connect 18 0 5 0;
-#X connect 18 1 23 0;
-#X connect 18 2 25 3;
+#X connect 18 1 15 0;
+#X connect 18 2 17 1;
 #X connect 19 0 5 0;
-#X connect 19 1 23 0;
-#X connect 19 2 25 4;
+#X connect 19 1 15 0;
+#X connect 19 2 17 2;
 #X connect 20 0 5 0;
-#X connect 20 1 23 0;
-#X connect 20 2 25 5;
+#X connect 20 1 15 0;
+#X connect 20 2 17 3;
 #X connect 21 0 5 0;
-#X connect 21 1 23 0;
-#X connect 21 2 25 6;
+#X connect 21 1 15 0;
+#X connect 21 2 17 4;
 #X connect 22 0 5 0;
-#X connect 22 1 23 0;
-#X connect 22 2 25 7;
-#X connect 23 0 24 0;
-#X connect 24 0 11 1;
-#X connect 25 0 11 2;
+#X connect 22 1 15 0;
+#X connect 22 2 17 5;
+#X connect 23 0 5 0;
+#X connect 23 1 15 0;
+#X connect 23 2 17 6;
+#X connect 24 0 5 0;
+#X connect 24 1 15 0;
+#X connect 24 2 17 7;
+#X connect 25 0 26 0;
+#X connect 26 0 0 0;
 #X restore 28 265 pd dsp-guts;
 #N canvas 32 209 855 423 gui-code 0;
 #X obj 86 214 int;
@@ -297,15 +301,15 @@
 #X connect 48 0 30 0;
 #X connect 49 0 40 0;
 #X restore 28 286 pd gui-code;
-#N canvas 590 100 275 163 NETPD 0;
-#N canvas 0 385 234 91 abslist 0;
+#N canvas 590 128 275 163 NETPD 0;
+#N canvas 0 413 234 91 abslist 0;
 #X msg 7 16 bon-padsynth1_voice;
-#X msg 8 43 jamx;
 #X msg 7 67 i2mx;
+#X msg 8 43 unstep;
 #X restore 27 21 pd abslist;
-#X msg 26 45 version 0 2 3;
+#X msg 26 45 version 0 2 4;
 #X restore 28 12 pd NETPD 2 0;
-#N canvas 980 496 171 183 \$1-bon-padsynth1 1;
+#N canvas 677 317 171 183 \$1-bon-padsynth1 1;
 #X obj 47 29 cnv 15 83 144 empty empty empty 20 12 0 14 -253822 -66577
 0;
 #X obj 45 31 cnv 15 87 140 empty empty empty 20 12 0 14 -253822 -66577
@@ -319,44 +323,44 @@
 #X obj 51 32 cnv 15 75 136 empty empty empty 20 12 0 14 -195568 -66577
 0;
 #X obj 54 38 hsl 70 16 0 1 0 0 \$1-stages \$1-stages empty -2 -6 0
-8 -233017 -233017 -1 4830 0;
+8 -233017 -233017 -1 6300 0;
 #X obj 52 39 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 46 cnv 1 54 7 empty \$1-cnv-stages stages:5 4 -4 1 4 -179584
+#X obj 52 46 cnv 1 73 7 empty \$1-cnv-stages stages:6 4 -4 1 4 -179584
 -262144 0;
-#X obj 52 39 cnv 1 54 7 empty \$1-cnv-stages stages:5 4 6 1 10 -237376
+#X obj 52 39 cnv 1 73 7 empty \$1-cnv-stages stages:6 4 6 1 10 -237376
 -1970 0;
 #X obj 54 54 hsl 70 16 0 1 0 0 \$1-detune \$1-detune empty -2 -6 0
-8 -233017 -233017 -1 1600 0;
+8 -233017 -233017 -1 900 0;
 #X obj 52 55 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 62 cnv 1 16 7 empty \$1-cnv-detune empty 4 -4 1 4 -179584
+#X obj 52 62 cnv 1 9 7 empty \$1-cnv-detune empty 4 -4 1 4 -179584
 -262144 0;
-#X obj 52 55 cnv 1 16 7 empty \$1-cnv-detune detune 4 6 1 10 -237376
+#X obj 52 55 cnv 1 9 7 empty \$1-cnv-detune detune 4 6 1 10 -237376
 -1970 0;
 #X obj 54 70 hsl 70 16 0 1 0 0 \$1-attack \$1-attack empty -2 -6 0
-8 -233017 -233017 -1 3800 0;
+8 -233017 -233017 -1 3450 0;
 #X obj 52 71 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 78 cnv 1 40 7 empty \$1-cnv-attack empty 4 -4 1 4 -179584
+#X obj 52 78 cnv 1 36 7 empty \$1-cnv-attack empty 4 -4 1 4 -179584
 -262144 0;
-#X obj 52 71 cnv 1 40 7 empty \$1-cnv-attack attack 4 6 1 10 -237376
+#X obj 52 71 cnv 1 36 7 empty \$1-cnv-attack attack 4 6 1 10 -237376
 -1970 0;
 #X obj 54 86 hsl 70 16 0 1 0 0 \$1-hold \$1-hold empty -2 -6 0 8 -233017
--233017 -1 6400 0;
+-233017 -1 4140 0;
 #X obj 52 87 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 94 cnv 1 67 7 empty \$1-cnv-hold empty 4 -4 1 4 -179584 -262144
+#X obj 52 94 cnv 1 43 7 empty \$1-cnv-hold empty 4 -4 1 4 -179584 -262144
 0;
-#X obj 52 87 cnv 1 67 7 empty \$1-cnv-hold hold 4 6 1 10 -237376 -1970
+#X obj 52 87 cnv 1 43 7 empty \$1-cnv-hold hold 4 6 1 10 -237376 -1970
 0;
 #X obj 54 102 hsl 70 16 0 1 0 0 \$1-release \$1-release empty -2 -6
-0 8 -233017 -233017 -1 4500 0;
+0 8 -233017 -233017 -1 5520 0;
 #X obj 52 103 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 110 cnv 1 47 7 empty \$1-cnv-release empty 4 -4 1 4 -179584
+#X obj 52 110 cnv 1 58 7 empty \$1-cnv-release empty 4 -4 1 4 -179584
 -262144 0;
-#X obj 52 103 cnv 1 47 7 empty \$1-cnv-release release 4 6 1 10 -237376
+#X obj 52 103 cnv 1 58 7 empty \$1-cnv-release release 4 6 1 10 -237376
 -1970 0;
 #X obj 54 134 hsl 70 16 0 1 0 0 \$1-highpass \$1-highpass empty -2
 -6 0 8 -233017 -233017 -1 690 0;
@@ -373,28 +377,27 @@
 #X obj 52 151 cnv 7 73 7 empty empty empty 4 6 1 10 -262144 -1970 0
 ;
 #X obj 54 118 hsl 70 16 0 1 0 0 \$1-lowpass \$1-lowpass empty -2 -6
-0 8 -233017 -233017 -1 3000 0;
+0 8 -233017 -233017 -1 3864 0;
 #X obj 52 119 cnv 5 73 7 empty empty empty 20 7 1 10 -262144 -190156
 0;
-#X obj 52 126 cnv 1 31 7 empty \$1-cnv-lowpass empty 4 -4 1 4 -179584
+#X obj 52 126 cnv 1 40 7 empty \$1-cnv-lowpass empty 4 -4 1 4 -179584
 -262144 0;
-#X obj 52 119 cnv 1 31 7 empty \$1-cnv-lowpass lowpass 4 6 1 10 -237376
+#X obj 52 119 cnv 1 40 7 empty \$1-cnv-lowpass lowpass 4 6 1 10 -237376
 -1970 0;
 #X obj 52 158 cnv 7 73 7 empty empty empty 4 6 1 10 -233017 -1970 0
 ;
-#X obj 51 150 bng 16 250 50 0 \$1-open-jam \$0-bli empty 0 -6 0 8 -262144
--1 -1;
+#X obj 51 150 bng 16 250 50 0 \$0.show.unstep \$0-bli empty 0 -6 0
+8 -262144 -1 -1;
 #X obj 52 158 cnv 6 14 7 empty empty empty 4 -4 1 4 -179584 -262144
 0;
-#X obj 52 151 cnv 5 14 7 empty empty jamx 20 6 1 10 -237376 -1970 0
-;
+#X obj 52 151 cnv 5 14 7 empty empty unstep 20 6 1 10 -237376 -1970
+0;
 #X obj 52 30 cnv 7 73 7 empty empty empty 4 6 1 10 -233017 -1970 0
 ;
 #X obj 52 22 cnv 7 73 7 empty empty padsynth1 4 6 1 10 -262144 -1970
 0;
 #X restore 28 307 pd \$1-bon-padsynth1;
 #X obj 28 35 netpd_head \$1 bon-padsynth1;
-#X obj 28 57 jamx \$1 bon-padsynth1 0;
 #X obj 26 97 netpd_f \$1 stages 0.7;
 #X obj 26 118 netpd_f \$1 detune 0.75;
 #X obj 26 140 netpd_f \$1 attack 0.5;
@@ -402,3 +405,10 @@
 #X obj 26 182 netpd_f \$1 release 0.8;
 #X obj 26 203 netpd_f \$1 lowpass 0.56;
 #X obj 26 224 netpd_f \$1 highpass 0.1;
+#X obj 230 92 unstep \$1 bon-padsynth;
+#X msg 230 70 vis 1;
+#X obj 230 114 s \$0.unstep;
+#X obj 230 48 r \$0.show.unstep;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 15 0 13 0;
