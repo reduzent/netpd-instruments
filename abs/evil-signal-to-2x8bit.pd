@@ -11,6 +11,9 @@
 #X obj 46 115 -~;
 #X obj 46 38 *~ 32767.5;
 #X obj 46 60 +~ 32767.5;
+#N canvas 0 44 339 157 NETPD 0;
+#X msg 18 19 version 0 1 0;
+#X restore 173 41 pd NETPD 2 0;
 #X connect 0 0 10 0;
 #X connect 1 0 2 1;
 #X connect 2 0 4 0;
