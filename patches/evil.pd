@@ -4,6 +4,7 @@
 #N canvas 483 313 318 115 abslist 0;
 #X msg 12 14 evil-signal-to-2x8bit;
 #X msg 12 40 evil-2x8bit-to-signal;
+#X msg 12 65 master-param;
 #X restore 12 34 pd abslist;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 evil;
