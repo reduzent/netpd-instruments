@@ -7,9 +7,16 @@
 #X restore 12 34 pd abslist;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 evil;
-#N canvas 691 100 426 339 \$1-evil 0;
+#N canvas 1036 149 426 339 \$1-evil 1;
+#X obj 34 52 tgl 15 0 \$1-switch \$1-switch empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X text 62 53 on / off;
+#X obj 34 15 bng 15 250 50 0 \$0.grab \$0.bli empty 17 7 0 10 -262144
+-1 -1;
+#X text 61 14 grab ownership;
+#X floatatom 34 34 3 0 0 0 - #0.owner #0.bla, f 3;
+#X text 61 33 current owner;
 #X restore 10 42 pd \$1-evil;
-#X obj 187 65 netpd-status-get socket 1;
 #N canvas 533 82 462 464 send-signal 0;
 #X obj 28 152 evil-signal-to-2x8bit;
 #X obj 29 208 tabwrite~ \$0.msb.send;
@@ -60,10 +67,8 @@
 #X connect 22 0 21 1;
 #X connect 22 1 23 0;
 #X connect 23 0 4 1;
-#X restore 42 156 pd send-signal;
-#X obj 42 134 *~ 0.2;
-#X obj 319 280 tgl 15 0 \$1-switch \$1-switch empty 17 7 0 10 -262144
--1 -1 0 1;
+#X restore 14 234 pd send-signal;
+#X obj 14 212 *~ 0.2;
 #N canvas 233 392 738 370 receive-signal 0;
 #X obj 15 71 netpd_r \$1 audio;
 #X obj 227 275 evil-2x8bit-to-signal;
@@ -128,14 +133,14 @@
 #X connect 26 0 25 1;
 #X connect 27 0 23 0;
 #X connect 27 1 26 1;
-#X restore 47 221 pd receive-signal;
-#X obj 123 133 netpd_f \$1 switch 0;
-#X floatatom 100 111 5 0 0 0 - - -, f 5;
-#X obj 42 112 osc~ 120;
-#X floatatom 43 93 5 0 0 0 - - -, f 5;
+#X restore 20 371 pd receive-signal;
+#X obj 161 188 netpd_f \$1 switch 0;
+#X floatatom 72 189 5 0 0 0 - - -, f 5;
+#X obj 14 190 osc~ 120;
+#X floatatom 15 171 5 0 0 0 - - -, f 5;
 #N canvas 583 351 483 453 calculate_real_latency 0;
 #X obj 118 15 vradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144 -1
--1 6;
+-1 4;
 #X text 101 14 64;
 #X text 95 29 128;
 #X text 95 44 256;
@@ -190,15 +195,34 @@
 #X connect 28 0 27 1;
 #X connect 30 0 27 0;
 #X connect 32 0 29 0;
-#X restore 35 343 pd calculate_real_latency;
-#X obj 229 232 print;
-#X obj 263 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 246 411 pd calculate_real_latency;
+#X obj 155 419 print;
+#X obj 189 348 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 228 200 master-param pos;
-#X connect 5 0 4 0;
-#X connect 8 0 4 1;
-#X connect 9 0 5 1;
-#X connect 10 0 5 0;
-#X connect 11 0 10 0;
-#X connect 14 0 15 0;
-#X connect 15 0 13 0;
+#X obj 154 387 master-param pos;
+#N canvas 722 213 280 247 ownership 0;
+#X obj 25 20 r \$0.grab;
+#X obj 25 62 f;
+#X obj 25 84 netpd_s \$1 owner;
+#X obj 25 105 netpd_r \$1 owner;
+#X obj 52 44 netpd-status-get socket 1;
+#X obj 25 149 ==;
+#X obj 25 171 s \$0.ownership;
+#X obj 25 127 t a a;
+#X obj 52 149 s \$0.owner;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 7 0;
+#X connect 4 0 1 1;
+#X connect 4 0 5 1;
+#X connect 5 0 6 0;
+#X connect 7 0 5 0;
+#X connect 7 1 8 0;
+#X restore 162 143 pd ownership;
+#X connect 4 0 3 0;
+#X connect 6 0 3 1;
+#X connect 7 0 4 1;
+#X connect 8 0 4 0;
+#X connect 9 0 8 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
