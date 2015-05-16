@@ -1,11 +1,12 @@
 #N canvas 591 162 371 489 10;
 #N canvas 624 75 293 96 NETPD 0;
-#X msg 12 8 version 0 0 0;
 #N canvas 483 313 318 115 abslist 0;
 #X msg 12 14 evil-signal-to-2x8bit;
 #X msg 12 40 evil-2x8bit-to-signal;
 #X msg 12 65 master-param;
+#X msg 12 89 i2mx;
 #X restore 12 34 pd abslist;
+#X msg 12 8 version 0 0 0;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 evil;
 #N canvas 793 162 299 159 \$1-evil 1;
@@ -529,7 +530,6 @@
 #X connect 10 0 1 0;
 #X connect 11 0 3 1;
 #X restore 14 326 pd playback_control;
-#X obj 15 395 dac~;
 #N canvas 1010 196 321 323 switch 0;
 #X obj 14 107 r \$0.switch;
 #X obj 14 299 outlet;
@@ -564,10 +564,12 @@
 #X connect 12 0 7 0;
 #X restore 95 148 pd switch;
 #X obj 14 133 adc~ 1;
-#X connect 4 0 10 0;
+#X obj 14 402 i2mx \$1 evil;
+#X connect 4 0 12 0;
+#X connect 4 0 12 1;
 #X connect 6 0 7 1;
 #X connect 7 0 8 0;
 #X connect 8 0 3 1;
 #X connect 9 0 4 0;
-#X connect 11 0 7 0;
-#X connect 12 0 3 0;
+#X connect 10 0 7 0;
+#X connect 11 0 3 0;
