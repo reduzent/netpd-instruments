@@ -6,7 +6,7 @@
 #X msg 12 65 master-param;
 #X msg 12 89 i2mx;
 #X restore 12 34 pd abslist;
-#X msg 12 8 version 0 0 0;
+#X msg 12 8 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 evil;
 #N canvas 610 170 299 159 \$1-evil 1;
@@ -18,7 +18,7 @@
 #X text 57 31 grab ownership;
 #X floatatom 30 52 3 0 0 0 - #0.owner #0.bla, f 3;
 #X text 57 51 current owner;
-#N canvas 941 217 304 140 ALSA 0;
+#N canvas 941 217 302 164 ALSA 1;
 #X floatatom 12 16 5 0 0 0 - #0.bli #0.alsa.msec, f 5;
 #X text 47 16 msec;
 #X obj 112 15 vradio 15 1 0 7 \$0.alsa.blocksize \$0.bli empty 0 -8
@@ -31,6 +31,8 @@
 #X text 83 91 2048;
 #X text 83 107 4096;
 #X text 134 15 blocksize;
+#X text 62 136 latency compensation (ms);
+#X floatatom 9 136 8 0 0 0 - #0.latency.compensation -, f 8;
 #X restore 30 93 pd ALSA settings;
 #X text 138 92 <- latency compensation;
 #X floatatom 30 71 3 8 99 0 - #0.delay.steps.r #0.delay.steps, f 3
@@ -287,8 +289,7 @@
 #X obj 173 15 r \$0.alsa.blocksize;
 #X obj 33 331 outlet;
 #X obj 33 287 + 0.7;
-#X obj 33 309 + 30;
-#X text 67 308 don't know why \, but it seems needed;
+#X obj 101 334 s \$0.latency.compensation;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;
 #X connect 1 1 0 1;
@@ -308,8 +309,8 @@
 #X connect 13 0 12 0;
 #X connect 15 0 9 0;
 #X connect 16 0 1 0;
+#X connect 18 0 17 0;
 #X connect 18 0 19 0;
-#X connect 19 0 17 0;
 #X restore 183 98 pd calculate_real_latency;
 #X obj 150 74 r \$0.delay.steps;
 #X obj 150 196 *;
@@ -440,10 +441,9 @@
 #X connect 12 0 7 0;
 #X restore 95 148 pd switch;
 #X obj 14 133 adc~ 1;
-#X obj 14 402 i2mx \$1 evil;
+#X obj 13 404 i2mx \$1 evil;
 #N canvas 943 416 325 183 komischer_bug_workaround 0;
 #N canvas 0 100 256 177 \$0.deleteme 0;
-#X obj 6 15 bang~;
 #X restore 20 15 pd \$0.deleteme;
 #X obj 27 58 loadbang;
 #X obj 27 105 s pd-\$0.deleteme;
@@ -451,6 +451,7 @@
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
 #X restore 140 92 pd komischer_bug_workaround;
+#X obj 14 256 clip~ -0.999 0.999;
 #X connect 4 0 12 0;
 #X connect 4 0 12 1;
 #X connect 6 0 7 1;
@@ -458,4 +459,5 @@
 #X connect 8 0 3 1;
 #X connect 9 0 4 0;
 #X connect 10 0 7 0;
-#X connect 11 0 3 0;
+#X connect 11 0 14 0;
+#X connect 14 0 3 0;
