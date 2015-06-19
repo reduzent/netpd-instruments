@@ -170,32 +170,31 @@
 #X obj 23 33 inlet~;
 #X obj 10 310 outlet~;
 #X obj 48 282 outlet~;
-#N canvas 449 457 156 111 \$3-rcomp 1;
-#X obj -37 5 cnv 15 137 88 empty empty empty 20 -3 0 14 -1 -62784 0
-;
-#X obj -32 63 hsl 128 14 -20 30 0 0 \$1-\$2/gain \$1-\$2/gain empty
-8 7 0 10 -83253 -1 -262144 9100 1;
-#X obj -32 7 hsl 128 14 1 10 1 0 \$1-\$2/ratio \$1-\$2/ratio empty
-8 7 0 10 -41633 -1 -262144 8100 1;
-#X obj -32 21 hsl 128 14 -60 0 0 0 \$1-\$2/threshold \$1-\$2/threshold
-empty 8 7 0 10 -49958 -1 -262144 0 1;
-#X obj -32 35 hsl 128 14 1 300 1 0 \$1-\$2/attack \$1-\$2/attack empty
-8 7 0 10 -62443 -1 -262144 3700 1;
-#X obj -32 49 hsl 128 14 10 3000 1 0 \$1-\$2/release \$1-\$2/release
-empty 8 7 0 10 -70768 -1 -262144 12700 1;
-#X obj 8 78 cnv 1 1 12 empty \$0-damping empty 20 12 0 14 -124858 -66577
-0;
-#X obj -35 77 tgl 14 0 \$0-vissw-s \$0-vissw-r empty 40 8 0 10 -124856
+#N canvas 572 345 163 108 \$3-rcomp 1;
+#X obj 3 3 cnv 15 137 88 empty empty empty 20 -3 0 14 -1 -62784 0;
+#X obj 8 61 hsl 128 14 -20 30 0 0 \$1-\$2/gain \$1-\$2/gain empty 8
+7 0 10 -83253 -1 -262144 5080 1;
+#X obj 8 5 hsl 128 14 1 25 1 0 \$1-\$2/ratio \$1-\$2/ratio empty 8
+7 0 10 -41633 -1 -262144 12700 1;
+#X obj 8 19 hsl 128 14 -60 0 0 0 \$1-\$2/threshold \$1-\$2/threshold
+empty 8 7 0 10 -49958 -1 -262144 8300 1;
+#X obj 8 33 hsl 128 14 1 300 1 0 \$1-\$2/attack \$1-\$2/attack empty
+8 7 0 10 -62443 -1 -262144 5127 1;
+#X obj 8 47 hsl 128 14 10 3000 1 0 \$1-\$2/release \$1-\$2/release
+empty 8 7 0 10 -70768 -1 -262144 6173 1;
+#X obj 48 76 cnv 1 1 12 empty \$0-damping empty 20 12 0 14 -124858
+-66577 0;
+#X obj 5 75 tgl 14 0 \$0-vissw-s \$0-vissw-r empty 40 8 0 10 -124856
 -1 -262144 0 1;
 #X restore 320 43 pd \$3-rcomp;
 #X obj 103 52 netpd_f \$1 \$2/gain 0;
 #X obj 122 74 netpd_f \$1 \$2/ratio 1;
 #X obj 140 95 netpd_f \$1 \$2/threshold 0;
-#N canvas 724 564 155 121 NETPD 0;
+#N canvas 724 620 155 121 NETPD 0;
 #N canvas 589 300 162 53 abslist 0;
 #X msg 10 11 dynlib_comp;
 #X restore 11 34 pd abslist;
-#X msg 11 7 version 0 2 3;
+#X msg 11 7 version 0 2 5;
 #X restore 320 62 pd NETPD 2 0;
 #X obj 159 116 netpd_f \$1 \$2/attack 10;
 #X obj 178 138 netpd_f \$1 \$2/release 160;

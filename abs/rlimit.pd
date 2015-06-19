@@ -269,20 +269,19 @@
 #X connect 38 0 7 0;
 #X connect 39 0 38 0;
 #X restore 96 189 pd display-stuff;
-#N canvas 603 569 153 67 \$3-rlimit 0;
-#X obj -26 3 cnv 15 137 46 empty empty empty 20 -3 0 14 -1 -62784 0
-;
-#X obj -21 19 hsl 128 14 -30 0 0 0 \$1-\$2/level \$1-\$2/level empty
+#N canvas 603 597 167 69 \$3-rlimit 1;
+#X obj 4 3 cnv 15 137 46 empty empty empty 20 -3 0 14 -1 -62784 0;
+#X obj 9 19 hsl 128 14 -30 0 0 0 \$1-\$2/level \$1-\$2/level empty
 8 7 0 10 -214293 -1 -262144 12700 1;
-#X obj -21 5 hsl 128 14 -30 0 0 0 \$1-\$2/threshold \$1-\$2/threshold
-empty 8 7 0 10 -193618 -1 -262144 0 1;
-#X obj 19 34 cnv 1 1 12 empty \$0-dumping empty 20 12 0 14 -235423
+#X obj 9 5 hsl 128 14 -30 0 0 0 \$1-\$2/threshold \$1-\$2/threshold
+empty 8 7 0 10 -193618 -1 -262144 12700 1;
+#X obj 49 34 cnv 1 1 12 empty \$0-dumping empty 20 12 0 14 -235423
 -66577 0;
-#X obj -24 33 tgl 14 0 \$0-vissw-s \$0-vissw-r empty 40 8 0 10 -227231
+#X obj 6 33 tgl 14 0 \$0-vissw-s \$0-vissw-r empty 40 8 0 10 -227231
 -1 -262144 0 1;
 #X restore 261 90 pd \$3-rlimit;
-#N canvas 464 414 203 84 NETPD 0;
-#X msg -13 -82 version 0 2 2;
+#N canvas 464 498 287 152 NETPD 0;
+#X msg 97 86 version 0 2 3;
 #X restore 261 112 pd NETPD 2 0;
 #X obj 21 42 inlet~;
 #X obj 45 63 inlet~;
