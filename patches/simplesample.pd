@@ -1,0 +1,107 @@
+#N canvas 928 87 460 561 10;
+#N canvas 624 75 434 290 NETPD 0;
+#N canvas 315 75 473 287 abslist 0;
+#X text 7 13 Put a message box containing the name of the abstraction
+(without the .pd suffix) for each dependency.;
+#X text 6 55 For instance:;
+#X text 23 84 [mysynth-voice(;
+#X text 13 130 NOTE: abstractions of instruments also use netpd meta
+tags and may also specify their own dependencies. unpatch resolves
+dependency trees recursively.;
+#X restore 12 178 pd abslist;
+#X text 111 179 <- add dependencies of your netpd instrument;
+#X text 18 32 A 'version' meta tag is mandatory. unpatch uses this
+information to make sure that all clients load the same version of
+the instrument.;
+#X text 19 78 Whenever you make changes to your instrument \, make
+sure to bump the version.;
+#X text 18 118 There is no predefined meaning of the three version
+fields. Use them at your own will.;
+#X text 16 211 The [pd abslist] tag container is optional and is used
+to specify dependencies (abstractions in netpd/abs) of your instrument.
+;
+#X text 107 7 <- update the version of this netpd instrument;
+#X msg 12 8 version 0 0 1;
+#X restore 10 14 pd NETPD 2 0;
+#X obj 9 68 netpd_head \$1 simplesample;
+#N canvas 591 379 296 61 \$1-simplesample 1;
+#X obj 9 16 nbx 5 30 1 99 0 0 \$1-length \$1-length length 0 -8 0 10
+-262144 -1 -1 16 256;
+#X obj 80 17 tgl 30 0 \$1-playback \$1-playback playback 0 -8 0 10
+-4034 -1 -1 0 1;
+#X obj 140 16 tgl 30 0 \$1-record \$1-record record 0 -8 0 10 -258113
+-1 -1 0 1;
+#X obj 187 16 nbx 5 30 1 99 0 0 \$1-instance \$1-instance instance
+0 -8 0 10 -262144 -1 -1 10 256;
+#X obj 140 16 bng 13 250 50 0 \$0.bla \$0.rec.light empty 17 7 0 10
+-258113 -1 -1;
+#X obj 80 17 bng 13 250 50 0 \$0.bla \$0.play.light empty 17 7 0 10
+-4034 -1 -1;
+#X restore 10 42 pd \$1-simplesample;
+#X obj 43 488 i2mx \$1 simplesample;
+#X obj 292 497 table \$0.sample;
+#X obj 343 295 master-param 16th;
+#X obj 343 320 t a b;
+#X obj 356 342 samplerate~;
+#X obj 356 367 / 1000;
+#X obj 341 390 *;
+#X obj 286 445 s \$0.sample;
+#X obj 286 369 *;
+#X msg 286 420 resize \$1;
+#X obj 286 394 int;
+#X obj 286 219 netpd_f \$1 length 16;
+#X obj 217 178 tabwrite~ \$0.sample;
+#X obj 43 447 tabplay~ \$0.sample;
+#X obj 43 363 mod;
+#X obj 43 387 sel 0;
+#X obj 80 285 netpd_f \$1 playback 0;
+#X obj 80 307 t a a;
+#X obj 43 340 spigot;
+#X obj 107 378 sel 0;
+#X msg 107 407 stop;
+#X obj 19 128 netpd_f \$1 instance 0;
+#X obj 12 97 s~ 0.EVIL;
+#X obj 19 179 r~ 0.EVIL;
+#X msg 19 150 set \$1.EVIL;
+#X obj 190 11 master-param step;
+#X obj 217 113 mod;
+#X obj 217 137 sel 0;
+#X obj 217 90 spigot;
+#X obj 250 51 netpd_f \$1 record 0;
+#X obj 190 33 t a a;
+#X obj 294 116 s \$0.rec.light;
+#X obj 148 339 s \$0.play.light;
+#X connect 5 0 6 0;
+#X connect 6 0 9 0;
+#X connect 6 1 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 1;
+#X connect 9 0 11 1;
+#X connect 11 0 13 0;
+#X connect 12 0 10 0;
+#X connect 13 0 12 0;
+#X connect 14 0 11 0;
+#X connect 14 0 17 1;
+#X connect 14 0 29 1;
+#X connect 16 0 3 0;
+#X connect 16 0 3 1;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 18 0 35 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 1;
+#X connect 20 1 22 0;
+#X connect 21 0 17 0;
+#X connect 22 0 23 0;
+#X connect 23 0 16 0;
+#X connect 24 0 27 0;
+#X connect 26 0 15 0;
+#X connect 27 0 26 0;
+#X connect 28 0 33 0;
+#X connect 29 0 30 0;
+#X connect 30 0 15 0;
+#X connect 30 0 34 0;
+#X connect 31 0 29 0;
+#X connect 32 0 31 1;
+#X connect 33 0 21 0;
+#X connect 33 1 31 0;
