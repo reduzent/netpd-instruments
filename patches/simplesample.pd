@@ -1,4 +1,4 @@
-#N canvas 648 44 485 455 10;
+#N canvas 648 44 467 523 10;
 #N canvas 624 75 332 68 NETPD 0;
 #N canvas 315 75 336 156 abslist 0;
 #X msg 17 15 master-param;
@@ -7,9 +7,9 @@
 #X msg 12 8 version 0 0 2;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 68 netpd_head \$1 simplesample;
-#N canvas 585 426 297 72 \$1-simplesample 1;
+#N canvas 882 460 297 72 \$1-simplesample 1;
 #X obj 9 16 nbx 5 30 1 99 0 0 \$1-length \$1-length length 0 -8 0 10
--262144 -1 -1 16 256;
+-262144 -1 -1 10 256;
 #X obj 80 17 tgl 30 0 \$1-playback \$1-playback playback 0 -8 0 10
 -4034 -1 -1 0 1;
 #X obj 187 16 nbx 5 30 1 99 0 0 \$1-instance \$1-instance instance
@@ -138,6 +138,30 @@
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
 #X restore 115 13 pd force_trigger_dsp;
+#X obj 36 350 soundfiler;
+#X obj 36 307 f \$0;
+#X obj 36 283 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 36 328 write -bytes 2 ../data/sdfjlksadfa.wav \$1.sample;
+#N canvas 471 200 324 210 detect_preset 0;
+#X obj 77 38 netpd-r /\$1/simplesample/dump/request;
+#X obj 77 67 list append;
+#X obj 77 90 select p;
+#X msg 77 113 1;
+#X msg 122 113 0;
+#X obj 34 144 spigot;
+#X obj 34 16 netpd-dump \$1;
+#X obj 34 172 outlet;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 5 1;
+#X connect 4 0 5 1;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X restore 51 394 pd detect_preset;
 #X connect 5 0 7 1;
 #X connect 7 0 15 0;
 #X connect 8 0 6 0;
@@ -151,3 +175,6 @@
 #X connect 15 0 16 0;
 #X connect 15 1 17 0;
 #X connect 16 0 9 0;
+#X connect 20 0 22 0;
+#X connect 21 0 20 0;
+#X connect 22 0 19 0;
