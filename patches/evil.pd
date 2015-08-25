@@ -60,22 +60,40 @@
 #X text 62 136 latency compensation (ms);
 #X floatatom 9 136 8 0 0 0 - #0.latency.compensation -, f 8;
 #X restore 29 115 pd jack settings;
-#X obj 296 11 hsl 63 20 0 127 0 0 \$0.grab.gui.s \$0.grab.gui.r GRAB
--1 8 1 12 -232576 -232576 -1 0 1;
-#X obj 296 36 hsl 63 20 0 127 0 0 \$0.switch.gui.s \$0.switch.gui.r
-SEND -1 8 1 12 -232576 -232576 -1 0 1;
-#X obj 379 38 hsl 63 20 0 127 0 0 \$0.jack.gui.s \$0.jack.gui.r JACK
--1 8 1 12 -232576 -232576 -1 0 1;
-#X obj 293 61 nbx 6 20 8 99 0 1 \$0.delay.steps \$0.delay.gui.r steps
-33 11 1 12 -232576 -1 -1 16 256;
-#X obj 379 13 hsl 63 20 0 127 0 0 \$0.alsa.gui.s \$0.alsa.gui.r ALSA
--1 8 1 12 -232576 -232576 -1 0 1;
-#X obj 296 86 hsl 63 20 0 127 0 0 \$0.receive.gui.s \$0.receive.gui.r
-RECEIVE -1 8 1 12 -232576 -232576 -1 0 1;
-#X obj 379 63 hsl 63 20 0 127 0 0 \$0.help.gui.s \$0.help.gui.r HELP
--1 8 1 12 -232576 -232576 -1 0 1;
-#X obj 379 88 hsl 63 20 0 127 0 0 \$0.buffer.gui.s \$0.buffer.gui.r
-BUFFER -1 8 1 12 -232576 -232576 -1 0 1;
+#X obj 317 27 cnv 15 153 97 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 326 31 hsl 63 20 0 127 0 0 \$0.grab.gui.s \$0.grab.gui.r GRAB
+-1 8 2 12 -1 -1 -262130 0 1;
+#X obj 326 54 hsl 63 20 0 127 0 0 \$0.switch.gui.s \$0.switch.gui.r
+SEND -1 8 2 12 -1 -1 -262130 0 1;
+#X obj 399 54 hsl 63 20 0 127 0 0 \$0.jack.gui.s \$0.jack.gui.r JACK
+-1 8 2 12 -1 -1 -262130 0 1;
+#X obj 323 77 nbx 6 20 8 99 0 1 \$0.delay.steps \$0.delay.gui.r steps
+33 11 2 12 -1 -262130 -262130 28 256;
+#X obj 399 31 hsl 63 20 0 127 0 0 \$0.alsa.gui.s \$0.alsa.gui.r ALSA
+-1 8 2 12 -1 -1 -262130 0 1;
+#X obj 326 100 hsl 63 20 0 127 0 0 \$0.receive.gui.s \$0.receive.gui.r
+RECEIVE -1 8 2 12 -1 -1 -262130 0 1;
+#X obj 399 77 hsl 63 20 0 127 0 0 \$0.help.gui.s \$0.help.gui.r HELP
+-1 8 2 12 -1 -1 -262130 0 1;
+#X obj 399 100 hsl 63 20 0 127 0 0 \$0.buffer.gui.s \$0.buffer.gui.r
+BUFFER -1 8 2 12 -1 -1 -262130 0 1;
+#X obj 319 51 cnv 3 150 3 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 319 74 cnv 3 150 3 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 319 97 cnv 3 150 3 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 319 120 cnv 3 150 3 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 319 28 cnv 3 150 3 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 318 29 cnv 3 5 93 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 391 29 cnv 3 5 93 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 464 29 cnv 3 5 93 empty empty empty 20 12 0 14 -262130 -66577
+0;
 #X connect 10 0 11 0;
 #X restore 10 42 pd \$1-evil;
 #N canvas 533 82 462 464 send-signal 0;
