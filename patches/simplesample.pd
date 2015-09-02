@@ -4,16 +4,16 @@
 #X msg 17 15 master-param;
 #X msg 17 46 i2mx;
 #X restore 12 34 pd abslist;
-#X msg 12 8 version 0 0 3;
+#X msg 13 8 version 0 0 5;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 68 netpd_head \$1 simplesample;
-#N canvas 591 426 297 72 \$1-simplesample 1;
+#N canvas 591 424 297 72 \$1-simplesample 1;
 #X obj 9 16 nbx 5 30 1 99 0 0 \$1-length \$1-length length 0 -8 0 10
--262144 -1 -1 16 256;
+-262144 -1 -1 78 256;
 #X obj 80 17 tgl 30 0 \$1-playback \$1-playback playback 0 -8 0 10
 -4034 -1 -1 1 1;
 #X obj 187 16 nbx 5 30 1 99 0 0 \$1-instance \$1-instance instance
-0 -8 0 10 -262144 -1 -1 2 256;
+0 -8 0 10 -262144 -1 -1 10 256;
 #X obj 80 17 bng 13 250 50 0 \$0.bla \$0.play.light empty 17 7 0 10
 -4034 -1 -1;
 #X obj 135 16 bng 30 250 50 0 \$0.record \$0.bli record 0 -8 0 10 -258113
@@ -78,13 +78,14 @@
 #X obj 157 208 netpd_r \$1 recordstart;
 #X obj 157 281 print \$1-simplesample;
 #X msg 157 259 Error: missed recording start time;
-#X obj 44 272 sel 0;
 #X obj 77 379 s \$0.rec.light;
 #X msg 77 347 1;
 #X msg 116 352 0;
 #X obj 116 330 delay 1000;
 #X obj 186 330 r \$0.length(ms);
 #X obj 173 379 s \$0.changed;
+#X msg 102 271 -1;
+#X obj 44 272 sel -1;
 #X connect 1 0 5 0;
 #X connect 2 0 4 0;
 #X connect 4 0 0 0;
@@ -98,21 +99,23 @@
 #X connect 11 0 13 0;
 #X connect 12 0 15 0;
 #X connect 13 0 12 0;
-#X connect 14 0 20 0;
+#X connect 14 0 27 0;
 #X connect 14 1 8 1;
 #X connect 14 2 16 1;
 #X connect 16 0 19 0;
-#X connect 16 1 20 1;
+#X connect 16 1 27 1;
 #X connect 17 0 16 0;
 #X connect 19 0 18 0;
-#X connect 20 0 0 0;
-#X connect 20 0 22 0;
-#X connect 20 0 24 0;
-#X connect 22 0 21 0;
-#X connect 23 0 21 0;
-#X connect 24 0 23 0;
-#X connect 24 0 26 0;
-#X connect 25 0 24 1;
+#X connect 21 0 20 0;
+#X connect 22 0 20 0;
+#X connect 23 0 22 0;
+#X connect 23 0 25 0;
+#X connect 24 0 23 1;
+#X connect 26 0 27 1;
+#X connect 27 0 0 0;
+#X connect 27 0 21 0;
+#X connect 27 0 23 0;
+#X connect 27 0 26 0;
 #X restore 90 176 pd recorder;
 #X obj 268 108 t a a;
 #N canvas 136 124 209 195 ms2samples 0;
