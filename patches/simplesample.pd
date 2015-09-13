@@ -1,28 +1,27 @@
-#N canvas 648 44 466 346 10;
-#N canvas 624 75 332 68 NETPD 0;
+#N canvas 412 82 465 363 10;
+#N canvas 621 66 332 68 NETPD 0;
 #N canvas 315 75 336 156 abslist 0;
 #X msg 17 15 master-param;
 #X msg 17 46 i2mx;
 #X restore 12 34 pd abslist;
-#X msg 13 8 version 0 0 5;
+#X msg 13 8 version 0 0 6;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 68 netpd_head \$1 simplesample;
-#N canvas 591 424 297 72 \$1-simplesample 1;
-#X obj 9 16 nbx 5 30 1 99 0 0 \$1-length \$1-length length 0 -8 0 10
--262144 -1 -1 78 256;
-#X obj 80 17 tgl 30 0 \$1-playback \$1-playback playback 0 -8 0 10
--4034 -1 -1 1 1;
-#X obj 187 16 nbx 5 30 1 99 0 0 \$1-instance \$1-instance instance
-0 -8 0 10 -262144 -1 -1 10 256;
-#X obj 80 17 bng 13 250 50 0 \$0.bla \$0.play.light empty 17 7 0 10
--4034 -1 -1;
-#X obj 135 16 bng 30 250 50 0 \$0.record \$0.bli record 0 -8 0 10 -258113
--1 -1;
-#X obj 135 16 tgl 13 0 \$0.bla \$0.rec.light empty 17 7 0 10 -258113
+#N canvas 682 315 318 60 \$1-simplesample 1;
+#X obj 21 31 hsl 230 15 0 1 0 0 \$0.playback.cursor \$0.playback.cursor.r
+empty -2 -8 0 10 -225271 -225271 -1 0 1;
+#X obj 4 31 tgl 15 0 \$1-playback \$1-playback playback 20 8 0 10 -4034
 -1 -1 0 1;
+#X obj 21 16 hsl 230 15 0 1 0 0 \$0.record.cursor \$0.record.cursor.r
+empty -2 -8 0 10 -261689 -261689 -1 12700 1;
+#X obj 4 16 bng 15 250 50 0 \$0.record \$0.bli record 20 8 0 10 -258113
+-1 -1;
+#X obj 252 16 nbx 5 15 1 99 0 0 \$1-instance \$1-instance instance
+-50 8 0 10 -191407 -1 -1 1 256;
+#X obj 252 31 nbx 5 15 1 999 0 0 \$1-length \$1-length length -50 8
+0 10 -191407 -1 -1 99 256;
 #X restore 10 42 pd \$1-simplesample;
 #X obj 11 215 i2mx \$1 simplesample;
-#X obj 269 281 table \$0.sample;
 #X obj 323 51 master-param 16th;
 #X obj 268 252 s \$0.sample;
 #X obj 268 79 *;
@@ -31,7 +30,7 @@
 #X obj 268 28 netpd_f \$1 length 16;
 #X obj 11 116 master-param step;
 #X obj 11 138 t a a;
-#N canvas 242 136 316 318 playback 0;
+#N canvas 227 91 337 368 playback 0;
 #X obj 32 260 tabplay~ \$0.sample;
 #X obj 32 134 mod;
 #X obj 32 158 sel 0;
@@ -40,24 +39,56 @@
 #X obj 32 87 spigot;
 #X obj 92 203 sel 0;
 #X msg 92 226 stop;
-#X obj 38 179 s \$0.play.light;
 #X obj 47 112 netpd_r \$1 length;
 #X obj 32 11 inlet;
 #X obj 32 288 outlet~;
-#X connect 0 0 11 0;
+#N canvas 847 430 484 300 gui-stuff 0;
+#X obj 37 41 r \$0.length(ms);
+#X obj 22 200 s \$0.playback.cursor.r;
+#X msg 22 95 0 \, 1 \$1;
+#X obj 22 18 inlet;
+#X obj 22 72 f;
+#X obj 135 68 sel 0;
+#X msg 135 90 0;
+#X obj 223 15 netpd_r \$1 playback;
+#X obj 190 202 s \$0.playback.cursor.r;
+#X msg 190 153 -1;
+#X obj 190 117 spigot;
+#X obj 234 117 sel 0;
+#X obj 21 123 line 0 40;
+#X msg 190 178 color 6 \$1 -1;
+#X msg 234 151 6;
+#X connect 0 0 4 1;
+#X connect 2 0 12 0;
+#X connect 3 0 4 0;
+#X connect 3 0 10 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 12 0;
+#X connect 7 0 5 0;
+#X connect 7 0 10 1;
+#X connect 7 0 11 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 11 0 14 0;
+#X connect 12 0 1 0;
+#X connect 13 0 8 0;
+#X connect 14 0 13 0;
+#X restore 155 205 pd gui-stuff;
+#X connect 0 0 10 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
-#X connect 2 0 8 0;
+#X connect 2 0 11 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 1;
 #X connect 4 1 6 0;
 #X connect 5 0 1 0;
 #X connect 6 0 7 0;
 #X connect 7 0 0 0;
-#X connect 9 0 1 1;
-#X connect 10 0 5 0;
+#X connect 8 0 1 1;
+#X connect 9 0 5 0;
 #X restore 11 176 pd playback;
-#N canvas 169 44 433 578 recorder 0;
+#N canvas 163 44 433 578 recorder 0;
 #X obj 44 516 tabwrite~ \$0.sample;
 #X obj 58 419 netpd_f \$1 instance 0;
 #X msg 58 467 set \$1.EVIL;
@@ -75,7 +106,7 @@
 #X obj 44 26 t a a a;
 #X obj 157 189 netpd_s \$1 recordstart;
 #X obj 157 230 moses;
-#X obj 157 208 netpd_r \$1 recordstart;
+#X obj 157 210 netpd_r \$1 recordstart;
 #X obj 157 281 print \$1-simplesample;
 #X msg 157 259 Error: missed recording start time;
 #X obj 77 379 s \$0.rec.light;
@@ -86,6 +117,34 @@
 #X obj 173 379 s \$0.changed;
 #X msg 102 271 -1;
 #X obj 44 272 sel -1;
+#N canvas 844 421 484 300 gui-stuff 0;
+#X obj 37 41 r \$0.length(ms);
+#X msg 22 149 0 \, 1 \$1;
+#X obj 22 18 inlet;
+#X obj 22 63 f;
+#X msg 190 153 -1;
+#X obj 22 173 line 0 40;
+#X msg 217 131 3;
+#X msg 190 178 color 3 \$1 -1;
+#X obj 190 202 s \$0.record.cursor.r;
+#X obj 22 85 t a a;
+#X obj 190 85 t b a;
+#X obj 217 109 delay;
+#X obj 22 200 s \$0.record.cursor.r;
+#X connect 0 0 3 1;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 9 0;
+#X connect 4 0 7 0;
+#X connect 5 0 12 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 1 0;
+#X connect 9 1 10 0;
+#X connect 10 0 4 0;
+#X connect 10 1 11 0;
+#X connect 11 0 6 0;
+#X restore 264 451 pd gui-stuff;
 #X connect 1 0 5 0;
 #X connect 2 0 4 0;
 #X connect 4 0 0 0;
@@ -116,6 +175,7 @@
 #X connect 27 0 21 0;
 #X connect 27 0 23 0;
 #X connect 27 0 26 0;
+#X connect 27 0 28 0;
 #X restore 90 176 pd recorder;
 #X obj 268 108 t a a;
 #N canvas 136 124 209 195 ms2samples 0;
@@ -143,7 +203,7 @@
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
 #X restore 115 13 pd force_trigger_dsp;
-#N canvas 154 215 509 440 save_wav_data_with_preset 0;
+#N canvas 151 206 509 440 save_wav_data_with_preset 0;
 #N canvas 439 245 334 292 timestamp 0;
 #X obj 20 59 date . . .;
 #X obj 20 126 makefilename %02d;
@@ -248,16 +308,17 @@
 #X connect 25 0 23 0;
 #X restore 15 285 pd save_wav_data_with_preset;
 #X text 15 308 no netpd syncing implemented yet!;
-#X connect 5 0 7 1;
-#X connect 7 0 15 0;
-#X connect 8 0 6 0;
-#X connect 9 0 8 0;
-#X connect 10 0 7 0;
+#X obj 269 281 table \$0.sample;
+#X connect 4 0 6 1;
+#X connect 6 0 14 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 6 0;
+#X connect 10 0 11 0;
 #X connect 11 0 12 0;
-#X connect 12 0 13 0;
-#X connect 12 1 14 0;
-#X connect 13 0 3 0;
-#X connect 13 0 3 1;
-#X connect 15 0 16 0;
-#X connect 15 1 17 0;
-#X connect 16 0 9 0;
+#X connect 11 1 13 0;
+#X connect 12 0 3 0;
+#X connect 12 0 3 1;
+#X connect 14 0 15 0;
+#X connect 14 1 16 0;
+#X connect 15 0 8 0;
