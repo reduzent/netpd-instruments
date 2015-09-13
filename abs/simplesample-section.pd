@@ -1,0 +1,21 @@
+#N canvas 740 76 450 300 10;
+#X obj 10 10 cnv 15 302 15 empty empty sample\$2 4 8 0 10 -228856 -1
+0;
+#X obj 27 25 hsl 230 15 0 1 0 0 \$1-\$2/start \$1-\$2/start cue 105
+8 0 10 -191407 -1 -1 0 1;
+#X obj 10 25 bng 15 250 50 0 \$0.prelisten \$0.bla prelisten 20 8 0
+10 -191407 -1 -1;
+#X obj 258 25 nbx 5 15 1 999 0 0 \$1-\$2/length \$1-\$2/length length
+-50 8 0 10 -191407 -1 -1 1 256;
+#X obj 261 10 hsl 49 15 0 127 0 0 \$0.length.unit \$0.length.unit.r
+steps 1 8 0 10 -228856 -228856 -1 0 1;
+#X obj 222 10 nbx 3 15 -96 96 0 0 \$1-\$2/pitch \$1-\$2/pitch empty
+39 8 0 10 -228856 -1 -1 0 256;
+#X obj 171 10 hsl 49 15 1.27 127 1 0 \$1-\$2/fadetime \$1-\$2/fadetime
+fade 1 8 0 10 -228856 -1 -1 0 1;
+#X obj 146 10 hsl 20 15 0 127 0 0 \$0.direction \$0.direction.r >>>
+1 8 0 10 -228856 -228856 -1 0 1;
+#N canvas 930 209 212 57 NETPD 0;
+#X msg 15 10 version 0 0 0;
+#X restore 343 9 pd NETPD 2 0;
+#X coords 0 -1 1 1 302 30 2 10 10;
