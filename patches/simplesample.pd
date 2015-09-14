@@ -1,4 +1,4 @@
-#N canvas 388 44 465 363 10;
+#N canvas 388 50 462 419 10;
 #N canvas 618 57 332 68 NETPD 0;
 #N canvas 312 66 336 156 abslist 0;
 #X msg 12 46 master-param;
@@ -8,11 +8,11 @@
 #X msg 13 8 version 0 0 6;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 68 netpd_head \$1 simplesample;
-#N canvas 667 270 323 299 \$1-simplesample 1;
+#N canvas 667 270 323 299 \$1-simplesample 0;
 #X obj 4 80 simplesample-section \$1 1;
 #X obj 4 16 cnv 15 303 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#N canvas 0 44 450 300 (subpatch) 0;
+#N canvas 0 50 450 300 (subpatch) 0;
 #X array \$1.sample 88200 float 2;
 #X coords 0 1 88200 -1 233 30 1 0 0;
 #X restore 19 16 graph;
@@ -21,11 +21,11 @@ empty -2 -8 0 10 -225271 -225271 -1 0 1;
 #X obj 4 61 tgl 15 0 \$1-playback \$1-playback playback 20 8 0 10 -4034
 -1 -1 0 1;
 #X obj 21 46 hsl 230 15 0 1 0 0 \$0.record.cursor \$0.record.cursor.r
-empty -2 -8 0 10 -261689 -261689 -1 22900 1;
+empty -2 -8 0 10 -261689 -261689 -1 0 1;
 #X obj 4 46 bng 15 250 50 0 \$0.record \$0.bli record 20 8 0 10 -258113
 -1 -1;
 #X obj 252 46 nbx 5 15 1 99 0 0 \$1-instance \$1-instance instance
--50 8 0 10 -191407 -1 -1 2 256;
+-50 8 0 10 -191407 -1 -1 1 256;
 #X obj 252 61 nbx 5 15 1 999 0 0 \$1-length \$1-length length -50 8
 0 10 -191407 -1 -1 16 256;
 #X obj 4 146 simplesample-section \$1 3;
@@ -100,7 +100,7 @@ empty -2 -8 0 10 -261689 -261689 -1 22900 1;
 #X connect 8 0 4 0;
 #X connect 11 0 9 0;
 #X restore 11 176 pd playback;
-#N canvas 151 44 433 578 recorder 0;
+#N canvas 151 50 433 578 recorder 0;
 #X obj 58 419 netpd_f \$1 instance 0;
 #X msg 58 467 set \$1.EVIL;
 #X obj 58 441 route 0;
@@ -314,6 +314,8 @@ empty -2 -8 0 10 -261689 -261689 -1 22900 1;
 #X text 15 308 no netpd syncing implemented yet!;
 #X obj 295 132 s \$1.length(ms);
 #X obj 268 252 s \$1.sample;
+#X obj 16 364 qseq3-instr-list \$1 simplesample sample1 sample2 sample3
+sample4 sample5 sample6;
 #X connect 4 0 5 1;
 #X connect 5 0 13 0;
 #X connect 6 0 19 0;
