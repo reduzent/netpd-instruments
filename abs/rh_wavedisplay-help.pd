@@ -1,0 +1,32 @@
+#N canvas 498 207 554 391 10;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array display 200 float 2;
+#X coords 0 1 200 -1 100 70 1 0 0;
+#X restore 28 157 graph;
+#X obj 23 23 table audio 40000;
+#X msg 296 202 scale \$1;
+#X floatatom 296 177 5 0 0 0 - - -, f 5;
+#N canvas 675 296 333 51 NETPD 0;
+#X msg 12 10 version 0 0 1;
+#X restore 463 12 pd NETPD 2 0;
+#X obj 243 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 243 35 openpanel;
+#X msg 243 57 read \$1 audio;
+#X obj 243 79 soundfiler;
+#X obj 251 256 rh_wavedisplay display 200;
+#X text 370 141 set <table> <from> <to>;
+#X text 356 204 scale <factor>;
+#X msg 251 141 set audio 0 40000;
+#X text 252 120 == select range from source audio table ==;
+#X text 33 295 Audio tables often hold much more data than can actually
+be visually displayed. This abstraction is used to display a whole
+or part of an array containing audio in an optimal way in that all
+minima and maxima are correctly diplayed. Additionally \, the display
+can be visually scaled without affecting the original data.;
+#X connect 2 0 9 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 12 0 9 0;
