@@ -8,7 +8,9 @@ the netpd framework which is hosted at:
 
 Instruments are Pd patches with certain netpd-specific
 properties. They may be synthesizers, sequencers, but can 
-be anything else that can be expressed as Pd patch.
+be anything that can be expressed as Pd patch. In this
+repository instruments for making music collaboratively
+are hosted.
 
 Read more about netpd:
 
