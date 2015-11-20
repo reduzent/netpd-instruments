@@ -9,21 +9,21 @@
 #X msg 10 9 version 0 1 0;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 evil;
-#N canvas 597 169 165 185 \$1-evil 1;
+#N canvas 597 177 170 188 \$1-evil 1;
 #X obj 6 4 cnv 15 145 93 empty empty send 3 8 0 14 -191407 -1 0;
 #X obj 50 20 hsl 57 16 0 127 0 0 empty \$0.master.display master 2
 8 0 14 -1 -1 -195568 0 1;
 #X obj 115 20 hsl 31 16 0 127 0 0 empty \$0.dsp.display dsp 2 8 0 14
--1 -1 -195568 0 1;
+-1 -1 -24198 0 1;
 #X obj 50 39 hsl 96 16 0 127 0 0 \$0.owner.button \$0.owner.display
-owner:5 2 8 0 14 -1 -1 -195568 0 1;
+owner:0 2 8 0 14 -1 -1 -195568 0 1;
 #X obj 93 58 hsl 53 16 0 127 0 0 \$0.alsa.button \$0.alsa.display alsa
 2 8 0 14 -1 -1 -191407 0 1;
 #X obj 93 77 hsl 53 16 0 127 0 0 \$0.jack.button \$0.jack.display jack
 2 8 0 14 -1 -1 -191407 0 1;
 #X obj 15 58 nbx 7 16 8 128 0 0 \$1-delay \$1-delay empty 0 -8 0 10
--262144 -1 -191407 64 256;
-#X obj 12 58 hsl 73 16 0 127 0 0 empty \$0.delay.display delay:64 2
+-262144 -1 -191407 16 256;
+#X obj 12 58 hsl 73 16 0 127 0 0 empty \$0.delay.display delay:16 2
 8 0 14 -1 -1 -191407 0 1;
 #X obj 6 105 cnv 15 145 67 empty empty receive 2 8 0 14 -191407 -1
 0;
@@ -417,11 +417,13 @@ owner:5 2 8 0 14 -1 -1 -195568 0 1;
 #X connect 10 0 9 0;
 #X connect 12 0 5 0;
 #X restore 16 87 pd add_latency_introduced_by_tx/rx_buffers;
+#X msg 68 165 label \$1ms;
 #X connect 2 0 5 0;
 #X connect 3 0 5 0;
 #X connect 4 0 0 0;
-#X connect 4 1 1 0;
+#X connect 4 1 6 0;
 #X connect 5 0 4 0;
+#X connect 6 0 1 0;
 #X restore 183 98 pd calculate_real_latency;
 #X obj 150 196 *;
 #X obj 150 218 -;
@@ -809,43 +811,57 @@ exceeds 80% of the audio buffer \, we stop sending audio.;
 #X obj 139 40 sel 0;
 #X obj 186 40 t a;
 #X obj 139 18 r \$0.jack.button;
-#N canvas 906 193 296 188 ALSA 0;
-#X floatatom 12 16 5 0 0 0 - #0.bli #0.alsa.msec, f 5;
-#X text 47 16 msec;
-#X obj 112 15 vradio 15 1 0 7 \$0.alsa.blocksize \$0.bli empty 0 -8
-0 10 -262144 -1 -1 3;
-#X text 95 14 64;
-#X text 89 29 128;
-#X text 89 44 256;
-#X text 89 59 512;
-#X text 83 74 1024;
-#X text 83 91 2048;
-#X text 83 107 4096;
-#X text 134 15 blocksize;
-#X text 62 136 latency compensation (ms);
-#X floatatom 9 136 8 0 0 0 - #0.latency.compensation -, f 8;
-#X obj 35 168 namecanvas \$0.alsa.settings;
+#N canvas 762 177 208 200 ALSA 0;
+#X obj 23 163 namecanvas \$0.alsa.settings;
+#X obj 6 46 cnv 14 75 15 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 6 46 nbx 4 14 0 3000 0 0 \$0.alsa.msec \$0.blidsk msec 45 8
+0 12 -1 -4034 -4034 290 256;
+#X obj 82 46 cnv 15 115 104 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj 112 45 vradio 15 1 0 7 \$0.alsa.blocksize \$0.bli empty 0 -8
+0 10 -1 -4034 -1 1;
+#X text 95 44 64;
+#X text 89 59 128;
+#X text 89 74 256;
+#X text 89 89 512;
+#X text 83 104 1024;
+#X text 83 121 2048;
+#X text 83 137 4096;
+#X text 134 45 blocksize;
+#X obj 6 62 cnv 15 75 88 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 6 13 cnv 15 191 32 empty empty empty 2 25 0 12 -4034 -1 0;
+#X text 7 28 Specify your audio settings:;
+#X text 7 13 ALSA;
+#X obj 6 151 cnv 15 191 32 empty \$0.latency.compensation 197.37ms
+2 25 0 12 -4034 -1 0;
+#X text 6 153 eff. latency compensation:;
 #X restore 37 123 pd ALSA;
-#N canvas 852 186 301 199 JACK 0;
-#X obj 50 16 vradio 15 1 0 7 \$0.jack.frames \$0.bli empty 0 -8 0 10
--262144 -1 -1 5;
-#X text 33 15 64;
-#X text 27 30 128;
-#X text 27 45 256;
-#X text 27 60 512;
-#X text 21 75 1024;
-#X text 21 92 2048;
-#X text 21 108 4096;
-#X obj 136 17 vradio 15 1 0 3 \$0.jack.periods \$0.bli empty 0 -8 0
-10 -262144 -1 -1 2;
-#X text 124 16 2;
-#X text 124 31 3;
-#X text 124 46 4;
-#X text 155 15 periods;
-#X text 70 15 frames;
-#X text 62 136 latency compensation (ms);
-#X floatatom 9 136 8 0 0 0 - #0.latency.compensation -, f 8;
-#X obj 35 168 namecanvas \$0.jack.settings;
+#N canvas 762 177 207 198 JACK 0;
+#X obj 31 166 namecanvas \$0.jack.settings;
+#X obj 6 151 cnv 15 191 32 empty \$0.latency.compensation 197.37ms
+2 25 0 12 -4034 -1 0;
+#X text 6 153 eff. latency compensation:;
+#X obj 6 45 cnv 15 191 105 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj 40 45 vradio 15 1 0 7 \$0.jack.frames \$0.bli empty 0 -8 0 10
+-1 -4034 -1 4;
+#X text 23 44 64;
+#X text 17 59 128;
+#X text 17 74 256;
+#X text 17 89 512;
+#X text 11 104 1024;
+#X text 11 121 2048;
+#X text 11 137 4096;
+#X obj 128 45 vradio 15 1 0 3 \$0.jack.periods \$0.bli empty 0 -8 0
+10 -1 -4034 -1 2;
+#X text 116 44 2;
+#X text 116 59 3;
+#X text 116 74 4;
+#X text 147 43 periods;
+#X text 60 44 frames;
+#X obj 6 12 cnv 15 191 32 empty empty empty 2 25 0 12 -4034 -1 0;
+#X text 7 27 Specify your audio settings:;
+#X text 7 12 JACK;
 #X restore 36 145 pd JACK;
 #X msg 21 66 vis 1;
 #X obj 21 88 s \$0.alsa.settings;
