@@ -33,7 +33,7 @@
 #X text 137 590 KEYBOARD -> UNSTEP;
 #X text 12 8 PCR-30;
 #X obj 62 8 hsl 55 14 0 127 0 0 \$0.enable.button empty empty -2 20
-0 10 -262144 -1 -1 300 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 59 8 cnv 14 60 14 empty \$0.enable.display DISABLED 2 8 0 10
 -262140 -195568 0;
 #X restore 12 42 pd \$1-pcr-30;
@@ -61,6 +61,7 @@
 #X msg 257 167 20;
 #X text 223 92 enable only locally;
 #X msg 256 189 color -1.67772e+07 \$1;
+#X obj 275 131 loadbang;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
 #X connect 4 1 5 0;
@@ -78,3 +79,4 @@
 #X connect 14 0 17 0;
 #X connect 15 0 17 0;
 #X connect 17 0 13 0;
+#X connect 18 0 15 0;
