@@ -1707,7 +1707,7 @@ play 0 -6 1 7 -225280 -20025 -1;
 #X obj 284 184 netpd_head \$1 drum-delta;
 #N canvas 585 44 450 300 NETPD 0;
 #N canvas 1062 597 218 220 abslist 0;
-#X msg 17 21 instrument;
+#X msg 17 21 drum-delta-ctl-instance;
 #X msg 16 96 qseq3-instr-list;
 #X msg 17 42 i2mx;
 #X restore 12 16 pd abslist;
