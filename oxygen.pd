@@ -862,23 +862,23 @@
 #X obj 19 172 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X text 45 174 before saving;
-#N canvas 829 368 167 326 \$1-oxygen 1;
+#N canvas 900 336 167 326 \$1-oxygen 1;
 #X obj 7 7 cnv 15 150 305 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 17 15 hsl 129 10 1 100 1 0 \$1-oxy-aph-s \$1-oxy-aph-r empty
--1 5 1 7 -262144 -1 -1 0 0;
+-1 6 1 10 -262144 -1 -4160 0 0;
 #X obj 17 61 hsl 129 10 0 1 0 0 \$1-oxy-pik-s \$1-oxy-pik-r empty -1
-5 1 7 -262144 -1 -1 0 0;
+6 1 10 -262144 -1 -4160 3452 0;
 #X obj 17 74 hsl 129 10 20 4000 1 0 \$1-oxy-dur-s \$1-oxy-dur-r empty
--1 5 1 7 -262144 -1 -1 0 0;
+-1 6 1 10 -262144 -1 -4160 12800 0;
 #X obj 17 100 hsl 129 10 10 1000 1 0 \$1-oxy-dec-s \$1-oxy-dec-r empty
--1 5 1 7 -262144 -1 -1 0 0;
+-1 6 1 10 -262144 -1 -4160 0 0;
 #X obj 17 87 hsl 129 10 3 300 1 0 \$1-oxy-att-s \$1-oxy-att-r empty
--1 5 1 7 -262144 -1 -1 0 0;
+-1 6 1 10 -262144 -1 -4160 0 0;
 #X obj 17 126 hsl 129 10 50 5000 1 0 \$1-oxy-rel-s \$1-oxy-rel-r empty
--1 5 1 7 -262144 -1 -1 0 0;
+-1 6 1 10 -262144 -1 -4160 0 0;
 #X obj 17 113 hsl 129 10 0 1 0 0 \$1-oxy-sus-s \$1-oxy-sus-r empty
--1 5 1 7 -262144 -1 -1 0 0;
+-1 6 1 10 -262144 -1 -4160 12800 0;
 #X obj 14 146 vradio 10 1 0 12 \$1-oxy-fr1-s \$1-oxy-fr1-r empty 0
 -6 0 8 -262144 -1 -1 4;
 #X obj 24 146 vradio 15 1 0 8 \$1-oxy-oc1-s \$1-oxy-oc1-r empty 0 -6
@@ -886,9 +886,9 @@
 #X obj 58 286 hradio 15 1 0 6 \$1-oxy-instance \$1-oxy-instance-r instance
 0 -6 1 10 -262144 -1 -1 5;
 #X obj 17 28 hsl 129 10 1 10 1 0 \$1-oxy-fqu-s \$1-oxy-fqu-r empty
--1 5 1 7 -262144 -1 -1 0 0;
+-1 6 1 10 -262144 -1 -4160 3883 0;
 #X obj 17 41 hsl 129 10 20 20000 1 0 \$1-oxy-ffr-s \$1-oxy-ffr-r empty
--1 5 1 7 -262144 -1 -1 0 0;
+-1 6 1 10 -262144 -1 -4160 7766 0;
 #X obj 14 287 bng 14 250 50 0 \$1-oxy-prelisten \$0-bli play 0 -6 1
 10 -262144 -1 -1;
 #X text 15 251 c;
