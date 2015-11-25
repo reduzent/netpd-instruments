@@ -1,4 +1,4 @@
-#N canvas 633 246 457 314 10;
+#N canvas 401 257 457 314 10;
 #X obj 278 240 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X obj 278 259 s \$0-resetlabels;
@@ -829,7 +829,7 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X obj 12 98 int;
 #X obj 11 33 route label;
 #X obj 72 54 route set;
-#X obj 12 120 list append anfangsfrequenz Hz;
+#X obj 12 120 list append a-frequenz Hz;
 #N canvas 1058 44 450 300 list2symbol 0;
 #X obj 18 33 inlet;
 #X obj 18 221 outlet;
@@ -958,7 +958,7 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X obj 11 13 r \$1-kick-dec-r;
 #X obj 12 77 r \$1-kick-dec-s;
 #X obj 12 269 s \$1-kick-dec-r;
-#X obj 12 120 list append loslass ms;
+#X obj 12 120 list append los ms;
 #X connect 0 0 9 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
@@ -1111,7 +1111,7 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X restore 12 160 pd list2symbol;
 #X obj 11 13 r \$1-kick-efq-r;
 #X obj 12 73 r \$1-kick-efq-s;
-#X obj 12 120 list append endfrequenz Hz;
+#X obj 12 120 list append e-frequenz Hz;
 #X obj 12 275 s \$1-kick-efq-r;
 #X connect 0 0 10 0;
 #X connect 1 0 2 0;
@@ -1237,7 +1237,7 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X obj 72 54 route set;
 #X obj 12 101 * 100;
 #X obj 12 143 / 100;
-#X obj 12 186 symbol mix_fell<>kette;
+#X obj 12 186 symbol fell<>kette;
 #X obj 37 208 * 100;
 #X obj 37 228 t f f;
 #X obj 37 249 - 100;
@@ -1644,65 +1644,65 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X connect 4 0 0 1;
 #X connect 9 0 10 0;
 #X restore 122 90 pd hihat-datactrl;
-#N canvas 943 165 147 455 \$1-drum-delta 1;
+#N canvas 922 209 147 455 \$1-drum-delta 1;
 #X obj 10 3 cnv 7 119 438 empty empty empty 20 12 0 14 -99865 -66577
 0;
-#X obj 12 5 cnv 15 115 165 empty empty k_i_c_k___________________ 4
-7 1 7 -244200 -184581 0;
+#X obj 12 5 cnv 15 115 165 empty empty k_i_c_k___________ 4 8 1 10
+-244200 -184581 0;
 #X obj 20 23 hsl 100 14 20 20000 1 0 \$1-kick-afq-s \$1-kick-afq-r
-empty 4 7 1 7 -261689 -258699 -1 3859 1;
+empty 4 8 1 10 -261689 -258699 -1 0 1;
 #X obj 20 37 hsl 100 14 20 20000 1 0 \$1-kick-efq-s \$1-kick-efq-r
-empty 4 7 1 7 -261689 -258699 -1 1331 1;
+empty 4 8 1 10 -261689 -258699 -1 9900 1;
 #X obj 20 51 hsl 100 14 1 1000 1 0 \$1-kick-tim-s \$1-kick-tim-r empty
-4 7 1 7 -261689 -258699 -1 3411 1;
+4 8 1 10 -261689 -258699 -1 0 1;
 #X obj 20 65 hsl 100 14 1 1000 1 0 \$1-kick-att-s \$1-kick-att-r empty
-4 7 1 7 -261689 -258699 -1 83 1;
+4 8 1 10 -261689 -258699 -1 0 1;
 #X obj 20 79 hsl 60 14 10 10000 1 0 \$1-kick-dec-s \$1-kick-dec-r empty
-4 7 1 7 -261689 -258699 -1 3570 1;
+4 8 1 10 -261689 -258699 -1 0 1;
 #X obj 20 93 hsl 100 14 1 50 1 0 \$1-kick-dis-s \$1-kick-dis-r empty
-4 7 1 7 -261689 -258699 -1 0 1;
+4 8 1 10 -261689 -258699 -1 0 1;
 #X obj 20 107 hsl 100 14 20000 20 1 0 \$1-kick-lop-s \$1-kick-lop-r
-empty 4 7 1 7 -261689 -258699 -1 83 1;
+empty 4 8 1 10 -261689 -258699 -1 0 1;
 #X obj 20 121 hsl 100 14 0 1 0 0 \$1-kick-vol-s \$1-kick-vol-r empty
-4 7 1 7 -261689 -258699 -1 9900 1;
-#X obj 66 148 hradio 14 1 0 4 \$1-kick-instance \$1-kick-instance-r
-instance 0 -6 1 7 -261689 -244200 -1 0;
-#X obj 17 147 bng 14 250 50 0 \$1-kick-prelisten \$1-kick-prelisten-r
-play 0 -6 1 7 -261689 -244200 -1;
-#X obj 12 181 cnv 15 115 137 empty empty s_n_a_r_e_________________
-4 7 1 7 -130593 -10435 0;
+4 8 1 10 -261689 -258699 -1 9900 1;
+#X obj 66 150 hradio 14 1 0 4 \$1-kick-instance \$1-kick-instance-r
+instance 0 -6 1 10 -261689 -244200 -1 0;
+#X obj 17 149 bng 14 250 50 0 \$1-kick-prelisten \$1-kick-prelisten-r
+play 0 -6 1 10 -261689 -244200 -1;
+#X obj 12 181 cnv 15 115 137 empty empty s_n_a_r_e_________ 4 8 1 10
+-130593 -10435 0;
 #X obj 20 199 hsl 100 14 220 7000 1 0 \$1-snare-tun-s \$1-snare-tun-r
-empty 4 7 1 7 -225271 -258699 -1 1497 1;
+empty 4 8 1 10 -225271 -258699 -1 2000 1;
 #X obj 20 213 hsl 100 14 0 5.5 0 0 \$1-snare-nos-s \$1-snare-nos-r
-empty 4 7 1 7 -225271 -258699 -1 4409 1;
+empty 4 8 1 10 -225271 -258699 -1 9900 1;
 #X obj 20 227 hsl 100 14 0 1 0 0 \$1-snare-mix-s \$1-snare-mix-r empty
-4 7 1 7 -225271 -258699 -1 2662 1;
+4 8 1 10 -225271 -258699 -1 2000 1;
 #X obj 20 241 hsl 100 14 100 1000 0 0 \$1-snare-dec-s \$1-snare-dec-r
-empty 4 7 1 7 -225271 -258699 -1 5158 1;
+empty 4 8 1 10 -225271 -258699 -1 9158 1;
 #X obj 20 255 hsl 100 14 0 1 0 0 \$1-snare-pan-s \$1-snare-pan-r empty
-4 7 1 7 -225271 -258699 -1 4492 1;
+4 8 1 10 -225271 -258699 -1 0 1;
 #X obj 66 297 hradio 14 1 0 4 \$1-snare-instance \$1-snare-instance-r
-instance 0 -6 1 7 -225271 -130593 -1 0;
+instance 0 -6 1 10 -225271 -130593 -1 0;
 #X obj 17 297 bng 14 250 50 0 \$1-snare-prelisten \$1-snare-prelisten-r
-play 0 -6 1 7 -225271 -130593 -1;
+play 0 -6 1 10 -225271 -130593 -1;
 #X obj 20 269 hsl 100 14 0 1 0 0 \$1-snare-vol-s \$1-snare-vol-r empty
-4 7 1 7 -225271 -258699 -1 9900 1;
-#X obj 12 329 cnv 15 115 110 empty empty h_i_h_a_t_________________
-4 7 1 7 -20025 -10143 0;
+4 8 1 10 -225271 -258699 -1 9900 1;
+#X obj 12 329 cnv 15 115 110 empty empty h_i_h_a_t__________ 4 8 1
+10 -20025 -10143 0;
 #X obj 20 347 hsl 100 14 220 12000 1 0 \$1-hihat-crh-s \$1-hihat-crh-r
-empty 4 7 1 7 -225280 -258699 -1 0 1;
+empty 4 8 1 10 -225280 -258699 -1 5900 1;
 #X obj 20 361 hsl 100 14 50 5000 1 0 \$1-hihat-dec-s \$1-hihat-dec-r
-empty 4 7 1 7 -225280 -258699 -1 1913 1;
+empty 4 8 1 10 -225280 -258699 -1 7513 1;
 #X obj 20 375 hsl 100 14 0 1 0 0 \$1-hihat-pan-s \$1-hihat-pan-r empty
-4 7 1 7 -225280 -258699 -1 3411 1;
+4 8 1 10 -225280 -258699 -1 9900 1;
 #X obj 66 417 hradio 14 1 0 4 \$1-hihat-instance \$1-hihat-instance-r
-instance 0 -6 1 7 -225280 -20025 -1 0;
+instance 0 -6 1 10 -225280 -20025 -1 0;
 #X obj 17 417 bng 14 250 50 0 \$1-hihat-prelisten \$1-hihat-prelisten-r
-play 0 -6 1 7 -225280 -20025 -1;
+play 0 -6 1 10 -225280 -20025 -1;
 #X obj 20 389 hsl 100 14 0 1 0 0 \$1-hihat-vol-s \$1-hihat-vol-r empty
-4 7 1 7 -225280 -258699 -1 9900 1;
-#X obj 85 79 hsl 35 14 0 1 0 0 \$1-kick-cur-s \$1-kick-cur-r log<=>lin
-4 7 1 7 -261689 -258699 -1 0 1;
+4 8 1 10 -225280 -258699 -1 8700 1;
+#X obj 85 79 hsl 35 14 0 1 0 0 \$1-kick-cur-s \$1-kick-cur-r log/lin
+4 8 1 10 -261689 -258699 -1 0 1;
 #X restore 285 49 pd \$1-drum-delta;
 #X obj 284 184 netpd_head \$1 drum-delta;
 #N canvas 585 44 450 300 NETPD 0;
