@@ -23,7 +23,7 @@ empty -2 -8 0 10 -225271 -225271 -1 0 1;
 #X obj 4 61 tgl 15 0 \$1-playback \$1-playback playback 20 8 0 10 -4034
 -1 -1 0 1;
 #X obj 21 46 hsl 230 15 0 1 0 0 \$0.record.cursor \$0.record.cursor.r
-empty -2 -8 0 10 -261689 -261689 -1 22900 1;
+empty -2 -8 0 10 -261689 -261689 -1 0 1;
 #X obj 4 46 bng 15 250 50 0 \$0.record \$0.bli record 20 8 0 10 -258113
 -1 -1;
 #X obj 252 46 nbx 5 15 1 99 0 0 \$1-adc \$1-adc adc -33 8 0 10 -191407
@@ -198,25 +198,31 @@ sample4 sample5 sample6;
 #X obj 19 199 throw~ \$1.ss.sumR;
 #X obj 14 247 catch~ \$1.ss.sumL;
 #X obj 73 268 catch~ \$1.ss.sumR;
-#N canvas 887 381 280 259 wavedisplay 0;
-#X obj 30 229 rh_wavedisplay \$0.sample 466;
-#X obj 30 138 list trim;
-#X msg 114 185 scale \$1;
-#X obj 114 159 r \$0.wave.scale;
-#X obj 30 116 list prepend set \$1-sample-table 0;
-#X obj 74 20 r \$0.sample.status;
-#X obj 26 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 74 42 route length;
-#X obj 30 67 f;
+#N canvas 880 381 352 309 wavedisplay 0;
+#X msg 134 231 scale \$1;
+#X obj 134 205 r \$0.wave.scale;
+#X obj 27 15 r \$0.sample.status;
+#X obj 27 260 rh_wavedisplay \$1-sample-table \$0.sample;
+#X msg 27 68 range 0 \$1;
+#X obj 27 37 route length updated;
+#X obj 100 66 unpack;
+#X obj 100 88 t a a;
+#X obj 127 112 +;
+#X obj 100 134 pack;
+#X msg 100 159 update \$1 \$2;
+#X connect 0 0 3 0;
 #X connect 1 0 0 0;
-#X connect 2 0 0 0;
-#X connect 3 0 2 0;
-#X connect 4 0 1 0;
-#X connect 5 0 7 0;
-#X connect 6 0 8 0;
-#X connect 7 0 8 1;
-#X connect 8 0 4 0;
+#X connect 2 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 5 1 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 1;
+#X connect 7 0 9 0;
+#X connect 7 1 8 0;
+#X connect 8 0 9 1;
+#X connect 9 0 10 0;
+#X connect 10 0 3 0;
 #X restore 188 203 pd wavedisplay;
 #X obj 240 270 netpd_sample \$1 sample;
 #X obj 240 299 s \$0.sample.status;
