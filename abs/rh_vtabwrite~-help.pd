@@ -1,0 +1,31 @@
+#N canvas 485 44 557 502 10;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0.onblock 256 float 2;
+#X coords 0 1 255 -1 256 80 1 0 0;
+#X restore 16 369 graph;
+#X msg 157 136 -1 \, 1 5.8;
+#X obj 157 158 vline~;
+#X obj 16 74 del 10;
+#X obj 16 104 t b b;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0.precise 256 float 2;
+#X coords 0 1 255 -1 256 80 1 0 0;
+#X restore 16 259 graph;
+#X text 9 12 rh_vtabwrite~ - precise tabwrite~;
+#X floatatom 16 55 5 0 0 0 - - -, f 5;
+#X obj 16 198 rh_vtabwrite~ \$0.precise;
+#X obj 172 200 tabwrite~ \$0.onblock;
+#X text 179 59 Unlike the original [tabwrite~ ] that starts recording
+only on block boundaries \, [rh_tabwrite~] considers message scheduling
+to start recording exactly when it's due.;
+#N canvas 107 118 337 113 NETPD 0;
+#X msg 22 18 version 0 1 0;
+#X restore 436 16 pd NETPD 2 0;
+#X connect 1 0 2 0;
+#X connect 2 0 8 1;
+#X connect 2 0 9 0;
+#X connect 3 0 4 0;
+#X connect 4 0 8 0;
+#X connect 4 0 9 0;
+#X connect 4 1 1 0;
+#X connect 7 0 3 0;

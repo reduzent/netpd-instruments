@@ -1,8 +1,8 @@
 #N canvas 498 281 390 96 10;
 #X text 13 64 little suite of helper abstractions by roman haefeli
 ;
-#N canvas 678 319 264 110 NETPD 0;
-#N canvas 687 417 175 338 abslist 0;
+#N canvas 678 347 264 110 NETPD 0;
+#N canvas 687 445 172 385 abslist 0;
 #X msg 15 93 rh_symm2norm~;
 #X msg 15 115 rh_norm2symm~;
 #X msg 15 9 rh_scalelin;
@@ -14,10 +14,11 @@
 #X msg 15 178 rh_metro;
 #X msg 15 198 rh_slider_click;
 #X msg 15 239 rh_phasor~;
-#X msg 15 261 rh_pink~;
+#X msg 15 260 rh_pink~;
 #X msg 15 218 rh_slider_doubleclick;
-#X msg 15 283 rh_wavedisplay;
-#X msg 15 306 rh_sruntil;
+#X msg 15 281 rh_wavedisplay;
+#X msg 15 302 rh_sruntil;
+#X msg 15 323 rh_vtabwrite~;
 #X restore 12 12 pd abslist;
-#X msg 12 35 version 0 0 8;
+#X msg 12 35 version 0 0 9;
 #X restore 24 30 pd NETPD 2 0;
