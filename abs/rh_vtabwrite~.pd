@@ -36,7 +36,7 @@
 #N canvas 107 118 337 113 NETPD 0;
 #X msg 22 18 version 0 1 0;
 #N canvas 205 136 340 98 abslist 0;
-#X msg 15 14 rh_vtabrwrite~-help;
+#X msg 15 14 rh_vtabwrite~-help;
 #X restore 19 50 pd abslist;
 #X restore 327 28 pd NETPD 2 0;
 #X connect 0 0 6 0;
