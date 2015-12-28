@@ -1,12 +1,12 @@
 #N canvas 619 80 392 437 10;
 #N canvas 831 179 261 231 NETPD 0;
-#X msg 18 12 version 0 0 1;
+#X msg 18 12 version 0 0 2;
 #X restore 223 32 pd NETPD 2 0;
 #X obj 223 10 namecanvas \$0-mx-insert;
 #N canvas 978 235 159 111 INIT 0;
 #X obj 10 10 loadbang;
 #X obj 10 32 \$0;
-#X msg 10 54 \; \$1.sens 5 \; mx getfxlist bang;
+#X msg 10 54 \; \$1.sens 13 \; mx getfxlist bang;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 223 55 pd INIT;

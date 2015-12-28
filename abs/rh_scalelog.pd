@@ -13,9 +13,12 @@
 #X obj 256 24 loadbang;
 #X obj 117 62 \$1;
 #X obj 213 59 \$2;
-#N canvas 696 356 161 103 NETPD 0;
+#N canvas 696 384 161 103 NETPD 0;
 #X msg 7 12 version 0 0 1;
-#X restore 191 149 pd NETPD;
+#N canvas 696 356 297 108 abslist 0;
+#X msg 16 18 rh_scalelog-help;
+#X restore 8 35 pd abslist;
+#X restore 191 149 pd NETPD 2 0;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
