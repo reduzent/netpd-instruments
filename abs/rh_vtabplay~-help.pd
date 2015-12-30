@@ -1,0 +1,39 @@
+#N canvas 415 44 513 502 10;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0.delay 256 float 2;
+#X coords 0 1 256 -1 256 100 1 0 0;
+#X restore 16 279 graph;
+#X obj 16 225 tabwrite~ \$0.delay;
+#X obj 204 182 rh_vtabplay~ \$0.delay;
+#X obj 16 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 16 92 loadbang;
+#X obj 35 189 vline~;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0.compare 256 float 2;
+#X coords 0 1 256 -1 256 100 1 0 0;
+#X restore 16 379 graph;
+#X obj 177 212 tabwrite~ \$0.compare;
+#X obj 204 155 del 2;
+#X obj 177 131 t b a;
+#N canvas 95 60 369 78 NETPD 0;
+#X msg 8 11 version 0 0 1;
+#X restore 406 15 pd NETPD 2 0;
+#X msg 35 153 -1 \, 1 5;
+#X msg 177 97 0.9384;
+#X floatatom 240 97 5 0 0 0 - - -, f 5;
+#X text 14 13 rh_vtabplay~ - a sample precise [tabplay~] replacement
+;
+#X text 15 49 While [tabplay~] starts playing only on block boundaries
+\, [rh_vtabplay~] is sample-precise.;
+#X connect 2 0 7 0;
+#X connect 3 0 11 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 1 0;
+#X connect 8 0 2 0;
+#X connect 9 0 7 0;
+#X connect 9 1 8 0;
+#X connect 11 0 5 0;
+#X connect 12 0 9 0;
+#X connect 13 0 9 0;

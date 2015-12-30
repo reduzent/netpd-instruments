@@ -1,8 +1,8 @@
 #N canvas 484 74 450 48 10;
-#X obj 10 12 vsl 70 10 -1 8 0 0 \$1 \$1.r <empty> 3 6 1 8 -228856 -228856
--1 100 1;
-#N canvas 610 151 174 129 NETPD 0;
-#X msg 16 14 version 0 0 1;
+#X obj 10 12 vsl 70 10 6 3 0 0 \$1 \$1.r empty 2 7 1 10 -228856 -228856
+-1 300 1;
+#N canvas 610 179 174 129 NETPD 0;
+#X msg 16 14 version 0 0 2;
 #X restore 376 9 pd NETPD;
 #X obj 265 9 namecanvas \$1.gop;
 #X coords 0 -1 1 1 70 15 2 10 10;

@@ -1,0 +1,26 @@
+#N canvas 453 100 475 380 10;
+#X obj 81 230 rh_sruntil;
+#X text 7 12 rh_sruntil - a signal rate until;
+#X text 9 45 rh_until emits a bang at each sample of the audio signal.
+For efficiency reasons \, a block size can be specified as argument.
+All bangs of block are emitted in 0 logical time and the delay time
+between blocks increases with the block size.;
+#N canvas 520 266 308 63 NETPD 0;
+#X msg 10 14 version 0 0 1;
+#X restore 388 11 pd NETPD 2 0;
+#X msg 81 187 44100;
+#X obj 145 260 t b a;
+#X obj 145 282 del 0;
+#X obj 145 304 f;
+#X obj 145 326 print;
+#X text 9 124 Unlike the original until \, rh_sruntil emits up-counting
+numbers instead of bangs \, simply because it is often useful and also
+very easy to convert to bangs.;
+#X text 241 189 args:;
+#X text 246 215 1) block size (default: 2048);
+#X connect 0 0 5 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
