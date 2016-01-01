@@ -14,9 +14,10 @@
 #X floatatom 202 121 5 0 0 0 - - -, f 5;
 #X msg 223 23 add 10 100;
 #X obj 42 312 hsl 256 15 0 255 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 10500 1;
-#X msg 206 168 update_width 1 10;
+-1 -1 0 1;
 #X msg 206 191 update_offset 1 90;
+#X msg 206 168 update_width 1 8;
+#X msg 219 216 clear;
 #X connect 0 0 4 0;
 #X connect 0 1 7 0;
 #X connect 2 0 0 1;
@@ -30,3 +31,4 @@
 #X connect 11 0 0 1;
 #X connect 13 0 0 1;
 #X connect 14 0 0 1;
+#X connect 15 0 0 1;
