@@ -1,23 +1,24 @@
-#N canvas 755 173 469 362 10;
+#N canvas 755 173 453 392 10;
 #X obj 28 196 metaseq-segmenter;
 #N canvas 887 304 302 60 NETPD 0;
 #X msg 7 12 version 0 0 0;
 #X restore 364 300 pd NETPD 2 0;
 #X msg 153 22 add 5 50;
 #X floatatom 28 41 5 0 0 0 - - -, f 5;
-#X floatatom 28 260 5 0 0 0 - - -, f 5;
+#X floatatom 28 308 5 0 0 0 - - -, f 5;
 #X msg 178 77 quantity;
 #X msg 192 99 length;
-#X obj 127 251 print metaseq-segmenter;
+#X obj 127 274 print metaseq-segmenter;
 #X msg 160 52 add 7 200;
 #X msg 202 142 get \$1;
 #X floatatom 202 121 5 0 0 0 - - -, f 5;
 #X msg 223 23 add 10 100;
-#X obj 42 312 hsl 256 15 0 255 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 31 352 hsl 256 15 0 255 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X msg 206 191 update_offset 1 90;
 #X msg 206 168 update_width 1 8;
 #X msg 219 216 clear;
+#X msg 233 242 remove;
 #X connect 0 0 4 0;
 #X connect 0 1 7 0;
 #X connect 2 0 0 1;
@@ -32,3 +33,4 @@
 #X connect 13 0 0 1;
 #X connect 14 0 0 1;
 #X connect 15 0 0 1;
+#X connect 16 0 0 1;
