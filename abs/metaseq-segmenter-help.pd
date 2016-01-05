@@ -1,8 +1,8 @@
-#N canvas 366 44 632 621 10;
+#N canvas 366 44 647 630 10;
 #X obj 28 196 metaseq-segmenter;
 #N canvas 887 304 302 60 NETPD 0;
 #X msg 7 12 version 0 0 0;
-#X restore 548 595 pd NETPD 2 0;
+#X restore 549 595 pd NETPD 2 0;
 #X floatatom 28 41 5 0 0 0 - - -, f 5;
 #X floatatom 28 565 5 0 0 0 - - -, f 5;
 #X msg 198 77 quantity;
@@ -11,7 +11,7 @@
 #X msg 198 142 get \$1;
 #X floatatom 198 121 5 0 0 0 - - -, f 5;
 #X obj 31 589 hsl 256 15 0 255 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 20300 1;
+-1 -1 0 1;
 #X msg 198 187 update_offset 1 90;
 #X msg 198 165 update_width 1 8;
 #X msg 198 231 clear;
@@ -39,7 +39,6 @@
 ;
 #X text 231 274 ----------------dump state of current set;
 #X msg 198 371 set \$1;
-#X msg 198 330 set_add;
 #X msg 40 113 set \$1;
 #X text 248 330 -------------add new set;
 #X text 241 370 --------------switch context to set with id;
@@ -48,13 +47,16 @@
 #X text 243 252 --------------remove last segment;
 #X msg 198 417 set_count;
 #X text 259 417 -----------report number of sets;
-#X text 197 452 === general methods ========================================
+#X text 197 465 === general methods ========================================
 ;
-#X msg 199 471 dump_all;
-#X msg 197 496 clear_all;
-#X text 254 470 ------------dump complete state;
-#X text 260 495 -----------complete reset;
+#X msg 199 491 dump_all;
+#X msg 197 516 clear_all;
+#X text 254 490 ------------dump complete state;
+#X text 260 515 -----------complete reset;
 #X text 411 595 2015 \, Roman Haefeli;
+#X msg 198 441 set_restore 1 50 50 0 50 200 0;
+#X text 392 441 restore set (id \, segment \, segment \, ...);
+#X msg 198 330 set_add;
 #X connect 0 0 3 0;
 #X connect 0 1 6 0;
 #X connect 2 0 0 0;
@@ -72,11 +74,12 @@
 #X connect 16 0 0 1;
 #X connect 17 0 0 1;
 #X connect 18 0 32 0;
-#X connect 19 0 34 0;
+#X connect 19 0 33 0;
 #X connect 32 0 0 1;
-#X connect 33 0 0 1;
-#X connect 34 0 0 0;
-#X connect 37 0 0 1;
-#X connect 40 0 0 1;
+#X connect 33 0 0 0;
+#X connect 36 0 0 1;
+#X connect 39 0 0 1;
+#X connect 42 0 0 1;
 #X connect 43 0 0 1;
-#X connect 44 0 0 1;
+#X connect 47 0 0 1;
+#X connect 49 0 0 1;
