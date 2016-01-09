@@ -1,4 +1,4 @@
-#N canvas 366 44 658 718 10;
+#N canvas 395 65 658 718 10;
 #X obj 28 196 metaseq-segmenter;
 #N canvas 887 304 302 60 NETPD 0;
 #X msg 7 12 version 0 0 0;
@@ -11,7 +11,7 @@
 #X msg 198 248 get \$1;
 #X floatatom 198 227 5 0 0 0 - - -, f 5;
 #X obj 31 675 hsl 256 15 0 255 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 20500 1;
 #X msg 198 293 update_offset 1 90;
 #X msg 198 271 update_width 1 8;
 #X msg 198 337 clear;
@@ -61,8 +61,6 @@
 #X msg 198 179 range \$1;
 #X msg 261 179 range;
 #X msg 198 203 range_length;
-#X text 284 141 ------- set segment solo (-1=off) \; report solo state
-;
 #X text 301 179 ---- set range of to be played segments \, report range
 ;
 #X text 277 203 -------- report length of range;
@@ -70,6 +68,8 @@
 #X text 419 514 restore set;
 #X text 261 534 <id> <solo> <range> <segment 1 data> <segment 2 data>
 ...;
+#X text 284 141 ------- set segment solo (-1=off) \; report solo state
+;
 #X connect 0 0 3 0;
 #X connect 0 1 6 0;
 #X connect 2 0 0 0;
@@ -102,4 +102,4 @@
 #X connect 51 0 0 1;
 #X connect 52 0 0 1;
 #X connect 53 0 0 1;
-#X connect 57 0 0 1;
+#X connect 56 0 0 1;
