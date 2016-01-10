@@ -11,7 +11,7 @@
 #X msg 16 7 metaseq-segmenter;
 #X restore 23 51 pd abslist;
 #X restore 391 8 pd NETPD 2 0;
-#X obj 123 139 r \$0.to;
+#X obj 123 135 r \$0.to;
 #X obj 123 219 s \$0.from;
 #X text 21 8 This is a netpd-ized wrapper around metaseq-segmenter
 ;
@@ -74,24 +74,24 @@ modifiying methods may switch 'set').;
 #X obj 123 311 s \$0.out.1;
 #X obj 123 287 spigot 0;
 #X obj 168 263 r \$0.gate;
-#N canvas 0 212 287 609 modifiers 0;
+#N canvas 0 240 287 609 modifiers 0;
 #N canvas 162 211 450 300 filter.reporters 0;
 #X obj 11 15 inlet;
 #X obj 334 220 outlet;
-#X obj 11 67 route quantity length get dump set set_count dump_all
-solo range;
 #X obj 233 145 route float;
 #X msg 233 167 solo \$1;
 #X obj 309 147 route float;
 #X msg 309 169 range \$1;
-#X connect 0 0 2 0;
-#X connect 2 7 3 0;
-#X connect 2 8 5 0;
-#X connect 2 9 1 0;
-#X connect 3 0 4 0;
-#X connect 4 0 1 0;
-#X connect 5 0 6 0;
-#X connect 6 0 1 0;
+#X obj 11 67 route quantity length get dump set set_count dump_all
+range_length solo range;
+#X connect 0 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 6 8 2 0;
+#X connect 6 9 4 0;
+#X connect 6 10 1 0;
 #X restore 27 53 pd filter.reporters;
 #X obj 27 21 r \$0.in.1;
 #X obj 27 82 t a a;
