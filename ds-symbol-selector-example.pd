@@ -1,0 +1,33 @@
+#N struct selector float posy float number symbol label float fgclr
+float bgclr float vis;
+#N canvas 857 44 412 564 10;
+#N canvas 273 63 450 300 yoyo 1;
+#X scalar selector 20 34 dfkl:3 999 234 1 \;;
+#X restore 39 45 pd yoyo;
+#X obj 45 161 s pd-yoyo;
+#X obj 39 202 drawnumber number 44 posy(0:1000)(1:1001) fgclr;
+#X obj 38 258 filledpolygon bgclr bgclr 0 40 posy 40 posy(0:1000)(16:1016)
+136 posy(0:1000)(16:1016) 136 posy;
+#X msg 138 170 clear;
+#X obj 38 349 route change;
+#X obj 38 393 get selector number;
+#X obj 38 371 t p p;
+#X msg 35 482 symbol dfkl:\$1;
+#X obj 40 232 drawsymbol -v vis label 44 posy(0:1000)(1:1001) fgclr
+;
+#X obj 38 314 struct selector float posy float number symbol label
+float fgclr float bgclr float vis;
+#X obj 48 523 set -symbol selector label;
+#X msg 52 129 scalar selector 20 100 testi 999 234 1;
+#X obj 38 415 div 10;
+#X obj 38 437 change;
+#X connect 4 0 1 0;
+#X connect 5 0 7 0;
+#X connect 6 0 13 0;
+#X connect 7 0 6 0;
+#X connect 7 1 11 1;
+#X connect 8 0 11 0;
+#X connect 10 0 5 0;
+#X connect 12 0 1 0;
+#X connect 13 0 14 0;
+#X connect 14 0 8 0;
