@@ -1,15 +1,13 @@
-#N struct 1431.seg.range float posy float bgclr;
-#N struct 1431.seg.solo float posy float bgclr;
-#N struct 1431.seg.mute float posy float fgclr float bgclr;
-#N struct 1431.seg.row float posy float width float offset float fgclr
+#N struct 1752.seg.range float posy float bgclr;
+#N struct 1752.seg.solo float posy float bgclr;
+#N struct 1752.seg.mute float posy float fgclr float bgclr;
+#N struct 1752.seg.row float posy float width float offset float fgclr
 float bgclr float vis;
-#N struct 1431.seg.length float bgclr float fgclr float length;
-#N struct 1431.seg.count float bgclr float fgclr float count;
-#N struct 1431.seg.width float bgclr float fgclr float default;
-#N struct 1431.seg.del float bgclr float fgclr symbol label;
-#N struct 1431.seg.add float bgclr float fgclr symbol label;
-#N struct 1431.set.del float bgclr float fgclr symbol label;
-#N struct 1431.set.add float bgclr float fgclr symbol label;
+#N struct 1752.seg.length float bgclr float fgclr float length;
+#N struct 1752.seg.count float bgclr float fgclr float count;
+#N struct 1752.seg.width float bgclr float fgclr float default;
+#N struct 1752.seg.del float bgclr float fgclr symbol label;
+#N struct 1752.seg.add float bgclr float fgclr symbol label;
 #N canvas 259 126 597 643 10;
 #N canvas 624 75 396 76 NETPD 0;
 #X msg 12 8 version 0 0 0;
@@ -1385,6 +1383,14 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X connect 8 0 4 0;
 #X connect 10 0 11 0;
 #X restore 11 159 pd set.manager.gui.code;
+#N canvas 876 321 514 299 routing_tables 0;
+#X obj 388 11 table \$0.routing 10;
+#X floatatom 22 8 5 0 0 0 - - -, f 5;
+#X obj 387 33 table \$0.offset 10;
+#X text 61 5 master;
+#X msg 22 28 -1 1, f 5;
+#X connect 1 0 4 0;
+#X restore 34 459 pd routing_tables;
 #X connect 3 0 22 1;
 #X connect 4 0 22 1;
 #X connect 5 0 22 1;
