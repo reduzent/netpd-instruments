@@ -16,9 +16,6 @@
 #X msg 202 203 update 2 0;
 #N canvas 70 98 306 118 NETPD 0;
 #X msg 12 17 version 0 1 0;
-#N canvas 366 248 352 141 abslist 0;
-#X msg 9 13 metaseq-router-help;
-#X restore 12 45 pd abslist;
 #X restore 441 13 pd NETPD 2 0;
 #X obj 105 307 print metaseq-router:1;
 #X text 100 55 <route> <value>;
