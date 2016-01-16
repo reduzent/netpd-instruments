@@ -1442,7 +1442,7 @@ selector float number;
 label float fgclr float bgclr float vis float offset float length float
 vis2;
 #X obj 486 31 drawnumber -v vis2 number 0 posy(0:1000)(1:1001) 0;
-#X obj 484 53 filledpolygon bgclr bgclr 0 0 posy 0 posy(0:1000)(16:1016)
+#X obj 484 53 filledpolygon 234 234 0 0 posy 0 posy(0:1000)(16:1016)
 10 posy(0:1000)(16:1016) 10 posy;
 #X obj 482 89 filledpolygon 345 345 0 0 posy(0:1000)(2:1002) 0 posy(0:1000)(14:1014)
 10 posy(0:1000)(14:1014) 10 posy(0:1000)(2:1002);
