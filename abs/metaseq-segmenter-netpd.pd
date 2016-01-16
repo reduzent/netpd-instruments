@@ -73,7 +73,7 @@ modifiying methods may switch 'set').;
 #X obj 123 240 r \$0.from;
 #X obj 123 311 s \$0.out.1;
 #X obj 123 287 spigot 0;
-#N canvas 171 312 287 609 modifiers 0;
+#N canvas 218 169 287 609 modifiers 0;
 #N canvas 162 211 450 300 filter.reporters 0;
 #X obj 11 15 inlet;
 #X obj 334 220 outlet;
@@ -105,11 +105,11 @@ range_length solo range;
 #X restore 27 136 pd filter.set_managers;
 #N canvas 261 216 438 124 filter.set_specific 0;
 #X obj 33 16 inlet;
-#X obj 33 38 route add update_width update_offset update_mute clear
-remove;
 #X obj 354 75 outlet;
-#X connect 0 0 1 0;
-#X connect 1 6 2 0;
+#X obj 33 38 route add update_width update_offset update_mute clear
+remove range;
+#X connect 0 0 2 0;
+#X connect 2 7 1 0;
 #X restore 54 104 pd filter.set_specific;
 #X obj 27 227 list prepend;
 #X msg 96 203 set \$1;
