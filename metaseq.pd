@@ -1,21 +1,21 @@
-#N struct 4897.seg.range float posy float bgclr;
-#N struct 4897.seg.solo float posy float bgclr;
-#N struct 4897.seg.mute float posy float fgclr float bgclr;
-#N struct 4897.seg.row float posy float width float offset float fgclr
+#N struct 5663.seg.range float posy float bgclr;
+#N struct 5663.seg.solo float posy float bgclr;
+#N struct 5663.seg.mute float posy float fgclr float bgclr;
+#N struct 5663.seg.row float posy float width float offset float fgclr
 float bgclr float vis;
-#N struct 4897.seg.length float bgclr float fgclr float length;
-#N struct 4897.seg.count float bgclr float fgclr float count;
-#N struct 4897.seg.width float bgclr float fgclr float default;
-#N struct 4897.seg.del float bgclr float fgclr symbol label;
-#N struct 4897.seg.add float bgclr float fgclr symbol label;
-#N struct 4897.set.selector float posy float number symbol label float
+#N struct 5663.seg.length float bgclr float fgclr float length;
+#N struct 5663.seg.count float bgclr float fgclr float count;
+#N struct 5663.seg.width float bgclr float fgclr float default;
+#N struct 5663.seg.del float bgclr float fgclr symbol label;
+#N struct 5663.seg.add float bgclr float fgclr symbol label;
+#N struct 5663.set.selector float posy float number symbol label float
 fgclr float bgclr float vis float offset float length float vis2;
-#N struct 4897.set.default float bgclr float fgclr symbol selector
+#N struct 5663.set.default float bgclr float fgclr symbol selector
 float number;
-#N struct 4897.set.default_length float bgclr float fgclr float default
+#N struct 5663.set.default_length float bgclr float fgclr float default
 ;
-#N struct 4897.set.del float bgclr float fgclr symbol label;
-#N struct 4897.set.add float bgclr float fgclr symbol label;
+#N struct 5663.set.del float bgclr float fgclr symbol label;
+#N struct 5663.set.add float bgclr float fgclr symbol label;
 #N canvas 541 75 417 637 10;
 #N canvas 624 75 396 76 NETPD 0;
 #X msg 12 8 version 0 0 0;
@@ -810,6 +810,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X connect 63 0 64 0;
 #X connect 65 0 66 0;
 #X connect 65 1 62 1;
+#X connect 67 0 68 0;
 #X connect 68 0 69 0;
 #X connect 68 1 70 1;
 #X connect 69 0 70 0;
@@ -1927,7 +1928,7 @@ float default;
 #X msg 47 136 set_add;
 #X msg 90 113 set_remove;
 #X obj 47 49 route add del selected;
-#X msg 133 84 set \$1 \, quantity \, scrollbar;
+#X msg 133 84 set \$1 \, quantity;
 #X connect 0 0 61 0;
 #X connect 1 0 59 0;
 #X connect 2 0 3 0;
