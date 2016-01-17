@@ -310,6 +310,7 @@
 #X obj 262 161 f \$3;
 #X obj 307 161 + \$3;
 #X obj 262 183 pack f f;
+#X obj 68 318 + \$2;
 #X connect 0 0 10 0;
 #X connect 2 0 22 0;
 #X connect 3 0 4 0;
@@ -320,7 +321,7 @@
 #X connect 7 0 1 1;
 #X connect 7 1 4 1;
 #X connect 8 0 9 0;
-#X connect 9 0 1 0;
+#X connect 9 0 30 0;
 #X connect 10 0 11 0;
 #X connect 10 1 13 0;
 #X connect 10 2 15 0;
@@ -341,6 +342,7 @@
 #X connect 27 0 29 0;
 #X connect 28 0 29 1;
 #X connect 29 0 14 0;
+#X connect 30 0 1 0;
 #X restore 314 378 pd cursor;
 #X msg 303 316 next;
 #X msg 255 317 rewind;
@@ -514,8 +516,8 @@
 #X connect 30 2 2 1;
 #X restore 142 247 pd dump;
 #X obj 44 347 filledpolygon color 666 1 posx posy posx posy(0:10000)(10:10010)
-posx(0:10000)(10:10010) posy(0:10000)(10:10010) posx(0:10000)(10:10010) posy
-;
+posx(0:10000)(10:10010) posy(0:10000)(10:10010) posx(0:10000)(10:10010)
+posy;
 #X msg 267 96 vis \$1;
 #N canvas 843 120 338 523 set.cell 0;
 #X msg 60 215 next;
@@ -577,7 +579,7 @@ posx(0:10000)(10:10010) posy(0:10000)(10:10010) posx(0:10000)(10:10010) posy
 #N canvas 710 499 309 45 abslist 0;
 #X msg 14 13 ungrid-help;
 #X restore 16 41 pd abslist;
-#X msg 16 13 version 0 1 4;
+#X msg 16 13 version 0 1 5;
 #X restore 275 471 pd NETPD 2 0;
 #X obj 23 50 route cell row column create autoclear clear vis;
 #X obj 226 123 s \$1;
