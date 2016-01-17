@@ -1,21 +1,21 @@
-#N struct 4682.seg.range float posy float bgclr;
-#N struct 4682.seg.solo float posy float bgclr;
-#N struct 4682.seg.mute float posy float fgclr float bgclr;
-#N struct 4682.seg.row float posy float width float offset float fgclr
+#N struct 3519.seg.range float posy float bgclr;
+#N struct 3519.seg.solo float posy float bgclr;
+#N struct 3519.seg.mute float posy float fgclr float bgclr;
+#N struct 3519.seg.row float posy float width float offset float fgclr
 float bgclr float vis;
-#N struct 4682.seg.length float bgclr float fgclr float length;
-#N struct 4682.seg.count float bgclr float fgclr float count;
-#N struct 4682.seg.width float bgclr float fgclr float default;
-#N struct 4682.seg.del float bgclr float fgclr symbol label;
-#N struct 4682.seg.add float bgclr float fgclr symbol label;
-#N struct 4682.set.selector float posy float number symbol label float
+#N struct 3519.seg.length float bgclr float fgclr float length;
+#N struct 3519.seg.count float bgclr float fgclr float count;
+#N struct 3519.seg.width float bgclr float fgclr float default;
+#N struct 3519.seg.del float bgclr float fgclr symbol label;
+#N struct 3519.seg.add float bgclr float fgclr symbol label;
+#N struct 3519.set.selector float posy float number symbol label float
 fgclr float bgclr float vis float offset float length float vis2;
-#N struct 4682.set.default float bgclr float fgclr symbol selector
+#N struct 3519.set.default float bgclr float fgclr symbol selector
 float number;
-#N struct 4682.set.default_length float bgclr float fgclr float default
+#N struct 3519.set.default_length float bgclr float fgclr float default
 ;
-#N struct 4682.set.del float bgclr float fgclr symbol label;
-#N struct 4682.set.add float bgclr float fgclr symbol label;
+#N struct 3519.set.del float bgclr float fgclr symbol label;
+#N struct 3519.set.add float bgclr float fgclr symbol label;
 #N canvas 541 75 417 637 10;
 #N canvas 624 75 396 76 NETPD 0;
 #X msg 12 8 version 0 0 0;
@@ -2139,9 +2139,10 @@ float default;
 #X obj 48 153 until;
 #X obj 48 221 outlet;
 #X obj 48 6 inlet;
+#X obj 48 52 del 0;
 #X connect 0 0 9 0;
 #X connect 0 1 6 0;
-#X connect 1 0 4 0;
+#X connect 1 0 11 0;
 #X connect 1 1 0 1;
 #X connect 2 0 3 0;
 #X connect 3 0 8 0;
@@ -2153,9 +2154,10 @@ float default;
 #X connect 7 0 4 1;
 #X connect 8 0 0 0;
 #X connect 10 0 1 0;
+#X connect 11 0 4 0;
 #X restore 19 366 pd buffer;
 #X obj 19 392 t a a;
-#X obj 46 415 s \$0.feedback.route;
+#X obj 19 461 s \$0.feedback.route;
 #X obj 69 46 r \$0.feedback.route;
 #N canvas 972 79 326 377 apply.offset.length 0;
 #X obj 44 22 inlet;
@@ -2222,8 +2224,8 @@ float default;
 #X connect 15 0 14 0;
 #X restore 19 163 pd apply.offset.length;
 #X obj 20 20 master-param step;
-#X msg 19 436 setpos \$1 \$2;
-#X obj 19 458 s metaseq;
+#X msg 46 414 setpos \$1 \$2;
+#X obj 46 436 s metaseq;
 #X obj 281 93 r \$0.from.set;
 #X obj 281 116 route count;
 #X obj 253 24 r metaseq;
@@ -2245,8 +2247,8 @@ float default;
 #X connect 9 1 10 1;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
-#X connect 12 0 17 0;
-#X connect 12 1 13 0;
+#X connect 12 0 13 0;
+#X connect 12 1 17 0;
 #X connect 14 0 2 0;
 #X connect 15 0 5 0;
 #X connect 16 0 4 0;
