@@ -1,21 +1,21 @@
-#N struct 3392.seg.range float posy float bgclr;
-#N struct 3392.seg.solo float posy float bgclr;
-#N struct 3392.seg.mute float posy float fgclr float bgclr;
-#N struct 3392.seg.row float posy float width float offset float fgclr
+#N struct 4682.seg.range float posy float bgclr;
+#N struct 4682.seg.solo float posy float bgclr;
+#N struct 4682.seg.mute float posy float fgclr float bgclr;
+#N struct 4682.seg.row float posy float width float offset float fgclr
 float bgclr float vis;
-#N struct 3392.seg.length float bgclr float fgclr float length;
-#N struct 3392.seg.count float bgclr float fgclr float count;
-#N struct 3392.seg.width float bgclr float fgclr float default;
-#N struct 3392.seg.del float bgclr float fgclr symbol label;
-#N struct 3392.seg.add float bgclr float fgclr symbol label;
-#N struct 3392.set.selector float posy float number symbol label float
+#N struct 4682.seg.length float bgclr float fgclr float length;
+#N struct 4682.seg.count float bgclr float fgclr float count;
+#N struct 4682.seg.width float bgclr float fgclr float default;
+#N struct 4682.seg.del float bgclr float fgclr symbol label;
+#N struct 4682.seg.add float bgclr float fgclr symbol label;
+#N struct 4682.set.selector float posy float number symbol label float
 fgclr float bgclr float vis float offset float length float vis2;
-#N struct 3392.set.default float bgclr float fgclr symbol selector
+#N struct 4682.set.default float bgclr float fgclr symbol selector
 float number;
-#N struct 3392.set.default_length float bgclr float fgclr float default
+#N struct 4682.set.default_length float bgclr float fgclr float default
 ;
-#N struct 3392.set.del float bgclr float fgclr symbol label;
-#N struct 3392.set.add float bgclr float fgclr symbol label;
+#N struct 4682.set.del float bgclr float fgclr symbol label;
+#N struct 4682.set.add float bgclr float fgclr symbol label;
 #N canvas 541 75 417 637 10;
 #N canvas 624 75 396 76 NETPD 0;
 #X msg 12 8 version 0 0 0;
@@ -2231,8 +2231,8 @@ float default;
 #X obj 253 68 route count;
 #X obj 253 90 b;
 #X obj 253 145 f;
-#X msg 253 169 count;
 #X obj 253 191 s metaseq;
+#X msg 253 169 count \$1;
 #X connect 1 0 10 0;
 #X connect 3 0 15 0;
 #X connect 4 0 2 0;
@@ -2252,13 +2252,13 @@ float default;
 #X connect 16 0 4 0;
 #X connect 17 0 18 0;
 #X connect 19 0 20 0;
-#X connect 20 0 25 1;
+#X connect 20 0 25 0;
 #X connect 21 0 22 0;
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
 #X connect 24 0 25 0;
-#X connect 25 0 26 0;
-#X connect 26 0 27 0;
+#X connect 25 0 27 0;
+#X connect 27 0 26 0;
 #X restore 16 260 pd sequencer;
 #X obj 24 309 r \$0.to.seq;
 #X obj 24 393 s \$0.from.seq;
