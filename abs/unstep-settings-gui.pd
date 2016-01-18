@@ -2,7 +2,7 @@
 #N canvas 619 400 356 36 NETPD 0;
 #X msg 15 12 version 0 0 2;
 #X restore 122 28 pd NETPD 2 0;
-#X obj 20 20 cnv 4 67 401 empty empty empty 20 12 0 14 -191407 -66577
+#X obj 20 20 cnv 4 67 400 empty empty empty 20 12 0 14 -191407 -66577
 0;
 #X obj 25 38 nbx 7 15 1 999 0 0 \$3.xsize \$3.xsize.r empty 40 10 0
 8 -262144 -1 -1 32 256;
@@ -74,4 +74,4 @@ empty 40 10 0 8 -262144 -1 -1 19 256;
 -1 -1;
 #X obj 21 21 cnv 15 65 15 empty \$3.doit.label redim 2 7 0 10 -261949
 -131105 0;
-#X coords 0 -1 1 1 67 401 2 20 20;
+#X coords 0 -1 1 1 67 400 2 20 20;
