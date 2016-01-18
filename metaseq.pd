@@ -1,21 +1,21 @@
-#N struct 3519.seg.range float posy float bgclr;
-#N struct 3519.seg.solo float posy float bgclr;
-#N struct 3519.seg.mute float posy float fgclr float bgclr;
-#N struct 3519.seg.row float posy float width float offset float fgclr
+#N struct 1394.seg.range float posy float bgclr;
+#N struct 1394.seg.solo float posy float bgclr;
+#N struct 1394.seg.mute float posy float fgclr float bgclr;
+#N struct 1394.seg.row float posy float width float offset float fgclr
 float bgclr float vis;
-#N struct 3519.seg.length float bgclr float fgclr float length;
-#N struct 3519.seg.count float bgclr float fgclr float count;
-#N struct 3519.seg.width float bgclr float fgclr float default;
-#N struct 3519.seg.del float bgclr float fgclr symbol label;
-#N struct 3519.seg.add float bgclr float fgclr symbol label;
-#N struct 3519.set.selector float posy float number symbol label float
+#N struct 1394.seg.length float bgclr float fgclr float length;
+#N struct 1394.seg.count float bgclr float fgclr float count;
+#N struct 1394.seg.width float bgclr float fgclr float default;
+#N struct 1394.seg.del float bgclr float fgclr symbol label;
+#N struct 1394.seg.add float bgclr float fgclr symbol label;
+#N struct 1394.set.selector float posy float number symbol label float
 fgclr float bgclr float vis float offset float length float vis2;
-#N struct 3519.set.default float bgclr float fgclr symbol selector
+#N struct 1394.set.default float bgclr float fgclr symbol selector
 float number;
-#N struct 3519.set.default_length float bgclr float fgclr float default
+#N struct 1394.set.default_length float bgclr float fgclr float default
 ;
-#N struct 3519.set.del float bgclr float fgclr symbol label;
-#N struct 3519.set.add float bgclr float fgclr symbol label;
+#N struct 1394.set.del float bgclr float fgclr symbol label;
+#N struct 1394.set.add float bgclr float fgclr symbol label;
 #N canvas 541 75 417 637 10;
 #N canvas 624 75 396 76 NETPD 0;
 #X msg 12 8 version 0 0 0;
@@ -25,7 +25,7 @@ float number;
 #X restore 12 33 pd abslist;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 metaseq;
-#N canvas 284 268 347 201 \$1-metaseq 1;
+#N canvas 173 319 347 201 \$1-metaseq 1;
 #X obj 178 9 metaseq-gop157x177 \$0.segments.gop;
 #X obj 10 9 metaseq-gop157x177 \$0.sets.gop;
 #X restore 10 42 pd \$1-metaseq;
@@ -931,7 +931,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X restore 9 106 pd set.editor.gui.code;
 #X obj 237 389 s \$0.from.seg;
 #X obj 237 311 r \$0.to.seg;
-#N canvas 285 113 982 358 set.editor.gui.interfacing 0;
+#N canvas 583 111 982 358 set.editor.gui.interfacing 0;
 #X obj 229 11 r \$0.from.seg;
 #X obj 41 162 s \$0.to.seg;
 #X obj 41 13 r \$0.from.seg.gui;
@@ -1041,7 +1041,6 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X connect 11 0 7 0;
 #X restore 462 216 pd range;
 #X obj 347 166 t a b a;
-#X msg 381 228 solo \, range;
 #X obj 755 226 r \$0.from.seg;
 #X obj 755 248 route range_length;
 #X msg 755 272 length \$1;
@@ -1049,11 +1048,12 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X obj 299 54 t b b a;
 #X obj 41 139 spigot;
 #X obj 229 33 route set_count quantity;
-#X connect 0 0 58 0;
+#X msg 384 240 solo \, range \, range_length;
+#X connect 0 0 57 0;
 #X connect 2 0 20 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
-#X connect 5 0 57 0;
+#X connect 5 0 56 0;
 #X connect 6 0 7 0;
 #X connect 7 0 50 0;
 #X connect 8 0 9 0;
@@ -1070,7 +1070,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X connect 20 0 3 0;
 #X connect 20 1 4 1;
 #X connect 20 2 21 0;
-#X connect 21 0 57 0;
+#X connect 21 0 56 0;
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
 #X connect 23 1 29 0;
@@ -1098,20 +1098,20 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X connect 45 0 46 0;
 #X connect 46 0 47 0;
 #X connect 50 0 14 0;
-#X connect 50 1 51 0;
+#X connect 50 1 58 0;
 #X connect 50 2 48 0;
 #X connect 50 2 49 0;
 #X connect 50 2 24 1;
-#X connect 51 0 18 0;
+#X connect 51 0 52 0;
 #X connect 52 0 53 0;
 #X connect 53 0 54 0;
-#X connect 54 0 55 0;
-#X connect 56 0 13 0;
-#X connect 56 1 51 0;
-#X connect 56 2 15 0;
-#X connect 57 0 1 0;
-#X connect 58 0 57 1;
-#X connect 58 1 56 0;
+#X connect 55 0 13 0;
+#X connect 55 1 58 0;
+#X connect 55 2 15 0;
+#X connect 56 0 1 0;
+#X connect 57 0 56 1;
+#X connect 57 1 55 0;
+#X connect 58 0 18 0;
 #X restore 10 133 pd set.editor.gui.interfacing;
 #N canvas 782 111 796 305 set.manager.gui.code 0;
 #X msg 197 75 456 777 999;
