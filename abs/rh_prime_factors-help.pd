@@ -1,10 +1,8 @@
-#N canvas 354 44 399 288 10;
+#N canvas 369 44 399 288 10;
 #N canvas 659 72 327 81 NETPD 0;
 #X msg 15 16 version 0 1 0;
 #X restore 294 229 pd NETPD 2 0;
 #X text 255 255 2016 \, Roman Haefeli;
-#X text 21 13 [rh_pfactorize] - perform a prime factorization on number
-;
 #X text 205 74 inlet0: number to factorize;
 #X text 198 92 outlet0: list of prime factors;
 #X obj 26 211 print factors;
@@ -17,12 +15,14 @@
 #X msg 109 89 563727;
 #X msg 112 114 1.11111e+08;
 #X obj 26 173 rh_prime_factors;
-#X connect 6 0 14 0;
-#X connect 7 0 14 0;
-#X connect 8 0 14 0;
-#X connect 9 0 14 0;
-#X connect 10 0 14 0;
-#X connect 11 0 14 0;
-#X connect 12 0 14 0;
-#X connect 13 0 14 0;
-#X connect 14 0 5 0;
+#X text 16 12 [rh_prime_factors] - perform a prime factorization on
+number;
+#X connect 5 0 13 0;
+#X connect 6 0 13 0;
+#X connect 7 0 13 0;
+#X connect 8 0 13 0;
+#X connect 9 0 13 0;
+#X connect 10 0 13 0;
+#X connect 11 0 13 0;
+#X connect 12 0 13 0;
+#X connect 13 0 4 0;
