@@ -1,10 +1,10 @@
 #N canvas 301 44 561 299 10;
-#X obj 20 20 nbx 9 20 -1 2 0 0 \$0.meta.set.nb \$0.meta.set.nb empty
+#X obj 20 20 nbx 9 20 -1 0 0 0 \$0.meta.set.nb \$0.meta.set.nb empty
 0 10 0 10 -262144 -1 -1 0 256;
 #X obj 111 20 nbx 9 20 0 9999 0 0 \$0.meta.offset.nb \$0.meta.offset.nb
 empty 0 10 0 10 -262144 -1 -1 0 256;
 #X obj 202 20 nbx 9 20 1 9999 0 0 \$0.meta.length.nb \$0.meta.length.nb
-empty 0 10 0 10 -262144 -1 -1 1 256;
+empty 0 10 0 10 -262144 -1 -1 32 256;
 #X obj 20 20 cnv 15 273 20 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 22 22 cnv 10 87 16 empty \$0.meta.set.label empty 3 8 0 12 -228856
@@ -195,5 +195,43 @@ empty 0 10 0 10 -262144 -1 -1 1 256;
 #X connect 28 0 13 0;
 #X connect 29 0 14 0;
 #X restore 307 61 pd netpdization;
+#X obj 22 265 s \$1.qseq3;
+#X obj 22 243 list trim;
+#X obj 22 58 r \$0.meta.set;
+#X obj 246 149 r \$0.meta.length;
+#X obj 213 126 r \$0.meta.offset;
+#X msg 22 185 set \$1;
+#X obj 180 59 r metaseq;
+#X obj 180 81 route setpos;
+#X obj 180 103 route;
+#X obj 180 125 -;
+#X obj 180 148 moses 0;
+#X obj 219 172 moses;
+#X msg 219 194 pos \$1;
+#X obj 22 221 list prepend metaseq \$2;
+#X obj 22 160 f;
+#X obj 57 93 r \$1.qseq3;
+#X obj 57 115 route loadbang;
+#X obj 57 137 route \$2;
+#X obj 57 159 b;
 #X connect 9 0 7 0;
+#X connect 13 0 12 0;
+#X connect 14 0 20 1;
+#X connect 14 0 26 0;
+#X connect 15 0 23 1;
+#X connect 16 0 21 1;
+#X connect 17 0 25 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 1 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 13 0;
+#X connect 26 0 17 0;
+#X connect 27 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 30 0 26 0;
 #X coords 0 -1 1 1 273 20 2 20 20;
