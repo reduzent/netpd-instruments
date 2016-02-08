@@ -16,12 +16,12 @@
 #X obj 199 158 netpd_f \$1 \$2/\$3/fb 0;
 #X obj 139 87 netpd_f \$1 \$2/\$3/pitch 0;
 #X obj 40 20 nbx 4 14 0 200 0 0 \$1-\$2/\$3/steps \$1-\$2/\$3/steps
-empty 0 8 0 10 -262130 -159808 -159808 4 256;
+empty 0 8 0 10 -262130 -159808 -159808 3 256;
 #X obj 20 20 cnv 14 20 14 empty empty \$3 10 8 0 10 -159808 -262130
 0;
 #X obj 82 20 nbx 4 14 -99 99 0 0 \$1-\$2/\$3/pitch \$1-\$2/\$3/pitch
 empty 0 8 0 10 -262130 -159808 -1 0 256;
-#X obj 127 20 hsl 20 14 0 127 0 0 \$0.direction \$0.direction.r >>>
+#X obj 127 20 hsl 20 14 0 127 0 0 \$0.direction \$0.direction.r <<<
 1 7 0 10 -262130 -262130 -159808 0 1;
 #X obj 152 20 hsl 40 14 0 1 0 0 \$1-\$2/\$3/level \$1-\$2/\$3/level
 empty -2 7 0 10 -262130 -159808 -1 3900 1;
@@ -30,16 +30,16 @@ empty -2 7 0 10 -262130 -159808 -1 3900 1;
 #X obj 159 110 netpd_f \$1 \$2/\$3/steps 4;
 #X obj 179 137 netpd_f \$1 \$2/\$3/level 1;
 #X obj 33 128 r qseq3;
-#X obj 33 150 route \$2;
 #X obj 33 172 route pong\$3;
 #X obj 139 216 pack f f f f f;
 #X obj 33 255 list append;
 #X obj 33 194 b;
 #X obj 33 277 s \$1-\$2;
+#X obj 33 150 route \$1-\$2;
 #X connect 0 0 1 1;
 #X connect 1 0 4 0;
 #X connect 1 1 0 0;
-#X connect 2 0 25 3;
+#X connect 2 0 24 3;
 #X connect 2 1 4 1;
 #X connect 2 1 5 0;
 #X connect 3 0 1 0;
@@ -50,14 +50,14 @@ empty -2 7 0 10 -262130 -159808 -1 3900 1;
 #X connect 7 0 8 0;
 #X connect 9 0 11 0;
 #X connect 11 0 2 0;
-#X connect 12 0 25 3;
-#X connect 13 0 25 0;
-#X connect 20 0 25 1;
-#X connect 21 0 25 2;
-#X connect 22 0 23 0;
-#X connect 23 0 24 0;
-#X connect 24 0 27 0;
-#X connect 25 0 26 1;
-#X connect 26 0 28 0;
-#X connect 27 0 26 0;
+#X connect 12 0 24 3;
+#X connect 13 0 24 0;
+#X connect 20 0 24 1;
+#X connect 21 0 24 2;
+#X connect 22 0 28 0;
+#X connect 23 0 26 0;
+#X connect 24 0 25 1;
+#X connect 25 0 27 0;
+#X connect 26 0 25 0;
+#X connect 28 0 23 0;
 #X coords 0 -1 1 1 219 14 2 20 20;
