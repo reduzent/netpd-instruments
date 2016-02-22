@@ -1,4 +1,4 @@
-#N canvas 444 209 705 603 10;
+#N canvas 488 505 705 603 10;
 #X obj 155 317 inlet~;
 #X obj 202 317 inlet~;
 #X obj 253 549 outlet~;
@@ -11,13 +11,13 @@
 #X msg 14 72 qse3-instr-list;
 #X restore 18 44 pd ablist;
 #X restore 111 12 pd NETPD 2 0;
-#N canvas 1125 336 343 213 \$3-e-pong 1;
+#N canvas 1376 367 343 213 \$3-e-pong 1;
 #X obj 15 23 e-pong-gui-instance \$1 \$2 1;
 #X obj 36 8 cnv 14 41 14 empty empty steps 2 8 0 10 -159808 -262130
 0;
 #X obj 77 8 cnv 14 41 14 empty empty pitch 2 8 0 10 -159808 -262130
 0;
-#X obj 119 8 cnv 14 25 14 empty empty empty 2 8 0 10 -159808 -262130
+#X obj 118 8 cnv 14 25 14 empty empty empty 2 8 0 10 -159808 -262130
 0;
 #X obj 144 8 cnv 14 45 14 empty empty level 2 8 0 10 -159808 -262130
 0;
@@ -122,9 +122,9 @@ pong5 pong6 pong7 pong8;
 #X connect 31 0 32 0;
 #X connect 32 0 18 0;
 #X connect 32 1 16 0;
-#X connect 32 2 22 1;
-#X connect 32 3 36 0;
-#X connect 32 4 37 0;
+#X connect 32 2 36 0;
+#X connect 32 3 37 0;
+#X connect 32 4 22 1;
 #X connect 34 0 14 0;
 #X connect 35 0 13 0;
 #X connect 36 0 34 1;
