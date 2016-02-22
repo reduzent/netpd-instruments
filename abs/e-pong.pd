@@ -4,7 +4,7 @@
 #X obj 253 549 outlet~;
 #X obj 387 553 outlet~;
 #N canvas 1064 240 231 103 NETPD 0;
-#X msg 14 17 version 0 0 1;
+#X msg 14 17 version 0 0 2;
 #N canvas 798 188 338 100 ablist 0;
 #X msg 11 11 roman_helpers;
 #X msg 11 42 e-pong-gui-instance;
