@@ -7,7 +7,6 @@
 #X msg 13 90 zcomplim;
 #X msg 15 121 mx-fx-list;
 #X msg 74 16 r4mbc;
-#X msg 73 42 r4sat;
 #X restore 18 16 pd abslist;
 #X msg 18 41 version 0 3 1;
 #X restore 14 12 pd NETPD 2 0;
