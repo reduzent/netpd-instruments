@@ -1,5 +1,5 @@
-#N canvas 698 265 318 226 12;
-#N canvas 175 132 236 288 \$1 0;
-#X coords 0 0 156 176 157 177 2 0 0;
-#X restore 20 20 pd \$1;
+#N canvas 698 265 324 218 12;
+#N canvas 980 412 308 62 NETPD 0;
+#X msg 33 18 version 0 1 0;
+#X restore 200 21 pd NETPD 2 0;
 #X coords 0 0 156 176 157 177 2 20 20;
