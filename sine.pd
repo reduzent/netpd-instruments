@@ -1,24 +1,3 @@
-#N struct 2907.button float posx float posy float color;
-#N struct 2907.cursor float cx float cy float cy2;
-#N struct 2840-automation float yshift array variy 2840-automation-element
-;
-#N struct 2840-automation-element float y;
-#N struct 2839.autolabel float x float y symbol lbl float color float
-track;
-#N struct 2976.button float posx float posy float color;
-#N struct 2976.cursor float cx float cy float cy2;
-#N struct 2909-automation float yshift array variy 2909-automation-element
-;
-#N struct 2909-automation-element float y;
-#N struct 2908.autolabel float x float y symbol lbl float color float
-track;
-#N struct 3045.button float posx float posy float color;
-#N struct 3045.cursor float cx float cy float cy2;
-#N struct 2978-automation float yshift array variy 2978-automation-element
-;
-#N struct 2978-automation-element float y;
-#N struct 2977.autolabel float x float y symbol lbl float color float
-track;
 #N canvas 410 94 632 644 10;
 #N canvas 624 75 315 71 NETPD 0;
 #N canvas 636 194 303 48 abslist 0;
@@ -26,7 +5,7 @@ track;
 #X msg 11 19 unstep;
 #X msg 115 19 sine-voice;
 #X restore 11 33 pd abslist;
-#X msg 12 8 version 0 0 2;
+#X msg 12 8 version 0 1 0;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 67 netpd_head \$1 sine;
 #N canvas 702 112 295 133 \$1-sine 1;
