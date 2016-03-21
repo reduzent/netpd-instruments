@@ -1,18 +1,39 @@
-#N canvas 410 94 632 644 10;
+#N struct 1838.button float posx float posy float color;
+#N struct 1838.cursor float cx float cy float cy2;
+#N struct 1771-automation float yshift array variy 1771-automation-element
+;
+#N struct 1771-automation-element float y;
+#N struct 1770.autolabel float x float y symbol lbl float color float
+track;
+#N struct 1907.button float posx float posy float color;
+#N struct 1907.cursor float cx float cy float cy2;
+#N struct 1840-automation float yshift array variy 1840-automation-element
+;
+#N struct 1840-automation-element float y;
+#N struct 1839.autolabel float x float y symbol lbl float color float
+track;
+#N struct 1976.button float posx float posy float color;
+#N struct 1976.cursor float cx float cy float cy2;
+#N struct 1909-automation float yshift array variy 1909-automation-element
+;
+#N struct 1909-automation-element float y;
+#N struct 1908.autolabel float x float y symbol lbl float color float
+track;
+#N canvas 410 94 779 625 10;
 #N canvas 624 75 315 71 NETPD 0;
 #N canvas 636 194 303 48 abslist 0;
 #X msg 69 17 i2mx;
 #X msg 11 19 unstep;
 #X msg 115 19 sine-voice;
 #X restore 11 33 pd abslist;
-#X msg 12 8 version 0 1 0;
+#X msg 12 8 version 0 1 1;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 67 netpd_head \$1 sine;
 #N canvas 702 112 295 133 \$1-sine 1;
 #X obj 7 7 hsl 183 17 0 1 0 0 \$1-volume \$1-volume volume 100 8 0
-13 -66577 -4032 -262144 9900 1;
-#X obj 7 27 hsl 260 17 0 1 0 0 \$1-glide \$1-glide glide 100 8 0 13
--66577 -4032 -262144 0 1;
+13 -66577 -4032 -262144 0 1;
+#X obj 7 27 hsl 183 17 0 1 0 0 \$1-glide \$1-glide glide 100 8 0 13
+-66577 -4032 -262144 400 1;
 #X obj 7 47 hsl 260 17 0 1 0 0 \$1-attack \$1-attack attack 100 8 0
 13 -66577 -4032 -262144 1295 1;
 #X obj 7 67 hsl 260 17 0 1 0 0 \$1-hold \$1-hold hold 100 8 0 13 -66577
@@ -20,13 +41,15 @@
 #X obj 7 87 hsl 260 17 0 1 0 0 \$1-decay \$1-decay decay 100 8 0 13
 -66577 -4032 -262144 12950 1;
 #X obj 7 107 hsl 81 17 0 1 0 0 \$0.unstep1 \$0.bli unstep1 10 8 0 13
--66577 -66577 -262144 300 1;
+-66577 -66577 -262144 0 1;
 #X obj 96 107 hsl 81 17 0 1 0 0 \$0.unstep2 \$0.bli unstep2 10 8 0
 13 -66577 -66577 -262144 0 1;
 #X obj 185 107 hsl 82 17 0 1 0 0 \$0.unstep3 \$0.bli unstep3 10 8 0
 13 -66577 -66577 -262144 0 1;
 #X obj 195 7 nbx 6 17 1 36 0 0 \$1-voices \$1-voices voices 28 9 0
 12 -66577 -4032 -262144 1 256;
+#X obj 198 27 hsl 69 17 0 1 0 0 \$1-stereo \$1-stereo stereo 20 8 0
+13 -66577 -4032 -262144 0 1;
 #X restore 10 42 pd \$1-sine;
 #X obj 15 489 i2mx \$1 sine;
 #N canvas 517 370 185 142 attack 0;
@@ -184,7 +207,7 @@
 #X connect 2 0 0 0;
 #X connect 3 0 1 0;
 #X restore 154 110 pd unstep3;
-#N canvas 517 342 177 137 glide 0;
+#N canvas 517 370 177 137 glide 0;
 #X obj 29 17 netpd_f \$1 glide 0;
 #X obj 29 39 t a a;
 #X obj 29 61 *;
@@ -196,7 +219,6 @@
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X restore 532 199 pd glide;
-#X obj 211 333 pack f f f f f;
 #X obj 211 362 s \$1-sine/params;
 #X obj 15 438 catch~ \$1-sum/left;
 #X obj 49 464 catch~ \$1-sum/right;
@@ -220,7 +242,7 @@
 #X connect 7 0 1 0;
 #X restore 14 307 pd voice.assign;
 #X obj 14 356 s \$1-sine/notes;
-#N canvas 0 44 450 300 voices 0;
+#N canvas 0 44 450 300 voices 1;
 #X obj 14 16 sine-voice \$1 0;
 #X obj 14 36 sine-voice \$1 1;
 #X obj 14 56 sine-voice \$1 2;
@@ -261,6 +283,8 @@
 #X obj 326 254 +;
 #X obj 326 279 min 1;
 #X obj 326 304 rmstodb;
+#X obj 589 199 netpd_f \$1 stereo 0;
+#X obj 211 333 pack f f f f f f;
 #X connect 4 0 15 1;
 #X connect 5 0 17 1;
 #X connect 6 0 16 1;
@@ -268,18 +292,18 @@
 #X connect 7 1 9 0;
 #X connect 8 0 9 0;
 #X connect 8 1 9 1;
-#X connect 9 0 25 1;
-#X connect 10 0 25 0;
-#X connect 11 0 29 0;
+#X connect 9 0 35 1;
+#X connect 10 0 35 0;
+#X connect 11 0 28 0;
 #X connect 11 1 10 0;
 #X connect 12 0 15 0;
 #X connect 13 0 17 0;
 #X connect 14 0 16 0;
 #X connect 15 0 7 0;
 #X connect 16 0 8 0;
-#X connect 17 0 25 2;
-#X connect 18 0 32 0;
-#X connect 19 0 32 1;
+#X connect 17 0 35 2;
+#X connect 18 0 31 0;
+#X connect 19 0 31 1;
 #X connect 20 0 11 0;
 #X connect 20 1 12 0;
 #X connect 20 2 14 0;
@@ -288,11 +312,12 @@
 #X connect 21 0 20 0;
 #X connect 22 0 20 0;
 #X connect 23 0 20 0;
-#X connect 24 0 25 4;
-#X connect 25 0 26 0;
-#X connect 27 0 3 0;
-#X connect 28 0 3 1;
-#X connect 29 0 30 0;
+#X connect 24 0 35 4;
+#X connect 26 0 3 0;
+#X connect 27 0 3 1;
+#X connect 28 0 29 0;
+#X connect 31 0 32 0;
 #X connect 32 0 33 0;
-#X connect 33 0 34 0;
-#X connect 34 0 25 3;
+#X connect 33 0 35 3;
+#X connect 34 0 35 5;
+#X connect 35 0 25 0;
