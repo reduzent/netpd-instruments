@@ -62,7 +62,7 @@ empty 17 7 0 10 -262144 -1 -1 0 1;
 empty 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 21 148 cnv 15 65 15 empty \$3.switch.label polyrhythm 2 7 0
 10 -261949 -233017 0;
-#X obj 23 114 nbx 7 15 -1 4 0 0 \$1-unstep/\$2/metaseq/set \$1-unstep/\$2/metaseq/set
+#X obj 23 114 nbx 7 15 -1 -1 0 0 \$1-unstep/\$2/metaseq/set \$1-unstep/\$2/metaseq/set
 empty 40 10 0 8 -262144 -1 -1 -1 256;
 #X obj 21 114 cnv 15 65 15 empty \$3.meta.set.label empty 2 7 0 10
 -261949 -131106 0;
