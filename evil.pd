@@ -1,15 +1,15 @@
-#N canvas 711 141 364 500 10;
-#N canvas 624 75 293 96 NETPD 0;
+#N canvas 711 138 364 500 10;
+#N canvas 624 73 293 96 NETPD 0;
 #N canvas 483 313 318 115 abslist 0;
 #X msg 12 14 evil-signal-to-2x8bit;
 #X msg 12 40 evil-2x8bit-to-signal;
 #X msg 12 65 master-param;
 #X msg 12 89 i2mx;
 #X restore 12 34 pd abslist;
-#X msg 10 9 version 0 1 0;
+#X msg 11 10 version 0 1 2;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 evil;
-#N canvas 597 177 170 188 \$1-evil 1;
+#N canvas 597 200 167 186 \$1-evil 1;
 #X obj 6 4 cnv 15 145 93 empty empty send 3 8 0 14 -191407 -1 0;
 #X obj 50 20 hsl 57 16 0 127 0 0 empty \$0.master.display master 2
 8 0 14 -1 -1 -195568 0 1;
@@ -17,11 +17,7 @@
 -1 -1 -24198 0 1;
 #X obj 50 39 hsl 96 16 0 127 0 0 \$0.owner.button \$0.owner.display
 owner:0 2 8 0 14 -1 -1 -195568 0 1;
-#X obj 93 58 hsl 53 16 0 127 0 0 \$0.alsa.button \$0.alsa.display alsa
-2 8 0 14 -1 -1 -191407 0 1;
-#X obj 93 77 hsl 53 16 0 127 0 0 \$0.jack.button \$0.jack.display jack
-2 8 0 14 -1 -1 -191407 0 1;
-#X obj 15 58 nbx 7 16 8 128 0 0 \$1-delay \$1-delay empty 0 -8 0 10
+#X obj 8 58 nbx 7 16 8 128 0 0 \$1-delay \$1-delay empty 0 -8 0 10
 -262144 -1 -191407 16 256;
 #X obj 12 58 hsl 73 16 0 127 0 0 empty \$0.delay.display delay:16 2
 8 0 14 -1 -1 -191407 0 1;
@@ -39,12 +35,16 @@ owner:0 2 8 0 14 -1 -1 -195568 0 1;
 0 10 -262144 -1 -1 0 1;
 #X obj 9 20 cnv 15 35 35 empty \$0.switch.display empty 20 12 0 14
 -1 -1 0;
-#X obj 13 77 nbx 5 16 1 64 0 0 \$1-adc \$1-adc empty 0 -8 0 10 -262144
+#X obj 10 77 nbx 5 16 1 64 0 0 \$1-adc \$1-adc empty 0 -8 0 10 -262144
 -1 -191407 1 256;
-#X obj 12 77 hsl 54 16 0 127 0 0 empty \$0.adc.display adc:1 2 8 0
+#X obj 12 77 hsl 53 16 0 127 0 0 empty \$0.adc.display adc:1 2 8 0
 14 -1 -1 -191407 0 1;
-#X obj 71 77 cnv 10 16 16 empty \$0.peak.display empty 20 12 0 14 -1
+#X obj 70 77 cnv 10 78 16 empty \$0.peak.display empty 20 12 0 14 -1
 -1 0;
+#X obj 93 58 hsl 53 16 0 127 0 0 \$0.help.button empty empty -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 93 58 hsl 53 16 0 127 0 0 empty \$0.help.label help 2 8 0 14
+-1 -1 -191407 0 1;
 #X restore 10 42 pd \$1-evil;
 #N canvas 533 82 462 464 send-signal 0;
 #X obj 28 152 evil-signal-to-2x8bit;
@@ -274,7 +274,7 @@ owner:0 2 8 0 14 -1 -1 -195568 0 1;
 #X connect 26 1 14 0;
 #X connect 27 0 15 0;
 #X restore 14 416 pd receive-signal;
-#N canvas 900 149 427 221 ownership 0;
+#N canvas 900 148 427 221 ownership 0;
 #X obj 25 82 f;
 #X obj 52 64 netpd-status-get socket 1;
 #X obj 25 152 ==;
@@ -292,6 +292,7 @@ owner:0 2 8 0 14 -1 -1 -195568 0 1;
 #X obj 25 14 r \$0.owner.button;
 #X obj 25 37 sel 0;
 #X obj 70 36 t a;
+#X msg 170 102 0;
 #X connect 0 0 6 0;
 #X connect 1 0 0 1;
 #X connect 1 0 2 1;
@@ -310,86 +311,17 @@ owner:0 2 8 0 14 -1 -1 -195568 0 1;
 #X connect 15 0 0 0;
 #X connect 15 1 16 0;
 #X connect 16 0 15 1;
+#X connect 17 0 7 0;
 #X restore 160 36 pd ownership;
-#N canvas 882 164 390 604 calculate_start_time 0;
+#N canvas 882 162 390 604 calculate_start_time 0;
 #X obj 39 114 master-param pos;
 #X obj 12 12 inlet;
 #X obj 236 127 master-param 16th;
-#N canvas 572 349 298 242 calculate_real_latency 0;
+#N canvas 572 347 298 242 calculate_real_latency 0;
 #X obj 16 199 outlet;
 #X obj 68 200 s \$0.latency.compensation;
-#N canvas 641 269 300 420 jack_latency 0;
-#X msg 150 68 2 \$1;
-#X obj 150 89 pow;
-#X obj 150 44 + 6;
-#X obj 38 158 *;
-#X obj 59 135 t b a;
-#X obj 38 47 + 2;
-#X obj 38 78 + 2;
-#X text 67 77 why?;
-#X obj 38 16 r \$0.jack.periods;
-#X obj 150 15 r \$0.jack.frames;
-#X text 89 271 convert samples to ms;
-#X obj 38 271 t a b;
-#X obj 38 318 /;
-#X obj 65 295 samplerate~;
-#X obj 38 341 * 1000;
-#X obj 38 371 outlet;
-#X connect 0 0 1 0;
-#X connect 1 0 4 0;
-#X connect 2 0 0 0;
-#X connect 3 0 11 0;
-#X connect 4 0 3 0;
-#X connect 4 1 3 1;
-#X connect 5 0 6 0;
-#X connect 6 0 3 0;
-#X connect 8 0 5 0;
-#X connect 9 0 2 0;
-#X connect 11 0 12 0;
-#X connect 11 1 13 0;
-#X connect 12 0 14 0;
-#X connect 13 0 12 1;
-#X connect 14 0 15 0;
-#X restore 132 24 pd jack_latency;
-#N canvas 238 173 433 321 alsa_latency 0;
-#X obj 173 87 <<;
-#X obj 173 41 t b a;
-#X msg 173 64 64;
-#X text 235 191 ALSA blocksize in ms;
-#X obj 35 159 /;
-#X obj 49 131 t b a;
-#X obj 35 181 int;
-#X obj 35 222 *;
-#X obj 35 202 max 1;
-#X obj 35 76 r \$0.alsa.msec;
-#X obj 173 15 r \$0.alsa.blocksize;
-#X obj 35 297 outlet;
-#X text 224 112 convert samples to ms;
-#X obj 173 112 t a b;
-#X obj 173 159 /;
-#X obj 200 136 samplerate~;
-#X obj 173 182 * 1000;
-#X connect 0 0 13 0;
-#X connect 1 0 2 0;
-#X connect 1 1 0 1;
-#X connect 2 0 0 0;
-#X connect 4 0 6 0;
-#X connect 5 0 4 0;
-#X connect 5 1 4 1;
-#X connect 5 1 7 1;
-#X connect 6 0 8 0;
-#X connect 7 0 11 0;
-#X connect 8 0 7 0;
-#X connect 9 0 4 0;
-#X connect 10 0 1 0;
-#X connect 13 0 14 0;
-#X connect 13 1 15 0;
-#X connect 14 0 16 0;
-#X connect 15 0 14 1;
-#X connect 16 0 5 0;
-#X restore 16 23 pd alsa_latency;
 #X obj 16 134 t a a;
-#N canvas 423 211 301 243 add_latency_introduced_by_tx/rx_buffers 0
+#N canvas 423 209 301 243 add_latency_introduced_by_tx/rx_buffers 0
 ;
 #X obj 111 27 loadbang;
 #X msg 111 49 1024;
@@ -403,11 +335,9 @@ owner:0 2 8 0 14 -1 -1 -195568 0 1;
 #X obj 13 119 +;
 #X obj 13 48 inlet;
 #X text 147 71 <- why?;
-#X obj 111 101 + 512;
-#X text 150 101 <- why?;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X connect 2 0 12 0;
+#X connect 2 0 5 0;
 #X connect 4 0 6 1;
 #X connect 5 0 6 0;
 #X connect 5 1 4 0;
@@ -415,15 +345,14 @@ owner:0 2 8 0 14 -1 -1 -195568 0 1;
 #X connect 7 0 9 1;
 #X connect 9 0 8 0;
 #X connect 10 0 9 0;
-#X connect 12 0 5 0;
 #X restore 16 87 pd add_latency_introduced_by_tx/rx_buffers;
 #X msg 68 165 label \$1ms;
-#X connect 2 0 5 0;
-#X connect 3 0 5 0;
-#X connect 4 0 0 0;
-#X connect 4 1 6 0;
-#X connect 5 0 4 0;
-#X connect 6 0 1 0;
+#X obj 16 26 netpd-pref-get pd-audio-latency 1;
+#X connect 2 0 0 0;
+#X connect 2 1 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 5 0 3 0;
 #X restore 183 98 pd calculate_real_latency;
 #X obj 150 196 *;
 #X obj 150 218 -;
@@ -804,69 +733,7 @@ exceeds 80% of the audio buffer \, we stop sending audio.;
 #X restore 65 276 pd monitor_network_send_buffer;
 #X obj 14 371 t a a;
 #X obj 67 376 s \$0.playback;
-#N canvas 965 262 331 253 gui.stuff 0;
-#X obj 21 16 r \$0.alsa.button;
-#X obj 21 38 sel 0;
-#X obj 68 38 t a;
-#X obj 139 40 sel 0;
-#X obj 186 40 t a;
-#X obj 139 18 r \$0.jack.button;
-#N canvas 762 177 208 200 ALSA 0;
-#X obj 23 163 namecanvas \$0.alsa.settings;
-#X obj 6 46 cnv 14 75 15 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 6 46 nbx 4 14 0 3000 0 0 \$0.alsa.msec \$0.blidsk msec 45 8
-0 12 -1 -4034 -4034 290 256;
-#X obj 82 46 cnv 15 115 104 empty empty empty 20 12 0 14 -4034 -66577
-0;
-#X obj 112 45 vradio 15 1 0 7 \$0.alsa.blocksize \$0.bli empty 0 -8
-0 10 -1 -4034 -1 1;
-#X text 95 44 64;
-#X text 89 59 128;
-#X text 89 74 256;
-#X text 89 89 512;
-#X text 83 104 1024;
-#X text 83 121 2048;
-#X text 83 137 4096;
-#X text 134 45 blocksize;
-#X obj 6 62 cnv 15 75 88 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 6 13 cnv 15 191 32 empty empty empty 2 25 0 12 -4034 -1 0;
-#X text 7 28 Specify your audio settings:;
-#X text 7 13 ALSA;
-#X obj 6 151 cnv 15 191 32 empty \$0.latency.compensation 197.37ms
-2 25 0 12 -4034 -1 0;
-#X text 6 153 eff. latency compensation:;
-#X restore 37 123 pd ALSA;
-#N canvas 762 177 207 198 JACK 0;
-#X obj 31 166 namecanvas \$0.jack.settings;
-#X obj 6 151 cnv 15 191 32 empty \$0.latency.compensation 197.37ms
-2 25 0 12 -4034 -1 0;
-#X text 6 153 eff. latency compensation:;
-#X obj 6 45 cnv 15 191 105 empty empty empty 20 12 0 14 -4034 -66577
-0;
-#X obj 40 45 vradio 15 1 0 7 \$0.jack.frames \$0.bli empty 0 -8 0 10
--1 -4034 -1 4;
-#X text 23 44 64;
-#X text 17 59 128;
-#X text 17 74 256;
-#X text 17 89 512;
-#X text 11 104 1024;
-#X text 11 121 2048;
-#X text 11 137 4096;
-#X obj 128 45 vradio 15 1 0 3 \$0.jack.periods \$0.bli empty 0 -8 0
-10 -1 -4034 -1 2;
-#X text 116 44 2;
-#X text 116 59 3;
-#X text 116 74 4;
-#X text 147 43 periods;
-#X text 60 44 frames;
-#X obj 6 12 cnv 15 191 32 empty empty empty 2 25 0 12 -4034 -1 0;
-#X text 7 27 Specify your audio settings:;
-#X text 7 12 JACK;
-#X restore 36 145 pd JACK;
-#X msg 21 66 vis 1;
-#X obj 21 88 s \$0.alsa.settings;
-#X msg 139 67 vis 1;
-#X obj 139 89 s \$0.jack.settings;
+#N canvas 965 392 225 240 gui.stuff 0;
 #N canvas 0 44 300 209 buffer.meter 0;
 #X obj 40 128 s \$0.buffer.meter;
 #X msg 40 105 vis_size \$1 4;
@@ -879,7 +746,7 @@ exceeds 80% of the audio buffer \, we stop sending audio.;
 #X connect 3 0 1 0;
 #X connect 4 0 5 0;
 #X connect 5 0 2 0;
-#X restore 27 174 pd buffer.meter;
+#X restore 14 16 pd buffer.meter;
 #N canvas 790 258 452 312 playback.meter.display 0;
 #X obj 9 100 s \$0.playback.display;
 #X msg 9 76 color -1 -1 \$1;
@@ -908,17 +775,38 @@ exceeds 80% of the audio buffer \, we stop sending audio.;
 #X connect 11 0 12 0;
 #X connect 12 0 13 0;
 #X connect 13 0 7 0;
-#X restore 26 200 pd playback.meter.display;
-#X connect 0 0 1 0;
-#X connect 1 0 8 0;
-#X connect 1 1 2 0;
-#X connect 2 0 1 1;
-#X connect 3 0 10 0;
-#X connect 3 1 4 0;
-#X connect 4 0 3 1;
-#X connect 5 0 3 0;
-#X connect 8 0 9 0;
-#X connect 10 0 11 0;
+#X restore 14 42 pd playback.meter.display;
+#N canvas 764 147 380 366 \$1-evil-help 0;
+#X text 11 8 evil - send live audio with netpd;
+#X text 11 20 ---------------------------------;
+#X text 11 37 evil broadcasts an uncompressed 16-bit audio stream to
+all clients. By pre-defining a desired delay \, live audio is in time
+with generated sound.;
+#X text 22 139 * DSP needs to be turned on;
+#X text 23 157 * You are owner of this evil instance (click on owner)
+;
+#X text 22 121 * master needs to be loaded and running (for time sync)
+;
+#X text 12 87 Three conditions need to be met before you can stream
+audio and the corresponding labels need to be green:;
+#X text 14 181 If two or more clients desire to send live audio \,
+more instances of evil need to be loaded. Beware that each instance
+requires 100kB/s download bandwidth for each client.;
+#X text 14 246 NOTE: If a buffer underrun is detected on any receiving
+client \, the sending instance immediately stops sending.;
+#X text 14 289 TIP: Make sure you configured a correct value for pd-audio-latency
+in netpd-preferences. This allows for precise timing.;
+#X restore 15 171 pd \$1-evil-help;
+#X obj 16 74 r \$0.help.button;
+#X obj 16 94 sel 0;
+#X obj 58 95 t a;
+#X msg 16 117 vis 1;
+#X obj 16 137 s pd-\$1-evil-help;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 4 1;
+#X connect 6 0 7 0;
 #X restore 162 77 pd gui.stuff;
 #N canvas 241 128 319 146 set.adc 0;
 #X msg 14 38 set \$1;
