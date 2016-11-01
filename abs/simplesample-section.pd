@@ -1,8 +1,8 @@
-#N canvas 740 76 439 567 10;
+#N canvas 740 75 439 567 10;
 #X obj 10 10 cnv 15 302 15 empty empty sample\$2 4 8 0 10 -228856 -99865
 0;
 #X obj 27 25 hsl 230 15 0 1 0 0 \$1-\$2/start \$1-\$2/start cue 105
-8 0 10 -191407 -1 -1 0 1;
+8 0 10 -191407 -1 -1 2500 1;
 #X obj 10 25 bng 15 70 50 0 \$0.prelisten \$0.prelisten.r prelisten
 20 8 0 10 -191407 -1 -1;
 #X obj 258 25 nbx 5 15 1 9999 0 0 \$1-\$2/length \$1-\$2/length length
@@ -15,11 +15,11 @@ steps 1 8 0 10 -228856 -228856 -1 0 1;
 1 8 0 10 -228856 -1 -1 0 1;
 #X obj 200 10 hsl 20 15 0 127 0 0 \$0.direction \$0.direction.r >>>
 1 8 0 10 -228856 -228856 -1 0 1;
-#N canvas 930 293 204 64 NETPD 0;
+#N canvas 930 319 204 64 NETPD 0;
 #N canvas 862 414 329 97 abslist 0;
 #X msg 11 18 master-param;
 #X restore 15 35 pd abslist;
-#X msg 15 10 version 0 0 1;
+#X msg 15 10 version 0 0 2;
 #X restore 343 9 pd NETPD 2 0;
 #N canvas 136 124 209 177 ms2samples 0;
 #X obj 17 36 t a b;
@@ -96,14 +96,17 @@ steps 1 8 0 10 -228856 -228856 -1 0 1;
 #X restore 28 43 pd direction;
 #X restore 343 36 pd gui-stuff;
 #X obj 154 220 netpd_r \$1 \$2/reverse;
-#N canvas 506 298 207 219 start.pos 0;
-#X obj 26 45 r \$1.length(ms);
+#N canvas 506 324 207 219 start.pos 0;
+#X obj 68 36 r \$1.length(ms);
 #X obj 11 10 netpd_f \$1 \$2/start;
-#X obj 11 68 *;
-#X obj 11 100 outlet;
-#X connect 0 0 2 1;
+#X obj 11 88 *;
+#X obj 11 120 outlet;
+#X obj 68 56 t b a;
+#X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X connect 4 1 2 1;
 #X restore 34 91 pd start.pos;
 #N canvas 865 271 303 316 section.length 0;
 #X obj 81 70 netpd_r \$1 \$2/lengthunit;
