@@ -1,0 +1,11 @@
+#N canvas 594 44 313 173 10;
+#N canvas 624 75 342 74 NETPD 0;
+#N canvas 315 75 425 199 abslist 0;
+#X msg 20 10 latch3-instance;
+#X restore 14 31 pd abslist;
+#X msg 14 9 version 0 0 0;
+#X restore 10 14 pd NETPD 2 0;
+#X obj 10 72 netpd_head \$1 latch3;
+#N canvas 694 109 426 339 \$1-latch3 0;
+#X obj 26 40 latch3-instance \$1 0;
+#X restore 10 42 pd \$1-latch3;
