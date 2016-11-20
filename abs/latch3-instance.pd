@@ -2,21 +2,21 @@
 #N canvas 0 43 378 137 NETPD 0;
 #X msg 11 14 version 0 0 1;
 #X restore 399 11 pd NETPD 2 0;
-#X obj 327 383 nbx 5 14 -1e+37 1e+37 0 0 \$1-\$2/length \$1-\$2/length
+#X obj 100 232 nbx 5 14 -1e+37 1e+37 0 0 \$1-\$2/length \$1-\$2/length
 empty 0 -8 0 10 -262144 -1 -1 16 256;
 #X obj 333 69 netpd_f \$1 \$2/length 16;
-#X obj 362 286 bng 15 250 50 0 \$0.record empty empty 17 7 0 10 -258113
+#X obj 25 231 bng 15 250 50 0 \$0.record empty empty 17 7 0 10 -258113
 -1 -1;
-#X obj 305 406 r \$0.record.status;
-#X obj 305 428 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
+#X obj 251 232 r \$0.record.status;
+#X obj 251 254 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 287 204 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 27 253 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X text 384 286 record;
-#X text 389 383 length;
-#X text 412 261 param value;
-#X symbolatom 313 226 10 0 0 0 - - -, f 10;
-#X msg 310 244 bla bla blu;
+#X text 47 231 record;
+#X text 162 232 length;
+#X text 162 253 param value;
+#X symbolatom 53 275 10 0 0 0 - - -, f 10;
+#X msg 50 293 bla bla blu;
 #X obj 306 138 netpd_text \$1 \$2/text;
 #X obj 306 160 s \$0.from;
 #X obj 306 113 r \$0.to;
@@ -108,7 +108,7 @@ empty 0 -8 0 10 -262144 -1 -1 16 256;
 #X connect 22 0 23 0;
 #X connect 24 0 11 0;
 #X restore 16 17 pd recorder;
-#X obj 284 263 s \$0.param.value.rec;
+#X obj 24 312 s \$0.param.value.rec;
 #N canvas 0 43 425 606 player 0;
 #X obj 46 348 text get \$1-\$2/text;
 #X obj 18 17 master-param step;
@@ -223,12 +223,15 @@ empty 0 -8 0 10 -262144 -1 -1 16 256;
 #X connect 31 0 32 0;
 #X connect 32 0 8 0;
 #X restore 16 40 pd player;
-#X obj 361 316 bng 15 250 50 0 \$0.play empty empty 17 7 0 10 -4034
+#X obj 26 361 bng 15 250 50 0 \$0.play empty empty 17 7 0 10 -4034
 -1 -1;
-#X text 383 316 play;
-#X obj 223 316 r \$0.play.start.stop;
-#X obj 222 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X text 48 361 play;
+#X obj 82 361 r \$0.play.start.stop;
+#X obj 81 380 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
+#X obj 25 398 r \$0.param.value.play;
+#X obj 28 423 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X connect 4 0 5 0;
 #X connect 6 0 17 0;
 #X connect 10 0 17 0;
@@ -237,3 +240,4 @@ empty 0 -8 0 10 -262144 -1 -1 16 256;
 #X connect 12 2 15 0;
 #X connect 14 0 12 0;
 #X connect 21 0 22 0;
+#X connect 23 0 24 0;
