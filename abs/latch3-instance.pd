@@ -2,16 +2,16 @@
 #N canvas 0 43 378 137 NETPD 0;
 #X msg 11 14 version 0 0 1;
 #X restore 399 11 pd NETPD 2 0;
-#X obj 96 283 nbx 3 14 2 999 0 0 \$1-\$2/length \$1-\$2/length empty
-0 -8 0 10 -262144 -1 -1 33 256;
+#X obj 94 323 nbx 3 14 2 999 0 0 \$1-\$2/length \$1-\$2/length empty
+0 -8 0 10 -262144 -1 -1 32 256;
 #X obj 304 116 netpd_f \$1 \$2/length 16;
-#X obj 21 282 bng 15 250 50 0 \$0.record empty empty 17 7 0 10 -258113
+#X obj 19 322 bng 15 250 50 0 \$0.record empty empty 17 7 0 10 -258113
 -1 -1;
-#X obj 247 283 r \$0.record.status;
-#X obj 247 305 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
+#X obj 245 323 r \$0.record.status;
+#X obj 245 345 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X text 43 282 record;
-#X text 158 283 length;
+#X text 41 322 record;
+#X text 156 323 length;
 #X obj 304 166 netpd_text \$1 \$2/text;
 #X obj 304 188 s \$0.from;
 #X obj 304 146 r \$0.to;
@@ -395,7 +395,35 @@
 #X obj 302 50 r \$0.to.param;
 #X obj 302 90 s \$0.from.param;
 #X obj 98 411 tgl 15 0 empty \$0.play.start.stop empty 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
+#X obj 50 185 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -228856
+-1 0;
+#X obj 71 185 cnv 20 20 20 empty \$0.play.display ▶ 3 9 0 24 -228856
+-1 0;
+#X obj 50 206 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -258113
+-1 0;
+#X obj 71 206 cnv 20 20 20 empty \$0.play.display ▶ 3 9 0 24 -228856
+-1 0;
+#X obj 50 227 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -228856
+-1 0;
+#X obj 71 227 cnv 20 20 20 empty \$0.play.display ▶ 3 9 0 24 -4034
+-1 0;
+#X obj 120 165 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -228856
+-86277 0;
+#X obj 141 165 cnv 20 20 20 empty \$0.play.display ▶ 3 9 0 24 -228856
+-13381 0;
+#X obj 120 186 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -228856
+-258113 0;
+#X obj 141 186 cnv 20 20 20 empty \$0.play.display ▶ 3 9 0 24 -228856
+-13381 0;
+#X obj 120 227 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -228856
+-86277 0;
+#X obj 141 227 cnv 20 20 20 empty \$0.play.display ▶ 3 9 0 24 -228856
+-4034 0;
+#X obj 193 227 cnv 20 200 20 empty \$0.param.label /3/sine/attack 5
+11 0 12 -233017 -1 0;
+#X obj 162 227 cnv 20 30 20 empty \$0.param.label 999 5 11 0 12 -233017
+-1 0;
 #X connect 4 0 5 0;
 #X connect 8 0 9 0;
 #X connect 8 2 11 0;
