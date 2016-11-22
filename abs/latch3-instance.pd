@@ -1,9 +1,9 @@
-#N canvas 636 257 484 494 10;
+#N canvas 636 256 484 494 10;
 #N canvas 0 43 378 137 NETPD 0;
 #X msg 11 14 version 0 0 1;
 #X restore 399 11 pd NETPD 2 0;
-#X obj 63 26 nbx 3 20 2 999 0 0 \$1-\$2/length \$1-\$2/length empty
-0 -8 0 6 -262144 -1 -1 16 256;
+#X obj 62 20 nbx 3 20 2 999 0 0 \$1-\$2/length \$1-\$2/length empty
+0 10 0 6 -262144 -1 -1 16 256;
 #X obj 304 146 netpd_f \$1 \$2/length 16;
 #X obj 21 216 r \$0.record.status;
 #X obj 21 238 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
@@ -399,17 +399,17 @@
 #X obj 302 101 netpd_a \$1 \$2/parameter;
 #X obj 302 80 r \$0.to.param;
 #X obj 302 120 s \$0.from.param;
-#X obj 94 26 cnv 20 200 20 empty \$0.param.display empty 5 11 0 12
+#X obj 93 20 cnv 20 200 20 empty \$0.param.display empty 5 11 0 12
 -233017 -1 0;
-#X obj 63 26 cnv 20 30 20 empty \$0.length.display 016 5 11 0 12 -233017
+#X obj 62 20 cnv 20 30 20 empty \$0.length.display 016 5 11 0 12 -233017
 -1 0;
-#X obj 21 26 bng 20 250 50 0 \$0.record empty empty 17 7 0 10 -262144
+#X obj 20 20 bng 20 250 50 0 \$0.record empty empty 17 10 0 10 -262144
 -1 -1;
-#X obj 42 26 bng 20 250 50 0 \$0.play empty empty 17 7 0 10 -262144
+#X obj 41 20 bng 20 250 50 0 \$0.play empty empty 17 10 0 10 -262144
 -1 -1;
-#X obj 42 26 cnv 20 20 20 empty \$0.play.display ▶ 3 9 0 24 -233017
+#X obj 41 20 cnv 20 20 20 empty \$0.play.display ▶ 3 9 0 24 -233017
 -42246 0;
-#X obj 21 26 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -233017
+#X obj 20 20 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -233017
 -143491 0;
 #N canvas 205 211 493 406 gui 0;
 #X obj 14 301 s \$0.record.display;
@@ -481,3 +481,4 @@
 #X connect 7 0 5 0;
 #X connect 13 0 15 0;
 #X connect 14 0 13 0;
+#X coords 0 -1 1 1 273 20 2 20 20;
