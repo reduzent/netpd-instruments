@@ -1,9 +1,7 @@
-#N canvas 636 256 484 494 10;
+#N canvas 636 250 484 494 10;
 #N canvas 0 43 378 137 NETPD 0;
 #X msg 11 14 version 0 0 1;
 #X restore 399 11 pd NETPD 2 0;
-#X obj 62 20 nbx 3 20 2 999 0 0 \$1-\$2/length \$1-\$2/length empty
-0 10 0 6 -262144 -1 -1 16 256;
 #X obj 304 146 netpd_f \$1 \$2/length 16;
 #X obj 21 216 r \$0.record.status;
 #X obj 21 238 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
@@ -399,18 +397,6 @@
 #X obj 302 101 netpd_a \$1 \$2/parameter;
 #X obj 302 80 r \$0.to.param;
 #X obj 302 120 s \$0.from.param;
-#X obj 93 20 cnv 20 200 20 empty \$0.param.display empty 5 11 0 12
--233017 -1 0;
-#X obj 62 20 cnv 20 30 20 empty \$0.length.display 016 5 11 0 12 -233017
--1 0;
-#X obj 20 20 bng 20 250 50 0 \$0.record empty empty 17 10 0 10 -262144
--1 -1;
-#X obj 41 20 bng 20 250 50 0 \$0.play empty empty 17 10 0 10 -262144
--1 -1;
-#X obj 41 20 cnv 20 20 20 empty \$0.play.display ▶ 3 9 0 24 -233017
--42246 0;
-#X obj 20 20 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -233017
--143491 0;
 #N canvas 205 211 493 406 gui 0;
 #X obj 14 301 s \$0.record.display;
 #X msg 14 280 color 10 \$1 \$1;
@@ -475,10 +461,67 @@
 #X connect 27 1 18 1;
 #X restore 16 175 pd gui;
 #X obj 304 164 netpd_f \$1 \$2/playback 0;
+#N canvas 838 462 429 436 cursor 0;
+#X obj 69 385 set \$0.cursor cx;
+#X obj 162 219 t b b;
+#X obj 162 272 until;
+#X msg 162 294 next;
+#X obj 162 339 pointer \$0.cursor;
+#X obj 162 361 t p b;
+#X msg 221 307 traverse \$1;
+#X obj 16 26 struct \$0.cursor float cx float cy float cy2;
+#X msg 162 239 1000;
+#X obj 16 48 drawpolygon 0 1 cx cy cx cy2;
+#X obj 221 285 list append pd-\$0.gui.canvas;
+#X obj 162 101 loadbang;
+#X obj 69 297 inlet;
+#X obj 162 121 t b b;
+#X obj 271 129 \$0;
+#X obj 271 169 s pd-\$0.gui.canvas;
+#X obj 135 96 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 271 149 scalar \$1.cursor 0 0 21;
+#X connect 1 0 8 0;
+#X connect 1 1 10 0;
+#X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 5 0 6 0;
-#X connect 5 2 8 0;
-#X connect 7 0 5 0;
-#X connect 13 0 15 0;
-#X connect 14 0 13 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 1;
+#X connect 5 1 2 1;
+#X connect 6 0 4 0;
+#X connect 8 0 2 0;
+#X connect 10 0 6 0;
+#X connect 11 0 13 0;
+#X connect 12 0 0 0;
+#X connect 13 0 1 0;
+#X connect 13 1 14 0;
+#X connect 14 0 17 0;
+#X connect 16 0 13 0;
+#X connect 17 0 15 0;
+#X restore 48 377 pd cursor;
+#N canvas 0 43 494 397 \$0.gui.canvas 0;
+#X obj 62 20 nbx 3 20 2 999 0 0 \$1-\$2/length \$1-\$2/length empty
+0 10 0 6 -262144 -1 -1 16 256;
+#X obj 93 20 cnv 20 200 20 empty \$0.param.display empty 5 11 0 12
+-233017 -1 0;
+#X obj 62 20 cnv 20 30 20 empty \$0.length.display 016 5 11 0 12 -233017
+-1 0;
+#X obj 20 20 bng 20 250 50 0 \$0.record empty empty 17 10 0 10 -262144
+-1 -1;
+#X obj 41 20 bng 20 250 50 0 \$0.play empty empty 17 10 0 10 -262144
+-1 -1;
+#X obj 41 20 cnv 20 20 20 empty \$0.play.display ▶ 3 9 0 24 -233017
+-42246 0;
+#X obj 20 20 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -233017
+-143491 0;
+#X coords 0 0 273 20 273 20 2 20 20;
+#X restore 20 20 pd \$0.gui.canvas;
+#X floatatom 62 334 5 0 0 0 - - -, f 5;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 4 2 7 0;
+#X connect 6 0 4 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 19 0 17 0;
 #X coords 0 -1 1 1 273 20 2 20 20;
