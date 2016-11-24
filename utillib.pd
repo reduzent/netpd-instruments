@@ -1,11 +1,12 @@
 #N canvas 669 135 352 135 10;
-#N canvas 570 348 225 111 NETPD 0;
-#X msg 7 11 version 0 0 1;
+#N canvas 570 402 225 111 NETPD 0;
 #N canvas 412 216 356 118 abslist 0;
 #X msg 14 9 swapph;
 #X msg 195 11 mx-fx-list;
 #X msg 31 40 tryout;
 #X restore 7 37 pd abslist;
+#X msg 9 63 singleton;
+#X msg 7 11 version 0 0 2;
 #X restore 14 11 pd NETPD 2 0;
 #N canvas 643 124 414 198 \$1-utillib 1;
 #X text 9 9 UTILLIB - utilities for mx;
