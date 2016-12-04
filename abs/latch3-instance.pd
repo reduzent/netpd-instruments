@@ -1,3 +1,5 @@
+#N struct 1436.cursor float cx float cy float cy2 float vis float clr
+;
 #N canvas 431 109 484 494 10;
 #N canvas 0 43 378 137 NETPD 0;
 #X msg 11 14 version 0 0 1;
@@ -478,6 +480,7 @@
 -42246 0;
 #X obj 20 20 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -166441
 -143491 0;
+#X scalar 1436.cursor 273 0 21 0 90 \;;
 #X coords 0 0 273 20 273 20 2 20 20;
 #X restore 20 20 pd \$0.gui.canvas;
 #N canvas 553 228 447 447 cursor.structure 0;
@@ -550,7 +553,7 @@ float clr;
 #X msg 21 297 pos \$1;
 #X msg 563 349 state \$1;
 #X obj 613 324 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 0;
 #X obj 21 276 + 1;
 #X obj 21 255 * 272;
 #X obj 20 326 s \$0.cursor;
@@ -601,8 +604,6 @@ float clr;
 #X obj 102 426 mod;
 #X obj 131 426 netpd_f \$1 \$2/length 16;
 #X obj 102 287 master-param step;
-#X obj 102 446 sel 0;
-#X msg 102 465 0;
 #X obj 25 495 outlet;
 #X connect 0 0 8 0;
 #X connect 1 0 3 0;
@@ -610,7 +611,7 @@ float clr;
 #X connect 3 0 6 0;
 #X connect 4 0 6 1;
 #X connect 5 0 4 1;
-#X connect 6 0 26 0;
+#X connect 6 0 24 0;
 #X connect 7 0 11 0;
 #X connect 8 0 7 0;
 #X connect 9 0 10 0;
@@ -621,7 +622,7 @@ float clr;
 #X connect 12 0 15 0;
 #X connect 13 0 15 1;
 #X connect 14 0 13 1;
-#X connect 15 0 26 0;
+#X connect 15 0 24 0;
 #X connect 16 0 18 0;
 #X connect 17 0 19 0;
 #X connect 18 0 20 1;
@@ -631,8 +632,6 @@ float clr;
 #X connect 21 0 24 0;
 #X connect 22 0 21 1;
 #X connect 23 0 20 0;
-#X connect 24 0 25 0;
-#X connect 25 0 26 0;
 #X restore 269 18 pd playback.triggers;
 #X obj 335 121 master-param 16th;
 #X obj 341 53 netpd_f \$1 \$2/length 16;
