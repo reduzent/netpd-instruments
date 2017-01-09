@@ -1,4 +1,4 @@
-#N canvas 591 50 460 561 10;
+#N canvas 588 43 460 561 10;
 #N canvas 624 75 434 290 NETPD 0;
 #X msg 12 8 version 0 0 0;
 #N canvas 315 75 473 287 abslist 0;
@@ -24,8 +24,8 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X text 107 7 <- update the version of this netpd instrument;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 69 netpd_head \$1 couscous;
-#N canvas 676 49 325 215 \$1-couscous 1;
-#N canvas 508 43 816 585 experimenting 1;
+#N canvas 673 43 359 325 \$1-couscous 1;
+#N canvas 508 50 816 585 experimenting 0;
 #X obj 18 22 adc~;
 #X obj 56 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -391,4 +391,19 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X connect 50 0 29 0;
 #X connect 52 0 50 0;
 #X restore 16 34 pd experimenting2;
+#X obj 61 181 rh_trline;
+#X obj 49 129 metro 100;
+#X msg 136 138 127 3000;
+#X obj 64 214 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 59 92 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X floatatom 208 215 10 0 0 0 - - -, f 10;
+#X msg 152 165 0 1000;
+#X connect 2 0 5 0;
+#X connect 2 0 7 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 1;
+#X connect 6 0 3 0;
+#X connect 8 0 2 1;
 #X restore 10 42 pd \$1-couscous;
