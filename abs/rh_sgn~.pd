@@ -1,4 +1,4 @@
-#N canvas 432 282 336 210 10;
+#N canvas 432 281 336 210 10;
 #X obj 191 115 table \$0.ref 2;
 #X obj 190 84 s \$0.ref;
 #X msg 190 53 0 -1 1;
@@ -7,8 +7,11 @@
 #X obj 190 26 loadbang;
 #X obj 40 23 inlet~;
 #X obj 41 146 outlet~;
-#N canvas 696 356 161 103 NETPD 0;
-#X msg 7 12 version 0 0 1;
+#N canvas 696 382 161 103 NETPD 0;
+#X msg 7 12 version 0 0 2;
+#N canvas 712 355 313 73 abslist 0;
+#X msg 8 14 rh_sgn~-help;
+#X restore 7 43 pd abslist;
 #X restore 191 149 pd NETPD;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
