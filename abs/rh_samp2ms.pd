@@ -1,4 +1,4 @@
-#N canvas 685 356 305 229 10;
+#N canvas 685 355 305 229 10;
 #X obj 27 32 inlet;
 #X obj 27 181 outlet;
 #X obj 75 28 loadbang;
@@ -6,10 +6,10 @@
 #X obj 75 88 /;
 #X obj 27 142 *;
 #X msg 75 68 1000 \$1;
-#N canvas 916 305 340 91 NETPD 0;
+#N canvas 916 304 340 91 NETPD 0;
 #X msg 6 11 version 0 0 1;
-#N canvas 935 184 316 55 abslist 0;
-#X msg 6 10 rh_samp2ms;
+#N canvas 935 183 316 55 abslist 0;
+#X msg 6 10 rh_samp2ms-help;
 #X restore 6 37 pd abslist;
 #X restore 198 12 pd NETPD 2 0;
 #X connect 0 0 5 0;
