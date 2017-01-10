@@ -1,0 +1,18 @@
+#N canvas 455 43 420 287 10;
+#X obj 26 145 rh_abs~;
+#X obj 26 108 sig~;
+#X floatatom 26 77 5 0 0 0 - - -, f 5;
+#X obj 27 214 snapshot~;
+#X obj 66 168 loadbang;
+#X obj 66 188 metro 50;
+#X floatatom 27 234 5 0 0 0 - - -, f 5;
+#X text 16 7 rh_abs~ - get absolute value of incoming signal;
+#N canvas 597 136 308 61 NETPD 0;
+#X msg 17 19 version 0 0 1;
+#X restore 304 247 pd NETPD 2 0;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
