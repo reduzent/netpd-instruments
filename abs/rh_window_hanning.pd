@@ -24,7 +24,7 @@
 #N canvas 810 292 317 104 NETPD 0;
 #X msg 9 12 version 0 0 1;
 #N canvas 852 315 344 76 abslist 0;
-#X msg 8 8 rh_windw_hanning-help;
+#X msg 8 8 rh_window_hanning-help;
 #X restore 9 37 pd abslist;
 #X restore 207 370 pd NETPD 2 0;
 #X connect 0 0 1 0;
