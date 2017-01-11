@@ -1,4 +1,4 @@
-#N canvas 223 332 373 219 10;
+#N canvas 220 322 373 219 10;
 #X obj 98 87 log;
 #X obj 194 84 log;
 #X obj 123 123 t b f;
@@ -13,9 +13,12 @@
 #X obj 20 183 outlet~;
 #X obj 20 19 inlet~;
 #X obj 20 155 expr~ exp($v1);
-#N canvas 696 356 161 103 NETPD 0;
-#X msg 7 12 version 0 0 1;
-#X restore 191 149 pd NETPD;
+#N canvas 693 373 161 103 NETPD 0;
+#X msg 7 12 version 0 0 2;
+#N canvas 709 498 336 48 abslist 0;
+#X msg 4 8 rh_scalelog~-help;
+#X restore 14 47 pd abslist;
+#X restore 191 149 pd NETPD 2 0;
 #X connect 0 0 2 0;
 #X connect 0 0 10 1;
 #X connect 1 0 3 0;
