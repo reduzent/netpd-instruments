@@ -1,0 +1,20 @@
+#N canvas 356 43 437 306 10;
+#N canvas 502 267 338 110 NETPD 0;
+#X msg 14 13 version 0 0 1;
+#X restore 335 272 pd NETPD 2 0;
+#X floatatom 72 93 5 0 0 0 - - -, f 5;
+#X floatatom 122 93 5 0 0 0 - - -, f 5;
+#X text 4 11 rh_scalelin - scale input 0-1 to given range;
+#X obj 26 46 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 23 66 5 0 0 0 - - -, f 5;
+#X obj 23 139 rh_scalelin 20 30;
+#X floatatom 23 192 5 0 0 0 - - -, f 5;
+#X obj 26 218 hsl 128 15 20 30 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X connect 1 0 6 1;
+#X connect 2 0 6 2;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
