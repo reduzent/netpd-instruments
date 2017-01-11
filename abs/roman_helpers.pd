@@ -7,7 +7,7 @@
 #X msg 5 65 rh_isint;
 #X msg 5 84 rh_metro;
 #X msg 5 103 rh_ms2samp;
-#X msg 5 122 rh_norm2symm;
+#X msg 5 122 rh_norm2symm~;
 #X msg 5 141 rh_phasor~;
 #X msg 5 160 rh_pink~;
 #X msg 5 179 rh_pol2cart~;
