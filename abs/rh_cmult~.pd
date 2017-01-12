@@ -1,4 +1,4 @@
-#N canvas 218 366 430 273 10;
+#N canvas 215 356 430 273 10;
 #X obj 19 21 inlet~;
 #X obj 71 23 inlet~;
 #X obj 291 20 inlet~;
@@ -11,12 +11,13 @@
 #X obj 128 141 +~;
 #X obj 19 212 outlet~;
 #X obj 127 216 outlet~;
-#N canvas 517 229 322 63 NETPD 0;
-#X msg 15 15 version 0 0 1;
+#N canvas 514 219 322 63 NETPD 0;
 #N canvas 595 229 363 58 abslist 0;
 #X msg 14 12 rh_cmult~-help;
 #X restore 15 38 pd abslist;
-#X restore 317 232 pd NETPD 2 0;
+#X msg 15 15 version 0 0 2;
+#X restore 343 244 pd NETPD 2 0;
+#X text 16 247 https://www2.clarku.edu/~djoyce/complex/mult.html;
 #X connect 0 0 4 0;
 #X connect 0 0 8 0;
 #X connect 1 0 5 0;
