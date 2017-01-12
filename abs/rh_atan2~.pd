@@ -1,0 +1,20 @@
+#N canvas 489 43 457 212 10;
+#X obj 36 41 expr~ if($v1 > 0 \, atan($v2/$v1) \, if($v2 > 0 \, $f3/2
+- atan($v1/$v2) \, if($v2 < 0 \, ($f3/2)*-1 - atan($v1/$v2) \, if($v1
+< 0 \, atan($v2/$v1) + $f3 \, 0))));
+#X text 35 129 from: https://en.wikipedia.org/wiki/Atan2#Definition_and_computation
+;
+#X obj 35 5 inlet~;
+#X obj 197 6 inlet~;
+#X obj 36 93 outlet~;
+#X obj 357 5 rh_const_pi;
+#N canvas 876 315 327 102 NETPD 0;
+#X msg 15 10 version 0 0 1;
+#N canvas 868 446 354 61 abslist 0;
+#X msg 13 12 rh_atan2~-help;
+#X restore 16 34 pd abslist;
+#X restore 349 182 pd NETPD 2 0;
+#X connect 0 0 4 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 1;
+#X connect 5 0 0 2;
