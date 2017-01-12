@@ -1,4 +1,4 @@
-#N canvas 221 366 450 300 10;
+#N canvas 215 346 450 300 10;
 #X obj 34 18 inlet~;
 #X obj 149 15 inlet~;
 #X obj 35 211 outlet~;
@@ -7,10 +7,6 @@
 #X text 196 15 phase;
 #X obj 33 156 *~;
 #X obj 181 161 *~;
-#X obj 116 91 expr~ cos($v1);
-#X obj 233 99 expr~ sin($v1);
-#X obj 109 60 +~ 3.14159;
-#X obj 174 42 +~ 3.14159;
 #N canvas 517 229 329 90 NETPD 0;
 #N canvas 614 290 310 54 abslist 0;
 #X msg 19 16 rh_pol2cart~-help;
@@ -19,13 +15,11 @@
 #X restore 325 251 pd NETPD 2 0;
 #X text 88 209 x;
 #X text 231 209 y;
+#X obj 116 91 expr~ cos($v1) \; sin($v1);
 #X connect 0 0 6 0;
 #X connect 0 0 7 0;
-#X connect 1 0 10 0;
 #X connect 1 0 11 0;
 #X connect 6 0 2 0;
 #X connect 7 0 3 0;
-#X connect 8 0 6 1;
-#X connect 9 0 7 1;
-#X connect 10 0 8 0;
-#X connect 11 0 9 0;
+#X connect 11 0 6 1;
+#X connect 11 1 7 1;
