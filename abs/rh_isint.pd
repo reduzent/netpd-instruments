@@ -1,0 +1,17 @@
+#N canvas 439 114 399 192 10;
+#X obj 12 18 inlet;
+#X obj 12 108 outlet;
+#X obj 12 40 t a a;
+#X obj 12 62 int;
+#X obj 12 84 ==;
+#N canvas 659 72 327 81 NETPD 0;
+#X msg 15 16 version 0 1 0;
+#N canvas 466 201 368 55 abslist 0;
+#X msg 15 10 rh_isint-help;
+#X restore 18 42 pd abslist;
+#X restore 298 23 pd NETPD 2 0;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;

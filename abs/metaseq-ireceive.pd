@@ -1,0 +1,14 @@
+#N canvas 621 337 360 227 10;
+#X obj 23 158 outlet;
+#X obj 23 21 r \$2;
+#X obj 23 87 tabread \$1;
+#X obj 125 36 r \$1;
+#X obj 125 91 route;
+#N canvas 842 405 329 72 NETPD 0;
+#X msg 14 12 version 0 1 0;
+#X restore 266 14 pd NETPD 2 0;
+#X connect 1 0 2 0;
+#X connect 1 0 4 1;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;

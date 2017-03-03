@@ -1,0 +1,15 @@
+#N canvas 621 309 313 162 10;
+#X obj 16 94 tabread \$1;
+#X obj 66 15 r \$2;
+#X obj 66 37 << 8;
+#X obj 16 70 +;
+#X obj 16 12 inlet;
+#X obj 16 116 outlet;
+#N canvas 842 405 329 72 NETPD 0;
+#X msg 14 12 version 0 1 0;
+#X restore 221 12 pd NETPD 2 0;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 1;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;

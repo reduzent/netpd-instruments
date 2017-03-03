@@ -1,5 +1,5 @@
 #N canvas 590 192 405 94 10;
-#N canvas 668 212 164 91 NETPD 0;
+#N canvas 668 239 164 91 NETPD 0;
 #N canvas 813 321 214 147 abslist 0;
 #X msg 12 15 rcomp;
 #X msg 13 42 rlimit;
@@ -7,11 +7,11 @@
 #X msg 13 90 zcomplim;
 #X msg 15 121 mx-fx-list;
 #X msg 74 16 r4mbc;
-#X msg 73 42 r4sat;
 #X restore 18 16 pd abslist;
-#X msg 18 41 version 0 3 1;
+#X msg 18 41 version 0 3 2;
+#X msg 19 64 singleton;
 #X restore 14 12 pd NETPD 2 0;
-#N canvas 618 339 453 138 \$1-dynlib 0;
+#N canvas 618 339 453 138 \$1-dynlib 1;
 #X text 21 6 DYNLIB;
 #X text 23 24 a collection of dynamic processing effects to be used
 with mx.;
