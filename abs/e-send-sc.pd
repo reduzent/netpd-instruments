@@ -1,0 +1,12 @@
+#N canvas 193 207 315 292 10;
+#N canvas 1061 117 231 103 NETPD 0;
+#X msg 14 17 version 0 0 1;
+#X restore 111 12 pd NETPD 2 0;
+#X obj 20 136 inlet~;
+#X obj 154 137 inlet~;
+#X obj 20 247 outlet~;
+#X obj 155 249 outlet~;
+#N canvas 238 401 165 47 \$3-e-send-sc 1;
+#X restore 7 12 pd \$3-e-send-sc;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
