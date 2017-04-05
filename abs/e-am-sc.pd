@@ -1,22 +1,12 @@
-#N canvas 586 184 618 269 10;
-#N canvas 1061 117 231 103 NETPD 0;
+#N canvas 655 173 670 361 10;
+#N canvas 1061 138 231 103 NETPD 0;
 #X msg 14 17 version 0 0 1;
 #X restore 144 9 pd NETPD 2 0;
 #X obj 10 33 inlet~;
 #X obj 144 33 inlet~;
 #X obj 10 113 outlet~;
 #X obj 145 115 outlet~;
-#N canvas 438 359 165 47 \$3-e-am-sc 1;
+#N canvas 621 144 259 101 \$3-e-am-sc 1;
 #X restore 10 9 pd \$3-e-am-sc;
-#X obj 327 55 symbol \$2;
-#X obj 327 18 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 327 78 list fromsymbol;
-#X obj 327 98 list prepend 0;
-#X obj 443 83 table \$0.symbol 20;
-#X obj 327 118 s \$0.symbol;
-#X obj 301 184 array get;
-#X connect 6 0 8 0;
-#X connect 7 0 6 0;
-#X connect 8 0 9 0;
-#X connect 9 0 11 0;
+#X obj 191 177 netpd_f \$1 \$2/f 0;
+#X obj 307 90 mx-fx-sidechannel \$1 \$2/sc;
