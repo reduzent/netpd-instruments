@@ -483,11 +483,11 @@
 #X connect 15 3 16 0;
 #X connect 16 0 17 1;
 #X connect 17 0 2 0;
-#X restore 231 268 pd availability.test;
+#X restore 231 288 pd availability.test;
 #X obj 231 200 r \$0.selected.sc;
 #X msg 20 81 label \$1;
 #X obj 20 104 s \$0.selector.r;
-#X obj 231 293 s \$0.configured.sc;
+#X obj 231 313 s \$0.configured.sc;
 #X obj 20 59 r \$0.configured.sc;
 #X obj 24 159 r \$0.configured.sc;
 #X obj 24 185 select empty;
@@ -509,12 +509,24 @@
 #X obj 68 23 cnv 1 1 1 empty 3075.field.0.r empty 1 6 1 9 -233017 -1
 0;
 #X obj 24 233 symbol mx-\$1-\$2;
+#X obj 68 23 cnv 1 1 1 empty 3320.field.3.r empty 1 6 1 9 -1 -1 0;
+#X obj 68 23 cnv 1 1 1 empty 3320.field.-2.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 3320.field.-1.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 3320.field.1.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 3320.field.2.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 3320.field.0.r empty 1 6 1 9 -233017 -1
+0;
+#X obj 231 264 route symbol;
 #X connect 1 0 25 0;
 #X connect 23 0 1 0;
 #X connect 23 1 24 0;
 #X connect 32 0 23 0;
 #X connect 39 0 40 0;
-#X connect 40 0 42 0;
+#X connect 40 0 69 0;
 #X connect 41 0 42 1;
 #X connect 42 0 46 0;
 #X connect 43 0 39 0;
@@ -527,4 +539,5 @@
 #X connect 51 0 53 0;
 #X connect 53 0 52 0;
 #X connect 62 0 51 0;
+#X connect 69 0 42 0;
 #X coords 0 -1 1 1 50 12 2 20 22;
