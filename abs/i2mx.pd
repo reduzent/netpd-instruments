@@ -316,13 +316,13 @@
 #X text 37 15 [i2mx \$1 instrument];
 #X obj 35 38 inlet~;
 #X obj 122 38 inlet~;
-#N canvas 931 347 148 162 NETPD 0;
+#N canvas 931 368 148 162 NETPD 1;
 #N canvas 1004 390 186 126 abslist 0;
 #X msg 11 12 mx-aux-send;
 #X msg 13 39 mx-insert-container;
 #X msg 13 65 mx-insert-control;
 #X restore 9 39 pd abslist;
-#X msg 9 15 version 0 0 5;
+#X msg 9 15 version 0 0 6;
 #X restore 211 38 pd NETPD 2 0;
 #N canvas 793 366 257 218 INIT 0;
 #X obj 14 131 \$1;
@@ -420,8 +420,7 @@
 #X obj 273 151 b;
 #X obj 273 173 symbol \$1-dac;
 #X obj 23 64 s~ mx-\$1-\$2-l;
-#X obj 58 97 s~ mx-\$1-\$2-l;
-#N canvas 683 550 204 215 instr.com 1;
+#N canvas 683 550 204 215 instr.com 0;
 #X obj 25 10 r mx;
 #X obj 25 78 b;
 #X obj 25 144 s mx;
@@ -436,6 +435,7 @@
 #X connect 5 0 2 0;
 #X connect 6 0 1 0;
 #X restore 219 10 pd instr.com;
+#X obj 58 97 s~ mx-\$1-\$2-r;
 #X connect 0 0 3 0;
 #X connect 0 0 11 1;
 #X connect 3 0 4 0;
@@ -446,7 +446,7 @@
 #X connect 7 0 1 0;
 #X connect 7 0 15 0;
 #X connect 8 0 2 0;
-#X connect 8 0 16 0;
+#X connect 8 0 17 0;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
