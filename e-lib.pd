@@ -1,7 +1,7 @@
-#N canvas 631 60 467 219 10;
+#N canvas 628 50 467 219 10;
 #X text 94 140 by Enrique Erne;
-#N canvas 879 117 307 123 NETPD 0;
-#N canvas 1084 117 481 299 abslist 0;
+#N canvas 876 107 307 123 NETPD 0;
+#N canvas 1081 107 481 299 abslist 0;
 #X msg 28 45 e-del;
 #X msg 28 65 e-spectdel;
 #X msg 39 174 e-2rect;
@@ -23,15 +23,16 @@
 #X msg 254 134 e-dwnsmp;
 #X msg 184 254 e-pong;
 #X msg 234 63 e-am-sc;
+#X msg 235 82 e-mix-sc;
 #X restore 18 37 pd abslist;
 #X msg 23 62 singleton;
-#X msg 19 15 version 0 2 11;
+#X msg 19 15 version 0 2 12;
 #X restore 18 46 pd NETPD 2 0;
 #X text 17 158 netpd2-ified by Roman Haefeli;
-#N canvas 193 266 346 133 \$1-e-lib 0;
+#N canvas 190 256 346 133 \$1-e-lib 0;
 #X text 29 25 maybe there will be a description...;
 #X msg 250 63 eN!;
 #X restore 18 17 pd \$1-e-lib;
 #X obj 15 75 mx-fx-list \$1 e-lib e-2rect e-am e-am-sc e-bitcrush e-convolve
-e-crs4 e-del e-dwnsmp e-flanger e-loop e-modf e-monitor e-pitchshifter
+e-crs4 e-del e-dwnsmp e-flanger e-loop e-mix-sc e-modf e-monitor e-pitchshifter
 e-pong e-rev1 e-rev2 e-rev3 e-ssb e-spectdel e-spectfilt e-tanh;
