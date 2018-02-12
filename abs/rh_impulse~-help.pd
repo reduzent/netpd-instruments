@@ -1,0 +1,16 @@
+#N canvas 354 53 429 317 10;
+#N canvas 659 72 327 81 NETPD 0;
+#X msg 15 16 version 0 1 0;
+#X restore 304 186 pd NETPD 2 0;
+#X obj 26 158 rh_impulse~;
+#X obj 26 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 205 74 inlet0: bang;
+#X text 287 286 2018 \, Roman Haefeli;
+#X obj 26 212 dac~;
+#X text 198 92 outlet0: impulse (signal);
+#X text 21 13 [rh_impulse~] - convert bangs to impulses;
+#X text 113 28 (with sample precision);
+#X connect 1 0 5 0;
+#X connect 1 0 5 1;
+#X connect 2 0 1 0;
