@@ -71,8 +71,11 @@
 #X obj 125 216 outlet~;
 #X obj 183 46 inlet;
 #X obj 257 44 inlet;
-#N canvas 779 229 264 116 NETPD 0;
+#N canvas 779 256 264 116 NETPD 0;
 #X msg 17 22 version 0 1 2;
+#N canvas 793 195 446 61 abslist 0;
+#X msg 9 12 dynlib_twophaseenvelope~-help;
+#X restore 19 54 pd abslist;
 #X restore 370 278 pd NETPD 2 0;
 #N canvas 0 215 284 252 rt60 0;
 #X obj 87 21 loadbang;

@@ -1,4 +1,4 @@
-#N canvas 382 43 435 295 10;
+#N canvas 382 53 435 295 10;
 #X declare -stdpath iemlib -stdlib iemlib/iemlib1;
 #N canvas 366 362 832 288 frequenzweiche 0;
 #X obj 36 69 inlet~;
@@ -46,8 +46,11 @@
 #X obj 86 51 inlet;
 #X obj 126 51 inlet;
 #X obj 166 51 inlet;
-#N canvas 710 180 268 110 NETPD 0;
+#N canvas 710 207 268 110 NETPD 0;
 #X msg 22 14 version 0 1 4;
+#N canvas 762 180 418 67 abslist 0;
+#X msg 12 11 dynlib_4bfs~-help;
+#X restore 23 44 pd abslist;
 #X restore 278 34 pd NETPD 2 0;
 #X text 24 15 4-band frequency separator;
 #X obj 119 258 declare -stdpath iemlib -stdlib iemlib/iemlib1;
