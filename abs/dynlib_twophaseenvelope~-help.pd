@@ -1,0 +1,61 @@
+#N canvas 618 53 559 634 10;
+#X obj 35 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -261234 -1
+-1;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0.envelope 500 float 0;
+#X coords 0 1.1 499 -0.1 500 100 1 0 0;
+#X restore 37 487 graph;
+#X floatatom 147 161 5 0 0 0 - - -, f 5;
+#X floatatom 218 189 5 0 0 0 - - -, f 5;
+#X obj 77 216 dynlib_twophaseenvelope~;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0.direct 500 float 0;
+#X coords 0 1.1 499 -0.1 500 100 1 0 0;
+#X restore 37 375 graph;
+#X obj 35 253 tabwrite~ \$0.envelope;
+#X obj 85 114 tabwrite~ \$0.direct;
+#X obj 35 92 t b;
+#X text 194 161 attack (in samples);
+#X text 253 190 release (in samples);
+#X text 189 23 dependent coefficients;
+#X obj 228 112 loadbang;
+#X msg 147 141 44;
+#X msg 218 138 264;
+#N canvas 0 53 313 226 testsignal 0;
+#X obj 23 19 inlet;
+#X obj 23 102 vline~;
+#X msg 23 77 0 0 1 \, 1 0 3 \, 0 0 9 \, 1 0 30;
+#X obj 78 46 loadbang;
+#X obj 22 139 outlet~;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X restore 76 88 pd testsignal;
+#X text 347 58 inlet0: signal;
+#X text 347 78 inlet1: downward slope time (s);
+#X text 347 98 inlet2: upward slope time (s);
+#X text 341 118 outlet0: envelope signal;
+#X text 37 286 This is useful whenever the adjustment time of the follower
+is supposed to be different for upward and downward adjustment. The
+typical use case is the attack and release time of a dynamic range
+compressor.;
+#X text 330 599 2018 \, Roman Haefeli;
+#N canvas 0 53 329 94 NETPD 0;
+#X msg 16 23 version 0 1 0;
+#X restore 458 595 pd NETPD 2 0;
+#X text 28 8 dynlib_twophaseenvelope~ - a low-pass filter with direction
+;
+#X connect 0 0 8 0;
+#X connect 0 0 15 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 2;
+#X connect 4 0 6 0;
+#X connect 8 0 7 0;
+#X connect 8 0 6 0;
+#X connect 12 0 13 0;
+#X connect 12 0 14 0;
+#X connect 13 0 2 0;
+#X connect 14 0 3 0;
+#X connect 15 0 4 0;
+#X connect 15 0 7 0;
