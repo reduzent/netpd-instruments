@@ -1,4 +1,4 @@
-#N canvas 134 44 929 557 10;
+#N canvas 134 53 929 557 10;
 #X text 5 2 single band compressor gui;
 #X text 215 3 args: \$1 \$2 \$0 id;
 #X obj 160 148 s \$0.threshold.display;
@@ -50,7 +50,7 @@
 #X obj 803 405 -;
 #X obj 803 320 max 40;
 #X msg 803 454 vis_size 3 \$1;
-#X obj 396 287 r \$3.damp\$4;
+#X obj 396 238 r \$3.damp\$4;
 #X obj 652 300 r \$1-\$2/threshold\$4;
 #X obj 803 298 r \$3.env\$4;
 #X obj 396 464 s \$0.damp.gui;
@@ -68,7 +68,6 @@
 #X obj 789 97 del 500;
 #X obj 789 73 loadbang;
 #X obj 518 291 r \$3.damp\$4;
-#X obj 518 313 - 100;
 #X obj 518 385 t a a b;
 #X obj 518 361 change;
 #X obj 581 357 del 500;
@@ -85,22 +84,22 @@
 #X obj 82 147 tgl 20 0 \$1-\$2/solo\$4 \$1-\$2/solo\$4 empty 17 7 0
 10 -262144 -1 -1 0 1;
 #X obj 53 47 nbx 5 18 -60 0 0 0 \$1-\$2/threshold\$4 \$1-\$2/threshold\$4
-empty 0 -8 0 9 -262144 -1 -1 0 256;
+empty 0 -8 0 9 -262144 -1 -1 -15.126 256;
 #X obj 53 67 nbx 5 18 1 100 1 0 \$1-\$2/ratio\$4 \$1-\$2/ratio\$4 empty
-0 -8 0 9 -262144 -1 -1 1 200;
+0 -8 0 9 -262144 -1 -1 2 200;
 #X obj 53 87 nbx 5 18 1 1000 1 0 \$1-\$2/attack\$4 \$1-\$2/attack\$4
-empty 0 -8 0 9 -262144 -1 -1 1 256;
+empty 0 -8 0 9 -262144 -1 -1 30 256;
 #X obj 53 107 nbx 5 18 10 9999 1 0 \$1-\$2/release\$4 \$1-\$2/release\$4
-empty 0 -8 0 9 -262144 -1 -1 10 256;
+empty 0 -8 0 9 -262144 -1 -1 60 256;
 #X obj 53 127 nbx 5 18 -24 24 0 0 \$1-\$2/gain\$4 \$1-\$2/gain\$4 empty
 0 -8 0 9 -262144 -1 -1 0 256;
 #X obj 31 46 vsl 10 120 -60 0 0 0 \$1-\$2/threshold\$4 \$1-\$2/threshold\$4
-empty 0 -9 0 10 -262144 -1 -1 0 1;
+empty 0 -9 0 10 -262144 -1 -1 8900 1;
 #X obj 30 30 cnv 6 74 154 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 42 47 cnv 3 3 120 empty empty empty 20 12 0 14 -261057 -66577
 0;
-#X obj 42 43 cnv 3 3 123 empty \$0.level.gui empty 20 12 0 14 -66577
+#X obj 42 43 cnv 3 3 90 empty \$0.level.gui empty 20 12 0 14 -66577
 -66577 0;
 #X obj 47 47 cnv 3 3 120 empty empty empty 20 12 0 14 -66577 -66577
 0;
@@ -110,20 +109,20 @@ empty 0 -9 0 10 -262144 -1 -1 0 1;
 -261441 0;
 #X obj 32 47 cnv 3 8 120 empty empty empty 20 12 0 14 -4034 -66577
 0;
-#X obj 32 43 cnv 3 8 39 empty \$0.threshold.gui empty 20 12 0 14 -66577
+#X obj 32 43 cnv 3 8 33 empty \$0.threshold.gui empty 20 12 0 14 -66577
 -66577 0;
 #X obj 32 43 cnv 3 18 3 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 32 32 cnv 5 70 13 empty \$0.damp.display 0dB 0 7 0 10 -66577
+#X obj 32 32 cnv 5 70 13 empty \$0.damp.display    0dB 0 7 0 10 -66577
 -258113 0;
-#X obj 52 47 cnv 5 50 18 empty \$0.threshold.display -18dB 4 9 0 10
+#X obj 52 47 cnv 5 50 18 empty \$0.threshold.display  -15dB 4 9 0 10
 -66577 -4034 0;
 #X obj 52 67 cnv 5 50 18 empty \$0.ratio.display 1:2 4 9 0 10 -66577
 -4034 0;
-#X obj 52 87 cnv 5 50 18 empty \$0.attack.display 17ms 4 9 0 10 -66577
+#X obj 52 87 cnv 5 50 18 empty \$0.attack.display   30ms 4 9 0 10 -66577
 -4034 0;
-#X obj 52 107 cnv 5 50 18 empty \$0.release.display 60ms 4 9 0 10 -66577
--4034 0;
-#X obj 52 127 cnv 5 50 18 empty \$0.gain.display 0dB 4 9 0 10 -66577
+#X obj 52 107 cnv 5 50 18 empty \$0.release.display   60ms 4 9 0 10
+-66577 -4034 0;
+#X obj 52 127 cnv 5 50 18 empty \$0.gain.display    0dB 4 9 0 10 -66577
 -4034 0;
 #X obj 52 147 cnv 5 50 20 empty \$0.solo.display S 21 9 0 10 -66577
 -249601 0;
@@ -151,6 +150,7 @@ empty 0 -9 0 10 -262144 -1 -1 0 1;
 -1 -1;
 #X msg 513 229 label empty;
 #X text 534 208 <- before save;
+#X obj 396 259 + 100;
 #X connect 3 0 4 0;
 #X connect 5 0 6 0;
 #X connect 7 0 8 0;
@@ -197,10 +197,10 @@ empty 0 -9 0 10 -262144 -1 -1 0 1;
 #X connect 45 0 46 0;
 #X connect 46 0 47 0;
 #X connect 47 0 48 0;
-#X connect 48 0 118 0;
+#X connect 48 0 117 0;
 #X connect 49 0 45 0;
 #X connect 50 0 55 0;
-#X connect 51 0 34 0;
+#X connect 51 0 124 0;
 #X connect 52 0 44 0;
 #X connect 53 0 49 0;
 #X connect 56 0 57 0;
@@ -213,42 +213,42 @@ empty 0 -9 0 10 -262144 -1 -1 0 1;
 #X connect 62 0 61 0;
 #X connect 63 0 62 0;
 #X connect 64 0 58 1;
-#X connect 65 0 121 0;
+#X connect 65 0 120 0;
 #X connect 65 1 63 0;
 #X connect 66 0 64 0;
 #X connect 67 0 66 0;
-#X connect 68 0 69 0;
-#X connect 69 0 74 0;
-#X connect 70 0 77 0;
-#X connect 70 1 74 1;
-#X connect 70 2 72 0;
-#X connect 71 0 70 0;
-#X connect 72 0 75 0;
-#X connect 73 0 72 0;
-#X connect 74 0 71 0;
-#X connect 75 0 74 1;
-#X connect 76 0 78 0;
-#X connect 77 0 76 0;
-#X connect 104 0 113 0;
-#X connect 104 1 113 0;
-#X connect 105 0 104 0;
-#X connect 107 0 109 0;
-#X connect 108 0 107 0;
-#X connect 109 0 110 0;
-#X connect 109 0 115 1;
-#X connect 109 0 114 1;
-#X connect 110 0 109 1;
-#X connect 111 0 106 0;
-#X connect 112 0 106 0;
-#X connect 113 0 114 0;
-#X connect 113 1 115 0;
+#X connect 68 0 73 0;
+#X connect 69 0 76 0;
+#X connect 69 1 73 1;
+#X connect 69 2 71 0;
+#X connect 70 0 69 0;
+#X connect 71 0 74 0;
+#X connect 72 0 71 0;
+#X connect 73 0 70 0;
+#X connect 74 0 73 1;
+#X connect 75 0 77 0;
+#X connect 76 0 75 0;
+#X connect 103 0 112 0;
+#X connect 103 1 112 0;
+#X connect 104 0 103 0;
+#X connect 106 0 108 0;
+#X connect 107 0 106 0;
+#X connect 108 0 109 0;
+#X connect 108 0 114 1;
+#X connect 108 0 113 1;
+#X connect 109 0 108 1;
+#X connect 110 0 105 0;
+#X connect 111 0 105 0;
+#X connect 112 0 113 0;
+#X connect 112 1 114 0;
+#X connect 113 0 110 0;
 #X connect 114 0 111 0;
-#X connect 115 0 112 0;
-#X connect 116 0 108 0;
-#X connect 118 0 50 0;
-#X connect 119 0 62 0;
+#X connect 115 0 107 0;
+#X connect 117 0 50 0;
+#X connect 118 0 62 0;
+#X connect 119 0 118 0;
 #X connect 120 0 119 0;
-#X connect 121 0 120 0;
-#X connect 122 0 123 0;
-#X connect 123 0 61 0;
+#X connect 121 0 122 0;
+#X connect 122 0 61 0;
+#X connect 124 0 34 0;
 #X coords 0 -1 1 1 74 154 2 30 30;
