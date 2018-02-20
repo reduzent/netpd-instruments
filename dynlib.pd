@@ -18,7 +18,7 @@
 #X msg 15 55 ragc;
 #X restore 18 16 pd abslist;
 #X msg 19 64 singleton;
-#X msg 18 41 version 0 3 4;
+#X msg 18 41 version 0 3 5;
 #X restore 14 12 pd NETPD 2 0;
 #N canvas 618 339 496 187 \$1-dynlib 1;
 #X text 21 6 DYNLIB;
