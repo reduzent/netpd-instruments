@@ -169,47 +169,57 @@
 #X connect 67 0 37 0;
 #X restore 115 250 pd display-stuff;
 #X obj 10 12 inlet~;
-#X obj 28 33 inlet~;
+#X obj 61 12 inlet~;
 #X obj 10 310 outlet~;
-#X obj 62 282 outlet~;
-#N canvas 690 282 161 104 \$3-rcomp 1;
-#X obj 3 3 cnv 15 137 88 empty empty empty 20 -3 0 14 -1 -62784 0;
-#X obj 8 61 hsl 128 14 -20 30 0 0 \$1-\$2/gain \$1-\$2/gain empty 8
-7 0 10 -83253 -1 -262144 5080 1;
-#X obj 8 5 hsl 128 14 1 100 1 0 \$1-\$2/ratio \$1-\$2/ratio empty 8
-7 0 10 -41633 -1 -262144 0 1;
+#X obj 62 310 outlet~;
+#N canvas 690 336 158 99 \$3-rcomp 1;
+#X obj 3 3 cnv 15 137 88 empty empty hjk 20 30 0 14 -1 -62784 0;
+#X obj 8 61 hsl 128 14 -20 30 0 0 \$1-\$2/gain \$1-\$2/gain gain:        0dB
+8 7 0 10 -83253 -1 -262144 5300 1;
+#X obj 8 5 hsl 128 14 1 100 1 0 \$1-\$2/ratio \$1-\$2/ratio ratio:     1:1.7
+8 7 0 10 -41633 -1 -262144 1600 1;
 #X obj 8 19 hsl 128 14 -60 0 0 0 \$1-\$2/threshold \$1-\$2/threshold
-empty 8 7 0 10 -49958 -1 -262144 12700 1;
-#X obj 8 33 hsl 128 14 1 300 1 0 \$1-\$2/attack \$1-\$2/attack empty
+threshold: -33dB 8 7 0 10 -49958 -1 -262144 5600 1;
+#X obj 8 33 hsl 128 14 1 300 1 0 \$1-\$2/attack \$1-\$2/attack attack:     10ms
 8 7 0 10 -62443 -1 -262144 5127 1;
 #X obj 8 47 hsl 128 14 10 3000 1 0 \$1-\$2/release \$1-\$2/release
-empty 8 7 0 10 -70768 -1 -262144 6173 1;
+release:   221ms 8 7 0 10 -70768 -1 -262144 6900 1;
 #X obj 48 76 cnv 1 1 12 empty \$0-damping empty 20 12 0 14 -124858
 -66577 0;
-#X obj 5 75 tgl 14 0 \$0-vissw-s \$0-vissw-r 0dB 40 8 0 10 -124856
--1 -262144 0 1;
+#X obj 5 75 tgl 14 0 \$0-vissw-s \$0-vissw-r   0dB 40 8 0 10 -124856
+-1 -262144 1 1;
 #X restore 320 43 pd \$3-rcomp;
 #X obj 133 52 netpd_f \$1 \$2/gain 0;
 #X obj 152 74 netpd_f \$1 \$2/ratio 1;
 #X obj 170 95 netpd_f \$1 \$2/threshold 0;
-#N canvas 724 675 155 121 NETPD 0;
-#X msg 11 7 version 0 2 7;
+#N canvas 620 475 151 87 NETPD 0;
+#X msg 15 20 version 0 2 8;
 #X restore 320 62 pd NETPD 2 0;
 #X obj 189 116 netpd_f \$1 \$2/attack 10;
 #X obj 208 138 netpd_f \$1 \$2/release 160;
-#X obj 10 198 dynlib_compressor~;
-#X connect 1 0 12 0;
-#X connect 2 0 12 1;
+#X msg 85 80 gain \$1;
+#X msg 87 111 ratio \$1;
+#X msg 88 139 threshold;
+#X msg 96 161 attack \$1;
+#X msg 107 186 release \$1;
+#X obj 10 218 dynlib_compressor~;
+#X connect 1 0 17 0;
+#X connect 2 0 17 1;
+#X connect 6 0 12 0;
 #X connect 6 0 0 1;
-#X connect 6 0 12 6;
 #X connect 7 0 0 2;
-#X connect 7 0 12 2;
+#X connect 7 0 13 0;
 #X connect 8 0 0 3;
-#X connect 8 0 12 3;
+#X connect 8 0 14 0;
 #X connect 10 0 0 4;
-#X connect 10 0 12 4;
+#X connect 10 0 15 0;
 #X connect 11 0 0 5;
-#X connect 11 0 12 5;
-#X connect 12 0 3 0;
-#X connect 12 1 4 0;
-#X connect 12 2 0 0;
+#X connect 11 0 16 0;
+#X connect 12 0 17 2;
+#X connect 13 0 17 2;
+#X connect 14 0 17 2;
+#X connect 15 0 17 2;
+#X connect 16 0 17 2;
+#X connect 17 0 3 0;
+#X connect 17 1 4 0;
+#X connect 17 2 0 0;
