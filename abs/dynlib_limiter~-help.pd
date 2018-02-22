@@ -1,33 +1,29 @@
 #N canvas 447 53 631 437 10;
 #N canvas 659 72 327 81 NETPD 0;
-#X msg 15 16 version 0 1 0;
+#X msg 15 16 version 0 1 1;
 #X restore 533 374 pd NETPD 2 0;
 #X text 493 404 2018 \, Roman Haefeli;
 #X obj 30 249 dynlib_limiter~;
 #X text 409 30 inlet0: audio-in left;
 #X text 409 50 inlet1: audio-in right;
-#X text 403 110 outlet0: audio-out left;
-#X text 403 130 outlet1: audio-out right;
-#X floatatom 88 197 5 -30 0 0 - - -, f 5;
-#X floatatom 117 226 5 -30 0 0 - - -, f 5;
+#X text 403 90 outlet0: audio-out left;
+#X text 403 110 outlet1: audio-out right;
+#X floatatom 126 171 5 -30 0 0 - - -, f 5;
+#X floatatom 224 170 5 -30 0 0 - - -, f 5;
 #X obj 29 325 dac~;
 #X obj 29 292 *~ 0.2;
 #X obj 73 294 *~ 0.2;
 #X obj 30 58 osc~ 200;
 #X obj 85 58 osc~ 201;
 #X obj 157 75 *~;
-#X text 403 150 outlet2: reduction (dB);
-#X text 409 90 inlet3: output gain (dB \, 0 = unity);
 #X obj 256 47 tgl 15 0 empty empty empty 17 7 0 10 -261234 -1 -1 0
 1;
 #X msg 256 87 \$1 2;
 #X obj 256 108 line~;
-#X obj 128 140 loadbang;
-#X msg 128 161 0;
+#X obj 152 119 loadbang;
+#X msg 152 140 0;
 #X obj 157 54 osc~ 98;
 #X obj 256 66 * 10;
-#X text 127 196 threshold (dB);
-#X text 152 226 output gain (dB);
 #X obj 133 281 vsl 15 40 -30 0 0 0 empty empty empty 0 -9 0 10 -262130
 -1 -1 0 1;
 #X text 146 273 - 0 dB;
@@ -38,30 +34,35 @@
 #X text 39 97 -6dB;
 #X text 16 13 [dynlib_limiter~] - stereo limiter with 3ms pre-delay
 ;
-#X text 230 262 Peaks of the input signal exceeding the threshold are
+#X text 409 70 inlet2: controls;
+#X text 403 130 outlet2: attenuation (dB);
+#X msg 126 191 threshold \$1;
+#X msg 224 190 outceiling \$1;
+#X text 229 262 Peaks of the input signal exceeding the threshold are
 levelled down with a hard-coded pre-delay of 3ms. The amplitude limited
 signal is then amplified by the amount of |threshold| to fit the dynamic
-range set by the output gain. If you don't want the output signal to
-use the full dynamic range \, reduce its gain with the output gain.
+range set by the outceiling. If you don't want the output signal to
+use the full dynamic range \, reduce its gain with the outceiling parameter.
 ;
-#X text 409 70 inlet2: threshold (db \, 0 = unity);
 #X connect 2 0 10 0;
 #X connect 2 1 11 0;
-#X connect 2 2 26 0;
-#X connect 7 0 2 2;
-#X connect 8 0 2 3;
+#X connect 2 2 22 0;
+#X connect 7 0 32 0;
+#X connect 8 0 33 0;
 #X connect 10 0 9 0;
 #X connect 11 0 9 1;
-#X connect 12 0 30 0;
-#X connect 13 0 31 0;
+#X connect 12 0 26 0;
+#X connect 13 0 27 0;
 #X connect 14 0 2 0;
-#X connect 17 0 23 0;
+#X connect 15 0 21 0;
+#X connect 16 0 17 0;
+#X connect 17 0 14 1;
 #X connect 18 0 19 0;
-#X connect 19 0 14 1;
-#X connect 20 0 21 0;
-#X connect 21 0 7 0;
-#X connect 21 0 8 0;
-#X connect 22 0 14 0;
-#X connect 23 0 18 0;
-#X connect 30 0 2 0;
-#X connect 31 0 2 1;
+#X connect 19 0 7 0;
+#X connect 19 0 8 0;
+#X connect 20 0 14 0;
+#X connect 21 0 16 0;
+#X connect 26 0 2 0;
+#X connect 27 0 2 1;
+#X connect 32 0 2 2;
+#X connect 33 0 2 2;
