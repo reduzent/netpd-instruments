@@ -8,7 +8,7 @@
 #X restore 11 34 pd abslist;
 #X msg 11 7 version 0 1 3;
 #X restore 837 31 pd NETPD 2 0;
-#N canvas 603 457 425 218 \$3-r4mbc 1;
+#N canvas 603 457 427 215 \$3-r4mbc 1;
 #X obj 2 2 cnv 15 410 202 empty empty sdfdsaf 20 12 0 14 -33295 -66577
 0;
 #X obj 5 5 cnv 14 404 14 empty empty empty 20 12 0 14 -1 -66577 0;
@@ -17,19 +17,19 @@
 #X obj 175 47 r4mbc-sbcg \$1 \$2 \$0 3;
 #X obj 260 47 r4mbc-sbcg \$1 \$2 \$0 4;
 #N canvas 546 121 434 65 frequency.separator 0;
-#X obj 13 10 hsl 96 10 1 96 0 0 \$0.slider1 \$0.slider1.r sdfa -2 5
-0 10 -262144 -1 -1 9000 1;
-#X obj 13 10 hsl 181 10 1 181 0 0 \$0.slider2 \$0.slider2.r sdfa -2
-5 0 10 -262144 -1 -1 17500 1;
-#X obj 14 10 hsl 280 10 1 280 0 0 \$0.slider3 \$0.slider3.r sdfa -2
-5 0 10 -262144 -1 -1 27400 1;
+#X obj 13 10 hsl 83 10 1 83.5576 0 0 \$0.slider1 \$0.slider1.r sdfa
+-2 5 0 10 -262144 -1 -1 7703 1;
+#X obj 13 10 hsl 203 10 1 203.924 0 0 \$0.slider2 \$0.slider2.r sdfa
+-2 5 0 10 -262144 -1 -1 19702 1;
+#X obj 14 10 hsl 323 10 1 323.997 0 0 \$0.slider3 \$0.slider3.r sdfa
+-2 5 0 10 -262144 -1 -1 31702 1;
 #X obj 10 10 cnv 10 400 10 empty \$0.segment4 empty 20 12 0 14 -261056
 -66577 0;
-#X obj 10 10 cnv 10 280 10 empty \$0.segment3 empty 20 12 0 14 -235706
+#X obj 10 10 cnv 10 323 10 empty \$0.segment3 empty 20 12 0 14 -235706
 -66577 0;
-#X obj 10 10 cnv 10 181 10 empty \$0.segment2 empty 20 12 0 14 -198129
+#X obj 10 10 cnv 10 203 10 empty \$0.segment2 empty 20 12 0 14 -198129
 -66577 0;
-#X obj 10 10 cnv 10 96 10 empty \$0.segment1 empty 20 0 0 14 -144676
+#X obj 10 10 cnv 10 83 10 empty \$0.segment1 empty 20 0 0 14 -144676
 -66577 0;
 #X coords 0 -1 1 1 400 10 2 10 10;
 #X restore 7 7 pd frequency.separator;
@@ -43,11 +43,11 @@
 -257025 0;
 #X obj 335 145 cnv 15 74 16 empty empty -------gain 2 7 0 10 -86853
 -257025 0;
-#X obj 50 24 cnv 15 60 15 empty \$0.xfreq1.display    148Hz 2 7 0 10
+#X obj 50 24 cnv 15 60 15 empty \$0.xfreq1.display    123Hz 2 7 0 10
 -66577 -259712 0;
-#X obj 136 24 cnv 15 60 15 empty \$0.xfreq2.display    538Hz 2 7 0
+#X obj 136 24 cnv 15 60 15 empty \$0.xfreq2.display    763Hz 2 7 0
 10 -66577 -259712 0;
-#X obj 223 24 cnv 15 60 15 empty \$0.xfreq3.display   2418Hz 2 7 0
+#X obj 223 24 cnv 15 60 15 empty \$0.xfreq3.display   4712Hz 2 7 0
 10 -66577 -259712 0;
 #X obj 80 65 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
 #X obj 80 85 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
