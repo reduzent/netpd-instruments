@@ -114,19 +114,19 @@
 #X connect 39 0 38 0;
 #X connect 40 0 30 0;
 #X restore 108 191 pd display-stuff;
-#N canvas 904 329 156 60 \$3-rlimit 1;
+#N canvas 904 356 156 60 \$3-rlimit 1;
 #X obj 4 3 cnv 15 137 46 empty empty empty 20 20 0 14 -1 -62784 0;
-#X obj 9 19 hsl 128 14 -30 0 0 0 \$1-\$2/level \$1-\$2/level outceiling:   0dB
-8 7 0 10 -214293 -1 -262144 12700 1;
+#X obj 9 19 hsl 128 14 -30 0 0 0 \$1-\$2/level \$1-\$2/level outceiling
+8 7 0 10 -214293 -1 -262144 0 1;
 #X obj 9 5 hsl 128 14 -30 0 0 0 \$1-\$2/threshold \$1-\$2/threshold
-threshold:    0dB 8 7 0 10 -193618 -1 -262144 12700 1;
+threshold 8 7 0 10 -193618 -1 -262144 0 1;
 #X obj 49 34 cnv 1 1 12 empty \$0-dumping empty 20 12 0 14 -235423
 -66577 0;
 #X obj 6 33 tgl 14 0 \$0-vissw-s \$0-vissw-r empty 40 8 0 10 -227231
 -1 -262144 0 1;
 #X restore 270 146 pd \$3-rlimit;
-#N canvas 464 633 287 152 NETPD 0;
-#X msg 97 86 version 0 1 5;
+#N canvas 464 660 287 152 NETPD 0;
+#X msg 97 86 version 0 2 4;
 #X restore 270 168 pd NETPD 2 0;
 #X obj 21 42 inlet~;
 #X obj 63 42 inlet~;
