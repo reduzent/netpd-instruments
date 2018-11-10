@@ -1,5 +1,4 @@
 #N canvas 628 332 364 338 10;
-#X declare -stdpath extra/iemlib;
 #N canvas 716 188 168 171 \$1-tr808 1;
 #X obj 19 94 hsl 128 15 0 1 0 0 \$1-clap/gain \$1-clap/gain gain 2
 7 0 10 -204786 -1 -1 7150 1;
@@ -19,7 +18,7 @@ decay 2 7 0 10 -262130 -1 -1 8980 1;
 #X msg 17 34 tr808-bd~;
 #X msg 99 37 qseq3-instr-list;
 #X restore 31 36 pd abslist;
-#X msg 30 13 version 0 0 7;
+#X msg 30 13 version 0 0 8;
 #X restore 14 31 pd NETPD 2 0;
 #X obj 14 77 netpd_head \$1 tr808;
 #N canvas 325 666 347 282 clap 0;
