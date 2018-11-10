@@ -1,5 +1,11 @@
-#N canvas 627 303 376 294 10;
-#X declare -stdpath iemlib -stdlib iem_t3_lib;
+#N struct 1632.button float posx float posy float color;
+#N struct 1632.cursor float cx float cy float cy2;
+#N struct 1562-automation float yshift array variy 1562-automation-element
+;
+#N struct 1562-automation-element float y;
+#N struct 1561.autolabel float x float y symbol lbl float color float
+track;
+#N canvas 946 138 376 294 10;
 #N canvas 102 211 671 621 pluckit! 0;
 #X obj 37 263 pack f f f;
 #N canvas 159 73 755 400 dat 0;
@@ -192,7 +198,7 @@
 #X connect 28 2 1 0;
 #X connect 29 0 13 0;
 #X restore 19 253 pd pluckit!;
-#N canvas 1006 352 107 77 \$1-bon-plucker 0;
+#N canvas 1006 451 107 77 \$1-bon-plucker 1;
 #X obj 8 5 cnv 15 80 63 empty empty bon-plucker 4 6 0 8 -211943 -123526
 0;
 #X obj 11 36 hsl 75 17 0 1 0 0 \$1-pluckpos \$1-pluckpos pluckpos 4
@@ -205,18 +211,17 @@
 #X obj 19 104 netpd_head \$1 bon-plucker;
 #X obj 19 147 netpd_f \$1 pluckpos 0.3;
 #X obj 19 125 netpd_f \$1 decay 0.5;
-#N canvas 847 202 242 115 NETPD 0;
-#N canvas 419 259 155 134 abslist 0;
+#N canvas 847 235 242 115 NETPD 0;
+#N canvas 419 325 155 134 abslist 0;
 #X msg 14 54 bon-plucker-voice;
 #X msg 14 34 i2mx;
 #X msg 14 13 unstep;
 #X restore 10 38 pd abslist;
-#X msg 9 13 version 0 0 4;
+#X msg 9 13 version 0 0 5;
 #X restore 19 43 pd NETPD 2 0;
 #X obj 19 228 unstep \$1 bon-plucker decay pluckpos;
 #X obj 19 181 r \$0.unstep;
 #X msg 19 205 vis 1;
-#X obj 19 23 declare -stdpath iemlib -stdlib iem_t3_lib;
 #X connect 6 0 0 0;
 #X connect 7 0 8 0;
 #X connect 8 0 6 0;
