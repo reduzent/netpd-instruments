@@ -1,38 +1,23 @@
 #N canvas 789 147 523 357 10;
 #X obj 34 78 inlet~;
-#X obj 167 79 inlet~;
+#X obj 197 79 inlet~;
 #X obj 33 288 outlet~;
-#X obj 167 288 outlet~;
-#N canvas 1004 308 225 110 NETPD 0;
-#N canvas 0 50 331 82 abslist 0;
+#X obj 197 288 outlet~;
+#N canvas 1004 539 225 143 NETPD 0;
+#N canvas 0 165 331 82 abslist 0;
 #X msg 13 9 roman_helpers;
 #X restore 8 39 pd abslist;
-#X msg 7 15 version 0 1 1;
+#X msg 7 15 version 0 2 0;
 #X restore 34 21 pd NETPD 2 0;
-#N canvas 546 171 304 199 \$3-e-convolve 1;
+#N canvas 546 369 293 197 \$3-e-convolve 1;
 #X obj 8 11 bng 15 250 50 0 \$0.load \$0.bli load_impulse_response
 17 7 0 10 -262144 -1 -1;
 #X obj 11 32 hsl 128 15 0 127 0 0 \$1-\$2/level \$1-\$2/level level
-2 8 0 10 -262144 -1 -1 5000 1;
-#X floatatom 8 53 6 0 0 0 - #0.rms -, f 6;
+2 8 0 10 -262144 -1 -1 11200 1;
+#X floatatom 8 53 6 0 0 0 - #0.rms -;
 #X text 49 52 dB (output);
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array \$0.IR 500 float 3;
-#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X array \$0.IR 500 float 2;
 #X coords 0 1 500 -1 250 100 1 0 0;
 #X restore 8 84 graph;
 #X restore 34 45 pd \$3-e-convolve;
@@ -67,21 +52,16 @@
 #X obj 174 398 t a a;
 #X obj 146 301 netpd_a \$1 \$2/IR-length;
 #X msg 313 354 resize \$1;
-#X msg 12 534 analyze \$1.left;
-#X obj 12 510 \$0;
-#X obj 12 554 s \$0.conv.l;
-#X obj 115 510 \$0;
-#X msg 115 534 analyze \$1.right;
 #X obj 146 321 route float;
-#X obj 115 554 s \$0.conv.r;
 #X obj 12 259 t a a;
 #X obj 57 262 s \$0.wavedisplay;
+#X obj 12 525 outlet;
 #X connect 0 0 17 0;
 #X connect 1 0 7 0;
 #X connect 2 0 1 0;
 #X connect 3 0 6 0;
 #X connect 3 1 0 0;
-#X connect 4 0 37 0;
+#X connect 4 0 31 0;
 #X connect 6 0 12 0;
 #X connect 7 0 9 0;
 #X connect 8 0 13 0;
@@ -99,39 +79,30 @@
 #X connect 20 0 23 0;
 #X connect 21 0 22 0;
 #X connect 23 0 24 0;
-#X connect 25 0 31 0;
-#X connect 25 1 33 0;
+#X connect 25 0 33 0;
 #X connect 25 2 26 0;
 #X connect 26 0 27 0;
 #X connect 27 0 19 0;
 #X connect 27 1 20 0;
-#X connect 28 0 35 0;
+#X connect 28 0 30 0;
 #X connect 29 0 22 0;
 #X connect 29 0 24 0;
-#X connect 30 0 32 0;
-#X connect 31 0 30 0;
-#X connect 33 0 34 0;
-#X connect 34 0 36 0;
-#X connect 35 0 18 1;
-#X connect 35 0 29 0;
-#X connect 35 0 19 1;
-#X connect 35 0 20 1;
-#X connect 37 0 16 0;
-#X connect 37 1 38 0;
-#X restore 335 66 pd load.IR;
-#X obj 34 143 convolve~ 1024;
-#X obj 167 143 convolve~ 1024;
+#X connect 30 0 18 1;
+#X connect 30 0 29 0;
+#X connect 30 0 19 1;
+#X connect 30 0 20 1;
+#X connect 31 0 16 0;
+#X connect 31 1 32 0;
+#X restore 289 47 pd load.IR;
 #X obj 34 236 *~;
-#X obj 168 239 *~;
-#X obj 73 111 r \$0.conv.l;
-#X obj 199 110 r \$0.conv.r;
+#X obj 198 239 *~;
 #X obj 68 171 r \$0.level;
 #X msg 68 191 \$1 50;
-#X obj 242 271 env~ 8192 8192;
-#X obj 242 291 s \$0.rms;
-#X obj 335 109 netpd_f \$1 \$2/level 50;
-#X obj 335 129 dbtorms;
-#X obj 335 149 s \$0.level;
+#X obj 272 271 env~ 8192 8192;
+#X obj 272 291 s \$0.rms;
+#X obj 385 109 netpd_f \$1 \$2/level 50;
+#X obj 385 129 dbtorms;
+#X obj 385 149 s \$0.level;
 #X obj 68 211 line~;
 #N canvas 946 174 450 300 wavedisplay 0;
 #X obj 27 13 r \$0.wavedisplay;
@@ -158,21 +129,25 @@
 #X connect 7 0 8 1;
 #X connect 8 0 9 0;
 #X connect 9 0 10 0;
-#X restore 333 191 pd wavedisplay;
-#X connect 0 0 7 0;
-#X connect 1 0 8 0;
-#X connect 7 0 9 0;
-#X connect 8 0 10 0;
-#X connect 9 0 2 0;
-#X connect 9 0 15 0;
-#X connect 10 0 3 0;
-#X connect 10 0 15 0;
-#X connect 11 0 7 0;
-#X connect 12 0 8 0;
+#X restore 383 191 pd wavedisplay;
+#X obj 34 143 rh_convolve~ \$0.left 128;
+#X obj 197 143 rh_convolve~ \$0.right 128;
+#X msg 289 90 analyze;
+#X connect 0 0 18 0;
+#X connect 1 0 19 0;
+#X connect 6 0 20 0;
+#X connect 7 0 2 0;
+#X connect 7 0 11 0;
+#X connect 8 0 3 0;
+#X connect 8 0 11 0;
+#X connect 9 0 10 0;
+#X connect 10 0 16 0;
+#X connect 11 0 12 0;
 #X connect 13 0 14 0;
-#X connect 14 0 20 0;
-#X connect 15 0 16 0;
-#X connect 17 0 18 0;
-#X connect 18 0 19 0;
-#X connect 20 0 9 1;
-#X connect 20 0 10 1;
+#X connect 14 0 15 0;
+#X connect 16 0 7 1;
+#X connect 16 0 8 1;
+#X connect 18 0 7 0;
+#X connect 19 0 8 0;
+#X connect 20 0 19 1;
+#X connect 20 0 18 1;
