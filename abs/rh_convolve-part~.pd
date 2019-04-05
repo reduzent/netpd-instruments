@@ -208,6 +208,9 @@
 #X obj 760 94 expr ln(\$3)/ln(2);
 #X text 758 275 protect against rounding error;
 #X obj 309 244 tabplay~ \$4;
+#N canvas 386 219 361 59 NETPD 0;
+#X msg 7 15 version 0 1 0;
+#X restore 27 19 pd NETPD 2 0;
 #X connect 0 0 7 1;
 #X connect 1 0 7 0;
 #X connect 2 0 27 0;
