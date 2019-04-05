@@ -9,7 +9,7 @@
 #X restore 8 39 pd abslist;
 #X msg 7 15 version 0 1 1;
 #X restore 34 21 pd NETPD 2 0;
-#N canvas 546 303 304 199 \$3-e-convolve 1;
+#N canvas 546 336 293 197 \$3-e-convolve 1;
 #X obj 8 11 bng 15 250 50 0 \$0.load \$0.bli load_impulse_response
 17 7 0 10 -262144 -1 -1;
 #X obj 11 32 hsl 128 15 0 127 0 0 \$1-\$2/level \$1-\$2/level level
