@@ -1,0 +1,16 @@
+#N canvas 356 43 450 300 10;
+#X obj 26 115 hsl 75 40 0 1 0 0 \$0.slider empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 24 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 111 116 <- named send symbol: \$0.slider;
+#X text 18 69 When clicking&dragging the slider with the mouse \, the
+dragging part is suppressed. This can be useful for making bng replacements
+with non-square shapes.;
+#N canvas 694 380 314 48 NETPD 0;
+#X msg 16 16 version 0 0 1;
+#X restore 313 264 pd NETPD 2 0;
+#X obj 24 172 rh_slider_doubleclick \$0.slider;
+#X text 14 7 rh_slider_doubleclick - detect doubleclick on hsl or vsl
+;
+#X connect 5 0 1 0;

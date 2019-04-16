@@ -1,0 +1,19 @@
+#N canvas 492 43 395 273 10;
+#X obj 27 138 rh_const_pi;
+#X floatatom 27 158 10 0 0 0 - - -, f 10;
+#X obj 27 104 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 27 175 print PI;
+#X obj 123 136 rh_const_pi / 2;
+#X obj 123 177 print PI/2;
+#X text 14 10 rh_const_pi - returns value of number Pi;
+#X text 14 38 rh_const_pi outputs pi on loadbang. Also \, you can apply
+simple arithmetics by specifying an operator and number as arguments.
+;
+#N canvas 812 158 333 54 NETPD 0;
+#X msg 15 10 version 0 0 1;
+#X restore 293 242 pd NETPD 2 0;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;

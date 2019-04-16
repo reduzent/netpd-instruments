@@ -1,0 +1,20 @@
+#N canvas 455 43 420 287 10;
+#N canvas 597 135 308 61 NETPD 0;
+#X msg 17 19 version 0 0 1;
+#X restore 304 247 pd NETPD 2 0;
+#X text 16 7 rh_pink~ - pink noise generator;
+#X obj 26 76 rh_pink~;
+#X obj 26 178 dac~;
+#X obj 26 146 *~;
+#X obj 84 104 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 84 124 * 0.2;
+#X msg 84 144 \$1 50;
+#X obj 84 164 line~;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 4 0 3 1;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 1;

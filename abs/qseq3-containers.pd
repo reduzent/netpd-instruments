@@ -1,10 +1,10 @@
-#N canvas 556 191 191 118 10;
-#N canvas 654 144 339 170 NETPD 0;
-#X msg 14 9 version 0 0 1;
+#N canvas 556 224 191 118 10;
+#N canvas 654 177 339 170 NETPD 0;
+#X msg 14 9 version 0 0 2;
 #X restore 8 9 pd NETPD;
 #N canvas 599 231 450 300 \$1.set.displays 0;
 #X restore 8 29 pd \$1.set.displays;
 #N canvas 599 231 450 300 \$1.set.containers 0;
 #X restore 8 49 pd \$1.set.containers;
-#N canvas 520 226 245 266 \$1-qseq3 1;
+#N canvas 586 132 299 259 \$1-qseq3 0;
 #X restore 8 69 pd \$1-qseq3;

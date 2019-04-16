@@ -1,4 +1,4 @@
-#N canvas 405 55 352 525 10;
+#N canvas 396 43 352 525 10;
 #X obj 27 13 inlet;
 #X obj 27 157 /;
 #X msg 27 135 1000 \$1;
@@ -10,7 +10,7 @@
 #X obj 148 217 * 6;
 #X obj 27 215 *;
 #X obj 114 215 * 4;
-#N canvas 0 44 431 228 exciter 0;
+#N canvas 0 50 431 228 exciter 0;
 #X obj 28 136 vline~;
 #X obj 28 70 * 0.5;
 #X obj 28 158 outlet~;
@@ -29,7 +29,7 @@
 #X connect 6 0 7 0;
 #X connect 7 0 0 0;
 #X restore 27 266 pd exciter;
-#N canvas 0 44 450 300 reblocked 0;
+#N canvas 0 50 450 300 reblocked 0;
 #X obj 62 168 outlet~;
 #X obj 61 92 +~;
 #X obj 178 175 lop~;
@@ -55,7 +55,7 @@
 #X restore 39 398 pd reblocked;
 #X obj 26 458 outlet~;
 #X obj 194 373 lop~ 5000;
-#N canvas 0 44 450 300 reblocked 0;
+#N canvas 0 50 450 300 reblocked 0;
 #X obj 62 168 outlet~;
 #X obj 61 92 +~;
 #X obj 178 175 lop~;
@@ -101,17 +101,17 @@
 #X obj 27 86 mtof;
 #X obj 42 346 hip~ 400;
 #X obj 223 346 hip~ 400;
-#N canvas 584 92 321 70 NETPD 0;
-#X msg 13 14 version 0 0 2;
+#N canvas 581 82 321 70 NETPD 0;
+#X msg 13 14 version 0 0 3;
 #X restore 259 501 pd NETPD 2 0;
 #X text 10 503 2013 \, Roman Haefeli;
-#N canvas 95 173 181 212 humanize 0;
+#N canvas 89 207 181 212 humanize 0;
 #X obj 36 55 t b a;
 #X obj 36 99 del;
 #X obj 36 121 f;
 #X obj 36 23 inlet;
 #X obj 36 151 outlet;
-#X obj 36 77 random 50;
+#X obj 36 77 random 0;
 #X connect 0 0 5 0;
 #X connect 0 1 2 1;
 #X connect 1 0 2 0;

@@ -1,4 +1,4 @@
-#N canvas 50 101 377 295 10;
+#N canvas 50 99 377 295 10;
 #X obj 23 12 noise~;
 #X obj 23 32 rpole~ 0.995728;
 #X obj 23 52 rpole~ 0.947906;
@@ -10,8 +10,11 @@
 #X text 22 207 http://www.firstpr.com.au/dsp/pink-noise/;
 #X text 23 192 source:;
 #X text 228 270 2014 \, Roman Haefeli;
-#N canvas 0 44 343 44 NETPD 0;
-#X msg 17 12 version 0 1 0;
+#N canvas 476 240 345 102 NETPD 0;
+#X msg 17 12 version 0 1 1;
+#N canvas 573 286 316 75 abslist 0;
+#X msg 16 18 rh_pink~-help;
+#X restore 18 38 pd abslist;
 #X restore 281 12 pd NETPD 2 0;
 #X text 176 69 pink noise generator;
 #X connect 0 0 1 0;

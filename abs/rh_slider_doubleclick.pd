@@ -1,8 +1,11 @@
-#N canvas 263 346 298 275 10;
+#N canvas 257 326 298 275 10;
 #X obj 14 6 r \$1;
 #X obj 14 233 outlet;
-#N canvas 606 290 184 121 NETPD 0;
-#X msg 12 18 version 0 1 0;
+#N canvas 603 307 184 94 NETPD 0;
+#X msg 12 18 version 0 1 1;
+#N canvas 0 43 321 80 abslist 0;
+#X msg 8 17 rh_slider_doubleclick-help;
+#X restore 14 46 pd abslist;
 #X restore 176 16 pd NETPD 2 0;
 #X obj 14 28 route float;
 #X obj 14 210 del 1;

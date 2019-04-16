@@ -1,0 +1,12 @@
+#N canvas 512 43 368 245 10;
+#X floatatom 42 72 5 0 0 0 - - -, f 5;
+#X floatatom 42 148 5 0 0 0 - - -, f 5;
+#N canvas 916 304 340 91 NETPD 0;
+#X msg 6 11 version 0 0 1;
+#X restore 268 215 pd NETPD 2 0;
+#X obj 42 108 rh_ms2samp;
+#X text 81 73 milliseconds;
+#X text 86 148 samples;
+#X text 11 6 rh_ms2samp - convert milliseconds to samples;
+#X connect 0 0 3 0;
+#X connect 3 0 1 0;

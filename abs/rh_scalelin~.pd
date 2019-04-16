@@ -1,4 +1,4 @@
-#N canvas 514 179 321 257 10;
+#N canvas 514 178 321 257 10;
 #X obj 88 60 t b f;
 #X obj 47 130 - \$1;
 #X obj 225 42 loadbang;
@@ -9,9 +9,12 @@
 #X obj 31 196 +~ \$1;
 #X obj 31 220 outlet~;
 #X obj 32 38 inlet~;
-#N canvas 696 356 161 103 NETPD 0;
-#X msg 7 12 version 0 0 1;
-#X restore 191 149 pd NETPD;
+#N canvas 696 408 174 86 NETPD 0;
+#X msg 7 12 version 0 0 2;
+#N canvas 712 239 354 136 abslist 0;
+#X msg 10 14 rh_scalelin~-help;
+#X restore 7 45 pd abslist;
+#X restore 217 213 pd NETPD 2 0;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 0 1 7 1;

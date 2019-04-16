@@ -1,17 +1,27 @@
 #N canvas 590 192 405 94 10;
-#N canvas 668 239 164 91 NETPD 0;
-#N canvas 813 321 214 147 abslist 0;
-#X msg 12 15 rcomp;
-#X msg 13 42 rlimit;
-#X msg 14 66 zlimit;
-#X msg 13 90 zcomplim;
-#X msg 15 121 mx-fx-list;
-#X msg 74 16 r4mbc;
+#N canvas 668 482 164 91 NETPD 0;
+#N canvas 813 537 236 466 abslist 0;
+#X msg 15 75 rcomp;
+#X msg 15 95 rlimit;
+#X msg 15 135 zlimit;
+#X msg 15 115 zcomplim;
+#X msg 106 97 mx-fx-list;
+#X msg 15 35 r4mbc;
+#X msg 15 277 dynlib_peakhold~;
+#X msg 15 357 roman_helpers;
+#X msg 15 297 dynlib_peakenvelope~;
+#X msg 15 177 dynlib_4bfs~;
+#X msg 15 237 dynlib_compressor~;
+#X msg 15 257 dynlib_limiter~;
+#X msg 15 317 dynlib_twophaseenvelope~;
+#X msg 15 217 dynlib_agc~;
+#X msg 15 55 ragc;
+#X msg 15 197 dynlib_4mbc~;
 #X restore 18 16 pd abslist;
-#X msg 18 41 version 0 3 2;
 #X msg 19 64 singleton;
+#X msg 18 41 version 0 3 6;
 #X restore 14 12 pd NETPD 2 0;
-#N canvas 618 339 453 138 \$1-dynlib 1;
+#N canvas 618 339 496 187 \$1-dynlib 0;
 #X text 21 6 DYNLIB;
 #X text 23 24 a collection of dynamic processing effects to be used
 with mx.;
@@ -20,5 +30,5 @@ with mx.;
 #X text 22 60 Author: Roman Haefeli;
 #X text 22 12 ------;
 #X restore 14 33 pd \$1-dynlib;
-#X obj 14 54 mx-fx-list \$1 dynlib r4sat r4mbc rcomp rlimit zcomplim
+#X obj 14 54 mx-fx-list \$1 dynlib r4mbc ragc rcomp rlimit zcomplim
 zlimit;

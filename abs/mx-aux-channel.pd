@@ -1,8 +1,8 @@
-#N canvas 590 44 303 322 10;
+#N canvas 587 43 337 418 10;
 #X obj 8 56 inlet~;
-#X obj 9 289 outlet~;
-#X obj 8 265 throw~ \$1-mx-sum-l;
-#X obj 95 242 throw~ \$1-mx-sum-r;
+#X obj 9 329 outlet~;
+#X obj 8 305 throw~ \$1-mx-sum-l;
+#X obj 96 264 throw~ \$1-mx-sum-r;
 #N canvas 931 59 387 305 mx.insert___ 0;
 #X obj 6 52 inlet~;
 #X obj 111 50 inlet~;
@@ -132,13 +132,13 @@
 #X obj 8 81 catch~ mx-aux-\$2-l;
 #X obj 94 100 catch~ mx-aux-\$2-r;
 #X obj 9 19 namecanvas mx-aux-channel-\$1-\$2;
-#N canvas 893 445 143 66 NETPD 0;
-#N canvas 914 344 209 227 abslist 0;
+#N canvas 890 510 143 66 NETPD 0;
+#N canvas 914 365 209 227 abslist 0;
 #X msg 8 59 mx-insert-container;
 #X msg 8 13 mx-aux-insert-control;
 #X msg 8 36 mx-aux-send2;
 #X restore 12 31 pd abslist;
-#X msg 12 7 version 0 0 2;
+#X msg 12 7 version 0 0 4;
 #X restore 143 146 pd NETPD 2 0;
 #X obj 144 173 switch~;
 #N canvas 520 483 531 286 mx.aux.pre__ 0;
@@ -158,7 +158,7 @@
 #X connect 1 0 5 1;
 #X connect 1 0 6 1;
 #X restore 8 160 pd mx.aux.pre__;
-#N canvas 683 445 204 215 aux.com 0;
+#N canvas 683 508 204 215 aux.com 0;
 #X obj 25 10 r mx;
 #X obj 25 32 route aux;
 #X obj 25 54 route \$2;
@@ -177,6 +177,8 @@
 #X connect 6 0 7 0;
 #X connect 8 0 5 0;
 #X restore 144 208 pd aux.com;
+#X obj 23 283 s~ mx-aux-\$2-l;
+#X obj 104 243 s~ mx-aux-\$2-r;
 #X connect 4 0 11 0;
 #X connect 4 1 10 0;
 #X connect 4 2 11 1;
@@ -185,4 +187,6 @@
 #X connect 6 0 4 0;
 #X connect 7 0 4 1;
 #X connect 11 0 5 0;
+#X connect 11 0 13 0;
 #X connect 11 1 5 1;
+#X connect 11 1 14 0;
