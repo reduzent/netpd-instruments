@@ -1,6 +1,5 @@
 #N canvas 731 126 1249 837 10;
-#X declare -stdpath iemlib -stdlib iemlib -stdlib iemlib/iemlib1 -stdlib
-iemlib/iem_t3_lib;
+#X declare -path iemlib -lib iemlib;
 #X obj 34 13 inlet notes;
 #X obj 195 406 *~ -1;
 #X obj 383 548 s~ \$0-fb;
@@ -105,11 +104,10 @@ iemlib/iem_t3_lib;
 #X obj 506 641 > -90;
 #X text 763 367 corrected switch~ing part and added version tag. by
 roman;
-#N canvas 962 367 284 91 NETPD 0;
-#X msg 62 23 version 0 0 2;
+#N canvas 962 400 284 91 NETPD 0;
+#X msg 62 23 version 0 0 3;
 #X restore 821 249 pd NETPD 2 0;
-#X obj 820 292 declare -stdpath iemlib -stdlib iemlib -stdlib iemlib/iemlib1
--stdlib iemlib/iem_t3_lib;
+#X obj 820 292 declare -path iemlib -lib iemlib;
 #X connect 0 0 18 0;
 #X connect 1 0 15 0;
 #X connect 3 0 14 0;

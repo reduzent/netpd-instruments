@@ -1,5 +1,5 @@
 #N canvas 259 315 473 400 10;
-#X declare -stdpath extra/zexy -stdlib extra/zexy;
+#X declare -path zexy -lib zexy;
 #N canvas 223 360 522 487 processing 0;
 #X obj 7 271 *~;
 #X obj 7 31 inlet~;
@@ -238,7 +238,7 @@
 #X obj 197 456 sel 0 1;
 #X obj 251 482 15;
 #X obj 197 414 > 97.45;
-#X floatatom 137 209 5 0 0 0 - - -, f 5;
+#X floatatom 137 209 5 0 0 0 - - -;
 #X obj 226 310 s \$1-\$2/ratio;
 #X obj 352 239 s \$1-\$2/threshold;
 #X obj 628 242 s \$1-\$2/release;
@@ -347,19 +347,19 @@
 #X obj 55 65 inlet~;
 #X obj 80 314 outlet~;
 #X obj 44 342 outlet~;
-#N canvas 791 391 166 127 \$3-zcomplim 1;
+#N canvas 791 523 166 127 \$3-zcomplim 1;
 #X obj 3 4 cnv 15 137 102 empty empty empty 20 -3 0 14 -1 -62784 0
 ;
 #X obj 8 76 hsl 128 14 -30 0 0 0 \$1-\$2/ceiling \$1-\$2/ceiling empty
-8 7 1 8 -85269 -1 -262144 12700 1;
+8 7 1 8 -85269 -1 -262144 0 1;
 #X obj 8 20 hsl 128 14 -50 0 0 0 \$1-\$2/threshold \$1-\$2/threshold
-empty 8 7 1 8 -43019 -1 -262144 12700 1;
+empty 8 7 1 8 -43019 -1 -262144 0 1;
 #X obj 8 34 hsl 128 14 1 1000 1 0 \$1-\$2/hold \$1-\$2/hold empty 8
 7 1 8 -51533 -1 -262144 0 1;
 #X obj 8 48 hsl 128 14 1 1000 1 0 \$1-\$2/release \$1-\$2/release empty
-8 7 1 8 -64144 -1 -262144 9331 1;
+8 7 1 8 -64144 -1 -262144 0 1;
 #X obj 8 62 hsl 128 14 -30 0 0 0 \$1-\$2/limit \$1-\$2/limit empty
-8 7 1 8 -72658 -1 -262144 12700 1;
+8 7 1 8 -72658 -1 -262144 0 1;
 #X obj 48 91 cnv 1 1 12 empty \$0-dumping empty 20 12 0 14 -126430
 -262144 0;
 #X obj 5 90 tgl 14 0 \$0-vissw-s \$0-vissw-r empty 16 7 1 7 -126431
@@ -367,9 +367,8 @@ empty 8 7 1 8 -43019 -1 -262144 12700 1;
 #X obj 8 6 hsl 128 14 1 0.1 1 0 \$1-\$2/ratio \$1-\$2/ratio empty 8
 7 1 8 -30280 -1 -262144 0 1;
 #X restore 230 42 pd \$3-zcomplim;
-#X obj 43 12 declare -stdpath extra/zexy -stdlib extra/zexy;
-#N canvas 651 171 191 77 NETPD 0;
-#X msg 10 13 version 0 2 2;
+#N canvas 651 204 191 77 NETPD 0;
+#X msg 10 13 version 0 2 3;
 #X restore 230 64 pd NETPD 2 0;
 #X obj 154 97 netpd_f \$1 \$2/ratio 1;
 #X obj 170 118 netpd_f \$1 \$2/threshold 0;
@@ -377,20 +376,21 @@ empty 8 7 1 8 -43019 -1 -262144 12700 1;
 #X obj 201 161 netpd_f \$1 \$2/release 160;
 #X obj 216 182 netpd_f \$1 \$2/limit 0;
 #X obj 232 204 netpd_f \$1 \$2/ceiling 0;
+#X obj 43 12 declare -path zexy -lib zexy;
 #X connect 0 0 5 0;
 #X connect 0 1 4 0;
 #X connect 0 2 1 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 1;
-#X connect 9 0 0 2;
-#X connect 9 0 1 1;
-#X connect 10 0 0 3;
-#X connect 10 0 1 2;
-#X connect 11 0 0 4;
-#X connect 11 0 1 3;
-#X connect 12 0 0 5;
-#X connect 12 0 1 4;
-#X connect 13 0 0 6;
-#X connect 13 0 1 5;
-#X connect 14 0 0 7;
-#X connect 14 0 1 6;
+#X connect 8 0 0 2;
+#X connect 8 0 1 1;
+#X connect 9 0 0 3;
+#X connect 9 0 1 2;
+#X connect 10 0 0 4;
+#X connect 10 0 1 3;
+#X connect 11 0 0 5;
+#X connect 11 0 1 4;
+#X connect 12 0 0 6;
+#X connect 12 0 1 5;
+#X connect 13 0 0 7;
+#X connect 13 0 1 6;

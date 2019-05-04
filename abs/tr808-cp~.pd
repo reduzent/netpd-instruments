@@ -1,5 +1,5 @@
 #N canvas 867 233 643 440 10;
-#X declare -stdpath iemlib -stdlib iemlib -stdlib iemlib/iemlib1;
+#X declare -path iemlib -lib iemlib;
 #X obj 222 259 vline~;
 #X obj 222 281 dbtorms~;
 #X obj 31 255 noise~;
@@ -35,11 +35,10 @@
 #X msg 222 223 \$1 \, 0 34 \, \$1 0.5 10.5 \, 0 34 11 \, \$1 0 23 \,
 0 34 23 \, \$1 0 31 \, 0 34 31 \, \$1 0 36 \, 0 230 36.5 \, 0 500 65
 \, 0 400 120;
-#N canvas 586 150 278 181 NETPD 0;
-#X msg 49 40 version 0 0 4;
+#N canvas 586 183 278 181 NETPD 0;
+#X msg 49 40 version 0 0 5;
 #X restore 288 45 pd NETPD 2 0;
-#X obj 288 11 declare -stdpath iemlib -stdlib iemlib -stdlib iemlib/iemlib1
-;
+#X obj 288 11 declare -path iemlib -lib iemlib;
 #X connect 0 0 1 0;
 #X connect 1 0 3 1;
 #X connect 2 0 4 0;
