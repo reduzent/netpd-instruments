@@ -1,15 +1,34 @@
-#N canvas 541 75 417 637 10;
-#N canvas 624 75 396 76 NETPD 0;
-#N canvas 315 75 381 123 abslist 0;
+#N struct 1669.seg.range float posy float bgclr;
+#N struct 1669.seg.solo float posy float bgclr;
+#N struct 1669.seg.mute float posy float fgclr float bgclr;
+#N struct 1669.seg.row float posy float width float offset float fgclr
+float bgclr float vis;
+#N struct 1669.seg.length float bgclr float fgclr float length;
+#N struct 1669.seg.count float bgclr float fgclr float count;
+#N struct 1669.seg.width float bgclr float fgclr float default;
+#N struct 1669.seg.del float bgclr float fgclr symbol label;
+#N struct 1669.seg.add float bgclr float fgclr symbol label;
+#N struct 1669.set.selector float posy float number symbol label float
+fgclr float bgclr float vis float offset float length float vis2;
+#N struct 1669.set.default float bgclr float fgclr symbol selector
+float number;
+#N struct 1669.set.default_length float bgclr float fgclr float default
+;
+#N struct 1669.set.del float bgclr float fgclr symbol label;
+#N struct 1669.set.add float bgclr float fgclr symbol label;
+#N canvas 541 99 417 637 10;
+#N canvas 624 99 396 76 NETPD 0;
+#N canvas 315 99 381 123 abslist 0;
 #X msg 17 15 metaseq-segmenter-netpd;
 #X msg 15 45 metaseq-router-netpd;
 #X msg 28 78 metaseq-gop157x177;
+#X msg 228 29 master-param;
 #X restore 12 33 pd abslist;
 #X msg 109 20 singleton;
-#X msg 11 8 version 0 1 1;
+#X msg 11 8 version 0 1 2;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 metaseq;
-#N canvas 250 390 347 201 \$1-metaseq 1;
+#N canvas 250 423 352 203 \$1-metaseq 1;
 #X obj 178 9 metaseq-gop157x177 \$0.segments.gop;
 #X obj 10 9 metaseq-gop157x177 \$0.sets.gop;
 #X restore 10 42 pd \$1-metaseq;
