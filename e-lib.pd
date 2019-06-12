@@ -1,7 +1,7 @@
-#N canvas 625 43 467 219 10;
+#N canvas 625 99 467 219 10;
 #X text 94 140 by Enrique Erne;
-#N canvas 873 97 307 123 NETPD 0;
-#N canvas 1078 97 481 299 abslist 0;
+#N canvas 873 132 307 123 NETPD 0;
+#N canvas 1078 99 481 299 abslist 0;
 #X msg 28 45 e-del;
 #X msg 28 65 e-spectdel;
 #X msg 39 174 e-2rect;
@@ -25,12 +25,13 @@
 #X msg 234 63 e-am-sc;
 #X msg 235 82 e-mix-sc;
 #X msg 236 101 e-ring-sc;
+#X msg 27 106 e-convolve;
 #X restore 18 37 pd abslist;
 #X msg 18 59 singleton;
-#X msg 19 15 version 0 2 13;
+#X msg 30 14 version 0 2 14;
 #X restore 18 46 pd NETPD 2 0;
 #X text 17 158 netpd2-ified by Roman Haefeli;
-#N canvas 190 256 346 133 \$1-e-lib 0;
+#N canvas 190 289 346 133 \$1-e-lib 0;
 #X text 29 25 maybe there will be a description...;
 #X msg 250 63 eN!;
 #X restore 18 17 pd \$1-e-lib;
