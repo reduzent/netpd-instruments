@@ -954,6 +954,9 @@ restore 136 37 82 58 2 4 \, note restore 137 39 75 58 5 4 \, note restore
 -1;
 #X text 263 40 load example song;
 #X text 222 240 Container for the GUI:;
+#N canvas 0 99 475 61 NETPD 0;
+#X msg 11 11 version 1 0 0;
+#X restore 530 150 pd NETPD 2 0;
 #X connect 0 0 34 0;
 #X connect 1 0 0 0;
 #X connect 3 0 11 0;
