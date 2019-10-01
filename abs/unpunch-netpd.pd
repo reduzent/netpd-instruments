@@ -1,4 +1,4 @@
-#N canvas 507 113 450 300 10;
+#N canvas 497 105 450 300 10;
 #N canvas 1079 307 412 96 NETPD 0;
 #X msg 25 11 version 0 1 0;
 #N canvas 309 182 410 81 abslist 0;
@@ -200,6 +200,8 @@
 #X restore 96 131 pd process.output;
 #X obj 230 45 netpd-dump \$1;
 #X msg 230 68 dump;
+#X obj 236 155 inlet;
+#X text 275 156 don't do shit here!;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
 #X connect 3 1 10 0;
@@ -211,3 +213,4 @@
 #X connect 10 0 7 0;
 #X connect 11 0 12 0;
 #X connect 12 0 3 1;
+#X connect 13 0 7 0;
