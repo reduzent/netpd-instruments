@@ -1,4 +1,23 @@
-#N canvas 595 214 398 465 10;
+#N struct 1660.vertgrid float x float y float w float h;
+#N struct 1660.horizgrid float x float y float w float h float c symbol
+note float notevis;
+#N struct 1660.vertline float x float y float h float c float n float
+nvis;
+#N struct 1660.guibar float x float y float w;
+#N struct 1660.gid.button float x float y float clr float gid;
+#N struct 1660.vel float x float y float value;
+#N struct 1660.dur float x float y float value;
+#N struct 1660.mode.button float x float y float w float c symbol param
+;
+#N struct 1660.show.selector float x float y float w float hilite float
+id symbol label;
+#N struct 1660.cursor float x float y float h float vis;
+#N struct 1660.pager float x float y float c float dir float num float
+nvis;
+#N struct 1660.scroller float x float y float c float dir;
+#N struct 1660.keyboard.toggle float x float y symbol label float hilite
+float ihilite;
+#N canvas 575 198 398 465 10;
 #N canvas 624 99 402 76 NETPD 0;
 #N canvas 315 99 398 107 abslist 0;
 #X msg 12 43 i2mx;
@@ -7,21 +26,19 @@
 #X msg 106 40 elorg-voice;
 #X msg 12 13 unpunch-netpd;
 #X msg 107 65 elorg-param;
+#X msg 219 15 elorg-gop1000x740;
 #X restore 14 35 pd abslist;
 #X msg 13 7 version 0 1 0;
 #X restore 291 18 pd NETPD 2 0;
 #X obj 11 39 netpd_head \$1 elorg;
-#N canvas 953 99 1010 783 \$1-elorg 1;
-#N canvas 1160 356 1166 927 \$0.seq 0;
-#X coords 0 0 1000 740 1000 740 2 0 0;
-#X restore 2 31 pd \$0.seq;
-#X obj 2 4 cnv 15 1000 24 empty empty empty 20 12 0 14 -128992 -66577
+#N canvas 943 99 1011 786 \$1-elorg 1;
+#X obj 32 8 cnv 15 960 24 empty empty empty 20 12 0 14 -128992 -66577
 0;
-#X obj 4 6 elorg-param \$1 repeat 64 1 999;
-#X obj 107 6 elorg-param \$1 offset 0 0 999;
-#X obj 210 6 elorg-param \$1 shift 0 -999 999;
-#X obj 797 6 elorg-param \$1 grid 4 1 20;
-#X obj 900 6 elorg-param \$1 subgrid 4 1 20;
+#X obj 34 10 elorg-param \$1 repeat 64 1 999;
+#X obj 137 10 elorg-param \$1 offset 0 0 999;
+#X obj 240 10 elorg-param \$1 shift 0 -999 999;
+#X obj 787 10 elorg-param \$1 grid 4 1 20;
+#X obj 890 10 elorg-param \$1 subgrid 4 1 20;
 #N canvas 1294 395 356 211 redraw 0;
 #X obj 20 20 bng 20 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -43,7 +60,8 @@
 #X connect 7 1 5 0;
 #X connect 8 0 6 0;
 #X coords 0 -1 1 1 20 20 2 20 20;
-#X restore 774 6 pd redraw;
+#X restore 764 10 pd redraw;
+#X obj 2 33 elorg-gop1000x740 \$0.seq;
 #X restore 10 12 pd \$1-elorg;
 #X obj 12 367 catch~ \$1-sum/left;
 #X obj 48 393 catch~ \$1-sum/right;
