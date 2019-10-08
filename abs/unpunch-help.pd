@@ -802,7 +802,7 @@ notes.;
 #X connect 14 0 1 0;
 #X connect 15 0 1 0;
 #X restore 20 69 pd configuration;
-#N canvas 141 99 798 440 editing 0;
+#N canvas 141 99 795 497 editing 0;
 #X text 7 6 NOTE CREATION AND DELETION;
 #X text 7 16 --------------------------;
 #X text 8 37 <Click> (on empty space): create a note;
@@ -810,9 +810,6 @@ notes.;
 #X text 8 77 <Ctrl_L>+<Click> (on note): delete note;
 #X text 7 296 NOTE SELECTION;
 #X text 7 306 --------------;
-#X text 8 327 <Shift>+<Click> (on note): toggle selection;
-#X text 8 347 <Shift>+(<Click> \, <Click>) (twice on empty space):
-mark a region to select all notes within region;
 #X text 8 384 NOTE: Marking many regions adds notes to selection instead
 of replacing current selection;
 #X text 7 146 NOTE MANIPULATION;
@@ -827,8 +824,6 @@ can be manipulated.;
 #X text 417 16 ---------------------------;
 #X text 417 36 NOTE: Key commands require 'keyboard' to be toggled
 on;
-#X text 417 76 <Shift>+<ArrowKey>: Increase step size to 1 octave /
-1 bar;
 #X text 417 56 <ArrowKey>: Move selection to given direction;
 #X text 417 96 <Ctrl_L>+<ArrowKey>: Make a copy while moving selection
 ;
@@ -849,7 +844,16 @@ many instances of unpatch \, the keyboard toggle makes sure that at
 most one instance receives key events.;
 #X text 417 246 NAVIGATION;
 #X text 417 256 ----------;
-#X text 417 276 <Ctrl_R>+<ArrowKey>: switch view by one page/octave
+#X text 417 276 <PgUp>/<PgDn>: switch view by one page;
+#X text 417 296 <Shift_L>+<PgUp>/<PgDn>: switch view by one octave
+;
+#X text 417 76 <Shift_L>+<ArrowKey>: Increase step size to 1 octave
+/ 1 bar;
+#X text 8 327 <Shift_L>+<Click> (on note): toggle selection;
+#X text 8 347 <Shift_L>+(<Click> \, <Click>) (twice on empty space):
+mark a region to select all notes within region;
+#X text 203 436 NOTE: Some modifier keys do not work reliably on some
+platforms. That's why the used keys are limited to Shift_L and Ctrl_L
 ;
 #X restore 20 99 pd editing;
 #N canvas 170 116 568 256 state 0;
@@ -866,7 +870,7 @@ internally without updating visual representation);
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X restore 20 129 pd state management;
-#N canvas 703 99 1006 749 example-sequencer 1;
+#N canvas 704 117 1006 749 example-sequencer 1;
 #X restore 242 261 pd example-sequencer;
 #X obj 20 261 unpunch pd-example-sequencer;
 #X text 397 236 inlet0: sequencer input (clock);
@@ -955,7 +959,7 @@ restore 136 37 82 58 2 4 \, note restore 137 39 75 58 5 4 \, note restore
 #X text 263 40 load example song;
 #X text 222 240 Container for the GUI:;
 #N canvas 0 99 475 61 NETPD 0;
-#X msg 11 11 version 1 0 0;
+#X msg 11 11 version 1 0 1;
 #X restore 530 150 pd NETPD 2 0;
 #X connect 0 0 34 0;
 #X connect 1 0 0 0;
