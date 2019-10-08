@@ -1,23 +1,4 @@
-#N struct 1660.vertgrid float x float y float w float h;
-#N struct 1660.horizgrid float x float y float w float h float c symbol
-note float notevis;
-#N struct 1660.vertline float x float y float h float c float n float
-nvis;
-#N struct 1660.guibar float x float y float w;
-#N struct 1660.gid.button float x float y float clr float gid;
-#N struct 1660.vel float x float y float value;
-#N struct 1660.dur float x float y float value;
-#N struct 1660.mode.button float x float y float w float c symbol param
-;
-#N struct 1660.show.selector float x float y float w float hilite float
-id symbol label;
-#N struct 1660.cursor float x float y float h float vis;
-#N struct 1660.pager float x float y float c float dir float num float
-nvis;
-#N struct 1660.scroller float x float y float c float dir;
-#N struct 1660.keyboard.toggle float x float y symbol label float hilite
-float ihilite;
-#N canvas 575 198 398 465 10;
+#N canvas 565 190 398 465 10;
 #N canvas 624 99 402 76 NETPD 0;
 #N canvas 315 99 398 107 abslist 0;
 #X msg 12 43 i2mx;
@@ -31,7 +12,7 @@ float ihilite;
 #X msg 13 7 version 0 1 0;
 #X restore 291 18 pd NETPD 2 0;
 #X obj 11 39 netpd_head \$1 elorg;
-#N canvas 943 99 1011 786 \$1-elorg 1;
+#N canvas 933 99 1011 786 \$1-elorg 1;
 #X obj 32 8 cnv 15 960 24 empty empty empty 20 12 0 14 -128992 -66577
 0;
 #X obj 34 10 elorg-param \$1 repeat 64 1 999;
