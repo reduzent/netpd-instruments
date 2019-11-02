@@ -1,18 +1,18 @@
-#N canvas 888 412 447 236 10;
+#N canvas 398 366 447 236 10;
 #N canvas 0 91 450 300 NETPD 0;
 #X msg 4 14 version 0 1 0;
-#X restore 312 18 pd NETPD 2 0;
-#X obj 20 20 nbx 10 20 1 999 0 0 \$1-\$2/\$3 \$1-\$2/\$3 empty 0 8 0 10 -262144
--1 -1 64 256;
-#X obj 20 20 cnv 15 60 20 empty empty \$3: 3 10 0 12 -233017 -1 0;
-#X obj 80 20 cnv 15 40 20 empty \$0.label  64 12 10 0 12 -233017 -1
-0;
+#X restore 316 17 pd NETPD 2 0;
+#X obj 20 20 nbx 10 20 1 999 0 0 \$1-\$2/\$3 \$1-\$2/\$3 empty 0 8
+0 10 -262144 -1 -1 64 256;
+#X obj 20 20 cnv 15 60 20 empty \$0.param.label \$3: 3 10 0 12 -233017
+-1 0;
+#X obj 80 20 cnv 15 40 20 empty \$0.value.label 64 12 10 0 12 -233017
+-1 0;
 #X obj 26 88 loadbang;
 #X msg 26 134 set \$1;
 #X obj 141 105 route float set;
 #X obj 141 148 makefilename %3d;
 #X msg 141 171 label \$1;
-#X obj 141 194 s \$0.label;
 #X obj 276 122 loadbang;
 #X msg 276 168 range \$1 \$2;
 #X obj 26 158 s \$1-\$2/\$3;
@@ -21,15 +21,34 @@
 #X obj 276 145 list append \$5 \$6;
 #X obj 276 191 s \$1-\$2/\$3;
 #X obj 26 111 \$4;
-#X connect 4 0 17 0;
-#X connect 5 0 12 0;
+#X obj 141 194 s \$0.value.label;
+#N canvas 252 521 328 230 color 0;
+#X obj 22 189 s \$0.param.label;
+#X obj 42 168 s \$0.value.label;
+#X msg 22 121 color 10 10 \$1;
+#X obj 22 56 sel -1;
+#X msg 22 79 -1;
+#X msg 55 79 1;
+#X obj 22 8 netpd_r \$1 \$2/metaseq-set;
+#X obj 22 31 spigot \$7;
+#X connect 2 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 0;
+#X restore 276 64 pd color;
+#X connect 4 0 16 0;
+#X connect 5 0 11 0;
 #X connect 6 0 7 0;
 #X connect 6 1 7 0;
 #X connect 7 0 8 0;
-#X connect 8 0 9 0;
+#X connect 8 0 17 0;
+#X connect 9 0 14 0;
 #X connect 10 0 15 0;
-#X connect 11 0 16 0;
-#X connect 14 0 6 0;
-#X connect 15 0 11 0;
-#X connect 17 0 5 0;
+#X connect 13 0 6 0;
+#X connect 14 0 10 0;
+#X connect 16 0 5 0;
 #X coords 0 -1 1 1 100 20 2 20 20;
