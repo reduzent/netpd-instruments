@@ -1,23 +1,25 @@
-#N struct 2130.vertgrid float x float y float w float h;
-#N struct 2130.horizgrid float x float y float w float h float c symbol
+#N struct 2486.vertgrid float x float y float w float h;
+#N struct 2486.horizgrid float x float y float w float h float c symbol
 note float notevis;
-#N struct 2130.vertline float x float y float h float c float n float
+#N struct 2486.vertline float x float y float h float c float n float
 nvis;
-#N struct 2130.guibar float x float y float w;
-#N struct 2130.gid.button float x float y float clr float gid;
-#N struct 2130.vel float x float y float value;
-#N struct 2130.dur float x float y float value;
-#N struct 2130.mode.button float x float y float w float c symbol param
+#N struct 2486.guibar float x float y float w;
+#N struct 2486.gid.button float x float y float clr float gid;
+#N struct 2486.vel float x float y float value;
+#N struct 2486.dur float x float y float value;
+#N struct 2486.mode.button float x float y float w float c symbol param
 ;
-#N struct 2130.show.selector float x float y float w float hilite float
+#N struct 2486.show.selector float x float y float w float hilite float
 id symbol label;
-#N struct 2130.cursor float x float y float h float vis;
-#N struct 2130.pager float x float y float c float dir float num float
+#N struct 2486.cursor float x float y float h float vis;
+#N struct 2486.pager float x float y float c float dir float num float
 nvis;
-#N struct 2130.scroller float x float y float c float dir;
-#N struct 2130.keyboard.toggle float x float y symbol label float hilite
+#N struct 2486.scroller float x float y float c float dir;
+#N struct 2486.keyboard.toggle float x float y symbol label float hilite
 float ihilite;
-#N canvas 173 166 392 333 10;
+#N struct 2486.note float x float y float w float h float id float
+gid float vel float dur float c float vis float mrk;
+#N canvas 173 166 318 346 10;
 #N canvas 624 99 402 76 NETPD 0;
 #N canvas 315 99 398 107 abslist 0;
 #X msg 12 43 i2mx;
@@ -27,9 +29,9 @@ float ihilite;
 #X msg 12 13 unpunch-plus;
 #X restore 14 35 pd abslist;
 #X msg 13 7 version 0 1 1;
-#X restore 291 18 pd NETPD 2 0;
+#X restore 231 12 pd NETPD 2 0;
 #X obj 11 39 netpd_head \$1 elorg;
-#N canvas 484 166 381 282 \$1-elorg 1;
+#N canvas 423 160 381 282 \$1-elorg 1;
 #X obj 5 3 cnv 15 370 270 empty empty empty 20 12 0 14 -57793 -66577
 0;
 #X obj 10 8 cnv 1 360 260 empty empty E*L*O*R*G 5 16 2 22 -220268 -57793
@@ -39,11 +41,11 @@ float ihilite;
 #X obj 15 43 cnv 15 350 220 empty empty empty 20 12 0 14 -57793 -66577
 0;
 #X obj 20 47 vradio 20 1 0 9 \$1-partial/1 \$1-partial/1 empty 0 -8
-0 10 -86853 -262144 -1 0;
+0 10 -86853 -262144 -1 8;
 #X obj 60 47 vradio 20 1 0 9 \$1-partial/3 \$1-partial/3 empty 0 -8
 0 10 -86853 -262144 -1 0;
 #X obj 100 47 vradio 20 1 0 9 \$1-partial/2 \$1-partial/2 empty 0 -8
-0 10 -262144 -66577 -1 0;
+0 10 -262144 -66577 -1 7;
 #X obj 140 47 vradio 20 1 0 9 \$1-partial/4 \$1-partial/4 empty 0 -8
 0 10 -262144 -66577 -1 0;
 #X obj 180 47 vradio 20 1 0 9 \$1-partial/6 \$1-partial/6 empty 0 -8
@@ -76,7 +78,7 @@ float ihilite;
 #X obj 279 13 cnv 15 86 25 empty empty *unpunch* 5 12 2 16 -57793 -220268
 0;
 #X restore 10 12 pd \$1-elorg;
-#X obj 11 274 i2mx \$1 elorg;
+#X obj 11 317 i2mx \$1 elorg;
 #X obj 11 159 pack f f f;
 #X obj 11 136 poly 8 1, f 10;
 #X obj 11 185 s \$1-elorg-voice;
@@ -122,14 +124,41 @@ float ihilite;
 #X obj 17 197 netpd_f \$1 partial/10;
 #X obj 17 226 netpd_f \$1 partial/12;
 #X obj 17 256 netpd_f \$1 partial/16;
-#X restore 199 104 pd drawbars;
+#X restore 237 42 pd drawbars;
+#N canvas 535 458 401 182 dirt 0;
+#X obj 9 13 inlet~;
+#X obj 131 13 inlet~;
+#X obj 9 123 outlet~;
+#X obj 132 123 outlet~;
+#X obj 258 29 inlet;
+#X obj 258 113 outlet;
+#X obj 258 52 t a a;
+#X obj 285 84 switch~;
+#X obj 10 57 expr~ tanh($v1*2);
+#X obj 132 56 expr~ tanh($v1*2);
+#X obj 10 80 *~ 0.5;
+#X obj 133 80 *~ 0.5;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X connect 6 1 7 0;
+#X connect 8 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 2 0;
+#X connect 11 0 3 0;
+#X restore 11 272 pd dirt;
+#X f 13;
 #X connect 4 0 6 0;
 #X connect 5 0 4 0;
 #X connect 5 1 4 1;
 #X connect 5 2 4 2;
-#X connect 7 0 3 0;
-#X connect 7 1 3 1;
+#X connect 7 0 12 0;
+#X connect 7 1 12 1;
 #X connect 8 0 7 0;
-#X connect 8 1 3 2;
+#X connect 8 1 12 2;
 #X connect 9 0 5 0;
 #X connect 10 0 9 0;
+#X connect 12 0 3 0;
+#X connect 12 1 3 1;
+#X connect 12 2 3 2;
