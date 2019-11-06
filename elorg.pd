@@ -1,25 +1,25 @@
-#N struct 2486.vertgrid float x float y float w float h;
-#N struct 2486.horizgrid float x float y float w float h float c symbol
+#N struct 6270.vertgrid float x float y float w float h;
+#N struct 6270.horizgrid float x float y float w float h float c symbol
 note float notevis;
-#N struct 2486.vertline float x float y float h float c float n float
+#N struct 6270.vertline float x float y float h float c float n float
 nvis;
-#N struct 2486.guibar float x float y float w;
-#N struct 2486.gid.button float x float y float clr float gid;
-#N struct 2486.vel float x float y float value;
-#N struct 2486.dur float x float y float value;
-#N struct 2486.mode.button float x float y float w float c symbol param
+#N struct 6270.guibar float x float y float w;
+#N struct 6270.gid.button float x float y float clr float gid;
+#N struct 6270.vel float x float y float value;
+#N struct 6270.dur float x float y float value;
+#N struct 6270.mode.button float x float y float w float c symbol param
 ;
-#N struct 2486.show.selector float x float y float w float hilite float
+#N struct 6270.show.selector float x float y float w float hilite float
 id symbol label;
-#N struct 2486.cursor float x float y float h float vis;
-#N struct 2486.pager float x float y float c float dir float num float
+#N struct 6270.cursor float x float y float h float vis;
+#N struct 6270.pager float x float y float c float dir float num float
 nvis;
-#N struct 2486.scroller float x float y float c float dir;
-#N struct 2486.keyboard.toggle float x float y symbol label float hilite
+#N struct 6270.scroller float x float y float c float dir;
+#N struct 6270.keyboard.toggle float x float y symbol label float hilite
 float ihilite;
-#N struct 2486.note float x float y float w float h float id float
+#N struct 6270.note float x float y float w float h float id float
 gid float vel float dur float c float vis float mrk;
-#N canvas 173 166 318 346 10;
+#N canvas 163 158 318 346 10;
 #N canvas 624 99 402 76 NETPD 0;
 #N canvas 315 99 398 107 abslist 0;
 #X msg 12 43 i2mx;
@@ -31,7 +31,7 @@ gid float vel float dur float c float vis float mrk;
 #X msg 13 7 version 0 1 1;
 #X restore 231 12 pd NETPD 2 0;
 #X obj 11 39 netpd_head \$1 elorg;
-#N canvas 423 160 381 282 \$1-elorg 1;
+#N canvas 413 152 381 282 \$1-elorg 1;
 #X obj 5 3 cnv 15 370 270 empty empty empty 20 12 0 14 -57793 -66577
 0;
 #X obj 10 8 cnv 1 360 260 empty empty E*L*O*R*G 5 16 2 22 -220268 -57793
@@ -43,9 +43,9 @@ gid float vel float dur float c float vis float mrk;
 #X obj 20 47 vradio 20 1 0 9 \$1-partial/1 \$1-partial/1 empty 0 -8
 0 10 -86853 -262144 -1 8;
 #X obj 60 47 vradio 20 1 0 9 \$1-partial/3 \$1-partial/3 empty 0 -8
-0 10 -86853 -262144 -1 0;
+0 10 -86853 -262144 -1 7;
 #X obj 100 47 vradio 20 1 0 9 \$1-partial/2 \$1-partial/2 empty 0 -8
-0 10 -262144 -66577 -1 7;
+0 10 -262144 -66577 -1 6;
 #X obj 140 47 vradio 20 1 0 9 \$1-partial/4 \$1-partial/4 empty 0 -8
 0 10 -262144 -66577 -1 0;
 #X obj 180 47 vradio 20 1 0 9 \$1-partial/6 \$1-partial/6 empty 0 -8
@@ -53,11 +53,11 @@ gid float vel float dur float c float vis float mrk;
 #X obj 220 47 vradio 20 1 0 9 \$1-partial/8 \$1-partial/8 empty 0 -8
 0 10 -262144 -66577 -1 0;
 #X obj 260 47 vradio 20 1 0 9 \$1-partial/10 \$1-partial/10 empty 0
--8 0 10 -66577 -262144 -1 0;
+-8 0 10 -66577 -262144 -1 3;
 #X obj 300 47 vradio 20 1 0 9 \$1-partial/12 \$1-partial/12 empty 0
--8 0 10 -66577 -262144 -1 0;
+-8 0 10 -66577 -262144 -1 2;
 #X obj 340 47 vradio 20 1 0 9 \$1-partial/16 \$1-partial/16 empty 0
--8 0 10 -262144 -66577 -1 0;
+-8 0 10 -262144 -66577 -1 2;
 #X obj 20 235 cnv 15 340 22 empty empty empty 20 12 0 14 -220268 -66577
 0;
 #X text 21 237 16';
@@ -114,16 +114,16 @@ gid float vel float dur float c float vis float mrk;
 #X f 13;
 #X obj 11 107 unpunch-plus \$1 elorg;
 #X obj 11 80 r \$0.show.unpunch;
-#N canvas 568 288 366 305 drawbars 0;
-#X obj 17 17 netpd_f \$1 partial/1;
-#X obj 17 46 netpd_f \$1 partial/3;
-#X obj 17 77 netpd_f \$1 partial/2;
+#N canvas 558 280 366 305 drawbars 0;
 #X obj 17 106 netpd_f \$1 partial/4;
 #X obj 17 137 netpd_f \$1 partial/6;
 #X obj 17 166 netpd_f \$1 partial/8;
-#X obj 17 197 netpd_f \$1 partial/10;
-#X obj 17 226 netpd_f \$1 partial/12;
-#X obj 17 256 netpd_f \$1 partial/16;
+#X obj 17 17 netpd_f \$1 partial/1 8;
+#X obj 17 46 netpd_f \$1 partial/3 7;
+#X obj 17 77 netpd_f \$1 partial/2 6;
+#X obj 17 197 netpd_f \$1 partial/10 3;
+#X obj 17 226 netpd_f \$1 partial/12 2;
+#X obj 17 256 netpd_f \$1 partial/16 2;
 #X restore 237 42 pd drawbars;
 #N canvas 535 458 401 182 dirt 0;
 #X obj 9 13 inlet~;
