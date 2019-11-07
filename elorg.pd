@@ -1,25 +1,25 @@
-#N struct 6270.vertgrid float x float y float w float h;
-#N struct 6270.horizgrid float x float y float w float h float c symbol
+#N struct 5352.vertgrid float x float y float w float h;
+#N struct 5352.horizgrid float x float y float w float h float c symbol
 note float notevis;
-#N struct 6270.vertline float x float y float h float c float n float
+#N struct 5352.vertline float x float y float h float c float n float
 nvis;
-#N struct 6270.guibar float x float y float w;
-#N struct 6270.gid.button float x float y float clr float gid;
-#N struct 6270.vel float x float y float value;
-#N struct 6270.dur float x float y float value;
-#N struct 6270.mode.button float x float y float w float c symbol param
+#N struct 5352.guibar float x float y float w;
+#N struct 5352.gid.button float x float y float clr float gid;
+#N struct 5352.vel float x float y float value;
+#N struct 5352.dur float x float y float value;
+#N struct 5352.mode.button float x float y float w float c symbol param
 ;
-#N struct 6270.show.selector float x float y float w float hilite float
+#N struct 5352.show.selector float x float y float w float hilite float
 id symbol label;
-#N struct 6270.cursor float x float y float h float vis;
-#N struct 6270.pager float x float y float c float dir float num float
+#N struct 5352.cursor float x float y float h float vis;
+#N struct 5352.pager float x float y float c float dir float num float
 nvis;
-#N struct 6270.scroller float x float y float c float dir;
-#N struct 6270.keyboard.toggle float x float y symbol label float hilite
+#N struct 5352.scroller float x float y float c float dir;
+#N struct 5352.keyboard.toggle float x float y symbol label float hilite
 float ihilite;
-#N struct 6270.note float x float y float w float h float id float
+#N struct 5352.note float x float y float w float h float id float
 gid float vel float dur float c float vis float mrk;
-#N canvas 163 158 318 346 10;
+#N canvas 163 158 326 348 10;
 #N canvas 624 99 402 76 NETPD 0;
 #N canvas 315 99 398 107 abslist 0;
 #X msg 12 43 i2mx;
@@ -31,7 +31,7 @@ gid float vel float dur float c float vis float mrk;
 #X msg 13 7 version 0 1 1;
 #X restore 231 12 pd NETPD 2 0;
 #X obj 11 39 netpd_head \$1 elorg;
-#N canvas 413 152 381 282 \$1-elorg 1;
+#N canvas 723 216 386 278 \$1-elorg 1;
 #X obj 5 3 cnv 15 370 270 empty empty empty 20 12 0 14 -57793 -66577
 0;
 #X obj 10 8 cnv 1 360 260 empty empty E*L*O*R*G 5 16 2 22 -220268 -57793
@@ -49,7 +49,7 @@ gid float vel float dur float c float vis float mrk;
 #X obj 140 47 vradio 20 1 0 9 \$1-partial/4 \$1-partial/4 empty 0 -8
 0 10 -262144 -66577 -1 0;
 #X obj 180 47 vradio 20 1 0 9 \$1-partial/6 \$1-partial/6 empty 0 -8
-0 10 -66577 -262144 -1 0;
+0 10 -66577 -262144 -1 5;
 #X obj 220 47 vradio 20 1 0 9 \$1-partial/8 \$1-partial/8 empty 0 -8
 0 10 -262144 -66577 -1 0;
 #X obj 260 47 vradio 20 1 0 9 \$1-partial/10 \$1-partial/10 empty 0
@@ -77,6 +77,8 @@ gid float vel float dur float c float vis float mrk;
 10 -262144 -1 -1;
 #X obj 279 13 cnv 15 86 25 empty empty *unpunch* 5 12 2 16 -57793 -220268
 0;
+#X obj 222 13 hsl 50 25 0 1 0 0 \$1-leslie \$1-leslie LESLIE 2 12 2
+14 -57793 -220268 -220268 0 1;
 #X restore 10 12 pd \$1-elorg;
 #X obj 11 317 i2mx \$1 elorg;
 #X obj 11 159 pack f f f;
@@ -147,7 +149,117 @@ gid float vel float dur float c float vis float mrk;
 #X connect 9 0 11 0;
 #X connect 10 0 2 0;
 #X connect 11 0 3 0;
-#X restore 11 272 pd dirt;
+#X restore 11 262 pd dirt;
+#X f 13;
+#N canvas 351 407 505 349 leslie 0;
+#X obj 9 13 inlet~;
+#X obj 131 13 inlet~;
+#X obj 9 163 outlet~;
+#X obj 132 163 outlet~;
+#X obj 418 22 inlet;
+#X obj 418 106 outlet;
+#X obj 418 45 t a a;
+#X obj 445 77 switch~;
+#N canvas 20 428 450 300 lesl 0;
+#X obj 11 5 inlet~;
+#X obj 13 175 outlet~;
+#X obj 165 33 inlet~;
+#N canvas 0 89 450 300 delwrite~ 0;
+#X obj 14 15 inlet~;
+#X obj 19 154 outlet~;
+#X obj 13 52 delwrite~ \$0.leslie.l 3;
+#X connect 0 0 2 0;
+#X restore 12 59 pd delwrite~;
+#N canvas 0 89 450 300 delread4~ 0;
+#X obj 14 15 inlet~;
+#X obj 19 154 outlet~;
+#X obj 165 33 inlet~;
+#X obj 165 80 delread4~ \$0.leslie.l;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X restore 13 104 pd delread4~;
+#X connect 0 0 3 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X restore 9 77 pd lesl;
+#X obj 242 127 phasor~;
+#X obj 243 156 cos~;
+#X floatatom 242 61 5 0 0 0 - - -;
+#X obj 243 179 +~ 1;
+#X obj 243 202 *~ 0.5;
+#X msg 313 109 \$1 343;
+#X obj 313 135 /;
+#X obj 313 86 * 1000;
+#X obj 243 225 *~ 0;
+#X text 281 62 Hz;
+#N canvas 20 428 450 300 lesl 0;
+#X obj 11 5 inlet~;
+#X obj 13 175 outlet~;
+#X obj 165 33 inlet~;
+#N canvas 0 89 450 300 delwrite~ 0;
+#X obj 14 15 inlet~;
+#X obj 19 154 outlet~;
+#X obj 13 52 delwrite~ \$0.leslie.r 3;
+#X connect 0 0 2 0;
+#X restore 12 59 pd delwrite~;
+#N canvas 0 89 450 300 delread4~ 0;
+#X obj 14 15 inlet~;
+#X obj 19 154 outlet~;
+#X obj 165 33 inlet~;
+#X obj 165 80 delread4~ \$0.leslie.r;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X restore 13 104 pd delread4~;
+#X connect 0 0 3 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X restore 132 74 pd lesl;
+#X obj 320 200 cos~;
+#X obj 320 223 +~ 1;
+#X obj 320 246 *~ 0.5;
+#X obj 321 174 +~ 0;
+#X obj 9 123 *~;
+#X obj 133 122 *~;
+#X obj 320 269 *~ 0.2;
+#X obj 320 292 +~ 0.8;
+#X obj 313 37 loadbang;
+#X msg 313 60 0.4;
+#X text 343 60 size(m);
+#X obj 242 35 * 10;
+#X obj 242 8 netpd_f \$1 leslie 0;
+#X connect 0 0 8 0;
+#X connect 1 0 19 0;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X connect 6 1 7 0;
+#X connect 8 0 24 0;
+#X connect 9 0 10 0;
+#X connect 9 0 23 0;
+#X connect 10 0 12 0;
+#X connect 11 0 9 0;
+#X connect 12 0 13 0;
+#X connect 13 0 17 0;
+#X connect 14 0 15 0;
+#X connect 15 0 17 1;
+#X connect 16 0 14 0;
+#X connect 17 0 8 1;
+#X connect 19 0 25 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 26 0;
+#X connect 23 0 20 0;
+#X connect 24 0 2 0;
+#X connect 25 0 3 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 1;
+#X connect 27 0 24 1;
+#X connect 28 0 29 0;
+#X connect 29 0 16 0;
+#X connect 31 0 11 0;
+#X connect 32 0 31 0;
+#X restore 11 290 pd leslie;
 #X f 13;
 #X connect 4 0 6 0;
 #X connect 5 0 4 0;
@@ -159,6 +271,9 @@ gid float vel float dur float c float vis float mrk;
 #X connect 8 1 12 2;
 #X connect 9 0 5 0;
 #X connect 10 0 9 0;
-#X connect 12 0 3 0;
-#X connect 12 1 3 1;
-#X connect 12 2 3 2;
+#X connect 12 0 13 0;
+#X connect 12 1 13 1;
+#X connect 12 2 13 2;
+#X connect 13 0 3 0;
+#X connect 13 1 3 1;
+#X connect 13 2 3 2;
