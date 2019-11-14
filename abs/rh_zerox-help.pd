@@ -1,5 +1,5 @@
-#N canvas 404 43 456 369 10;
-#X text 9 10 rh_zerox - detect zero crossings in given table;
+#N canvas 404 89 456 369 10;
+#X text 9 7 rh_zerox - detect zero crossings in given table;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0.wave 259 float 3;
 #A 0 -0.0539581 0 0.0539581 0.107689 0.160966 0.213565 0.265267 0.315853
@@ -38,21 +38,21 @@
 -0.544966 -0.502962 -0.458867 -0.412859 -0.365126 -0.315864 -0.265278
 -0.213577 -0.160977 -0.1077 -0.0539698 -1.16758e-05 0.0539465;
 #X coords 0 1 259 -1 200 140 1;
-#X restore 14 93 graph;
-#X obj 235 136 s \$0.wave;
-#X obj 235 97 loadbang;
-#X msg 235 116 sinesum 256 0.3 0.2 0.5;
-#X msg 18 258 0 256;
-#X obj 18 289 rh_zerox \$0.wave;
-#X obj 18 328 print rh_zerox;
-#X text 65 257 <- click;
-#X text 11 34 rh_zerox analyzes the given range of a table and outputs
-indexes of upward zero crossings (a change from a negative to a positive
-value).;
+#X restore 14 113 graph;
+#X obj 235 156 s \$0.wave;
+#X obj 235 117 loadbang;
+#X msg 235 136 sinesum 256 0.3 0.2 0.5;
+#X obj 18 299 rh_zerox \$0.wave;
+#X obj 18 325 print rh_zerox;
+#X text 65 267 <- click;
 #N canvas 963 146 326 47 NETPD 0;
-#X msg 11 12 version 0 0 1;
+#X msg 11 12 version 0 0 2;
 #X restore 358 339 pd NETPD 2 0;
+#X msg 18 269 0 256;
+#X text 10 29 rh_zerox analyzes the given range of a table and outputs
+indexes of zero crossing and their slope. The sign of the slope indicates
+whether it is an upward or downward crossing.;
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
 #X connect 5 0 6 0;
-#X connect 6 0 7 0;
+#X connect 9 0 5 0;
