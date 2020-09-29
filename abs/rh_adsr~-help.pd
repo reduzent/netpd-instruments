@@ -1,0 +1,25 @@
+#N canvas 536 139 338 318 10;
+#N canvas 902 295 336 56 NETPD 0;
+#X msg 17 10 version 0 0 1;
+#X restore 249 266 pd NETPD 2 0;
+#X text 7 7 rh_adsr~ - create an adsr envelope;
+#X obj 26 33 tgl 20 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 0.5
+;
+#X obj 27 261 *~;
+#X obj 61 221 osc~ 400;
+#X obj 27 284 dac~;
+#X obj 26 184 rh_adsr~ 100 300 0.3 2000;
+#X floatatom 62 78 5 0 0 1 attack - -;
+#X text 53 36 trigger;
+#X floatatom 99 101 5 0 0 1 decay - -;
+#X floatatom 136 126 5 0 0 1 sustain - -;
+#X floatatom 173 147 5 0 0 1 release - -;
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 1;
+#X connect 6 0 3 0;
+#X connect 7 0 6 1;
+#X connect 9 0 6 2;
+#X connect 10 0 6 3;
+#X connect 11 0 6 4;
