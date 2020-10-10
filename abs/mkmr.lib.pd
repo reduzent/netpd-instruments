@@ -1,0 +1,13 @@
+#N canvas 540 160 450 300 12;
+#N canvas 520 318 450 300 NETPD 0;
+#X msg 31 27 version 0 0 1;
+#N canvas 0 106 420 231 abslist 0;
+#X msg 8 15 mkmr.fi.hipass;
+#X msg 8 41 mkmr.fi.lowpass;
+#X msg 8 66 mkmr.fi.resonator;
+#X msg 8 90 mkmr.ma.tanh~;
+#X restore 32 60 pd abslist;
+#X restore 21 21 pd NETPD 2 0;
+#X text 24 81 Library from Mike Moreno's abstractions.;
+#X text 25 111 Imported to netpd by Roman Haefeli in 2020;
+#X text 25 144 © Mike Moreno;
