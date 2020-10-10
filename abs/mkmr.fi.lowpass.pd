@@ -50,6 +50,9 @@
 #X obj 62 52 f \$1;
 #X obj 156 52 f \$2;
 #X obj 242 36 t b b;
+#N canvas 0 106 450 68 NETPD 0;
+#X msg 3 14 version 0 0 1;
+#X restore 289 499 pd NETPD 2 0;
 #X connect 0 0 48 0;
 #X connect 1 0 49 0;
 #X connect 2 0 3 0;
