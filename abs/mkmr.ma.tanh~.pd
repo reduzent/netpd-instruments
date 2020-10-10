@@ -1,4 +1,4 @@
-#N canvas 254 82 375 222 10;
+#N canvas 254 139 375 222 10;
 #X obj 12 12 inlet~;
 #X obj 12 38 clip~ -3 3;
 #X obj 27 64 *~;
@@ -11,6 +11,9 @@
 #X obj 27 90 +~ 27;
 #X obj 67 116 +~ 27;
 #X text 92 22 // pade-approximation of tanh function;
+#N canvas 0 106 450 62 NETPD 0;
+#X msg 13 13 version 0 0 1;
+#X restore 205 168 pd NETPD 2 0;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 2 1;
