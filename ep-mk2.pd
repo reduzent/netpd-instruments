@@ -1,23 +1,23 @@
-#N struct 1594.vertgrid float x float y float w float h;
-#N struct 1594.horizgrid float x float y float w float h float c symbol
+#N struct 1538.vertgrid float x float y float w float h;
+#N struct 1538.horizgrid float x float y float w float h float c symbol
 note float notevis;
-#N struct 1594.vertline float x float y float h float c float n float
+#N struct 1538.vertline float x float y float h float c float n float
 nvis;
-#N struct 1594.guibar float x float y float w;
-#N struct 1594.gid.button float x float y float clr float gid;
-#N struct 1594.vel float x float y float value;
-#N struct 1594.dur float x float y float value;
-#N struct 1594.mode.button float x float y float w float c symbol param
+#N struct 1538.guibar float x float y float w;
+#N struct 1538.gid.button float x float y float clr float gid;
+#N struct 1538.vel float x float y float value;
+#N struct 1538.dur float x float y float value;
+#N struct 1538.mode.button float x float y float w float c symbol param
 ;
-#N struct 1594.show.selector float x float y float w float hilite float
+#N struct 1538.show.selector float x float y float w float hilite float
 id symbol label;
-#N struct 1594.cursor float x float y float h float vis;
-#N struct 1594.pager float x float y float c float dir float num float
+#N struct 1538.cursor float x float y float h float vis;
+#N struct 1538.pager float x float y float c float dir float num float
 nvis;
-#N struct 1594.scroller float x float y float c float dir;
-#N struct 1594.keyboard.toggle float x float y symbol label float hilite
+#N struct 1538.scroller float x float y float c float dir;
+#N struct 1538.keyboard.toggle float x float y symbol label float hilite
 float ihilite;
-#N struct 1594.note float x float y float w float h float id float
+#N struct 1538.note float x float y float w float h float id float
 gid float vel float dur float c float vis float mrk;
 #N canvas 481 106 800 383 10;
 #X obj 28 235 pack f f f;
@@ -40,7 +40,6 @@ gid float vel float dur float c float vis float mrk;
 #X obj 594 106 + 6;
 #X obj 594 85 * 7;
 #X obj 254 60 * 8;
-#X obj 28 256 clone -s 1 ep-mk2-voice 8 \$0;
 #N canvas 341 327 403 98 NETPD 0;
 #X msg 9 24 version 0 0 1;
 #N canvas 266 391 391 130 abslist 0;
@@ -49,20 +48,22 @@ gid float vel float dur float c float vis float mrk;
 #X msg 17 72 i2mx;
 #X restore 8 52 pd abslist;
 #X restore 28 23 pd NETPD 2 0;
-#N canvas 831 503 450 300 \$1-ep-mk2 0;
-#X text 183 36 GUI OF EP-MK2;
-#X obj 58 145 hsl 128 16 0 1 0 1 \$1-decay-time \$1-decay-time DECAY TIME
--2 -6 0 12 -1 -262144 -1 10900 1;
-#X obj 58 175 hsl 128 16 0 1 0 1 \$1-release-time \$1-release-time
-RELEASE TIME -2 -6 0 12 -1 -262144 -1 0 1;
-#X obj 58 215 hsl 128 16 0 1 0 1 \$1-tine-decay \$1-tine-decay TINE DECAY
--2 -6 0 12 -1 -262144 -1 12700 1;
-#X obj 53 66 hsl 128 15 0 127 0 0 \$0.unpunch \$0.bli UNPUNCH -2 -8
-0 10 -1 -262144 -1 0 1;
+#N canvas 610 335 183 220 \$1-ep-mk2 1;
+#X obj 11 9 cnv 15 144 175 empty empty ▬▬▬EP-MK2▬▬▬ 0 16
+0 20 -261234 -66577 0;
+#X obj 14 47 hsl 139 20 0 127 0 0 \$0.unpunch \$0.bli UNPUNCH 2 10
+0 14 -33289 -1 -261234 8900 1;
+#X obj 14 83 hsl 139 20 0 1 0 1 \$1-decay-time \$1-decay-time DECAY TIME
+2 10 0 14 -1 -261234 -261234 12700 1;
+#X obj 14 119 hsl 139 20 0 1 0 1 \$1-release-time \$1-release-time
+RELEASE TIME 2 10 0 14 -1 -261234 -261234 5600 1;
+#X obj 14 155 hsl 139 20 0 1 0 1 \$1-tine-decay \$1-tine-decay TINE DECAY
+2 10 0 14 -1 -261234 -261234 0 1;
+#X obj 11 185 cnv 15 144 18 empty empty © Mike Moreno 4 10 0 12
+-261234 -66577 0;
 #X restore 28 55 pd \$1-ep-mk2;
 #X obj 28 82 netpd_head \$1 ep-mk2;
 #X obj 28 163 unpunch-plus \$1 ep-mk2;
-#X obj 28 214 poly 8 1;
 #X msg 28 186 \$1 \$2;
 #X obj 28 343 i2mx \$1 ep-mk2;
 #X obj 28 111 r \$0.unpunch;
@@ -72,9 +73,16 @@ RELEASE TIME -2 -6 0 12 -1 -262144 -1 0 1;
 #X obj 254 29 netpd_f \$1 decay-time 0.8;
 #X obj 414 27 netpd_f \$1 release-time 0.3;
 #X obj 594 35 netpd_f \$1 tine-decay 1;
-#X connect 0 0 20 0;
-#X connect 1 0 27 0;
-#X connect 1 0 27 1;
+#X text 300 288 Sources from https://github.com/MikeMorenoDSP/EP-MK1
+;
+#X text 300 310 netpd-ified by Roman Haefeli in 2020;
+#X text 300 254 Original EP-MK2 is written by Mike Moreno \, licensed
+under the "Standard Improved BSD License".;
+#X obj 28 214 poly 16 1;
+#X obj 28 256 clone -s 1 ep-mk2-voice 16 \$0;
+#X connect 0 0 37 0;
+#X connect 1 0 25 0;
+#X connect 1 0 25 1;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 6 0 7 0;
@@ -87,18 +95,18 @@ RELEASE TIME -2 -6 0 12 -1 -262144 -1 0 1;
 #X connect 17 0 13 0;
 #X connect 18 0 17 0;
 #X connect 19 0 10 0;
-#X connect 20 0 31 0;
-#X connect 24 0 26 0;
-#X connect 25 0 0 0;
-#X connect 25 1 0 1;
-#X connect 25 2 0 2;
-#X connect 26 0 25 0;
-#X connect 28 0 29 0;
-#X connect 29 0 24 0;
-#X connect 29 1 30 0;
-#X connect 30 0 29 1;
-#X connect 31 0 1 0;
-#X connect 32 0 19 0;
-#X connect 33 0 11 0;
-#X connect 34 0 18 0;
+#X connect 23 0 24 0;
+#X connect 24 0 36 0;
+#X connect 26 0 27 0;
+#X connect 27 0 23 0;
+#X connect 27 1 28 0;
+#X connect 28 0 27 1;
+#X connect 29 0 1 0;
+#X connect 30 0 19 0;
+#X connect 31 0 11 0;
+#X connect 32 0 18 0;
+#X connect 36 0 0 0;
+#X connect 36 1 0 1;
+#X connect 36 2 0 2;
+#X connect 37 0 29 0;
 #X coords 0 383 1 382 566 325 0;
