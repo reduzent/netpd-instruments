@@ -1,23 +1,25 @@
-#N struct 3153.vertgrid float x float y float w float h;
-#N struct 3153.horizgrid float x float y float w float h float c symbol
+#N struct 4271.vertgrid float x float y float w float h;
+#N struct 4271.horizgrid float x float y float w float h float c symbol
 note float notevis;
-#N struct 3153.vertline float x float y float h float c float n float
+#N struct 4271.vertline float x float y float h float c float n float
 nvis;
-#N struct 3153.guibar float x float y float w;
-#N struct 3153.gid.button float x float y float clr float gid;
-#N struct 3153.vel float x float y float value;
-#N struct 3153.dur float x float y float value;
-#N struct 3153.mode.button float x float y float w float c symbol param
+#N struct 4271.guibar float x float y float w;
+#N struct 4271.gid.button float x float y float clr float gid;
+#N struct 4271.vel float x float y float value;
+#N struct 4271.dur float x float y float value;
+#N struct 4271.mode.button float x float y float w float c symbol param
 ;
-#N struct 3153.show.selector float x float y float w float hilite float
+#N struct 4271.show.selector float x float y float w float hilite float
 id symbol label;
-#N struct 3153.cursor float x float y float h float vis;
-#N struct 3153.pager float x float y float c float dir float num float
+#N struct 4271.cursor float x float y float h float vis;
+#N struct 4271.pager float x float y float c float dir float num float
 nvis;
-#N struct 3153.scroller float x float y float c float dir;
-#N struct 3153.keyboard.toggle float x float y symbol label float hilite
+#N struct 4271.scroller float x float y float c float dir;
+#N struct 4271.keyboard.toggle float x float y symbol label float hilite
 float ihilite;
-#N canvas 143 241 326 348 10;
+#N struct 4271.note float x float y float w float h float id float
+gid float vel float dur float c float vis float mrk;
+#N canvas 143 307 326 348 10;
 #N canvas 614 106 402 76 NETPD 0;
 #N canvas 305 99 398 107 abslist 0;
 #X msg 12 43 i2mx;
@@ -29,7 +31,7 @@ float ihilite;
 #X msg 13 7 version 0 1 3;
 #X restore 231 12 pd NETPD 2 0;
 #X obj 11 39 netpd_head \$1 elorg;
-#N canvas 713 208 386 278 \$1-elorg 1;
+#N canvas 713 208 386 278 \$1-elorg 0;
 #X obj 5 3 cnv 15 370 270 empty empty empty 20 12 0 14 -57793 -66577
 0;
 #X obj 10 8 cnv 1 360 260 empty empty E*L*O*R*G 5 16 2 22 -220268 -57793
@@ -76,7 +78,7 @@ float ihilite;
 #X obj 279 13 cnv 15 86 25 empty empty *unpunch* 5 12 2 16 -57793 -220268
 0;
 #X obj 222 13 hsl 50 25 0 1 0 0 \$1-leslie \$1-leslie LESLIE 2 12 2
-14 -57793 -220268 -220268 0 1;
+14 -57793 -220268 -220268 1900 1;
 #X restore 10 12 pd \$1-elorg;
 #X obj 11 317 i2mx \$1 elorg;
 #X obj 11 159 pack f f f;
@@ -245,8 +247,14 @@ float ihilite;
 #X obj 273 241 *~ 0.5;
 #X obj 273 264 *~ 0;
 #X obj 262 167 +~ 0.25;
-#X msg 313 60 0.5;
 #X obj 376 181 +~ 0.75;
+#X obj 445 203 cos~;
+#X obj 445 226 +~ 1;
+#X obj 445 249 *~ 0.5;
+#X obj 445 276 *~ 0.2;
+#X obj 445 299 +~ 0.8;
+#X obj 446 180 +~ 0.5;
+#X msg 313 60 0.3;
 #X connect 0 0 8 0;
 #X connect 1 0 19 0;
 #X connect 4 0 6 0;
@@ -255,7 +263,8 @@ float ihilite;
 #X connect 8 0 23 0;
 #X connect 9 0 10 0;
 #X connect 9 0 35 0;
-#X connect 9 0 37 0;
+#X connect 9 0 36 0;
+#X connect 9 0 42 0;
 #X connect 10 0 12 0;
 #X connect 11 0 9 0;
 #X connect 12 0 13 0;
@@ -272,9 +281,8 @@ float ihilite;
 #X connect 23 0 2 0;
 #X connect 24 0 3 0;
 #X connect 25 0 26 0;
-#X connect 26 0 24 1;
 #X connect 26 0 23 1;
-#X connect 27 0 36 0;
+#X connect 27 0 43 0;
 #X connect 29 0 11 0;
 #X connect 30 0 29 0;
 #X connect 31 0 32 0;
@@ -282,8 +290,14 @@ float ihilite;
 #X connect 33 0 34 0;
 #X connect 34 0 19 1;
 #X connect 35 0 31 0;
-#X connect 36 0 16 0;
-#X connect 37 0 20 0;
+#X connect 36 0 20 0;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
+#X connect 39 0 40 0;
+#X connect 40 0 41 0;
+#X connect 41 0 24 1;
+#X connect 42 0 37 0;
+#X connect 43 0 16 0;
 #X restore 11 290 pd leslie;
 #X f 13;
 #X obj 11 136 poly 16 1, f 10;
