@@ -4,14 +4,8 @@
 #N canvas 177 253 384 116 abslist 0;
 #X restore 136 20 pd abslist;
 #X restore 11 130 pd NETPD 2 0;
-#X obj 10 22 cnv 15 100 50 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#N canvas 0 50 450 250 (subpatch) 0;
-#X array \$1-\$2/preview 200 float 2;
-#X coords 0 1 200 -1 100 50 1 0 0;
-#X restore 10 20 graph;
-#N canvas 246 346 510 333 gui.stuff 0;
-#X obj 12 10 loadbang;
+#N canvas 246 346 510 389 gui.stuff 0;
+#X obj 39 32 loadbang;
 #X obj 39 73 \$2;
 #X obj 39 207 s \$0.background;
 #X msg 39 181 color \$1 \$1 -1;
@@ -22,21 +16,16 @@
 #X obj 162 117 sel 0 1;
 #X msg 181 143 13;
 #X obj 137 153 f;
-#X obj 12 33 t b b;
-#X obj 12 253 sel 1;
-#X msg 12 276 1;
 #X obj 315 35 r \$0.button;
 #X obj 315 58 sel;
 #X obj 353 62 t a;
 #X obj 162 63 r \$1.selected.instance;
-#X obj 12 300 s \$1.selected.instance;
 #X obj 315 111 s \$1.selected.instance;
 #X obj 315 86 f \$2;
-#X obj 12 230 f \$2;
 #X obj 162 94 == \$2;
 #X obj 97 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X connect 0 0 11 0;
+#X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 3 0 2 0;
 #X connect 4 0 7 0;
@@ -47,24 +36,15 @@
 #X connect 8 1 9 0;
 #X connect 9 0 6 0;
 #X connect 10 0 6 0;
-#X connect 11 0 21 0;
-#X connect 11 1 1 0;
-#X connect 12 0 13 0;
-#X connect 13 0 18 0;
-#X connect 14 0 15 0;
-#X connect 15 0 20 0;
-#X connect 15 1 16 0;
-#X connect 16 0 15 1;
-#X connect 17 0 22 0;
-#X connect 20 0 19 0;
-#X connect 21 0 12 0;
-#X connect 22 0 8 0;
-#X connect 23 0 10 0;
+#X connect 11 0 12 0;
+#X connect 12 0 16 0;
+#X connect 12 1 13 0;
+#X connect 13 0 12 1;
+#X connect 14 0 17 0;
+#X connect 16 0 15 0;
+#X connect 17 0 8 0;
+#X connect 18 0 10 0;
 #X restore 12 99 pd gui.stuff;
-#X obj 13 70 hsl 95 10 0 127 0 0 \$0.button \$0.background empty -2
--8 0 10 -261689 -261689 -1 0 1;
-#X obj 13 10 hsl 95 10 0 127 0 0 \$0.selector \$0.background.hl empty
--2 -8 0 10 -258699 -258699 -1 0 1;
 #X obj 316 38 r~ \$1.audio.in;
 #X obj 170 18 r \$1.sample.control;
 #X obj 170 41 route \$2;
@@ -117,17 +97,29 @@
 #X obj 170 176 +;
 #X obj 170 200 sel;
 #X msg 170 225 done;
-#X connect 6 0 10 1;
+#X obj 13 10 hsl 95 70 0 127 0 0 \$0.button empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 10 21 cnv 15 100 50 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$1-\$2/preview 200 float 2;
+#X coords 0 1 200 -1 100 50 1 0 0;
+#X restore 10 20 graph;
+#X obj 13 70 hsl 95 10 0 127 0 0 \$0.bla \$0.background empty -2 -8
+0 10 -261689 -261689 -1 0 1;
+#X obj 13 10 hsl 95 10 0 127 0 0 \$0.bla \$0.background.hl empty -2
+-8 0 10 -258699 -258699 -1 0 1;
+#X connect 2 0 6 1;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 6 0 10 0;
 #X connect 7 0 8 0;
-#X connect 8 0 10 0;
-#X connect 10 0 14 0;
-#X connect 11 0 12 0;
-#X connect 14 0 16 0;
-#X connect 14 1 15 0;
-#X connect 14 2 11 0;
-#X connect 15 0 18 1;
-#X connect 16 0 17 0;
-#X connect 17 0 18 0;
-#X connect 18 0 19 0;
-#X connect 19 0 11 0;
+#X connect 10 0 12 0;
+#X connect 10 1 11 0;
+#X connect 10 2 7 0;
+#X connect 11 0 14 1;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 7 0;
 #X coords 0 -1 1 1 100 70 2 10 10;
