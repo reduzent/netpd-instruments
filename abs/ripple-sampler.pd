@@ -10,12 +10,9 @@
 #X obj 39 207 s \$0.background;
 #X msg 39 181 color \$1 \$1 -1;
 #X obj 39 96 + 2;
-#X obj 137 206 s \$0.background.hl;
-#X msg 137 182 color \$1 \$1 -1;
-#X obj 39 121 t a a;
-#X obj 162 117 sel 0 1;
-#X msg 181 143 13;
-#X obj 137 153 f;
+#X obj 162 195 s \$0.background.hl;
+#X msg 162 171 color \$1 \$1 -1;
+#X obj 162 117 sel 0 1, f 12;
 #X obj 315 35 r \$0.button;
 #X obj 315 58 sel;
 #X obj 353 62 t a;
@@ -25,25 +22,24 @@
 #X obj 162 94 == \$2;
 #X obj 97 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
+#X msg 196 143 1;
+#X msg 162 143 10;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 3 0 2 0;
-#X connect 4 0 7 0;
+#X connect 4 0 3 0;
 #X connect 6 0 5 0;
-#X connect 7 0 3 0;
-#X connect 7 1 10 0;
-#X connect 8 0 10 0;
-#X connect 8 1 9 0;
-#X connect 9 0 6 0;
-#X connect 10 0 6 0;
-#X connect 11 0 12 0;
-#X connect 12 0 16 0;
-#X connect 12 1 13 0;
-#X connect 13 0 12 1;
-#X connect 14 0 17 0;
-#X connect 16 0 15 0;
-#X connect 17 0 8 0;
-#X connect 18 0 10 0;
+#X connect 7 0 17 0;
+#X connect 7 1 16 0;
+#X connect 8 0 9 0;
+#X connect 9 0 13 0;
+#X connect 9 1 10 0;
+#X connect 10 0 9 1;
+#X connect 11 0 14 0;
+#X connect 13 0 12 0;
+#X connect 14 0 7 0;
+#X connect 16 0 6 0;
+#X connect 17 0 6 0;
 #X restore 12 99 pd gui.stuff;
 #X obj 316 38 r~ \$1.audio.in;
 #X obj 170 18 r \$1.sample.control;
@@ -97,18 +93,16 @@
 #X obj 170 176 +;
 #X obj 170 200 sel;
 #X msg 170 225 done;
-#X obj 13 10 hsl 95 70 0 127 0 0 \$0.button empty empty -2 -8 0 10
+#X obj 13 10 hsl 95 60 0 127 0 0 \$0.button empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X obj 10 21 cnv 15 100 50 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#X obj 10 11 cnv 15 100 50 empty \$0.background.hl empty 20 12 0 14
+-233017 -1 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$1-\$2/preview 200 float 2;
 #X coords 0 1 200 -1 100 50 1 0 0;
-#X restore 10 20 graph;
-#X obj 13 70 hsl 95 10 0 127 0 0 \$0.bla \$0.background empty -2 -8
+#X restore 10 10 graph;
+#X obj 13 60 hsl 95 10 0 127 0 0 \$0.bla \$0.background empty -2 -8
 0 10 -261689 -261689 -1 0 1;
-#X obj 13 10 hsl 95 10 0 127 0 0 \$0.bla \$0.background.hl empty -2
--8 0 10 -258699 -258699 -1 0 1;
 #X connect 2 0 6 1;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
@@ -122,4 +116,4 @@
 #X connect 13 0 14 0;
 #X connect 14 0 15 0;
 #X connect 15 0 7 0;
-#X coords 0 -1 1 1 100 70 2 10 10;
+#X coords 0 -1 1 1 100 60 2 10 10;
