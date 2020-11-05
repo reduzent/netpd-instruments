@@ -1,0 +1,37 @@
+#N canvas 518 180 450 350 10;
+#X obj 28 145 rh_table_segment_player;
+#X obj 274 215 table \$0.sample 44100;
+#X obj 275 188 tabwrite~ \$0.sample;
+#X msg 321 144 start;
+#X obj 275 145 adc~ 1;
+#X text 13 5 rh_table_segment_player - helper for generating vline~
+input;
+#X text 168 20 for playback from table;
+#X obj 28 291 dac~;
+#X obj 28 218 tabread4~ \$0.sample;
+#X msg 28 169 \$1 \, \$2 \$3;
+#X obj 28 192 vline~;
+#X obj 163 172 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 182 172 Done;
+#N canvas 0 106 450 56 NETPD 0;
+#X msg 12 14 version 0 1 0;
+#X restore 357 312 pd NETPD 2 0;
+#X text 154 72 backwards;
+#X text 140 43 play full table;
+#X msg 52 97 oneshot 22050 44100 -12;
+#X text 357 144 record audio;
+#X text 205 97 second half octave lower;
+#X msg 28 45 oneshot 0 44100 -7;
+#X msg 41 72 oneshot 44100 0 23;
+#X connect 0 0 9 0;
+#X connect 0 1 11 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 8 0 7 0;
+#X connect 8 0 7 1;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 16 0 0 0;
+#X connect 19 0 0 0;
+#X connect 20 0 0 0;
