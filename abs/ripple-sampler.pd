@@ -1,8 +1,9 @@
 #N canvas 738 485 450 347 10;
 #N canvas 0 106 383 58 NETPD 0;
-#X msg 11 20 version 0 0 1;
-#N canvas 177 253 384 116 abslist 0;
+#N canvas 177 253 384 73 abslist 0;
+#X msg 14 19 ripple-sampler-param;
 #X restore 136 20 pd abslist;
+#X msg 10 20 version 0 1 0;
 #X restore 11 130 pd NETPD 2 0;
 #N canvas 246 346 510 389 gui.stuff 0;
 #X obj 39 32 loadbang;
@@ -104,15 +105,39 @@
 #X obj 170 200 sel;
 #X msg 170 225 done;
 #X obj 13 10 hsl 95 60 0 127 0 0 \$0.button empty empty -2 -8 0 10
--262144 -1 -1 1900 1;
+-262144 -1 -1 0 1;
 #X obj 10 11 cnv 15 100 50 empty \$0.background.hl empty 20 12 0 14
--166441 -1 0;
+-233017 -1 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$1-\$2/preview 200 float 2;
 #X coords 0 1 200 -1 100 50 1 0 0;
 #X restore 10 10 graph;
 #X obj 13 60 hsl 95 10 0 127 0 0 \$0.bla \$0.background empty -2 -8
 0 10 -261689 -261689 -1 0 1;
+#N canvas 0 139 414 377 adsr.params 0;
+#X obj 8 12 ripple-sampler-param \$1 \$2 adsr/a 0;
+#X obj 8 42 ripple-sampler-param \$1 \$2 adsr/d 0;
+#X obj 8 102 ripple-sampler-param \$1 \$2 adsr/r 1;
+#X obj 8 72 ripple-sampler-param \$1 \$2 adsr/s 1;
+#X obj 67 192 netpd_r \$1 \$2/adsr;
+#X obj 67 215 route /a /d /s /r, f 22;
+#X obj 10 265 pack f f f f, f 26;
+#X obj 10 240 f;
+#X obj 10 291 s \$1.set.params;
+#X obj 10 137 r \$1.get.params;
+#X obj 10 160 route \$2;
+#X obj 10 183 b;
+#X connect 4 0 5 0;
+#X connect 5 0 7 1;
+#X connect 5 1 6 1;
+#X connect 5 2 6 2;
+#X connect 5 3 6 3;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X restore 11 220 pd adsr.params;
 #X connect 2 0 6 1;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
