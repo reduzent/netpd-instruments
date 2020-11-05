@@ -1,27 +1,27 @@
-#N struct 11897.window-frame float x float w;
-#N struct 11897.zero-line float w;
-#N struct 11897.cue-marker float x float clr float id;
-#N struct 11897.cue-dtl float x float clr float id float vis;
-#N struct 12176.vertgrid float x float y float w float h;
-#N struct 12176.horizgrid float x float y float w float h float c symbol
+#N struct 3828.window-frame float x float w;
+#N struct 3828.zero-line float w;
+#N struct 3828.cue-marker float x float clr float id;
+#N struct 3828.cue-dtl float x float clr float id float vis;
+#N struct 4107.vertgrid float x float y float w float h;
+#N struct 4107.horizgrid float x float y float w float h float c symbol
 note float notevis;
-#N struct 12176.vertline float x float y float h float c float n float
+#N struct 4107.vertline float x float y float h float c float n float
 nvis;
-#N struct 12176.guibar float x float y float w;
-#N struct 12176.gid.button float x float y float clr float gid;
-#N struct 12176.vel float x float y float value;
-#N struct 12176.dur float x float y float value;
-#N struct 12176.mode.button float x float y float w float c symbol
-param;
-#N struct 12176.show.selector float x float y float w float hilite
-float id symbol label;
-#N struct 12176.cursor float x float y float h float vis;
-#N struct 12176.pager float x float y float c float dir float num float
+#N struct 4107.guibar float x float y float w;
+#N struct 4107.gid.button float x float y float clr float gid;
+#N struct 4107.vel float x float y float value;
+#N struct 4107.dur float x float y float value;
+#N struct 4107.mode.button float x float y float w float c symbol param
+;
+#N struct 4107.show.selector float x float y float w float hilite float
+id symbol label;
+#N struct 4107.cursor float x float y float h float vis;
+#N struct 4107.pager float x float y float c float dir float num float
 nvis;
-#N struct 12176.scroller float x float y float c float dir;
-#N struct 12176.keyboard.toggle float x float y symbol label float
-hilite float ihilite;
-#N struct 12176.note float x float y float w float h float id float
+#N struct 4107.scroller float x float y float c float dir;
+#N struct 4107.keyboard.toggle float x float y symbol label float hilite
+float ihilite;
+#N struct 4107.note float x float y float w float h float id float
 gid float vel float dur float c float vis float mrk;
 #N canvas 574 246 595 571 10;
 #X obj 47 112 loadbang;
@@ -132,7 +132,7 @@ gid float vel float dur float c float vis float mrk;
 #X connect 11 0 13 0;
 #X connect 13 0 15 0;
 #X restore 457 58 pd display.stuff;
-#N canvas 801 400 317 312 gui.stuff 0;
+#N canvas 801 433 317 312 gui.stuff 0;
 #N canvas 73 266 450 300 window-frame 0;
 #X obj 58 37 drawpolygon 555 1 1 1 w 1 w 79 1 79 1 1;
 #X obj 57 62 struct \$0.window-frame float x float w;
@@ -559,7 +559,7 @@ gid float vel float dur float c float vis float mrk;
 #X connect 18 0 6 0;
 #X connect 19 0 7 0;
 #X restore 90 122 pd switch.cues;
-#N canvas 1031 135 413 578 set.cue 0;
+#N canvas 1031 135 413 620 set.cue 0;
 #X obj 236 120 \$0;
 #X obj 178 176 pointer \$0.cue-marker;
 #X msg 236 145 traverse pd-\$1.gop;
@@ -585,10 +585,11 @@ gid float vel float dur float c float vis float mrk;
 #X obj 23 297 t a a;
 #X obj 178 37 r \$0.cue.click;
 #X obj 40 337 r \$0.length;
-#X obj 292 294 r \$0.instance;
-#X obj 292 340 * 3;
+#X obj 291 290 r \$0.instance;
+#X obj 291 313 * 3;
 #X obj 277 365 +;
 #X obj 184 448 tabwrite \$1-cues;
+#X obj 291 336 t b a;
 #X connect 0 0 2 0;
 #X connect 1 0 7 0;
 #X connect 1 2 6 1;
@@ -621,8 +622,10 @@ gid float vel float dur float c float vis float mrk;
 #X connect 23 0 5 0;
 #X connect 24 0 18 1;
 #X connect 25 0 26 0;
-#X connect 26 0 27 1;
+#X connect 26 0 29 0;
 #X connect 27 0 28 1;
+#X connect 29 0 27 0;
+#X connect 29 1 27 1;
 #X restore 17 121 pd set.cue;
 #X connect 2 0 3 0;
 #X restore 457 36 pd gui.stuff;
@@ -663,44 +666,44 @@ gid float vel float dur float c float vis float mrk;
 5 0 10 -228856 -228856 -66577 0 1;
 #X obj 10 230 ripple-sampler \$1 1;
 #X obj 478 220 hsl 130 10 0 1 0 0 \$0.zoom \$0.zoom.r empty 2 8 0 10
--228856 -162280 -1 0 1;
+-228856 -162280 -1 11500 1;
 #X obj 133 220 hsl 30 10 0 1 0 0 \$0.cue.0.sld \$0.cue.0.sld.r ▶
 13 5 0 12 -262144 -262144 -159745 0 1;
 #X obj 168 220 hsl 30 10 0 1 0 0 \$0.cue.1.sld \$0.cue.1.sld.r ◤
-13 5 0 12 -262144 -262144 -2497 600 1;
+13 5 0 12 -262144 -262144 -2497 700 1;
 #X obj 203 220 hsl 30 10 0 1 0 0 \$0.cue.2.sld \$0.cue.2.sld.r ◥
-13 5 0 12 -233017 -233017 -40 500 1;
-#X obj 13 220 hsl 60 10 1 20 1 0 \$0.length.sld \$0.length.sld.r 2.00s
-4 6 0 11 -262144 -191407 -66577 1365 1;
+13 5 0 12 -233017 -233017 -40 100 1;
+#X obj 13 220 hsl 60 10 1 20 1 0 \$0.length.sld \$0.length.sld.r 1.00s
+4 6 0 11 -262144 -191407 -66577 0 1;
 #X obj 78 220 hsl 50 10 0 1 0 0 \$0.rec.btn \$1.rec.btn.r ● 22 5
 0 12 -262144 -262144 -258113 0 1;
 #X obj 10 84 cnv 15 100 15 empty empty empty 20 12 0 14 -262144 -66577
 0;
 #X obj 13 100 hsl 595 120 0 1 0 0 \$0.position.in.window \$0.position.in.window.r
-ripple 120 60 0 90 -245500 -245500 -228856 27100 0;
+ripple 120 60 0 90 -245500 -245500 -228856 37100 0;
 #N canvas 0 106 450 250 (subpatch) 0;
 #X array \$1.wav.dtl 1200 float 2;
 #X coords 0 1 1199 -1 600 120 1 0 0;
 #X restore 10 100 graph;
 #X obj 610 102 vsl 10 115 1 100 1 0 \$0.scale.dtl \$0.scale.dtl.r empty
-0 -9 0 10 -228856 -128992 -1 2600 1;
+0 -9 0 10 -228856 -128992 -1 3100 1;
 #X obj 610 22 vsl 10 75 1 100 1 0 \$1.scale.ov \$1.scale.ov.r empty
 0 -9 0 10 -228856 -128992 -1 0 1;
 #X obj 13 20 hsl 595 80 0 1 0 0 \$0.window.position \$0.window.position
-empty -2 -8 0 10 -241536 -241536 -1 40600 0;
+empty -2 -8 0 10 -241536 -241536 -1 32700 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$1.wav.ov 1200 float 2;
 #X coords 0 1 1200 -1 600 80 1 0 0;
 #X restore 10 20 graph;
 #N canvas 598 479 677 501 \$0.gop 0;
-#X scalar 11897.window-frame 389.844 28.1656 \;;
-#X scalar 11897.zero-line 600 \;;
-#X scalar 11897.cue-marker 80.7356 500 0 \;;
-#X scalar 11897.cue-dtl 0 500 0 0 \;;
-#X scalar 11897.cue-marker 223.206 50 1 \;;
-#X scalar 11897.cue-dtl 0 50 1 0 \;;
-#X scalar 11897.cue-marker 403.911 5 2 \;;
-#X scalar 11897.cue-dtl 273.737 5 2 1 \;;
+#X scalar 3828.window-frame 321.496 14.1617 \;;
+#X scalar 3828.zero-line 600 \;;
+#X scalar 3828.cue-marker 0 500 0 \;;
+#X scalar 3828.cue-dtl 0 500 0 0 \;;
+#X scalar 3828.cue-marker 0 50 1 \;;
+#X scalar 3828.cue-dtl 0 50 1 0 \;;
+#X scalar 3828.cue-marker 331.268 5 2 \;;
+#X scalar 3828.cue-dtl 374.747 5 2 1 \;;
 #X coords 0 0 599 199 600 200 2 20 20;
 #X restore 10 20 pd \$0.gop;
 #X obj 10 4 cnv 15 100 15 empty empty empty 20 12 0 14 -262144 -66577
@@ -806,9 +809,8 @@ empty -2 -8 0 10 -241536 -241536 -1 40600 0;
 #X floatatom 171 463 10 0 0 0 - - -;
 #X obj 20 311 table \$1-cues 18;
 #X obj 20 137 list append \$0 \$1;
-#X obj 128 311 netpd_t \$1 cues 21;
-#X text 251 304 cues are offset by one instance (3 indices);
-#X text 253 319 to circumvent netpd_t bug \, thus 21 instead 18;
+#X text 298 306 cues are offset by one instance (3 indices);
+#X text 297 319 to circumvent netpd_t bug \, thus 21 instead 18;
 #X obj 235 153 pack f f f;
 #X obj 235 107 list split 2, f 21;
 #X obj 235 176 list append;
@@ -829,10 +831,10 @@ empty -2 -8 0 10 -241536 -241536 -1 40600 0;
 #X restore 454 225 pd aggregate.switch~;
 #X obj 235 202 clone -s 1 ripple-sample-player 32 \$1;
 #X obj 235 130 poly 32 1;
-#X floatatom 317 452 5 0 0 0 - - -;
 #X msg 20 162 \; \$1.default.length 2000 \; \$1.vis.width 600 \; \$1.zoom.min
 4000 \; \$1.zoom.max 600 \; \$1.cue.clr.list 500 50 5 \; \$1.loadbang
 bang \; \$2.selected.instance 1 \;;
+#X obj 128 311 netpd_t \$1 cues 22;
 #X connect 0 0 23 0;
 #X connect 1 0 23 0;
 #X connect 3 0 18 0;
@@ -842,19 +844,19 @@ bang \; \$2.selected.instance 1 \;;
 #X connect 13 0 15 0;
 #X connect 13 1 14 0;
 #X connect 14 0 13 1;
-#X connect 15 0 28 0;
+#X connect 15 0 27 0;
 #X connect 18 0 2 0;
 #X connect 19 0 21 0;
 #X connect 20 0 19 0;
-#X connect 23 0 35 0;
-#X connect 27 0 29 0;
-#X connect 28 0 33 0;
-#X connect 28 1 29 1;
-#X connect 29 0 32 0;
-#X connect 31 0 30 2;
-#X connect 32 0 30 0;
-#X connect 32 1 30 1;
-#X connect 32 2 31 0;
-#X connect 33 0 27 0;
-#X connect 33 1 27 1;
-#X connect 33 2 27 2;
+#X connect 23 0 33 0;
+#X connect 26 0 28 0;
+#X connect 27 0 32 0;
+#X connect 27 1 28 1;
+#X connect 28 0 31 0;
+#X connect 30 0 29 2;
+#X connect 31 0 29 0;
+#X connect 31 1 29 1;
+#X connect 31 2 30 0;
+#X connect 32 0 26 0;
+#X connect 32 1 26 1;
+#X connect 32 2 26 2;
