@@ -1,9 +1,9 @@
-#N canvas 738 485 737 347 10;
+#N canvas 416 367 732 356 10;
 #N canvas 0 106 383 58 NETPD 0;
 #N canvas 177 253 384 73 abslist 0;
 #X msg 14 19 ripple-sampler-param;
 #X restore 136 20 pd abslist;
-#X msg 10 20 version 0 1 1;
+#X msg 10 20 version 0 1 2;
 #X restore 11 130 pd NETPD 2 0;
 #N canvas 246 346 510 389 gui.stuff 0;
 #X obj 39 32 loadbang;
@@ -107,39 +107,48 @@
 #X obj 170 176 +;
 #X obj 170 200 sel;
 #X msg 170 225 done;
-#X obj 13 10 hsl 95 60 0 127 0 0 \$0.button empty empty -2 -8 0 10
+#X obj 13 20 hsl 95 60 0 127 0 0 \$0.button empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X obj 10 11 cnv 15 100 50 empty \$0.background.hl empty 20 12 0 14
--233017 -1 0;
+#X obj 10 21 cnv 15 100 50 empty \$0.background.hl empty 20 12 0 14
+-166441 -1 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$1-\$2/preview 200 float 2;
 #X coords 0 1 200 -1 100 50 1 0 0;
-#X restore 10 10 graph;
-#X obj 13 60 hsl 95 10 0 127 0 0 \$0.bla \$0.background empty -2 -8
+#X restore 10 20 graph;
+#X obj 13 70 hsl 95 10 0 127 0 0 \$0.bla \$0.background empty -2 -8
 0 10 -261689 -261689 -1 0 1;
-#N canvas 0 139 414 377 adsr.params 0;
+#N canvas 0 139 414 414 adsr.params 0;
 #X obj 8 12 ripple-sampler-param \$1 \$2 adsr/a 0;
 #X obj 8 42 ripple-sampler-param \$1 \$2 adsr/d 0;
 #X obj 8 102 ripple-sampler-param \$1 \$2 adsr/r 1;
 #X obj 8 72 ripple-sampler-param \$1 \$2 adsr/s 1;
-#X obj 67 192 netpd_r \$1 \$2/adsr;
-#X obj 67 215 route /a /d /s /r, f 22;
-#X obj 10 265 pack f f f f, f 26;
-#X obj 10 240 f;
-#X obj 10 291 s \$1.set.params;
-#X obj 10 137 r \$1.get.params;
-#X obj 10 160 route \$2;
-#X obj 10 183 b;
+#X obj 56 274 netpd_r \$1 \$2/adsr;
+#X obj 56 297 route /a /d /s /r, f 22;
+#X obj 10 320 f;
+#X obj 10 371 s \$1.set.params;
+#X obj 10 228 r \$1.get.params;
+#X obj 10 251 route \$2;
+#X obj 10 283 b;
+#X obj 8 132 ripple-sampler-param \$1 \$2 pitchoffset 60;
+#X obj 200 267 netpd_r \$1 \$2/pitchoffset;
+#X obj 247 290 netpd_r \$1 \$2/pan;
+#X obj 8 162 ripple-sampler-param \$1 \$2 pan 0.5;
+#X obj 8 192 ripple-sampler-param \$1 \$2 mode 0;
+#X obj 295 313 netpd_r \$1 \$2/mode;
+#X obj 10 345 pack f f f f f f f, f 48;
 #X connect 4 0 5 0;
-#X connect 5 0 7 1;
-#X connect 5 1 6 1;
-#X connect 5 2 6 2;
-#X connect 5 3 6 3;
-#X connect 6 0 8 0;
-#X connect 7 0 6 0;
+#X connect 5 0 6 1;
+#X connect 5 1 17 1;
+#X connect 5 2 17 2;
+#X connect 5 3 17 3;
+#X connect 6 0 17 0;
+#X connect 8 0 9 0;
 #X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 11 0 7 0;
+#X connect 10 0 6 0;
+#X connect 12 0 17 4;
+#X connect 13 0 17 5;
+#X connect 16 0 17 6;
+#X connect 17 0 7 0;
 #X restore 11 253 pd adsr.params;
 #X obj 170 68 netpd_sample \$1 \$2/sample/l;
 #X obj 330 39 r~ \$1.audio.in.l;
@@ -167,4 +176,4 @@
 #X connect 22 0 23 0;
 #X connect 24 0 23 1;
 #X connect 25 0 7 0;
-#X coords 0 -1 1 1 100 60 2 10 10;
+#X coords 0 -1 1 1 100 60 2 10 20;
