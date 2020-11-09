@@ -23,7 +23,7 @@
 #X obj 162 94 == \$2;
 #X obj 97 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 196 143 1;
+#X msg 196 143 20;
 #X msg 162 143 10;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
@@ -110,14 +110,23 @@
 #X obj 13 20 hsl 95 60 0 127 0 0 \$0.button empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
 #X obj 10 21 cnv 15 100 50 empty \$0.background.hl empty 20 12 0 14
--166441 -1 0;
+-195568 -1 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$1-\$2/preview 200 float 2;
 #X coords 0 1 200 -1 100 50 1 0 0;
 #X restore 10 20 graph;
 #X obj 13 70 hsl 95 10 0 127 0 0 \$0.bla \$0.background empty -2 -8
 0 10 -261689 -261689 -1 0 1;
-#N canvas 0 139 414 414 adsr.params 0;
+#X obj 170 68 netpd_sample \$1 \$2/sample/l;
+#X obj 330 39 r~ \$1.audio.in.l;
+#X obj 450 18 r \$1.sample.control;
+#X obj 450 41 route \$2;
+#X obj 450 68 netpd_sample \$1 \$2/sample/r;
+#X obj 610 39 r~ \$1.audio.in.r;
+#X obj 11 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 31 195 refresh;
+#N canvas 0 139 414 414 params 0;
 #X obj 8 12 ripple-sampler-param \$1 \$2 adsr/a 0;
 #X obj 8 42 ripple-sampler-param \$1 \$2 adsr/d 0;
 #X obj 8 102 ripple-sampler-param \$1 \$2 adsr/r 1;
@@ -149,18 +158,9 @@
 #X connect 13 0 17 5;
 #X connect 16 0 17 6;
 #X connect 17 0 7 0;
-#X restore 11 253 pd adsr.params;
-#X obj 170 68 netpd_sample \$1 \$2/sample/l;
-#X obj 330 39 r~ \$1.audio.in.l;
-#X obj 450 18 r \$1.sample.control;
-#X obj 450 41 route \$2;
-#X obj 450 68 netpd_sample \$1 \$2/sample/r;
-#X obj 610 39 r~ \$1.audio.in.r;
-#X obj 11 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X text 31 195 refresh;
+#X restore 11 253 pd params;
 #X connect 2 0 3 0;
-#X connect 3 0 19 0;
+#X connect 3 0 18 0;
 #X connect 5 0 6 0;
 #X connect 8 0 10 0;
 #X connect 8 1 9 0;
@@ -170,10 +170,10 @@
 #X connect 11 0 12 0;
 #X connect 12 0 13 0;
 #X connect 13 0 5 0;
-#X connect 19 0 8 0;
-#X connect 20 0 19 1;
+#X connect 18 0 8 0;
+#X connect 19 0 18 1;
+#X connect 20 0 21 0;
 #X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 24 0 23 1;
-#X connect 25 0 7 0;
+#X connect 23 0 22 1;
+#X connect 24 0 7 0;
 #X coords 0 -1 1 1 100 60 2 10 20;
