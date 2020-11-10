@@ -3,7 +3,7 @@
 #N canvas 177 253 384 73 abslist 0;
 #X msg 14 19 ripple-sampler-param;
 #X restore 136 20 pd abslist;
-#X msg 10 20 version 0 1 2;
+#X msg 10 20 version 0 1 3;
 #X restore 11 130 pd NETPD 2 0;
 #N canvas 246 346 510 389 gui.stuff 0;
 #X obj 39 32 loadbang;
