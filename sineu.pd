@@ -27,7 +27,7 @@ gid float vel float dur float c float vis float mrk;
 #X msg 11 19 unpunch-plus;
 #X msg 208 18 roman_helpers;
 #X restore 11 33 pd abslist;
-#X msg 10 9 version 0 0 3;
+#X msg 10 9 version 0 0 4;
 #X restore 10 14 pd NETPD 2 0;
 #N canvas 713 268 289 160 \$1-sineu 1;
 #X obj 7 7 hsl 183 17 0 1 0 0 \$1-volume \$1-volume volume 100 8 0
@@ -53,7 +53,7 @@ gid float vel float dur float c float vis float mrk;
 #X obj 7 107 hsl 260 17 0 1 0 0 \$1-release \$1-release release 100
 8 0 13 -66577 -4032 -262144 3100 1;
 #X restore 10 42 pd \$1-sineu;
-#X obj 9 422 i2mx \$1 sine;
+#X obj 9 422 i2mx \$1 sineu;
 #N canvas 517 535 204 172 attack 0;
 #X obj 29 39 t a a;
 #X obj 29 61 *;
