@@ -1,24 +1,3 @@
-#N struct 4271.vertgrid float x float y float w float h;
-#N struct 4271.horizgrid float x float y float w float h float c symbol
-note float notevis;
-#N struct 4271.vertline float x float y float h float c float n float
-nvis;
-#N struct 4271.guibar float x float y float w;
-#N struct 4271.gid.button float x float y float clr float gid;
-#N struct 4271.vel float x float y float value;
-#N struct 4271.dur float x float y float value;
-#N struct 4271.mode.button float x float y float w float c symbol param
-;
-#N struct 4271.show.selector float x float y float w float hilite float
-id symbol label;
-#N struct 4271.cursor float x float y float h float vis;
-#N struct 4271.pager float x float y float c float dir float num float
-nvis;
-#N struct 4271.scroller float x float y float c float dir;
-#N struct 4271.keyboard.toggle float x float y symbol label float hilite
-float ihilite;
-#N struct 4271.note float x float y float w float h float id float
-gid float vel float dur float c float vis float mrk;
 #N canvas 143 307 326 348 10;
 #N canvas 614 106 402 76 NETPD 0;
 #N canvas 305 99 398 107 abslist 0;
@@ -28,7 +7,7 @@ gid float vel float dur float c float vis float mrk;
 #X msg 106 40 elorg-voice;
 #X msg 12 13 unpunch-plus;
 #X restore 14 35 pd abslist;
-#X msg 13 7 version 0 1 3;
+#X msg 13 7 version 0 1 4;
 #X restore 231 12 pd NETPD 2 0;
 #X obj 11 39 netpd_head \$1 elorg;
 #N canvas 713 208 386 278 \$1-elorg 0;

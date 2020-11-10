@@ -1,24 +1,3 @@
-#N struct 1951.vertgrid float x float y float w float h;
-#N struct 1951.horizgrid float x float y float w float h float c symbol
-note float notevis;
-#N struct 1951.vertline float x float y float h float c float n float
-nvis;
-#N struct 1951.guibar float x float y float w;
-#N struct 1951.gid.button float x float y float clr float gid;
-#N struct 1951.vel float x float y float value;
-#N struct 1951.dur float x float y float value;
-#N struct 1951.mode.button float x float y float w float c symbol param
-;
-#N struct 1951.show.selector float x float y float w float hilite float
-id symbol label;
-#N struct 1951.cursor float x float y float h float vis;
-#N struct 1951.pager float x float y float c float dir float num float
-nvis;
-#N struct 1951.scroller float x float y float c float dir;
-#N struct 1951.keyboard.toggle float x float y symbol label float hilite
-float ihilite;
-#N struct 1951.note float x float y float w float h float id float
-gid float vel float dur float c float vis float mrk;
 #N canvas 415 225 402 466 10;
 #N canvas 614 197 315 71 NETPD 0;
 #N canvas 636 293 335 57 abslist 0;

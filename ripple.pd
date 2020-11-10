@@ -1,26 +1,3 @@
-#N struct 1440.window-frame float x float w;
-#N struct 1440.zero-line float w;
-#N struct 1440.cue-marker float x float clr float id;
-#N struct 1440.cue-dtl float x float clr float id float vis;
-#N struct 1793.vertgrid float x float y float w float h;
-#N struct 1793.horizgrid float x float y float w float h float c symbol
-note float notevis;
-#N struct 1793.vertline float x float y float h float c float n float
-nvis;
-#N struct 1793.guibar float x float y float w;
-#N struct 1793.gid.button float x float y float clr float gid;
-#N struct 1793.vel float x float y float value;
-#N struct 1793.dur float x float y float value;
-#N struct 1793.mode.button float x float y float w float c symbol param
-;
-#N struct 1793.show.selector float x float y float w float hilite float
-id symbol label;
-#N struct 1793.cursor float x float y float h float vis;
-#N struct 1793.pager float x float y float c float dir float num float
-nvis;
-#N struct 1793.scroller float x float y float c float dir;
-#N struct 1793.keyboard.toggle float x float y symbol label float hilite
-float ihilite;
 #N canvas 578 322 602 571 10;
 #X obj 47 112 loadbang;
 #X obj 20 112 bng 17 250 50 0 empty empty empty 17 7 0 10 -262144 -1

@@ -1,24 +1,3 @@
-#N struct 1538.vertgrid float x float y float w float h;
-#N struct 1538.horizgrid float x float y float w float h float c symbol
-note float notevis;
-#N struct 1538.vertline float x float y float h float c float n float
-nvis;
-#N struct 1538.guibar float x float y float w;
-#N struct 1538.gid.button float x float y float clr float gid;
-#N struct 1538.vel float x float y float value;
-#N struct 1538.dur float x float y float value;
-#N struct 1538.mode.button float x float y float w float c symbol param
-;
-#N struct 1538.show.selector float x float y float w float hilite float
-id symbol label;
-#N struct 1538.cursor float x float y float h float vis;
-#N struct 1538.pager float x float y float c float dir float num float
-nvis;
-#N struct 1538.scroller float x float y float c float dir;
-#N struct 1538.keyboard.toggle float x float y symbol label float hilite
-float ihilite;
-#N struct 1538.note float x float y float w float h float id float
-gid float vel float dur float c float vis float mrk;
 #N canvas 610 223 800 412 10;
 #X obj 28 224 pack f f f;
 #X obj 28 319 *~ 0.9;
@@ -41,7 +20,7 @@ gid float vel float dur float c float vis float mrk;
 #X obj 594 74 * 7;
 #X obj 254 49 * 8;
 #N canvas 341 327 403 98 NETPD 0;
-#X msg 9 24 version 0 0 1;
+#X msg 9 24 version 0 1 0;
 #N canvas 266 391 391 130 abslist 0;
 #X msg 17 42 unpunch-plus;
 #X msg 17 12 ep-mk2-voice;

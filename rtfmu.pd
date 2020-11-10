@@ -1,25 +1,3 @@
-#N struct 2629.button float posx float posy float color;
-#N struct 2817.vertgrid float x float y float w float h;
-#N struct 2817.horizgrid float x float y float w float h float c symbol
-note float notevis;
-#N struct 2817.vertline float x float y float h float c float n float
-nvis;
-#N struct 2817.guibar float x float y float w;
-#N struct 2817.gid.button float x float y float clr float gid;
-#N struct 2817.vel float x float y float value;
-#N struct 2817.dur float x float y float value;
-#N struct 2817.mode.button float x float y float w float c symbol param
-;
-#N struct 2817.show.selector float x float y float w float hilite float
-id symbol label;
-#N struct 2817.cursor float x float y float h float vis;
-#N struct 2817.pager float x float y float c float dir float num float
-nvis;
-#N struct 2817.scroller float x float y float c float dir;
-#N struct 2817.keyboard.toggle float x float y symbol label float hilite
-float ihilite;
-#N struct 2817.note float x float y float w float h float id float
-gid float vel float dur float c float vis float mrk;
 #N canvas 594 106 409 323 10;
 #N canvas 624 139 316 64 NETPD 0;
 #N canvas 954 530 228 138 abslist 0;
@@ -29,7 +7,7 @@ gid float vel float dur float c float vis float mrk;
 #X msg 10 84 unradio;
 #X msg 12 108 roman_helpers;
 #X restore 12 33 pd abslist;
-#X msg 12 8 version 0 0 9;
+#X msg 12 8 version 0 0 10;
 #X restore 10 14 pd NETPD 2 0;
 #N canvas 1004 314 129 450 \$1-rtfmu 1;
 #X obj 9 205 cnv 15 107 98 empty empty amplitude 6 8 1 12 -258113 -1
