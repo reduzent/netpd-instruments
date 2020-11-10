@@ -1,0 +1,11 @@
+#N canvas 455 106 415 286 10;
+#N canvas 597 168 308 61 NETPD 0;
+#X msg 17 19 version 0 0 1;
+#X restore 319 252 pd NETPD 2 0;
+#X text 16 7 rh_midi2notename - convert MIDI pitches to symbolic names
+;
+#X floatatom 26 44 5 0 0 0 - - -;
+#X obj 26 67 rh_midi2notename;
+#X symbolatom 26 90 10 0 0 0 - - -;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
