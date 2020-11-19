@@ -1,0 +1,38 @@
+#N canvas 734 361 454 357 10;
+#N canvas 1064 172 231 103 NETPD 0;
+#X msg 14 17 version 0 0 1;
+#N canvas 610 229 437 67 abslist 0;
+#X msg 7 10 mkmr.fi.lowpass;
+#X restore 11 47 pd abslist;
+#X restore 111 12 pd NETPD 2 0;
+#X obj 20 156 inlet~;
+#X obj 154 157 inlet~;
+#X obj 20 277 outlet~;
+#X obj 155 279 outlet~;
+#X obj 87 49 netpd_f \$1 \$2/frequency 500;
+#X obj 261 50 netpd_f \$1 \$2/resonance 1;
+#X msg 87 72 \$1 100;
+#X obj 87 95 line 0 2;
+#X msg 261 76 \$1 100;
+#X obj 261 99 line 0 2;
+#X obj 19 222 biquad~;
+#X obj 155 221 biquad~;
+#N canvas 1062 407 165 93 \$3-fl-rlop 0;
+#X obj 14 26 hsl 128 15 20 12000 1 0 \$1-\$2/frequency \$1-\$2/frequency
+frequency 0 -8 0 12 -262144 -1 -1 0 1;
+#X obj 15 65 hsl 128 15 1 100 1 0 \$1-\$2/resonance \$1-\$2/resonance
+resonance 0 -8 0 12 -262144 -1 -1 0 1;
+#X restore 7 12 pd \$3-fl-rlop;
+#X obj 87 127 fl_reslowpass_coeff;
+#X connect 1 0 11 0;
+#X connect 2 0 12 0;
+#X connect 5 0 7 0;
+#X connect 6 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 14 0;
+#X connect 9 0 10 0;
+#X connect 10 0 14 1;
+#X connect 11 0 3 0;
+#X connect 12 0 4 0;
+#X connect 14 0 11 0;
+#X connect 14 0 12 0;
