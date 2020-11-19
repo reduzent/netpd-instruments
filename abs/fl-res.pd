@@ -1,0 +1,38 @@
+#N canvas 734 361 477 331 10;
+#N canvas 1064 172 231 103 NETPD 0;
+#X msg 14 17 version 0 0 1;
+#N canvas 610 229 450 42 abslist 0;
+#X msg 7 10 mkmr.fi.resonator;
+#X restore 11 47 pd abslist;
+#X restore 111 12 pd NETPD 2 0;
+#X obj 35 158 inlet~;
+#X obj 169 159 inlet~;
+#X obj 35 269 outlet~;
+#X obj 170 271 outlet~;
+#X obj 117 49 netpd_f \$1 \$2/frequency 500;
+#X obj 290 51 netpd_f \$1 \$2/resonance 1;
+#X msg 117 72 \$1 100;
+#X obj 117 95 line 0 2;
+#X msg 290 75 \$1 100;
+#X obj 290 98 line 0 2;
+#X obj 35 229 biquad~;
+#X obj 170 223 biquad~;
+#N canvas 1062 407 165 93 \$3-fl-res 0;
+#X obj 14 26 hsl 128 15 20 12000 1 0 \$1-\$2/frequency \$1-\$2/frequency
+frequency 0 -8 0 12 -262144 -1 -1 0 1;
+#X obj 15 65 hsl 128 15 1 100 1 0 \$1-\$2/resonance \$1-\$2/resonance
+resonance 0 -8 0 12 -262144 -1 -1 0 1;
+#X restore 7 12 pd \$3-fl-res;
+#X obj 117 124 fl_resonant_coeff;
+#X connect 1 0 11 0;
+#X connect 2 0 12 0;
+#X connect 5 0 7 0;
+#X connect 6 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 14 0;
+#X connect 9 0 10 0;
+#X connect 10 0 14 1;
+#X connect 11 0 3 0;
+#X connect 12 0 4 0;
+#X connect 14 0 11 0;
+#X connect 14 0 12 0;
