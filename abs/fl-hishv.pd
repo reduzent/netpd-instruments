@@ -1,52 +1,163 @@
-#N canvas 734 361 616 324 10;
+#N canvas 734 361 565 371 10;
 #N canvas 1064 205 231 103 NETPD 0;
 #X msg 14 17 version 0 0 1;
 #X restore 111 12 pd NETPD 2 0;
-#X obj 19 182 inlet~;
-#X obj 141 184 inlet~;
-#X obj 20 267 outlet~;
-#X obj 140 270 outlet~;
-#X obj 87 46 netpd_f \$1 \$2/frequency 500;
-#X msg 87 69 \$1 100;
-#X msg 264 69 \$1 100;
-#N canvas 1062 539 165 209 \$3-fl-hishv 1;
-#X obj 14 26 hsl 128 15 20 12000 1 0 \$1-\$2/frequency \$1-\$2/frequency
-frequency 0 -8 0 12 -262144 -1 -1 6391 1;
-#X obj 15 65 hsl 128 15 0 1 0 0 \$1-\$2/slope \$1-\$2/slope slope 0
--8 0 12 -262144 -1 -1 0 1;
-#X obj 15 105 hsl 128 15 -24 24 0 0 \$1-\$2/gain \$1-\$2/gain gain
-0 -8 0 12 -262144 -1 -1 6350 1;
+#X obj 19 232 inlet~;
+#X obj 141 234 inlet~;
+#X obj 20 317 outlet~;
+#X obj 140 320 outlet~;
+#N canvas 618 122 487 114 \$3-fl-hishv 1;
+#N canvas 0 106 450 250 (subpatch) 0;
+#X array \$0.plot 200 float 3;
+#A 0 -3.17891e-07 -3.17891e-07 -3.17891e-07 0 0 0 0 0 -9.53674e-07
+-6.35783e-07 -6.35783e-07 -6.35783e-07 -3.17891e-07 -3.17891e-07 -3.17891e-07
+0 -3.17891e-07 -3.17891e-07 -3.17891e-07 -3.17891e-07 -3.17891e-07
+0 0 0 -3.17891e-07 -3.17891e-07 -3.17891e-07 0 -3.17891e-07 -3.17891e-07
+-3.17891e-07 -6.35783e-07 -3.17891e-07 0 0 0 -3.17891e-07 0 3.17891e-07
+0 0 0 -3.17891e-07 0 0 3.17891e-07 0 6.35783e-07 3.17891e-07 9.53674e-07
+9.53674e-07 9.53674e-07 9.53674e-07 1.58946e-06 2.22524e-06 2.54313e-06
+2.54313e-06 2.54313e-06 3.17891e-06 3.8147e-06 4.45048e-06 5.08626e-06
+6.03994e-06 7.3115e-06 8.26518e-06 9.85463e-06 1.08083e-05 1.30335e-05
+1.52588e-05 1.7484e-05 2.00272e-05 2.28882e-05 2.67029e-05 3.08355e-05
+3.49681e-05 4.1008e-05 4.73658e-05 5.43594e-05 6.26246e-05 7.21614e-05
+8.29697e-05 9.6639e-05 0.000111262 0.000128746 0.000148137 0.000171026
+0.000197093 0.000227292 0.00026226 0.000301997 0.000348727 0.000402451
+0.000464121 0.000535011 0.000617027 0.000711441 0.000820478 0.000946045
+0.001091 0.0012579 0.00145022 0.00167211 0.00192706 0.00222174 0.0025603
+0.00295067 0.00339953 0.00391642 0.00451056 0.00519371 0.0059789 0.00688044
+0.0079155 0.00910187 0.0104618 0.0120179 0.0137971 0.0158285 0.0181446
+0.0207809 0.0237757 0.0271705 0.03101 0.0353406 0.0402117 0.0456727
+0.0517731 0.0585635 0.066089 0.0743945 0.0835174 0.0934893 0.104335
+0.116067 0.12869 0.142199 0.156576 0.17179 0.187806 0.204572 0.222033
+0.240123 0.25877 0.277899 0.297427 0.317269 0.337339 0.357547 0.3778
+0.398006 0.418071 0.437901 0.457404 0.476485 0.495057 0.513033 0.530331
+0.546878 0.562608 0.577466 0.591408 0.604403 0.616435 0.627498 0.637603
+0.646773 0.655039 0.662444 0.669037 0.674873 0.680009 0.684505 0.68842
+0.691812 0.694736 0.697244 0.699385 0.701204 0.702742 0.704035 0.705115
+0.706014 0.706756 0.707364 0.707859 0.708258 0.708575 0.708826 0.70902
+0.709167 0.709278 0.709358 0.709414 0.709451 0.709474 0.709487 0.709494
+0.709496 0.709497 0.709497;
+#X coords 0 1 200 -1 200 71 1 0 0;
+#X restore 263 23 graph;
+#X obj 264 22 cnv 15 200 70 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X obj 21 23 hsl 180 20 0 1 0 0 \$1-\$2/frequency \$1-\$2/frequency
+frequency 0 11 0 12 -65561 -258113 -232576 14400 1;
+#X obj 21 48 hsl 180 20 0 1 0 0 \$1-\$2/slope \$1-\$2/slope slope 0
+11 0 12 -65561 -258113 -232576 17900 1;
+#X obj 203 48 cnv 15 60 20 empty \$0.slope.display 100% 4 10 0 12 -65561
+-232576 0;
+#X obj 203 23 cnv 20 60 20 empty \$0.frequency.display 3435Hz 4 10
+0 12 -65561 -232576 0;
+#X obj 8 23 cnv 10 10 20 empty empty empty 4 10 0 12 -65561 -1 0;
+#X obj 8 48 cnv 10 10 20 empty empty empty 4 10 0 12 -65561 -1 0;
+#X obj 21 73 hsl 180 20 0 1 0 0 \$1-\$2/gain \$1-\$2/gain gain 0 11
+0 12 -65561 -258113 -232576 15300 1;
+#X obj 203 73 cnv 15 60 20 empty \$0.gain.display 17dB 4 10 0 12 -65561
+-232576 0;
+#X obj 8 73 cnv 10 10 20 empty empty empty 4 10 0 12 -65561 -1 0;
+#X obj 8 43 cnv 5 255 5 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 8 68 cnv 5 255 5 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 463 22 cnv 5 5 71 empty empty empty 4 10 0 12 -45076 -1 0;
+#X obj 8 18 cnv 5 460 5 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 8 93 cnv 5 460 5 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 8 7 cnv 10 460 10 empty empty empty 20 12 0 14 -262144 -66577
+0;
 #X restore 7 12 pd \$3-fl-hishv;
-#X obj 20 223 biquad~;
-#X obj 141 227 biquad~;
-#X obj 87 159 fl_highshelf_coeff;
-#X msg 425 67 \$1 100;
-#X obj 425 90 line 0 2;
-#X obj 425 41 netpd_f \$1 \$2/gain 0;
-#X obj 264 43 netpd_f \$1 \$2/slope 1;
-#X msg 217 183 clear;
-#X obj 87 114 change;
-#X obj 264 115 change;
-#X obj 425 113 change;
-#X obj 87 91 line 500 2;
-#X obj 264 92 line 1 2;
-#X connect 1 0 9 0;
-#X connect 2 0 10 0;
-#X connect 5 0 6 0;
-#X connect 6 0 20 0;
-#X connect 7 0 21 0;
-#X connect 9 0 3 0;
-#X connect 10 0 4 0;
-#X connect 11 0 9 0;
-#X connect 11 0 10 0;
-#X connect 12 0 13 0;
-#X connect 13 0 19 0;
-#X connect 14 0 12 0;
-#X connect 15 0 7 0;
-#X connect 16 0 10 0;
-#X connect 16 0 9 0;
-#X connect 17 0 11 0;
-#X connect 18 0 11 1;
-#X connect 19 0 11 2;
-#X connect 20 0 17 0;
-#X connect 21 0 18 0;
+#X obj 20 273 biquad~;
+#X obj 141 277 biquad~;
+#X obj 87 149 fl_highshelf_coeff;
+#X obj 264 46 netpd_f \$1 \$2/slope 1;
+#X msg 217 233 clear;
+#X obj 156 198 fl_filterplot \$0.plot;
+#X obj 87 172 t a a a, f 12;
+#N canvas 392 238 339 191 param 0;
+#X obj 17 142 change;
+#X obj 17 119 line 500 2;
+#X msg 17 97 \$1 50;
+#X obj 17 41 rh_scalelog 20 12000;
+#X obj 17 11 inlet;
+#X obj 17 165 outlet;
+#X obj 174 151 s \$0.frequency.display;
+#X msg 174 125 label \$1Hz;
+#X obj 174 101 int;
+#X obj 17 66 t a a;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 9 0;
+#X connect 4 0 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 2 0;
+#X connect 9 1 8 0;
+#X restore 87 76 pd param;
+#N canvas 392 304 339 213 param 0;
+#X obj 17 162 change;
+#X obj 17 139 line 500 2;
+#X msg 17 117 \$1 50;
+#X obj 17 11 inlet;
+#X obj 17 185 outlet;
+#X obj 174 101 int;
+#X obj 17 65 dbtorms;
+#X obj 17 88 t a a;
+#X obj 174 76 * 100;
+#X msg 174 125 label \$1%;
+#X obj 174 151 s \$0.slope.display;
+#X obj 17 41 rh_scalelin 88 100;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 11 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X connect 7 1 8 0;
+#X connect 8 0 5 0;
+#X connect 9 0 10 0;
+#X connect 11 0 6 0;
+#X restore 264 81 pd param;
+#N canvas 392 337 528 236 param 0;
+#X obj 17 162 change;
+#X obj 17 139 line 500 2;
+#X msg 17 117 \$1 50;
+#X obj 17 11 inlet;
+#X obj 17 185 outlet;
+#X obj 174 101 int;
+#X obj 17 88 t a a;
+#X obj 17 41 rh_scalelin -24 24;
+#X msg 174 125 label \$1dB;
+#X obj 174 151 s \$0.gain.display;
+#X obj 302 20 rh_slider_doubleclick \$1-\$2/gain;
+#X msg 302 43 0.5;
+#X obj 302 66 s \$1-\$2/gain;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 2 0;
+#X connect 6 1 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X restore 425 81 pd param;
+#X obj 87 46 netpd_f \$1 \$2/frequency 0.5;
+#X obj 425 41 netpd_f \$1 \$2/gain 0.5;
+#X connect 1 0 6 0;
+#X connect 2 0 7 0;
+#X connect 6 0 3 0;
+#X connect 7 0 4 0;
+#X connect 8 0 12 0;
+#X connect 9 0 14 0;
+#X connect 10 0 7 0;
+#X connect 10 0 6 0;
+#X connect 12 0 6 0;
+#X connect 12 1 7 0;
+#X connect 12 2 11 0;
+#X connect 13 0 8 0;
+#X connect 14 0 8 1;
+#X connect 15 0 8 2;
+#X connect 16 0 13 0;
+#X connect 17 0 15 0;
