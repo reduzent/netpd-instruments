@@ -1,6 +1,6 @@
 #N canvas 164 106 755 609 10;
 #N canvas 0 106 450 70 NETPD 0;
-#X msg 10 22 version 0 1 0;
+#X msg 10 23 version 0 1 1;
 #X restore 665 9 pd NETPD 2 0;
 #X obj 80 35 inlet;
 #X obj 159 36 inlet;
@@ -56,10 +56,11 @@
 #X connect 10 0 2 0;
 #X connect 11 0 10 2;
 #X restore 80 65 pd Hz2rad;
-#X obj 159 63 max 5.96046e-08;
 #X obj 230 522 fl_normalize_a0;
+#X obj 80 181 unpack f f f, f 22;
+#X obj 144 218 max 5.96046e-08;
 #X connect 1 0 28 0;
-#X connect 2 0 29 0;
+#X connect 2 0 4 0;
 #X connect 3 0 6 0;
 #X connect 4 0 5 0;
 #X connect 4 1 5 1;
@@ -77,7 +78,7 @@
 #X connect 16 0 17 0;
 #X connect 17 0 19 5;
 #X connect 18 0 19 3;
-#X connect 19 0 30 0;
+#X connect 19 0 29 0;
 #X connect 20 0 21 0;
 #X connect 21 0 19 2;
 #X connect 22 0 23 0;
@@ -86,8 +87,11 @@
 #X connect 24 0 13 0;
 #X connect 24 1 15 1;
 #X connect 24 1 14 1;
-#X connect 25 0 24 0;
+#X connect 25 0 30 0;
 #X connect 25 1 12 0;
 #X connect 28 0 5 0;
-#X connect 29 0 4 0;
-#X connect 30 0 26 0;
+#X connect 29 0 26 0;
+#X connect 30 0 24 0;
+#X connect 30 1 31 0;
+#X connect 30 2 24 2;
+#X connect 31 0 24 1;
