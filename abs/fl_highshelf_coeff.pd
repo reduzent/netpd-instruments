@@ -1,6 +1,6 @@
 #N canvas 67 139 762 630 10;
 #N canvas 0 106 450 70 NETPD 0;
-#X msg 10 22 version 0 1 0;
+#X msg 10 22 version 0 1 1;
 #X restore 665 9 pd NETPD 2 0;
 #X text 333 555 a0 a1 a2 b0 b1 b2;
 #X obj 230 555 pack f f f f f f;
