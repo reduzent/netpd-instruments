@@ -1,0 +1,218 @@
+#N struct 2199.filterplot float y array filterplot-array 2199.filterplot-element
+;
+#N struct 2199.filterplot-element float y;
+#N canvas 406 374 693 394 10;
+#N canvas 1064 304 231 103 NETPD 0;
+#X msg 15 17 version 0 1 0;
+#X restore 111 12 pd NETPD 2 0;
+#X obj 19 232 inlet~;
+#X obj 141 234 inlet~;
+#X obj 20 317 outlet~;
+#X obj 140 320 outlet~;
+#N canvas 773 594 479 95 \$3-fl-bp 1;
+#X obj 8 9 cnv 15 460 72 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 21 11 hsl 180 20 0 1 0 0 \$1-\$2/frequency \$1-\$2/frequency
+frequency 0 11 0 12 -98305 -258113 -261234 11500 1;
+#X obj 21 59 hsl 180 20 0 1 0 0 \$1-\$2/bandwidth \$1-\$2/bandwidth
+bandwidth 0 11 0 12 -98305 -258113 -261234 11900 1;
+#X obj 203 12 cnv 18 60 18 empty \$0.frequency.display 1218Hz 4 10
+0 12 -98305 -261234 0;
+#X obj 8 12 cnv 10 10 18 empty empty empty 4 10 0 12 -98305 -1 0;
+#X obj 8 36 cnv 10 255 18 empty empty empty 4 10 0 12 -98305 -1 0;
+#X obj 203 60 cnv 14 60 18 empty \$0.bandwidth.display 2 4 10 0 12
+-98305 -261234 0;
+#X obj 8 60 cnv 10 10 18 empty empty empty 4 10 0 12 -98305 -1 0;
+#N canvas 860 465 450 300 \$0.plot.display 0;
+#X scalar 2199.filterplot 0 \; 68 \; 68 \; 68 \; 68 \; 68 \; 68 \;
+68 \; 68 \; 68 \; 68 \; 68 \; 68 \; 68 \; 68 \; 68 \; 68 \; 68 \; 68
+\; 67.8776 \; 67.3923 \; 66.9071 \; 66.422 \; 65.9371 \; 65.4522 \;
+64.9675 \; 64.4829 \; 63.9985 \; 63.5142 \; 63.0301 \; 62.5462 \; 62.0626
+\; 61.5791 \; 61.0959 \; 60.6129 \; 60.1302 \; 59.6479 \; 59.1658 \;
+58.6842 \; 58.2029 \; 57.722 \; 57.2416 \; 56.7617 \; 56.2823 \; 55.8035
+\; 55.3253 \; 54.8478 \; 54.371 \; 53.895 \; 53.4198 \; 52.9455 \;
+52.4722 \; 52 \; 51.5289 \; 51.0591 \; 50.5906 \; 50.1234 \; 49.6579
+\; 49.194 \; 48.732 \; 48.2718 \; 47.8137 \; 47.3578 \; 46.9044 \;
+46.4535 \; 46.0054 \; 45.5602 \; 45.1183 \; 44.6798 \; 44.2449 \; 43.8139
+\; 43.3871 \; 42.9648 \; 42.5472 \; 42.1348 \; 41.7277 \; 41.3263 \;
+40.9312 \; 40.5425 \; 40.1607 \; 39.7862 \; 39.4194 \; 39.0607 \; 38.7106
+\; 38.3695 \; 38.0379 \; 37.7162 \; 37.4049 \; 37.1044 \; 36.8152 \;
+36.5379 \; 36.2727 \; 36.0202 \; 35.7808 \; 35.555 \; 35.343 \; 35.1454
+\; 34.9625 \; 34.7946 \; 34.6421 \; 34.5052 \; 34.3843 \; 34.2795 \;
+34.1912 \; 34.1194 \; 34.0643 \; 34.0261 \; 34.0048 \; 34.0005 \; 34.0133
+\; 34.0431 \; 34.0898 \; 34.1535 \; 34.234 \; 34.3313 \; 34.445 \;
+34.5752 \; 34.7214 \; 34.8836 \; 35.0615 \; 35.2547 \; 35.463 \; 35.686
+\; 35.9234 \; 36.1748 \; 36.4399 \; 36.7184 \; 37.0097 \; 37.3136 \;
+37.6297 \; 37.9576 \; 38.2969 \; 38.6473 \; 39.0084 \; 39.3799 \; 39.7615
+\; 40.1529 \; 40.5538 \; 40.964 \; 41.3833 \; 41.8114 \; 42.2484 \;
+42.6939 \; 43.148 \; 43.6107 \; 44.0819 \; 44.5618 \; 45.0503 \; 45.5478
+\; 46.0545 \; 46.5706 \; 47.0966 \; 47.6329 \; 48.1801 \; 48.7388 \;
+49.3099 \; 49.8943 \; 50.4931 \; 51.1075 \; 51.7391 \; 52.3895 \; 53.061
+\; 53.7558 \; 54.4768 \; 55.2275 \; 56.012 \; 56.8352 \; 57.7033 \;
+58.6237 \; 59.6058 \; 60.6617 \; 61.8068 \; 63.062 \; 64.4554 \; 66.0269
+\; 67.8351 \; 68 \; 68 \; 68 \; 68 \; 68 \; 68 \; \;;
+#X coords 0 0 180 68 180 68 2 30 30;
+#X restore 287 11 pd \$0.plot.display;
+#X obj 265 12 vsl 20 29 0 127 0 0 \$0.mode.switch \$0.mode.switch.r
+fr 3 15 0 12 -98305 -99329 -261234 0 1;
+#X obj 265 48 vsl 20 29 0 127 0 0 \$0.plot.switch \$0.plot.switch.r
+⊟ 3 15 0 24 -98305 -99329 -261234 300 1;
+#X obj 287 11 cnv 15 180 68 empty empty fl-bp 4 16 0 28 -261234 -219559
+0;
+#X restore 7 12 pd \$3-fl-bp;
+#X obj 20 273 biquad~;
+#X obj 141 277 biquad~;
+#X msg 217 233 clear;
+#X obj 87 172 t a a a, f 12;
+#N canvas 382 263 339 191 param 0;
+#X obj 17 142 change;
+#X obj 17 119 line 500 2;
+#X msg 17 97 \$1 50;
+#X obj 17 41 rh_scalelog 20 12000;
+#X obj 17 11 inlet;
+#X obj 17 165 outlet;
+#X obj 174 151 s \$0.frequency.display;
+#X msg 174 125 label \$1Hz;
+#X obj 174 101 int;
+#X obj 17 66 t a a;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 9 0;
+#X connect 4 0 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 2 0;
+#X connect 9 1 8 0;
+#X restore 87 76 pd param;
+#X obj 87 46 netpd_f \$1 \$2/frequency 0.5;
+#X obj 298 177 netpd-rate-limit 50;
+#N canvas 864 454 450 300 gui.stuff 0;
+#X obj 10 12 r \$0.mode.switch;
+#X obj 10 238 s \$0.mode.switch.r;
+#X obj 10 35 sel;
+#X obj 36 34 t a;
+#X obj 10 58 f;
+#X obj 10 81 + 1;
+#X obj 10 104 mod 2;
+#X obj 10 180 sel 0 1, f 12;
+#X msg 10 203 label fr;
+#X msg 72 205 label ph;
+#X obj 10 127 t a a a, f 19;
+#X obj 65 151 s \$0.plot.phase;
+#X obj 117 178 loadbang;
+#X obj 245 40 sel;
+#X obj 271 39 t a;
+#X obj 245 63 f;
+#X obj 245 86 + 1;
+#X obj 245 109 mod 2;
+#X obj 245 132 t a a a, f 19;
+#X obj 245 17 r \$0.plot.switch;
+#X obj 245 157 s \$0.plot.onoff;
+#X connect 0 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 3 0;
+#X connect 3 0 2 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 10 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 8 0 1 0;
+#X connect 9 0 1 0;
+#X connect 10 0 7 0;
+#X connect 10 1 11 0;
+#X connect 10 2 4 1;
+#X connect 12 0 8 0;
+#X connect 13 0 15 0;
+#X connect 13 1 14 0;
+#X connect 14 0 13 1;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 20 0;
+#X connect 18 2 15 1;
+#X connect 19 0 13 0;
+#X restore 297 350 pd gui.stuff;
+#X obj 553 156 r \$0.plot.phase;
+#X msg 553 250 phase \$1;
+#X msg 418 273 0 0 0 0 0;
+#X obj 553 201 f;
+#X obj 553 224 spigot;
+#X obj 298 249 spigot;
+#X obj 418 120 r \$0.plot.onoff;
+#X obj 418 143 t a a;
+#X obj 418 167 sel 0 1;
+#X obj 437 189 t b b;
+#X obj 418 245 t b b;
+#X msg 492 261 0;
+#X obj 298 200 t b a;
+#X obj 298 226 list append;
+#X obj 264 46 netpd_f \$1 \$2/bandwidth 0.5;
+#N canvas 382 692 345 300 param 0;
+#X obj 17 232 change;
+#X msg 17 187 \$1 50;
+#X obj 17 11 inlet;
+#X obj 17 255 outlet;
+#X obj 17 135 dbtorms;
+#X obj 17 158 t a a;
+#X obj 174 201 s \$0.bandwidth.display;
+#X obj 17 209 line 0 2;
+#X obj 17 111 rh_scalelin 80 120;
+#X msg 17 39 1 \$1;
+#X obj 17 62 -;
+#X obj 174 147 makefilename %3.2f;
+#X msg 174 175 label \$1;
+#X obj 174 90 /;
+#X msg 174 67 1 \$1;
+#X connect 0 0 3 0;
+#X connect 1 0 7 0;
+#X connect 2 0 9 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 14 0;
+#X connect 7 0 0 0;
+#X connect 8 0 4 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 11 0 12 0;
+#X connect 12 0 6 0;
+#X connect 13 0 11 0;
+#X connect 14 0 13 0;
+#X restore 264 79 pd param;
+#X obj 87 149 fl_bandpass_coeff;
+#X obj 298 319 fl_filterplot pd-\$0.plot.display 400 181 68;
+#X connect 1 0 6 0;
+#X connect 2 0 7 0;
+#X connect 6 0 3 0;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 9 1 7 0;
+#X connect 9 2 12 0;
+#X connect 10 0 30 0;
+#X connect 11 0 10 0;
+#X connect 12 0 26 0;
+#X connect 14 0 17 0;
+#X connect 15 0 31 1;
+#X connect 16 0 31 0;
+#X connect 17 0 18 0;
+#X connect 18 0 15 0;
+#X connect 19 0 31 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 21 1 18 1;
+#X connect 21 1 19 1;
+#X connect 22 0 24 0;
+#X connect 22 1 23 0;
+#X connect 23 0 17 0;
+#X connect 23 1 27 0;
+#X connect 24 0 16 0;
+#X connect 24 1 25 0;
+#X connect 25 0 15 0;
+#X connect 26 0 27 0;
+#X connect 26 1 27 1;
+#X connect 27 0 19 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 1;
+#X connect 30 0 9 0;

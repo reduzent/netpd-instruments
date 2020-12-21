@@ -1,0 +1,37 @@
+#N canvas 450 387 587 154 10;
+#N canvas 1064 282 185 109 NETPD 1;
+#N canvas 1037 327 359 288 abslist 0;
+#X msg 6 9 mx-fx-list;
+#X msg 8 40 fl-ap;
+#X msg 9 66 fl-bp;
+#X msg 9 92 fl-hishv;
+#X msg 9 117 fl-loshv;
+#X msg 9 142 fl-notch;
+#X msg 11 167 fl-peak;
+#X msg 11 192 fl-rhip;
+#X msg 11 216 fl-rlop;
+#X msg 11 240 fl-res;
+#X msg 188 24 fl_allpass_coeff;
+#X msg 188 44 fl_bandpass_coeff;
+#X msg 188 64 fl_highshelf_coeff;
+#X msg 188 104 fl_lowshelf_coeff;
+#X msg 188 124 fl_normalize_a0;
+#X msg 188 144 fl_notch_coeff;
+#X msg 188 164 fl_peaking_coeff;
+#X msg 188 184 fl_reshighpass_coeff;
+#X msg 188 204 fl_reslowpass_coeff;
+#X msg 188 224 fl_resonant_coeff;
+#X msg 188 84 fl_filterplot;
+#X restore 12 40 pd abslist;
+#X msg 11 67 singleton;
+#X msg 11 16 version 0 1 1;
+#X restore 16 18 pd NETPD 2 0;
+#N canvas 882 255 444 258 \$1-filtlib 0;
+#X text 23 89 for a more detailed description visit:;
+#X text 27 111 http://www.netpd.org/filtlib;
+#X text 29 18 A suite of filters based on the Audio-EQ-Cookbook:;
+#X text 24 39 http://shepazu.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html
+;
+#X restore 16 39 pd \$1-filtlib;
+#X obj 16 61 mx-fx-list \$1 filtlib fl-ap fl-bp fl-hishv fl-loshv fl-notch
+fl-peak fl-rhip fl-rlop fl-res;
