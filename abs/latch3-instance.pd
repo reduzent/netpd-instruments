@@ -1,6 +1,8 @@
+#N struct 2978.cursor float cx float cy float cy2 float vis float clr
+;
 #N canvas 431 109 484 494 10;
-#N canvas 0 99 378 137 NETPD 0;
-#N canvas 0 99 450 300 abslist 0;
+#N canvas 0 106 378 137 NETPD 0;
+#N canvas 0 106 450 300 abslist 0;
 #X msg 15 19 master-param;
 #X restore 87 48 pd abslist;
 #X msg 11 14 version 0 0 3;
@@ -144,7 +146,7 @@
 #X connect 23 0 11 0;
 #X connect 24 0 21 0;
 #X restore 16 106 pd recorder;
-#N canvas 0 43 530 640 player 0;
+#N canvas 0 106 530 640 player 0;
 #X obj 46 378 text get \$1-\$2/text;
 #X obj 18 17 master-param step;
 #X obj 18 44 mod 16;
@@ -279,7 +281,7 @@
 #X connect 44 1 21 1;
 #X connect 44 2 43 0;
 #X restore 16 129 pd player;
-#N canvas 0 43 335 250 data.input 0;
+#N canvas 0 172 335 250 data.input 0;
 #N canvas 441 263 470 475 access.raw.data 0;
 #X obj 19 4 r NETPD;
 #X obj 72 188 list;
@@ -322,7 +324,7 @@
 #X connect 6 0 4 1;
 #X connect 7 0 1 0;
 #X restore 19 106 pd block_master_offset;
-#N canvas 65 133 331 229 filter.send.data 0;
+#N canvas 65 166 331 229 filter.send.data 0;
 #X obj 15 47 route to receiver;
 #X obj 90 70 list;
 #X obj 90 92 sel b;
@@ -341,6 +343,7 @@
 #X connect 4 0 5 1;
 #X connect 5 0 8 0;
 #X connect 6 0 5 0;
+#X connect 6 1 5 0;
 #X connect 7 0 0 0;
 #X restore 19 69 pd filter.send.data;
 #X obj 170 21 r \$0.record.status;
@@ -469,10 +472,10 @@
 #X obj 304 164 netpd_f \$1 \$2/playback 0;
 #N canvas 1030 450 554 408 \$0.gui.canvas 0;
 #X obj 62 20 nbx 3 20 2 999 0 0 \$1-\$2/length \$1-\$2/length empty
-0 10 0 6 -262144 -1 -1 33 256;
+0 10 0 6 -262144 -1 -1 16 256;
 #X obj 93 20 cnv 20 200 20 empty \$0.param.display empty 5 11 0 12
 -162280 -262144 0;
-#X obj 62 20 cnv 20 30 20 empty \$0.length.display 033 5 11 0 12 -162280
+#X obj 62 20 cnv 20 30 20 empty \$0.length.display 016 5 11 0 12 -162280
 -262144 0;
 #X obj 20 20 bng 20 250 50 0 \$0.record empty empty 17 10 0 10 -262144
 -1 -1;
