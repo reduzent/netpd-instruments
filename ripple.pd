@@ -1,3 +1,26 @@
+#N struct 8119.window-frame float x float w;
+#N struct 8119.zero-line float w;
+#N struct 8119.cue-marker float x float clr float id;
+#N struct 8119.cue-dtl float x float clr float id float vis;
+#N struct 8472.vertgrid float x float y float w float h;
+#N struct 8472.horizgrid float x float y float w float h float c symbol
+note float notevis;
+#N struct 8472.vertline float x float y float h float c float n float
+nvis;
+#N struct 8472.guibar float x float y float w;
+#N struct 8472.gid.button float x float y float clr float gid;
+#N struct 8472.vel float x float y float value;
+#N struct 8472.dur float x float y float value;
+#N struct 8472.mode.button float x float y float w float c symbol param
+;
+#N struct 8472.show.selector float x float y float w float hilite float
+id symbol label;
+#N struct 8472.cursor float x float y float h float vis;
+#N struct 8472.pager float x float y float c float dir float num float
+nvis;
+#N struct 8472.scroller float x float y float c float dir;
+#N struct 8472.keyboard.toggle float x float y symbol label float hilite
+float ihilite;
 #N canvas 578 322 602 571 10;
 #X obj 47 112 loadbang;
 #X obj 20 112 bng 17 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -107,7 +130,7 @@
 #X connect 11 0 13 0;
 #X connect 13 0 15 0;
 #X restore 457 58 pd display.stuff;
-#N canvas 1238 360 317 312 gui.stuff 0;
+#N canvas 1238 426 317 312 gui.stuff 0;
 #N canvas 73 266 450 300 window-frame 0;
 #X obj 58 37 drawpolygon 555 1 1 1 w 1 w 79 1 79 1 1;
 #X obj 57 62 struct \$0.window-frame float x float w;
@@ -604,7 +627,7 @@
 #X connect 29 0 27 0;
 #X connect 29 1 27 1;
 #X restore 17 121 pd set.cue;
-#N canvas 958 508 450 448 offset|pan|mode 0;
+#N canvas 958 508 633 455 offset|pan|mode|recmode 0;
 #X obj 12 87 rh_midi2notename;
 #X obj 12 13 r \$1.pitchoffset.r;
 #X obj 12 36 route set;
@@ -634,6 +657,24 @@
 #X msg 321 294 symbol LOOP;
 #X msg 287 364 label \$1;
 #X obj 287 387 s \$1.mode.label;
+#X obj 394 125 sel;
+#X obj 425 126 t a;
+#X obj 394 155 f;
+#X obj 465 171 route set;
+#X obj 394 178 + 1;
+#X obj 504 249 route set;
+#X msg 487 364 label \$1;
+#X obj 394 102 r \$1.recmode.click;
+#X obj 394 200 mod 2;
+#X obj 394 223 s \$1.recmode;
+#X obj 469 125 r \$1.recmode;
+#X obj 465 148 r \$1.recmode.r;
+#X obj 487 200 r \$1.recmode;
+#X obj 504 226 r \$1.recmode.r;
+#X obj 487 272 sel 0 1;
+#X obj 487 387 s \$1.recmode.label;
+#X msg 506 305 symbol STEREO;
+#X msg 487 337 symbol MONO;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
@@ -662,7 +703,25 @@
 #X connect 25 0 27 0;
 #X connect 26 0 27 0;
 #X connect 27 0 28 0;
-#X restore 16 270 pd offset|pan|mode;
+#X connect 29 0 31 0;
+#X connect 29 1 30 0;
+#X connect 30 0 29 1;
+#X connect 31 0 33 0;
+#X connect 32 0 31 1;
+#X connect 33 0 37 0;
+#X connect 34 0 43 0;
+#X connect 35 0 44 0;
+#X connect 36 0 29 0;
+#X connect 37 0 38 0;
+#X connect 39 0 31 1;
+#X connect 40 0 32 0;
+#X connect 41 0 43 0;
+#X connect 42 0 34 0;
+#X connect 43 0 46 0;
+#X connect 43 1 45 0;
+#X connect 45 0 35 0;
+#X connect 46 0 35 0;
+#X restore 16 270 pd offset|pan|mode|recmode;
 #X connect 2 0 3 0;
 #X restore 457 36 pd gui.stuff;
 #N canvas 0 106 473 231 recording 0;
@@ -720,22 +779,30 @@ empty -2 -8 0 10 -241536 -241536 -1 0 0;
 #X coords 0 1 1200 -1 600 80 1 0 0;
 #X restore 10 20 graph;
 #N canvas 598 479 677 501 \$0.gop 0;
+#X scalar 8119.window-frame -1 1 \;;
+#X scalar 8119.zero-line 600 \;;
+#X scalar 8119.cue-marker 0 500 0 \;;
+#X scalar 8119.cue-dtl 0 500 0 1 \;;
+#X scalar 8119.cue-marker 0 50 1 \;;
+#X scalar 8119.cue-dtl 0 50 1 1 \;;
+#X scalar 8119.cue-marker 0 5 2 \;;
+#X scalar 8119.cue-dtl 0 5 2 1 \;;
 #X coords 0 0 599 199 600 200 2 20 20;
 #X restore 10 20 pd \$0.gop;
 #X obj 10 4 cnv 15 100 15 empty empty empty 20 12 0 14 -262144 -66577
 0;
 #X obj 478 220 hsl 130 15 0 1 0 0 \$0.zoom \$0.zoom.r empty 2 8 0 10
 -262144 -162280 -1 0 1;
-#X obj 133 220 hsl 30 15 0 1 0 0 \$0.cue.0.sld \$0.cue.0.sld.r ▶
+#X obj 181 220 hsl 30 15 0 1 0 0 \$0.cue.0.sld \$0.cue.0.sld.r ▶
 2 7 0 12 -195568 -195568 -159745 0 1;
-#X obj 168 220 hsl 30 15 0 1 0 0 \$0.cue.1.sld \$0.cue.1.sld.r ◤
+#X obj 216 220 hsl 30 15 0 1 0 0 \$0.cue.1.sld \$0.cue.1.sld.r ◤
 2 7 0 12 -262144 -262144 -2497 0 1;
-#X obj 203 220 hsl 30 15 0 1 0 0 \$0.cue.2.sld \$0.cue.2.sld.r ◥
+#X obj 251 220 hsl 30 15 0 1 0 0 \$0.cue.2.sld \$0.cue.2.sld.r ◥
 21 7 0 12 -262144 -262144 -40 0 1;
 #X obj 13 220 hsl 60 15 1 20 1 0 \$0.length.sld \$0.length.sld.r 2.00s
 4 8 0 12 -262144 -191407 -66577 1365 1;
-#X obj 78 220 hsl 50 15 0 1 0 0 \$0.rec.btn \$1.rec.btn.r ● 4 7 0
-12 -262144 -262144 -258113 0 1;
+#X obj 133 220 hsl 43 15 0 1 0 0 \$0.rec.btn \$1.rec.btn.r ● 4 7
+0 12 -262144 -262144 -258113 0 1;
 #X obj 285 235 hsl 77 15 0 1 0 0 \$1.adsr/a \$1.adsr/a.r A 4 8 0 12
 -262144 -191407 -66577 0 1;
 #X obj 367 235 hsl 77 15 0 1 0 0 \$1.adsr/d \$1.adsr/d.r D 4 8 0 12
@@ -752,8 +819,10 @@ C4 4 8 0 12 -262144 -262144 -66577 0 1;
 -191407 -66577 7700 1;
 #X obj 13 235 hsl 60 15 0 1 0 0 \$1.mode.click \$1.mode.label NORMAL
 4 8 0 12 -262144 -262144 -66577 0 1;
-#X obj 236 221 cnv 13 238 13 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 284 221 cnv 13 190 13 empty empty empty 20 12 0 14 -228856 -66577
 0;
+#X obj 78 220 hsl 50 15 0 1 0 0 \$1.recmode.click \$1.recmode.label
+STEREO 4 8 0 12 -262144 -262144 -66577 0 1;
 #X restore 20 46 pd \$1-ripple;
 #X obj 20 22 netpd_head \$1 ripple;
 #N canvas 774 161 394 64 NETPD 0;
@@ -764,7 +833,7 @@ C4 4 8 0 12 -262144 -262144 -66577 0 1;
 #X msg 11 108 ripple-sampler;
 #X msg 108 108 ripple-sample-player;
 #X restore 112 20 pd abslist;
-#X msg 11 19 version 0 1 4;
+#X msg 11 19 version 0 1 5;
 #X restore 20 70 pd NETPD 2 0;
 #X obj 235 38 r \$0.unpunch;
 #X obj 235 61 sel;
@@ -829,7 +898,7 @@ C4 4 8 0 12 -262144 -262144 -66577 0 1;
 #X connect 29 0 2 0;
 #X restore 457 102 pd instances;
 #X obj 20 335 table \$1.lengths 6;
-#N canvas 0 337 336 198 resolve.cues 0;
+#N canvas 0 370 336 198 resolve.cues 0;
 #X obj 20 19 inlet;
 #X obj 74 63 r \$0.instance;
 #X obj 74 109 * 3;
