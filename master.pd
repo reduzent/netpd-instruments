@@ -1,5 +1,5 @@
 #N canvas 594 149 491 615 10;
-#N canvas 624 75 339 107 NETPD 0;
+#N canvas 624 172 339 107 NETPD 0;
 #N canvas 315 75 320 105 abslist 0;
 #X msg 19 15 roman_helpers;
 #X msg 19 42 master-poly;
@@ -8,7 +8,7 @@
 #X msg 156 44 master-param;
 #X restore 13 42 pd abslist;
 #X msg 13 69 singleton;
-#X msg 12 18 version 0 4 7;
+#X msg 12 18 version 0 4 8;
 #X restore 10 14 pd NETPD 2 0;
 #N canvas 0 44 368 170 request 0;
 #X text 128 50 request packet transmission;
@@ -34,7 +34,7 @@
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
 #X restore 302 54 pd request;
-#N canvas 183 44 357 441 response 0;
+#N canvas 183 139 357 441 response 0;
 #X obj 23 92 t a b;
 #X obj 23 140 list append;
 #X text 133 116 request packet reception;
@@ -48,7 +48,6 @@
 #X obj 104 188 random 76;
 #X obj 104 210 + 20;
 #X obj 23 65 spigot;
-#X obj 73 65 r \$1.notown;
 #X obj 23 162 t a b;
 #X obj 23 194 unpack f f f;
 #X obj 23 232 pipe 0 0 0 100;
@@ -90,34 +89,37 @@
 #X connect 6 0 1 0;
 #X connect 7 0 3 0;
 #X restore 50 115 pd timestamp;
+#X obj 82 64 r \$1.NETPD;
+#X obj 82 87 route remote_origin;
 #X connect 0 0 1 0;
-#X connect 0 1 22 0;
-#X connect 1 0 14 0;
+#X connect 0 1 21 0;
+#X connect 1 0 13 0;
 #X connect 3 0 4 0;
-#X connect 3 1 21 0;
+#X connect 3 1 20 0;
 #X connect 4 0 7 0;
 #X connect 6 0 12 0;
 #X connect 7 0 8 0;
 #X connect 7 1 9 0;
-#X connect 8 1 20 0;
-#X connect 9 0 20 1;
+#X connect 8 1 19 0;
+#X connect 9 0 19 1;
 #X connect 10 0 11 0;
-#X connect 11 0 16 3;
+#X connect 11 0 15 3;
 #X connect 12 0 0 0;
-#X connect 13 0 12 1;
+#X connect 13 0 14 0;
+#X connect 13 1 10 0;
 #X connect 14 0 15 0;
-#X connect 14 1 10 0;
+#X connect 14 1 15 1;
+#X connect 14 2 15 2;
 #X connect 15 0 16 0;
 #X connect 15 1 16 1;
 #X connect 15 2 16 2;
-#X connect 16 0 17 0;
-#X connect 16 1 17 1;
-#X connect 16 2 17 2;
-#X connect 17 0 3 0;
-#X connect 18 0 6 0;
-#X connect 19 0 6 1;
-#X connect 21 0 4 1;
-#X connect 22 0 1 1;
+#X connect 16 0 3 0;
+#X connect 17 0 6 0;
+#X connect 18 0 6 1;
+#X connect 20 0 4 1;
+#X connect 21 0 1 1;
+#X connect 22 0 23 0;
+#X connect 23 0 12 1;
 #X restore 302 74 pd response;
 #N canvas 435 149 376 278 evaluation 0;
 #X obj 23 36 t a b;
@@ -215,7 +217,7 @@
 #X obj 9 256 pack f f;
 #X obj 9 278 t a b;
 #X msg 48 279 0;
-#N canvas 594 44 468 57 \$1-master 1;
+#N canvas 594 106 468 57 \$1-master 1;
 #X obj 9 2 cnv 15 450 42 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 11 4 cnv 15 446 38 empty empty empty 20 12 0 14 -191407 -66577
@@ -237,7 +239,7 @@
 #X obj 322 8 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -1 -4033
 0;
-#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000013 3 7 0 11
+#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000000 3 7 0 11
 -1 -4033 0;
 #X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 -9 0
 10 -262144 -1 -1 0 1;
