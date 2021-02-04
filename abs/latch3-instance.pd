@@ -1,11 +1,11 @@
-#N struct 2978.cursor float cx float cy float cy2 float vis float clr
+#N struct 3849.cursor float cx float cy float cy2 float vis float clr
 ;
 #N canvas 431 109 484 494 10;
 #N canvas 0 106 378 137 NETPD 0;
 #N canvas 0 106 450 300 abslist 0;
 #X msg 15 19 master-param;
 #X restore 87 48 pd abslist;
-#X msg 11 14 version 0 0 3;
+#X msg 11 14 version 0 0 4;
 #X restore 399 11 pd NETPD 2 0;
 #X obj 304 146 netpd_f \$1 \$2/length 16;
 #X obj 304 292 r \$0.record.status;
@@ -281,7 +281,7 @@
 #X connect 44 1 21 1;
 #X connect 44 2 43 0;
 #X restore 16 129 pd player;
-#N canvas 0 172 335 250 data.input 0;
+#N canvas 0 205 335 250 data.input 0;
 #N canvas 441 263 470 475 access.raw.data 0;
 #X obj 19 4 r NETPD;
 #X obj 72 188 list;
@@ -324,7 +324,7 @@
 #X connect 6 0 4 1;
 #X connect 7 0 1 0;
 #X restore 19 106 pd block_master_offset;
-#N canvas 65 166 331 229 filter.send.data 0;
+#N canvas 65 199 331 229 filter.send.data 0;
 #X obj 15 47 route to receiver;
 #X obj 90 70 list;
 #X obj 90 92 sel b;
@@ -485,6 +485,7 @@
 -42246 0;
 #X obj 20 20 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 -166441
 -143491 0;
+#X scalar 3849.cursor 0 0 21 0 0 \;;
 #X coords 0 0 273 20 273 20 2 20 20;
 #X restore 20 20 pd \$0.gui.canvas;
 #N canvas 553 228 447 447 cursor.structure 0;
