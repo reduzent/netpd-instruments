@@ -1,20 +1,25 @@
-#N canvas 583 335 282 324 10;
-#N canvas 763 429 175 138 NETPD 0;
-#N canvas 653 350 190 338 abslist 0;
+#N struct 2486.filterplot float y array filterplot-array 2486.filterplot-element
+;
+#N struct 2486.filterplot-element float y;
+#N struct 1695.filterplot float y array filterplot-array 1695.filterplot-element
+;
+#N struct 1695.filterplot-element float y;
+#N canvas 583 368 282 324 10;
+#N canvas 763 495 175 138 NETPD 0;
+#N canvas 653 383 190 338 abslist 0;
 #X msg 28 21 i2mx;
-#X msg 28 166 mx-i2mx-gui;
+#X msg 28 146 mx-i2mx-gui;
 #X msg 28 84 mx-containers;
-#X msg 28 126 mx-fx-list;
-#X msg 28 251 mx-vu-peak;
-#X msg 28 229 mx-master-gui;
-#X msg 28 187 mx-insert-container;
-#X msg 28 208 mx-insert-control;
+#X msg 28 106 mx-fx-list;
+#X msg 28 231 mx-vu-peak;
+#X msg 28 209 mx-master-gui;
+#X msg 28 167 mx-insert-container;
+#X msg 28 188 mx-insert-control;
 #X msg 28 42 mx-aux-channel;
 #X msg 28 63 mx-aux-channel-gui;
-#X msg 28 105 mx-early-f;
-#X msg 27 273 roman_helpers;
-#X msg 27 296 mx-recorder;
-#X msg 28 146 mx-fx-sc;
+#X msg 27 253 roman_helpers;
+#X msg 27 276 mx-recorder;
+#X msg 28 126 mx-fx-sc;
 #X restore 17 36 pd abslist;
 #X msg 16 63 singleton;
 #X msg 15 8 version 0 1 0;
