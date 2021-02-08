@@ -1,10 +1,16 @@
-#N struct 2486.filterplot float y array filterplot-array 2486.filterplot-element
+#N struct 2208.filterplot float y array filterplot-array 2208.filterplot-element
 ;
-#N struct 2486.filterplot-element float y;
+#N struct 2208.filterplot-element float y;
+#N struct 3526.filterplot float y array filterplot-array filterplot-element
+;
+#N struct filterplot-element float y;
+#N struct 2524.filterplot float y array filterplot-array 2524.filterplot-element
+;
+#N struct 2524.filterplot-element float y;
 #N struct 1695.filterplot float y array filterplot-array 1695.filterplot-element
 ;
 #N struct 1695.filterplot-element float y;
-#N canvas 583 368 282 324 10;
+#N canvas 583 467 282 324 10;
 #N canvas 763 495 175 138 NETPD 0;
 #N canvas 653 383 190 338 abslist 0;
 #X msg 28 21 i2mx;
@@ -140,20 +146,20 @@
 #X connect 15 0 16 0;
 #X connect 17 0 3 0;
 #X restore 8 123 pd fxlist;
-#N canvas 763 211 328 304 main-out 0;
+#N canvas 763 277 328 304 main-out 0;
 #X obj 7 9 inlet~;
 #X obj 10 233 outlet~;
-#N canvas 511 157 387 305 mx.insert___ 0;
+#N canvas 511 157 455 300 mx.insert___ 0;
 #X obj 6 52 inlet~;
-#X obj 98 52 inlet~;
-#X obj 98 246 outlet~;
+#X obj 111 52 inlet~;
+#X obj 111 246 outlet~;
 #X obj 6 246 outlet~;
-#X obj 6 108 mx-insert-container \$1 insert/1;
-#X obj 6 159 mx-insert-container \$1 insert/2;
-#X obj 6 210 mx-insert-container \$1 insert/3;
-#X obj 189 85 mx-insert-control \$1 1;
-#X obj 189 133 mx-insert-control \$1 2;
-#X obj 189 184 mx-insert-control \$1 3;
+#X obj 6 108 mx-insert-container \$1/mx/2 insert/1;
+#X obj 6 159 mx-insert-container \$1/mx/2 insert/2;
+#X obj 6 210 mx-insert-container \$1/mx/2 insert/3;
+#X obj 219 85 mx-insert-control \$1/mx/1 1;
+#X obj 219 133 mx-insert-control \$1/mx/1 2;
+#X obj 219 184 mx-insert-control \$1/mx/1 3;
 #X connect 0 0 4 0;
 #X connect 1 0 4 1;
 #X connect 4 0 5 0;
@@ -327,7 +333,7 @@
 #X connect 14 1 18 0;
 #X restore 8 169 pd main-out;
 #X obj 8 29 netpd_head \$1 mx;
-#N canvas 776 347 219 95 create.aux.channel.gui 0;
+#N canvas 776 380 219 95 create.aux.channel.gui 0;
 #N canvas 890 328 432 258 add.add.button 0;
 #X obj 14 19 loadbang;
 #X obj 41 64 f \$1;
@@ -346,23 +352,23 @@
 #X connect 6 0 5 0;
 #X connect 6 1 1 0;
 #X restore 13 64 pd add.add.button;
-#N canvas 778 547 341 252 add.aux.channel 0;
-#N canvas 840 365 352 208 create.aux.channel.gui 0;
+#N canvas 778 580 341 252 add.aux.channel 0;
+#N canvas 840 398 352 208 create.aux.channel.gui 0;
 #X obj 10 35 t a a;
 #X obj 37 58 * 25;
 #X obj 10 103 list append;
 #X obj 37 79 - 3;
 #X obj 10 15 inlet;
-#X obj 10 125 list append \$1/\$0/2 \$1;
 #X msg 10 150 \; pd-\$4-mx-aux obj 10 \$2 mx-aux-channel-gui \$3 \$1
 \; mx-aux-channel-gui-\$3-\$1 loadbang;
+#X obj 10 125 list append \$1/mx/2 \$1;
 #X connect 0 0 2 0;
 #X connect 0 1 1 0;
 #X connect 1 0 3 0;
-#X connect 2 0 5 0;
+#X connect 2 0 6 0;
 #X connect 3 0 2 1;
 #X connect 4 0 0 0;
-#X connect 5 0 6 0;
+#X connect 6 0 5 0;
 #X restore 50 65 pd create.aux.channel.gui;
 #N canvas 721 275 537 329 create.aux.channel 0;
 #X obj 20 11 inlet;
@@ -377,23 +383,23 @@
 #X obj 20 171 list append;
 #X text 126 88 <- index of previous object;
 #X text 99 126 <- y pos;
-#X obj 20 149 list prepend \$1/\$0/2;
 #X obj 20 194 list append \$1;
 #X msg 20 217 \; pd-\$5-aux-containers obj 10 \$3 mx-aux-channel \$1
 \$2 \, connect \$4 0 \$2 0 \; mx-aux-channel-\$1-\$2 loadbang \;;
+#X obj 20 148 list prepend \$1/mx/2;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 4 0 5 0;
 #X connect 4 1 6 0;
 #X connect 4 1 8 0;
-#X connect 5 0 12 0;
+#X connect 5 0 14 0;
 #X connect 6 0 7 0;
 #X connect 7 0 5 1;
 #X connect 8 0 9 1;
-#X connect 9 0 13 0;
-#X connect 12 0 9 0;
-#X connect 13 0 14 0;
+#X connect 9 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 9 0;
 #X restore 30 101 pd create.aux.channel;
 #X msg 11 125 reinit;
 #X obj 11 147 s \$1.NETPD;
@@ -436,7 +442,7 @@
 ;
 #X obj 36 32 t b b b;
 #X obj 55 139 s \$1-add-aux-channel-r;
-#X obj 12 173 netpd_f \$1/\$0/1 aux/quantity;
+#X obj 12 173 netpd_f \$1/mx/1 aux/quantity;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 26 0;
@@ -485,6 +491,6 @@
 #X connect 6 0 5 0;
 #X restore 8 192 pd show-aux/show-rec;
 #X obj 7 243 mx-fx-list \$1 mxlib mx-slots;
-#X obj 7 270 netpd-bus-order \$1 \$0/1 \$0/2;
+#X obj 7 270 netpd-bus-order \$1 mx/1 mx/2;
 #X connect 2 0 4 0;
 #X connect 7 0 6 0;
