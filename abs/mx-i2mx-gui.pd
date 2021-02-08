@@ -123,7 +123,7 @@
 #X msg 8 13 mx-aux-gui;
 #X msg 9 42 mx-insert-gui;
 #X restore 24 42 pd abslist;
-#X msg 21 15 version 0 0 6;
+#X msg 21 15 version 0 0 7;
 #X restore 110 75 pd NETPD 2 0;
 #N canvas 520 520 261 258 level-slider-stuff 0;
 #X obj 20 14 r \$1-mx/level;
@@ -272,9 +272,9 @@
 #X obj 20 102 mx-aux-gui \$1 1;
 #X obj 20 125 mx-aux-gui \$1 2;
 #X obj 20 148 mx-aux-gui \$1 3;
-#X obj 20 34 mx-insert-gui \$1/mx/1 1;
-#X obj 20 56 mx-insert-gui \$1/mx/1 2;
-#X obj 20 79 mx-insert-gui \$1/mx/1 3;
+#X obj 20 34 mx-insert-gui \$1/\mx/1 1;
+#X obj 20 56 mx-insert-gui \$1/\mx/1 2;
+#X obj 20 79 mx-insert-gui \$1/\mx/1 3;
 #N canvas 517 613 285 296 hide-gui 0;
 #X obj 11 264 s \$0.cover;
 #X msg 11 223 vis_size 38 251 \, pos 21 34 \, color 10;
