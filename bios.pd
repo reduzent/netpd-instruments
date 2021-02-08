@@ -1,0 +1,262 @@
+#N canvas 283 65 494 257 10;
+#N canvas 624 75 434 290 NETPD 0;
+#N canvas 315 75 473 287 abslist 0;
+#X text 7 13 Put a message box containing the name of the abstraction
+(without the .pd suffix) for each dependency.;
+#X text 6 55 For instance:;
+#X text 23 84 [mysynth-voice(;
+#X text 13 130 NOTE: abstractions of instruments also use netpd meta
+tags and may also specify their own dependencies. unpatch resolves
+dependency trees recursively.;
+#X restore 12 178 pd abslist;
+#X text 111 179 <- add dependencies of your netpd instrument;
+#X text 16 211 The [pd abslist] tag container is optional and is used
+to specify dependencies (abstractions in netpd/abs) of your instrument.
+;
+#X text 107 7 <- update the version of this netpd instrument;
+#X msg 12 8 version 0 0 2;
+#X restore 10 14 pd NETPD 2 0;
+#X text 158 70 <- this manages patch state synchorization;
+#X obj 10 69 netpd_head \$1 bios;
+#N canvas 349 23 93 548 \$1-bios 1;
+#X obj 60 27 tgl 16 0 \$1-start \$1-start empty -32 7 0 10 -232576
+-1 -191407 1 1;
+#X obj 60 43 tgl 16 0 \$1-reset \$1-reset empty -33 7 0 10 -261234
+-1 -191407 0 1;
+#X obj 60 11 bng 16 250 50 0 \$1-PRND \$1-PRND empty -26 7 0 10 -204800
+-1 -191407;
+#X obj 12 13 vsl 8 256 0 1 0 0 \$1-upquark \$1-upquark empty 0 -9 0
+10 -261234 -1 -4032 16900 0;
+#X obj 20 13 vsl 8 256 0 1 0 0 \$1-downquark \$1-downquark empty 0
+-9 0 10 -261234 -1 -4032 19800 0;
+#X obj 12 274 vsl 8 256 0 1 0 0 \$1-electron \$1-electron empty 0 -9
+0 10 -204786 -1 -4032 23400 0;
+#X obj 20 274 vsl 8 256 0 1 0 0 \$1-eneutrino \$1-eneutrino empty 0
+-9 0 10 -204786 -1 -4032 5400 0;
+#X obj 28 13 vsl 8 256 0 1 0 0 \$1-charmquark \$1-charmquark empty
+0 -9 0 10 -262130 -1 -4032 5400 0;
+#X obj 36 13 vsl 8 256 0 1 0 0 \$1-strangequark \$1-strangequark empty
+0 -9 0 10 -262130 -1 -4032 2600 0;
+#X obj 28 274 vsl 8 256 0 1 0 0 \$1-muon \$1-muon empty 0 -9 0 10 -204800
+-1 -4032 3700 0;
+#X obj 36 274 vsl 8 256 0 1 0 0 \$1-mneutrino \$1-mneutrino empty 0
+-9 0 10 -204800 -1 -4032 24400 0;
+#X obj 44 13 vsl 8 256 0 1 0 0 \$1-topquark \$1-topquark empty 0 -9
+0 10 -261234 -1 -4032 17900 0;
+#X obj 52 13 vsl 8 256 0 1 0 0 \$1-bottomquark \$1-bottomquark empty
+0 -9 0 10 -261234 -1 -4032 23100 0;
+#X obj 44 274 vsl 8 256 0 1 0 0 \$1-tau \$1-tau empty 0 -9 0 10 -204786
+-1 -4032 15300 0;
+#X obj 52 274 vsl 8 256 0 1 0 0 \$1-tneutrino \$1-tneutrino empty 0
+-9 0 10 -204786 -1 -4032 25300 0;
+#X obj 60 274 vsl 8 256 0 1 0 0 \$1-higgs \$1-higgs empty 0 -9 0 10
+-261682 -1 -4032 20100 0;
+#X coords 0 548 1 547 85 60 0;
+#X restore 10 42 pd \$1-bios;
+#X text 8 136 bios is based on the 0XB105F00D 'polymorphic bytechip
+equations' patch by Boran Robert Andrei;
+#X text 8 165 https://forum.pdpatchrepo.info/topic/12647/0xb105food-experimental-music-texture-generator-using-bytechip-equations-v1-alpha
+;
+#X text 8 207 adapted for netpd by beem 2020;
+#N canvas 226 23 1054 720 biosdsp 0;
+#X msg 58 99 0;
+#X obj 48 150 rpole~ 1;
+#X obj 58 389 clip~ 0 44100;
+#X obj 158 352 samplerate~;
+#X msg 62 121 clear;
+#X msg 50 78 1;
+#X obj 158 323 loadbang;
+#X floatatom 153 65 5 0 0 0 - - -;
+#X floatatom 304 56 5 0 0 0 - - -;
+#X floatatom 423 58 5 0 0 0 - - -;
+#X floatatom 191 135 5 0 0 0 - - -;
+#X floatatom 342 146 5 0 0 0 - - -;
+#X obj 7 184 expr~ (($v1*($f2*($v1>>$f3&$f4)&$f5))/$f6&$f7)+((((($v1>>$f8)^($v1>>$f9)-$f10)%$f11*$v1)/$f12|$v1>>$f13)&$f14)
+;
+#X f 115;
+#X obj 4 40 sel 0 1;
+#N canvas 0 23 1280 725 initialize_quantum_nature 0;
+#X obj 56 238 random 257;
+#X obj 75 314 random 257;
+#X obj 112 381 random 257;
+#X obj 131 457 random 257;
+#X obj 170 238 random 257;
+#X obj 189 314 random 257;
+#X obj 316 227 random 257;
+#X obj 335 303 random 257;
+#X obj 372 370 random 257;
+#X obj 391 446 random 257;
+#X obj 430 227 random 257;
+#X obj 449 303 random 257;
+#X obj 92 192 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 195 545 random 257;
+#X obj 851 290 netpd_f \$1 electron;
+#X obj 861 318 netpd_f \$1 muon;
+#X obj 873 349 netpd_f \$1 tau;
+#X obj 883 377 netpd_f \$1 eneutrino;
+#X obj 897 405 netpd_f \$1 mneutrino;
+#X obj 906 434 netpd_f \$1 tneutrino;
+#X obj 922 488 netpd_f \$1 higgs;
+#X obj 671 420 netpd_f \$1 bottomquark;
+#X obj 655 392 netpd_f \$1 topquark;
+#X obj 641 364 netpd_f \$1 strangequark;
+#X obj 631 336 netpd_f \$1 charmquark;
+#X obj 619 305 netpd_f \$1 downquark;
+#X obj 609 277 netpd_f \$1 upquark;
+#X obj 89 160 r \$1-PRND;
+#X obj 58 276 * 0.00389105;
+#X obj 77 352 * 0.00389105;
+#X obj 172 276 * 0.00389105;
+#X obj 318 265 * 0.00389105;
+#X obj 437 254 * 0.00389105;
+#X obj 452 339 * 0.00389105;
+#X obj 337 341 * 0.00389105;
+#X obj 374 408 * 0.00389105;
+#X obj 393 484 * 0.00389105;
+#X obj 197 583 * 0.00389105;
+#X obj 133 495 * 0.00389105;
+#X obj 114 419 * 0.00389105;
+#X obj 191 352 * 0.00389105;
+#X connect 0 0 28 0;
+#X connect 1 0 29 0;
+#X connect 2 0 39 0;
+#X connect 3 0 38 0;
+#X connect 4 0 30 0;
+#X connect 5 0 40 0;
+#X connect 6 0 31 0;
+#X connect 7 0 34 0;
+#X connect 8 0 35 0;
+#X connect 9 0 36 0;
+#X connect 10 0 32 0;
+#X connect 11 0 33 0;
+#X connect 12 0 0 0;
+#X connect 12 0 4 0;
+#X connect 12 0 6 0;
+#X connect 12 0 10 0;
+#X connect 12 0 1 0;
+#X connect 12 0 5 0;
+#X connect 12 0 7 0;
+#X connect 12 0 11 0;
+#X connect 12 0 2 0;
+#X connect 12 0 8 0;
+#X connect 12 0 3 0;
+#X connect 12 0 9 0;
+#X connect 12 0 13 0;
+#X connect 13 0 37 0;
+#X connect 27 0 12 0;
+#X connect 28 0 26 0;
+#X connect 29 0 15 0;
+#X connect 30 0 25 0;
+#X connect 31 0 14 0;
+#X connect 32 0 16 0;
+#X connect 33 0 24 0;
+#X connect 34 0 22 0;
+#X connect 35 0 17 0;
+#X connect 36 0 21 0;
+#X connect 37 0 20 0;
+#X connect 38 0 19 0;
+#X connect 39 0 18 0;
+#X connect 40 0 23 0;
+#X restore 12 667 pd initialize_quantum_nature;
+#X obj 438 532 sel 0 1;
+#X obj 21 559 switch~;
+#X obj 21 531 i2mx \$1 bios;
+#X obj 147 21 netpd_f \$1 upquark;
+#X obj 147 42 * 256;
+#X obj 58 417 *~ 0.007;
+#X obj 284 7 netpd_f \$1 downquark;
+#X obj 288 33 * 256;
+#X obj 437 7 netpd_f \$1 charmquark;
+#X obj 409 36 * 256;
+#X obj 151 98 netpd_f \$1 strangequark;
+#X obj 151 119 * 256;
+#X obj 322 118 * 256;
+#X obj 322 97 netpd_f \$1 topquark;
+#X obj 462 97 netpd_f \$1 bottomquark;
+#X obj 346 253 netpd_f \$1 electron;
+#X obj 482 254 netpd_f \$1 muon;
+#X obj 635 254 netpd_f \$1 tau;
+#X obj 519 342 netpd_f \$1 mneutrino;
+#X obj 660 344 netpd_f \$1 tneutrino;
+#X obj 590 439 netpd_f \$1 higgs;
+#X obj 438 499 netpd_f \$1 reset;
+#X obj 4 7 netpd_f \$1 start;
+#X floatatom 533 150 5 0 0 0 - - -;
+#X obj 513 122 * 256;
+#X floatatom 317 310 5 0 0 0 - - -;
+#X obj 297 282 * 256;
+#X floatatom 477 318 5 0 0 0 - - -;
+#X obj 457 290 * 256;
+#X floatatom 610 304 5 0 0 0 - - -;
+#X obj 610 277 * 256;
+#X floatatom 442 412 5 0 0 0 - - -;
+#X obj 422 384 * 256;
+#X floatatom 516 417 5 0 0 0 - - -;
+#X obj 496 389 * 256;
+#X floatatom 754 398 5 0 0 0 - - -;
+#X obj 734 370 * 256;
+#X floatatom 670 503 5 0 0 0 - - -;
+#X obj 650 475 * 256;
+#X obj 347 345 netpd_f \$1 eneutrino;
+#X obj 58 449 hip~ 2;
+#X connect 0 0 1 0;
+#X connect 1 0 12 0;
+#X connect 2 0 20 0;
+#X connect 3 0 2 2;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 3 0;
+#X connect 12 0 2 0;
+#X connect 13 0 0 0;
+#X connect 13 1 5 0;
+#X connect 15 1 4 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 0;
+#X connect 19 0 12 1;
+#X connect 19 0 7 0;
+#X connect 20 0 55 0;
+#X connect 21 0 22 0;
+#X connect 22 0 8 0;
+#X connect 22 0 12 2;
+#X connect 23 0 24 0;
+#X connect 24 0 12 3;
+#X connect 24 0 9 0;
+#X connect 25 0 26 0;
+#X connect 26 0 10 0;
+#X connect 26 0 12 4;
+#X connect 27 0 12 5;
+#X connect 27 0 11 0;
+#X connect 28 0 27 0;
+#X connect 29 0 39 0;
+#X connect 30 0 41 0;
+#X connect 31 0 43 0;
+#X connect 32 0 45 0;
+#X connect 33 0 49 0;
+#X connect 34 0 51 0;
+#X connect 35 0 53 0;
+#X connect 36 0 15 0;
+#X connect 37 0 13 0;
+#X connect 39 0 38 0;
+#X connect 39 0 12 6;
+#X connect 41 0 40 0;
+#X connect 41 0 12 7;
+#X connect 43 0 42 0;
+#X connect 43 0 12 8;
+#X connect 45 0 44 0;
+#X connect 45 0 12 9;
+#X connect 47 0 46 0;
+#X connect 47 0 12 10;
+#X connect 49 0 48 0;
+#X connect 49 0 12 11;
+#X connect 51 0 50 0;
+#X connect 51 0 12 12;
+#X connect 53 0 52 0;
+#X connect 53 0 12 13;
+#X connect 54 0 47 0;
+#X connect 55 0 17 1;
+#X connect 55 0 17 0;
+#X restore 10 105 pd biosdsp;
+#X text 10 66;
+#X text 159 44 <- GUI canvas;
+#X text 158 16 <- meta tags here;
