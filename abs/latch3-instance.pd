@@ -5,7 +5,7 @@
 #N canvas 0 106 450 300 abslist 0;
 #X msg 15 19 master-param;
 #X restore 87 48 pd abslist;
-#X msg 11 14 version 0 0 3;
+#X msg 11 14 version 0 0 4;
 #X restore 399 11 pd NETPD 2 0;
 #X obj 304 146 netpd_f \$1 \$2/length 16;
 #X obj 304 292 r \$0.record.status;
