@@ -1,16 +1,4 @@
-#N struct 2208.filterplot float y array filterplot-array 2208.filterplot-element
-;
-#N struct 2208.filterplot-element float y;
-#N struct 3526.filterplot float y array filterplot-array filterplot-element
-;
-#N struct filterplot-element float y;
-#N struct 2524.filterplot float y array filterplot-array 2524.filterplot-element
-;
-#N struct 2524.filterplot-element float y;
-#N struct 1695.filterplot float y array filterplot-array 1695.filterplot-element
-;
-#N struct 1695.filterplot-element float y;
-#N canvas 583 467 282 324 10;
+#N canvas 591 343 282 324 10;
 #N canvas 763 495 175 138 NETPD 0;
 #N canvas 653 383 190 338 abslist 0;
 #X msg 28 21 i2mx;
@@ -333,7 +321,7 @@
 #X connect 14 1 18 0;
 #X restore 8 169 pd main-out;
 #X obj 8 29 netpd_head \$1 mx;
-#N canvas 776 380 219 95 create.aux.channel.gui 0;
+#N canvas 776 413 219 95 create.aux.channel.gui 0;
 #N canvas 890 328 432 258 add.add.button 0;
 #X obj 14 19 loadbang;
 #X obj 41 64 f \$1;
@@ -342,15 +330,11 @@
 -66577 0 \, obj 13 8 cnv 13 30 13 empty empty aux 2 6 1 14 -228856
 -1 0 \, obj 49 7 hsl 29 15 0 1 0 0 \$1-add-aux-channel-s \$1-add-aux-channel-r
 + 8 6 1 16 -228856 -228856 -1 0 1;
-#X obj 14 207 s \$1-add-aux-channel-r;
-#X msg 14 186 set 0.5;
 #X obj 14 41 t b b;
-#X connect 0 0 6 0;
+#X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
-#X connect 5 0 4 0;
-#X connect 6 0 5 0;
-#X connect 6 1 1 0;
+#X connect 4 1 1 0;
 #X restore 13 64 pd add.add.button;
 #N canvas 778 580 341 252 add.aux.channel 0;
 #N canvas 840 398 352 208 create.aux.channel.gui 0;
