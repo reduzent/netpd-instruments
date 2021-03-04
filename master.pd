@@ -1,4 +1,4 @@
-#N canvas 882 106 491 615 10;
+#N canvas 882 0 491 615 10;
 #N canvas 594 280 339 107 NETPD 0;
 #N canvas 305 139 320 105 abslist 0;
 #X msg 19 15 roman_helpers;
@@ -216,7 +216,7 @@
 #X obj 9 256 pack f f;
 #X obj 9 278 t a b;
 #X msg 48 279 0;
-#N canvas 554 106 468 53 \$1-master 1;
+#N canvas 554 0 468 53 \$1-master 1;
 #X obj 9 2 cnv 15 450 42 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 11 4 cnv 15 446 38 empty empty empty 20 12 0 14 -191407 -66577
