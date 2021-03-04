@@ -1,10 +1,10 @@
-#N canvas 438 335 320 305 10;
-#N canvas 520 44 409 218 NETPD 0;
+#N canvas 428 360 320 305 10;
+#N canvas 510 106 409 218 NETPD 0;
 #N canvas 649 195 233 167 abslist 0;
 #X msg 8 13 mx-aux-gui;
 #X msg 9 42 mx-insert-gui;
 #X restore 24 42 pd abslist;
-#X msg 21 15 version 0 0 3;
+#X msg 21 15 version 0 0 4;
 #X restore 128 67 pd NETPD 2 0;
 #N canvas 565 546 261 258 level-slider-stuff 0;
 #X obj 20 228 s \$0.level.top.r;
@@ -136,7 +136,7 @@
 #X obj 21 213 cnv 10 10 11 empty empty e 1 5 1 14 -228856 -1 0;
 #X obj 21 225 cnv 10 10 11 empty empty c 1 5 1 14 -228856 -1 0;
 #X obj 20 22 vsl 12 127 0 0 0 0 \$1-show-aux-channels \$1.NULL empty
-0 -9 0 10 -228856 -228856 -1 0 1;
+0 0 0 10 -228856 -228856 -1 0 1;
 #X obj 21 69 cnv 10 10 11 empty empty a 2 5 1 14 -228856 -1 0;
 #X obj 21 81 cnv 10 10 11 empty empty u 1 5 1 14 -228856 -1 0;
 #X obj 21 93 cnv 10 10 11 empty empty x 2 5 1 14 -228856 -1 0;
