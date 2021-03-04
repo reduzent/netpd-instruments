@@ -1,5 +1,5 @@
-#N canvas 600 106 491 615 10;
-#N canvas 604 255 339 107 NETPD 0;
+#N canvas 580 106 491 615 10;
+#N canvas 594 280 339 107 NETPD 0;
 #N canvas 305 139 320 105 abslist 0;
 #X msg 19 15 roman_helpers;
 #X msg 19 42 master-poly;
@@ -8,7 +8,7 @@
 #X msg 156 44 master-param;
 #X restore 13 42 pd abslist;
 #X msg 13 69 singleton;
-#X msg 12 18 version 0 5 0;
+#X msg 12 18 version 0 5 1;
 #X restore 10 14 pd NETPD 2 0;
 #N canvas 0 44 368 170 request 0;
 #X text 128 50 request packet transmission;
@@ -216,7 +216,7 @@
 #X obj 9 256 pack f f;
 #X obj 9 278 t a b;
 #X msg 48 279 0;
-#N canvas 584 106 468 57 \$1-master 1;
+#N canvas 564 106 468 53 \$1-master 1;
 #X obj 9 2 cnv 15 450 42 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 11 4 cnv 15 446 38 empty empty empty 20 12 0 14 -191407 -66577
@@ -240,7 +240,7 @@
 0;
 #X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000000 3 7 0 11
 -1 -4033 0;
-#X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 -9 0
+#X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 9 0
 10 -262144 -1 -1 0 1;
 #X obj 71 8 cnv 15 18 30 empty \$1-mode-cover R 5 15 0 11 -1 -4033
 0;
