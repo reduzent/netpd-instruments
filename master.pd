@@ -1,4 +1,4 @@
-#N canvas 580 106 491 615 10;
+#N canvas 882 106 491 615 10;
 #N canvas 594 280 339 107 NETPD 0;
 #N canvas 305 139 320 105 abslist 0;
 #X msg 19 15 roman_helpers;
@@ -177,7 +177,7 @@
 #X obj 24 407 t a a;
 #X obj 24 429 int;
 #X obj 104 319 wrap;
-#N canvas 277 359 308 313 set.exact.step.at.dump 0;
+#N canvas 237 459 308 313 set.exact.step.at.dump 0;
 #X msg 9 260 set \$1;
 #X obj 24 23 r \$0.step;
 #X obj 51 167 timer;
@@ -216,7 +216,7 @@
 #X obj 9 256 pack f f;
 #X obj 9 278 t a b;
 #X msg 48 279 0;
-#N canvas 564 106 468 53 \$1-master 1;
+#N canvas 554 106 468 53 \$1-master 1;
 #X obj 9 2 cnv 15 450 42 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 11 4 cnv 15 446 38 empty empty empty 20 12 0 14 -191407 -66577
@@ -238,7 +238,7 @@
 #X obj 322 8 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -1 -4033
 0;
-#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000000 3 7 0 11
+#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0003088 3 7 0 11
 -1 -4033 0;
 #X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 9 0
 10 -262144 -1 -1 0 1;
@@ -256,10 +256,10 @@
 #X obj 115 8 master-gui-bar 10;
 #X obj 401 8 hsl 50 30 0 1 0 0 \$1-offset-sl \$1-offset-sl empty 5
 15 0 14 -262144 -237180 -237180 0 1;
-#X obj 398 8 cnv 14 55 15 empty \$1-offset-top OFFSET 3 8 0 11 -1 -4033
+#X obj 398 8 cnv 14 55 15 empty \$1-offset-top OFFSET 3 8 0 11 -1 -2049
 0;
-#X obj 398 24 cnv 14 55 14 empty \$1-offset-bottom 0ms 3 7 0 11 -1
--4033 0;
+#X obj 398 24 cnv 14 55 14 empty \$1-offset-bottom \ \ \ \ 0ms 3 7
+0 11 -1 -2049 0;
 #X restore 10 42 pd \$1-master;
 #X obj 9 69 netpd_head \$1 master;
 #N canvas 393 158 471 367 examination 0;
