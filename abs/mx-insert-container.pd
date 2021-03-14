@@ -1,4 +1,4 @@
-#N canvas 626 197 732 375 10;
+#N canvas 616 189 732 375 10;
 #X obj 12 4 inlet~;
 #X obj 98 3 inlet~;
 #X obj 11 277 outlet~;
@@ -9,7 +9,7 @@
 #X obj 324 72 netpd-dsp-off;
 #X obj 351 139 t a b;
 #X msg 413 138 clear;
-#N canvas 633 44 306 90 insert-container-container 1;
+#N canvas 633 44 306 90 insert-container-container 0;
 #X obj 17 14 inlet~;
 #X obj 16 48 outlet~;
 #N canvas 633 44 450 300 \$0-insert-container 0;
@@ -21,14 +21,14 @@
 #X connect 0 0 1 0;
 #X connect 3 0 4 0;
 #X restore 12 126 pd insert-container-container;
-#N canvas 801 44 450 300 NETPD 0;
-#X msg 12 22 version 0 0 2;
+#N canvas 791 106 450 300 NETPD 0;
+#X msg 12 22 version 0 0 3;
 #X restore 575 6 pd NETPD 2 0;
-#N canvas 1128 238 178 149 add-creation-arguments 0;
+#N canvas 1118 296 178 149 add-creation-arguments 0;
 #X obj 13 83 list prepend \$0;
 #X obj 13 105 outlet;
 #X obj 13 29 inlet;
-#X obj 13 59 list append \$1 \$2 \$1-\$2;
+#X obj 13 59 list append \$1 \$2 \$3-\$2;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;

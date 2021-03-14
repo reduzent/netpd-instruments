@@ -1,5 +1,6 @@
-#N canvas 591 376 282 324 10;
-#N canvas 763 495 175 138 NETPD 0;
+#N struct 3073.cursor float pos float color;
+#N canvas 571 426 282 324 10;
+#N canvas 753 553 175 138 NETPD 0;
 #N canvas 653 383 190 338 abslist 0;
 #X msg 28 21 i2mx;
 #X msg 28 146 mx-i2mx-gui;
@@ -16,9 +17,9 @@
 #X msg 28 126 mx-fx-sc;
 #X restore 17 36 pd abslist;
 #X msg 16 63 singleton;
-#X msg 15 8 version 0 1 0;
+#X msg 15 8 version 0 1 1;
 #X restore 8 7 pd NETPD 2 0;
-#N canvas 603 106 348 450 create.channel.guis 0;
+#N canvas 593 139 348 450 create.channel.guis 0;
 #X obj 17 10 loadbang;
 #X msg 17 52 getallinstr;
 #X obj 17 74 s mx;
@@ -321,7 +322,7 @@
 #X connect 18 0 2 0;
 #X restore 8 169 pd main-out;
 #X obj 8 29 netpd_head \$1 mx;
-#N canvas 776 413 219 95 create.aux.channel.gui 0;
+#N canvas 766 438 219 95 create.aux.channel.gui 0;
 #N canvas 890 328 432 258 add.add.button 0;
 #X obj 14 19 loadbang;
 #X obj 41 64 f \$1;
@@ -336,7 +337,7 @@
 #X connect 3 0 2 0;
 #X connect 4 1 1 0;
 #X restore 13 64 pd add.add.button;
-#N canvas 778 580 341 252 add.aux.channel 0;
+#N canvas 758 630 341 252 add.aux.channel 0;
 #N canvas 840 398 352 208 create.aux.channel.gui 0;
 #X obj 10 35 t a a;
 #X obj 37 58 * 25;
@@ -354,7 +355,7 @@
 #X connect 4 0 0 0;
 #X connect 6 0 5 0;
 #X restore 50 65 pd create.aux.channel.gui;
-#N canvas 721 275 537 329 create.aux.channel 0;
+#N canvas 711 267 537 329 create.aux.channel 0;
 #X obj 20 11 inlet;
 #X obj 185 13 loadbang;
 #X msg 185 35 obj 10 10 inlet~;
@@ -368,22 +369,23 @@
 #X text 126 88 <- index of previous object;
 #X text 99 126 <- y pos;
 #X obj 20 194 list append \$1;
-#X msg 20 217 \; pd-\$5-aux-containers obj 10 \$3 mx-aux-channel \$1
-\$2 \, connect \$4 0 \$2 0 \; mx-aux-channel-\$1-\$2 loadbang \;;
 #X obj 20 148 list prepend \$1/mx/2;
+#X msg 20 217 \; pd-\$5-aux-containers obj 10 \$3 mx-aux-channel \$1
+\$2 \$5 \, connect \$4 0 \$2 0 \; mx-aux-channel-\$1-\$2 loadbang \;
+;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 4 0 5 0;
 #X connect 4 1 6 0;
 #X connect 4 1 8 0;
-#X connect 5 0 14 0;
+#X connect 5 0 13 0;
 #X connect 6 0 7 0;
 #X connect 7 0 5 1;
 #X connect 8 0 9 1;
 #X connect 9 0 12 0;
-#X connect 12 0 13 0;
-#X connect 14 0 9 0;
+#X connect 12 0 14 0;
+#X connect 13 0 9 0;
 #X restore 30 101 pd create.aux.channel;
 #X msg 11 125 reinit;
 #X obj 11 147 s \$1.NETPD;
@@ -398,7 +400,7 @@
 #X obj 13 15 inlet;
 #X connect 2 0 1 0;
 #X restore 8 99 pd create.aux.channel.gui;
-#N canvas 832 282 401 447 auxlist 0;
+#N canvas 822 274 401 447 auxlist 0;
 #X obj 12 105 bang;
 #X obj 12 127 f;
 #X obj 12 149 + 1;
