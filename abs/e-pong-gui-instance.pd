@@ -5,7 +5,7 @@
 #X obj 224 200 netpd_f \$1 \$2/\$3/fb 0;
 #X obj 139 87 netpd_f \$1 \$2/\$3/pitch 0;
 #X obj 40 20 nbx 4 14 0 200 0 0 \$1-\$2/\$3/steps \$1-\$2/\$3/steps
-empty 0 8 0 10 -262130 -159808 -159808 12 256;
+empty 0 8 0 10 -262130 -159808 -159808 4 256;
 #X obj 159 110 netpd_f \$1 \$2/\$3/steps 4;
 #X obj 198 154 netpd_f \$1 \$2/\$3/level 1;
 #X obj 33 98 r qseq3;
@@ -15,15 +15,15 @@ empty 0 8 0 10 -262130 -159808 -159808 12 256;
 #X obj 213 176 netpd_f \$1 \$2/\$3/pan 0.5;
 #X obj 33 250 pack f f f f f f;
 #X obj 82 20 nbx 4 14 -200 200 0 0 \$1-\$2/\$3/length \$1-\$2/\$3/length
-empty 0 8 0 10 -262130 -159808 -159808 -6 256;
+empty 0 8 0 10 -262130 -159808 -159808 8 256;
 #X obj 124 20 nbx 4 14 -99 99 0 0 \$1-\$2/\$3/pitch \$1-\$2/\$3/pitch
-empty 0 8 0 10 -262130 -159808 -1 11 256;
+empty 0 8 0 10 -262130 -159808 -1 0 256;
 #X obj 169 20 hsl 40 14 0 1 0 0 \$1-\$2/\$3/level \$1-\$2/\$3/level
-empty -2 7 0 10 -262130 -159808 -1 3100 1;
+empty -2 7 0 10 -262130 -159808 -1 3900 1;
 #X obj 259 20 hsl 40 14 0 1 0 0 \$1-\$2/\$3/fb \$1-\$2/\$3/fb empty
--2 7 0 10 -262130 -159808 -1 3900 1;
+-2 7 0 10 -262130 -159808 -1 0 1;
 #X obj 214 20 hsl 40 14 0 1 0 0 \$1-\$2/\$3/pan \$1-\$2/\$3/pan empty
--2 7 0 10 -262130 -159808 -1 800 1;
+-2 7 0 10 -262130 -159808 -1 1950 1;
 #X obj 179 131 netpd_f \$1 \$2/\$3/length 8;
 #X obj 23 20 hsl 14 14 0 1 0 0 empty empty empty -2 7 0 10 -262130
 -159808 -1 0 1;
@@ -45,13 +45,13 @@ empty -2 7 0 10 -262130 -159808 -1 3100 1;
 #X obj 200 252 del 100;
 #X obj 612 218 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 33 120 route \$4/e-pong;
 #X obj 596 278 print \$4/e-pong;
+#X obj 33 120 route \$4-\$2;
 #X connect 1 0 11 5;
 #X connect 2 0 9 1;
 #X connect 4 0 11 1;
 #X connect 5 0 11 3;
-#X connect 6 0 35 0;
+#X connect 6 0 36 0;
 #X connect 7 0 22 0;
 #X connect 9 0 11 0;
 #X connect 10 0 11 4;
@@ -75,6 +75,6 @@ empty -2 7 0 10 -262130 -159808 -1 3100 1;
 #X connect 32 0 33 0;
 #X connect 32 1 30 0;
 #X connect 33 0 29 0;
-#X connect 34 0 36 0;
-#X connect 35 0 7 0;
+#X connect 34 0 35 0;
+#X connect 36 0 7 0;
 #X coords 0 -1 1 1 281 14 2 20 20;
