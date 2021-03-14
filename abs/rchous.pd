@@ -92,25 +92,11 @@
 #X obj 184 19 inlet~;
 #X obj 14 93 outlet~;
 #X obj 184 93 outlet~;
-#N canvas 686 506 133 77 \$3-rchous 1;
-#X obj 7 4 cnv 15 109 62 empty empty empty 20 12 0 14 -128992 -66577
-0;
-#X obj 63 51 cnv 13 51 13 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 12 6 hsl 100 13 0.01 5 1 0 \$1-\$2/freq \$1-\$2/freq empty 2
-6 1 7 -1 -66577 -195568 1700 1;
-#X obj 12 21 hsl 100 13 5 50 0 0 \$1-\$2/del \$1-\$2/del empty 2 6
-1 7 -1 -66577 -195568 0 1;
-#X obj 12 36 hsl 100 13 1 100 0 0 \$1-\$2/depth \$1-\$2/depth empty
-2 6 1 7 -1 -66577 -195568 1400 1;
-#X obj 9 51 hradio 13 1 0 4 \$1-\$2/voc \$1-\$2/voc empty 57 6 1 7
--1 -66577 -195568 0;
-#X restore 373 19 pd \$3-rchous;
-#N canvas 1014 192 341 170 NETPD 0;
+#N canvas 1014 225 341 170 NETPD 0;
 #N canvas 1100 245 171 89 abslist 0;
 #X msg 5 10 rchous-voice;
 #X restore 13 41 pd abslist;
-#X msg 13 17 version 0 2 1;
+#X msg 13 17 version 0 2 2;
 #X restore 373 42 pd NETPD 2 0;
 #X obj 19 124 netpd_f \$1 \$2/voc 0;
 #X obj 20 218 netpd_f \$1 \$2/del 5;
@@ -118,6 +104,20 @@
 #X obj 19 191 s \$0-voice-activation;
 #X obj 21 303 netpd_f \$1 \$2/depth 15;
 #X obj 20 388 netpd_f \$1 \$2/freq 0.02;
+#N canvas 686 572 133 77 \$3-\$2 1;
+#X obj 7 4 cnv 15 109 62 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj 63 51 cnv 13 51 13 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 12 6 hsl 100 13 0.01 5 1 0 \$1-\$2/freq \$1-\$2/freq empty 2
+6 1 7 -1 -66577 -195568 0 1;
+#X obj 12 21 hsl 100 13 5 50 0 0 \$1-\$2/del \$1-\$2/del empty 2 6
+1 7 -1 -66577 -195568 0 1;
+#X obj 12 36 hsl 100 13 1 100 0 0 \$1-\$2/depth \$1-\$2/depth empty
+2 6 1 7 -1 -66577 -195568 0 1;
+#X obj 9 51 hradio 13 1 0 4 \$1-\$2/voc \$1-\$2/voc empty 57 6 1 7
+-1 -66577 -195568 0;
+#X restore 373 19 pd \$3-\$2;
 #X connect 0 0 3 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
@@ -125,15 +125,15 @@
 #X connect 8 0 9 0;
 #X connect 10 0 17 0;
 #X connect 11 0 18 0;
-#X connect 13 0 23 0;
+#X connect 13 0 22 0;
 #X connect 15 0 1 0;
 #X connect 16 0 2 0;
-#X connect 21 0 13 0;
-#X connect 21 0 14 3;
-#X connect 22 0 7 0;
-#X connect 22 0 14 2;
-#X connect 23 0 24 0;
-#X connect 25 0 4 0;
-#X connect 25 0 14 1;
-#X connect 26 0 0 0;
-#X connect 26 0 14 0;
+#X connect 20 0 13 0;
+#X connect 20 0 14 3;
+#X connect 21 0 7 0;
+#X connect 21 0 14 2;
+#X connect 22 0 23 0;
+#X connect 24 0 4 0;
+#X connect 24 0 14 1;
+#X connect 25 0 0 0;
+#X connect 25 0 14 0;
