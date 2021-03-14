@@ -1,16 +1,6 @@
 #N canvas 661 370 459 239 10;
 #X obj 34 88 inlet~;
 #X obj 137 89 inlet~;
-#N canvas 619 283 298 85 \$3-e-spectfilt 1;
-#X obj 5 17 cnv 15 256 60 empty empty empty 20 12 0 14 -261888 -66577
-0;
-#N canvas 0 50 450 300 (subpatch) 0;
-#X array \$1-\$2/gain 128 float 0;
-#X coords 0 1.05 127 -0.05 256 60 1 0 0;
-#X restore 5 17 graph;
-#X obj 261 19 vsl 15 55 0 1 0 0 \$0-gain-const \$0-gain-const-r empty
-0 -9 0 10 -261234 -1 -1 0 1;
-#X restore 34 45 pd \$3-e-spectfilt;
 #X obj 33 153 outlet~;
 #X obj 137 153 outlet~;
 #N canvas 861 43 500 411 spectral.filter 0;
@@ -75,11 +65,11 @@
 #X connect 26 0 23 1;
 #X connect 26 0 22 1;
 #X restore 33 119 pd spectral.filter;
-#N canvas 1007 297 225 110 NETPD 0;
+#N canvas 1007 330 225 110 NETPD 0;
 #N canvas 792 382 333 46 abslist 0;
 #X msg 17 16 roman_helpers;
 #X restore 7 43 pd abslist;
-#X msg 7 15 version 0 1 6;
+#X msg 7 15 version 0 1 7;
 #X restore 34 21 pd NETPD 2 0;
 #N canvas 1231 475 270 321 gain-const 0;
 #X msg 17 55 const \$1;
@@ -125,7 +115,17 @@
 #X restore 220 83 pd gain-const;
 #X obj 219 57 netpd_t \$1 \$2/gain 128;
 #X obj 217 122 rh_window_hanning \$0-hann 512;
-#X connect 0 0 5 0;
-#X connect 1 0 5 1;
-#X connect 5 0 3 0;
-#X connect 5 1 4 0;
+#N canvas 619 316 298 85 \$3-\$2 1;
+#X obj 5 17 cnv 15 256 60 empty empty empty 20 12 0 14 -261888 -66577
+0;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array \$1-\$2/gain 128 float 0;
+#X coords 0 1.05 127 -0.05 256 60 1 0 0;
+#X restore 5 17 graph;
+#X obj 261 19 vsl 15 55 0 1 0 0 \$0-gain-const \$0-gain-const-r empty
+0 -9 0 10 -261234 -1 -1 0 1;
+#X restore 34 45 pd \$3-\$2;
+#X connect 0 0 4 0;
+#X connect 1 0 4 1;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;

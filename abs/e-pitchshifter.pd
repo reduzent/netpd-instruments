@@ -1,4 +1,4 @@
-#N canvas 491 59 483 356 10;
+#N canvas 491 106 483 356 10;
 #X text 121 213 msec;
 #X text 68 171 window (msec);
 #X text 22 119 transposition (halftones);
@@ -106,20 +106,8 @@
 #X connect 49 0 40 1;
 #X connect 50 0 10 1;
 #X restore 20 251 pd pitchshifter;
-#N canvas 152 412 424 38 \$3-e-pitchshifter 1;
-#X obj 4 6 cnv 10 392 18 empty empty empty 330 10 1 8 -53197 -250685
-0;
-#X obj 5 7 cnv 10 390 16 empty empty harmonizer 330 8 1 9 -217077 -53197
-0;
-#X obj 11 10 hsl 100 10 -24 24 0 0 \$1-\$2/transpose \$1-\$2/transpose
-empty 5 5 1 9 -53197 -1 -1 3100 1;
-#X obj 118 10 hsl 100 10 0.1 1000 1 0 \$1-\$2/window \$1-\$2/window
->_window_> 15 5 1 9 -53197 -1 -1 0 1;
-#X obj 225 10 hsl 100 10 0 1000 0 0 \$1-\$2/delay \$1-\$2/delay >_delay_>
-15 5 1 9 -53197 -1 -1 0 1;
-#X restore 20 21 pd \$3-e-pitchshifter;
-#N canvas 1064 72 227 118 NETPD 0;
-#X msg 19 14 version 0 2 2;
+#N canvas 1064 139 227 118 NETPD 0;
+#X msg 19 14 version 0 2 3;
 #X restore 158 20 pd NETPD 2 0;
 #X obj 20 61 inlet~;
 #X obj 211 61 inlet~;
@@ -130,10 +118,22 @@ empty 5 5 1 9 -53197 -1 -1 3100 1;
 #X obj 120 231 netpd_f \$1 \$2/delay 200;
 #X obj 20 91 delwrite~ \$0_ps-l 2000;
 #X obj 211 91 delwrite~ \$0_ps-r 2000;
-#X connect 3 0 8 0;
-#X connect 3 1 9 0;
+#N canvas 152 412 424 38 \$3-\$2 1;
+#X obj 4 6 cnv 10 392 18 empty empty empty 330 10 1 8 -53197 -250685
+0;
+#X obj 5 7 cnv 10 390 16 empty empty harmonizer 330 8 1 9 -217077 -53197
+0;
+#X obj 11 10 hsl 100 10 -24 24 0 0 \$1-\$2/transpose \$1-\$2/transpose
+empty 5 5 1 9 -53197 -1 -1 0 1;
+#X obj 118 10 hsl 100 10 0.1 1000 1 0 \$1-\$2/window \$1-\$2/window
+>_window_> 15 5 1 9 -53197 -1 -1 0 1;
+#X obj 225 10 hsl 100 10 0 1000 0 0 \$1-\$2/delay \$1-\$2/delay >_delay_>
+15 5 1 9 -53197 -1 -1 0 1;
+#X restore 20 21 pd \$3-\$2;
+#X connect 3 0 7 0;
+#X connect 3 1 8 0;
+#X connect 5 0 12 0;
 #X connect 6 0 13 0;
-#X connect 7 0 14 0;
-#X connect 10 0 3 0;
-#X connect 11 0 3 1;
-#X connect 12 0 3 2;
+#X connect 9 0 3 0;
+#X connect 10 0 3 1;
+#X connect 11 0 3 2;
