@@ -24,11 +24,11 @@
 #N canvas 791 106 450 300 NETPD 0;
 #X msg 12 22 version 0 0 3;
 #X restore 575 6 pd NETPD 2 0;
-#N canvas 1118 296 178 149 add-creation-arguments 0;
+#N canvas 1118 494 178 149 add-creation-arguments 0;
 #X obj 13 83 list prepend \$0;
 #X obj 13 105 outlet;
 #X obj 13 29 inlet;
-#X obj 13 59 list append \$1 \$2 \$3-\$2;
+#X obj 13 59 list append \$1 \$2 \$3;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
@@ -43,22 +43,22 @@
 #X msg 159 135 empty;
 #X obj 23 180 list trim;
 #X obj 23 202 route empty;
-#X msg 24 251 \; pd-\$1-\$2-\$3 vis 1;
 #X obj 107 112 route insert clear;
 #X obj 24 227 list prepend \$3 \$2;
+#X msg 24 251 \; pd-\$1-\$2/\$3 vis 1;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 2 1 4 0;
 #X connect 3 0 5 0;
 #X connect 4 0 1 0;
-#X connect 4 1 10 0;
+#X connect 4 1 9 0;
 #X connect 5 0 7 0;
 #X connect 6 0 5 1;
 #X connect 7 0 8 0;
-#X connect 8 1 11 0;
-#X connect 10 0 5 1;
-#X connect 10 1 6 0;
-#X connect 11 0 9 0;
+#X connect 8 1 10 0;
+#X connect 9 0 5 1;
+#X connect 9 1 6 0;
+#X connect 10 0 11 0;
 #X restore 324 48 pd show.fx.gui;
 #X obj 324 117 t b a;
 #X msg 324 294 reinit;
@@ -66,10 +66,6 @@
 #X text 368 295 <- needed to make the abs set itself to init values
 ;
 #X obj 324 95 route insert clear;
-#X msg 351 202 obj 23 21 receive~ \$1.in.l \, obj 159 21 receive~ \$1.in.r
-\, obj 38 128 \$2 \$3 \$4/\$2 \$5 \, obj 23 235 throw~ \$1.out.l \,
-obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
-\, connect 2 0 3 0 \, connect 2 1 4 0 \, loadbang;
 #N canvas 961 321 353 255 in________________________ 0;
 #X obj 19 15 inlet~;
 #X obj 18 225 outlet~;
@@ -214,31 +210,35 @@ obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
 #X connect 6 0 4 0;
 #X connect 7 0 1 0;
 #X restore 268 257 pd zero_delay;
-#X connect 0 0 20 0;
-#X connect 1 0 20 1;
-#X connect 5 0 22 0;
+#X msg 351 202 obj 23 21 receive~ \$1.in.l \, obj 159 21 receive~ \$1.in.r
+\, obj 38 128 \$2 \$3 \$4/\$2 \$5 \, obj 23 235 throw~ \$1.out.l \,
+obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
+\, connect 2 0 3 0 \, connect 2 1 4 0 \, loadbang;
+#X connect 0 0 19 0;
+#X connect 1 0 19 1;
+#X connect 5 0 21 0;
 #X connect 7 0 18 0;
 #X connect 8 0 12 0;
 #X connect 8 1 9 0;
 #X connect 9 0 6 0;
-#X connect 10 0 21 0;
-#X connect 10 1 21 1;
-#X connect 12 0 19 0;
+#X connect 10 0 20 0;
+#X connect 10 1 20 1;
+#X connect 12 0 25 0;
 #X connect 13 0 7 0;
 #X connect 14 0 15 0;
 #X connect 14 1 8 0;
 #X connect 15 0 16 0;
 #X connect 18 0 14 0;
 #X connect 18 1 9 0;
-#X connect 19 0 6 0;
-#X connect 20 0 10 0;
-#X connect 20 1 10 1;
-#X connect 21 0 2 0;
-#X connect 21 1 3 0;
-#X connect 22 0 24 0;
-#X connect 22 1 23 0;
-#X connect 22 1 25 0;
-#X connect 22 2 13 0;
-#X connect 23 0 21 2;
-#X connect 24 0 21 2;
-#X connect 25 0 4 0;
+#X connect 19 0 10 0;
+#X connect 19 1 10 1;
+#X connect 20 0 2 0;
+#X connect 20 1 3 0;
+#X connect 21 0 23 0;
+#X connect 21 1 22 0;
+#X connect 21 1 24 0;
+#X connect 21 2 13 0;
+#X connect 22 0 20 2;
+#X connect 23 0 20 2;
+#X connect 24 0 4 0;
+#X connect 25 0 6 0;
