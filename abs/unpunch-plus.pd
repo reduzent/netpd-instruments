@@ -1,31 +1,27 @@
-#N struct 1982.vertgrid float x float y float w float h;
-#N struct 1982.horizgrid float x float y float w float h float c symbol
+#N struct 3408.vertgrid float x float y float w float h;
+#N struct 3408.horizgrid float x float y float w float h float c symbol
 note float notevis;
-#N struct 1982.vertline float x float y float h float c float n float
+#N struct 3408.vertline float x float y float h float c float n float
 nvis;
-#N struct 1982.guibar float x float y float w;
-#N struct 1982.gid.button float x float y float clr float gid;
-#N struct 1982.vel float x float y float value;
-#N struct 1982.dur float x float y float value;
-#N struct 1982.mode.button float x float y float w float c symbol param
+#N struct 3408.guibar float x float y float w;
+#N struct 3408.gid.button float x float y float clr float gid;
+#N struct 3408.vel float x float y float value;
+#N struct 3408.dur float x float y float value;
+#N struct 3408.mode.button float x float y float w float c symbol param
 ;
-#N struct 1982.show.selector float x float y float w float hilite float
+#N struct 3408.show.selector float x float y float w float hilite float
 id symbol label;
-#N struct 1982.cursor float x float y float h float vis;
-#N struct 1982.pager float x float y float c float dir float num float
+#N struct 3408.cursor float x float y float h float vis;
+#N struct 3408.pager float x float y float c float dir float num float
 nvis;
-#N struct 1982.scroller float x float y float c float dir;
-#N struct 1982.keyboard.toggle float x float y symbol label float hilite
+#N struct 3408.scroller float x float y float c float dir;
+#N struct 3408.keyboard.toggle float x float y symbol label float hilite
 float ihilite;
-#N canvas 233 89 455 449 10;
+#N canvas 233 106 455 449 10;
 #X obj 12 73 master-poly;
 #X obj 59 242 master-param switch;
 #X obj 59 265 sel 0;
 #X msg 59 288 mute;
-#X msg 245 304 set gridsubdivision \$1;
-#X msg 245 244 set griddivision \$1;
-#X obj 245 341 r \$0.redraw;
-#X msg 245 364 redraw;
 #X obj 12 361 outlet;
 #N canvas 0 89 327 183 loop.params 0;
 #X obj 12 53 + 0;
@@ -58,16 +54,14 @@ float ihilite;
 #X obj 28 151 == -1;
 #X obj 12 322 unpunch-netpd \$1 \$2/seq pd-\$0.seq;
 #X obj 28 128 netpd_r \$1 \$2/metaseq-set;
-#X obj 245 221 netpd_r \$1 \$2/grid;
-#X obj 245 281 netpd_r \$1 \$2/subgrid;
-#N canvas 643 89 1009 791 \$1-\$2/unpunch 1;
+#N canvas 643 106 1009 791 \$1-\$2/unpunch 1;
 #X obj 32 8 cnv 15 960 24 empty empty empty 20 12 0 14 -128992 -66577
 0;
 #X obj 34 10 unpunch-plus-param \$1 \$2 repeat 64 1 999 1;
 #X obj 137 10 unpunch-plus-param \$1 \$2 offset 0 0 999 1;
 #X obj 240 10 unpunch-plus-param \$1 \$2 shift 0 -999 999 1;
-#X obj 787 10 unpunch-plus-param \$1 \$2 grid 4 1 20;
-#X obj 890 10 unpunch-plus-param \$1 \$2 subgrid 4 1 20;
+#X obj 787 10 unpunch-plus-param2 \$1 \$2 grid 4 1 20;
+#X obj 890 10 unpunch-plus-param2 \$1 \$2 subgrid 4 1 20;
 #N canvas 1294 395 356 211 redraw 0;
 #X obj 20 20 bng 20 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -94,8 +88,7 @@ float ihilite;
 #X obj 456 10 unpunch-plus-metaseq \$1 \$2;
 #X obj 343 10 unpunch-plus-poly \$1 \$2;
 #X restore 267 20 pd \$1-\$2/unpunch;
-#N canvas 0 89 450 300 NETPD 0;
-#X msg 16 21 version 0 0 1;
+#N canvas 0 106 450 300 NETPD 0;
 #N canvas 137 172 450 300 abslist 0;
 #X msg 17 15 master-poly;
 #X msg 19 64 unpunch-netpd;
@@ -104,7 +97,9 @@ float ihilite;
 #X msg 18 163 unpunch-plus-poly;
 #X msg 18 189 unpunch-plus-metaseq;
 #X msg 16 101 unpunch-plus-gop1000x740;
+#X msg 141 138 unpunch-plus-param2;
 #X restore 18 73 pd abslist;
+#X msg 16 21 version 0 0 2;
 #X restore 134 14 pd NETPD 2 0;
 #X obj 12 181 spigot 1;
 #X obj 253 74 inlet;
@@ -125,22 +120,50 @@ float ihilite;
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;
 #X restore 12 32 pd poly;
-#X connect 0 0 9 0;
+#N canvas 0 106 450 300 grid.subgrid.redraw 0;
+#X obj 12 16 r \$0.redraw;
+#X obj 12 174 outlet;
+#X obj 27 46 r \$1.\$2.grid;
+#X obj 27 69 route send;
+#X obj 108 70 route send;
+#X obj 108 47 r \$1.\$2.subgrid;
+#X obj 332 117 s \$1.\$2.subgrid;
+#X obj 232 117 s \$1.\$2.grid;
+#X msg 232 90 set \$1;
+#X msg 332 90 set \$1;
+#X obj 12 122 pack f f;
+#X obj 12 97 f;
+#X msg 12 149 set griddivision \$1 \, set gridsubdivision \$2 \, redraw
+;
+#X obj 232 18 netpd_r \$1 \$2/seq;
+#X obj 232 41 route set;
+#X obj 232 64 route griddivision gridsubdivision;
+#X connect 0 0 11 0;
+#X connect 2 0 3 0;
+#X connect 3 0 11 1;
+#X connect 4 0 10 1;
+#X connect 5 0 4 0;
+#X connect 8 0 7 0;
+#X connect 9 0 6 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 1 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 8 0;
+#X connect 15 1 9 0;
+#X restore 207 260 pd grid.subgrid.redraw;
+#X connect 0 0 5 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 12 0;
-#X connect 4 0 12 1;
-#X connect 5 0 12 1;
-#X connect 6 0 7 0;
+#X connect 3 0 8 0;
+#X connect 5 0 12 0;
+#X connect 6 0 8 0;
 #X connect 7 0 12 1;
-#X connect 9 0 18 0;
-#X connect 10 0 12 0;
-#X connect 11 0 18 1;
+#X connect 8 0 4 0;
+#X connect 9 0 7 0;
 #X connect 12 0 8 0;
-#X connect 13 0 11 0;
-#X connect 14 0 5 0;
-#X connect 15 0 4 0;
-#X connect 18 0 12 0;
-#X connect 19 0 20 0;
-#X connect 20 0 21 0;
-#X connect 22 0 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 16 0 0 0;
+#X connect 17 0 8 1;
