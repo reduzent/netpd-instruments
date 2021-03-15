@@ -1,6 +1,4 @@
-![netpd](https://www.netpd.org/netpd-logo.png "netpd")
-
-netpd-instruments
+![netpd](https://www.netpd.org/netpd-logo.png "netpd") instruments
 =================
 
 This is a collection of instruments to be used within
