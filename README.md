@@ -20,5 +20,5 @@ Some instruments are [documented](https://www.netpd.org/instruments).
 updated and new ones are added. Do not expect a current checkout
 to work with older versions of netpd.
 
-Authors: Roman Haefeli et al.
+Authors: Roman Haefeli et al.  
 License: TODO
