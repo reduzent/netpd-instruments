@@ -1,5 +1,7 @@
-![netpd](https://www.netpd.org/netpd-logo.png "netpd") instruments
-=================
+![netpd](https://www.netpd.org/netpd-logo.png "netpd")
+
+instruments
+===========
 
 This is a collection of instruments to be used within
 the netpd framework which is hosted at:
