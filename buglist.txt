@@ -1,8 +1,0 @@
-qseq3
-  
-  * sub- / instr selectors are not init'ed on instr list change
-  
-  * subinstr list selector doesn't update on instr list selection
-
-  * in rare cases subinstr list selector can't be changed (reported by sqgl)
-
