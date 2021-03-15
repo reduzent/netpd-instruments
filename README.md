@@ -1,3 +1,5 @@
+![netpd](https://www.netpd.org/netpd-logo.png "netpd")
+
 netpd-instruments
 =================
 
