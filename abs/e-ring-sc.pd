@@ -1,23 +1,9 @@
 #N canvas 615 192 446 297 10;
-#N canvas 1055 214 231 103 NETPD 0;
-#X msg 16 18 version 0 0 1;
+#N canvas 1055 247 231 103 NETPD 0;
+#X msg 16 18 version 0 0 2;
 #X restore 144 9 pd NETPD 2 0;
 #X obj 10 33 inlet~;
 #X obj 10 265 outlet~;
-#N canvas 174 384 204 76 \$3-e-ring-sc 1;
-#X obj 5 14 mx-fx-sc-gui \$1 \$2/sc;
-#X text 58 13 side channel;
-#X obj 8 26 hsl 20 12 0 127 0 0 \$0.bli \$0.indicator.l empty -2 -8
-0 10 -1 -1 -1 0 1;
-#X obj 33 26 hsl 20 12 0 127 0 0 \$0.bli \$0.indicator.r empty -2 -8
-0 10 -1 -1 -1 0 1;
-#X obj 8 50 hsl 45 12 0 1 0 0 \$1-\$2/drive/d \$1-\$2/drive/d empty
--2 -8 0 10 -228856 -1 -1 3465 1;
-#X obj 8 38 hsl 45 12 0 1 0 0 \$1-\$2/drive/sc \$1-\$2/drive/sc empty
--2 -8 0 10 -228856 -1 -1 3465 1;
-#X text 58 37 drive (sc);
-#X text 58 49 drive (direct);
-#X restore 10 9 pd \$3-e-ring-sc;
 #X obj 222 33 mx-fx-sc \$1 \$2/sc;
 #X obj 90 33 inlet~;
 #X obj 90 265 outlet~;
@@ -95,19 +81,33 @@
 #X obj 322 205 expr~ tanh($v1*$f2);
 #X obj 10 231 *~;
 #X obj 90 234 *~;
-#X connect 1 0 11 0;
-#X connect 4 0 9 0;
-#X connect 4 1 10 0;
-#X connect 5 0 12 0;
-#X connect 7 0 11 1;
+#N canvas 174 417 204 76 \$3-\$2 1;
+#X obj 5 14 mx-fx-sc-gui \$1 \$2/sc;
+#X text 58 13 side channel;
+#X obj 8 26 hsl 20 12 0 127 0 0 \$0.bli \$0.indicator.l empty -2 -8
+0 10 -1 -1 -1 0 1;
+#X obj 33 26 hsl 20 12 0 127 0 0 \$0.bli \$0.indicator.r empty -2 -8
+0 10 -1 -1 -1 0 1;
+#X obj 8 50 hsl 45 12 0 1 0 0 \$1-\$2/drive/d \$1-\$2/drive/d empty
+-2 -8 0 10 -228856 -1 -1 0 1;
+#X obj 8 38 hsl 45 12 0 1 0 0 \$1-\$2/drive/sc \$1-\$2/drive/sc empty
+-2 -8 0 10 -228856 -1 -1 0 1;
+#X text 58 37 drive (sc);
+#X text 58 49 drive (direct);
+#X restore 10 9 pd \$3-\$2;
+#X connect 1 0 10 0;
+#X connect 3 0 8 0;
+#X connect 3 1 9 0;
+#X connect 4 0 11 0;
+#X connect 6 0 10 1;
+#X connect 6 0 11 1;
 #X connect 7 0 12 1;
-#X connect 8 0 13 1;
-#X connect 8 0 14 1;
+#X connect 7 0 13 1;
+#X connect 8 0 12 0;
 #X connect 9 0 13 0;
 #X connect 10 0 14 0;
 #X connect 11 0 15 0;
-#X connect 12 0 16 0;
+#X connect 12 0 14 1;
 #X connect 13 0 15 1;
-#X connect 14 0 16 1;
-#X connect 15 0 2 0;
-#X connect 16 0 6 0;
+#X connect 14 0 2 0;
+#X connect 15 0 5 0;

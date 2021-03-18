@@ -1,4 +1,4 @@
-#N canvas 401 257 457 314 10;
+#N canvas 391 249 458 314 10;
 #X obj 278 240 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X obj 278 259 s \$0-resetlabels;
@@ -433,14 +433,13 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X restore 285 137 pd qseq.list;
-#N canvas 401 44 526 503 loaddefault 0;
+#N canvas 391 106 526 503 loaddefault 0;
 #X obj 394 465 s \$1.NETPD;
 #X obj 394 422 list prepend send;
 #X obj 394 444 list trim;
 #X obj 393 44 spigot 1;
 #X obj 393 66 t b b;
 #X msg 468 55 0;
-#X obj 393 17 netpd-dump \$1 10;
 #X msg 13 17 /hihat/setfx/4 0 \, /hihat/setfx/3 0 \, /hihat/setfx/2
 0 \, /hihat/setfx/1 0 \, /hihat/fxl/4 0 \, /hihat/fxl/3 0 \, /hihat/fxl/2
 0 \, /hihat/fxl/1 0 \, /hihat/pan/4 0.487395 \, /hihat/pan/3 0.605042
@@ -472,14 +471,15 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 \, /kick/efq/2 76.0085 \, /kick/efq/1 50.6281 \, /kick/afq/4 15855.9
 \, /kick/afq/3 3307.63 \, /kick/afq/2 1467.49 \, /kick/afq/1 516.172
 ;
+#X obj 393 17 netpd-dump \$1;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;
-#X connect 4 0 7 0;
+#X connect 4 0 6 0;
 #X connect 4 1 5 0;
 #X connect 5 0 3 1;
-#X connect 6 0 3 0;
-#X connect 7 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 3 0;
 #X restore 285 89 pd loaddefault;
 #N canvas 470 282 816 264 fx.list 0;
 #N canvas 712 293 188 271 getfxname 0;
@@ -1644,26 +1644,26 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X connect 4 0 0 1;
 #X connect 9 0 10 0;
 #X restore 122 90 pd hihat-datactrl;
-#N canvas 922 209 147 455 \$1-drum-delta 1;
+#N canvas 955 172 147 455 \$1-drum-delta 1;
 #X obj 10 3 cnv 7 119 438 empty empty empty 20 12 0 14 -99865 -66577
 0;
 #X obj 12 5 cnv 15 115 165 empty empty k_i_c_k___________ 4 8 1 10
 -244200 -184581 0;
 #X obj 20 23 hsl 100 14 20 20000 1 0 \$1-kick-afq-s \$1-kick-afq-r
-empty 4 8 1 10 -261689 -258699 -1 0 1;
+a-frequenz\ 516Hz 4 8 1 10 -261689 -258699 -1 4659 1;
 #X obj 20 37 hsl 100 14 20 20000 1 0 \$1-kick-efq-s \$1-kick-efq-r
-empty 4 8 1 10 -261689 -258699 -1 9900 1;
-#X obj 20 51 hsl 100 14 1 1000 1 0 \$1-kick-tim-s \$1-kick-tim-r empty
-4 8 1 10 -261689 -258699 -1 0 1;
-#X obj 20 65 hsl 100 14 1 1000 1 0 \$1-kick-att-s \$1-kick-att-r empty
-4 8 1 10 -261689 -258699 -1 0 1;
-#X obj 20 79 hsl 60 14 10 10000 1 0 \$1-kick-dec-s \$1-kick-dec-r empty
-4 8 1 10 -261689 -258699 -1 0 1;
-#X obj 20 93 hsl 100 14 1 50 1 0 \$1-kick-dis-s \$1-kick-dis-r empty
+e-frequenz\ 50Hz 4 8 1 10 -261689 -258699 -1 1331 1;
+#X obj 20 51 hsl 100 14 1 1000 1 0 \$1-kick-tim-s \$1-kick-tim-r zeit\ 10ms
+4 8 1 10 -261689 -258699 -1 3411 1;
+#X obj 20 65 hsl 100 14 1 1000 1 0 \$1-kick-att-s \$1-kick-att-r angriff\ 1ms
+4 8 1 10 -261689 -258699 -1 83 1;
+#X obj 20 79 hsl 60 14 10 10000 1 0 \$1-kick-dec-s \$1-kick-dec-r los\ 653ms
+4 8 1 10 -261689 -258699 -1 3570 1;
+#X obj 20 93 hsl 100 14 1 50 1 0 \$1-kick-dis-s \$1-kick-dis-r verzerr\ 10$
 4 8 1 10 -261689 -258699 -1 0 1;
 #X obj 20 107 hsl 100 14 20000 20 1 0 \$1-kick-lop-s \$1-kick-lop-r
-empty 4 8 1 10 -261689 -258699 -1 0 1;
-#X obj 20 121 hsl 100 14 0 1 0 0 \$1-kick-vol-s \$1-kick-vol-r empty
+tiefpass\ 18872Hz 4 8 1 10 -261689 -258699 -1 83 1;
+#X obj 20 121 hsl 100 14 0 1 0 0 \$1-kick-vol-s \$1-kick-vol-r lautstaerke\ 1
 4 8 1 10 -261689 -258699 -1 9900 1;
 #X obj 66 150 hradio 14 1 0 4 \$1-kick-instance \$1-kick-instance-r
 instance 0 -6 1 10 -261689 -244200 -1 0;
@@ -1672,46 +1672,46 @@ play 0 -6 1 10 -261689 -244200 -1;
 #X obj 12 181 cnv 15 115 137 empty empty s_n_a_r_e_________ 4 8 1 10
 -130593 -10435 0;
 #X obj 20 199 hsl 100 14 220 7000 1 0 \$1-snare-tun-s \$1-snare-tun-r
-empty 4 8 1 10 -225271 -258699 -1 2000 1;
+tonhoehe\ 371Hz 4 8 1 10 -225271 -258699 -1 1497 1;
 #X obj 20 213 hsl 100 14 0 5.5 0 0 \$1-snare-nos-s \$1-snare-nos-r
-empty 4 8 1 10 -225271 -258699 -1 9900 1;
-#X obj 20 227 hsl 100 14 0 1 0 0 \$1-snare-mix-s \$1-snare-mix-r empty
-4 8 1 10 -225271 -258699 -1 2000 1;
+knack\ 2.4 4 8 1 10 -225271 -258699 -1 4409 1;
+#X obj 20 227 hsl 100 14 0 1 0 0 \$1-snare-mix-s \$1-snare-mix-r fell<>kette\ 74:26
+4 8 1 10 -225271 -258699 -1 2662 1;
 #X obj 20 241 hsl 100 14 100 1000 0 0 \$1-snare-dec-s \$1-snare-dec-r
-empty 4 8 1 10 -225271 -258699 -1 9158 1;
-#X obj 20 255 hsl 100 14 0 1 0 0 \$1-snare-pan-s \$1-snare-pan-r empty
-4 8 1 10 -225271 -258699 -1 0 1;
+loslass\ 568ms 4 8 1 10 -225271 -258699 -1 5158 1;
+#X obj 20 255 hsl 100 14 0 1 0 0 \$1-snare-pan-s \$1-snare-pan-r panorama\ 0.1L
+4 8 1 10 -225271 -258699 -1 4492 1;
 #X obj 66 297 hradio 14 1 0 4 \$1-snare-instance \$1-snare-instance-r
 instance 0 -6 1 10 -225271 -130593 -1 0;
 #X obj 17 297 bng 14 250 50 0 \$1-snare-prelisten \$1-snare-prelisten-r
 play 0 -6 1 10 -225271 -130593 -1;
-#X obj 20 269 hsl 100 14 0 1 0 0 \$1-snare-vol-s \$1-snare-vol-r empty
+#X obj 20 269 hsl 100 14 0 1 0 0 \$1-snare-vol-s \$1-snare-vol-r lautstaerke\ 1
 4 8 1 10 -225271 -258699 -1 9900 1;
 #X obj 12 329 cnv 15 115 110 empty empty h_i_h_a_t__________ 4 8 1
 10 -20025 -10143 0;
 #X obj 20 347 hsl 100 14 220 12000 1 0 \$1-hihat-crh-s \$1-hihat-crh-r
-empty 4 8 1 10 -225280 -258699 -1 5900 1;
+schaerfe\ 220Hz 4 8 1 10 -225280 -258699 -1 0 1;
 #X obj 20 361 hsl 100 14 50 5000 1 0 \$1-hihat-dec-s \$1-hihat-dec-r
-empty 4 8 1 10 -225280 -258699 -1 7513 1;
-#X obj 20 375 hsl 100 14 0 1 0 0 \$1-hihat-pan-s \$1-hihat-pan-r empty
-4 8 1 10 -225280 -258699 -1 9900 1;
+loslass\ 121ms 4 8 1 10 -225280 -258699 -1 1913 1;
+#X obj 20 375 hsl 100 14 0 1 0 0 \$1-hihat-pan-s \$1-hihat-pan-r panorama\ 0.4L
+4 8 1 10 -225280 -258699 -1 3411 1;
 #X obj 66 417 hradio 14 1 0 4 \$1-hihat-instance \$1-hihat-instance-r
 instance 0 -6 1 10 -225280 -20025 -1 0;
 #X obj 17 417 bng 14 250 50 0 \$1-hihat-prelisten \$1-hihat-prelisten-r
 play 0 -6 1 10 -225280 -20025 -1;
-#X obj 20 389 hsl 100 14 0 1 0 0 \$1-hihat-vol-s \$1-hihat-vol-r empty
-4 8 1 10 -225280 -258699 -1 8700 1;
+#X obj 20 389 hsl 100 14 0 1 0 0 \$1-hihat-vol-s \$1-hihat-vol-r lautstaerke\ 1
+4 8 1 10 -225280 -258699 -1 9900 1;
 #X obj 85 79 hsl 35 14 0 1 0 0 \$1-kick-cur-s \$1-kick-cur-r log/lin
 4 8 1 10 -261689 -258699 -1 0 1;
 #X restore 285 49 pd \$1-drum-delta;
 #X obj 284 184 netpd_head \$1 drum-delta;
-#N canvas 585 44 450 300 NETPD 0;
+#N canvas 575 106 450 300 NETPD 0;
 #N canvas 1062 597 218 220 abslist 0;
 #X msg 17 21 drum-delta-ctl-instance;
 #X msg 16 96 qseq3-instr-list;
 #X msg 17 42 i2mx;
 #X restore 12 16 pd abslist;
-#X msg 11 37 version 0 3 3;
+#X msg 11 37 version 0 3 4;
 #X restore 201 169 pd NETPD 2 0;
 #X obj 22 242 i2mx \$1 drum-delta;
 #N canvas 845 85 350 143 instances 0;

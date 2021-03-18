@@ -2,57 +2,13 @@
 ;
 #N struct filterplot-element float y;
 #N canvas 534 293 665 386 10;
-#N canvas 1064 271 231 103 NETPD 0;
-#X msg 15 17 version 0 0 3;
+#N canvas 1064 370 231 103 NETPD 0;
+#X msg 15 17 version 0 0 6;
 #X restore 111 12 pd NETPD 2 0;
 #X obj 19 232 inlet~;
 #X obj 141 234 inlet~;
 #X obj 20 317 outlet~;
 #X obj 140 320 outlet~;
-#N canvas 886 227 477 97 \$3-fl-hishv 1;
-#X obj 8 9 cnv 15 460 72 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 21 11 hsl 180 20 0 1 0 0 \$1-\$2/frequency \$1-\$2/frequency
-frequency 0 11 0 12 -65561 -258113 -232576 8950 1;
-#X obj 21 35 hsl 180 20 0 1 0 0 \$1-\$2/slope \$1-\$2/slope slope 0
-11 0 12 -65561 -258113 -232576 17900 1;
-#X obj 203 36 cnv 15 60 18 empty \$0.slope.display 100% 4 10 0 12 -65561
--232576 0;
-#X obj 203 10 cnv 18 60 20 empty \$0.frequency.display 489Hz 4 10 0
-12 -65561 -232576 0;
-#X obj 8 12 cnv 10 10 18 empty empty empty 4 10 0 12 -65561 -1 0;
-#X obj 8 36 cnv 10 10 18 empty empty empty 4 10 0 12 -65561 -1 0;
-#X obj 21 59 hsl 180 20 0 1 0 0 \$1-\$2/gain \$1-\$2/gain gain 0 11
-0 12 -65561 -258113 -232576 8950 1;
-#X obj 203 60 cnv 14 60 18 empty \$0.gain.display 0dB 4 10 0 12 -65561
--232576 0;
-#X obj 8 60 cnv 10 10 18 empty empty empty 4 10 0 12 -65561 -1 0;
-#N canvas 860 465 450 300 \$0.plot.display 0;
-#X scalar 3526.filterplot 0 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
-34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
-\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
-34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
-\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
-34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
-\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
-34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
-\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
-34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
-\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
-34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
-\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
-34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
-\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
-34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
-\; 34 \; 34 \; \;;
-#X coords 0 0 180 68 180 68 2 30 30;
-#X restore 287 11 pd \$0.plot.display;
-#X obj 265 12 vsl 20 29 0 127 0 0 \$0.mode.switch \$0.mode.switch.r
-fr 3 15 0 12 -65561 -65561 -232576 0 1;
-#X obj 265 48 vsl 20 29 0 127 0 0 \$0.plot.switch \$0.plot.switch.r
-⊟ 3 15 0 24 -65561 -65561 -232576 0 1;
-#X obj 287 11 cnv 15 180 68 empty empty fl-hishv 4 16 0 28 -232576
--190902 0;
-#X restore 7 12 pd \$3-fl-hishv;
 #X obj 20 273 biquad~;
 #X obj 141 277 biquad~;
 #X obj 87 149 fl_highshelf_coeff;
@@ -196,40 +152,84 @@ fr 3 15 0 12 -65561 -65561 -232576 0 1;
 #X msg 492 261 0;
 #X obj 298 200 t b a;
 #X obj 298 226 list append;
-#X connect 1 0 6 0;
-#X connect 2 0 7 0;
-#X connect 6 0 3 0;
-#X connect 7 0 4 0;
-#X connect 8 0 11 0;
-#X connect 9 0 13 0;
-#X connect 10 0 7 0;
-#X connect 10 0 6 0;
-#X connect 11 0 6 0;
-#X connect 11 1 7 0;
-#X connect 11 2 17 0;
-#X connect 12 0 8 0;
-#X connect 13 0 8 1;
-#X connect 14 0 8 2;
-#X connect 15 0 12 0;
-#X connect 16 0 14 0;
-#X connect 17 0 32 0;
-#X connect 20 0 23 0;
-#X connect 21 0 18 1;
-#X connect 22 0 18 0;
-#X connect 23 0 24 0;
-#X connect 24 0 21 0;
-#X connect 25 0 18 0;
+#N canvas 886 227 477 97 \$3-\$2 1;
+#X obj 8 9 cnv 15 460 72 empty empty empty 20 12 0 14 -1 -66577 0;
+#X obj 21 11 hsl 180 20 0 1 0 0 \$1-\$2/frequency \$1-\$2/frequency
+frequency 0 11 0 12 -65561 -258113 -232576 0 1;
+#X obj 21 35 hsl 180 20 0 1 0 0 \$1-\$2/slope \$1-\$2/slope slope 0
+11 0 12 -65561 -258113 -232576 0 1;
+#X obj 203 36 cnv 15 60 18 empty \$0.slope.display 100% 4 10 0 12 -65561
+-232576 0;
+#X obj 203 10 cnv 18 60 20 empty \$0.frequency.display 489Hz 4 10 0
+12 -65561 -232576 0;
+#X obj 8 12 cnv 10 10 18 empty empty empty 4 10 0 12 -65561 -1 0;
+#X obj 8 36 cnv 10 10 18 empty empty empty 4 10 0 12 -65561 -1 0;
+#X obj 21 59 hsl 180 20 0 1 0 0 \$1-\$2/gain \$1-\$2/gain gain 0 11
+0 12 -65561 -258113 -232576 0 1;
+#X obj 203 60 cnv 14 60 18 empty \$0.gain.display 0dB 4 10 0 12 -65561
+-232576 0;
+#X obj 8 60 cnv 10 10 18 empty empty empty 4 10 0 12 -65561 -1 0;
+#N canvas 860 465 450 300 \$0.plot.display 0;
+#X scalar 3526.filterplot 0 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
+34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
+\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
+34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
+\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
+34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
+\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
+34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
+\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
+34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
+\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
+34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
+\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
+34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
+\; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \;
+34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34 \; 34
+\; 34 \; 34 \; \;;
+#X coords 0 0 180 68 180 68 2 30 30;
+#X restore 287 11 pd \$0.plot.display;
+#X obj 265 12 vsl 20 29 0 127 0 0 \$0.mode.switch \$0.mode.switch.r
+fr 3 15 0 12 -65561 -65561 -232576 0 1;
+#X obj 265 48 vsl 20 29 0 127 0 0 \$0.plot.switch \$0.plot.switch.r
+⊟ 3 15 0 24 -65561 -65561 -232576 0 1;
+#X obj 287 11 cnv 15 180 68 empty empty fl-hishv 4 16 0 28 -232576
+-190902 0;
+#X restore 8 12 pd \$3-\$2;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X connect 7 0 10 0;
+#X connect 8 0 12 0;
+#X connect 9 0 6 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 10 1 6 0;
+#X connect 10 2 16 0;
+#X connect 11 0 7 0;
+#X connect 12 0 7 1;
+#X connect 13 0 7 2;
+#X connect 14 0 11 0;
+#X connect 15 0 13 0;
+#X connect 16 0 31 0;
+#X connect 19 0 22 0;
+#X connect 20 0 17 1;
+#X connect 21 0 17 0;
+#X connect 22 0 23 0;
+#X connect 23 0 20 0;
+#X connect 24 0 17 0;
+#X connect 25 0 26 0;
 #X connect 26 0 27 0;
-#X connect 27 0 28 0;
-#X connect 27 1 24 1;
-#X connect 27 1 25 1;
-#X connect 28 0 30 0;
-#X connect 28 1 29 0;
-#X connect 29 0 23 0;
-#X connect 29 1 33 0;
-#X connect 30 0 22 0;
-#X connect 30 1 31 0;
-#X connect 31 0 21 0;
-#X connect 32 0 33 0;
-#X connect 32 1 33 1;
-#X connect 33 0 25 0;
+#X connect 26 1 23 1;
+#X connect 26 1 24 1;
+#X connect 27 0 29 0;
+#X connect 27 1 28 0;
+#X connect 28 0 22 0;
+#X connect 28 1 32 0;
+#X connect 29 0 21 0;
+#X connect 29 1 30 0;
+#X connect 30 0 20 0;
+#X connect 31 0 32 0;
+#X connect 31 1 32 1;
+#X connect 32 0 24 0;

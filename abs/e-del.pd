@@ -1,4 +1,4 @@
-#N canvas 590 44 451 568 10;
+#N canvas 590 106 451 568 10;
 #N canvas 1237 44 324 263 delay.time 0;
 #X obj 26 57 t b f;
 #X obj 49 131 t b f;
@@ -256,7 +256,7 @@
 #X obj 177 270 outlet;
 #X obj 151 240 netpd_a \$1 \$2/dp.rep;
 #X obj 288 51 netpd_r \$1 \$2/dp.rep;
-#X floatatom 370 151 5 0 0 0 - - -, f 5;
+#X floatatom 370 151 5 0 0 0 - - -;
 #X obj 288 166 route float;
 #X connect 0 0 7 0;
 #X connect 1 0 11 0;
@@ -282,15 +282,19 @@
 #X connect 19 0 3 0;
 #X restore 209 65 pd netpd-mixed_dp.rep;
 #X text 16 21 by Enrique Erne;
-#N canvas 341 405 288 126 NETPD 0;
-#X msg 16 12 version 0 2 2;
+#N canvas 341 438 288 126 NETPD 0;
 #N canvas 416 185 227 69 ablist 0;
 #X msg 7 9 master-param;
 #X restore 22 37 pd ablist;
+#X msg 16 12 version 0 2 3;
 #X restore 13 43 pd NETPD 2 0;
-#N canvas 1041 72 167 104 \$3-e-del 1;
+#X obj 89 530 outlet~;
+#X obj 250 532 outlet~;
+#X obj 132 367 inlet~;
+#X obj 289 366 inlet~;
+#N canvas 1041 172 167 104 \$3-\$2 1;
 #X obj 16 58 hsl 130 15 0 0.99 0 0 \$1-\$2/dp.feed \$1-\$2/dp.feed
-___feedback 7 7 1 9 -262144 -1 -183085 8470 0;
+___feedback 7 7 1 9 -262144 -1 -183085 0 0;
 #X obj 16 26 hsl 130 15 0 1 0 0 \$1-\$2/dp.time \$1-\$2/dp.time _+_16th
 7 7 1 9 -262144 -1 -183085 0 0;
 #X obj 13 12 hradio 15 1 0 9 \$1-\$2/dp.16 \$1-\$2/dp.16 empty 10 -7
@@ -298,14 +302,10 @@ ___feedback 7 7 1 9 -262144 -1 -183085 8470 0;
 #X obj 88 42 hradio 15 1 0 4 \$0_rep-radio \$0_rep-radio-r empty 0
 -6 1 9 -262144 -1 -1 0;
 #X obj 16 74 hsl 130 15 0 1 0 0 \$1-\$2/dp.mix \$1-\$2/dp.mix _original_|><|_d-play_
-7 7 1 9 -262144 -1 -183085 6450 0;
+7 7 1 9 -262144 -1 -183085 0 0;
 #X obj 16 42 hsl 70 15 0 3 0 0 \$0_rep-slider \$0_rep-slider-r ___repeat
 7 7 1 9 -262144 -1 -183085 0 0;
-#X restore 297 25 pd \$3-e-del;
-#X obj 89 530 outlet~;
-#X obj 250 532 outlet~;
-#X obj 132 367 inlet~;
-#X obj 289 366 inlet~;
+#X restore 297 25 pd \$3-\$2;
 #X connect 1 0 8 0;
 #X connect 1 0 30 0;
 #X connect 1 0 32 0;
@@ -316,10 +316,10 @@ ___feedback 7 7 1 9 -262144 -1 -183085 8470 0;
 #X connect 3 0 4 1;
 #X connect 3 1 6 1;
 #X connect 3 1 7 1;
-#X connect 4 0 38 0;
-#X connect 5 0 39 0;
-#X connect 6 0 38 0;
-#X connect 7 0 39 0;
+#X connect 4 0 37 0;
+#X connect 5 0 38 0;
+#X connect 6 0 37 0;
+#X connect 7 0 38 0;
 #X connect 8 0 4 0;
 #X connect 9 0 5 0;
 #X connect 10 0 8 0;
@@ -340,13 +340,13 @@ ___feedback 7 7 1 9 -262144 -1 -183085 8470 0;
 #X connect 19 1 33 0;
 #X connect 34 0 2 0;
 #X connect 34 0 14 0;
-#X connect 40 0 6 0;
-#X connect 40 0 20 0;
-#X connect 40 0 22 0;
-#X connect 40 0 24 0;
-#X connect 40 0 26 0;
-#X connect 41 0 7 0;
-#X connect 41 0 21 0;
-#X connect 41 0 23 0;
-#X connect 41 0 25 0;
-#X connect 41 0 27 0;
+#X connect 39 0 6 0;
+#X connect 39 0 20 0;
+#X connect 39 0 22 0;
+#X connect 39 0 24 0;
+#X connect 39 0 26 0;
+#X connect 40 0 7 0;
+#X connect 40 0 21 0;
+#X connect 40 0 23 0;
+#X connect 40 0 25 0;
+#X connect 40 0 27 0;

@@ -1,0 +1,45 @@
+#N canvas 398 366 501 277 10;
+#N canvas 0 106 450 300 NETPD 1;
+#X msg 4 14 version 0 1 0;
+#X restore 316 17 pd NETPD 2 0;
+#X obj 20 20 nbx 10 20 1 20 0 0 \$0.number \$0.number.r empty 0 8 0
+10 -262144 -1 -1 20 256;
+#X obj 20 20 cnv 15 60 20 empty \$0.param.label \$3: 3 10 0 12 -233017
+-1 0;
+#X obj 80 20 cnv 15 40 20 empty \$0.value.label \ 29 12 10 0 12 -233017
+-1 0;
+#X obj 200 14 loadbang;
+#X obj 187 157 makefilename %3d;
+#X msg 187 180 label \$1;
+#X obj 322 57 loadbang;
+#X msg 322 103 range \$1 \$2;
+#X obj 322 80 list append \$5 \$6;
+#X obj 200 37 \$4;
+#X obj 187 203 s \$0.value.label;
+#X obj 187 130 r \$0.number;
+#X obj 200 59 s \$0.number.r;
+#X obj 322 126 s \$0.number.r;
+#X obj 17 55 r \$1.\$2.\$3;
+#X obj 17 78 route set;
+#X obj 17 154 s \$0.number.r;
+#X obj 16 222 s \$1.\$2.\$3;
+#X msg 16 198 send \$1;
+#X obj 16 178 r \$0.number;
+#X msg 17 131 set \$1;
+#X obj 17 101 t a a;
+#X connect 4 0 10 0;
+#X connect 5 0 6 0;
+#X connect 6 0 11 0;
+#X connect 7 0 9 0;
+#X connect 8 0 14 0;
+#X connect 9 0 8 0;
+#X connect 10 0 13 0;
+#X connect 12 0 5 0;
+#X connect 15 0 16 0;
+#X connect 16 0 22 0;
+#X connect 19 0 18 0;
+#X connect 20 0 19 0;
+#X connect 21 0 17 0;
+#X connect 22 0 21 0;
+#X connect 22 1 5 0;
+#X coords 0 -1 1 1 100 20 2 20 20;

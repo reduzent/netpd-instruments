@@ -44,27 +44,11 @@
 #X obj 506 367 * 16;
 #X obj 543 407 * 16;
 #X obj 522 588 * 16;
-#N canvas 86 406 247 172 \$3-e-loop 1;
-#X obj 17 56 hsl 187 18 -2 2 0 0 \$1-\$2/speed \$1-\$2/speed speed_(-2_-_+2)
--2 -8 0 10 -262144 -1 -1 4650 1;
-#X obj 14 4 nbx 2 16 1 20 0 0 \$1-\$2/unit \$1-\$2/unit time-unit_(16th)
-32 9 0 10 -262144 -1 -1 1 256;
-#X obj 14 22 nbx 2 16 0 20 0 0 \$1-\$2/length \$1-\$2/length loop-length_(unit)
-32 9 0 10 -262144 -1 -1 1 256;
-#X obj 14 76 nbx 2 16 0 100 0 0 \$1-\$2/roffset \$1-\$2/roffset rec-offset_(unit)
-32 9 0 10 -262144 -1 -1 0 256;
-#X obj 14 112 nbx 2 16 1 100 0 0 \$1-\$2/loop \$1-\$2/loop play-loop_(>=1)
-32 9 0 10 -262144 -1 -1 1 256;
-#X obj 14 130 nbx 2 16 0 100 0 0 \$1-\$2/original \$1-\$2/original
-mix_original_(db) 32 9 0 10 -262144 -1 -1 0 256;
-#X obj 14 94 nbx 2 16 0 100 0 0 \$1-\$2/offset \$1-\$2/offset play-offset_(unit)
-32 9 0 10 -262144 -1 -1 7 256;
-#X restore 17 21 pd \$3-e-loop;
-#N canvas 286 376 197 85 NETPD 0;
+#N canvas 286 409 197 85 NETPD 0;
 #N canvas 333 173 286 107 abslist 0;
 #X msg 9 7 master-param;
 #X restore 15 37 pd abslist;
-#X msg 13 11 version 0 1 6;
+#X msg 13 11 version 0 1 7;
 #X restore 18 42 pd NETPD 2 0;
 #X obj 514 27 netpd_f \$1 \$2/length 1;
 #X obj 548 272 netpd_f \$2 \$2/unit 16;
@@ -88,8 +72,24 @@ mix_original_(db) 32 9 0 10 -262144 -1 -1 0 256;
 #X obj 254 134 netpd_f \$1 \$2/speed -1;
 #X obj 395 434 master-param step;
 #X obj 581 63 master-param 16th;
-#X connect 0 0 55 0;
-#X connect 1 0 56 0;
+#N canvas 86 439 247 172 \$3-\$2 1;
+#X obj 17 56 hsl 187 18 -2 2 0 0 \$1-\$2/speed \$1-\$2/speed speed_(-2_-_+2)
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 14 4 nbx 2 16 1 20 0 0 \$1-\$2/unit \$1-\$2/unit time-unit_(16th)
+32 9 0 10 -262144 -1 -1 1 256;
+#X obj 14 22 nbx 2 16 0 20 0 0 \$1-\$2/length \$1-\$2/length loop-length_(unit)
+32 9 0 10 -262144 -1 -1 0 256;
+#X obj 14 76 nbx 2 16 0 100 0 0 \$1-\$2/roffset \$1-\$2/roffset rec-offset_(unit)
+32 9 0 10 -262144 -1 -1 0 256;
+#X obj 14 112 nbx 2 16 1 100 0 0 \$1-\$2/loop \$1-\$2/loop play-loop_(>=1)
+32 9 0 10 -262144 -1 -1 1 256;
+#X obj 14 130 nbx 2 16 0 100 0 0 \$1-\$2/original \$1-\$2/original
+mix_original_(db) 32 9 0 10 -262144 -1 -1 0 256;
+#X obj 14 94 nbx 2 16 0 100 0 0 \$1-\$2/offset \$1-\$2/offset play-offset_(unit)
+32 9 0 10 -262144 -1 -1 0 256;
+#X restore 17 21 pd \$3-\$2;
+#X connect 0 0 54 0;
+#X connect 1 0 55 0;
 #X connect 3 0 0 1;
 #X connect 3 0 1 1;
 #X connect 4 0 36 1;
@@ -101,8 +101,8 @@ mix_original_(db) 32 9 0 10 -262144 -1 -1 0 256;
 #X connect 7 0 40 0;
 #X connect 8 0 14 0;
 #X connect 8 1 14 1;
-#X connect 9 0 59 0;
-#X connect 9 0 61 0;
+#X connect 9 0 58 0;
+#X connect 9 0 60 0;
 #X connect 10 0 33 0;
 #X connect 11 0 10 0;
 #X connect 11 1 9 0;
@@ -110,14 +110,14 @@ mix_original_(db) 32 9 0 10 -262144 -1 -1 0 256;
 #X connect 12 1 43 1;
 #X connect 13 0 42 0;
 #X connect 13 1 42 1;
-#X connect 14 0 65 1;
+#X connect 14 0 64 1;
 #X connect 15 0 7 0;
 #X connect 16 0 15 0;
 #X connect 16 1 15 1;
 #X connect 17 0 18 0;
 #X connect 17 0 30 1;
+#X connect 18 0 62 0;
 #X connect 18 0 63 0;
-#X connect 18 0 64 0;
 #X connect 19 0 30 0;
 #X connect 20 0 27 0;
 #X connect 20 0 35 0;
@@ -133,8 +133,8 @@ mix_original_(db) 32 9 0 10 -262144 -1 -1 0 256;
 #X connect 28 0 29 0;
 #X connect 28 1 29 1;
 #X connect 29 0 26 1;
+#X connect 30 0 56 0;
 #X connect 30 0 57 0;
-#X connect 30 0 58 0;
 #X connect 31 0 5 0;
 #X connect 32 0 20 0;
 #X connect 32 0 31 0;
@@ -143,8 +143,8 @@ mix_original_(db) 32 9 0 10 -262144 -1 -1 0 256;
 #X connect 33 0 32 0;
 #X connect 34 0 6 0;
 #X connect 35 0 6 0;
-#X connect 36 0 56 0;
-#X connect 37 0 55 0;
+#X connect 36 0 55 0;
+#X connect 37 0 54 0;
 #X connect 38 0 34 1;
 #X connect 39 0 40 0;
 #X connect 39 1 40 1;
@@ -155,23 +155,23 @@ mix_original_(db) 32 9 0 10 -262144 -1 -1 0 256;
 #X connect 42 0 10 1;
 #X connect 43 0 8 0;
 #X connect 44 0 9 1;
-#X connect 47 0 15 0;
-#X connect 48 0 13 0;
-#X connect 48 0 12 0;
-#X connect 48 0 16 0;
-#X connect 48 0 41 0;
-#X connect 49 0 42 0;
-#X connect 50 0 39 0;
-#X connect 50 0 43 0;
-#X connect 51 0 38 0;
-#X connect 52 0 44 0;
-#X connect 53 0 37 0;
-#X connect 53 0 61 0;
-#X connect 54 0 36 0;
-#X connect 54 0 59 0;
-#X connect 57 0 0 0;
-#X connect 58 0 1 0;
-#X connect 65 0 11 0;
-#X connect 66 0 29 0;
-#X connect 67 0 65 0;
-#X connect 68 0 7 1;
+#X connect 46 0 15 0;
+#X connect 47 0 13 0;
+#X connect 47 0 12 0;
+#X connect 47 0 16 0;
+#X connect 47 0 41 0;
+#X connect 48 0 42 0;
+#X connect 49 0 39 0;
+#X connect 49 0 43 0;
+#X connect 50 0 38 0;
+#X connect 51 0 44 0;
+#X connect 52 0 37 0;
+#X connect 52 0 60 0;
+#X connect 53 0 36 0;
+#X connect 53 0 58 0;
+#X connect 56 0 0 0;
+#X connect 57 0 1 0;
+#X connect 64 0 11 0;
+#X connect 65 0 29 0;
+#X connect 66 0 64 0;
+#X connect 67 0 7 1;

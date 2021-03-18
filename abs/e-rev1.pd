@@ -1,14 +1,10 @@
 #N canvas 722 213 401 238 10;
-#N canvas 558 302 190 108 \$3-e-rev1 1;
-#X obj 31 45 nbx 3 14 0 99 0 0 \$1-\$2/rev1 \$1-\$2/rev1 db_after_1sec
-40 8 0 10 -262144 -1 -1 0 256;
-#X restore 23 15 pd \$3-e-rev1;
-#N canvas 941 154 251 149 NETPD 0;
-#X msg 9 14 version 0 1 0;
+#N canvas 941 187 251 149 NETPD 0;
 #N canvas 1230 100 177 112 abslist 0;
 #X msg -14 20 e-rev1-stage;
 #X msg -13 41 e-rev1-final;
 #X restore 8 40 pd abslist;
+#X msg 9 14 version 0 1 1;
 #X restore 116 15 pd NETPD 2 0;
 #N canvas 951 44 549 351 rev1~ 0;
 #X obj 345 154 dbtorms;
@@ -80,8 +76,12 @@
 #X obj 32 174 outlet~;
 #X obj 83 175 outlet~;
 #X obj 155 91 netpd_f \$1 \$2/rev1 30;
-#X connect 2 0 5 0;
-#X connect 2 0 6 0;
-#X connect 3 0 2 0;
-#X connect 4 0 2 0;
-#X connect 7 0 2 1;
+#N canvas 558 335 190 108 \$3-\$2 1;
+#X obj 31 45 nbx 3 14 0 99 0 0 \$1-\$2/rev1 \$1-\$2/rev1 db_after_1sec
+40 8 0 10 -262144 -1 -1 0 256;
+#X restore 23 15 pd \$3-\$2;
+#X connect 1 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 6 0 1 1;

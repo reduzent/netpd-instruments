@@ -1,6 +1,6 @@
-#N canvas 301 44 561 299 10;
-#X obj 20 20 nbx 9 20 -1 0 0 0 \$0.meta.set.nb \$0.meta.set.nb empty
-0 10 0 10 -262144 -1 -1 0 256;
+#N canvas 291 106 573 306 10;
+#X obj 20 20 nbx 9 20 -1 1 0 0 \$0.meta.set.nb \$0.meta.set.nb empty
+0 10 0 10 -262144 -1 -1 1 256;
 #X obj 111 20 nbx 9 20 0 9999 0 0 \$0.meta.offset.nb \$0.meta.offset.nb
 empty 0 10 0 10 -262144 -1 -1 0 256;
 #X obj 202 20 nbx 9 20 1 9999 0 0 \$0.meta.length.nb \$0.meta.length.nb
@@ -126,13 +126,13 @@ empty 0 10 0 10 -262144 -1 -1 32 256;
 #X connect 51 0 50 0;
 #X connect 52 0 19 0;
 #X restore 307 36 pd gui.interfacing;
-#N canvas 366 109 352 73 NETPD 0;
-#X msg 19 13 version 0 0 1;
+#N canvas 356 139 352 73 NETPD 0;
+#X msg 19 13 version 0 0 2;
 #X restore 429 19 pd NETPD 2 0;
 #X obj 307 14 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 328 13 <-before save;
-#N canvas 301 194 557 343 netpdization 0;
+#N canvas 281 178 557 343 netpdization 0;
 #X obj 18 95 r \$0.meta.set.nb;
 #X obj 18 190 netpd_s \$1 \$2/metaseq/set;
 #X obj 18 118 route float set;
@@ -158,11 +158,11 @@ empty 0 10 0 10 -262144 -1 -1 32 256;
 #X obj 18 140 change -100;
 #X obj 188 140 change -100;
 #X obj 373 140 change -100;
-#X obj 135 14 netpd-dump \$1 8;
 #X obj 188 285 loadbang;
 #X msg 172 312 -1;
 #X msg 213 314 0;
 #X msg 269 317 128;
+#X obj 135 14 netpd-dump \$1;
 #X connect 0 0 2 0;
 #X connect 2 0 22 0;
 #X connect 2 1 21 1;
@@ -187,13 +187,13 @@ empty 0 10 0 10 -262144 -1 -1 32 256;
 #X connect 22 0 21 0;
 #X connect 23 0 19 0;
 #X connect 24 0 20 0;
-#X connect 25 0 18 0;
-#X connect 26 0 27 0;
-#X connect 26 0 28 0;
-#X connect 26 0 29 0;
-#X connect 27 0 12 0;
-#X connect 28 0 13 0;
-#X connect 29 0 14 0;
+#X connect 25 0 26 0;
+#X connect 25 0 27 0;
+#X connect 25 0 28 0;
+#X connect 26 0 12 0;
+#X connect 27 0 13 0;
+#X connect 28 0 14 0;
+#X connect 29 0 18 0;
 #X restore 307 61 pd netpdization;
 #X obj 22 265 s \$1.qseq3;
 #X obj 22 243 list trim;

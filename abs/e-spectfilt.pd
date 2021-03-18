@@ -1,16 +1,6 @@
 #N canvas 661 370 459 239 10;
 #X obj 34 88 inlet~;
 #X obj 137 89 inlet~;
-#N canvas 619 250 298 85 \$3-e-spectfilt 1;
-#X obj 5 17 cnv 15 256 60 empty empty empty 20 12 0 14 -261888 -66577
-0;
-#N canvas 0 50 450 300 (subpatch) 0;
-#X array \$1-\$2/gain 128 float 0;
-#X coords 0 1.05 127 -0.05 256 60 1 0 0;
-#X restore 5 17 graph;
-#X obj 261 19 vsl 15 55 0 1 0 0 \$0-gain-const \$0-gain-const-r empty
-0 -9 0 10 -261234 -1 -1 5400 1;
-#X restore 34 45 pd \$3-e-spectfilt;
 #X obj 33 153 outlet~;
 #X obj 137 153 outlet~;
 #N canvas 861 43 500 411 spectral.filter 0;
@@ -75,13 +65,13 @@
 #X connect 26 0 23 1;
 #X connect 26 0 22 1;
 #X restore 33 119 pd spectral.filter;
-#N canvas 1007 264 225 110 NETPD 0;
-#X msg 7 15 version 0 1 5;
+#N canvas 1007 330 225 110 NETPD 0;
 #N canvas 792 382 333 46 abslist 0;
 #X msg 17 16 roman_helpers;
 #X restore 7 43 pd abslist;
+#X msg 7 15 version 0 1 7;
 #X restore 34 21 pd NETPD 2 0;
-#N canvas 1231 442 270 321 gain-const 0;
+#N canvas 1231 475 270 321 gain-const 0;
 #X msg 17 55 const \$1;
 #X obj 17 192 route const;
 #X msg 17 214 set \$1;
@@ -89,7 +79,6 @@
 #X obj 17 235 s \$0-gain-const-r;
 #X obj 17 110 r \$1-\$2/gain;
 #X obj 17 89 s \$1-\$2/gain;
-#X obj 50 144 r \$1.notown;
 #X obj 17 168 spigot;
 #X obj 133 23 r \$1.NETPD;
 #X obj 133 45 route init;
@@ -108,22 +97,35 @@
 #X connect 2 1 3 0;
 #X connect 3 0 1 1;
 #X restore 133 93 pd once;
+#X obj 62 142 r \$1.NETPD;
+#X obj 62 165 route remote_origin;
 #X connect 0 0 6 0;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 3 0 0 0;
-#X connect 5 0 8 0;
-#X connect 7 0 8 1;
-#X connect 8 0 1 0;
+#X connect 5 0 7 0;
+#X connect 7 0 1 0;
+#X connect 8 0 9 0;
 #X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 11 0 14 0;
-#X connect 12 0 13 0;
-#X connect 14 0 12 0;
+#X connect 10 0 13 0;
+#X connect 11 0 12 0;
+#X connect 13 0 11 0;
+#X connect 14 0 15 0;
+#X connect 15 0 7 1;
 #X restore 220 83 pd gain-const;
 #X obj 219 57 netpd_t \$1 \$2/gain 128;
 #X obj 217 122 rh_window_hanning \$0-hann 512;
-#X connect 0 0 5 0;
-#X connect 1 0 5 1;
-#X connect 5 0 3 0;
-#X connect 5 1 4 0;
+#N canvas 619 316 298 85 \$3-\$2 1;
+#X obj 5 17 cnv 15 256 60 empty empty empty 20 12 0 14 -261888 -66577
+0;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array \$1-\$2/gain 128 float 0;
+#X coords 0 1.05 127 -0.05 256 60 1 0 0;
+#X restore 5 17 graph;
+#X obj 261 19 vsl 15 55 0 1 0 0 \$0-gain-const \$0-gain-const-r empty
+0 -9 0 10 -261234 -1 -1 0 1;
+#X restore 34 45 pd \$3-\$2;
+#X connect 0 0 4 0;
+#X connect 1 0 4 1;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
