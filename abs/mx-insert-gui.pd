@@ -1,4 +1,4 @@
-#N struct 1411.rectangle float id float x float y float w float h float
+#N struct 3220.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
 #N canvas 619 106 494 437 10;
 #N canvas 831 212 261 231 NETPD 0;
@@ -105,7 +105,7 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 262 93 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 221 99 \$0;
-#X msg 221 123 \; \$1.drop selected_text_color 0 \; \$1.drop selected_box_color
+#X msg 221 129 \; \$1.drop selected_text_color 0 \; \$1.drop selected_box_color
 0 \; \$1.drop selected_background_color 777 \; \$1.drop items_text_color
 0 \; \$1.drop items_box_color 777 \; \$1.drop items_background_color
 777 \;;
@@ -253,7 +253,14 @@ txtclr float boxclr float bgclr symbol label;
 #X connect 46 0 39 0;
 #X connect 47 0 27 0;
 #X restore 21 107 pd two.level.dropdown;
-#X obj 20 20 netpd-gui-dropdown \$0.drop 40 12 8;
+#X obj 20 20 mx-dropdown \$0.drop 40 12 8;
+#X obj 205 242 r \$0.drop;
+#X obj 205 265 route expand;
+#X obj 299 17 namecanvas \$0.gop;
+#X obj 205 338 s \$0.gop;
+#X obj 205 288 + 22;
+#X msg 205 315 coords 0 -1 1 1 40 \$1 2 20 10;
+#X msg 293 264 0;
 #X connect 1 0 32 0;
 #X connect 2 0 3 0;
 #X connect 4 0 2 0;
@@ -263,4 +270,9 @@ txtclr float boxclr float bgclr symbol label;
 #X connect 8 0 9 0;
 #X connect 32 0 33 0;
 #X connect 34 0 4 0;
+#X connect 36 0 37 0;
+#X connect 37 0 40 0;
+#X connect 40 0 41 0;
+#X connect 41 0 39 0;
+#X connect 42 0 40 0;
 #X coords 0 -1 1 1 40 22 2 20 10;
