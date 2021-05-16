@@ -1,6 +1,6 @@
-#N canvas 605 99 467 219 10;
-#X text 94 140 by Enrique Erne;
-#N canvas 854 167 307 123 NETPD 0;
+#N canvas 605 103 467 333 10;
+#X text 94 220 by Enrique Erne;
+#N canvas 854 197 307 123 NETPD 0;
 #N canvas 1078 99 481 299 abslist 0;
 #X msg 28 45 e-del;
 #X msg 28 65 e-spectdel;
@@ -28,10 +28,10 @@
 #X msg 27 106 e-convolve;
 #X restore 18 37 pd abslist;
 #X msg 18 59 singleton;
-#X msg 18 14 version 0 2 15;
+#X msg 18 14 version 0 2 16;
 #X restore 18 46 pd NETPD 2 0;
-#X text 17 158 netpd2-ified by Roman Haefeli;
-#N canvas 180 281 381 602 \$1-e-lib 0;
+#X text 17 238 netpd2-ified by Roman Haefeli;
+#N canvas 180 281 381 602 \$1-e-lib 1;
 #X msg 130 531 eN!;
 #X text 30 12 e-lib;
 #X text 30 82 e-am - amplitude modulation;
@@ -61,7 +61,8 @@
 #X text 30 362 e-rev1 - mono reverb (from Miller's pd/extra);
 #X text 30 422 e-ring-sc - ring modulation with sidechain;
 #X restore 18 17 pd \$1-e-lib;
-#X obj 15 75 mx-fx-list \$1 e-lib e-2rect e-am e-am-sc e-bitcrush e-convolve
-e-crs4 e-del e-dwnsmp e-flanger e-loop e-mix-sc e-modf e-monitor e-pitchshifter
-e-pong e-rev1 e-rev2 e-rev3 e-ring-sc e-ssb e-spectdel e-spectfilt
-e-tanh;
+#X obj 15 129 mx-fx-list \$1 e-lib-b e-pong e-rev1 e-rev2 e-rev3 e-ring-sc
+e-ssb e-spectdel e-spectfilt e-tanh;
+#X obj 15 75 mx-fx-list \$1 e-lib-a e-2rect e-am e-am-sc e-bitcrush
+e-convolve e-crs4 e-del e-dwnsmp e-flanger e-loop e-mix-sc e-modf e-monitor
+e-pitchshifter;
