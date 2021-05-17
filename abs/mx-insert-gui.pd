@@ -21,7 +21,7 @@
 #X obj 21 271 route insert;
 #X obj 21 293 route \$2;
 #X obj 21 315 route setlabel;
-#N canvas 912 178 519 291 buttons 1;
+#N canvas 912 178 519 291 buttons 0;
 #X obj 16 250 s \$0.bypass.r;
 #X msg 16 225 color \$1 \$1 \$2;
 #X msg 35 178 2 10;
@@ -260,10 +260,8 @@
 0 \; \$1.drop selected_background_color 777 \; \$1.drop items_text_color
 0 \; \$1.drop items_box_color 877 \; \$1.drop items_background_color
 877 \;;
-#X obj 92 200 print BLABLA;
 #X connect 1 0 32 0;
 #X connect 2 0 3 0;
-#X connect 2 0 43 0;
 #X connect 4 0 2 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
