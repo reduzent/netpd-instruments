@@ -4,21 +4,26 @@
 #X msg 8 13 mx-aux-gui;
 #X msg 9 42 mx-insert-gui;
 #X restore 24 42 pd abslist;
-#X msg 21 15 version 0 0 5;
+#X msg 25 19 version 0 0 7;
 #X restore 128 67 pd NETPD 2 0;
-#N canvas 565 546 261 258 level-slider-stuff 0;
-#X obj 20 228 s \$0.level.top.r;
-#X msg 87 203 vis_size 18 \$1;
-#X obj 87 157 * -1;
-#X obj 20 130 t a a;
-#X obj 20 110 int;
-#X obj 87 179 + 2;
-#X obj 20 88 - 0.5;
-#X obj 20 36 route float set;
+#N canvas 565 546 576 304 level-slider-stuff 0;
+#X obj 20 268 s \$0.level.top.r;
+#X msg 87 243 vis_size 18 \$1;
+#X obj 87 197 * -1;
+#X obj 20 170 t a a;
+#X obj 20 150 int;
+#X obj 87 219 + 2;
+#X obj 20 128 - 0.5;
+#X obj 20 76 route float set;
 #X obj 20 14 r \$1-level;
-#X obj 20 153 + 283;
-#X msg 20 196 pos 45 \$1;
-#X obj 20 65 * -156.55;
+#X obj 20 193 + 283;
+#X msg 20 236 pos 45 \$1;
+#X obj 20 105 * -156.55;
+#X obj 400 30 r mx;
+#X obj 400 53 route \$1;
+#X obj 400 76 route gui_lock;
+#X obj 400 99 == 0;
+#X obj 20 46 spigot 1;
 #X connect 1 0 0 0;
 #X connect 2 0 5 0;
 #X connect 3 0 9 0;
@@ -28,10 +33,15 @@
 #X connect 6 0 4 0;
 #X connect 7 0 11 0;
 #X connect 7 1 11 0;
-#X connect 8 0 7 0;
+#X connect 8 0 16 0;
 #X connect 9 0 10 0;
 #X connect 10 0 0 0;
 #X connect 11 0 6 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 1;
+#X connect 16 0 7 0;
 #X restore 128 112 pd level-slider-stuff;
 #N canvas 590 44 294 326 double-click-reset 0;
 #X obj 15 32 route float;
@@ -128,16 +138,16 @@
 #X obj 21 213 cnv 10 10 11 empty empty e 1 5 1 14 -228856 -1 0;
 #X obj 21 225 cnv 10 10 11 empty empty c 1 5 1 14 -228856 -1 0;
 #X obj 20 22 vsl 12 127 0 0 0 0 \$1-show-aux-channels \$1.NULL empty
-0 0 0 10 -228856 -228856 -1 600 1;
+0 0 0 10 -228856 -228856 -1 0 1;
 #X obj 21 69 cnv 10 10 11 empty empty a 2 5 1 14 -228856 -1 0;
 #X obj 21 81 cnv 10 10 11 empty empty u 1 5 1 14 -228856 -1 0;
 #X obj 21 93 cnv 10 10 11 empty empty x 2 5 1 14 -228856 -1 0;
 #X obj 44 126 vsl 20 157 0 1 0 0 \$1-level \$1-level empty 0 -9 0 10
--66577 -66577 -1 0 1;
+-66577 -66577 -1 12283 1;
 #X obj 45 160 cnv 1 18 125 empty \$0.level.top.r empty 20 12 0 14 -258089
 -66577 0;
 #X obj 65 125 vu 8 160 \$1-meter-r empty -1 -8 0 10 -66577 -1 0 0;
 #X obj 35 125 vu 8 160 \$1-meter-l empty -1 -8 0 10 -66577 -1 0 0;
 #X obj 37 109 hsl 35 15 0 1 0 0 \$1-pan \$1-pan empty -2 -8 0 10 -66577
--258153 -1 0 1;
+-258153 -1 1700 1;
 #X coords 0 -1 1 1 58 269 2 18 18;
