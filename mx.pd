@@ -1,4 +1,45 @@
-#N canvas 571 489 282 324 10;
+#N struct 8299.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8304.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8309.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8319.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8324.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8329.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8345.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8350.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8355.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 2208.filterplot float y array filterplot-array 2208.filterplot-element
+;
+#N struct 2208.filterplot-element float y;
+#N struct 8372.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8424.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8476.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8528.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8580.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8632.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8684.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8751.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8803.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 8855.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N canvas 453 296 282 324 10;
 #N canvas 753 553 175 138 NETPD 0;
 #N canvas 653 383 190 338 abslist 0;
 #X msg 28 21 i2mx;
@@ -316,7 +357,7 @@
 #X connect 18 0 2 0;
 #X restore 8 169 pd main-out;
 #X obj 8 29 netpd_head \$1 mx;
-#N canvas 766 438 219 95 create.aux.channel.gui 0;
+#N canvas 639 318 219 95 create.aux.channel.gui 0;
 #N canvas 890 328 432 258 add.add.button 0;
 #X obj 14 19 loadbang;
 #X obj 41 64 f \$1;
@@ -331,23 +372,24 @@
 #X connect 3 0 2 0;
 #X connect 4 1 1 0;
 #X restore 13 64 pd add.add.button;
-#N canvas 758 630 341 252 add.aux.channel 0;
-#N canvas 840 398 352 208 create.aux.channel.gui 0;
+#N canvas 683 364 341 252 add.aux.channel 0;
+#N canvas 840 398 358 229 create.aux.channel.gui 0;
 #X obj 10 35 t a a;
-#X obj 37 58 * 25;
 #X obj 10 103 list append;
 #X obj 37 79 - 3;
 #X obj 10 15 inlet;
-#X msg 10 150 \; pd-\$4-mx-aux obj 10 \$2 mx-aux-channel-gui \$3 \$1
-\; mx-aux-channel-gui-\$3-\$1 loadbang;
 #X obj 10 125 list append \$1/mx/2 \$1;
-#X connect 0 0 2 0;
-#X connect 0 1 1 0;
-#X connect 1 0 3 0;
-#X connect 2 0 6 0;
-#X connect 3 0 2 1;
-#X connect 4 0 0 0;
-#X connect 6 0 5 0;
+#X msg 10 149 \; pd-\$4-mx-aux obj 10 \$2 mx-aux-channel-gui \$3 \$1
+\; pd-\$4-mx-aux obj 32 \$2 mx-aux-insert-gui \$3/\$1/1 \$1 \; mx-aux-channel-gui-\$3-\$1
+loadbang \; mx-aux-insert-gui \$1 bang \;;
+#X obj 37 58 * 26;
+#X connect 0 0 1 0;
+#X connect 0 1 6 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 6 0 2 0;
 #X restore 50 65 pd create.aux.channel.gui;
 #N canvas 711 267 537 329 create.aux.channel 0;
 #X obj 20 11 inlet;
