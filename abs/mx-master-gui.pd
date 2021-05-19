@@ -138,7 +138,7 @@
 #X obj 21 213 cnv 10 10 11 empty empty e 1 5 1 14 -228856 -1 0;
 #X obj 21 225 cnv 10 10 11 empty empty c 1 5 1 14 -228856 -1 0;
 #X obj 20 22 vsl 12 127 0 0 0 0 \$1-show-aux-channels \$1.NULL empty
-0 0 0 10 -228856 -228856 -1 0 1;
+0 10 0 10 -228856 -228856 -1 0 1;
 #X obj 21 69 cnv 10 10 11 empty empty a 2 5 1 14 -228856 -1 0;
 #X obj 21 81 cnv 10 10 11 empty empty u 1 5 1 14 -228856 -1 0;
 #X obj 21 93 cnv 10 10 11 empty empty x 2 5 1 14 -228856 -1 0;
