@@ -1,4 +1,4 @@
-#N canvas 752 125 256 344 10;
+#N canvas 752 152 256 344 10;
 #N canvas 455 91 527 335 parse.arg.list 0;
 #N canvas 305 260 375 202 \$0.parser 0;
 #X restore 11 10 pd \$0.parser;
@@ -51,8 +51,8 @@
 #X obj 12 290 list trim;
 #X obj 11 68 b;
 #X obj 12 175 r mx;
-#N canvas 0 316 273 206 NETPD 0;
-#X msg 9 0 version 0 0 1;
+#N canvas 0 346 273 206 NETPD 0;
+#X msg 9 0 version 0 1 1;
 #X restore 166 12 pd NETPD 2 0;
 #X text 11 148 == fx list ===========;
 #X obj 12 268 list prepend addfxlist;
