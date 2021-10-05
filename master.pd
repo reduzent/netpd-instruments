@@ -1,4 +1,4 @@
-#N canvas 882 106 491 615 10;
+#N canvas 852 103 491 615 10;
 #N canvas 584 305 339 107 NETPD 0;
 #N canvas 305 139 320 105 abslist 0;
 #X msg 19 15 roman_helpers;
@@ -226,7 +226,7 @@
 #X obj 9 256 pack f f;
 #X obj 9 278 t a b;
 #X msg 48 279 0;
-#N canvas 613 106 468 53 \$1-master 1;
+#N canvas 593 103 468 53 \$1-master 1;
 #X obj 9 2 cnv 15 450 42 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 11 4 cnv 15 446 38 empty empty empty 20 12 0 14 -191407 -66577
@@ -234,21 +234,21 @@
 #X obj 13 6 cnv 15 442 34 empty empty empty 20 12 0 14 -99865 -66577
 0;
 #X obj 18 8 hsl 50 30 0 1 0 0 \$1-switch-sl \$1-switch-sl empty 5 15
-0 14 -262144 -237180 -237180 0 1;
+0 14 -262144 -237180 -237180 200 1;
 #X obj 120 8 hsl 200 15 60 240 1 0 \$1-bpm \$1-bpm empty 30 8 0 11
--1 -4034 -4034 9400 1;
+-1 -4034 -4034 7300 1;
 #X obj 120 23 hsl 200 15 50 75 1 0 \$1-shuffle \$1-shuffle empty 30
-8 0 11 -1 -4034 -1 12900 1;
+8 0 11 -1 -4034 -1 13500 1;
 #X obj 337 8 cnv 15 60 30 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 322 8 nbx 5 15 1 500 0 0 \$1-bpm \$1-bpm BPM 49 8 0 11 -1 -4034
--4034 115.489 256;
+-4034 99.7717 256;
 #X obj 322 23 nbx 5 15 50 75 0 0 \$1-shuffle \$1-shuffle % 49 8 0 11
--1 -4034 -4034 65.0309 256;
+-1 -4034 -4034 65.8308 256;
 #X obj 322 8 cnv 8 8 30 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 -4033
 -1 0;
-#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0011417 3 7 0 11
+#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0025559 3 7 0 11
 -4033 -1 0;
 #X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 9 0
 10 -262144 -1 -1 0 1;
@@ -817,7 +817,7 @@ in a list.;
 #X obj 183 477 r \$0.mode;
 #X obj 168 497 f;
 #X obj 168 519 sel 1;
-#N canvas 1424 260 884 565 master.api 1;
+#N canvas 1424 260 884 565 master.api 0;
 #X msg 503 424 switch \$1;
 #X msg 686 425 bpm \$1;
 #X msg 598 422 16th \$1;
@@ -939,7 +939,7 @@ in a list.;
 #X msg 168 541 0;
 #X obj 9 139 netpd_f \$1 startstop 0;
 #X obj 92 471 r \$1-startstop;
-#N canvas 561 297 445 436 stepshuffle 0;
+#N canvas 718 270 461 430 stepshuffle 0;
 #X obj 26 13 r \$0.step;
 #X obj 261 96 * 2;
 #X obj 261 127 *;
@@ -951,26 +951,24 @@ in a list.;
 #X obj 26 64 mod 2;
 #X obj 101 147 r \$0.shuffletime;
 #X obj 26 86 sel 0;
-#X obj 26 108 t b b;
 #X obj 26 222 f;
-#X obj 26 196 rh_metro 1000;
-#X obj 54 350 sel 1;
-#X msg 146 312 stop;
-#X msg 53 128 0;
+#X msg 46 132 0;
 #X obj 26 35 t a a;
-#X obj 92 72 >> 1;
-#X obj 92 94 << 1;
-#X obj 26 350 +;
-#X obj 89 230 + 1;
+#X obj 88 72 >> 1;
+#X obj 88 94 << 1;
+#X obj 73 347 +;
+#X obj 155 231 + 1;
 #X obj 149 19 r \$0.startstop;
 #X obj 149 41 route 0;
 #X obj 149 63 b;
 #X msg 149 85 stop;
-#X obj 26 383 s \$0.stepshuffle;
+#X obj 73 380 s \$0.stepshuffle;
 #X obj 101 170 t a a;
 #X obj 26 168 t a a;
-#X obj 27 243 t a a a;
-#X connect 0 0 17 0;
+#X obj 27 243 t a a a, f 16;
+#X obj 26 196 rh_metro;
+#X obj 26 108 t b b b;
+#X connect 0 0 13 0;
 #X connect 1 0 2 0;
 #X connect 2 0 7 0;
 #X connect 3 0 2 0;
@@ -979,30 +977,28 @@ in a list.;
 #X connect 5 0 4 0;
 #X connect 6 0 3 0;
 #X connect 8 0 10 0;
-#X connect 9 0 27 0;
-#X connect 10 0 11 0;
-#X connect 11 0 28 0;
-#X connect 11 1 16 0;
-#X connect 12 0 29 0;
-#X connect 13 0 12 0;
+#X connect 9 0 23 0;
+#X connect 10 0 27 0;
+#X connect 11 0 25 0;
+#X connect 12 0 11 1;
+#X connect 13 0 8 0;
+#X connect 13 1 14 0;
 #X connect 14 0 15 0;
-#X connect 15 0 28 0;
-#X connect 16 0 12 1;
-#X connect 17 0 8 0;
-#X connect 17 1 18 0;
+#X connect 15 0 16 1;
+#X connect 16 0 22 0;
+#X connect 17 0 11 1;
 #X connect 18 0 19 0;
-#X connect 19 0 20 1;
-#X connect 20 0 26 0;
-#X connect 21 0 12 1;
-#X connect 22 0 23 0;
-#X connect 23 0 24 0;
-#X connect 24 0 25 0;
-#X connect 25 0 28 0;
-#X connect 27 0 13 1;
-#X connect 28 0 13 0;
-#X connect 29 0 20 0;
-#X connect 29 1 14 0;
-#X connect 29 2 21 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 24 0;
+#X connect 23 0 26 1;
+#X connect 24 0 26 0;
+#X connect 25 1 16 0;
+#X connect 25 2 17 0;
+#X connect 26 0 11 0;
+#X connect 27 0 24 0;
+#X connect 27 1 12 0;
+#X connect 27 2 21 0;
 #X restore 330 427 pd stepshuffle;
 #X text 295 8 offset detection/correction;
 #N canvas 706 669 210 184 gui.stuff 0;
