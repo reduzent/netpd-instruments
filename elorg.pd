@@ -7,7 +7,7 @@
 #X msg 106 40 elorg-voice;
 #X msg 12 13 unpunch-plus;
 #X restore 14 35 pd abslist;
-#X msg 13 7 version 0 1 4;
+#X msg 16 7 version 0 1 5;
 #X restore 231 12 pd NETPD 2 0;
 #X obj 11 39 netpd_head \$1 elorg;
 #N canvas 713 208 386 278 \$1-elorg 0;
@@ -57,7 +57,9 @@
 #X obj 279 13 cnv 15 86 25 empty empty *unpunch* 5 12 2 16 -57793 -220268
 0;
 #X obj 222 13 hsl 50 25 0 1 0 0 \$1-leslie \$1-leslie LESLIE 2 12 2
-14 -57793 -220268 -220268 1900 1;
+14 -57793 -220268 -220268 0 1;
+#X obj 162 13 hsl 50 25 0 1 0 0 \$1-human \$1-human HUMAN 2 12 2 14
+-57793 -220268 -220268 0 1;
 #X restore 10 12 pd \$1-elorg;
 #X obj 11 317 i2mx \$1 elorg;
 #X obj 11 159 pack f f f;
@@ -280,6 +282,7 @@
 #X restore 11 290 pd leslie;
 #X f 13;
 #X obj 11 136 poly 16 1, f 10;
+#X obj 196 69 netpd_f \$1 human 0;
 #X connect 4 0 5 0;
 #X connect 6 0 11 0;
 #X connect 6 1 11 1;
