@@ -1,6 +1,6 @@
-#N canvas 406 73 510 396 10;
-#N canvas 257 87 374 78 NETPD 0;
-#X msg 8 6 version 0 0 1;
+#N canvas 692 110 510 396 10;
+#N canvas 257 103 374 78 NETPD 0;
+#X msg 8 6 version 0 0 2;
 #X restore 234 12 pd NETPD 2 0;
 #N canvas 0 50 338 259 selector 0;
 #N canvas 278 280 419 327 slider.wrapper 0;
@@ -382,47 +382,81 @@
 0;
 #X obj 68 23 cnv 1 1 1 empty 2560.field.0.r empty 1 6 1 9 -233017 -1
 0;
-#N canvas 0 50 314 412 get.sidechannel.sources.list 0;
-#X obj 34 75 r mx;
-#X obj 34 7 loadbang;
-#X obj 34 51 s mx;
-#X obj 34 97 route auxnum instrument;
-#X msg 34 29 getauxnum \, instrumentgetlist;
-#X obj 34 116 t a a;
-#X obj 34 137 -;
-#X obj 34 167 until;
-#X obj 34 209 t a a;
-#X msg 34 229 aux-\$1;
-#X obj 34 254 list append;
-#X msg 61 300 add2 \$1;
-#X obj 75 193 + 1;
-#X obj 101 226 t a;
-#X obj 34 189 f 1;
-#X obj 34 321 del 0;
-#X obj 34 274 t b a;
-#X obj 34 346 netpd-messagebox;
-#X obj 34 371 outlet;
-#X connect 0 0 3 0;
-#X connect 1 0 4 0;
-#X connect 3 0 5 0;
-#X connect 3 1 13 0;
-#X connect 4 0 2 0;
-#X connect 5 0 6 1;
-#X connect 5 1 6 0;
+#N canvas 0 512 305 515 get.sidechannel.sources.list 0;
+#X obj 74 135 r mx;
+#X obj 74 111 s mx;
+#X obj 74 198 route auxnum instrument;
+#X msg 74 89 getauxnum \, instrumentgetlist;
+#X obj 74 256 until;
+#X obj 74 298 t a a;
+#X msg 74 318 aux-\$1;
+#X obj 74 354 list append;
+#X obj 115 282 + 1;
+#X obj 141 315 t a;
+#X obj 74 278 f 1;
+#X obj 37 481 outlet;
+#X obj 74 220 t a b;
+#X msg 121 254 1;
+#X msg 74 377 append \$1;
+#X obj 37 451 list store, f 29;
+#N canvas 322 122 450 394 retrigger 0;
+#X obj 107 9 r mx;
+#X obj 107 31 route auxnum instrument;
+#X obj 107 56 b;
+#X obj 107 177 t b b b;
+#X msg 168 209 0;
+#X msg 71 235 1;
+#X obj 126 238 outlet;
+#X obj 190 118 loadbang;
+#X obj 107 78 spigot 0;
+#X obj 107 101 del 0;
+#X obj 72 207 del 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 2 0;
+#X connect 2 0 8 0;
+#X connect 3 0 10 0;
+#X connect 3 1 6 0;
+#X connect 3 2 4 0;
+#X connect 4 0 8 1;
+#X connect 5 0 8 1;
+#X connect 7 0 3 0;
+#X connect 8 0 9 0;
+#X connect 9 0 3 0;
+#X connect 10 0 5 0;
+#X restore 37 32 pd retrigger;
+#X obj 37 60 t b b b, f 29;
+#X obj 74 158 spigot 0;
+#X msg 130 135 1;
+#X msg 44 114 0;
+#X obj 37 284 del 0;
+#X connect 0 0 18 0;
+#X connect 2 0 12 0;
+#X connect 2 1 9 0;
+#X connect 3 0 1 0;
+#X connect 4 0 10 0;
+#X connect 5 0 6 0;
+#X connect 5 1 8 0;
 #X connect 6 0 7 0;
 #X connect 7 0 14 0;
-#X connect 8 0 9 0;
-#X connect 8 1 12 0;
-#X connect 9 0 10 0;
-#X connect 10 0 16 0;
-#X connect 11 0 17 0;
-#X connect 12 0 14 1;
-#X connect 13 0 10 0;
-#X connect 14 0 8 0;
-#X connect 15 0 17 0;
-#X connect 16 0 15 0;
-#X connect 16 1 11 0;
-#X connect 17 0 18 0;
+#X connect 8 0 10 1;
+#X connect 9 0 7 0;
+#X connect 10 0 5 0;
+#X connect 12 0 4 0;
+#X connect 12 1 13 0;
+#X connect 13 0 10 1;
+#X connect 14 0 15 0;
+#X connect 15 0 11 0;
+#X connect 16 0 17 0;
+#X connect 17 0 21 0;
+#X connect 17 1 3 0;
+#X connect 17 2 15 1;
+#X connect 17 2 19 0;
+#X connect 18 0 2 0;
+#X connect 19 0 18 1;
+#X connect 20 0 18 1;
+#X connect 21 0 15 0;
+#X connect 21 0 20 0;
 #X restore 232 66 pd get.sidechannel.sources.list;
 #X obj 68 23 cnv 1 1 1 empty 2563.field.3.r empty 1 6 1 9 -1 -1 0;
 #X obj 68 23 cnv 1 1 1 empty 2563.field.-2.r empty 1 6 1 9 -187246
@@ -521,6 +555,84 @@
 #X obj 68 23 cnv 1 1 1 empty 3320.field.0.r empty 1 6 1 9 -233017 -1
 0;
 #X obj 231 264 route symbol;
+#X obj 68 23 cnv 1 1 1 empty 1448.field.3.r empty 1 6 1 9 -1 -1 0;
+#X obj 68 23 cnv 1 1 1 empty 1448.field.-2.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 1448.field.-1.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 1448.field.1.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 1448.field.2.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 1448.field.0.r empty 1 6 1 9 -233017 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 1444.field.3.r empty 1 6 1 9 -1 -1 0;
+#X obj 68 23 cnv 1 1 1 empty 1444.field.-2.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 1444.field.-1.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 1444.field.1.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 1444.field.2.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 1444.field.0.r empty 1 6 1 9 -233017 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 1966.field.3.r empty 1 6 1 9 -1 -1 0;
+#X obj 68 23 cnv 1 1 1 empty 1966.field.-2.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 1966.field.-1.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 1966.field.1.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 1966.field.2.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 1966.field.0.r empty 1 6 1 9 -233017 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 6456.field.3.r empty 1 6 1 9 -1 -1 0;
+#X obj 68 23 cnv 1 1 1 empty 6456.field.-2.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 6456.field.-1.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 6456.field.1.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 6456.field.2.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 6456.field.0.r empty 1 6 1 9 -233017 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 8822.field.3.r empty 1 6 1 9 -1 -1 0;
+#X obj 68 23 cnv 1 1 1 empty 8822.field.-2.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 8822.field.-1.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 8822.field.1.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 8822.field.2.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 8822.field.0.r empty 1 6 1 9 -233017 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 9253.field.3.r empty 1 6 1 9 -1 -1 0;
+#X obj 68 23 cnv 1 1 1 empty 9253.field.-2.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 9253.field.-1.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 9253.field.1.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 9253.field.2.r empty 1 6 1 9 -187246 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 9253.field.0.r empty 1 6 1 9 -233017 -1
+0;
+#X obj 68 23 cnv 1 1 1 empty 10138.field.3.r empty 1 6 1 9 -1 -1 0
+;
+#X obj 68 23 cnv 1 1 1 empty 10138.field.-2.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 10138.field.-1.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 10138.field.1.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 10138.field.2.r empty 1 6 1 9 -187246
+-1 0;
+#X obj 68 23 cnv 1 1 1 empty 10138.field.0.r empty 1 6 1 9 -233017
+-1 0;
 #X connect 1 0 25 0;
 #X connect 23 0 1 0;
 #X connect 23 1 24 0;
