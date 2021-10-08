@@ -8,5 +8,10 @@
 #X msg 11 16 version 0 0 2;
 #X restore 16 18 pd NETPD 2 0;
 #N canvas 872 247 444 258 \$1-dirtlib 1;
+#X text 7 12 Library of effects that add dirt;
+#X text 7 24 ================================;
+#X text 7 53 wobble - messes with pitch by slightly modulating a delay
+;
+#X text 6 68 tramp - crude amp&speaker overdrive emulation;
 #X restore 16 39 pd \$1-dirtlib;
-#X obj 16 60 mx-fx-list \$1 dirtlib wobble tramp;
+#X obj 16 60 mx-fx-list \$1 dirtlib wobble tramp leslie;
