@@ -5,13 +5,15 @@
 #X msg 4 11 wobble;
 #X restore 12 40 pd abslist;
 #X msg 11 67 singleton;
-#X msg 11 16 version 0 0 2;
+#X msg 11 16 version 0 0 3;
 #X restore 16 18 pd NETPD 2 0;
 #N canvas 872 247 444 258 \$1-dirtlib 1;
 #X text 7 12 Library of effects that add dirt;
 #X text 7 24 ================================;
 #X text 7 53 wobble - messes with pitch by slightly modulating a delay
 ;
-#X text 6 68 tramp - crude amp&speaker overdrive emulation;
+#X text 7 68 tramp - emulates crudely amp&speaker in overdrive;
+#X text 7 83 leslie - emulates a rotating speaker;
+#X text 7 98 mp33 - washes sounds like bad compression;
 #X restore 16 39 pd \$1-dirtlib;
-#X obj 16 60 mx-fx-list \$1 dirtlib wobble tramp leslie;
+#X obj 16 60 mx-fx-list \$1 dirtlib wobble tramp leslie mp33;
