@@ -1,8 +1,12 @@
-#N canvas 440 376 353 148 10;
-#N canvas 917 319 185 109 NETPD 0;
-#N canvas 813 323 194 105 abslist 0;
+#N canvas 430 368 353 148 10;
+#N canvas 917 349 185 109 NETPD 0;
+#N canvas 813 353 194 129 abslist 0;
 #X msg 84 11 mx-fx-list;
 #X msg 4 11 wobble;
+#X msg 3 32 tramp;
+#X msg 3 53 leslie;
+#X msg 4 74 mp33;
+#X msg 4 95 spicy;
 #X restore 12 40 pd abslist;
 #X msg 11 67 singleton;
 #X msg 11 16 version 0 0 3;
@@ -15,5 +19,7 @@
 #X text 7 68 tramp - emulates crudely amp&speaker in overdrive;
 #X text 7 83 leslie - emulates a rotating speaker;
 #X text 7 98 mp33 - washes sounds like bad compression;
+#X text 7 113 spicy - adds dirt applying the fourth power;
 #X restore 16 39 pd \$1-dirtlib;
-#X obj 16 60 mx-fx-list \$1 dirtlib wobble tramp leslie mp33;
+#X obj 16 60 mx-fx-list \$1 dirtlib wobble tramp leslie mp33 spicy
+;
