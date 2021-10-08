@@ -7,6 +7,6 @@
 #X msg 11 67 singleton;
 #X msg 11 16 version 0 0 2;
 #X restore 16 18 pd NETPD 2 0;
-#N canvas 872 247 444 258 \$1-distlib 1;
-#X restore 16 39 pd \$1-distlib;
-#X obj 16 60 mx-fx-list \$1 distlib wobble tramp;
+#N canvas 872 247 444 258 \$1-dirtlib 1;
+#X restore 16 39 pd \$1-dirtlib;
+#X obj 16 60 mx-fx-list \$1 dirtlib wobble tramp;
