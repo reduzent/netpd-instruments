@@ -1,6 +1,6 @@
-#N canvas 410 349 389 110 10;
-#N canvas 897 453 185 109 NETPD 0;
-#N canvas 803 405 194 167 abslist 0;
+#N canvas 410 346 430 118 10;
+#N canvas 897 483 185 109 NETPD 0;
+#N canvas 803 435 194 167 abslist 0;
 #X msg 84 11 mx-fx-list;
 #X msg 4 11 wobble;
 #X msg 3 32 tramp;
@@ -8,11 +8,12 @@
 #X msg 4 74 mp33;
 #X msg 4 95 spicy;
 #X msg 4 115 asy;
+#X msg 5 137 fifty;
 #X restore 12 40 pd abslist;
 #X msg 11 67 singleton;
-#X msg 11 16 version 0 0 4;
+#X msg 11 16 version 0 0 6;
 #X restore 16 18 pd NETPD 2 0;
-#N canvas 842 223 444 258 \$1-dirtlib 1;
+#N canvas 842 220 444 258 \$1-dirtlib 0;
 #X text 7 12 Library of effects that add dirt;
 #X text 7 24 ================================;
 #X text 7 53 wobble - messes with pitch by slightly modulating a delay
@@ -23,4 +24,4 @@
 #X text 7 113 spicy - adds dirt applying the fourth power;
 #X restore 16 39 pd \$1-dirtlib;
 #X obj 16 60 mx-fx-list \$1 dirtlib wobble tramp leslie mp33 spicy
-asy;
+asy fifty;
