@@ -1,20 +1,21 @@
-#N canvas 609 219 672 630 10;
-#N canvas 1038 213 234 106 NETPD 0;
-#X msg 14 18 version 0 0 1;
+#N canvas 589 203 672 630 10;
+#N canvas 1018 257 234 106 NETPD 0;
+#X msg 14 18 version 0 0 2;
+#N canvas 502 296 270 59 abslist 0;
+#X msg 33 23 fifty-button;
+#X restore 13 53 pd abslist;
 #X restore 111 12 pd NETPD 2 0;
 #X obj 20 136 inlet~;
 #X obj 154 137 inlet~;
 #X obj 46 568 outlet~;
 #X obj 181 570 outlet~;
-#N canvas 668 316 322 128 \$3-\$2 1;
-#X obj 18 15 tgl 20 0 \$1-\$2/hum \$1-\$2/hum hum 25 10 0 14 #fcfcfc
-#000000 #000000 0 1;
-#X obj 18 40 tgl 20 0 \$1-\$2/hiss \$1-\$2/hiss hiss 25 10 0 14 #fcfcfc
-#000000 #000000 0 1;
-#X obj 18 65 tgl 20 0 \$1-\$2/tiptouch \$1-\$2/tiptouch tiptouch 25
-10 0 14 #fcfcfc #000000 #000000 0 1;
-#X obj 18 91 tgl 20 0 \$1-\$2/modulate \$1-\$2/modulate modulate 25
-10 0 14 #fcfcfc #000000 #000000 0 1;
+#N canvas 666 463 159 154 \$3-\$2 1;
+#X obj 8 7 cnv 15 124 134 empty empty fifty 28 120 0 20 #ff04ff #ffffff
+0;
+#X obj 10 9 fifty-button \$1 \$2 hum 1 #cc5533 #ff9977;
+#X obj 10 36 fifty-button \$1 \$2 hiss 1 #55bb33 #99ff77;
+#X obj 10 90 fifty-button \$1 \$2 tiptouch 0 #5533cc #9977ff;
+#X obj 10 63 fifty-button \$1 \$2 modulate 1 #3355cc #7799ff;
 #X restore 7 12 pd \$3-\$2;
 #X obj 89 316 noise~;
 #X obj 180 303 noise~;
