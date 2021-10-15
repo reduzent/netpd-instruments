@@ -1,4 +1,4 @@
-#N canvas 422 103 703 488 10;
+#N canvas 412 103 703 488 10;
 #N canvas 237 103 374 78 NETPD 0;
 #X msg 8 6 version 0 0 4;
 #X restore 234 12 pd NETPD 2 0;
@@ -386,7 +386,7 @@
 0;
 #X obj 68 23 cnv 1 1 1 empty 2560.field.0.r empty 1 6 1 9 #e0e0e0 #000000
 0;
-#N canvas 0 798 305 627 get.sidechannel.sources.list 0;
+#N canvas 0 820 305 627 get.sidechannel.sources.list 0;
 #X obj 74 175 r mx;
 #X obj 74 151 s mx;
 #X obj 74 238 route auxnum instrument;
@@ -409,7 +409,6 @@
 #X msg 44 155 0;
 #X obj 37 35 r \$0.refresh;
 #X obj 154 37 loadbang;
-#X obj 154 60 del 0;
 #X connect 0 0 17 0;
 #X connect 2 0 12 0;
 #X connect 2 1 9 0;
@@ -436,8 +435,7 @@
 #X connect 18 0 17 1;
 #X connect 19 0 17 1;
 #X connect 20 0 16 0;
-#X connect 21 0 22 0;
-#X connect 22 0 16 0;
+#X connect 21 0 16 0;
 #X restore 232 66 pd get.sidechannel.sources.list;
 #X obj 68 23 cnv 1 1 1 empty 2563.field.3.r empty 1 6 1 9 #000000 #000000
 0;
