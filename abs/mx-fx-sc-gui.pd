@@ -1,6 +1,6 @@
 #N canvas 412 103 703 488 10;
 #N canvas 237 103 374 78 NETPD 0;
-#X msg 8 6 version 0 0 4;
+#X msg 8 6 version 0 0 5;
 #X restore 234 12 pd NETPD 2 0;
 #N canvas 0 103 338 259 selector 0;
 #N canvas 238 248 426 401 slider.wrapper 0;
