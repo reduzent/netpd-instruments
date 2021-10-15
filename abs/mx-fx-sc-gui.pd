@@ -1,35 +1,35 @@
-#N canvas 652 103 510 396 10;
-#N canvas 247 103 374 78 NETPD 0;
-#X msg 8 6 version 0 0 3;
+#N canvas 422 103 703 488 10;
+#N canvas 237 103 374 78 NETPD 0;
+#X msg 8 6 version 0 0 4;
 #X restore 234 12 pd NETPD 2 0;
-#N canvas 0 50 338 259 selector 0;
-#N canvas 278 280 419 327 slider.wrapper 0;
-#X obj 20 255 pack f f f;
-#X obj 20 233 - 1;
-#X obj 20 167 change;
-#X obj 20 208 t a a a;
-#X obj 77 231 +;
-#X msg 20 277 range \$2 \$1 \, set \$3;
-#X obj 20 299 s \$0.selector.r;
-#X obj 20 145 div 5;
-#X obj 20 187 * 5;
-#X obj 92 208 mod 5;
-#X obj 48 232 + 5;
-#X obj 20 48 max 0;
-#X obj 20 74 min 1e+37;
-#X obj 139 20 inlet;
-#X obj 139 42 route range set;
-#X obj 139 67 unpack;
-#X obj 203 67 r \$0.sens;
-#X obj 139 91 *;
-#X obj 172 91 *;
-#X obj 172 184 div;
-#X obj 172 206 change -1e+37;
-#X obj 172 228 outlet;
-#X obj 182 121 *;
-#X obj 20 120 t a a;
-#X obj 20 96 t a a;
-#X obj 20 17 r \$0.selector.s;
+#N canvas 0 103 338 259 selector 0;
+#N canvas 238 248 426 401 slider.wrapper 0;
+#X obj 20 285 pack f f f;
+#X obj 20 263 - 1;
+#X obj 20 197 change;
+#X obj 20 238 t a a a;
+#X obj 77 261 +;
+#X msg 20 307 range \$2 \$1 \, set \$3;
+#X obj 20 329 s \$0.selector.r;
+#X obj 20 175 div 5;
+#X obj 20 217 * 5;
+#X obj 92 238 mod 5;
+#X obj 48 262 + 5;
+#X obj 20 78 max 0;
+#X obj 20 104 min 1e+37;
+#X obj 201 61 inlet;
+#X obj 201 83 route range set;
+#X obj 201 108 unpack;
+#X obj 265 108 r \$0.sens;
+#X obj 201 132 *;
+#X obj 234 132 *;
+#X obj 234 225 div;
+#X obj 234 247 change -1e+37;
+#X obj 234 269 outlet;
+#X obj 244 162 *;
+#X obj 20 150 t a a;
+#X obj 20 126 t a a;
+#X obj 20 38 r \$0.slider.wrapper;
 #X connect 0 0 5 0;
 #X connect 1 0 0 0;
 #X connect 2 0 8 0;
@@ -63,10 +63,10 @@
 #X connect 24 0 23 0;
 #X connect 24 1 19 0;
 #X connect 25 0 11 0;
-#X restore 24 153 pd slider.wrapper;
-#X obj 24 82 t a a;
-#X obj 24 108 list length;
-#N canvas 683 62 361 403 list.selector.fields 0;
+#X restore 24 183 pd slider.wrapper;
+#X obj 24 112 t a a;
+#X obj 24 138 list length;
+#N canvas 643 103 481 455 list.selector.fields 0;
 #N canvas 1158 567 142 254 counter 0;
 #X obj 10 12 inlet;
 #X msg 38 61 -2;
@@ -97,17 +97,17 @@
 #X connect 10 0 2 0;
 #X connect 11 0 9 1;
 #X connect 12 0 11 0;
-#X restore 5 140 pd counter;
-#X obj 5 164 t a a;
-#X obj 5 382 s;
-#X obj 5 186 list trim;
-#X obj 159 9 inlet;
-#X obj 32 50 del 600;
-#X obj 252 32 inlet;
-#X msg 5 75 1;
-#X msg 32 75 0;
-#X obj 5 228 route 1 0;
-#N canvas 752 253 288 441 update.labels 0;
+#X restore 55 170 pd counter;
+#X obj 55 194 t a a;
+#X obj 55 412 s;
+#X obj 55 216 list trim;
+#X obj 209 39 inlet;
+#X obj 82 80 del 600;
+#X obj 302 62 inlet;
+#X msg 55 105 1;
+#X msg 82 105 0;
+#X obj 55 258 route 1 0;
+#N canvas 742 245 366 499 update.labels 0;
 #N canvas 646 299 158 272 counter 0;
 #X obj 10 12 inlet;
 #X msg 10 57 5;
@@ -126,17 +126,17 @@
 #X connect 5 0 4 1;
 #X connect 7 0 1 0;
 #X connect 7 1 2 0;
-#X restore -47 75 pd counter;
-#X obj -47 31 t b a;
-#X obj -47 97 list append;
-#X obj -47 7 inlet;
-#X obj 97 9 inlet;
-#X obj -47 119 t a a;
-#X msg 16 124 \$1 \$2;
-#X obj 16 146 +;
-#X obj -47 171 list append;
-#X obj -47 193 t a a;
-#N canvas 781 423 450 300 get.label.from.id 0;
+#X restore 25 78 pd counter;
+#X obj 25 34 t b a;
+#X obj 25 100 list append;
+#X obj 25 10 inlet;
+#X obj 169 12 inlet;
+#X obj 25 122 t a a;
+#X msg 88 127 \$1 \$2;
+#X obj 88 149 +;
+#X obj 25 174 list append;
+#X obj 25 196 t a a;
+#N canvas 771 415 450 300 get.label.from.id 0;
 #X obj 68 94 t b a;
 #X obj 68 140 list split;
 #X obj 68 118 list append;
@@ -162,15 +162,15 @@
 #X connect 7 1 3 0;
 #X connect 9 0 5 0;
 #X connect 10 0 2 1;
-#X restore -20 241 pd get.label.from.id;
-#X obj -47 266 list append;
-#X msg -20 218 \$3;
-#X obj -20 310 list prepend \$0;
-#X msg -20 332 \; \$1.field.\$2.r label \$5;
-#X obj -47 288 t a a;
-#X obj -47 365 route 0;
-#X msg -47 385 symbol \$3;
-#X obj -47 407 outlet;
+#X restore 52 244 pd get.label.from.id;
+#X obj 25 269 list append;
+#X msg 52 221 \$3;
+#X obj 52 313 list prepend \$0;
+#X msg 52 335 \; \$1.field.\$2.r label \$5;
+#X obj 25 291 t a a;
+#X obj 25 368 route 0;
+#X msg 25 388 symbol \$3;
+#X obj 25 410 outlet;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 1 1 2 1;
@@ -192,18 +192,17 @@
 #X connect 15 1 13 0;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
-#X restore 159 55 pd update.labels;
-#X obj 32 338 list prepend \$0;
-#X msg 32 360 symbol \$1.field.\$3.r;
-#X obj 5 273 route 3;
-#X obj 126 231 outlet;
-#X obj 5 28 t b b;
-#X obj 5 97 change;
-#X obj 5 5 r \$0.selector.s;
-#X obj 159 29 f;
-#X obj 5 118 t a a;
-#X msg 159 99 symbol empty;
-#N canvas 756 152 450 300 init.cnvs 0;
+#X restore 209 85 pd update.labels;
+#X obj 82 368 list prepend \$0;
+#X msg 82 390 symbol \$1.field.\$3.r;
+#X obj 55 303 route 3;
+#X obj 176 261 outlet;
+#X obj 55 58 t b b;
+#X obj 55 127 change;
+#X obj 209 59 f;
+#X obj 55 148 t a a;
+#X msg 209 129 symbol empty;
+#N canvas 746 144 450 300 init.cnvs 0;
 #X obj 15 184 list prepend \$0;
 #X msg 120 137 -187246;
 #X msg 42 138 -233017;
@@ -215,12 +214,12 @@
 #X obj 15 28 spigot 1;
 #X msg 93 45 0;
 #X obj 15 50 t b b;
-#X obj 15 6 r \$0.selector.s;
 #X msg 165 67 1;
 #X msg 15 206 obj 68 23 cnv 1 1 1 empty \$1.field.\$2.r empty 1 6 1
 9 \$3 -1 0;
 #X obj 15 240 s \$0.canvas;
-#X connect 0 0 13 0;
+#X obj 15 6 r \$0.create.labels;
+#X connect 0 0 12 0;
 #X connect 1 0 4 1;
 #X connect 2 0 4 1;
 #X connect 3 0 4 0;
@@ -235,82 +234,83 @@
 #X connect 9 0 8 1;
 #X connect 10 0 7 0;
 #X connect 10 1 9 0;
-#X connect 11 0 8 0;
-#X connect 12 0 8 1;
-#X connect 13 0 14 0;
-#X restore 213 9 pd init.cnvs;
-#X obj 159 77 select -------;
-#X obj 126 122 symbol;
-#X obj 107 54 sel 1 0;
-#X obj 126 143 t a a;
-#X obj 269 177 symbol;
-#X msg 269 199 show \$1;
-#X obj 242 154 del 0;
-#X obj 126 165 sel -------;
-#X obj 126 187 t a a;
-#X obj 319 74 inlet;
-#X obj 319 96 symbol;
-#X obj 242 133 t b b;
-#X obj 242 111 r \$0.show.s;
-#X msg 39 253 pos 68 23 \, vis_size 1 1 \, label empty \, size 1;
-#X msg 44 298 pos 22 \$2 \, vis_size 50 12;
-#X msg 5 319 pos 20 -6 \, vis_size 54 68;
-#X msg 126 209 symbol \$1;
+#X connect 11 0 8 1;
+#X connect 12 0 13 0;
+#X connect 14 0 8 0;
+#X restore 263 39 pd init.cnvs;
+#X obj 209 107 select -------;
+#X obj 176 152 symbol;
+#X obj 157 84 sel 1 0;
+#X obj 176 173 t a a;
+#X obj 319 207 symbol;
+#X msg 319 229 show \$1;
+#X obj 292 184 del 0;
+#X obj 176 195 sel -------;
+#X obj 176 217 t a a;
+#X obj 369 104 inlet;
+#X obj 369 126 symbol;
+#X obj 292 163 t b b;
+#X obj 292 141 r \$0.show.s;
+#X msg 89 283 pos 68 23 \, vis_size 1 1 \, label empty \, size 1;
+#X msg 94 328 pos 22 \$2 \, vis_size 50 12;
+#X msg 55 349 pos 20 -6 \, vis_size 54 68;
+#X msg 176 239 symbol \$1;
+#X obj 55 26 r \$0.touch.detect;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 1 1 11 0;
 #X connect 3 0 9 0;
-#X connect 4 0 18 0;
+#X connect 4 0 17 0;
 #X connect 5 0 8 0;
 #X connect 6 0 10 1;
 #X connect 7 0 16 0;
 #X connect 8 0 16 0;
 #X connect 9 0 13 0;
-#X connect 9 1 35 0;
-#X connect 10 0 22 0;
+#X connect 9 1 34 0;
+#X connect 10 0 21 0;
 #X connect 11 0 12 0;
 #X connect 12 0 2 1;
-#X connect 13 0 37 0;
-#X connect 13 1 36 0;
+#X connect 13 0 36 0;
+#X connect 13 1 35 0;
 #X connect 15 0 7 0;
 #X connect 15 1 5 0;
-#X connect 16 0 19 0;
-#X connect 17 0 15 0;
-#X connect 18 0 10 0;
-#X connect 19 0 24 0;
-#X connect 19 1 0 0;
-#X connect 20 0 23 1;
-#X connect 22 0 20 0;
-#X connect 22 1 23 1;
-#X connect 23 0 25 0;
-#X connect 24 0 18 0;
-#X connect 24 1 23 0;
-#X connect 25 0 29 0;
-#X connect 25 1 26 1;
-#X connect 26 0 27 0;
-#X connect 27 0 14 0;
-#X connect 28 0 8 0;
-#X connect 29 1 30 0;
-#X connect 30 0 38 0;
-#X connect 30 1 29 1;
-#X connect 31 0 32 0;
-#X connect 32 0 29 1;
-#X connect 33 0 28 0;
-#X connect 33 1 26 0;
-#X connect 34 0 33 0;
+#X connect 16 0 18 0;
+#X connect 17 0 10 0;
+#X connect 18 0 23 0;
+#X connect 18 1 0 0;
+#X connect 19 0 22 1;
+#X connect 21 0 19 0;
+#X connect 21 1 22 1;
+#X connect 22 0 24 0;
+#X connect 23 0 17 0;
+#X connect 23 1 22 0;
+#X connect 24 0 28 0;
+#X connect 24 1 25 1;
+#X connect 25 0 26 0;
+#X connect 26 0 14 0;
+#X connect 27 0 8 0;
+#X connect 28 1 29 0;
+#X connect 29 0 37 0;
+#X connect 29 1 28 1;
+#X connect 30 0 31 0;
+#X connect 31 0 28 1;
+#X connect 32 0 27 0;
+#X connect 32 1 25 0;
+#X connect 33 0 32 0;
+#X connect 34 0 2 0;
 #X connect 35 0 2 0;
 #X connect 36 0 2 0;
-#X connect 37 0 2 0;
-#X connect 38 0 14 0;
-#X restore 24 180 pd list.selector.fields;
-#X msg 24 130 range 1 \$1;
-#X obj 24 59 list prepend -------;
+#X connect 37 0 14 0;
+#X connect 38 0 15 0;
+#X restore 24 210 pd list.selector.fields;
+#X msg 24 160 range 1 \$1;
+#X obj 24 89 list prepend -------;
 #X obj 24 33 inlet;
-#X msg 202 102 set 1;
+#X msg 202 132 set 1;
 #X obj 202 13 loadbang;
 #X obj 202 35 t b b b;
-#X obj 24 204 outlet;
-#X obj 159 154 r \$0.configured.sc;
+#X obj 24 234 outlet;
+#X obj 159 184 r \$0.configured.sc;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 1;
@@ -372,7 +372,7 @@
 #X obj 68 23 cnv 1 1 1 empty 2558.field.0.r empty 1 6 1 9 #e0e0e0 #000000
 0;
 #X obj 232 92 t a a;
-#X obj 259 114 s \$0.available.sc;
+#X obj 399 199 s \$0.available.sc;
 #X obj 232 162 s \$0.selected.sc;
 #X obj 68 23 cnv 1 1 1 empty 2560.field.3.r empty 1 6 1 9 #000000 #000000
 0;
@@ -386,54 +386,31 @@
 0;
 #X obj 68 23 cnv 1 1 1 empty 2560.field.0.r empty 1 6 1 9 #e0e0e0 #000000
 0;
-#N canvas 0 600 305 627 get.sidechannel.sources.list 0;
-#X obj 74 135 r mx;
-#X obj 74 111 s mx;
-#X obj 74 198 route auxnum instrument;
-#X msg 74 89 getauxnum \, instrumentgetlist;
-#X obj 74 256 until;
-#X obj 74 298 t a a;
-#X msg 74 318 aux-\$1;
-#X obj 74 354 list append;
-#X obj 115 282 + 1;
-#X obj 141 315 t a;
-#X obj 74 278 f 1;
-#X obj 39 557 outlet;
-#X obj 74 220 t a b;
-#X msg 121 254 1;
-#X msg 74 377 append \$1;
-#X obj 37 451 list store, f 29;
-#N canvas 312 114 450 394 retrigger 0;
-#X obj 107 9 r mx;
-#X obj 107 31 route auxnum instrument;
-#X obj 107 56 b;
-#X obj 107 177 t b b b;
-#X msg 259 186 0;
-#X msg 254 155 1;
-#X obj 126 238 outlet;
-#X obj 45 121 loadbang;
-#X obj 107 94 spigot 0;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 1 1 2 0;
-#X connect 2 0 8 0;
-#X connect 3 0 5 0;
-#X connect 3 1 6 0;
-#X connect 3 2 4 0;
-#X connect 4 0 8 1;
-#X connect 5 0 8 1;
-#X connect 7 0 3 0;
-#X connect 8 0 3 0;
-#X restore 37 32 pd retrigger;
-#X obj 37 60 t b b b, f 29;
-#X obj 74 158 spigot 0;
-#X msg 130 135 1;
-#X msg 44 115 0;
-#X obj 39 502 del 0;
-#X text 80 503 prevent 'no matching send' errors;
-#X obj 39 529 list append;
-#X obj 39 475 t b a;
-#X connect 0 0 18 0;
+#N canvas 0 798 305 627 get.sidechannel.sources.list 0;
+#X obj 74 175 r mx;
+#X obj 74 151 s mx;
+#X obj 74 238 route auxnum instrument;
+#X msg 74 129 getauxnum \, instrumentgetlist;
+#X obj 74 296 until;
+#X obj 74 338 t a a;
+#X msg 74 358 aux-\$1;
+#X obj 74 394 list append;
+#X obj 115 322 + 1;
+#X obj 141 355 t a;
+#X obj 74 318 f 1;
+#X obj 37 543 outlet;
+#X obj 74 260 t a b;
+#X msg 121 294 1;
+#X msg 74 417 append \$1;
+#X obj 37 491 list store, f 29;
+#X obj 37 100 t b b b, f 29;
+#X obj 74 198 spigot 0;
+#X msg 130 175 1;
+#X msg 44 155 0;
+#X obj 37 35 r \$0.refresh;
+#X obj 154 37 loadbang;
+#X obj 154 60 del 0;
+#X connect 0 0 17 0;
 #X connect 2 0 12 0;
 #X connect 2 1 9 0;
 #X connect 3 0 1 0;
@@ -449,20 +426,18 @@
 #X connect 12 1 13 0;
 #X connect 13 0 10 1;
 #X connect 14 0 15 0;
-#X connect 15 0 24 0;
-#X connect 16 0 17 0;
-#X connect 17 0 20 0;
-#X connect 17 0 15 0;
-#X connect 17 1 3 0;
-#X connect 17 2 15 1;
-#X connect 17 2 19 0;
-#X connect 18 0 2 0;
-#X connect 19 0 18 1;
-#X connect 20 0 18 1;
-#X connect 21 0 23 0;
-#X connect 23 0 11 0;
-#X connect 24 0 21 0;
-#X connect 24 1 23 1;
+#X connect 15 0 11 0;
+#X connect 16 0 19 0;
+#X connect 16 0 15 0;
+#X connect 16 1 3 0;
+#X connect 16 2 15 1;
+#X connect 16 2 18 0;
+#X connect 17 0 2 0;
+#X connect 18 0 17 1;
+#X connect 19 0 17 1;
+#X connect 20 0 16 0;
+#X connect 21 0 22 0;
+#X connect 22 0 16 0;
 #X restore 232 66 pd get.sidechannel.sources.list;
 #X obj 68 23 cnv 1 1 1 empty 2563.field.3.r empty 1 6 1 9 #000000 #000000
 0;
@@ -684,9 +659,285 @@
 #000000 0;
 #X obj 68 23 cnv 1 1 1 empty 15356.field.0.r empty 1 6 1 9 #e0e0e0
 #000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22877.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22877.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22877.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22877.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22877.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22877.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22923.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22923.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22923.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22923.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22923.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22923.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 399 146 del 0;
+#X text 440 147 prevent 'no matching send' errors;
+#X obj 399 173 list append;
+#X obj 399 119 t b a;
+#X obj 68 23 cnv 1 1 1 empty 22944.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22944.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22944.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22944.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22944.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22944.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22965.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22965.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22965.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22965.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22965.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 22965.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23007.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23007.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23007.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23007.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23007.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23007.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 455 291 r \$0.selector.s;
+#X obj 534 363 t a;
+#X obj 489 389 s \$0.refresh;
+#X obj 455 445 s \$0.slider.wrapper;
+#X obj 472 416 s \$0.touch.detect;
+#X obj 68 23 cnv 1 1 1 empty 23028.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23028.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23028.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23028.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23028.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23028.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23049.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23049.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23049.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23049.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23049.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23049.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23070.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23070.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23070.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23070.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23070.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23070.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23116.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23116.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23116.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23116.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23116.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23116.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 506 340 s \$0.create.labels;
+#X obj 455 314 t a a a a;
+#X obj 68 23 cnv 1 1 1 empty 23142.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23142.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23142.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23142.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23142.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23142.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23163.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23163.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23163.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23163.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23163.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23163.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23184.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23184.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23184.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23184.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23184.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23184.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23209.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23209.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23209.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23209.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23209.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23209.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23230.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23230.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23230.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23230.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23230.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23230.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23251.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23251.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23251.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23251.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23251.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23251.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23272.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23272.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23272.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23272.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23272.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23272.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23314.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23314.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23314.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23314.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23314.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23314.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23335.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23335.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23335.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23335.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23335.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23335.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23398.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23398.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23398.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23398.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23398.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23398.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 489 362 sel 20;
+#X obj 68 23 cnv 1 1 1 empty 23419.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23419.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23419.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23419.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23419.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 23419.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 25699.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 25699.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 25699.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 25699.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 25699.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 25699.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 27036.field.3.r empty 1 6 1 9 #000000
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 27036.field.-2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 27036.field.-1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 27036.field.1.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 27036.field.2.r empty 1 6 1 9 #b4b4b4
+#000000 0;
+#X obj 68 23 cnv 1 1 1 empty 27036.field.0.r empty 1 6 1 9 #e0e0e0
+#000000 0;
 #X connect 1 0 25 0;
 #X connect 23 0 1 0;
-#X connect 23 1 24 0;
+#X connect 23 1 145 0;
 #X connect 32 0 23 0;
 #X connect 39 0 40 0;
 #X connect 40 0 69 0;
@@ -703,4 +954,16 @@
 #X connect 53 0 52 0;
 #X connect 62 0 51 0;
 #X connect 69 0 42 0;
+#X connect 142 0 144 0;
+#X connect 144 0 24 0;
+#X connect 145 0 142 0;
+#X connect 145 1 144 1;
+#X connect 164 0 194 0;
+#X connect 165 0 255 1;
+#X connect 194 0 167 0;
+#X connect 194 1 168 0;
+#X connect 194 2 255 0;
+#X connect 194 3 193 0;
+#X connect 255 0 166 0;
+#X connect 255 1 165 0;
 #X coords 0 -1 1 1 50 12 2 20 22;
