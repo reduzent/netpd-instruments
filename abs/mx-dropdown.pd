@@ -1,14 +1,14 @@
-#N struct 4041.rectangle float id float x float y float w float h float
+#N struct 1003.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
 #N canvas 210 112 576 318 10;
 #N canvas 247 349 709 287 \$0.gop 0;
-#X scalar 4041.rectangle 1 0 0 100 16 0 666 777  \;;
-#X scalar 4041.rectangle 0 0 0 100 16 0 666 888  \;;
+#X scalar 1003.rectangle 1 0 0 100 16 0 666 777  \;;
+#X scalar 1003.rectangle 0 0 0 100 16 0 666 888  \;;
 #X coords 0 0 100 16 100 16 2 50 50;
 #X restore 50 50 pd \$0.gop;
 #X obj 193 275 s \$0.expand;
-#X obj 193 232 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 193 232 tgl 30 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #N canvas 30 112 670 630 create.items 0;
 #X obj 43 526 s pd-\$0.gop;
 #X obj 43 154 until;
@@ -299,7 +299,7 @@ float h float txtclr float boxclr float bgclr symbol label;
 #X connect 13 8 4 1;
 #X connect 13 9 4 2;
 #X restore 190 50 pd init;
-#N canvas 349 359 424 225 methods 0;
+#N canvas 349 359 424 279 methods 0;
 #N canvas 0 106 389 271 items 0;
 #X obj 11 7 r \$1;
 #X obj 45 142 list length;
@@ -473,6 +473,20 @@ float h float txtclr float boxclr float bgclr symbol label;
 #X connect 14 2 8 1;
 #X connect 15 0 14 0;
 #X restore 15 187 pd setlabel;
+#N canvas 0 106 328 167 drop 0;
+#X obj 11 7 r \$1;
+#X obj 11 112 s \$0.expand;
+#X obj 11 30 route drop;
+#X obj 11 53 sel 0 1;
+#X msg 11 83 0;
+#X msg 40 82 1;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X restore 15 210 pd drop;
 #X restore 190 74 pd methods;
 #X obj 269 275 s \$0.top;
 #X msg 269 250 font \$1 100 100;
