@@ -1,5 +1,5 @@
-#N struct 15271.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
+#N struct 4338.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
 #N canvas 819 468 591 454 10;
 #N canvas 831 179 261 231 NETPD 0;
 #X msg 17 13 version 0 0 3;
@@ -195,8 +195,8 @@ float txtclr float boxclr float bgclr symbol label;
 #X obj 21 178 mx-fx-2level-selector \$0.drop;
 #X msg 313 218 \; \$1.drop selected_text_color 600 \; \$1.drop selected_box_color
 0 \; \$1.drop selected_background_color 777 \; \$1.drop items_text_color
-0 \; \$1.drop items_box_color 766 \; \$1.drop items_background_color
-877 \;;
+0 \; \$1.drop items_box_color 777 \; \$1.drop items_background_color
+887 \;;
 #X connect 1 0 2 0;
 #X connect 2 0 45 0;
 #X connect 4 0 5 0;

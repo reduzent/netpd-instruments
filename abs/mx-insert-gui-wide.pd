@@ -1,6 +1,6 @@
-#N struct 15142.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N canvas 619 106 499 461 10;
+#N struct 4466.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N canvas 619 106 551 455 10;
 #N canvas 831 212 261 231 NETPD 0;
 #N canvas 528 332 386 163 abslist 0;
 #X msg 13 16 mx-dropdown;
@@ -194,10 +194,6 @@ float txtclr float boxclr float bgclr symbol label;
 #X obj 20 20 mx-dropdown \$0.drop 60 16 10;
 #X msg 20 353 coords 0 -1 1 1 60 \$1 2 20 10;
 #X obj 20 326 + 26;
-#X msg 20 164 \; \$1.drop selected_text_color 600 \; \$1.drop selected_box_color
-0 \; \$1.drop selected_background_color 777 \; \$1.drop items_text_color
-0 \; \$1.drop items_box_color 766 \; \$1.drop items_background_color
-877 \;;
 #X obj 312 45 r mx;
 #X obj 312 67 route \$1;
 #X obj 312 89 route insert;
@@ -207,20 +203,24 @@ float txtclr float boxclr float bgclr symbol label;
 #X obj 312 230 s mx;
 #X obj 312 186 list prepend \$1 insert \$2;
 #X obj 312 159 mx-fx-2level-selector \$0.drop;
+#X msg 20 164 \; \$1.drop selected_text_color 600 \; \$1.drop selected_box_color
+0 \; \$1.drop selected_background_color 777 \; \$1.drop items_text_color
+0 \; \$1.drop items_box_color 777 \; \$1.drop items_background_color
+887 \;;
 #X connect 1 0 24 0;
 #X connect 23 0 24 0;
-#X connect 24 0 33 0;
+#X connect 24 0 42 0;
 #X connect 25 0 26 0;
 #X connect 26 0 32 0;
 #X connect 29 0 32 0;
 #X connect 31 0 28 0;
 #X connect 32 0 31 0;
+#X connect 33 0 34 0;
 #X connect 34 0 35 0;
 #X connect 35 0 36 0;
 #X connect 36 0 37 0;
-#X connect 37 0 38 0;
-#X connect 38 0 42 0;
-#X connect 39 0 40 0;
-#X connect 41 0 39 0;
-#X connect 42 0 41 0;
+#X connect 37 0 41 0;
+#X connect 38 0 39 0;
+#X connect 40 0 38 0;
+#X connect 41 0 40 0;
 #X coords 0 -1 1 1 60 26 2 20 10;
