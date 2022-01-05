@@ -1,8 +1,11 @@
-#N struct 1988.rectangle float id float x float y float w float h float
+#N struct 1471.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
 #N canvas 619 106 482 461 10;
 #N canvas 831 212 261 231 NETPD 0;
 #X msg 18 12 version 0 1 1;
+#N canvas 528 332 386 163 abslist 0;
+#X msg 13 16 mx-dropdown;
+#X restore 19 40 pd abslist;
 #X restore 220 17 pd NETPD 2 0;
 #N canvas 978 367 218 177 INIT 0;
 #X obj 10 10 loadbang;
