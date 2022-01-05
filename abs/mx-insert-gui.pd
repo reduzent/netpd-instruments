@@ -1,6 +1,6 @@
-#N struct 8449.rectangle float id float x float y float w float h float
+#N struct 7249.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N canvas 619 106 482 461 10;
+#N canvas 1930 395 511 461 10;
 #X obj 43 10 hsl 15 10 0 1 0 0 \$0.show.s \$0.show.r [][] 3 5 1 5 #e0e0e0
 #e0e0e0 #000000 0 1;
 #X obj 23 10 hsl 15 10 0 1 0 0 \$0.bypass.s \$0.bypass.r by 3 5 1 8
@@ -196,15 +196,31 @@ txtclr float boxclr float bgclr symbol label;
 0 \; \$1.drop selected_background_color 777 \; \$1.drop items_text_color
 0 \; \$1.drop items_box_color 766 \; \$1.drop items_background_color
 877 \;;
-#X obj 20 44 mx-fx-2level-selector \$1 \$2 \$0.drop;
 #X msg 20 353 coords 0 -1 1 1 40 \$1 2 20 10;
 #X obj 20 326 + 22;
+#X obj 312 45 r mx;
+#X obj 312 67 route \$1;
+#X obj 312 89 route insert;
+#X obj 312 111 route \$2;
+#X obj 312 133 route setlabel;
+#X obj 312 208 list trim;
+#X obj 312 230 s mx;
+#X obj 312 186 list prepend \$1 insert \$2;
+#X obj 312 159 mx-fx-2level-selector \$0.drop;
 #X connect 22 0 25 0;
 #X connect 24 0 25 0;
 #X connect 25 0 31 0;
 #X connect 26 0 27 0;
-#X connect 27 0 34 0;
-#X connect 30 0 34 0;
-#X connect 33 0 29 0;
-#X connect 34 0 33 0;
+#X connect 27 0 33 0;
+#X connect 30 0 33 0;
+#X connect 32 0 29 0;
+#X connect 33 0 32 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 0;
+#X connect 38 0 42 0;
+#X connect 39 0 40 0;
+#X connect 41 0 39 0;
+#X connect 42 0 41 0;
 #X coords 0 -1 1 1 40 22 2 20 10;
