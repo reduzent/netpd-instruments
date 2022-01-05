@@ -1,4 +1,4 @@
-#N struct 4466.rectangle float id float x float y float w float h float
+#N struct 8436.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
 #N canvas 619 106 551 455 10;
 #N canvas 831 212 261 231 NETPD 0;
@@ -183,8 +183,8 @@ txtclr float boxclr float bgclr symbol label;
 0;
 #X obj 58 21 cnv 1 1 1 empty 1379.field.0.r empty 1 6 1 9 #e0e0e0 #000000
 0;
-#X obj 50 135 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 151 109 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 20 134 \$0;
 #X obj 20 280 r \$0.drop;
 #X obj 20 303 route expand;
