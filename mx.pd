@@ -1,47 +1,29 @@
-#N struct 8299.rectangle float id float x float y float w float h float
+#N struct 1814.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 8304.rectangle float id float x float y float w float h float
+#N struct 1819.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 8309.rectangle float id float x float y float w float h float
+#N struct 1824.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 8319.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 8324.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 8329.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 8345.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 8350.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 8355.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
+#N struct 2199.filterplot float y array filterplot-array 2199.filterplot-element
+;
+#N struct 2199.filterplot-element float y;
 #N struct 2208.filterplot float y array filterplot-array 2208.filterplot-element
 ;
 #N struct 2208.filterplot-element float y;
-#N struct 8372.rectangle float id float x float y float w float h float
+#N struct 1695.filterplot float y array filterplot-array 1695.filterplot-element
+;
+#N struct 1695.filterplot-element float y;
+#N struct 1917.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 8424.rectangle float id float x float y float w float h float
+#N struct 1922.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 8476.rectangle float id float x float y float w float h float
+#N struct 1927.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 8528.rectangle float id float x float y float w float h float
+#N struct 1837.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 8580.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 8632.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 8684.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 8751.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 8803.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 8855.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N canvas 453 296 282 324 10;
+#N canvas 413 416 282 324 10;
 #N canvas 753 553 175 138 NETPD 0;
-#N canvas 653 383 190 338 abslist 0;
+#N canvas 653 383 190 366 abslist 0;
 #X msg 28 21 i2mx;
 #X msg 28 146 mx-i2mx-gui;
 #X msg 28 84 mx-containers;
@@ -55,9 +37,10 @@ txtclr float boxclr float bgclr symbol label;
 #X msg 27 253 roman_helpers;
 #X msg 27 276 mx-recorder;
 #X msg 28 126 mx-fx-sc;
+#X msg 27 298 mx-slots;
 #X restore 17 36 pd abslist;
 #X msg 16 63 singleton;
-#X msg 15 8 version 0 2 0;
+#X msg 15 8 version 0 2 1;
 #X restore 8 7 pd NETPD 2 0;
 #N canvas 593 139 348 450 create.channel.guis 0;
 #X obj 17 10 loadbang;
@@ -267,7 +250,7 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 195 129 *;
 #X obj 183 213 - 100;
 #X obj 156 31 * 1.27;
-#X floatatom 123 203 5 0 0 0 - - -;
+#X floatatom 123 203 5 0 0 0 - - - 0;
 #X connect 0 0 4 0;
 #X connect 1 0 16 0;
 #X connect 4 0 2 0;
