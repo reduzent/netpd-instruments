@@ -5,7 +5,7 @@
 #X obj 11 108 b;
 #X obj 12 215 r mx;
 #N canvas 0 316 273 206 NETPD 0;
-#X msg 17 16 version 0 1 0;
+#X msg 17 16 version 0 1 2;
 #X restore 166 12 pd NETPD 2 0;
 #X text 11 188 == fx list ===========;
 #X obj 12 308 list prepend addfxlist;
