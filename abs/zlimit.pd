@@ -1,62 +1,4 @@
-#N canvas 358 383 416 254 10;
-#X declare -path zexy -lib zexy;
-#N canvas 139 400 539 407 processing 0;
-#X obj 7 300 *~;
-#X obj 7 31 inlet~;
-#X obj 7 350 outlet~;
-#X obj 288 26 inlet threshold;
-#X obj 64 300 *~;
-#X obj 66 36 inlet~;
-#X obj 64 350 outlet~;
-#X text 16 178 delay 1ms;
-#X obj 428 30 inlet level;
-#X obj 138 270 *~;
-#X obj 288 124 - 100;
-#X obj 288 149 * -1;
-#X obj 288 205 +;
-#X obj 328 169 t b f;
-#X obj 288 226 dbtorms;
-#X obj 8 198 z~ 64;
-#X obj 65 199 z~ 64;
-#X obj 139 206 limiter~ 1 2;
-#X obj 139 37 loadbang;
-#X msg 164 82 LIMIT;
-#X obj 223 129 + 100;
-#X msg 139 102 set 100 40 150;
-#X msg 223 151 limit \$1;
-#X obj 139 61 t b b;
-#X obj 213 328 env~ 6000;
-#X obj 213 355 outlet;
-#X connect 0 0 2 0;
-#X connect 1 0 15 0;
-#X connect 1 0 17 0;
-#X connect 3 0 10 0;
-#X connect 3 0 20 0;
-#X connect 4 0 6 0;
-#X connect 5 0 16 0;
-#X connect 5 0 17 1;
-#X connect 8 0 13 0;
-#X connect 9 0 4 1;
-#X connect 9 0 0 1;
-#X connect 10 0 11 0;
-#X connect 11 0 12 0;
-#X connect 12 0 14 0;
-#X connect 13 0 12 0;
-#X connect 13 1 12 1;
-#X connect 14 0 9 1;
-#X connect 15 0 0 0;
-#X connect 16 0 4 0;
-#X connect 17 0 9 0;
-#X connect 17 0 24 0;
-#X connect 18 0 23 0;
-#X connect 19 0 17 0;
-#X connect 20 0 22 0;
-#X connect 21 0 17 0;
-#X connect 22 0 17 0;
-#X connect 23 0 21 0;
-#X connect 23 1 19 0;
-#X connect 24 0 25 0;
-#X restore 14 128 pd processing;
+#N canvas 358 383 408 256 10;
 #N canvas 324 164 561 473 display-stuff 0;
 #X obj 225 6 inlet;
 #X obj 366 10 inlet;
@@ -122,12 +64,13 @@
 #X connect 11 0 2 1;
 #X connect 11 0 8 1;
 #X restore 30 302 pd speedlimit;
-#X obj 30 12 inlet;
+#X obj 30 2 inlet;
 #X obj 112 41 t b f f;
 #X obj 30 61 spigot;
 #X obj 41 39 100;
 #X obj 225 221 s \$1-\$2/threshold;
 #X obj 366 228 s \$1-\$2/level;
+#X obj 30 25 + 100;
 #X connect 0 0 4 0;
 #X connect 1 0 10 0;
 #X connect 2 0 40 0;
@@ -167,40 +110,52 @@
 #X connect 33 0 34 0;
 #X connect 34 0 13 0;
 #X connect 35 0 21 0;
-#X connect 36 0 38 0;
+#X connect 36 0 42 0;
 #X connect 37 0 39 0;
 #X connect 37 1 38 1;
 #X connect 37 2 28 0;
 #X connect 38 0 19 0;
 #X connect 39 0 38 0;
+#X connect 42 0 38 0;
 #X restore 89 167 pd display-stuff;
 #X obj 14 35 inlet~;
 #X obj 38 56 inlet~;
 #X obj 14 221 outlet~;
-#X obj 64 79 netpd_f \$1 \$2/threshold 0;
-#X obj 89 103 netpd_f \$1 \$2/level 0;
+#X obj 140 23 netpd_f \$1 \$2/threshold 0;
+#X obj 169 49 netpd_f \$1 \$2/level 0;
 #N canvas 0 382 207 79 NETPD 0;
-#X msg 17 13 version 0 2 3;
-#X restore 259 79 pd NETPD 2 0;
+#X msg 17 13 version 0 3 0;
+#X restore 288 159 pd NETPD 2 0;
 #X obj 51 194 outlet~;
-#X obj 13 9 declare -path zexy -lib zexy;
-#N canvas 836 538 165 68 \$3-\$2 1;
-#X obj 4 5 cnv 15 137 46 empty empty empty 20 -3 0 14 -1 -62784 0;
-#X obj 9 21 hsl 128 14 -30 0 0 0 \$1-\$2/level \$1-\$2/level empty
-8 7 1 8 -216018 -1 -262144 0 1;
-#X obj 9 7 hsl 128 14 -30 0 0 0 \$1-\$2/threshold \$1-\$2/threshold
-empty 8 7 1 8 -195218 -1 -262144 0 1;
-#X obj 49 36 cnv 1 1 12 empty \$0-dumping empty 20 12 0 14 -228831
--66577 0;
-#X obj 6 35 tgl 14 0 \$0-vissw-s \$0-vissw-r empty 16 7 1 7 -228831
--1 -262144 0 1;
-#X restore 259 56 pd \$3-\$2;
-#X connect 0 0 4 0;
-#X connect 0 1 8 0;
-#X connect 0 2 1 0;
-#X connect 2 0 0 0;
-#X connect 3 0 0 1;
-#X connect 5 0 1 1;
+#N canvas 836 538 566 120 \$3-\$2 0;
+#X obj 4 13 cnv 15 137 46 empty empty empty 20 -3 0 14 #000000 #3c50fc
+0;
+#X obj 9 29 hsl 128 14 -30 0 0 0 \$1-\$2/level \$1-\$2/level out\ ceiling:\ 0dB
+8 7 1 8 #d0bc44 #000000 #fcfcfc 0 1;
+#X obj 9 15 hsl 128 14 -30 0 0 0 \$1-\$2/threshold \$1-\$2/threshold
+threshold:\ 0dB 8 7 1 8 #bca844 #000000 #fcfcfc 0 1;
+#X obj 49 44 cnv 1 1 12 empty \$0-dumping empty 20 12 0 14 #dcdc78
+#404040 0;
+#X obj 6 43 tgl 14 0 \$0-vissw-s \$0-vissw-r empty 16 7 1 7 #dcdc78
+#000000 #fcfcfc 0 1;
+#X text 169 11 NOTE: this used to be a limiter based on zexy's [limiter~]
+external. I decided to get rid of the zexy dependency for netpd. Now
+\, this is just a plain copy of rlimit. It uses the same params \,
+thus is largely compatible.;
+#X text 169 70 Don't use it. Use rlimit instead. This will be removed
+in the future.;
+#X restore 288 136 pd \$3-\$2;
+#X msg 87 86 threshold \$1;
+#X msg 145 113 outceiling \$1;
+#X obj 14 128 dynlib_limiter~;
+#X connect 1 0 11 0;
+#X connect 2 0 11 1;
+#X connect 4 0 0 1;
+#X connect 4 0 9 0;
 #X connect 5 0 0 2;
-#X connect 6 0 1 2;
-#X connect 6 0 0 3;
+#X connect 5 0 10 0;
+#X connect 9 0 11 2;
+#X connect 10 0 11 2;
+#X connect 11 0 3 0;
+#X connect 11 1 7 0;
+#X connect 11 2 0 0;
