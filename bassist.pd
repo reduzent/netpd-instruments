@@ -1,10 +1,3 @@
-#N struct 7824.button float posx float posy float color;
-#N struct 7824.cursor float cx float cy float cy2;
-#N struct 7755-automation float yshift array variy 7755-automation-element
-;
-#N struct 7755-automation-element float y;
-#N struct 7754.autolabel float x float y symbol lbl float color float
-track;
 #N canvas 520 226 514 449 10;
 #X obj 161 232 exp;
 #X obj 75 213 + 90;
