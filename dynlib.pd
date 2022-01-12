@@ -1,10 +1,9 @@
 #N canvas 590 192 405 94 10;
-#N canvas 668 482 164 92 NETPD 0;
+#N canvas 668 482 164 92 NETPD 1;
 #N canvas 813 537 236 466 abslist 0;
 #X msg 15 75 rcomp;
 #X msg 15 95 rlimit;
-#X msg 15 135 zlimit;
-#X msg 15 115 zcomplim;
+#X msg 15 115 zlimit;
 #X msg 106 97 mx-fx-list;
 #X msg 15 35 r4mbc;
 #X msg 15 277 dynlib_peakhold~;
