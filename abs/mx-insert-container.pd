@@ -1,14 +1,14 @@
-#N canvas 616 189 732 375 10;
+#N canvas 616 189 774 447 10;
 #X obj 12 4 inlet~;
 #X obj 98 3 inlet~;
 #X obj 11 277 outlet~;
 #X obj 97 277 outlet~;
-#X obj 268 342 outlet;
+#X obj 268 392 outlet;
 #X obj 213 4 inlet;
-#X obj 351 272 s pd-\$0-insert-container;
-#X obj 324 72 netpd-dsp-off;
-#X obj 351 139 t a b;
-#X msg 413 138 clear;
+#X obj 351 322 s pd-\$0-insert-container;
+#X obj 324 122 netpd-dsp-off;
+#X obj 351 189 t a b;
+#X msg 413 188 clear;
 #N canvas 633 44 306 90 insert-container-container 0;
 #X obj 17 14 inlet~;
 #X obj 16 48 outlet~;
@@ -22,7 +22,7 @@
 #X connect 3 0 4 0;
 #X restore 12 126 pd insert-container-container;
 #N canvas 791 106 450 300 NETPD 0;
-#X msg 12 22 version 0 0 3;
+#X msg 12 22 version 0 0 4;
 #X restore 575 6 pd NETPD 2 0;
 #N canvas 1118 494 178 149 add-creation-arguments 0;
 #X obj 13 83 list prepend \$0;
@@ -32,7 +32,7 @@
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
-#X restore 351 175 pd add-creation-arguments;
+#X restore 351 225 pd add-creation-arguments;
 #N canvas 520 118 579 387 show.fx.gui 0;
 #X obj 23 13 inlet;
 #X obj 80 82 outlet;
@@ -60,12 +60,12 @@
 #X connect 9 1 6 0;
 #X connect 10 0 11 0;
 #X restore 324 48 pd show.fx.gui;
-#X obj 324 117 t b a;
-#X msg 324 294 reinit;
-#X obj 324 316 s \$1.NETPD;
-#X text 368 295 <- needed to make the abs set itself to init values
+#X obj 324 167 t b a;
+#X msg 324 344 reinit;
+#X obj 324 366 s \$1.NETPD;
+#X text 368 345 <- needed to make the abs set itself to init values
 ;
-#X obj 324 95 route insert clear;
+#X obj 324 145 route insert clear;
 #N canvas 961 321 353 255 in________________________ 0;
 #X obj 19 15 inlet~;
 #X obj 18 225 outlet~;
@@ -209,11 +209,14 @@
 #X connect 5 0 6 0;
 #X connect 6 0 4 0;
 #X connect 7 0 1 0;
-#X restore 268 257 pd zero_delay;
-#X msg 351 202 obj 23 21 receive~ \$1.in.l \, obj 159 21 receive~ \$1.in.r
+#X restore 268 307 pd zero_delay;
+#X msg 351 252 obj 23 21 receive~ \$1.in.l \, obj 159 21 receive~ \$1.in.r
 \, obj 38 128 \$2 \$3 \$4/\$2 \$5 \, obj 23 235 throw~ \$1.out.l \,
 obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
 \, connect 2 0 3 0 \, connect 2 1 4 0 \, loadbang;
+#X obj 324 98 spigot 0;
+#X msg 369 72 1;
+#X obj 324 71 t b a;
 #X connect 0 0 19 0;
 #X connect 1 0 19 1;
 #X connect 5 0 21 0;
@@ -224,7 +227,7 @@ obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
 #X connect 10 0 20 0;
 #X connect 10 1 20 1;
 #X connect 12 0 25 0;
-#X connect 13 0 7 0;
+#X connect 13 0 28 0;
 #X connect 14 0 15 0;
 #X connect 14 1 8 0;
 #X connect 15 0 16 0;
@@ -242,3 +245,7 @@ obj 157 235 throw~ \$1.out.r \, connect 0 0 2 0 \, connect 1 0 2 1
 #X connect 23 0 20 2;
 #X connect 24 0 4 0;
 #X connect 25 0 6 0;
+#X connect 26 0 7 0;
+#X connect 27 0 26 1;
+#X connect 28 0 27 0;
+#X connect 28 1 26 0;
