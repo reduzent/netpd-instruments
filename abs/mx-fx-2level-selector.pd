@@ -1,5 +1,5 @@
-#N canvas 709 555 450 300 10;
-#N canvas 496 385 744 635 two.level.dropdown 0;
+#N canvas 493 431 450 300 10;
+#N canvas 476 377 754 635 two.level.dropdown 0;
 #N canvas 546 307 426 268 get.fx.list 0;
 #X obj 13 37 inlet;
 #X obj 49 205 outlet;
@@ -51,17 +51,17 @@
 #X connect 4 0 2 0;
 #X connect 5 0 3 0;
 #X restore 22 130 pd get.fx.list;
-#X obj 49 176 list prepend ..;
-#X obj 49 201 list prepend items;
-#X obj 49 224 list trim;
+#X obj 49 216 list prepend ..;
+#X obj 49 241 list prepend items;
+#X obj 49 264 list trim;
 #X obj 22 79 route selected;
 #X obj 22 104 symbol;
-#X obj 22 295 s \$0.drop.level;
+#X obj 22 335 s \$0.drop.level;
 #X obj 88 24 r \$0.drop.level;
 #X obj 88 50 == 0;
 #X obj 22 47 spigot;
-#X obj 22 153 t b a;
-#X msg 22 268 1;
+#X obj 22 193 t b a;
+#X msg 22 308 1;
 #X msg 238 363 symbol;
 #X obj 238 339 loadbang;
 #X obj 211 387 route sd;
@@ -151,7 +151,7 @@
 #X msg 332 573 drop 0;
 #X msg 646 464 args 2;
 #X obj 22 24 r \$1;
-#X obj 49 249 s \$1;
+#X obj 49 289 s \$1;
 #X obj 221 22 r \$1;
 #X obj 211 287 r \$1;
 #X obj 332 596 s \$1;
@@ -160,7 +160,26 @@
 #X obj 392 79 r \$1;
 #X obj 535 369 r \$1;
 #X obj 643 141 s \$1;
-#X connect 0 0 10 0;
+#N canvas 0 0 477 300 crash.preventing 0;
+#X obj 22 102 t b a;
+#X obj 21 148 list append;
+#X obj 22 125 del 0;
+#X obj 22 49 inlet;
+#X obj 21 238 outlet;
+#X text 104 120 <- this prevents Pd crashing on macOS when using the
+dropdown selector. Surprisingly \, it still works ok with that delay.
+;
+#X msg 107 191 browse https://github.com/reduzent/netpd-instruments/issues/42
+;
+#X obj 107 227 pdcontrol;
+#X connect 0 0 2 0;
+#X connect 0 1 1 1;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 6 0 7 0;
+#X restore 22 163 pd crash.preventing;
+#X connect 0 0 77 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 68 0;
@@ -236,9 +255,10 @@
 #X connect 72 0 59 0;
 #X connect 74 0 29 0;
 #X connect 75 0 48 0;
+#X connect 77 0 10 0;
 #X restore 23 104 pd two.level.dropdown;
 #N canvas 1161 620 392 83 NETPD 0;
-#X msg 15 20 version 0 1 0;
+#X msg 15 20 version 0 1 1;
 #X restore 21 14 pd NETPD 2 0;
 #X text 164 106 <- MEAT;
 #X obj 23 76 inlet;
