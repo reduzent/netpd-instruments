@@ -1,15 +1,8 @@
-#N struct 1478.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1484.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1490.rectangle float id float x float y float w float h float
+#N struct 1003.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
 #N canvas 734 295 516 382 10;
 #N canvas 1064 172 266 78 NETPD 0;
-#N canvas 1053 362 375 54 abslist 0;
-#X msg 8 13 mx-aux-insert-gui-wide;
-#X restore 15 41 pd abslist;
-#X msg 14 17 version 0 0 5;
+#X msg 14 17 version 0 0 6;
 #X restore 111 12 pd NETPD 2 0;
 #X obj 12 64 inlet~;
 #X obj 136 67 inlet~;

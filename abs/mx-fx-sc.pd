@@ -1,9 +1,6 @@
 #N canvas 140 85 330 240 10;
 #N canvas 320 87 277 141 NETPD 0;
-#X msg 9 9 version 0 1 0;
-#N canvas 258 116 251 59 abslist 0;
-#X msg 8 5 mx-fx-sc-gui;
-#X restore 10 32 pd abslist;
+#X msg 9 9 version 0 1 1;
 #X restore 14 13 pd NETPD 2 0;
 #X obj 13 195 outlet~;
 #X obj 14 162 receive~ mx-\$1-\$2-l;

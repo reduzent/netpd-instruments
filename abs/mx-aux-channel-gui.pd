@@ -1,14 +1,14 @@
 #N canvas 722 454 531 358 10;
-#X obj 20 20 cnv 15 254 28 empty empty empty 20 12 0 14 -1 -66577 0
-;
+#X obj 20 20 cnv 15 254 28 empty empty empty 20 12 0 14 #000000 #404040
+0;
 #X obj 235 33 hsl 35 13 0 1 0 0 \$1-aux/\$2/pan \$1-aux/\$2/pan empty
--2 -8 0 10 -66577 -258113 -1 1700 1;
+-2 -8 0 10 #404040 #fc0400 #000000 0 1;
 #X obj 96 33 hsl 134 13 0 1 0 0 \$1-aux/\$2/level \$1-aux/\$2/level
-empty -2 -8 0 10 -66577 -66577 -1 10472 1;
-#X obj 94 34 cnv 1 108 11 empty \$0.level.top.r empty 20 12 0 14 -258113
--66577 0;
-#X obj 23 23 cnv 15 18 22 empty \$0.aux.label empty 1 11 1 14 -262144
--4160 0;
+empty -2 -8 0 10 #404040 #404040 #000000 0 1;
+#X obj 94 34 cnv 1 108 11 empty \$0.level.top.r empty 20 12 0 14 #fc0400
+#404040 0;
+#X obj 23 23 cnv 15 18 22 empty \$0.aux.label \ 0 1 11 1 14 #fcfcfc
+#0400fc 0;
 #N canvas 734 639 221 167 label 0;
 #X obj 16 24 loadbang;
 #X msg 16 90 label \$1;
@@ -39,20 +39,15 @@ empty -2 -8 0 10 -66577 -66577 -1 10472 1;
 #X connect 5 0 3 0;
 #X restore 24 107 pd level-slider-stuff;
 #N canvas 831 321 261 231 NETPD 0;
-#N canvas 1046 374 281 230 abslist 0;
-#X msg 3 11 mx-aux-gui2;
-#X msg 2 33 mx-aux-insert-gui;
-#X msg 2 54 mx-doubleclick-reset;
-#X restore 18 35 pd abslist;
-#X msg 19 14 version 0 0 4;
+#X msg 19 14 version 0 0 5;
 #X restore 173 66 pd NETPD 2 0;
 #X obj 24 176 namecanvas mx-aux-channel-gui-\$1-\$2;
 #X obj 24 150 mx-doubleclick-reset \$1-aux/\$2/pan 0.5;
 #X obj 93 22 mx-aux-gui2 \$1 aux/\$2/aux/1 \$2;
 #X obj 153 22 mx-aux-gui2 \$1 aux/\$2/aux/2 \$2;
 #X obj 213 22 mx-aux-gui2 \$1 aux/\$2/aux/3 \$2;
-#X obj 24 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 24 65 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X text 42 64 <- before save;
 #X obj 23 129 mx-doubleclick-reset \$1-aux/\$2/level 0.787402;
 #X connect 13 0 5 0;

@@ -132,12 +132,7 @@
 #X obj 94 100 catch~ mx-aux-\$2-r;
 #X obj 9 19 namecanvas mx-aux-channel-\$1-\$2;
 #N canvas 880 700 143 66 NETPD 0;
-#N canvas 914 398 209 227 abslist 0;
-#X msg 8 59 mx-insert-container;
-#X msg 8 13 mx-aux-insert-control;
-#X msg 8 36 mx-aux-send2;
-#X restore 12 31 pd abslist;
-#X msg 12 7 version 0 0 7;
+#X msg 12 7 version 0 0 8;
 #X restore 233 21 pd NETPD 2 0;
 #X obj 144 173 switch~;
 #N canvas 520 483 531 286 mx.aux.pre__ 0;

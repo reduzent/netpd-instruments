@@ -1,3 +1,5 @@
+#N struct 1003.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
 #N canvas 500 224 336 324 10;
 #N canvas 722 245 925 491 buttons-stuff 0;
 #X obj 689 229 netpd-rgb2iem;
@@ -135,11 +137,7 @@
 #X connect 57 0 44 0;
 #X restore 110 98 pd buttons-stuff;
 #N canvas 520 103 409 218 NETPD 0;
-#N canvas 649 225 233 139 abslist 0;
-#X msg 8 13 mx-aux-gui;
-#X msg 9 42 mx-insert-gui;
-#X restore 24 42 pd abslist;
-#X msg 21 15 version 0 0 8;
+#X msg 21 15 version 0 0 9;
 #X restore 110 75 pd NETPD 2 0;
 #N canvas 520 520 456 325 level-slider-stuff 0;
 #X obj 20 14 r \$1-mx/level;
@@ -283,8 +281,8 @@
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X restore 110 185 pd gui.existence.check;
-#X obj 20 18 cnv 15 42 269 empty empty empty 20 12 0 14 -1 -66577 0
-;
+#X obj 20 18 cnv 15 42 269 empty empty empty 20 12 0 14 #000000 #404040
+0;
 #X obj 20 34 mx-insert-gui \$1/mx/1 1;
 #X obj 20 56 mx-insert-gui \$1/mx/1 2;
 #X obj 20 79 mx-insert-gui \$1/mx/1 3;
@@ -321,9 +319,9 @@
 #X connect 14 0 3 0;
 #X restore 110 207 pd hide-gui;
 #X obj 23 20 hsl 35 12 0 127 0 0 \$0.label.click empty empty -2 -8
-0 10 -262144 -1 -1 0 1;
-#X obj 20 20 cnv 10 40 12 empty \$0.label.r 102-sine 1 7 1 8 -262144
--4160 0;
+0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 20 20 cnv 10 40 12 empty \$0.label.r 102-sine 1 7 1 8 #fcfcfc
+#0400fc 0;
 #N canvas 680 299 335 204 show-instrument 0;
 #X obj 21 20 r \$0.label.click;
 #X obj 21 47 sel;
@@ -343,20 +341,20 @@
 #X connect 7 1 5 0;
 #X restore 110 229 pd show-instrument;
 #X obj 20 183 vsl 20 100 0 1 0 0 \$1-mx/level \$1-mx/level empty 0
--9 0 10 -66577 -66577 -1 7795 1;
+-9 0 10 #404040 #404040 #000000 0 1;
 #X obj 23 171 hsl 35 10 0 1 0 0 \$1-mx/pan \$1-mx/pan empty -2 -8 0
-10 -66577 -258113 -1 1700 1;
-#X obj 43 181 hsl 15 12 0 1 0 0 \$0.solo.s \$0.solo.r s 4 6 0 12 -66577
--66577 -262081 0 1;
-#X obj 43 193 hsl 15 12 0 1 0 0 \$0.mute.s \$0.mute.r m 4 6 0 12 -66577
--66577 -64 0 1;
-#X obj 21 203 cnv 1 18 82 empty \$0.level.top.r empty 20 12 0 14 -258113
--66577 0;
+10 #404040 #fc0400 #000000 0 1;
+#X obj 43 181 hsl 15 12 0 1 0 0 \$0.solo.s \$0.solo.r s 4 6 0 12 #404040
+#404040 #fcfc00 0 1;
+#X obj 43 193 hsl 15 12 0 1 0 0 \$0.mute.s \$0.mute.r m 4 6 0 12 #404040
+#404040 #0000fc 0 1;
+#X obj 21 203 cnv 1 18 82 empty \$0.level.top.r empty 20 12 0 14 #fc0400
+#404040 0;
 #X obj 20 102 mx-aux-gui \$1 1;
 #X obj 20 125 mx-aux-gui \$1 2;
 #X obj 20 148 mx-aux-gui \$1 3;
 #X obj 43 205 hsl 15 12 0 1 0 0 \$0.psolo.s \$0.psolo.r ps 1 5 0 10
--66577 -66577 -262081 0 1;
-#X obj 41 284 cnv 1 1 1 empty \$0.cover empty 20 12 0 14 -1 -262144
+#404040 #404040 #fcfc00 0 1;
+#X obj 41 284 cnv 1 1 1 empty \$0.cover empty 20 12 0 14 #000000 #fcfcfc
 0;
 #X coords 0 -1 1 1 40 269 2 20 18;
