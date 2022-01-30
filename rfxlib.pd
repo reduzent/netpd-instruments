@@ -1,15 +1,16 @@
-#N canvas 450 387 353 148 10;
+#N canvas 450 387 432 195 10;
 #N canvas 1064 183 185 109 NETPD 0;
-#N canvas 813 293 194 120 abslist 0;
+#N canvas 813 293 194 176 abslist 0;
 #X msg 4 11 rodel;
 #X msg 5 52 rphase;
 #X msg 5 74 rflange;
 #X msg 5 96 rchous;
 #X msg 84 11 mx-fx-list;
 #X msg 6 32 rolong;
+#X msg 5 118 rdelfx;
 #X restore 12 40 pd abslist;
 #X msg 11 67 singleton;
-#X msg 11 16 version 0 1 6;
+#X msg 11 16 version 0 1 7;
 #X restore 16 18 pd NETPD 2 0;
 #N canvas 882 255 444 258 \$1-rfxlib 0;
 #X text 18 12 This is a collection of Roman's effects. they are made
@@ -23,4 +24,4 @@ to be used in mx [http://www.netpd.org/mx]. yet it contains:;
 #X text 42 202 http://www.netpd.org/rfxlib;
 #X restore 16 39 pd \$1-rfxlib;
 #X obj 16 60 mx-fx-list \$1 rfxlib rodel rolong rphase rflange rchous
-;
+rdelfx;
