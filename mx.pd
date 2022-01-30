@@ -1,46 +1,39 @@
-#N struct 1814.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1819.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1824.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 2199.filterplot float y array filterplot-array 2199.filterplot-element
-;
-#N struct 2199.filterplot-element float y;
-#N struct 2208.filterplot float y array filterplot-array 2208.filterplot-element
-;
-#N struct 2208.filterplot-element float y;
-#N struct 1695.filterplot float y array filterplot-array 1695.filterplot-element
-;
-#N struct 1695.filterplot-element float y;
-#N struct 1917.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1922.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1927.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1837.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
 #N canvas 413 416 282 324 10;
 #N canvas 753 553 175 138 NETPD 0;
-#N canvas 653 383 190 366 abslist 0;
-#X msg 28 21 i2mx;
-#X msg 28 146 mx-i2mx-gui;
-#X msg 28 84 mx-containers;
-#X msg 28 106 mx-fx-list;
-#X msg 28 231 mx-vu-peak;
-#X msg 28 209 mx-master-gui;
-#X msg 28 167 mx-insert-container;
-#X msg 28 188 mx-insert-control;
-#X msg 28 42 mx-aux-channel;
-#X msg 28 63 mx-aux-channel-gui;
-#X msg 27 253 roman_helpers;
-#X msg 27 276 mx-recorder;
-#X msg 28 126 mx-fx-sc;
-#X msg 27 298 mx-slots;
+#N canvas 653 383 391 374 abslist 0;
+#X msg 16 32 mx-aux-channel-gui;
+#X msg 16 55 mx-aux-channel;
+#X msg 16 78 mx-aux-gui2;
+#X msg 16 101 mx-aux-gui;
+#X msg 16 124 mx-aux-insert-control;
+#X msg 16 147 mx-aux-insert-gui;
+#X msg 16 170 mx-aux-insert-gui-wide;
+#X msg 16 193 mx-aux-send2;
+#X msg 16 216 mx-aux-send;
+#X msg 16 239 mx-containers;
+#X msg 16 262 mx-doubleclick-reset;
+#X msg 16 285 mx-dropdown;
+#X msg 16 308 mx-fx-2level-selector;
+#X msg 16 331 mx-fx-list;
+#X msg 206 10 mx-fx-sc-gui;
+#X msg 206 33 mx-fx-sc;
+#X msg 206 56 mx-i2mx-gui;
+#X msg 206 79 mx-insert-container;
+#X msg 206 102 mx-insert-control;
+#X msg 206 125 mx-insert-gui;
+#X msg 206 148 mx-insert-gui-wide;
+#X msg 206 171 mx-level-slider;
+#X msg 206 194 mx-master-gui;
+#X msg 206 217 mx-pan-slider;
+#X msg 206 240 mx-para;
+#X msg 206 263 mx-recorder;
+#X msg 206 286 mx-slots;
+#X msg 206 309 mx-vu-peak;
+#X msg 16 10 i2mx;
+#X msg 206 332 roman_helpers;
 #X restore 17 36 pd abslist;
 #X msg 16 63 singleton;
-#X msg 15 8 version 0 2 1;
+#X msg 15 8 version 0 2 3;
 #X restore 8 7 pd NETPD 2 0;
 #N canvas 593 139 348 450 create.channel.guis 0;
 #X obj 17 10 loadbang;
@@ -493,7 +486,7 @@ loadbang \; mx-aux-insert-gui \$1 bang \;;
 #X connect 5 0 4 0;
 #X connect 6 0 5 0;
 #X restore 8 192 pd show-aux/show-rec;
-#X obj 7 243 mx-fx-list \$1 mxlib mx-slots;
 #X obj 7 270 netpd-bus-order \$1 mx/1 mx/2;
+#X obj 7 243 mx-fx-list \$1 mxlib mx-slots mx-para;
 #X connect 2 0 4 0;
 #X connect 7 0 6 0;
