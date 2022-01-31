@@ -30,8 +30,8 @@
 #X obj 326 293 b;
 #X obj 219 89 loadbang;
 #X msg 219 115 set empty;
-#N canvas 1054 530 166 178 NETPD 0;
-#X msg 12 16 version 0 0 5;
+#N canvas 1054 530 155 169 NETPD 0;
+#X msg 12 16 version 0 0 6;
 #X restore 330 54 pd NETPD 2 0;
 #X obj 154 357 t b a;
 #X obj 411 124 loadbang;
