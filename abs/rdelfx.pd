@@ -1,19 +1,6 @@
-#N struct 3689.rectangle float id float x float y float w float h float
+#N struct 4881.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 4285.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 4291.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 4297.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 4303.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 4309.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 4352.filterplot float y array filterplot-array 4352.filterplot-element
-;
-#N struct 4352.filterplot-element float y;
-#N canvas 1374 331 468 500 10;
+#N canvas 1178 328 468 500 10;
 #X obj 10 158 delread~ \$0-fildell;
 #X obj 77 185 delread~ \$0-fildelr;
 #X obj 10 134 *;
@@ -50,31 +37,31 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 10 48 f;
 #X obj 10 70 change;
 #X obj 10 25 b;
-#N canvas 1104 308 83 325 \$3-\$2 1;
+#N canvas 1104 308 82 245 \$3-\$2 1;
 #X obj 8 10 cnv 10 62 220 empty empty rdelfx 4 12 0 14 #404040 #feffc6
 0;
 #X obj 9 36 nbx 2 18 0 99 0 0 \$1-\$2/til \$1-\$2/til empty 0 8 0 10
 #6e736c #feffc6 #000000 0 256;
 #X obj 39 36 nbx 2 18 0 99 0 0 \$1-\$2/tir \$1-\$2/tir empty 0 8 0
 10 #6e736c #feffc6 #000000 0 256;
-#X obj 9 54 mx-insert-gui-wide \$1/\$0/1 \$2/1;
+#X obj 9 54 mx-insert-gui-wide \$1/\$0/1 \$2/insert;
 #X obj 12 123 hsl 55 25 0 1 0 0 \$1-\$2/fb \$1-\$2/fb fb 37 17 0 16
 #aea9a4 #feffc6 #000000 0 1;
 #X obj 12 80 hsl 55 43 0 1 0 0 \$0.rt \$0.rt.label I I 6 30 1 60
 #bbbbbb #bbbbbb #000000 0 1;
 #X restore 298 46 pd \$3-\$2;
-#N canvas 0 0 459 155 insert 0;
-#X obj 261 49 mx-insert-control \$1/\$0/1 \$2/1;
-#X obj 12 72 mx-insert-container \$1/\$0/2 \$2/insert/1 \$3;
+#N canvas 0 0 497 155 insert 0;
 #X obj 11 37 inlet~;
 #X obj 137 35 inlet~;
 #X obj 12 114 outlet~;
 #X obj 135 111 outlet~;
-#X connect 0 0 1 2;
-#X connect 1 0 4 0;
-#X connect 1 1 5 0;
-#X connect 2 0 1 0;
-#X connect 3 0 1 1;
+#X obj 12 72 mx-insert-container \$1/\$0/2 \$2/insert \$3;
+#X obj 261 49 mx-insert-control \$1/\$0/1 \$2/insert;
+#X connect 0 0 4 0;
+#X connect 1 0 4 1;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 5 0 4 2;
 #X restore 41 397 pd insert;
 #X obj 118 398 netpd-bus-order \$1 \$0/1 \$0/2;
 #X obj 181 206 netpd_f \$1 \$2/fb 0;
