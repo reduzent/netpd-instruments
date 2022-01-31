@@ -1,3 +1,11 @@
+#N struct 1399.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1405.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1411.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1425.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
 #N canvas 413 416 282 324 10;
 #N canvas 753 553 175 138 NETPD 0;
 #N canvas 653 383 391 374 abslist 0;
@@ -33,7 +41,7 @@
 #X msg 206 332 roman_helpers;
 #X restore 17 36 pd abslist;
 #X msg 16 63 singleton;
-#X msg 15 8 version 0 2 3;
+#X msg 15 8 version 0 2 4;
 #X restore 8 7 pd NETPD 2 0;
 #N canvas 593 139 348 450 create.channel.guis 0;
 #X obj 17 10 loadbang;
@@ -333,7 +341,7 @@
 #X connect 18 0 2 0;
 #X restore 8 169 pd main-out;
 #X obj 8 29 netpd_head \$1 mx;
-#N canvas 639 318 219 95 create.aux.channel.gui 0;
+#N canvas 639 318 219 95 create.aux.channel.gui 1;
 #N canvas 890 328 432 258 add.add.button 0;
 #X obj 14 19 loadbang;
 #X obj 41 64 f \$1;
@@ -349,23 +357,24 @@
 #X connect 4 1 1 0;
 #X restore 13 64 pd add.add.button;
 #N canvas 683 364 341 252 add.aux.channel 0;
-#N canvas 840 398 358 229 create.aux.channel.gui 0;
+#N canvas 840 398 364 247 create.aux.channel.gui 0;
 #X obj 10 35 t a a;
 #X obj 10 103 list append;
 #X obj 37 79 - 3;
 #X obj 10 15 inlet;
 #X obj 10 125 list append \$1/mx/2 \$1;
-#X msg 10 149 \; pd-\$4-mx-aux obj 10 \$2 mx-aux-channel-gui \$3 \$1
-\; pd-\$4-mx-aux obj 32 \$2 mx-aux-insert-gui \$3/\$1/1 \$1 \; mx-aux-channel-gui-\$3-\$1
-loadbang \; mx-aux-insert-gui \$1 bang \;;
 #X obj 37 58 * 26;
+#X msg 10 149 \; pd-\$4-mx-aux obj 10 \$2 mx-aux-channel-gui \$3 \$1
+\; pd-\$4-mx-aux obj 32 \$2 mx-aux-insert-gui \$3/\$1/1 aux/\$1/insert
+\; mx-aux-channel-gui-\$3-\$1 loadbang \; mx-aux-insert-gui aux/\$1/insert
+bang \;;
 #X connect 0 0 1 0;
-#X connect 0 1 6 0;
+#X connect 0 1 5 0;
 #X connect 1 0 4 0;
 #X connect 2 0 1 1;
 #X connect 3 0 0 0;
-#X connect 4 0 5 0;
-#X connect 6 0 2 0;
+#X connect 4 0 6 0;
+#X connect 5 0 2 0;
 #X restore 50 65 pd create.aux.channel.gui;
 #N canvas 711 267 537 329 create.aux.channel 0;
 #X obj 20 11 inlet;
