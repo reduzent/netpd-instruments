@@ -137,7 +137,7 @@ txtclr float boxclr float bgclr symbol label;
 #X connect 57 0 44 0;
 #X restore 110 98 pd buttons-stuff;
 #N canvas 520 103 409 218 NETPD 0;
-#X msg 21 15 version 0 0 9;
+#X msg 21 15 version 0 0 10;
 #X restore 110 75 pd NETPD 2 0;
 #N canvas 520 520 456 325 level-slider-stuff 0;
 #X obj 20 14 r \$1-mx/level;
