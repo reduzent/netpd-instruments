@@ -1,8 +1,6 @@
-#N struct 1003.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
 #N canvas 734 295 516 382 10;
 #N canvas 1064 172 266 78 NETPD 0;
-#X msg 14 17 version 0 0 6;
+#X msg 14 17 version 0 0 7;
 #X restore 111 12 pd NETPD 2 0;
 #X obj 12 64 inlet~;
 #X obj 136 67 inlet~;
@@ -18,13 +16,13 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 8 68 mx-pan-slider \$1 \$2/direct/pan;
 #X obj 93 24 cnv 15 15 230 empty empty empty 20 12 0 14 #9f9f9f #000000
 0;
-#X obj 70 40 mx-aux-insert-gui-wide \$1/\$0/1 \$2/1;
+#X obj 70 40 mx-aux-insert-gui-wide \$1/\$0/1 \$2/insert/1;
 #X obj 154 24 cnv 15 15 230 empty empty empty 20 12 0 14 #9f9f9f #000000
 0;
-#X obj 131 40 mx-aux-insert-gui-wide \$1/\$0/1 \$2/2;
+#X obj 131 40 mx-aux-insert-gui-wide \$1/\$0/1 \$2/insert/2;
 #X obj 215 24 cnv 15 15 230 empty empty empty 20 12 0 14 #9f9f9f #000000
 0;
-#X obj 192 40 mx-aux-insert-gui-wide \$1/\$0/1 \$2/3;
+#X obj 192 40 mx-aux-insert-gui-wide \$1/\$0/1 \$2/insert/3;
 #X obj 90 84 mx-level-slider \$1 \$2/1/level;
 #X obj 70 68 mx-pan-slider \$1 \$2/1/pan;
 #X obj 151 84 mx-level-slider \$1 \$2/2/level;
@@ -239,7 +237,7 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 161 274 line~;
 #X msg 161 252 \$1 50;
 #X obj 22 72 mx-insert-container \$1/\$0/2 \$2/insert/1 \$3;
-#X obj 271 49 mx-aux-insert-control \$1/\$0/1 \$2/1;
+#X obj 271 49 mx-aux-insert-control \$1/\$0/1 \$2/insert/1;
 #X obj 323 114 netpd_f \$1 \$2/1/level 0.787402;
 #X obj 325 140 netpd_f \$1 \$2/1/pan 0.5;
 #X connect 0 0 14 0;
@@ -354,7 +352,7 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 161 274 line~;
 #X msg 161 252 \$1 50;
 #X obj 22 72 mx-insert-container \$1/\$0/2 \$2/insert/2 \$3;
-#X obj 271 49 mx-aux-insert-control \$1/\$0/1 \$2/2;
+#X obj 271 49 mx-aux-insert-control \$1/\$0/1 \$2/insert/2;
 #X obj 323 114 netpd_f \$1 \$2/2/level 0.787402;
 #X obj 325 140 netpd_f \$1 \$2/2/pan 0.5;
 #X connect 0 0 14 0;
@@ -469,7 +467,7 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 161 274 line~;
 #X msg 161 252 \$1 50;
 #X obj 22 72 mx-insert-container \$1/\$0/2 \$2/insert/2 \$3;
-#X obj 271 49 mx-aux-insert-control \$1/\$0/1 \$2/3;
+#X obj 271 49 mx-aux-insert-control \$1/\$0/1 \$2/insert/3;
 #X obj 323 114 netpd_f \$1 \$2/3/level 0.787402;
 #X obj 325 140 netpd_f \$1 \$2/3/pan 0.5;
 #X connect 0 0 14 0;
