@@ -31,7 +31,7 @@
 #X obj 219 89 loadbang;
 #X msg 219 115 set empty;
 #N canvas 1054 530 155 169 NETPD 0;
-#X msg 12 16 version 0 0 6;
+#X msg 12 16 version 0 0 7;
 #X restore 330 54 pd NETPD 2 0;
 #X obj 154 427 t b a;
 #X obj 353 229 loadbang;
@@ -41,12 +41,13 @@
 #X obj 337 494 s \$1-\$2/bypass;
 #X msg 337 468 set \$1;
 #X obj 47 212 t a a;
-#X obj 86 178 netpd_r \$1 mx/\$2/load;
+#X obj 101 180 netpd_r \$1 mx/\$2/load;
 #X text 235 178 <- for backwards compatibility in loading presets.
 ;
 #X msg 552 178 browse https://github.com/reduzent/netpd-instruments/issues/43
 ;
 #X obj 552 214 pdcontrol;
+#X obj 558 245 netpd_r \$1 mx/\$2/bypass 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -94,5 +95,7 @@
 #X connect 38 0 37 0;
 #X connect 39 0 5 0;
 #X connect 39 1 32 0;
-#X connect 40 0 39 0;
+#X connect 40 0 36 0;
 #X connect 42 0 43 0;
+#X connect 44 0 37 0;
+#X connect 44 0 38 0;
