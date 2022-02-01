@@ -1,4 +1,4 @@
-#N struct 4782.rectangle float id float x float y float w float h float
+#N struct 1678.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
 #N canvas 619 106 551 455 10;
 #N canvas 831 212 261 231 NETPD 0;
@@ -139,7 +139,7 @@ txtclr float boxclr float bgclr symbol label;
 #X connect 30 0 29 0;
 #X connect 32 0 12 0;
 #X restore 20 74 pd buttons;
-#X obj 53 10 hsl 25 10 0 1 0 0 \$0.show.s \$0.show.r [][] 8 5 1 7 #e0e0e0
+#X obj 53 10 hsl 25 10 0 1 0 0 \$0.show.s \$0.show.r ❑ 8 5 1 10 #e0e0e0
 #e0e0e0 #000000 0 1;
 #X obj 23 10 hsl 25 10 0 1 0 0 \$0.bypass.s \$0.bypass.r by 8 5 1 8
 #e0e0e0 #e0e0e0 #000000 0 1;

@@ -1,7 +1,7 @@
-#N struct 1003.rectangle float id float x float y float w float h float
+#N struct 1402.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
 #N canvas 724 513 511 461 10;
-#X obj 43 10 hsl 15 10 0 1 0 0 \$0.show.s \$0.show.r [][] 3 5 1 5 #e0e0e0
+#X obj 43 10 hsl 15 10 0 1 0 0 \$0.show.s \$0.show.r ❑ 3 6 1 9 #e0e0e0
 #e0e0e0 #000000 0 1;
 #X obj 23 10 hsl 15 10 0 1 0 0 \$0.bypass.s \$0.bypass.r by 3 5 1 8
 #e0e0e0 #e0e0e0 #000000 0 1;

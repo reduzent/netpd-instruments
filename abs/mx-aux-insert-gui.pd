@@ -1,4 +1,4 @@
-#N struct 1003.rectangle float id float x float y float w float h float
+#N struct 1984.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
 #N canvas 819 468 591 454 10;
 #N canvas 831 179 261 231 NETPD 0;
@@ -133,7 +133,7 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 21 74 r \$1-mx;
 #X obj 20 10 cnv 10 50 28 empty empty empty 1 12 0 14 #000000 #404040
 0;
-#X obj 48 12 hsl 20 12 0 1 0 0 \$0.show.s \$0.show.r [][] 5 6 1 5 #e0e0e0
+#X obj 48 12 hsl 20 12 0 1 0 0 \$0.show.s \$0.show.r ❑ 5 6 1 10 #e0e0e0
 #e0e0e0 #000000 0 1;
 #X obj 23 12 hsl 20 12 0 1 0 0 \$0.bypass.s \$0.bypass.r m 6 6 1 8
 #e0e0e0 #e0e0e0 #000000 0 1;
