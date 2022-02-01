@@ -48,6 +48,9 @@
 ;
 #X obj 552 214 pdcontrol;
 #X obj 558 245 netpd_r \$1 mx/\$2/bypass 0;
+#X obj 101 203 t a a;
+#X obj 158 204 list;
+#X msg 158 227 set \$1;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -95,7 +98,11 @@
 #X connect 38 0 37 0;
 #X connect 39 0 5 0;
 #X connect 39 1 32 0;
-#X connect 40 0 36 0;
+#X connect 40 0 45 0;
 #X connect 42 0 43 0;
 #X connect 44 0 37 0;
 #X connect 44 0 38 0;
+#X connect 45 0 39 0;
+#X connect 45 1 46 0;
+#X connect 46 0 47 0;
+#X connect 47 0 36 0;
