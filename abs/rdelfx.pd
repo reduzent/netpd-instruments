@@ -1,4 +1,4 @@
-#N struct 4881.rectangle float id float x float y float w float h float
+#N struct 3025.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
 #N canvas 1178 328 468 500 10;
 #X obj 10 158 delread~ \$0-fildell;
@@ -26,7 +26,7 @@ txtclr float boxclr float bgclr symbol label;
 #N canvas 640 338 411 84 abslist 0;
 #X msg 16 3 master-param;
 #X restore 33 31 pd abslist;
-#X msg 34 7 version 0 0 7;
+#X msg 34 7 version 0 0 8;
 #X restore 298 23 pd NETPD 2 0;
 #X obj 39 24 master-param 16th;
 #X obj 93 430 delwrite~ \$0-fildelr 20000;
@@ -37,7 +37,7 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 10 48 f;
 #X obj 10 70 change;
 #X obj 10 25 b;
-#N canvas 1104 308 82 245 \$3-\$2 1;
+#N canvas 932 556 82 245 \$3-\$2 1;
 #X obj 8 10 cnv 10 62 220 empty empty rdelfx 4 12 0 14 #404040 #feffc6
 0;
 #X obj 9 36 nbx 2 18 0 99 0 0 \$1-\$2/til \$1-\$2/til empty 0 8 0 10
@@ -76,22 +76,25 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 16 150 t a a;
 #X obj 16 179 sel 1 0;
 #X obj 62 105 s \$1-\$2/rt;
-#X obj 62 128 netpd_r \$1-\$2/rt;
 #X obj 16 102 t a a;
+#X obj 62 128 r \$1-\$2/rt;
+#X obj 62 151 route set float;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
 #X connect 4 1 5 0;
 #X connect 5 0 4 1;
-#X connect 6 0 11 0;
+#X connect 6 0 10 0;
 #X connect 7 0 8 0;
 #X connect 7 1 6 1;
 #X connect 8 0 1 0;
 #X connect 8 1 2 0;
 #X connect 10 0 7 0;
-#X connect 11 0 7 0;
-#X connect 11 1 9 0;
+#X connect 10 1 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 7 0;
+#X connect 12 1 7 0;
 #X restore 299 71 pd routing;
 #X connect 0 0 6 0;
 #X connect 0 0 19 0;
