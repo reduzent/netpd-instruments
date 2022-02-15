@@ -1,0 +1,15 @@
+#N canvas 354 44 420 304 10;
+#N canvas 659 72 327 81 NETPD 0;
+#X msg 15 16 version 0 1 0;
+#X restore 304 186 pd NETPD 2 0;
+#X text 21 13 [rh_list_unzip] - unzip a list into many;
+#X text 205 74 inlet0: incoming list;
+#X text 198 92 outlet0: sequence of lists;
+#X obj 26 158 rh_list_unzip 2;
+#X obj 26 181 print rh_list_unzip;
+#X msg 26 87 1 2 3 4 5 6 7 8 9 10 11 12;
+#X msg 113 126 3;
+#X text 255 255 2022 \, Roman Haefeli;
+#X connect 4 0 5 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 1;
