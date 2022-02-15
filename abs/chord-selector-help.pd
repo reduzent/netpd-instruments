@@ -1,0 +1,21 @@
+#N struct 1156.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1157.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1158.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1159.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1160.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N canvas 489 59 450 300 10;
+#X obj 180 27 r \$0.chord;
+#X obj 16 17 chord-selector \$0.chord;
+#X obj 180 50 route chordsym notes;
+#X listbox 238 79 20 0 0 0 - - - 0;
+#X obj 180 94 symbol;
+#X symbolatom 180 122 18 0 0 0 - - - 0;
+#X connect 0 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 3 0;
+#X connect 4 0 5 0;
