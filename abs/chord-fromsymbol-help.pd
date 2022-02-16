@@ -1,12 +1,12 @@
-#N struct 1245.rectangle float id float x float y float w float h float
+#N struct 1145.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1246.rectangle float id float x float y float w float h float
+#N struct 1146.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1247.rectangle float id float x float y float w float h float
+#N struct 1147.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1248.rectangle float id float x float y float w float h float
+#N struct 1148.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1249.rectangle float id float x float y float w float h float
+#N struct 1149.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
 #N canvas 489 59 540 320 10;
 #X obj 180 27 r \$0.chord;
@@ -19,9 +19,12 @@ octave neutral note value (0=C \, 1=C# \, etc.) and the function of
 the note (0=base \, 2=major second \, 3=minor third \, etc.).;
 #X obj 180 95 chord-fromsymbol;
 #X obj 34 6 chord-selector \$0.chord;
-#X obj 180 50 route chordsym;
 #X listbox 180 118 34 0 0 0 - - - 0;
-#X connect 0 0 8 0;
+#N canvas 0 0 339 92 NETPD 0;
+#X msg 22 13 version 0 1 0;
+#X restore 386 30 pd NETPD 2 0;
+#X obj 180 50 route chordsym;
+#X connect 0 0 10 0;
 #X connect 1 0 6 0;
-#X connect 6 0 9 0;
-#X connect 8 0 1 0;
+#X connect 6 0 8 0;
+#X connect 10 0 1 0;
