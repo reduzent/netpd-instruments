@@ -1,0 +1,13 @@
+#N canvas 461 67 420 304 10;
+#N canvas 659 72 327 81 NETPD 0;
+#X msg 15 16 version 0 1 0;
+#X restore 311 224 pd NETPD 2 0;
+#X listbox 26 181 33 0 0 0 - - - 0;
+#X text 161 274 borrowed from [list-abs/list-quicksort];
+#X text 205 74 inlet0: list of floats;
+#X text 198 92 outlet0: sorted lst of floats;
+#X text 21 13 [rh_list_sort] - sort a list of floats;
+#X msg 26 89 2 1 4 6 5 3 8 7;
+#X obj 26 138 rh_list_sort;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
