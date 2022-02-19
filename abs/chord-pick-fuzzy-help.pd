@@ -1,9 +1,8 @@
-#N canvas 681 230 723 318 10;
+#N canvas 494 103 723 318 10;
 #X text 156 34 <- F♯m⁷;
 #X text 20 7 list of note tuples representing a F♯m⁷ chord;
 #X listbox 21 192 20 0 0 0 - - - 0;
 #X msg 21 33 37 7 40 10 42 0 45 3;
-#X obj 21 114 chord-pick-fuzzy 1 5;
 #X text 170 135 NOTE: the meaning of the numbers in the argument differs
 from [chord-pick];
 #X text 172 188 The arguments given represent their musical function
@@ -16,5 +15,7 @@ and match a range of values:;
 #X text 20 286 see also:;
 #X text 157 113 <- only pass unison and (any) fifth;
 #X obj 92 286 chord-pick;
-#X connect 3 0 4 0;
-#X connect 4 0 2 0;
+#X text 170 276 9: matches major and minor ninth;
+#X obj 21 114 chord-pick-fuzzy 1 5;
+#X connect 3 0 13 0;
+#X connect 13 0 2 0;
