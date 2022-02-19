@@ -1,0 +1,11 @@
+#N canvas 765 73 536 258 10;
+#X listbox 21 192 23 0 0 0 - - - 0;
+#X msg 21 33 45 3 37 7 40 10 42 0;
+#X obj 21 114 chord-sort-by-func;
+#X msg 56 71 25 7 28 10 54 0 57 3;
+#X text 204 49 sort incoming note list by note function;
+#X text 237 214 see also:;
+#X obj 310 215 chord-sort-by-pitch;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
