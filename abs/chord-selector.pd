@@ -1,14 +1,14 @@
-#N struct 1152.rectangle float id float x float y float w float h float
+#N struct 1756.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1153.rectangle float id float x float y float w float h float
+#N struct 1757.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1154.rectangle float id float x float y float w float h float
+#N struct 1758.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1155.rectangle float id float x float y float w float h float
+#N struct 1759.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1156.rectangle float id float x float y float w float h float
+#N struct 1760.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N canvas 646 60 434 181 10;
+#N canvas 646 60 496 216 10;
 #X obj 20 20 cnv 15 117 130 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #X obj 92 22 vmenu \$0.fifth 20 _ +5 -5;
@@ -16,8 +16,6 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 39 22 vmenu \$0.shift 14 _ ♯ ♭;
 #X obj 56 22 vmenu \$0.third 33 M m sus2 sus;
 #X obj 115 22 vmenu \$0.seventh 20 _ Δ 7 -7 6;
-#X obj 39 124 cnv 15 96 24 empty \$0.chord.label empty 4 14 2 20 #ffffff
-#000000 0;
 #N canvas 340 285 743 424 label 0;
 #X obj 16 37 r \$0.key;
 #X obj 16 60 route selected;
@@ -129,17 +127,30 @@ txtclr float boxclr float bgclr symbol label;
 #X connect 44 0 17 4;
 #X connect 45 0 46 0;
 #X connect 45 1 40 0;
-#X restore 156 11 pd label;
-#X obj 156 93 list trim;
-#X obj 156 116 s \$1;
-#X obj 156 70 list prepend chordsym;
+#X restore 253 19 pd label;
+#X obj 172 146 list trim;
+#X obj 172 169 s \$1;
+#X obj 172 123 list prepend chordsym;
 #N canvas 0 0 319 88 NETPD 0;
 #X msg 9 10 version 0 1 0;
 #N canvas 0 0 351 68 abslist 0;
 #X msg 32 14 chord-selector-help;
 #X restore 14 42 pd abslist;
-#X restore 312 20 pd NETPD 2 0;
-#X connect 7 0 10 0;
-#X connect 8 0 9 0;
-#X connect 10 0 8 0;
+#X restore 323 20 pd NETPD 2 0;
+#X obj 42 124 hsl 91 24 0 127 0 0 \$0.chord.confirm empty empty -2
+-8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 39 124 cnv 15 96 24 empty \$0.chord.label empty 4 14 2 20 #ffffff
+#000000 0;
+#X obj 172 50 r \$0.chord.confirm;
+#X obj 172 73 sel;
+#X obj 201 74 t a;
+#X obj 172 97 symbol, f 14;
+#X connect 6 0 16 1;
+#X connect 7 0 8 0;
+#X connect 9 0 7 0;
+#X connect 13 0 14 0;
+#X connect 14 0 16 0;
+#X connect 14 1 15 0;
+#X connect 15 0 14 1;
+#X connect 16 0 9 0;
 #X coords 0 -1 1 1 117 130 2 20 20;
