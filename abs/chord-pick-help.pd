@@ -1,0 +1,16 @@
+#N canvas 726 26 535 312 10;
+#X text 156 34 <- F♯m⁷;
+#X text 20 7 list of note tuples representing a F♯m⁷ chord;
+#X listbox 21 204 20 0 0 0 - - - 0;
+#X msg 21 33 37 7 40 10 42 0 45 3;
+#X text 115 114 <- only pass notes having their function in given list
+;
+#X obj 21 114 chord-pick 0 7;
+#X text 136 130 we use 0 for the unison and 7 for the perfect fifth
+;
+#X text 165 175 NOTE: the meaning of the numbers in the argument differs
+from [chord-pick-fuzzy];
+#X text 53 281 see also:;
+#X obj 135 281 chord-pick-fuzzy;
+#X connect 3 0 5 0;
+#X connect 5 0 2 0;
