@@ -60,7 +60,7 @@
 #X obj 42 396 list store;
 #X msg 170 332 append \$1 \$2;
 #X obj 15 327 t b b;
-#X obj 42 428 chord-sort-by-note;
+#X obj 42 428 chord-sort-by-pitch;
 #X connect 0 0 32 0;
 #X connect 2 0 4 0;
 #X connect 3 0 6 1;
