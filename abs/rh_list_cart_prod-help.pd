@@ -1,0 +1,16 @@
+#N canvas 461 67 471 301 10;
+#N canvas 659 72 327 81 NETPD 0;
+#X msg 15 16 version 0 1 0;
+#X restore 376 263 pd NETPD 2 0;
+#X obj 26 181 print;
+#X text 21 13 [rh_list_cart_prod] - return cartesian product of two
+lists;
+#X obj 26 158 rh_list_cart_prod;
+#X msg 125 119 1 7 5;
+#X text 193 157 inlet0: list;
+#X text 193 142 inlet0: list;
+#X text 187 172 outlet0: cartesian product as list of tuples;
+#X msg 26 92 3 12 8 4;
+#X connect 3 0 1 0;
+#X connect 4 0 3 1;
+#X connect 8 0 3 0;
