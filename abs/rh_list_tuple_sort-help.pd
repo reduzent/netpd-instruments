@@ -1,0 +1,12 @@
+#N canvas 220 26 420 304 10;
+#N canvas 659 72 327 81 NETPD 0;
+#X msg 15 16 version 0 1 0;
+#X restore 320 266 pd NETPD 2 0;
+#X listbox 26 181 33 0 0 0 - - - 0;
+#X text 205 74 inlet0: list of tuples;
+#X text 198 92 outlet0: list sorted by tuple value;
+#X msg 26 89 8 1 6 3 4 5 2 7;
+#X text 21 13 [rh_list_tuple_sort] - sort a list of tuples;
+#X obj 26 138 rh_list_tuple_sort 2 1;
+#X connect 4 0 6 0;
+#X connect 6 0 1 0;
