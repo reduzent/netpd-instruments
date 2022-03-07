@@ -1,0 +1,17 @@
+#N canvas 449 58 527 305 10;
+#N canvas 659 72 327 81 NETPD 0;
+#X msg 15 16 version 0 1 0;
+#X restore 391 268 pd NETPD 2 0;
+#X obj 26 224 print;
+#X msg 197 100 1 7 5;
+#X text 175 209 inlet0: list;
+#X text 175 194 inlet0: list;
+#X msg 26 92 3 12 8 4;
+#X text 21 13 [rh_list_prod_sort_by_distsance] - sort the cartesian
+product by distance;
+#X text 169 224 outlet0: cartesian product as list of tuples sorted
+by distance;
+#X obj 26 158 rh_list_prod_sort_by_distance;
+#X connect 2 0 8 1;
+#X connect 5 0 8 0;
+#X connect 8 0 1 0;
