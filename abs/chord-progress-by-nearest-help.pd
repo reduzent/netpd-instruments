@@ -1,0 +1,15 @@
+#N canvas 530 46 655 230 10;
+#X msg 173 109 52 57 61;
+#X msg 26 82 48 50 53 57 60 62 65 69 72;
+#X obj 26 166 chord-progress-by-nearest;
+#X listbox 26 189 36 0 0 0 - - - 0;
+#N canvas 0 0 404 112 NETPD 0;
+#X msg 9 10 version 0 1 0;
+#X restore 559 197 pd NETPD 2 0;
+#X text 12 7 chord-progress-by-nearest - find the notes in set that
+are closest to the notes of another set.;
+#X text 277 52 NOTE: it tries to return the same number of notes as
+given as reference to the right inlet;
+#X connect 0 0 2 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
