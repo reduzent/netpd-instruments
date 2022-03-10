@@ -1,29 +1,29 @@
-#N struct 1460.rectangle float id float x float y float w float h float
+#N struct 1400.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1461.rectangle float id float x float y float w float h float
+#N struct 1401.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1462.rectangle float id float x float y float w float h float
+#N struct 1402.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1463.rectangle float id float x float y float w float h float
+#N struct 1403.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1464.rectangle float id float x float y float w float h float
+#N struct 1404.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1465.rectangle float id float x float y float w float h float
+#N struct 1405.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1446.rectangle float bar float barpart float x float y float
+#N struct 1386.rectangle float bar float barpart float x float y float
 w float h float txtclr float boxclr float bgclr symbol label float
 bleft float bright;
-#N struct 1498.rectangle float id float x float y float w float h float
+#N struct 1438.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1499.rectangle float id float x float y float w float h float
+#N struct 1439.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1500.rectangle float id float x float y float w float h float
+#N struct 1440.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1501.rectangle float id float x float y float w float h float
+#N struct 1441.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1502.rectangle float id float x float y float w float h float
+#N struct 1442.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1503.rectangle float id float x float y float w float h float
+#N struct 1443.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
 #N canvas 791 147 694 319 10;
 #N canvas 624 75 434 290 NETPD 0;
@@ -51,7 +51,7 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X text 107 7 <- update the version of this netpd instrument;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 71 netpd_head \$1 carlo;
-#N canvas 1065 257 766 678 \$1-carlo 1;
+#N canvas 1065 257 766 678 \$1-carlo 0;
 #X restore 10 42 pd \$1-carlo;
 #N canvas 474 393 1223 671 experiment_with_chord_stuff 0;
 #X obj 108 22 chord-selector \$0.chord;
@@ -155,7 +155,7 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X connect 44 1 21 1;
 #X connect 45 0 46 0;
 #X restore 14 108 pd experiment_with_chord_stuff;
-#N canvas 940 398 741 609 editor 1;
+#N canvas 925 389 741 609 editor 0;
 #N canvas 256 166 473 249 the.struct 0;
 #X obj 7 197 outlet;
 #X obj 12 12 filledpolygon -xv bgclr boxclr 1 0 0 w 0 w h 0 h;
@@ -378,11 +378,10 @@ float bleft float bright;
 #X connect 31 1 20 0;
 #X connect 34 0 33 0;
 #X restore 7 150 pd editor;
-#N canvas 1087 194 927 657 sequencer 1;
+#N canvas 1087 194 927 695 sequencer 0;
 #X obj 169 108 text size \$0.leadsheet;
 #X obj 31 20 master-param step;
 #X obj 76 84 div 16;
-#X obj 31 43 t a a, f 8;
 #X obj 31 84 mod 16;
 #X obj 76 107 change -1;
 #X obj 76 130 mod;
@@ -390,13 +389,12 @@ float bleft float bright;
 #X obj 76 177 text get \$0.leadsheet;
 #X obj 76 226 list length;
 #X obj 76 200 t a a;
-#X obj 31 297 div;
 #X obj 76 249 list prepend 16;
 #X obj 76 273 /;
-#X obj 31 398 list store, f 12;
-#X msg 31 375 get \$1 1;
-#X obj 31 329 change -1;
-#X obj 31 421 print;
+#X obj 31 431 list store, f 12;
+#X msg 31 408 get \$1 1;
+#X obj 31 362 change -1;
+#X obj 31 467 print;
 #X msg 59 297 set -1;
 #X obj 31 221 t a a;
 #X obj 38 256 sel 0;
@@ -406,7 +404,7 @@ float bleft float bright;
 #X obj 511 323 get \$0.rectangle bar barpart;
 #X obj 235 278 pack f f;
 #X obj 76 153 t a a, f 19;
-#X obj 31 352 t a a;
+#X obj 31 385 t a a;
 #X listbox 235 343 20 0 0 0 - - - 0;
 #X msg 235 301 \$2 \$1;
 #X obj 511 295 t p p;
@@ -432,71 +430,75 @@ float bleft float bright;
 #X obj 639 474 t p b p;
 #X msg 495 165 1000;
 #X obj 612 169 r \$0.traverse.cursor;
-#X connect 0 0 6 1;
-#X connect 1 0 3 0;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 3 1 2 0;
-#X connect 4 0 19 0;
-#X connect 5 0 6 0;
-#X connect 6 0 26 0;
-#X connect 7 0 0 0;
+#X obj 31 43 t a a a;
+#X obj 31 297 /;
+#X obj 31 325 int;
+#X connect 0 0 5 1;
+#X connect 1 0 51 0;
+#X connect 2 0 4 0;
+#X connect 3 0 17 0;
+#X connect 4 0 5 0;
+#X connect 5 0 24 0;
+#X connect 6 0 0 0;
+#X connect 7 0 9 0;
 #X connect 8 0 10 0;
-#X connect 9 0 12 0;
-#X connect 10 0 9 0;
-#X connect 10 1 14 1;
-#X connect 11 0 16 0;
-#X connect 12 0 13 0;
-#X connect 13 0 11 1;
-#X connect 14 0 17 0;
-#X connect 15 0 14 0;
-#X connect 16 0 27 0;
+#X connect 9 0 8 0;
+#X connect 9 1 12 1;
+#X connect 10 0 11 0;
+#X connect 11 0 52 1;
+#X connect 12 0 15 0;
+#X connect 13 0 12 0;
+#X connect 14 0 25 0;
+#X connect 16 0 14 0;
+#X connect 17 0 52 0;
+#X connect 17 1 18 0;
 #X connect 18 0 16 0;
-#X connect 19 0 11 0;
-#X connect 19 1 20 0;
-#X connect 20 0 18 0;
-#X connect 21 0 47 0;
-#X connect 22 0 47 0;
-#X connect 23 0 21 0;
-#X connect 24 0 31 0;
-#X connect 24 1 32 0;
-#X connect 25 0 29 0;
-#X connect 26 0 8 0;
-#X connect 26 1 25 1;
-#X connect 27 0 15 0;
-#X connect 27 1 25 0;
-#X connect 29 0 28 0;
-#X connect 29 0 40 0;
-#X connect 30 0 24 0;
-#X connect 30 1 50 0;
-#X connect 31 0 35 0;
-#X connect 32 0 35 1;
-#X connect 33 0 23 0;
-#X connect 33 1 48 0;
-#X connect 34 0 22 0;
-#X connect 35 0 36 0;
-#X connect 36 0 37 0;
-#X connect 37 0 39 0;
-#X connect 37 1 38 0;
-#X connect 38 0 34 1;
-#X connect 39 0 46 0;
-#X connect 40 0 51 0;
-#X connect 40 1 41 0;
-#X connect 41 0 31 1;
-#X connect 41 1 32 1;
-#X connect 42 0 44 0;
+#X connect 19 0 45 0;
+#X connect 20 0 45 0;
+#X connect 21 0 19 0;
+#X connect 22 0 29 0;
+#X connect 22 1 30 0;
+#X connect 23 0 27 0;
+#X connect 24 0 7 0;
+#X connect 24 1 23 1;
+#X connect 25 0 13 0;
+#X connect 25 1 23 0;
+#X connect 27 0 26 0;
+#X connect 27 0 38 0;
+#X connect 28 0 22 0;
+#X connect 28 1 48 0;
+#X connect 29 0 33 0;
+#X connect 30 0 33 1;
+#X connect 31 0 21 0;
+#X connect 31 1 46 0;
+#X connect 32 0 20 0;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
+#X connect 35 0 37 0;
+#X connect 35 1 36 0;
+#X connect 36 0 32 1;
+#X connect 37 0 44 0;
+#X connect 38 0 49 0;
+#X connect 38 1 39 0;
+#X connect 39 0 29 1;
+#X connect 39 1 30 1;
+#X connect 40 0 42 0;
+#X connect 42 0 41 0;
+#X connect 42 1 41 1;
 #X connect 44 0 43 0;
 #X connect 44 1 43 1;
-#X connect 46 0 45 0;
-#X connect 46 1 45 1;
-#X connect 47 0 30 0;
-#X connect 47 1 33 0;
-#X connect 49 0 40 0;
-#X connect 50 0 43 2;
-#X connect 50 1 42 0;
-#X connect 50 2 45 2;
-#X connect 51 0 34 0;
-#X connect 52 0 23 0;
+#X connect 45 0 28 0;
+#X connect 45 1 31 0;
+#X connect 47 0 38 0;
+#X connect 48 0 41 2;
+#X connect 48 1 40 0;
+#X connect 48 2 43 2;
+#X connect 49 0 32 0;
+#X connect 50 0 21 0;
+#X connect 51 0 3 0;
+#X connect 51 1 2 0;
+#X connect 52 0 53 0;
+#X connect 53 0 14 0;
 #X restore 9 176 pd sequencer;
 #X obj 315 54 text define \$0.leadsheet;
 #X obj 288 78 s pd-\$0.leadsheet;
