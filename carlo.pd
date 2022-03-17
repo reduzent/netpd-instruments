@@ -1,23 +1,23 @@
-#N struct 2052.rectangle float id float x float y float w float h float
+#N struct 3212.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 2053.rectangle float id float x float y float w float h float
+#N struct 3213.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 2054.rectangle float id float x float y float w float h float
+#N struct 3214.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 2055.rectangle float id float x float y float w float h float
+#N struct 3215.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 2056.rectangle float id float x float y float w float h float
+#N struct 3216.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 2057.rectangle float id float x float y float w float h float
+#N struct 3217.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 2058.rectangle float id float x float y float w float h float
+#N struct 3218.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 2059.rectangle float id float x float y float w float h float
+#N struct 3219.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 2038.rectangle float bar float barpart float x float y float
+#N struct 3198.rectangle float bar float barpart float x float y float
 w float h float txtclr float boxclr float bgclr symbol label float
 bleft float bright;
-#N struct 2038.selector float x float y float w float h float vis;
+#N struct 3198.selector float x float y float w float h float vis;
 #N canvas 441 308 453 339 10;
 #N canvas 624 75 434 290 NETPD 0;
 #X msg 12 8 version 0 0 0;
@@ -44,26 +44,50 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X text 107 7 <- update the version of this netpd instrument;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 71 netpd_head \$1 carlo;
-#N canvas 558 331 589 289 \$1-carlo 1;
-#X obj 31 8 chord-selector \$0.chord;
-#X obj 176 8 cnv 15 54 76 empty empty empty 20 12 0 14 #aee0e0 #404040
+#N canvas 655 365 523 180 \$1-carlo 1;
+#X obj 31 35 chord-selector \$0.chord;
+#X obj 176 35 cnv 15 54 76 empty empty empty 20 12 0 14 #aee0e0 #404040
 0;
-#X obj 178 10 vmenu \$0.action 50 append insert extend delete;
-#X obj 332 10 nbx 3 20 1 999 0 0 \$1-barlength \$1-barlength barlength=
+#X obj 178 37 vmenu \$0.action 50 append insert extend delete;
+#X obj 332 37 nbx 3 20 1 999 0 0 \$1-barlength \$1-barlength barlength=
 -81 11 0 14 #fcfcfc #000000 #9f9f9f 0 256;
-#X obj 332 36 nbx 3 20 1 999 0 0 \$1-looplength \$1-looplength looplength=
+#X obj 332 63 nbx 3 20 1 999 0 0 \$1-looplength \$1-looplength looplength=
 -90 11 0 14 #ffffff #000000 #9f9f9f 0 256;
-#X obj 6 9 cnv 15 20 112 empty empty empty 20 12 0 14 #f4d0c4 #404040
+#X obj 6 35 cnv 15 20 112 empty empty empty 20 12 0 14 #f4d0c4 #404040
 0;
-#X obj 8 11 vmenu \$0.bpl 16 2 3 4 5 6 8;
-#X obj 9 145 hsl 119 24 0 127 0 0 \$0.show.leadsheet empty empty -2
--8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 6 145 cnv 15 124 24 empty empty empty 2 10 0 14 #c4ee50 #000000
+#X obj 8 37 vmenu \$0.bpl 16 2 3 4 5 6 8;
+#X obj 9 6 hsl 119 24 0 127 0 0 \$0.show.leadsheet empty empty -2 8
+0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 6 6 cnv 15 124 24 empty empty empty 2 10 0 14 #c4ee50 #000000
 0;
-#X obj 8 147 cnv 15 120 20 empty empty SHOW\\\ LEADSHEET 2 10 0 14
-#ffffff #000000 0;
+#X obj 8 8 cnv 15 120 20 empty empty SHOW\\\ LEADSHEET 2 10 0 14 #ffffff
+#000000 0;
+#X obj 179 141 hsl 69 24 0 127 0 0 \$0.sym.cache.1 empty empty -2 -8
+0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 176 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
+0;
+#X obj 178 143 cnv 15 70 20 empty \$0.sym.cache.label.1 E♭ 2 10 0
+14 #ffffff #000000 0;
+#X obj 258 141 hsl 69 24 0 127 0 0 \$0.sym.cache.2 empty empty -2 -8
+0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 255 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
+0;
+#X obj 257 143 cnv 15 70 20 empty \$0.sym.cache.label.2 D♭ 2 10 0
+14 #ffffff #000000 0;
+#X obj 337 141 hsl 69 24 0 127 0 0 \$0.sym.cache.3 empty empty -2 -8
+0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 334 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
+0;
+#X obj 336 143 cnv 15 70 20 empty \$0.sym.cache.label.3 C♭ 2 10 0
+14 #ffffff #000000 0;
+#X obj 415 141 hsl 69 24 0 127 0 0 \$0.sym.cache.4 empty empty -2 -8
+0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 412 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffb9e1 #000000
+0;
+#X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 F♯m 2 10
+0 14 #ffffff #000000 0;
 #X restore 10 42 pd \$1-carlo;
-#N canvas 372 432 945 660 editor 0;
+#N canvas 372 432 934 603 editor 0;
 #X obj 14 531 carlo-ds-display \$0.leadsheet;
 #N canvas 787 428 719 665 add.to.leadsheet 0;
 #X obj 18 615 s pd-\$0.leadsheet;
@@ -545,6 +569,7 @@ vis;
 #X obj 65 415 text get \$1-leadsheet;
 #X obj 294 204 netpd_r \$1 barsperline;
 #X obj 294 227 t b a;
+#X obj 484 241 r \$0.from.buttons;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 21 0;
@@ -601,6 +626,7 @@ vis;
 #X connect 55 0 13 0;
 #X connect 55 1 12 3;
 #X connect 55 1 1 2;
+#X connect 56 0 21 0;
 #X restore 12 107 pd editor;
 #N canvas 533 89 393 555 sequencer 0;
 #X obj 31 20 master-param step;
@@ -675,7 +701,7 @@ vis;
 #X obj 342 80 s \$0.ls.o2;
 #X obj 29 239 netpd_f \$1 barlength 16;
 #X obj 29 259 netpd_f \$1 looplength 16;
-#N canvas 712 771 380 217 gui.stuff 0;
+#N canvas 568 649 614 287 gui.stuff 0;
 #X obj 8 10 r \$0.bpl;
 #X obj 8 33 route selected;
 #X obj 8 55 s \$1-barsperline;
@@ -688,6 +714,148 @@ vis;
 #X obj 119 16 r \$0.show.leadsheet;
 #X obj 119 39 sel 0;
 #X obj 158 41 t a;
+#X obj 121 117 loadbang;
+#X msg 121 140 set append;
+#X obj 121 163 s \$0.action;
+#N canvas 962 709 414 326 button.4 0;
+#X obj 11 16 r \$0.clicked;
+#X obj 11 39 unpack f f;
+#X obj 11 62 text get \$1-leadsheet;
+#X obj 11 85 t b a;
+#X obj 11 116 f, f 10;
+#X obj 11 164 list store;
+#X msg 11 141 get \$1;
+#X obj 242 88 symbol;
+#X msg 11 199 label \$1;
+#X obj 11 223 s \$0.sym.cache.label.4;
+#X obj 242 31 r \$0.sym.cache.4;
+#X obj 242 56 sel 0;
+#X obj 284 56 t a;
+#X obj 117 140 loadbang;
+#X msg 117 163 symbol empty;
+#X obj 242 113 s \$0.from.buttons;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 4 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 1;
+#X connect 4 0 6 0;
+#X connect 5 0 7 1;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 7 0 15 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 11 1 12 0;
+#X connect 12 0 11 1;
+#X connect 13 0 14 0;
+#X connect 14 0 8 0;
+#X restore 261 17 pd button.4;
+#N canvas 1079 536 642 429 button.1-3 0;
+#X obj 30 19 r \$0.chord;
+#X obj 30 65 symbol;
+#X obj 30 42 route chordsym;
+#X obj 55 111 s \$0.cache.check;
+#X obj 56 132 r \$0.cached.true;
+#X obj 30 177 spigot 0;
+#X msg 57 154 0;
+#X msg 81 155 1;
+#X obj 30 88 t a a b, f 9;
+#X obj 190 72 t a b;
+#X obj 190 95 symbol;
+#X obj 187 163 t a b;
+#X obj 187 186 symbol;
+#X obj 273 161 select _;
+#X obj 267 236 select _;
+#X obj 277 57 select _;
+#X obj 277 31 r \$0.cache.check;
+#X obj 277 81 s \$0.cached.true;
+#X obj 273 138 r \$0.cache.check;
+#X obj 274 184 s \$0.cached.true;
+#X obj 268 216 r \$0.cache.check;
+#X obj 267 259 s \$0.cached.true;
+#X obj 191 25 t a a a;
+#X obj 190 118 t a a a;
+#X obj 187 210 t a a;
+#X obj 26 380 s \$0.sym.cache.label.1;
+#X obj 64 329 s \$0.sym.cache.label.2;
+#X obj 110 282 s \$0.sym.cache.label.3;
+#X msg 26 353 label \$1;
+#X msg 64 306 label \$1;
+#X msg 110 259 label \$1;
+#X obj 422 86 symbol;
+#X obj 422 54 sel 0;
+#X obj 464 54 t a;
+#X obj 446 184 symbol;
+#X obj 446 152 sel 0;
+#X obj 489 151 t a;
+#X obj 454 292 symbol;
+#X obj 454 260 sel 0;
+#X obj 496 260 t a;
+#X obj 404 333 s \$0.from.buttons;
+#X obj 422 29 r \$0.sym.cache.1;
+#X obj 446 127 r \$0.sym.cache.2;
+#X obj 454 235 r \$0.sym.cache.3;
+#X obj 24 213 loadbang;
+#X msg 24 236 symbol empty;
+#X connect 0 0 2 0;
+#X connect 1 0 8 0;
+#X connect 2 0 1 0;
+#X connect 4 0 6 0;
+#X connect 5 0 22 0;
+#X connect 6 0 5 1;
+#X connect 7 0 5 1;
+#X connect 8 0 5 0;
+#X connect 8 1 3 0;
+#X connect 8 2 7 0;
+#X connect 9 0 10 1;
+#X connect 9 1 10 0;
+#X connect 10 0 23 0;
+#X connect 11 0 12 1;
+#X connect 11 1 12 0;
+#X connect 12 0 24 0;
+#X connect 13 0 19 0;
+#X connect 14 0 21 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 18 0 13 0;
+#X connect 20 0 14 0;
+#X connect 22 0 28 0;
+#X connect 22 1 9 0;
+#X connect 22 2 15 1;
+#X connect 22 2 31 1;
+#X connect 23 0 29 0;
+#X connect 23 1 11 0;
+#X connect 23 2 13 1;
+#X connect 23 2 34 1;
+#X connect 24 0 30 0;
+#X connect 24 1 14 1;
+#X connect 24 1 37 1;
+#X connect 28 0 25 0;
+#X connect 29 0 26 0;
+#X connect 30 0 27 0;
+#X connect 31 0 40 0;
+#X connect 32 0 31 0;
+#X connect 32 1 33 0;
+#X connect 33 0 32 1;
+#X connect 34 0 40 0;
+#X connect 35 0 34 0;
+#X connect 35 1 36 0;
+#X connect 36 0 35 1;
+#X connect 37 0 40 0;
+#X connect 38 0 37 0;
+#X connect 38 1 39 0;
+#X connect 39 0 38 1;
+#X connect 41 0 32 0;
+#X connect 42 0 35 0;
+#X connect 43 0 38 0;
+#X connect 44 0 45 0;
+#X connect 45 0 30 0;
+#X connect 45 0 29 0;
+#X connect 45 0 28 0;
+#X restore 261 48 pd button.1-3;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 4 0 5 0;
@@ -699,6 +867,8 @@ vis;
 #X connect 10 0 8 0;
 #X connect 10 1 11 0;
 #X connect 11 0 10 1;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
 #X restore 15 164 pd gui.stuff;
 #X obj 29 280 netpd_f \$1 barsperline 4;
 #X connect 6 0 5 0;
