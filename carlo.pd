@@ -1,23 +1,3 @@
-#N struct 3212.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 3213.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 3214.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 3215.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 3216.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 3217.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 3218.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 3219.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 3198.rectangle float bar float barpart float x float y float
-w float h float txtclr float boxclr float bgclr symbol label float
-bleft float bright;
-#N struct 3198.selector float x float y float w float h float vis;
 #N canvas 441 308 453 339 10;
 #N canvas 624 75 434 290 NETPD 0;
 #X msg 12 8 version 0 0 0;
@@ -66,25 +46,25 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 176 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 178 143 cnv 15 70 20 empty \$0.sym.cache.label.1 E♭ 2 10 0
+#X obj 178 143 cnv 15 70 20 empty \$0.sym.cache.label.1 C⁶ 2 10 0
 14 #ffffff #000000 0;
 #X obj 258 141 hsl 69 24 0 127 0 0 \$0.sym.cache.2 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 255 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 257 143 cnv 15 70 20 empty \$0.sym.cache.label.2 D♭ 2 10 0
+#X obj 257 143 cnv 15 70 20 empty \$0.sym.cache.label.2 A⁷ 2 10 0
 14 #ffffff #000000 0;
 #X obj 337 141 hsl 69 24 0 127 0 0 \$0.sym.cache.3 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 334 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 336 143 cnv 15 70 20 empty \$0.sym.cache.label.3 C♭ 2 10 0
-14 #ffffff #000000 0;
+#X obj 336 143 cnv 15 70 20 empty \$0.sym.cache.label.3 F♯⁷⁺⁵
+2 10 0 14 #ffffff #000000 0;
 #X obj 415 141 hsl 69 24 0 127 0 0 \$0.sym.cache.4 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 412 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffb9e1 #000000
 0;
-#X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 F♯m 2 10
+#X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 Em⁷ 2 10
 0 14 #ffffff #000000 0;
 #X restore 10 42 pd \$1-carlo;
 #N canvas 372 432 934 603 editor 0;
@@ -405,7 +385,6 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X obj 547 306 route 0 1 3, f 33;
 #X obj 655 260 t a;
 #X obj 830 253 r \$0.clicked;
-#X obj 830 301 list prepend;
 #X obj 830 324 route 2;
 #N canvas 0 0 394 538 delete 0;
 #X obj 20 21 inlet;
@@ -570,19 +549,20 @@ vis;
 #X obj 294 204 netpd_r \$1 barsperline;
 #X obj 294 227 t b a;
 #X obj 484 241 r \$0.from.buttons;
+#X obj 830 301 list prepend 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 21 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X connect 7 0 53 0;
+#X connect 7 0 52 0;
 #X connect 7 1 8 0;
 #X connect 7 1 12 1;
 #X connect 8 0 6 1;
 #X connect 10 0 9 0;
 #X connect 11 0 6 1;
 #X connect 12 0 1 0;
-#X connect 14 0 41 0;
+#X connect 14 0 40 0;
 #X connect 16 0 17 0;
 #X connect 16 1 18 0;
 #X connect 16 2 19 0;
@@ -593,40 +573,40 @@ vis;
 #X connect 20 0 30 0;
 #X connect 21 0 29 0;
 #X connect 25 0 26 0;
-#X connect 26 0 39 0;
+#X connect 26 0 38 0;
 #X connect 27 0 28 0;
 #X connect 27 1 28 1;
-#X connect 28 0 38 0;
+#X connect 28 0 37 0;
 #X connect 29 0 22 0;
 #X connect 29 1 23 0;
 #X connect 29 2 24 0;
 #X connect 30 0 21 1;
-#X connect 30 0 32 1;
-#X connect 31 0 32 0;
+#X connect 30 0 56 1;
+#X connect 31 0 56 0;
 #X connect 32 0 33 0;
-#X connect 33 0 34 0;
-#X connect 35 1 52 0;
-#X connect 35 2 10 0;
-#X connect 35 2 12 2;
-#X connect 35 2 1 1;
-#X connect 35 2 11 0;
-#X connect 36 0 25 0;
-#X connect 39 0 40 0;
-#X connect 39 1 27 0;
-#X connect 41 0 42 0;
-#X connect 41 1 35 0;
+#X connect 34 1 51 0;
+#X connect 34 2 10 0;
+#X connect 34 2 12 2;
+#X connect 34 2 1 1;
+#X connect 34 2 11 0;
+#X connect 35 0 25 0;
+#X connect 38 0 39 0;
+#X connect 38 1 27 0;
+#X connect 40 0 41 0;
+#X connect 40 1 34 0;
+#X connect 42 0 43 0;
 #X connect 43 0 44 0;
-#X connect 44 0 45 0;
-#X connect 45 0 16 0;
-#X connect 50 0 51 0;
-#X connect 51 0 15 0;
-#X connect 52 0 5 0;
-#X connect 53 0 12 0;
-#X connect 54 0 55 0;
-#X connect 55 0 13 0;
-#X connect 55 1 12 3;
-#X connect 55 1 1 2;
-#X connect 56 0 21 0;
+#X connect 44 0 16 0;
+#X connect 49 0 50 0;
+#X connect 50 0 15 0;
+#X connect 51 0 5 0;
+#X connect 52 0 12 0;
+#X connect 53 0 54 0;
+#X connect 54 0 13 0;
+#X connect 54 1 12 3;
+#X connect 54 1 1 2;
+#X connect 55 0 21 0;
+#X connect 56 0 32 0;
 #X restore 12 107 pd editor;
 #N canvas 533 89 393 555 sequencer 0;
 #X obj 31 20 master-param step;
