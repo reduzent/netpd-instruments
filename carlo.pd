@@ -1,24 +1,24 @@
-#N struct 1400.rectangle float id float x float y float w float h float
+#N struct 2052.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1401.rectangle float id float x float y float w float h float
+#N struct 2053.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1402.rectangle float id float x float y float w float h float
+#N struct 2054.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1403.rectangle float id float x float y float w float h float
+#N struct 2055.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1404.rectangle float id float x float y float w float h float
+#N struct 2056.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1405.rectangle float id float x float y float w float h float
+#N struct 2057.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1406.rectangle float id float x float y float w float h float
+#N struct 2058.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1783.rectangle float id float x float y float w float h float
+#N struct 2059.rectangle float id float x float y float w float h float
 txtclr float boxclr float bgclr symbol label;
-#N struct 1386.rectangle float bar float barpart float x float y float
+#N struct 2038.rectangle float bar float barpart float x float y float
 w float h float txtclr float boxclr float bgclr symbol label float
 bleft float bright;
-#N struct 1386.selector float x float y float w float h float vis;
-#N canvas 441 308 749 319 10;
+#N struct 2038.selector float x float y float w float h float vis;
+#N canvas 441 308 453 339 10;
 #N canvas 624 75 434 290 NETPD 0;
 #X msg 12 8 version 0 0 0;
 #N canvas 315 75 473 287 abslist 0;
@@ -44,21 +44,24 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X text 107 7 <- update the version of this netpd instrument;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 71 netpd_head \$1 carlo;
-#N canvas 558 331 596 316 \$1-carlo 1;
+#N canvas 558 331 589 289 \$1-carlo 1;
 #X obj 31 8 chord-selector \$0.chord;
 #X obj 176 8 cnv 15 54 76 empty empty empty 20 12 0 14 #aee0e0 #404040
 0;
 #X obj 178 10 vmenu \$0.action 50 append insert extend delete;
-#X obj 305 250 s pd-\$0.leadsheet;
-#X msg 305 206 vis 1;
-#X obj 95 155 nbx 3 20 1 999 0 0 \$1-barlength \$1-barlength barlength=
+#X obj 332 10 nbx 3 20 1 999 0 0 \$1-barlength \$1-barlength barlength=
 -81 11 0 14 #fcfcfc #000000 #9f9f9f 0 256;
-#X obj 95 181 nbx 3 20 1 999 0 0 \$1-looplength \$1-looplength looplength=
+#X obj 332 36 nbx 3 20 1 999 0 0 \$1-looplength \$1-looplength looplength=
 -90 11 0 14 #ffffff #000000 #9f9f9f 0 256;
 #X obj 6 9 cnv 15 20 112 empty empty empty 20 12 0 14 #f4d0c4 #404040
 0;
 #X obj 8 11 vmenu \$0.bpl 16 2 3 4 5 6 8;
-#X connect 4 0 3 0;
+#X obj 9 145 hsl 119 24 0 127 0 0 \$0.show.leadsheet empty empty -2
+-8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 6 145 cnv 15 124 24 empty empty empty 2 10 0 14 #c4ee50 #000000
+0;
+#X obj 8 147 cnv 15 120 20 empty empty SHOW\\\ LEADSHEET 2 10 0 14
+#ffffff #000000 0;
 #X restore 10 42 pd \$1-carlo;
 #N canvas 372 432 945 660 editor 0;
 #X obj 14 531 carlo-ds-display \$0.leadsheet;
@@ -597,7 +600,8 @@ vis;
 #X connect 54 0 55 0;
 #X connect 55 0 13 0;
 #X connect 55 1 12 3;
-#X restore 8 149 pd editor;
+#X connect 55 1 1 2;
+#X restore 12 107 pd editor;
 #N canvas 533 89 393 555 sequencer 0;
 #X obj 31 20 master-param step;
 #X obj 76 84 div 16;
@@ -660,23 +664,18 @@ vis;
 #X connect 27 0 1 1;
 #X connect 27 0 2 1;
 #X connect 27 0 8 1;
-#X restore 9 176 pd sequencer;
-#X obj 315 54 text define \$0.leadsheet;
-#X obj 288 78 s pd-\$0.leadsheet;
-#X msg 288 27 clear;
+#X restore 13 134 pd sequencer;
 #X obj 280 172 s pd-\$0.leadsheet;
 #X msg 280 128 vis 1;
 #X msg 327 130 clear;
-#X msg 381 9 write /home/roman/netpd/carlo_test.txt;
-#X msg 384 33 read /home/roman/netpd/carlo_test.txt;
-#X obj 435 144 netpd_text \$1 leadsheet;
-#X obj 435 117 r \$0.ls.i;
-#X obj 435 184 s \$0.ls.o0;
-#X obj 502 184 s \$0.ls.o1;
-#X obj 570 183 s \$0.ls.o2;
+#X obj 207 41 netpd_text \$1 leadsheet;
+#X obj 207 14 r \$0.ls.i;
+#X obj 207 81 s \$0.ls.o0;
+#X obj 274 81 s \$0.ls.o1;
+#X obj 342 80 s \$0.ls.o2;
 #X obj 29 239 netpd_f \$1 barlength 16;
 #X obj 29 259 netpd_f \$1 looplength 16;
-#N canvas 712 771 450 300 gui.stuff 0;
+#N canvas 712 771 380 217 gui.stuff 0;
 #X obj 8 10 r \$0.bpl;
 #X obj 8 33 route selected;
 #X obj 8 55 s \$1-barsperline;
@@ -684,21 +683,27 @@ vis;
 #X obj 7 80 r \$1-barsperline;
 #X obj 7 103 route float set;
 #X msg 7 128 set \$1;
+#X obj 119 90 s pd-\$0.leadsheet;
+#X msg 119 65 vis 1;
+#X obj 119 16 r \$0.show.leadsheet;
+#X obj 119 39 sel 0;
+#X obj 158 41 t a;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 5 1 6 0;
 #X connect 6 0 3 0;
-#X restore 11 206 pd gui.stuff;
-#X obj 29 280 netpd_f \$1 barsperline 4;
-#X connect 7 0 6 0;
-#X connect 7 0 5 0;
-#X connect 9 0 8 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
 #X connect 10 0 8 0;
-#X connect 11 0 5 0;
-#X connect 12 0 5 0;
-#X connect 13 0 15 0;
-#X connect 13 1 16 0;
-#X connect 13 2 17 0;
-#X connect 14 0 13 0;
+#X connect 10 1 11 0;
+#X connect 11 0 10 1;
+#X restore 15 164 pd gui.stuff;
+#X obj 29 280 netpd_f \$1 barsperline 4;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 10 0;
+#X connect 8 1 11 0;
+#X connect 8 2 12 0;
+#X connect 9 0 8 0;
