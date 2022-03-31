@@ -1,5 +1,3 @@
-#N struct 1678.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
 #N canvas 619 106 551 455 10;
 #N canvas 831 212 261 231 NETPD 0;
 #X msg 19 12 version 0 1 4;
@@ -187,7 +185,7 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 173 19 namecanvas \$0.gop;
 #X obj 20 376 s \$0.gop;
 #X msg 108 302 0;
-#X obj 20 20 mx-dropdown \$0.drop 60 16 10;
+#X obj 20 20 netpd-gui-dropdown \$0.drop 60 16 10;
 #X msg 20 353 coords 0 -1 1 1 60 \$1 2 20 10;
 #X obj 20 326 + 26;
 #X obj 312 45 r mx;
