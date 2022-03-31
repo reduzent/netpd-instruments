@@ -1,27 +1,28 @@
+#N struct 1739.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1740.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1741.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1742.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1743.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1744.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1737.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 1738.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
 #N canvas 441 308 453 339 10;
 #N canvas 624 75 434 290 NETPD 0;
-#X msg 12 8 version 0 0 0;
 #N canvas 315 75 473 287 abslist 0;
-#X text 7 13 Put a message box containing the name of the abstraction
-(without the .pd suffix) for each dependency.;
-#X text 6 55 For instance:;
-#X text 23 84 [mysynth-voice(;
-#X text 13 130 NOTE: abstractions of instruments also use netpd meta
-tags and may also specify their own dependencies. unpatch resolves
-dependency trees recursively.;
-#X restore 12 178 pd abslist;
-#X text 111 179 <- add dependencies of your netpd instrument;
-#X text 18 32 A 'version' meta tag is mandatory. unpatch uses this
-information to make sure that all clients load the same version of
-the instrument.;
-#X text 19 78 Whenever you make changes to your instrument \, make
-sure to bump the version.;
-#X text 18 118 There is no predefined meaning of the three version
-fields. Use them at your own will.;
-#X text 16 211 The [pd abslist] tag container is optional and is used
-to specify dependencies (abstractions in netpd/abs) of your instrument.
-;
-#X text 107 7 <- update the version of this netpd instrument;
+#X msg 6 16 vmenu;
+#X msg 16 54 rh_list_serialize;
+#X msg 21 80 chord-selector;
+#X msg 22 111 carlo-ds-display;
+#X restore 19 42 pd abslist;
+#X msg 12 8 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 71 netpd_head \$1 carlo;
 #N canvas 655 365 523 180 \$1-carlo 1;
@@ -46,25 +47,25 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 176 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 178 143 cnv 15 70 20 empty \$0.sym.cache.label.1 C⁶ 2 10 0
-14 #ffffff #000000 0;
+#X obj 178 143 cnv 15 70 20 empty \$0.sym.cache.label.1 empty 2 10
+0 14 #ffffff #000000 0;
 #X obj 258 141 hsl 69 24 0 127 0 0 \$0.sym.cache.2 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 255 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 257 143 cnv 15 70 20 empty \$0.sym.cache.label.2 A⁷ 2 10 0
-14 #ffffff #000000 0;
+#X obj 257 143 cnv 15 70 20 empty \$0.sym.cache.label.2 empty 2 10
+0 14 #ffffff #000000 0;
 #X obj 337 141 hsl 69 24 0 127 0 0 \$0.sym.cache.3 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 334 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 336 143 cnv 15 70 20 empty \$0.sym.cache.label.3 F♯⁷⁺⁵
-2 10 0 14 #ffffff #000000 0;
+#X obj 336 143 cnv 15 70 20 empty \$0.sym.cache.label.3 empty 2 10
+0 14 #ffffff #000000 0;
 #X obj 415 141 hsl 69 24 0 127 0 0 \$0.sym.cache.4 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 412 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffb9e1 #000000
 0;
-#X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 Em⁷ 2 10
+#X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 empty 2 10
 0 14 #ffffff #000000 0;
 #X restore 10 42 pd \$1-carlo;
 #N canvas 372 432 934 603 editor 0;
