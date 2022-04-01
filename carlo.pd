@@ -6,20 +6,23 @@
 #X msg 16 89 master-param;
 #X restore 19 42 pd abslist;
 #X msg 12 8 version 0 0 1;
+#X msg 18 81 singleton;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 71 netpd_head \$1 carlo;
 #N canvas 655 365 523 180 \$1-carlo 1;
 #X obj 31 35 chord-selector \$0.chord;
 #X obj 176 35 cnv 15 54 76 empty empty empty 20 12 0 14 #aee0e0 #404040
 0;
-#X obj 178 37 netpd-gui-vmenu \$0.action 50 18 12 0 888 888 555 888 888;
+#X obj 178 37 netpd-gui-vmenu \$0.action 50 18 12 0 888 888 555 888
+888;
 #X obj 332 37 nbx 3 20 1 999 0 0 \$1-barlength \$1-barlength barlength=
 -81 11 0 14 #fcfcfc #000000 #9f9f9f 0 256;
 #X obj 332 63 nbx 3 20 1 999 0 0 \$1-looplength \$1-looplength loopbars=
 -73 11 0 14 #ffffff #000000 #9f9f9f 0 256;
 #X obj 6 35 cnv 15 20 112 empty empty empty 20 12 0 14 #f4d0c4 #404040
 0;
-#X obj 8 37 netpd-gui-vmenu \$0.bpl 16 18 12 0 888 888 555 888 888;
+#X obj 8 37 netpd-gui-vmenu \$0.bpl 16 18 12 0 888 888 555 888 888
+;
 #X obj 9 6 hsl 119 24 0 127 0 0 \$0.show.leadsheet empty empty -2 8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 6 6 cnv 15 124 24 empty empty empty 2 10 0 14 #c4ee50 #000000
@@ -30,25 +33,25 @@
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 176 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 178 143 cnv 15 70 20 empty \$0.sym.cache.label.1 F♭m 2 10
+#X obj 178 143 cnv 15 70 20 empty \$0.sym.cache.label.1 empty 2 10
 0 14 #ffffff #000000 0;
 #X obj 258 141 hsl 69 24 0 127 0 0 \$0.sym.cache.2 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 255 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 257 143 cnv 15 70 20 empty \$0.sym.cache.label.2 G♭Δ 2 10
+#X obj 257 143 cnv 15 70 20 empty \$0.sym.cache.label.2 empty 2 10
 0 14 #ffffff #000000 0;
 #X obj 337 141 hsl 69 24 0 127 0 0 \$0.sym.cache.3 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 334 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 336 143 cnv 15 70 20 empty \$0.sym.cache.label.3 E♭m 2 10
+#X obj 336 143 cnv 15 70 20 empty \$0.sym.cache.label.3 empty 2 10
 0 14 #ffffff #000000 0;
 #X obj 415 141 hsl 69 24 0 127 0 0 \$0.sym.cache.4 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 412 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffb9e1 #000000
 0;
-#X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 F♭m 2 10
+#X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 empty 2 10
 0 14 #ffffff #000000 0;
 #X restore 10 42 pd \$1-carlo;
 #N canvas 372 432 934 603 editor 0;
@@ -606,7 +609,6 @@ vis;
 #X obj 31 431 list store, f 12;
 #X msg 31 408 get \$1 1;
 #X obj 31 362 change -1;
-#X obj 31 467 print;
 #X msg 59 297 set -1;
 #X obj 31 221 t a a;
 #X obj 38 256 sel 0;
@@ -621,39 +623,42 @@ vis;
 #X obj 169 108 text size \$1-leadsheet;
 #X obj 76 177 text get \$1-leadsheet;
 #X obj 145 32 netpd_r \$1 barlength;
-#X connect 0 0 21 0;
+#X obj 31 498 s carlo;
+#X msg 31 461 chordsym \$1;
+#X connect 0 0 20 0;
 #X connect 1 0 3 0;
-#X connect 2 0 15 0;
+#X connect 2 0 14 0;
 #X connect 3 0 4 0;
-#X connect 4 0 18 0;
-#X connect 5 0 25 0;
+#X connect 4 0 17 0;
+#X connect 5 0 24 0;
 #X connect 6 0 8 0;
 #X connect 7 0 6 0;
 #X connect 7 1 10 1;
 #X connect 8 0 9 0;
-#X connect 9 0 22 1;
-#X connect 10 0 13 0;
+#X connect 9 0 21 1;
+#X connect 10 0 28 0;
 #X connect 11 0 10 0;
-#X connect 12 0 19 0;
-#X connect 14 0 12 0;
-#X connect 15 0 22 0;
-#X connect 15 1 16 0;
-#X connect 16 0 14 0;
-#X connect 17 0 20 0;
-#X connect 18 0 26 0;
-#X connect 18 1 17 1;
-#X connect 19 0 11 0;
-#X connect 19 1 17 0;
-#X connect 20 0 24 0;
-#X connect 21 0 2 0;
-#X connect 21 1 1 0;
-#X connect 22 0 23 0;
-#X connect 23 0 12 0;
-#X connect 25 0 4 1;
-#X connect 26 0 7 0;
-#X connect 27 0 1 1;
-#X connect 27 0 2 1;
-#X connect 27 0 8 1;
+#X connect 12 0 18 0;
+#X connect 13 0 12 0;
+#X connect 14 0 21 0;
+#X connect 14 1 15 0;
+#X connect 15 0 13 0;
+#X connect 16 0 19 0;
+#X connect 17 0 25 0;
+#X connect 17 1 16 1;
+#X connect 18 0 11 0;
+#X connect 18 1 16 0;
+#X connect 19 0 23 0;
+#X connect 20 0 2 0;
+#X connect 20 1 1 0;
+#X connect 21 0 22 0;
+#X connect 22 0 12 0;
+#X connect 24 0 4 1;
+#X connect 25 0 7 0;
+#X connect 26 0 1 1;
+#X connect 26 0 2 1;
+#X connect 26 0 8 1;
+#X connect 28 0 27 0;
 #X restore 13 134 pd sequencer;
 #X obj 280 172 s pd-\$0.leadsheet;
 #X msg 280 128 vis 1;
