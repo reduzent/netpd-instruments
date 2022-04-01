@@ -1,8 +1,30 @@
+#N struct 54938.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54939.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54940.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54941.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54942.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54943.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54944.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54945.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54924.rectangle float bar float barpart float x float y float
+w float h float txtclr float boxclr float bgclr symbol label float
+bleft float bright;
+#N struct 54924.selector float x float y float w float h float vis
+;
 #N canvas 441 308 453 339 10;
 #N canvas 624 75 412 134 NETPD 0;
 #N canvas 315 75 411 213 abslist 0;
 #X msg 16 59 carlo-ds-display;
 #X msg 15 28 chord-abs;
+#X msg 16 89 master-param;
 #X restore 19 42 pd abslist;
 #X msg 12 8 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
@@ -29,25 +51,25 @@
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 176 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 178 143 cnv 15 70 20 empty \$0.sym.cache.label.1 empty 2 10
+#X obj 178 143 cnv 15 70 20 empty \$0.sym.cache.label.1 F♭m 2 10
 0 14 #ffffff #000000 0;
 #X obj 258 141 hsl 69 24 0 127 0 0 \$0.sym.cache.2 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 255 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 257 143 cnv 15 70 20 empty \$0.sym.cache.label.2 empty 2 10
+#X obj 257 143 cnv 15 70 20 empty \$0.sym.cache.label.2 G♭Δ 2 10
 0 14 #ffffff #000000 0;
 #X obj 337 141 hsl 69 24 0 127 0 0 \$0.sym.cache.3 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 334 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffc8b6 #000000
 0;
-#X obj 336 143 cnv 15 70 20 empty \$0.sym.cache.label.3 empty 2 10
+#X obj 336 143 cnv 15 70 20 empty \$0.sym.cache.label.3 E♭m 2 10
 0 14 #ffffff #000000 0;
 #X obj 415 141 hsl 69 24 0 127 0 0 \$0.sym.cache.4 empty empty -2 -8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 412 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffb9e1 #000000
 0;
-#X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 empty 2 10
+#X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 F♭m 2 10
 0 14 #ffffff #000000 0;
 #X restore 10 42 pd \$1-carlo;
 #N canvas 372 432 934 603 editor 0;
