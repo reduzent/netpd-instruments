@@ -41,11 +41,11 @@
 #X msg 5 175 rh_list_cart_prod;
 #X msg 5 194 rh_list_prod_sort_by_distance;
 #X msg 5 213 rh_list_serialize;
-#X msg 5 232 rh_sort;
 #X msg 5 251 rh_list_tuple_sort;
 #X msg 5 270 rh_list_unzip;
 #X msg 5 289 rh_list_zip;
 #X msg 5 669 rh_symbol_serialize;
+#X msg 5 232 rh_list_sort;
 #X restore 12 12 pd abslist;
 #X msg 12 40 version 0 0 20;
 #X restore 24 30 pd NETPD 2 0;

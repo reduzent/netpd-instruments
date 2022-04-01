@@ -33,6 +33,12 @@
 #X obj 250 287 moses 12;
 #X obj 364 360 spigot;
 #X msg 397 336 1;
+#N canvas 1215 248 342 96 NETPD 0;
+#X msg 16 14 version 0 1 0;
+#N canvas 1198 442 391 66 abslist 0;
+#X msg 16 7 chord-pick-fuzzy-help;
+#X restore 17 44 pd abslist;
+#X restore 477 564 pd NETPD 2 0;
 #X connect 0 0 7 0;
 #X connect 2 0 18 0;
 #X connect 3 0 4 0;

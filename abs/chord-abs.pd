@@ -1,14 +1,14 @@
-#N struct 55496.rectangle float id float x float y float w float h
+#N struct 55653.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
-#N struct 55497.rectangle float id float x float y float w float h
+#N struct 55654.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
-#N struct 55498.rectangle float id float x float y float w float h
+#N struct 55655.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
-#N struct 55499.rectangle float id float x float y float w float h
+#N struct 55656.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
-#N struct 55500.rectangle float id float x float y float w float h
+#N struct 55657.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
-#N struct 55501.rectangle float id float x float y float w float h
+#N struct 55658.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
 #N canvas 630 103 390 484 10;
 #X text 9 12 Set of abstractions dealing with chords;
@@ -26,14 +26,15 @@ or of pitchlists.;
 #X text 165 337 [chord-selector];
 #N canvas 916 134 407 123 NETPD 0;
 #X msg 9 11 version 0 1 0;
-#N canvas 931 287 396 250 abslist 0;
+#N canvas 931 287 407 280 abslist 0;
 #X msg 15 13 chord-fromsymbol;
 #X msg 15 43 chord-pick-fuzzy;
 #X msg 15 76 chord-pick;
 #X msg 15 106 chord-pitch-range;
 #X msg 15 136 chord-progress-by-nearest;
-#X msg 15 166 chord-sort-by-func;
-#X msg 15 196 chord-sort-by-pitch;
+#X msg 15 196 chord-sort-by-func;
+#X msg 15 226 chord-sort-by-pitch;
 #X msg 235 13 roman_helpers;
+#X msg 15 166 chord-selector;
 #X restore 8 36 pd abslist;
 #X restore 297 449 pd NETPD 2 0;

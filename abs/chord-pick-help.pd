@@ -12,5 +12,8 @@
 from [chord-pick-fuzzy];
 #X text 53 281 see also:;
 #X obj 135 281 chord-pick-fuzzy;
+#N canvas 1215 248 342 96 NETPD 0;
+#X msg 16 14 version 0 1 0;
+#X restore 418 271 pd NETPD 2 0;
 #X connect 3 0 5 0;
 #X connect 5 0 2 0;

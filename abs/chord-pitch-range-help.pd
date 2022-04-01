@@ -12,6 +12,9 @@ chord that are within the given pitch range.;
 The lengh of the output depends on the given range. If the range is
 small enough \, not all notes defining the given chord appear in the
 output.;
+#N canvas 1215 248 342 96 NETPD 0;
+#X msg 16 14 version 0 1 0;
+#X restore 498 229 pd NETPD 2 0;
 #X connect 0 0 7 1;
 #X connect 1 0 7 2;
 #X connect 3 0 7 0;
