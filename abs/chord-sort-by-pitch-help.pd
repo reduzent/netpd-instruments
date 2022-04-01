@@ -6,6 +6,9 @@
 #X text 237 214 see also:;
 #X obj 310 215 chord-sort-by-func;
 #X msg 56 71 57 3 25 7 28 10 54 0 42 0;
+#N canvas 1215 248 342 96 NETPD 0;
+#X msg 16 14 version 0 1 0;
+#X restore 441 20 pd NETPD 2 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 6 0 2 0;

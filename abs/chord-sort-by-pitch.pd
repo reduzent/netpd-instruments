@@ -16,6 +16,12 @@
 #X obj 26 309 list store;
 #X obj 27 277 t b b;
 #X obj 54 152 rh_list_serialize 1;
+#N canvas 1215 248 342 96 NETPD 0;
+#X msg 16 14 version 0 1 0;
+#N canvas 1198 442 391 66 abslist 0;
+#X msg 16 7 chord-sort-by-pitch-help;
+#X restore 17 44 pd abslist;
+#X restore 403 342 pd NETPD 2 0;
 #X connect 0 0 2 0;
 #X connect 2 0 6 0;
 #X connect 2 1 4 0;

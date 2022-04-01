@@ -37,6 +37,12 @@
 #X obj 335 110 r \$0.len;
 #X obj 295 368 r \$0.len;
 #X obj 282 134 r \$0.pos;
+#N canvas 1215 248 342 96 NETPD 0;
+#X msg 16 14 version 0 1 0;
+#N canvas 1198 442 391 66 abslist 0;
+#X msg 16 7 rh_list_tuple_sort-help;
+#X restore 17 44 pd abslist;
+#X restore 440 532 pd NETPD 2 0;
 #X connect 0 0 28 0;
 #X connect 2 0 16 0;
 #X connect 3 0 1 0;
