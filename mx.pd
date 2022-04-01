@@ -18,7 +18,6 @@ txtclr float boxclr float bgclr symbol label;
 #X msg 16 216 mx-aux-send;
 #X msg 16 239 mx-containers;
 #X msg 16 262 mx-doubleclick-reset;
-#X msg 16 285 mx-dropdown;
 #X msg 16 308 mx-fx-2level-selector;
 #X msg 16 331 mx-fx-list;
 #X msg 206 10 mx-fx-sc-gui;
