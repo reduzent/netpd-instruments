@@ -1,13 +1,15 @@
-#N struct 1152.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1153.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1154.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1155.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1156.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
+#N struct 54965.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54966.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54967.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54968.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54969.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 54970.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
 #N canvas 397 51 411 311 10;
 #X obj 180 27 r \$0.chord;
 #X obj 16 17 chord-selector \$0.chord;
@@ -19,7 +21,7 @@ txtclr float boxclr float bgclr symbol label;
 #X text 15 273 see also:;
 #X obj 93 274 chord-fromsymbol;
 #N canvas 540 41 410 85 NETPD 0;
-#X msg 20 11 version;
+#X msg 20 11 version 0 0 0;
 #X restore 262 275 pd NETPD 2 0;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
