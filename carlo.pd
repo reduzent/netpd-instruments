@@ -1,24 +1,3 @@
-#N struct 55713.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 55714.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 55715.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 55716.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 55717.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 55718.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 54944.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 54945.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 54924.rectangle float bar float barpart float x float y float
-w float h float txtclr float boxclr float bgclr symbol label float
-bleft float bright;
-#N struct 54924.selector float x float y float w float h float vis
-;
 #N canvas 441 308 453 339 10;
 #N canvas 624 75 412 134 NETPD 0;
 #N canvas 315 75 411 213 abslist 0;
@@ -33,14 +12,14 @@ bleft float bright;
 #X obj 31 35 chord-selector \$0.chord;
 #X obj 176 35 cnv 15 54 76 empty empty empty 20 12 0 14 #aee0e0 #404040
 0;
-#X obj 178 37 vmenu \$0.action 50 append insert extend delete;
+#X obj 178 37 netpd-gui-vmenu \$0.action 50 18 12 0 888 888 555 888 888;
 #X obj 332 37 nbx 3 20 1 999 0 0 \$1-barlength \$1-barlength barlength=
 -81 11 0 14 #fcfcfc #000000 #9f9f9f 0 256;
 #X obj 332 63 nbx 3 20 1 999 0 0 \$1-looplength \$1-looplength loopbars=
 -73 11 0 14 #ffffff #000000 #9f9f9f 0 256;
 #X obj 6 35 cnv 15 20 112 empty empty empty 20 12 0 14 #f4d0c4 #404040
 0;
-#X obj 8 37 vmenu \$0.bpl 16 2 3 4 5 6 8;
+#X obj 8 37 netpd-gui-vmenu \$0.bpl 16 18 12 0 888 888 555 888 888;
 #X obj 9 6 hsl 119 24 0 127 0 0 \$0.show.leadsheet empty empty -2 8
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 6 6 cnv 15 124 24 empty empty empty 2 10 0 14 #c4ee50 #000000
