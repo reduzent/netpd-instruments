@@ -1,26 +1,8 @@
-#N struct 1739.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1740.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1741.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1742.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1743.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1744.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1737.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1738.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
 #N canvas 441 308 453 339 10;
-#N canvas 624 75 434 290 NETPD 0;
-#N canvas 315 75 473 287 abslist 0;
-#X msg 6 16 vmenu;
-#X msg 16 54 rh_list_serialize;
-#X msg 21 80 chord-selector;
-#X msg 22 111 carlo-ds-display;
+#N canvas 624 75 412 134 NETPD 0;
+#N canvas 315 75 411 213 abslist 0;
+#X msg 16 59 carlo-ds-display;
+#X msg 15 28 chord-abs;
 #X restore 19 42 pd abslist;
 #X msg 12 8 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
@@ -32,8 +14,8 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 178 37 vmenu \$0.action 50 append insert extend delete;
 #X obj 332 37 nbx 3 20 1 999 0 0 \$1-barlength \$1-barlength barlength=
 -81 11 0 14 #fcfcfc #000000 #9f9f9f 0 256;
-#X obj 332 63 nbx 3 20 1 999 0 0 \$1-looplength \$1-looplength looplength=
--90 11 0 14 #ffffff #000000 #9f9f9f 0 256;
+#X obj 332 63 nbx 3 20 1 999 0 0 \$1-looplength \$1-looplength loopbars=
+-73 11 0 14 #ffffff #000000 #9f9f9f 0 256;
 #X obj 6 35 cnv 15 20 112 empty empty empty 20 12 0 14 #f4d0c4 #404040
 0;
 #X obj 8 37 vmenu \$0.bpl 16 2 3 4 5 6 8;
