@@ -1,23 +1,28 @@
-#N struct 1199.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1200.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1201.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1202.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1203.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1204.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
+#N struct 55703.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 55704.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 55705.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 55706.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 55707.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 55708.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
 #N canvas 646 60 863 246 10;
 #X obj 20 20 cnv 15 140 130 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 92 22 vmenu \$0.fifth 20 _ +5 -5;
-#X obj 22 22 vmenu \$0.key 14 C D E F G A B;
-#X obj 39 22 vmenu \$0.shift 14 _ ♯ ♭;
-#X obj 56 22 vmenu \$0.third 33 M m sus2 sus;
-#X obj 115 22 vmenu \$0.seventh 20 _ Δ 7 -7 6;
+#X obj 92 22 netpd-gui-vmenu \$0.fifth 20 18 12 0 888 888 555 888 888
+;
+#X obj 22 22 netpd-gui-vmenu \$0.key 14 18 12 0 888 888 555 888 888
+;
+#X obj 39 22 netpd-gui-vmenu \$0.shift 14 18 12 0 888 888 555 888 888
+;
+#X obj 56 22 netpd-gui-vmenu \$0.third 33 18 12 0 888 888 555 888 888
+;
+#X obj 115 22 netpd-gui-vmenu \$0.seventh 20 18 12 0 888 888 555 888
+888;
 #N canvas 340 285 955 424 label 0;
 #X obj 16 37 r \$0.key;
 #X obj 16 60 route selected;
@@ -171,10 +176,43 @@ txtclr float boxclr float bgclr symbol label;
 #X obj 172 73 sel;
 #X obj 201 74 t a;
 #X obj 172 97 symbol, f 14;
-#X obj 138 22 vmenu \$0.ninth 20 _ 9 -9;
+#X obj 138 22 netpd-gui-vmenu \$0.ninth 20 18 12 0 888 888 555 888
+888;
 #X obj 460 77 pdcontrol;
 #X msg 460 20 browse https://en.wikipedia.org/wiki/Chord_names_and_symbols_(popular_music)#Extended_tertian_chords
 ;
+#N canvas 702 313 450 300 init.menus 0;
+#X obj 23 18 loadbang;
+#X msg 23 41 items _ +5 -5;
+#X obj 23 64 s \$0.fifth;
+#X obj 120 18 loadbang;
+#X obj 120 64 s \$0.key;
+#X msg 120 41 items C D E F G A B;
+#X obj 23 102 loadbang;
+#X msg 23 125 items _ ♯ ♭;
+#X obj 23 148 s \$0.shift;
+#X obj 125 100 loadbang;
+#X obj 125 146 s \$0.third;
+#X msg 125 123 items M m sus2 sus;
+#X obj 23 184 loadbang;
+#X obj 23 230 s \$0.seventh;
+#X msg 23 207 items _ Δ 7 -7 6;
+#X obj 149 188 loadbang;
+#X obj 149 234 s \$0.ninth;
+#X msg 149 211 items _ 9 -9;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;
+#X connect 15 0 17 0;
+#X connect 17 0 16 0;
+#X restore 176 209 pd init.menus;
 #X connect 6 0 16 1;
 #X connect 7 0 8 0;
 #X connect 9 0 7 0;
