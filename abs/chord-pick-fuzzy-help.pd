@@ -1,7 +1,7 @@
 #N canvas 494 103 699 325 10;
 #X text 156 34 <- F♯m⁷;
 #X text 20 7 list of note tuples representing a F♯m⁷ chord;
-#X listbox 21 192 20 0 0 0 - - - 0;
+#X listbox 21 192 21 0 0 0 - - - 0;
 #X msg 21 33 37 7 40 10 42 0 45 3;
 #X text 170 135 NOTE: the meaning of the numbers in the argument differs
 from [chord-pick];
@@ -20,5 +20,10 @@ and match a range of values:;
 #N canvas 1215 248 342 96 NETPD 0;
 #X msg 16 14 version 0 1 0;
 #X restore 590 288 pd NETPD 2 0;
+#X msg 67 74 set 1 3;
+#X msg 127 75 set 1 3 5 7 9;
+#X text 218 75 <- set a different match;
 #X connect 3 0 13 0;
 #X connect 13 0 2 0;
+#X connect 15 0 13 0;
+#X connect 16 0 13 0;
