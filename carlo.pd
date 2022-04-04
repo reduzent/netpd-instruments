@@ -1,3 +1,4 @@
+#N struct 1392.selector float x float y float w float h float vis;
 #N canvas 441 308 453 339 10;
 #N canvas 624 75 412 134 NETPD 0;
 #N canvas 315 75 411 213 abslist 0;
@@ -9,7 +10,7 @@
 #X msg 18 81 singleton;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 71 netpd_head \$1 carlo;
-#N canvas 655 365 523 180 \$1-carlo 1;
+#N canvas 655 365 522 181 \$1-carlo 1;
 #X obj 31 35 chord-selector \$0.chord;
 #X obj 176 35 cnv 15 54 76 empty empty empty 20 12 0 14 #aee0e0 #404040
 0;
@@ -53,6 +54,18 @@
 0;
 #X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 empty 2 10
 0 14 #ffffff #000000 0;
+#X obj 138 6 hsl 39 24 0 127 0 0 \$0.save.button empty empty -2 8 0
+10 #fcfcfc #000000 #000000 0 1;
+#X obj 135 6 cnv 15 44 24 empty empty empty 2 10 0 14 #b0a0d0 #000000
+0;
+#X obj 137 8 cnv 15 40 20 empty empty save 2 10 0 14 #ffffff #000000
+0;
+#X obj 187 6 hsl 39 24 0 127 0 0 \$0.load.button empty empty -2 8 0
+10 #fcfcfc #000000 #000000 0 1;
+#X obj 184 6 cnv 15 44 24 empty empty empty 2 10 0 14 #b0a0d0 #000000
+0;
+#X obj 186 8 cnv 15 40 20 empty empty load 2 10 0 14 #ffffff #000000
+0;
 #X restore 10 42 pd \$1-carlo;
 #N canvas 372 432 934 603 editor 0;
 #X obj 14 531 carlo-ds-display \$0.leadsheet;
@@ -850,6 +863,32 @@ vis;
 #X connect 22 0 21 0;
 #X restore 15 164 pd gui.stuff;
 #X obj 29 280 netpd_f \$1 barsperline 4;
+#N canvas 0 0 397 188 save/load 0;
+#X obj 38 41 sel 0;
+#X obj 78 41 t a;
+#X obj 172 18 r \$0.load.button;
+#X obj 172 41 sel 0;
+#X obj 212 41 t a;
+#X obj 38 18 r \$0.save.button;
+#X obj 38 118 s \$0.ls.i;
+#X obj 38 70 savepanel;
+#X msg 38 93 write \$1;
+#X obj 172 119 s \$0.ls.i;
+#X obj 172 71 openpanel;
+#X msg 172 94 read \$1;
+#X connect 0 0 7 0;
+#X connect 0 1 1 0;
+#X connect 1 0 0 1;
+#X connect 2 0 3 0;
+#X connect 3 0 10 0;
+#X connect 3 1 4 0;
+#X connect 4 0 3 1;
+#X connect 5 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
+#X restore 15 193 pd save/load;
 #X connect 6 0 5 0;
 #X connect 7 0 5 0;
 #X connect 8 0 10 0;
