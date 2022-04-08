@@ -7,7 +7,7 @@
 #X msg 12 8 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 69 netpd_head \$1 carlito;
-#N canvas 640 227 254 288 \$1-carlito 1;
+#N canvas 488 236 254 288 \$1-carlito 1;
 #X obj 47 44 nbx 3 20 0 71 0 0 \$1-range/min \$1-range/min empty 0
 12 0 14 #ececf6 #000000 #000000 0 256;
 #X obj 14 44 hsl 31 20 0 127 0 0 \$0.blu \$0.range.min.label C4 0 10
@@ -315,8 +315,8 @@
 #X obj 55 436 rh_list_unzip 2;
 #X obj 55 459 route 0;
 #X obj 270 413 netpd_r \$1 name;
-#X obj 55 482 list prepend;
-#X obj 55 553 s unstep;
+#X obj 55 532 list prepend;
+#X obj 55 603 s unstep;
 #N canvas 1167 491 395 180 unstep.com 0;
 #X obj 20 7 r unstep;
 #X obj 20 53 b;
@@ -332,12 +332,13 @@
 #X connect 4 0 5 0;
 #X connect 6 0 2 1;
 #X restore 246 524 pd unstep.com;
-#X obj 55 505 list prepend notes;
-#X obj 55 528 list trim;
+#X obj 55 578 list trim;
 #X obj 270 437 list prepend \$1;
 #X obj 270 483 s \$0.source.name;
-#X obj 124 458 r \$0.source.name;
+#X obj 124 508 r \$0.source.name;
 #X msg 270 460 symbol \$1-\$2;
+#X obj 55 555 list prepend note;
+#X obj 55 484 rh_list_serialize;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
@@ -348,11 +349,12 @@
 #X connect 11 0 7 2;
 #X connect 17 0 9 0;
 #X connect 18 0 19 0;
-#X connect 19 0 21 0;
-#X connect 20 0 26 0;
-#X connect 21 0 24 0;
-#X connect 24 0 25 0;
-#X connect 25 0 22 0;
-#X connect 26 0 29 0;
-#X connect 28 0 21 1;
-#X connect 29 0 27 0;
+#X connect 19 0 30 0;
+#X connect 20 0 25 0;
+#X connect 21 0 29 0;
+#X connect 24 0 22 0;
+#X connect 25 0 28 0;
+#X connect 27 0 21 1;
+#X connect 28 0 26 0;
+#X connect 29 0 24 0;
+#X connect 30 0 21 0;
