@@ -1,6 +1,6 @@
-#N struct 1153.rectangle float id float x float y float w float h float
+#N struct 1907.rectangle float id float x float y float w float h float
 boxclr float bgclr float state;
-#N canvas 741 26 591 512 10;
+#N canvas 935 98 662 518 10;
 #X obj 1 0 cnv 15 500 30 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #X text 30 443 No inlets;
@@ -33,12 +33,17 @@ boxclr float bgclr float state;
 #X obj 293 280 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #X obj 293 342 s \$0.seq;
-#X msg 295 314 set 9 0 \$1;
+#X msg 299 295 set 9 0 \$1;
 #X msg 366 282 get 9 0;
 #X obj 366 305 s \$0.seq;
 #X obj 41 83 carlito-grid \$0.seq 120 30 12;
 #X text 10 47 [carlito-grid \$0.seq];
 #X text 8 7 carlito-grid - a configurable grid of toggles;
+#X msg 161 393 dump;
+#X obj 165 421 s \$0.seq;
+#X msg 278 405 restore 10 2 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 1 1
+;
+#X obj 279 438 s \$0.seq;
 #X connect 4 0 15 0;
 #X connect 5 0 7 0;
 #X connect 6 0 8 0;
@@ -57,3 +62,5 @@ boxclr float bgclr float state;
 #X connect 28 0 30 0;
 #X connect 30 0 29 0;
 #X connect 31 0 32 0;
+#X connect 36 0 37 0;
+#X connect 38 0 39 0;
