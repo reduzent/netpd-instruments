@@ -216,7 +216,7 @@
 #N canvas 516 455 239 79 NETPD 0;
 #N canvas 927 585 203 112 abslist 0;
 #X msg 13 9 rh_convolve-part~;
-#X msg 13 34 rh_convolve-help;
+#X msg 13 34 rh_convolve~-help;
 #X restore 7 43 pd abslist;
 #X msg 7 15 version 0 1 1;
 #X restore 21 267 pd NETPD 2 0;
