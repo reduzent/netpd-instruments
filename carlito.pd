@@ -1,15 +1,17 @@
-#N struct 1917.rect float x float w float h float clr;
-#N struct 1918.rectangle float id float x float y float w float h float
+#N struct 2396.rect float x float w float h float clr;
+#N struct 2397.rectangle float id float x float y float w float h float
 boxclr float bgclr float state;
-#N struct 1919.rect float x float w float h float clr;
-#N struct 1920.rectangle float id float x float y float w float h float
+#N struct 2398.rect float x float w float h float clr;
+#N struct 2399.rectangle float id float x float y float w float h float
 boxclr float bgclr float state;
 #N canvas 642 259 409 609 10;
-#N canvas 624 75 345 97 NETPD 0;
+#N canvas 624 75 345 97 NETPD 1;
 #N canvas 315 75 433 126 abslist 0;
 #X msg 18 13 chord-abs;
 #X msg 17 44 roman_helpers;
 #X msg 16 73 master-param;
+#X msg 142 9 carlito-grid;
+#X msg 143 35 carlito-cursor;
 #X restore 11 36 pd abslist;
 #X msg 12 8 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
@@ -49,7 +51,7 @@ boxclr float bgclr float state;
 empty 0 -8 0 22 #c6ffc7 #000000 #000000 0 256;
 #X obj 351 49 nbx 3 20 2 64 0 0 \$1-seq/steps \$1-seq/steps empty 0
 -8 0 20 #c6ffc7 #000000 #000000 0 256;
-#X obj 11 49 cnv 15 39 20 empty \$0.number.on.label \ 4 12 10 0 14
+#X obj 11 49 cnv 15 39 20 empty \$0.number.on.label \ 5 12 10 0 14
 #496b43 #d0ebd3 0;
 #X obj 51 46 carlito-cursor \$0.seq.cursor;
 #X obj 51 49 carlito-grid \$0.seq 300 20 16 1;
