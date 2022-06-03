@@ -1,4 +1,23 @@
-#N struct 1392.selector float x float y float w float h float vis;
+#N struct 4757.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 4758.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 4759.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 4760.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 4761.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 4762.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 4763.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 4764.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 4743.rectangle float bar float barpart float x float y float
+w float h float txtclr float boxclr float bgclr symbol label float
+bleft float bright;
+#N struct 4743.selector float x float y float w float h float vis;
 #N canvas 441 308 453 339 10;
 #N canvas 624 75 412 134 NETPD 0;
 #N canvas 315 75 411 213 abslist 0;
@@ -10,7 +29,7 @@
 #X msg 18 81 singleton;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 71 netpd_head \$1 carlo;
-#N canvas 655 365 522 181 \$1-carlo 1;
+#N canvas 655 365 521 184 \$1-carlo 1;
 #X obj 31 35 chord-selector \$0.chord;
 #X obj 176 35 cnv 15 54 76 empty empty empty 20 12 0 14 #aee0e0 #404040
 0;
@@ -52,7 +71,7 @@
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 412 141 cnv 15 74 24 empty empty empty 2 10 0 14 #ffb9e1 #000000
 0;
-#X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 empty 2 10
+#X obj 414 143 cnv 15 70 20 empty \$0.sym.cache.label.4 Am⁷ 2 10
 0 14 #ffffff #000000 0;
 #X obj 138 6 hsl 39 24 0 127 0 0 \$0.save.button empty empty -2 8 0
 10 #fcfcfc #000000 #000000 0 1;
@@ -686,11 +705,11 @@ vis;
 #N canvas 568 649 614 287 gui.stuff 0;
 #X obj 8 10 r \$0.bpl;
 #X obj 8 33 route selected;
-#X obj 8 55 s \$1-barsperline;
-#X obj 7 152 s \$0.bpl;
-#X obj 7 80 r \$1-barsperline;
-#X obj 7 103 route float set;
-#X msg 7 128 set \$1;
+#X obj 8 107 s \$1-barsperline;
+#X obj 15 231 s \$0.bpl;
+#X obj 15 159 r \$1-barsperline;
+#X obj 15 182 route float set;
+#X msg 15 207 set \$1;
 #X obj 119 90 s pd-\$0.leadsheet;
 #X msg 119 65 vis 1;
 #X obj 119 16 r \$0.show.leadsheet;
@@ -844,8 +863,10 @@ vis;
 #X obj 266 166 loadbang;
 #X obj 266 212 s \$0.action;
 #X msg 266 189 items append insert extend delete;
+#X obj 8 61 list;
+#X obj 8 84 f;
 #X connect 0 0 1 0;
-#X connect 1 0 2 0;
+#X connect 1 0 23 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 5 1 6 0;
@@ -861,6 +882,8 @@ vis;
 #X connect 18 0 19 0;
 #X connect 20 0 22 0;
 #X connect 22 0 21 0;
+#X connect 23 0 24 0;
+#X connect 24 0 2 0;
 #X restore 15 164 pd gui.stuff;
 #X obj 29 280 netpd_f \$1 barsperline 4;
 #N canvas 0 0 397 188 save/load 0;
