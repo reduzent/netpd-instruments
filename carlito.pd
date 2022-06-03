@@ -1,8 +1,8 @@
-#N struct 2060.rect float x float w float h float clr;
-#N struct 2061.rectangle float id float x float y float w float h float
+#N struct 1917.rect float x float w float h float clr;
+#N struct 1918.rectangle float id float x float y float w float h float
 boxclr float bgclr float state;
-#N struct 2113.rect float x float w float h float clr;
-#N struct 2119.rectangle float id float x float y float w float h float
+#N struct 1919.rect float x float w float h float clr;
+#N struct 1920.rectangle float id float x float y float w float h float
 boxclr float bgclr float state;
 #N canvas 568 97 399 671 10;
 #N canvas 624 75 345 97 NETPD 0;
@@ -14,57 +14,47 @@ boxclr float bgclr float state;
 #X msg 12 8 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 69 netpd_head \$1 carlito;
-#N canvas 676 279 438 246 \$1-carlito 1;
-#X obj 47 44 nbx 3 20 0 71 0 0 \$1-range/min \$1-range/min empty 0
-12 0 14 #ececf6 #000000 #000000 0 256;
-#X obj 14 44 hsl 31 20 0 127 0 0 \$0.blu \$0.range.min.label C4 0 10
-0 14 #dfdfdf #dfdfdf #000000 0 1;
-#X obj 136 44 nbx 3 20 61 127 0 0 \$1-range/max \$1-range/max empty
-0 12 0 14 #ececf6 #000000 #000000 0 256;
-#X obj 103 44 hsl 31 20 0 127 0 0 \$0.blu \$0.range.max.label C5 0
-10 0 14 #dfdfdf #dfdfdf #000000 0 1;
-#X text 187 52 RANGE;
-#X obj 14 74 hsl 30 20 0 127 0 0 \$0.pick.1 \$0.pick.1.r 1 0 10 0 14
-#ffcccc #ffcccc #000000 0 1;
-#X obj 49 74 hsl 30 20 0 127 0 0 \$0.pick.3 \$0.pick.3.r 3 0 10 0 14
-#ffcccc #ffcccc #000000 0 1;
-#X obj 84 74 hsl 30 20 0 127 0 0 \$0.pick.5 \$0.pick.5.r 5 0 10 0 14
-#ffcccc #ffcccc #000000 0 1;
-#X obj 119 74 hsl 30 20 0 127 0 0 \$0.pick.7 \$0.pick.7.r 7 0 10 0
-14 #ffcccc #ffcccc #000000 0 1;
-#X obj 154 74 hsl 30 20 0 127 0 0 \$0.pick.9 \$0.pick.9.r 9 0 10 0
-14 #ffcccc #ffcccc #000000 0 1;
+#N canvas 666 604 433 169 \$1-carlito 1;
+#X obj 232 14 nbx 3 20 0 71 0 0 \$1-range/min \$1-range/min empty 0
+12 0 14 #a6c8b1 #000000 #000000 0 256;
+#X obj 199 14 hsl 31 20 0 127 0 0 \$0.blu \$0.range.min.label C4 0
+10 0 14 #b9dbbb #b9dbbb #000000 0 1;
+#X obj 321 14 nbx 3 20 61 127 0 0 \$1-range/max \$1-range/max empty
+0 12 0 14 #a6c8b1 #000000 #ffffff 0 256;
+#X obj 288 14 hsl 31 20 0 127 0 0 \$0.blu \$0.range.max.label C5 0
+10 0 14 #b9dbbb #b9dbbb #000000 0 1;
+#X text 372 22 RANGE;
 #X symbolatom 11 16 25 0 0 0 - \$0.name.r \$0.name.s 12;
-#X obj 34 170 hsl 15 10 0 127 0 0 \$0.func.1.on \$0.bli empty -2 -8
+#X obj 34 90 hsl 15 10 0 127 0 0 \$0.func.1.on \$0.bli empty -2 -8
 0 10 #9f9f9f #9f9f9f #000000 0 1;
-#X obj 14 170 hsl 15 10 0 127 0 0 \$0.func.1.off \$0.bli empty -2 -8
-0 10 #ffffff #ffffff #000000 0 1;
-#X obj 34 180 hsl 15 10 0 127 0 0 \$0.func.3.on \$0.bli empty -2 -8
+#X obj 14 90 hsl 15 10 0 127 0 0 \$0.func.1.off \$0.bli 1 0 6 0 8 #ffffff
+#ffffff #000000 0 1;
+#X obj 34 100 hsl 15 10 0 127 0 0 \$0.func.3.on \$0.bli empty -2 -8
 0 10 #9f9f9f #9f9f9f #000000 0 1;
-#X obj 14 180 hsl 15 10 0 127 0 0 \$0.func.3.off \$0.bli empty -2 -8
-0 10 #ffffff #ffffff #000000 0 1;
-#X obj 34 190 hsl 15 10 0 127 0 0 \$0.func.5.on \$0.bli empty -2 -8
+#X obj 14 100 hsl 15 10 0 127 0 0 \$0.func.3.off \$0.bli 3 0 6 0 8
+#ffffff #ffffff #000000 0 1;
+#X obj 34 110 hsl 15 10 0 127 0 0 \$0.func.5.on \$0.bli empty -2 -8
 0 10 #9f9f9f #9f9f9f #000000 0 1;
-#X obj 14 190 hsl 15 10 0 127 0 0 \$0.func.5.off \$0.bli empty -2 -8
-0 10 #ffffff #ffffff #000000 0 1;
-#X obj 34 200 hsl 15 10 0 127 0 0 \$0.func.7.on \$0.bli empty -2 -8
+#X obj 14 110 hsl 15 10 0 127 0 0 \$0.func.5.off \$0.bli 5 0 6 0 8
+#ffffff #ffffff #000000 0 1;
+#X obj 34 120 hsl 15 10 0 127 0 0 \$0.func.7.on \$0.bli empty -2 -8
 0 10 #9f9f9f #9f9f9f #000000 0 1;
-#X obj 14 200 hsl 15 10 0 127 0 0 \$0.func.7.off \$0.bli empty -2 -8
-0 10 #ffffff #ffffff #000000 0 1;
-#X obj 34 210 hsl 15 10 0 127 0 0 \$0.func.9.on \$0.bli empty -2 -8
+#X obj 14 120 hsl 15 10 0 127 0 0 \$0.func.7.off \$0.bli 7 0 6 0 8
+#ffffff #ffffff #000000 0 1;
+#X obj 34 130 hsl 15 10 0 127 0 0 \$0.func.9.on \$0.bli empty -2 -8
 0 10 #9f9f9f #9f9f9f #000000 0 1;
-#X obj 14 210 hsl 15 10 0 127 0 0 \$0.func.9.off \$0.bli empty -2 -8
-0 10 #ffffff #ffffff #000000 0 1;
-#X obj 351 170 nbx 2 50 2 32 0 0 \$1-func/grid/cols \$1-func/grid/cols
-empty 0 -8 0 22 #fcfcfc #000000 #000000 0 256;
-#X obj 351 129 nbx 3 20 2 64 0 0 \$1-seq/steps \$1-seq/steps empty
-0 -8 0 20 #fcfcfc #000000 #000000 0 256;
-#X obj 11 129 cnv 15 39 20 empty \$0.number.on.label \ 4 12 10 0 14
-#7c7c7c #ffffff 0;
-#X obj 51 126 carlito-cursor \$0.seq.cursor;
-#X obj 51 129 carlito-grid \$0.seq 300 20 16 1;
-#X obj 51 167 carlito-cursor \$0.func.cursor;
-#X obj 51 170 carlito-grid \$0.functs 300 50 4 5;
+#X obj 14 130 hsl 15 10 0 127 0 0 \$0.func.9.off \$0.bli 9 0 6 0 8
+#ffffff #ffffff #000000 0 1;
+#X obj 351 90 nbx 2 50 2 32 0 0 \$1-func/grid/cols \$1-func/grid/cols
+empty 0 -8 0 22 #c6ffc7 #000000 #000000 0 256;
+#X obj 351 49 nbx 3 20 2 64 0 0 \$1-seq/steps \$1-seq/steps empty 0
+-8 0 20 #c6ffc7 #000000 #000000 0 256;
+#X obj 11 49 cnv 15 39 20 empty \$0.number.on.label \ 3 12 10 0 14
+#496b43 #d0ebd3 0;
+#X obj 51 46 carlito-cursor \$0.seq.cursor;
+#X obj 51 49 carlito-grid \$0.seq 300 20 16 1;
+#X obj 51 87 carlito-cursor \$0.func.cursor;
+#X obj 51 90 carlito-grid \$0.functs 300 50 4 5;
 #X restore 10 42 pd \$1-carlito;
 #X obj 55 177 r carlo;
 #X obj 55 200 route chordsym;
@@ -314,7 +304,7 @@ empty 0 -8 0 22 #fcfcfc #000000 #000000 0 256;
 #X msg 270 460 symbol \$1-\$2;
 #X obj 55 555 list prepend note;
 #X obj 55 484 rh_list_serialize;
-#N canvas 1088 544 760 591 func.grid 0;
+#N canvas 1088 544 890 591 func.grid 0;
 #X obj 27 18 netpd_f \$1 func/grid/cols 4;
 #X msg 27 40 columns \$1;
 #X obj 27 63 s \$0.functs;
@@ -498,6 +488,9 @@ empty 0 -8 0 22 #fcfcfc #000000 #000000 0 256;
 #X obj 244 479 netpd_r \$1 func/grid/cols;
 #X obj 111 501 master-param switch;
 #X msg 111 524 vis \$1;
+#X obj 607 493 loadbang;
+#X msg 607 518 on_color 565 \, off_color 787 \, box_color 343;
+#X obj 607 542 s \$0.functs;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 1;
@@ -576,8 +569,10 @@ empty 0 -8 0 22 #fcfcfc #000000 #000000 0 256;
 #X connect 70 0 68 0;
 #X connect 71 0 72 0;
 #X connect 72 0 69 0;
+#X connect 73 0 74 0;
+#X connect 74 0 75 0;
 #X restore 179 198 pd func.grid;
-#N canvas 904 549 638 615 seq 0;
+#N canvas 904 549 693 615 seq 0;
 #X obj 27 67 s \$0.seq;
 #X obj 27 18 netpd_f \$1 seq/steps 16;
 #X msg 27 44 columns \$1;
@@ -683,7 +678,7 @@ empty 0 -8 0 22 #fcfcfc #000000 #000000 0 256;
 #X obj 25 133 t a a, f 19;
 #X obj 136 208 div;
 #X obj 136 236 *;
-#X obj 289 400 table \$0.seq.to.steps 16;
+#X obj 208 395 table \$0.seq.to.steps 16;
 #X obj 44 490 tabread \$0.seq.to.steps;
 #X obj 44 513 +, f 16;
 #X obj 44 536 outlet;
@@ -696,6 +691,9 @@ empty 0 -8 0 22 #fcfcfc #000000 #000000 0 256;
 #X obj 25 207 t b a b a, f 10;
 #X obj 170 526 master-param switch;
 #X msg 170 549 vis \$1;
+#X obj 415 386 s \$0.seq;
+#X obj 415 337 loadbang;
+#X msg 415 362 on_color 565 \, off_color 787 \, box_color 343;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 51 0;
@@ -763,6 +761,8 @@ empty 0 -8 0 22 #fcfcfc #000000 #000000 0 256;
 #X connect 64 3 59 0;
 #X connect 65 0 66 0;
 #X connect 66 0 58 0;
+#X connect 68 0 69 0;
+#X connect 69 0 67 0;
 #X restore 179 151 pd seq;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
