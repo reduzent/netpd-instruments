@@ -1,5 +1,5 @@
 #N struct 1990.rect float x float w float h float clr;
-#N canvas 974 336 822 490 10;
+#N canvas 713 85 584 495 10;
 #N canvas 1633 542 493 228 \$0.gop 0;
 #X scalar 1990.rect 18.75 18.75 2 808 \;;
 #X coords 0 0 10 10 10 10 2 0 0;
@@ -34,6 +34,12 @@
 #X obj 201 173 t b a;
 #X obj 241 176 t b a;
 #X obj 81 101 route pos width steps height color vis, f 40;
+#N canvas 1335 233 450 300 NETPD 0;
+#X msg 23 11 version 0 1 0;
+#N canvas 1450 280 379 91 abslist 0;
+#X msg 18 22 carlito-cursor-help;
+#X restore 21 38 pd abslist;
+#X restore 488 15 pd NETPD 2 0;
 #X connect 1 0 9 0;
 #X connect 3 0 4 1;
 #X connect 5 0 14 0;
