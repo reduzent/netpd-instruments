@@ -1,0 +1,136 @@
+#N canvas 620 38 1010 511 12;
+#X declare -path teilkoerper;
+#X declare -path teilkoerper/ggee;
+#N canvas 634 67 1422 771 \$1-teilkoerper 1;
+#X obj 174 68 bng 50 250 50 0 empty blue W 14 25 0 40 #3c50fc #202020
+#fcfcfc;
+#X obj 119 123 bng 50 250 50 0 empty green A 14 25 0 40 #14e814 #7c7c7c
+#000000;
+#X obj 227 123 bng 50 250 50 0 empty red D 14 25 0 40 #a0a0a0 #7c7c7c
+#fcfcfc;
+#X obj 174 176 bng 50 250 50 0 empty yellow S 14 25 0 40 #a0a0a0 #7c7c7c
+#000000;
+#X text 107 25 SELECT AUDIO:;
+#X obj 42 407 vu 15 120 avu W -1 -8 0 10 #0400fc #9c9c9c 1 0;
+#X obj 268 407 vu 15 120 svu A -1 -8 0 10 #00fc04 #9c9c9c 1 0;
+#X obj 39 574 vu 15 120 cvu D -1 -8 0 10 #fc0400 #9c9c9c 1 0;
+#X obj 267 574 vu 15 120 mvu S -1 -8 0 10 #f8fc00 #9c9c9c 1 0;
+#X text 36 342 LEVELS:;
+#N canvas 3 50 450 250 (subpatch) 0;
+#X array ambi 135061 float 4;
+#X coords 0 1 135060 -1 135 75 1 0 0;
+#X restore 90 405 graph;
+#N canvas 3 50 450 250 (subpatch) 0;
+#X array stimme 127575 float 4;
+#X coords 0 1 127574 -1 135 75 1 0 0;
+#X restore 316 405 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array chords 2.00138e+06 float 4;
+#X coords 0 1 2.00138e+06 -1 135 75 1 0 0;
+#X restore 89 572 graph;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array mess 2.472e+06 float 4;
+#X coords 0 1 2.472e+06 -1 135 75 1 0 0;
+#X restore 322 572 graph;
+#X obj 136 273 hsl 128 25 0 34 0 0 empty counter empty -2 -8 0 10 #a0a0a0
+#fcfcfc #000000 0 1;
+#X text 141 254 S-Button STATUS:;
+#X text 72 276 inactive;
+#X obj 645 338 nbx 5 25 0 250 0 0 disabled.x-verb empty X: -20 14 1
+16 #e8fcd8 #000000 #000000 0 256;
+#X obj 766 338 nbx 5 25 0 250 0 0 disabled.y-verb empty Y: -20 14 1
+16 #e8fcd8 #000000 #000000 0 256;
+#X obj 888 350 bng 15 250 50 0 click-count empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 888 330 5 0 0 0 - - - 0;
+#X text 908 349 mouse click;
+#X text 641 29 VOLUME AND EFFECTS CONTROLLER:;
+#X obj 1034 340 nbx 5 25 0 250 0 0 x-dist empty X: -20 14 1 16 #e8fcd8
+#000000 #000000 0 256;
+#X obj 1155 340 nbx 5 25 0 250 0 0 y-dist empty Y: -20 14 1 16 #e8fcd8
+#000000 #000000 0 256;
+#X obj 1277 352 bng 15 250 50 0 click-count empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 1277 332 5 0 0 0 - - - 0;
+#X text 1297 351 mouse click;
+#X obj 646 693 nbx 5 25 0 250 0 0 x-grain empty X: -20 14 1 16 #e8fcd8
+#000000 #000000 0 256;
+#X obj 767 693 nbx 5 25 0 250 0 0 y-grain empty Y: -20 14 1 16 #e8fcd8
+#000000 #000000 0 256;
+#X obj 889 705 bng 15 250 50 0 click-count empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 889 685 5 0 0 0 - - - 0;
+#X text 909 704 mouse click;
+#X obj 645 74 vsl 15 251 250 0 0 0 \$1-verb-x \$1-verb-x empty 0 -9
+0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 663 56 hsl 251 15 0 250 0 0 \$1-verb-y \$1-verb-y empty -2 -8
+0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 1034 74 vsl 15 251 250 0 0 0 \$1-dist-x \$1-dist-x empty 0 -9
+0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 1052 56 hsl 251 15 0 250 0 0 \$1-dist-y \$1-dist-y empty -2
+-8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 646 424 vsl 15 251 250 0 0 0 \$1-grain-x \$1-grain-x empty 0
+-9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 664 406 hsl 251 15 0 250 0 0 \$1-grain-y \$1-grain-y empty -2
+-8 0 10 #fcfcfc #000000 #000000 0 1;
+#X connect 20 0 19 0;
+#X connect 26 0 25 0;
+#X connect 31 0 30 0;
+#X connect 33 0 17 0;
+#X connect 34 0 18 0;
+#X connect 35 0 23 0;
+#X connect 36 0 24 0;
+#X connect 37 0 28 0;
+#X connect 38 0 29 0;
+#X restore 23 84 pd \$1-teilkoerper;
+#X obj 27 145 key;
+#X obj 27 180 sel 119 97 100 115;
+#X obj 326 357 loadbang;
+#X msg 327 410 \; pd-joystick vis 0;
+#X obj 40 299 i;
+#X floatatom 40 320 5 0 0 0 - - - 0;
+#X msg 27 212 1;
+#X msg 64 212 2;
+#X msg 103 212 3;
+#X msg 145 212 4;
+#X msg 476 410 \; pd dsp 1;
+#X obj 160 252 s yellow;
+#X obj 160 277 s red;
+#X obj 160 302 s green;
+#X obj 160 327 s blue;
+#X obj 327 287 declare -path teilkoerper;
+#X obj 22 22 netpd_head \$1 teilkoerper;
+#N canvas 876 256 528 160 NETPD 0;
+#X msg 15 16 version 0 1 0;
+#X msg 16 50 singleton;
+#X text 119 18 <- version tag is mandatory;
+#N canvas 887 273 450 300 abslist 0;
+#X text 10 8 This is a special patch that is distributed beforehand
+to all participants. Thus \, we do not need to declare anything here.
+;
+#X restore 22 89 pd abslist;
+#X text 100 51 <- tell netpd that this instrument can only be loaded
+once;
+#X text 112 89 <- tell netpd what abstractions are use here;
+#X restore 23 52 pd NETPD 2 0;
+#X text 551 417 <- not necessary \, since already handled by netpd
+;
+#X text 160 86 <- GUI subpatch;
+#X text 206 22 <- every instrument needs one;
+#X obj 327 311 declare -path teilkoerper/ggee;
+#X obj 38 416 sampler \$1;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 2 0 15 0;
+#X connect 2 1 8 0;
+#X connect 2 1 14 0;
+#X connect 2 2 9 0;
+#X connect 2 2 13 0;
+#X connect 2 3 10 0;
+#X connect 2 3 12 0;
+#X connect 5 0 6 0;
+#X connect 6 0 23 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
