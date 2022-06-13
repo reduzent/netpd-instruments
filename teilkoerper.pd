@@ -1,9 +1,7 @@
-#N struct 1533.handle float xpos float ypos float clr;
-#N struct 1340.handle float xpos float ypos float clr;
 #N canvas 599 27 943 481 12;
 #X declare -path teilkoerper;
 #X declare -path teilkoerper/ggee;
-#N canvas 719 121 1422 771 \$1-teilkoerper 1;
+#N canvas 719 121 898 761 \$1-teilkoerper 1;
 #X obj 174 68 bng 50 250 50 0 empty blue W 14 25 0 40 #3c50fc #202020
 #fcfcfc;
 #X obj 119 123 bng 50 250 50 0 empty green A 14 25 0 40 #14e814 #7c7c7c
@@ -23,12 +21,12 @@
 #X coords 0 1 135060 -1 135 75 1 0 0;
 #X restore 90 405 graph;
 #N canvas 3 50 450 250 (subpatch) 0;
-#X array stimme 3.027e+06 float 4;
-#X coords 0 1 3.027e+06 -1 135 75 1 0 0;
+#X array stimme 635125 float 4;
+#X coords 0 1 635124 -1 135 75 1 0 0;
 #X restore 316 405 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
-#X array chords 474075 float 4;
-#X coords 0 1 474074 -1 135 75 1 0 0;
+#X array chords 2.5906e+06 float 4;
+#X coords 0 1 2.5906e+06 -1 135 75 1 0 0;
 #X restore 89 572 graph;
 #N canvas 0 50 450 300 (subpatch) 0;
 #X array mess 2.472e+06 float 4;
@@ -38,61 +36,27 @@
 #fcfcfc #000000 0 1;
 #X text 141 254 S-Button STATUS:;
 #X text 72 276 inactive;
-#X obj 645 338 nbx 5 25 0 250 0 0 disabled.x-verb empty X: -20 14 1
-16 #e8fcd8 #000000 #000000 0 256;
-#X obj 766 338 nbx 5 25 0 250 0 0 disabled.y-verb empty Y: -20 14 1
-16 #e8fcd8 #000000 #000000 0 256;
-#X obj 888 350 bng 15 250 50 0 click-count empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X floatatom 888 330 5 0 0 0 - - - 0;
-#X text 908 349 mouse click;
-#X text 641 29 VOLUME AND EFFECTS CONTROLLER:;
-#X obj 1034 340 nbx 5 25 0 250 0 0 x-dist empty X: -20 14 1 16 #e8fcd8
-#000000 #000000 0 256;
-#X obj 1155 340 nbx 5 25 0 250 0 0 y-dist empty Y: -20 14 1 16 #e8fcd8
-#000000 #000000 0 256;
-#X obj 1277 352 bng 15 250 50 0 click-count empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X floatatom 1277 332 5 0 0 0 - - - 0;
-#X text 1297 351 mouse click;
-#X obj 646 693 nbx 5 25 0 250 0 0 x-grain empty X: -20 14 1 16 #e8fcd8
-#000000 #000000 0 256;
-#X obj 767 693 nbx 5 25 0 250 0 0 y-grain empty Y: -20 14 1 16 #e8fcd8
-#000000 #000000 0 256;
-#X obj 889 705 bng 15 250 50 0 click-count empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X floatatom 889 685 5 0 0 0 - - - 0;
-#X text 909 704 mouse click;
-#X obj 645 74 vsl 15 251 250 0 0 0 \$1-verb-y \$1-verb-y empty 0 -9
-0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 663 56 hsl 251 15 0 250 0 0 \$1-verb-x \$1-verb-x empty -2 -8
-0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 1034 74 vsl 15 251 250 0 0 0 \$1-dist-x \$1-dist-x empty 0 -9
-0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 1052 56 hsl 251 15 0 250 0 0 \$1-dist-y \$1-dist-y empty -2
--8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 646 424 vsl 15 251 250 0 0 0 \$1-grain-x \$1-grain-x empty 0
--9 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 664 406 hsl 251 15 0 250 0 0 \$1-grain-y \$1-grain-y empty -2
--8 0 10 #fcfcfc #000000 #000000 0 1;
 #N canvas 2088 111 1135 875 \$0.gop 0;
-#X scalar 1533.handle 20 20 500 \;;
-#X scalar 1533.handle 80 156 50 \;;
-#X scalar 1533.handle 145 165 5 \;;
-#X scalar 1340.handle 40 75 500 \;;
-#X scalar 1340.handle 60 120 50 \;;
-#X scalar 1340.handle 111 214 5 \;;
+#X scalar 2123.handle 111 201 500 \;;
+#X scalar 2123.handle 91 22 50 \;;
+#X scalar 2123.handle 205 172 5 \;;
 #X coords 0 0 300 300 300 300 2 0 0;
-#X restore 311 48 pd \$0.gop;
-#X connect 20 0 19 0;
-#X connect 26 0 25 0;
-#X connect 31 0 30 0;
-#X connect 33 0 17 0;
-#X connect 34 0 18 0;
-#X connect 35 0 23 0;
-#X connect 36 0 24 0;
-#X connect 37 0 28 0;
-#X connect 38 0 29 0;
+#X restore 530 46 pd \$0.gop;
+#X obj 558 411 nbx 6 24 -1e+37 1e+37 0 0 empty \$1-verb-x X: -20 12
+0 14 #fcfcfc #a40400 #000000 0 256;
+#X obj 678 411 nbx 6 24 -1e+37 1e+37 0 0 empty \$1-verb-y Y: -20 12
+0 14 #fcfcfc #a40400 #000000 0 256;
+#X obj 558 451 nbx 6 24 -1e+37 1e+37 0 0 empty \$1-dist-x X: -20 12
+0 14 #ffffff #007104 #000000 0 256;
+#X obj 678 451 nbx 6 24 -1e+37 1e+37 0 0 empty \$1-dist-y Y: -20 12
+0 14 #fcfcfc #007104 #000000 0 256;
+#X obj 558 491 nbx 6 24 -1e+37 1e+37 0 0 empty \$1-grain-x X: -20 12
+0 14 #fcfcfc #0004ae #000000 0 256;
+#X obj 678 491 nbx 6 24 -1e+37 1e+37 0 0 empty \$1-grain-y Y: -20 12
+0 14 #fcfcfc #0004ae #000000 0 256;
+#X text 781 494 GRAIN;
+#X text 781 414 VERB;
+#X text 782 454 DIST;
 #X restore 23 84 pd \$1-teilkoerper;
 #X obj 27 145 key;
 #X obj 27 180 sel 119 97 100 115;
@@ -112,7 +76,6 @@
 #X obj 327 287 declare -path teilkoerper;
 #X obj 22 22 netpd_head \$1 teilkoerper;
 #N canvas 876 256 528 160 NETPD 0;
-#X msg 15 16 version 0 1 0;
 #X msg 16 50 singleton;
 #X text 119 18 <- version tag is mandatory;
 #N canvas 887 273 450 300 abslist 0;
@@ -123,6 +86,7 @@ to all participants. Thus \, we do not need to declare anything here.
 #X text 100 51 <- tell netpd that this instrument can only be loaded
 once;
 #X text 112 89 <- tell netpd what abstractions are use here;
+#X msg 15 16 version 0 1 1;
 #X restore 23 52 pd NETPD 2 0;
 #X text 551 417 <- not necessary \, since already handled by netpd
 ;
@@ -130,7 +94,7 @@ once;
 #X text 206 22 <- every instrument needs one;
 #X obj 327 311 declare -path teilkoerper/ggee;
 #X obj 38 416 sampler \$1;
-#N canvas 0 0 677 500 2d-cursor-code 0;
+#N canvas 0 0 796 547 2d-cursor-code 0;
 #N canvas 933 310 473 391 template 0;
 #X obj 68 279 outlet;
 #X obj 68 255 struct \$0.handle float xpos float ypos float clr;
@@ -144,12 +108,12 @@ xpos(0:300)(10:310) ypos(0:300)(0:300);
 xpos(0:300)(-10:290) ypos(0:300)(0:300);
 #X connect 1 0 0 0;
 #X restore 79 26 pd template;
-#X obj 447 109 list prepend \$0;
+#X obj 521 410 list prepend \$0;
 #X obj 78 50 route change;
-#X msg 447 137 scalar \$1.handle \$2 \$3 \$4;
+#X msg 521 438 scalar \$1.handle \$2 \$3 \$4;
 #X obj 78 110 pack f f f;
 #X obj 78 134 route 500 50 5;
-#X obj 447 161 s pd-\$0.gop;
+#X obj 521 462 s pd-\$0.gop;
 #X obj 78 74 get \$0.handle clr xpos ypos;
 #X obj 76 221 unpack;
 #X floatatom 85 248 5 0 0 0 - - - 0;
@@ -160,9 +124,7 @@ xpos(0:300)(-10:290) ypos(0:300)(0:300);
 #X obj 339 221 unpack;
 #X floatatom 349 251 5 0 0 0 - - - 0;
 #X floatatom 388 251 5 0 0 0 - - - 0;
-#X obj 447 35 loadbang;
-#X msg 447 59 20 20 500 \, 40 40 50 \, 60 60 5;
-#X msg 403 81 clear;
+#X obj 495 312 loadbang;
 #X text 86 198 rot;
 #X text 208 200 grün;
 #X text 355 200 blau;
@@ -172,6 +134,82 @@ xpos(0:300)(-10:290) ypos(0:300)(0:300);
 #X obj 246 281 s \$1-dist-y;
 #X obj 378 279 s \$1-grain-y;
 #X obj 339 302 s \$1-grain-x;
+#X msg 600 362 clear;
+#N canvas 12 865 515 292 set.red 0;
+#X obj 20 33 r \$1-verb-x;
+#X obj 67 62 r \$1-verb-y;
+#X obj 207 118 pointer;
+#X obj 207 68 f \$0;
+#X msg 207 92 traverse pd-\$1.gop \, next \, bang;
+#X obj 20 205 set \$0.handle xpos ypos;
+#X obj 67 136 t b a;
+#X obj 20 164 f;
+#X obj 20 111 route set;
+#X obj 67 86 route set;
+#X obj 207 24 inlet;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 2 0 5 2;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 6 1 5 1;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 6 0;
+#X connect 10 0 3 0;
+#X restore 77 457 pd set.red;
+#X obj 77 386 t b b b, f 51;
+#N canvas 12 865 515 292 set.green 0;
+#X obj 207 118 pointer;
+#X obj 207 68 f \$0;
+#X obj 20 205 set \$0.handle xpos ypos;
+#X obj 67 136 t b a;
+#X obj 20 164 f;
+#X obj 20 111 route set;
+#X obj 67 86 route set;
+#X obj 207 24 inlet;
+#X msg 207 92 traverse pd-\$1.gop \, next \, next \, bang;
+#X obj 20 33 r \$1-dist-x;
+#X obj 67 62 r \$1-dist-y;
+#X connect 0 0 2 2;
+#X connect 1 0 8 0;
+#X connect 3 0 4 0;
+#X connect 3 1 2 1;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 0;
+#X connect 7 0 1 0;
+#X connect 8 0 0 0;
+#X connect 9 0 5 0;
+#X connect 10 0 6 0;
+#X restore 254 454 pd set.green;
+#N canvas 12 865 547 280 set.blue 0;
+#X obj 207 118 pointer;
+#X obj 207 68 f \$0;
+#X obj 20 205 set \$0.handle xpos ypos;
+#X obj 67 136 t b a;
+#X obj 20 164 f;
+#X obj 20 111 route set;
+#X obj 67 86 route set;
+#X obj 207 24 inlet;
+#X msg 207 91 traverse pd-\$1.gop \, next \, next \, next \, bang;
+#X obj 20 33 r \$1-grain-x;
+#X obj 67 62 r \$1-grain-y;
+#X connect 0 0 2 2;
+#X connect 1 0 8 0;
+#X connect 3 0 4 0;
+#X connect 3 1 2 1;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 0;
+#X connect 7 0 1 0;
+#X connect 8 0 0 0;
+#X connect 9 0 5 0;
+#X connect 10 0 6 0;
+#X restore 431 452 pd set.blue;
+#X msg 521 385 20 20 500 \, 40 40 50 \, 60 60 5;
+#X obj 495 336 t b b b;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 7 0;
@@ -184,20 +222,26 @@ xpos(0:300)(-10:290) ypos(0:300)(0:300);
 #X connect 7 1 4 1;
 #X connect 7 2 4 2;
 #X connect 8 0 9 0;
-#X connect 8 0 23 0;
+#X connect 8 0 21 0;
 #X connect 8 1 10 0;
-#X connect 8 1 24 0;
+#X connect 8 1 22 0;
 #X connect 11 0 12 0;
-#X connect 11 0 25 0;
+#X connect 11 0 23 0;
 #X connect 11 1 13 0;
-#X connect 11 1 26 0;
+#X connect 11 1 24 0;
 #X connect 14 0 15 0;
-#X connect 14 0 28 0;
+#X connect 14 0 26 0;
 #X connect 14 1 16 0;
-#X connect 14 1 27 0;
-#X connect 17 0 18 0;
-#X connect 18 0 1 0;
-#X connect 19 0 6 0;
+#X connect 14 1 25 0;
+#X connect 17 0 33 0;
+#X connect 27 0 6 0;
+#X connect 29 0 28 0;
+#X connect 29 1 30 0;
+#X connect 29 2 31 0;
+#X connect 32 0 1 0;
+#X connect 33 0 29 0;
+#X connect 33 1 32 0;
+#X connect 33 2 27 0;
 #X restore 320 189 pd 2d-cursor-code;
 #X connect 1 0 2 0;
 #X connect 2 0 7 0;
