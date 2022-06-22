@@ -1,11 +1,11 @@
-#N struct 2396.rect float x float w float h float clr;
-#N struct 2397.rectangle float id float x float y float w float h float
+#N struct 5699.rect float x float w float h float clr;
+#N struct 5700.rectangle float id float x float y float w float h float
 boxclr float bgclr float state;
-#N struct 2398.rect float x float w float h float clr;
-#N struct 2399.rectangle float id float x float y float w float h float
+#N struct 5701.rect float x float w float h float clr;
+#N struct 5702.rectangle float id float x float y float w float h float
 boxclr float bgclr float state;
 #N canvas 642 259 409 609 10;
-#N canvas 624 75 345 97 NETPD 1;
+#N canvas 624 75 345 97 NETPD 0;
 #N canvas 315 75 433 126 abslist 0;
 #X msg 18 13 chord-abs;
 #X msg 17 44 roman_helpers;
@@ -13,17 +13,17 @@ boxclr float bgclr float state;
 #X msg 142 9 carlito-grid;
 #X msg 143 35 carlito-cursor;
 #X restore 11 36 pd abslist;
-#X msg 12 8 version 0 0 1;
+#X msg 12 8 version 0 0 2;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 69 netpd_head \$1 carlito;
 #N canvas 624 456 433 169 \$1-carlito 1;
-#X obj 232 14 nbx 3 20 0 71 0 0 \$1-range/min \$1-range/min empty 0
+#X obj 232 14 nbx 3 20 0 47 0 0 \$1-range/min \$1-range/min empty 0
 12 0 14 #a6c8b1 #000000 #000000 0 256;
-#X obj 199 14 hsl 31 20 0 127 0 0 \$0.blu \$0.range.min.label C4 0
+#X obj 199 14 hsl 31 20 0 127 0 0 \$0.blu \$0.range.min.label C1 0
 10 0 14 #b9dbbb #b9dbbb #000000 0 1;
-#X obj 321 14 nbx 3 20 61 127 0 0 \$1-range/max \$1-range/max empty
+#X obj 321 14 nbx 3 20 25 127 0 0 \$1-range/max \$1-range/max empty
 0 12 0 14 #a6c8b1 #000000 #ffffff 0 256;
-#X obj 288 14 hsl 31 20 0 127 0 0 \$0.blu \$0.range.max.label C5 0
+#X obj 288 14 hsl 31 20 0 127 0 0 \$0.blu \$0.range.max.label C3 0
 10 0 14 #b9dbbb #b9dbbb #000000 0 1;
 #X text 372 22 RANGE;
 #X symbolatom 11 16 25 0 0 0 - \$0.name.r \$0.name.s 12;
@@ -51,7 +51,7 @@ boxclr float bgclr float state;
 empty 0 -8 0 22 #c6ffc7 #000000 #000000 0 256;
 #X obj 351 49 nbx 3 20 2 64 0 0 \$1-seq/steps \$1-seq/steps empty 0
 -8 0 20 #c6ffc7 #000000 #000000 0 256;
-#X obj 11 49 cnv 15 39 20 empty \$0.number.on.label \ 5 12 10 0 14
+#X obj 11 49 cnv 15 39 20 empty \$0.number.on.label \ 4 12 10 0 14
 #496b43 #d0ebd3 0;
 #X obj 51 46 carlito-cursor \$0.seq.cursor;
 #X obj 51 49 carlito-grid \$0.seq 300 20 16 1;
@@ -318,9 +318,9 @@ empty 0 -8 0 22 #c6ffc7 #000000 #000000 0 256;
 #X obj 67 284 + 1;
 #X msg 66 249 0;
 #X obj 26 319 list append, f 14;
-#X obj 26 405 list prepend set;
-#X obj 26 428 list trim;
-#X obj 26 452 s \$0.functs;
+#X obj 25 440 list prepend set;
+#X obj 25 463 list trim;
+#X obj 25 487 s \$0.functs;
 #N canvas 536 132 277 175 on.off.1 0;
 #X obj 17 15 r \$0.func.1.on;
 #X obj 17 38 sel 0;
@@ -436,8 +436,8 @@ empty 0 -8 0 22 #c6ffc7 #000000 #000000 0 256;
 #X connect 8 0 2 0;
 #X connect 9 0 6 0;
 #X restore 87 180 pd on.off.9;
-#X obj 26 342 netpd_s \$1 func/grid/cell;
-#X obj 26 378 netpd_r \$1 func/grid/cell;
+#X obj 26 368 netpd_s \$1 func/grid/cell;
+#X obj 25 413 netpd_r \$1 func/grid/cell;
 #X obj 144 270 r \$0.functs;
 #X obj 144 293 route cell;
 #X obj 289 294 netpd_s \$1 func/grid/fullstate;
@@ -492,6 +492,8 @@ empty 0 -8 0 22 #c6ffc7 #000000 #000000 0 256;
 #X obj 607 493 loadbang;
 #X msg 607 518 on_color 565 \, off_color 787 \, box_color 343;
 #X obj 607 542 s \$0.functs;
+#X obj 144 323 spigot 1;
+#X obj 212 323 ==;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 1;
@@ -515,7 +517,7 @@ empty 0 -8 0 22 #c6ffc7 #000000 #000000 0 256;
 #X connect 19 0 5 0;
 #X connect 21 0 12 0;
 #X connect 22 0 23 0;
-#X connect 23 0 20 0;
+#X connect 23 0 76 0;
 #X connect 25 0 34 0;
 #X connect 27 0 33 0;
 #X connect 28 0 26 0;
@@ -533,7 +535,9 @@ empty 0 -8 0 22 #c6ffc7 #000000 #000000 0 256;
 #X connect 40 0 41 0;
 #X connect 41 0 49 0;
 #X connect 42 0 41 1;
+#X connect 42 0 77 0;
 #X connect 43 0 41 1;
+#X connect 43 0 77 0;
 #X connect 44 0 42 0;
 #X connect 44 1 47 0;
 #X connect 44 2 43 0;
@@ -572,6 +576,8 @@ empty 0 -8 0 22 #c6ffc7 #000000 #000000 0 256;
 #X connect 72 0 69 0;
 #X connect 73 0 74 0;
 #X connect 74 0 75 0;
+#X connect 76 0 20 0;
+#X connect 77 0 76 1;
 #X restore 25 180 pd func.grid;
 #N canvas 904 549 694 669 seq 0;
 #X obj 27 67 s \$0.seq;
