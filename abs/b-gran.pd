@@ -1,94 +1,76 @@
 #N canvas 242 203 703 605 10;
 #N canvas 624 75 434 290 NETPD 0;
-#X msg 12 8 version 0 0 0;
 #N canvas 315 75 473 287 abslist 0;
-#X text 7 13 Put a message box containing the name of the abstraction
-(without the .pd suffix) for each dependency.;
-#X text 6 55 For instance:;
-#X text 23 84 [mysynth-voice(;
-#X text 13 130 NOTE: abstractions of instruments also use netpd meta
-tags and may also specify their own dependencies. unpatch resolves
-dependency trees recursively.;
-#X restore 12 178 pd abslist;
-#X text 111 179 <- add dependencies of your netpd instrument;
-#X text 18 32 A 'version' meta tag is mandatory. unpatch uses this
-information to make sure that all clients load the same version of
-the instrument.;
-#X text 19 78 Whenever you make changes to your instrument \, make
-sure to bump the version.;
-#X text 18 118 There is no predefined meaning of the three version
-fields. Use them at your own will.;
-#X text 16 211 The [pd abslist] tag container is optional and is used
-to specify dependencies (abstractions in netpd/abs) of your instrument.
-;
-#X text 107 7 <- update the version of this netpd instrument;
+#X msg 35 21 b-granule;
+#X restore 13 52 pd abslist;
+#X msg 11 6 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
 #X text 158 77 <- this manages patch state synchorization;
 #X text 158 16 <- put your instrument's meta tags here;
 #X text 159 44 <- this is your new instrument's GUI canvas;
 #N canvas 569 23 518 157 \$3-\$2 1;
-#X obj 1 1 cnv 15 510 150 empty empty value 100 13 2 17 -249659 -83269
+#X obj 1 1 cnv 15 510 150 empty empty value 100 13 2 17 #f0f0e8 #505410
 0;
 #X obj 72 26 hsl 100 12 0 1 0 0 \$1-\$2/pitch \$1-\$2/pitch pitch -45
-7 0 13 -13330 -262144 -4160 3700 1;
+7 0 13 #0c4044 #fcfcfc #0400fc 0 1;
 #X obj 180 26 hsl 100 12 0 1 0 0 \$0-pitch-rnd \$0-pitch-rnd-r random/jitter
--4 -12 2 17 -13330 -262144 -86853 0 1;
+-4 -12 2 17 #0c4044 #fcfcfc #543410 0 1;
 #X obj 71 41 hsl 100 12 0 1 0 0 \$0-duration \$0-duration-r duration
--70 7 0 13 -13330 -262144 -4160 2700 1;
+-70 7 0 13 #0c4044 #fcfcfc #0400fc 0 1;
 #X obj 180 41 hsl 100 12 0 1 0 0 \$0-duration-rnd \$0-duration-rnd-r
-empty -2 -6 0 10 -13330 -262144 -1 9900 1;
+empty -2 -6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #X obj 71 56 hsl 100 12 0 1 0 0 \$0-delay \$0-delay-r delay -45 7 0
-13 -13330 -262144 -4160 3400 1;
+13 #0c4044 #fcfcfc #0400fc 0 1;
 #X obj 180 56 hsl 100 12 0 1 0 0 \$0-delay-rnd \$0-delay-rnd-r empty
--2 -6 0 10 -13330 -262144 -1 0 1;
+-2 -6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #X obj 71 72 hsl 100 12 0 1 0 0 \$0-metro \$0-metro-r metro -45 7 0
-13 -13330 -262144 -4160 8100 1;
+13 #0c4044 #fcfcfc #0400fc 0 1;
 #X obj 180 72 hsl 100 12 0 1 0 0 \$0-metro-rnd \$0-metro-rnd-r empty
--2 -6 0 10 -13330 -262144 -1 100 1;
+-2 -6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #X obj 400 26 hsl 100 12 0 1 0 0 \$0-envelope \$0-envelope-r empty
--2 -6 0 10 -13330 -262144 -1 5800 1;
+-2 -6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #X text 429 51 envelope;
 #X obj 400 41 hsl 100 12 0 1 0 0 \$0-envelope-exp \$0-envelope-exp-r
-empty -2 -6 0 10 -13330 -262144 -1 3300 1;
+empty -2 -6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #X obj 346 85 hradio 15 1 0 10 \$0-load \$0-load-r preset -45 7 0 12
--175484 -262144 -1 6;
+#a8d4ec #fcfcfc #000000 0;
 #X obj 406 66 bng 15 250 50 0 \$0-store rwiuytiuwytriu store 18 8 0
-10 -262144 -1 -1;
+10 #fcfcfc #000000 #000000;
 #X obj 457 66 bng 15 250 50 0 \$0-save troiuyiurtyiutwr save 18 8 0
-10 -262144 -1 -1;
-#X obj 368 4 cnv 15 140 17 empty empty grannie_basher 0 8 0 16 -258108
--262144 0;
+10 #fcfcfc #000000 #000000;
+#X obj 368 4 cnv 15 140 17 empty empty grannie_basher 0 8 0 16 #fc00ec
+#fcfcfc 0;
 #X obj 71 87 hsl 100 12 0 1 0 0 \$0-vcf \$0-vcf-r filter -52 7 0 13
--13330 -262144 -4160 3200 1;
+#0c4044 #fcfcfc #0400fc 0 1;
 #X obj 71 117 hsl 100 12 0 1 0 0 \$0-feedback \$0-feedback-r feedback
--68 7 0 13 -13330 -262144 -4160 5600 1;
+-68 7 0 13 #0c4044 #fcfcfc #0400fc 0 1;
 #X obj 288 117 hsl 100 12 0 1 0 0 \$0-feedback-time \$0-feedback-time-r
-empty -2 -6 0 10 -13330 -262144 -1 4600 1;
+empty -2 -6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #X obj 180 117 hsl 100 12 0 1 0 0 \$0-feedback-rnd \$0-feedback-rnd-r
-empty -2 -6 0 10 -13330 -262144 -1 1000 1;
+empty -2 -6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #X text 285 101 feedback time;
 #X obj 180 86 hsl 100 12 0 1 0 0 \$0-vcf-rnd \$0-vcf-rnd-r empty -2
--6 0 10 -13330 -262144 -1 0 1;
+-6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #X obj 396 117 hsl 100 12 0 1 0 0 \$0-feedback-return \$0-feedback-return-r
-empty -2 -6 0 10 -13330 -262144 -1 7000 1;
+empty -2 -6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #X text 393 101 feedback return;
 #X obj 71 102 hsl 100 12 0 1 0 0 \$0-autopan \$0-autopan-r autopan
--60 7 0 13 -13330 -262144 -4160 1600 1;
+-60 7 0 13 #0c4044 #fcfcfc #0400fc 0 1;
 #X obj 180 102 hsl 100 12 0 1 0 0 \$0-autopan-rnd \$0-autopan-rnd-r
-empty -2 -6 0 10 -13330 -262144 -1 0 1;
+empty -2 -6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #X obj 71 132 hsl 100 12 0 1 0 0 \$0-feedback-lfo \$0-feedback-lfo-r
-fb-lfo -52 7 0 13 -13330 -262144 -4160 0 1;
+fb-lfo -52 7 0 13 #0c4044 #fcfcfc #0400fc 0 1;
 #X obj 180 132 hsl 100 12 0 1 0 0 \$0-feedback-lfo-rnd \$0-feedback-lfo-rnd-r
-empty -2 -6 0 10 -13330 -262144 -1 0 1;
+empty -2 -6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #X obj 288 132 hsl 100 12 0 1 0 0 \$0-feedback-lfo-depth \$0-feedback-lfo-depth-r
-empty -2 -6 0 10 -13330 -262144 -1 7600 1;
+empty -2 -6 0 10 #0c4044 #fcfcfc #000000 0 1;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-env 100 float 0;
 #X coords 0 1 99 0 100 40 1;
 #X restore 293 26 graph;
 #X text 390 131 <--depth;
-#X obj 449 141 hsl 60 10 0 1 0 0 \$0-mix \$0-mix-r mix 17 -6 0 12 -16662
--262144 -4160 5900 1;
+#X obj 449 141 hsl 60 10 0 1 0 0 \$0-mix \$0-mix-r mix 17 -6 0 12 #101054
+#fcfcfc #0400fc 0 1;
 #X restore 10 42 pd \$3-\$2;
 #X text 441 218 hard.off@gmail.com;
 #X obj 14 109 inlet~;
