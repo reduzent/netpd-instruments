@@ -1,27 +1,6 @@
 #N canvas 52 23 589 619 10;
-#N canvas 624 75 434 290 NETPD 0;
-#N canvas 315 75 473 287 abslist 0;
-#X text 7 13 Put a message box containing the name of the abstraction
-(without the .pd suffix) for each dependency.;
-#X text 6 55 For instance:;
-#X text 23 84 [mysynth-voice(;
-#X text 13 130 NOTE: abstractions of instruments also use netpd meta
-tags and may also specify their own dependencies. unpatch resolves
-dependency trees recursively.;
-#X restore 12 178 pd abslist;
-#X text 111 179 <- add dependencies of your netpd instrument;
-#X text 18 32 A 'version' meta tag is mandatory. unpatch uses this
-information to make sure that all clients load the same version of
-the instrument.;
-#X text 19 78 Whenever you make changes to your instrument \, make
-sure to bump the version.;
-#X text 18 118 There is no predefined meaning of the three version
-fields. Use them at your own will.;
-#X text 16 211 The [pd abslist] tag container is optional and is used
-to specify dependencies (abstractions in netpd/abs) of your instrument.
-;
-#X text 107 7 <- update the version of this netpd instrument;
-#X msg 12 8 version 0 0 3;
+#N canvas 624 75 228 103 NETPD 0;
+#X msg 12 8 version 0 0 4;
 #X restore 10 14 pd NETPD 2 0;
 #X text 101 11 copied from jon~ - Reverb abstraction based on "Simplified
 plate-class reverberation topology in the style of Griesinger" from
@@ -97,7 +76,7 @@ by Jon Dattorro.;
 #X restore 18 288 pd output;
 #X text 149 288 output level \, dB;
 #X text 320 203 toggle dry/wet output:;
-#N canvas 268 34 387 608 receive_params 1;
+#N canvas 268 34 387 608 receive_params 0;
 #X msg 58 293 input_diffusion1 \$1;
 #X msg 70 349 input_diffusion2 \$1;
 #X msg 78 410 decay_diffusion1 \$1;
@@ -1110,25 +1089,25 @@ decay_diffusion2;
 #X obj 5 5 cnv 15 150 175 empty empty empty 20 12 0 14 #dcdcdc #404040
 0;
 #X obj 16 59 hsl 128 15 0.01 1 1 0 \$1-\$2/damping \$1-\$2/damping
-damping -2 8 0 10 #fcfcfc #000000 #000000 0 0;
+damping -2 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 16 74 hsl 128 15 0 1 0 0 \$1-\$2/decay \$1-\$2/decay decay -2
-8 0 10 #fcfcfc #000000 #000000 0 0;
+8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 16 29 hsl 128 15 0 1 0 0 \$1-\$2/predelay \$1-\$2/predelay predelay
--2 8 0 10 #fcfcfc #000000 #000000 0 0;
+-2 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 16 44 hsl 128 15 0.01 1 1 0 \$1-\$2/bandwidth \$1-\$2/bandwidth
-bandwidth -2 8 0 10 #fcfcfc #000000 #000000 0 0;
+bandwidth -2 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 16 104 hsl 128 15 0 1 0 0 \$1-\$2/input_diffusion_2 \$1-\$2/input_diffusion_2
-input_diffusion_2 -2 8 0 10 #fcfcfc #000000 #000000 0 0;
+input_diffusion_2 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 16 89 hsl 128 15 0 1 0 0 \$1-\$2/input_diffusion_1 \$1-\$2/input_diffusion_1
-input_diffusion_1 -2 8 0 10 #fcfcfc #000000 #000000 0 0;
+input_diffusion_1 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 16 134 hsl 128 15 0 1 0 0 \$1-\$2/decay_diffusion_2 \$1-\$2/decay_diffusion_2
-decay_diffusion_2 -2 8 0 10 #fcfcfc #000000 #000000 0 0;
+decay_diffusion_2 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 16 119 hsl 128 15 0 1 0 0 \$1-\$2/decay_diffusion_1 \$1-\$2/decay_diffusion_1
-decay_diffusion_1 -2 8 0 10 #fcfcfc #000000 #000000 0 0;
+decay_diffusion_1 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 16 149 hsl 128 15 0 1 0 0 \$1-\$2/excursion \$1-\$2/excursion
-excursion -2 8 0 10 #fcfcfc #000000 #000000 0 0;
+excursion -2 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 16 14 hsl 128 15 0 1 0 0 \$1-\$2/drywet \$1-\$2/drywet dry_wet
--2 8 0 10 #fcfcfc #000000 #000000 0 0;
+-2 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X restore 10 33 pd \$3-\$2;
 #X connect 2 0 16 0;
 #X connect 2 1 17 0;
