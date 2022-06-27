@@ -15,6 +15,7 @@
 #X text 96 145 BFX;
 #X text 96 165 b-jon plate reverb;
 #X text 96 185 b-uneven harmoniser;
+#X text 72 226 effects suite brought to netpd by beem;
 #X restore 10 42 pd \$1-bfx;
 #X obj 10 67 mx-fx-list \$1 bfx b-uneven b-jon b-loop b-gran b-util
 ;
