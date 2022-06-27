@@ -1,10 +1,10 @@
-#N struct 14325.button float posx float posy float color;
-#N struct 14325.cursor float cx float cy float cy2;
-#N struct 14256-automation float yshift array variy 14256-automation-element
+#N struct 2007.button float posx float posy float color;
+#N struct 2007.cursor float cx float cy float cy2;
+#N struct 1938-automation float yshift array variy 1938-automation-element
 ;
-#N struct 14256-automation-element float y;
-#N struct 14327.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
+#N struct 1938-automation-element float y;
+#N struct 2018.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
 #N canvas 1100 84 1419 774 10;
 #N canvas 624 75 434 290 NETPD 0;
 #N canvas 315 75 473 287 abslist 0;
@@ -189,7 +189,7 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X obj 254 539 netpd_f \$1 \$2/vol1 0.5;
 #X obj 519 661 *~;
 #X obj 706 665 *~;
-#N canvas 1344 235 385 155 \$3-\$2 1;
+#N canvas 1793 460 385 155 \$3-\$2 1;
 #X obj 11 126 hsl 75 15 0 0 0 0 \$0-unstep-gui \$0.bli unstep 3 8 0
 10 #fcfcfc #fcfcfc #000000 0 1;
 #X obj 8 17 nbx 5 14 -12 12 0 0 \$1-\$2/trans1 \$1-\$2/trans1 trans1
@@ -232,7 +232,6 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X obj 202 105 t b a;
 #X obj 425 157 t b a;
 #X obj 682 190 t b a;
-#X obj 215 162 print;
 #X obj 352 19 loadbang;
 #X msg 352 42 127;
 #X floatatom 166 81 5 0 0 0 - - - 0;
@@ -497,11 +496,10 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X connect 144 0 165 0;
 #X connect 146 0 147 0;
 #X connect 147 0 154 0;
-#X connect 147 0 172 0;
+#X connect 147 0 171 0;
 #X connect 148 0 1 0;
 #X connect 149 0 146 0;
 #X connect 150 0 148 0;
-#X connect 150 0 169 0;
 #X connect 150 1 152 0;
 #X connect 150 2 85 0;
 #X connect 150 2 153 0;
@@ -510,10 +508,10 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X connect 153 0 85 0;
 #X connect 154 0 151 0;
 #X connect 154 1 151 1;
-#X connect 155 0 173 0;
+#X connect 155 0 172 0;
 #X connect 156 0 155 1;
-#X connect 157 0 175 0;
-#X connect 158 0 177 0;
+#X connect 157 0 174 0;
+#X connect 158 0 176 0;
 #X connect 160 0 4 0;
 #X connect 161 0 47 0;
 #X connect 162 0 88 0;
@@ -526,14 +524,14 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X connect 167 1 152 1;
 #X connect 168 0 153 0;
 #X connect 168 1 153 1;
-#X connect 170 0 171 0;
-#X connect 171 0 154 1;
-#X connect 173 0 128 0;
-#X connect 173 1 129 0;
-#X connect 174 0 173 1;
-#X connect 175 0 128 0;
-#X connect 175 1 129 0;
-#X connect 176 0 175 1;
-#X connect 177 0 128 0;
-#X connect 177 1 129 0;
-#X connect 178 0 177 1;
+#X connect 169 0 170 0;
+#X connect 170 0 154 1;
+#X connect 172 0 128 0;
+#X connect 172 1 129 0;
+#X connect 173 0 172 1;
+#X connect 174 0 128 0;
+#X connect 174 1 129 0;
+#X connect 175 0 174 1;
+#X connect 176 0 128 0;
+#X connect 176 1 129 0;
+#X connect 177 0 176 1;
