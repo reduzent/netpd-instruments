@@ -1,0 +1,117 @@
+#N struct 4518.button float posx float posy float color;
+#N struct 4518.cursor float cx float cy float cy2;
+#N struct 4449-automation float yshift array variy 4449-automation-element
+;
+#N struct 4449-automation-element float y;
+#N struct 4448.autolabel float x float y symbol lbl float color float
+track;
+#N struct 4704.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 4592.button float posx float posy float color;
+#N struct 4592.cursor float cx float cy float cy2;
+#N struct 4523-automation float yshift array variy 4523-automation-element
+;
+#N struct 4523-automation-element float y;
+#N struct 4522.autolabel float x float y symbol lbl float color float
+track;
+#N struct 4698.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N struct 4663.button float posx float posy float color;
+#N struct 4663.cursor float cx float cy float cy2;
+#N struct 4594-automation float yshift array variy 4594-automation-element
+;
+#N struct 4594-automation-element float y;
+#N struct 4593.autolabel float x float y symbol lbl float color float
+track;
+#N struct 4695.rectangle float id float x float y float w float h float
+txtclr float boxclr float bgclr symbol label;
+#N canvas 511 107 523 608 10;
+#N canvas 624 75 434 290 NETPD 0;
+#N canvas 1134 428 473 287 abslist 0;
+#X msg 25 26 i2mx;
+#X msg 25 51 mkmr_marimba~;
+#X restore 11 62 pd abslist;
+#X msg 12 8 version 0 0 1;
+#X restore 10 14 pd NETPD 2 0;
+#X obj 11 66 netpd_head \$1 mmmarimba;
+#N canvas 440 309 294 118 \$1-mmmarimba 0;
+#X obj 15 8 hsl 220 27 0 127 0 0 \$0.unstep-1 \$0.bla mmmarimba\\\ unstep\\\ 1
+2 13 0 20 #fcf4f6 #fcf4f6 #000000 0 1;
+#X obj 15 41 hsl 220 27 0 127 0 0 \$0.unstep-2 \$0.bla mmmarimba\\\ unstep\\\ 2
+2 13 0 20 #fcf4f6 #fcf4f6 #000000 0 1;
+#X obj 15 74 hsl 220 27 0 127 0 0 \$0.unstep-3 \$0.bla mmmarimba\\\ unstep\\\ 3
+2 13 0 20 #fcf4f6 #fcf4f6 #000000 0 1;
+#X obj 242 9 vsl 27 89 0 1 0 0 \$1-vel \$1-vel empty 0 10 0 10 #e3eef1
+#c1b09b #000000 0 1;
+#X restore 10 42 pd \$1-mmmarimba;
+#X obj 12 530 i2mx \$1 mmmarimba;
+#X msg 11 152 vis 1;
+#X obj 11 228 route note vel;
+#X obj 11 355 f;
+#X obj 11 398 t a a;
+#X obj 69 386 + 1;
+#X msg 51 282 velocity \$1;
+#X obj 51 306 s \$0.voices;
+#X obj 11 326 t b a, f 8;
+#X obj 11 423 pack f f;
+#X obj 11 124 sel;
+#X obj 38 126 t a;
+#X obj 11 176 unstep \$1 mmmarimba-1 vel;
+#X obj 77 256 netpd_f \$1 vel 0.7;
+#X obj 51 255 +;
+#X obj 11 101 r \$0.unstep-1;
+#X msg 171 152 vis 1;
+#X obj 171 124 sel;
+#X obj 198 126 t a;
+#X msg 331 152 vis 1;
+#X obj 331 124 sel;
+#X obj 358 126 t a;
+#X obj 171 101 r \$0.unstep-2;
+#X obj 331 101 r \$0.unstep-3;
+#X obj 171 176 unstep \$1 mmmarimba-2 vel;
+#X obj 331 176 unstep \$1 mmmarimba-3 vel;
+#X obj 304 524 table \$0.switch 30;
+#X obj 11 449 clone mkmr_marimba~ 30 \$1 \$0;
+#X obj 176 475 t b a;
+#X obj 203 500 s \$0.switch;
+#X obj 176 523 array max \$0.switch;
+#X obj 12 558 switch~;
+#X obj 11 377 mod 30;
+#X connect 3 0 34 0;
+#X connect 4 0 15 0;
+#X connect 5 0 11 0;
+#X connect 5 1 17 0;
+#X connect 6 0 35 0;
+#X connect 7 0 12 0;
+#X connect 7 1 8 0;
+#X connect 8 0 6 1;
+#X connect 9 0 10 0;
+#X connect 11 0 6 0;
+#X connect 11 1 12 1;
+#X connect 12 0 30 0;
+#X connect 13 0 4 0;
+#X connect 13 1 14 0;
+#X connect 14 0 13 1;
+#X connect 15 0 5 0;
+#X connect 16 0 17 1;
+#X connect 17 0 9 0;
+#X connect 18 0 13 0;
+#X connect 19 0 27 0;
+#X connect 20 0 19 0;
+#X connect 20 1 21 0;
+#X connect 21 0 20 1;
+#X connect 22 0 28 0;
+#X connect 23 0 22 0;
+#X connect 23 1 24 0;
+#X connect 24 0 23 1;
+#X connect 25 0 20 0;
+#X connect 26 0 23 0;
+#X connect 27 0 5 0;
+#X connect 28 0 5 0;
+#X connect 30 0 3 0;
+#X connect 30 1 3 1;
+#X connect 30 2 31 0;
+#X connect 31 0 33 0;
+#X connect 31 1 32 0;
+#X connect 33 0 3 2;
+#X connect 35 0 7 0;
