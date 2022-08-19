@@ -20,7 +20,7 @@
 #X msg 782 530 1;
 #X obj 779 589 switch~;
 #X obj 12 279 / 1;
-#X msg 183 251 0;
+#X msg 136 247 0;
 #X obj 12 554 outlet~;
 #X obj 81 145 clip 0 127;
 #N canvas 0 0 450 300 NETPD 0;
@@ -241,7 +241,7 @@
 #X obj 6 97 -;
 #X obj 6 139 + 100;
 #X obj 6 160 dbtorms;
-#X obj 6 118 * -15;
+#X obj 6 118 * -30;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
