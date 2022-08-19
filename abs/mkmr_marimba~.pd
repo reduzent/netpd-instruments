@@ -1,4 +1,4 @@
-#N canvas 970 102 902 638 10;
+#N canvas 970 102 902 695 10;
 #X obj 12 270 phasor~;
 #X obj 12 312 -~ 0.25;
 #X obj 12 333 cos~;
@@ -108,7 +108,7 @@
 #X text 372 472 [marimba~] version 1;
 #X obj 65 555 outlet~;
 #X obj 752 561 t a a;
-#X obj 752 614 outlet;
+#X obj 752 662 outlet;
 #X obj 131 12 r \$3.voices;
 #X obj 131 35 route velocity;
 #X obj 131 58 * 127;
@@ -153,6 +153,8 @@
 #X obj 12 34 t a a;
 #X obj 44 59 s \$0.pitch;
 #X obj 55 486 r \$0.pitch;
+#X obj 752 637 pack f f;
+#X obj 797 613 r \$0.pitch;
 #X connect 0 0 58 0;
 #X connect 0 0 59 0;
 #X connect 0 0 60 0;
@@ -272,7 +274,7 @@
 #X connect 94 0 28 0;
 #X connect 95 0 32 0;
 #X connect 95 0 41 0;
-#X connect 106 0 107 0;
+#X connect 106 0 118 0;
 #X connect 106 1 56 0;
 #X connect 108 0 109 0;
 #X connect 109 0 110 0;
@@ -286,3 +288,5 @@
 #X connect 115 0 113 0;
 #X connect 115 1 116 0;
 #X connect 117 0 114 1;
+#X connect 118 0 107 0;
+#X connect 119 0 118 1;
