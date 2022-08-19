@@ -1,29 +1,29 @@
-#N struct 38832.button float posx float posy float color;
-#N struct 38832.cursor float cx float cy float cy2;
-#N struct 38763-automation float yshift array variy 38763-automation-element
+#N struct 41152.button float posx float posy float color;
+#N struct 41152.cursor float cx float cy float cy2;
+#N struct 41083-automation float yshift array variy 41083-automation-element
 ;
-#N struct 38763-automation-element float y;
-#N struct 38762.autolabel float x float y symbol lbl float color float
+#N struct 41083-automation-element float y;
+#N struct 41082.autolabel float x float y symbol lbl float color float
 track;
-#N struct 39517.rectangle float id float x float y float w float h
+#N struct 41344.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
-#N struct 38906.button float posx float posy float color;
-#N struct 38906.cursor float cx float cy float cy2;
-#N struct 38837-automation float yshift array variy 38837-automation-element
+#N struct 41226.button float posx float posy float color;
+#N struct 41226.cursor float cx float cy float cy2;
+#N struct 41157-automation float yshift array variy 41157-automation-element
 ;
-#N struct 38837-automation-element float y;
-#N struct 38836.autolabel float x float y symbol lbl float color float
+#N struct 41157-automation-element float y;
+#N struct 41156.autolabel float x float y symbol lbl float color float
 track;
-#N struct 39514.rectangle float id float x float y float w float h
+#N struct 41341.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
-#N struct 38977.button float posx float posy float color;
-#N struct 38977.cursor float cx float cy float cy2;
-#N struct 38908-automation float yshift array variy 38908-automation-element
+#N struct 41297.button float posx float posy float color;
+#N struct 41297.cursor float cx float cy float cy2;
+#N struct 41228-automation float yshift array variy 41228-automation-element
 ;
-#N struct 38908-automation-element float y;
-#N struct 38907.autolabel float x float y symbol lbl float color float
+#N struct 41228-automation-element float y;
+#N struct 41227.autolabel float x float y symbol lbl float color float
 track;
-#N struct 39511.rectangle float id float x float y float w float h
+#N struct 41338.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
 #N canvas 707 130 523 608 10;
 #N canvas 624 75 434 290 NETPD 0;
@@ -71,22 +71,27 @@ float txtclr float boxclr float bgclr symbol label;
 #X obj 176 435 t b a;
 #X obj 176 483 array max \$0.switch;
 #X obj 12 518 switch~;
-#N canvas 0 0 392 348 voice.allocate 0;
-#X obj 8 152 array min \$0.switch;
-#X obj 8 175 sel 0;
-#X obj 8 205 f;
-#X obj 36 195 b;
-#X obj 36 218 random 30;
+#N canvas 0 0 448 482 voice.allocate 0;
+#X obj 8 222 array min \$0.switch;
+#X obj 8 245 sel 0;
+#X obj 8 275 f;
+#X obj 36 265 b;
+#X obj 36 288 random 30;
 #X obj 8 1 inlet;
-#X obj 8 293 outlet;
-#X obj 8 252 t a a;
-#X obj 279 210 pack f f;
-#X msg 279 233 \$2 \$1;
-#X obj 279 256 s \$0.note.voice;
-#X obj 8 25 t a a, f 25;
-#X obj 8 123 b;
-#X obj 8 51 tabread \$0.note.voice;
-#X obj 8 74 sel -1, f 22;
+#X obj 8 363 outlet;
+#X obj 8 322 t a a;
+#X obj 279 280 pack f f;
+#X msg 279 303 \$2 \$1;
+#X obj 279 326 s \$0.note.voice;
+#X obj 8 95 t a a, f 25;
+#X obj 8 193 b;
+#X obj 8 121 tabread \$0.note.voice;
+#X obj 8 144 sel -1, f 22;
+#X obj 103 15 r \$0.voices;
+#X obj 103 38 route velocity;
+#X obj 8 24 list prepend;
+#X obj 8 47 route 0;
+#X msg 8 72 \$2;
 #X connect 0 0 1 0;
 #X connect 0 1 2 1;
 #X connect 1 0 2 0;
@@ -94,7 +99,7 @@ float txtclr float boxclr float bgclr symbol label;
 #X connect 2 0 7 0;
 #X connect 3 0 4 0;
 #X connect 4 0 7 0;
-#X connect 5 0 11 0;
+#X connect 5 0 17 0;
 #X connect 7 0 6 0;
 #X connect 7 1 8 0;
 #X connect 8 0 9 0;
@@ -105,6 +110,11 @@ float txtclr float boxclr float bgclr symbol label;
 #X connect 13 0 14 0;
 #X connect 14 0 12 0;
 #X connect 14 1 6 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 1;
+#X connect 17 0 18 0;
+#X connect 18 1 19 0;
+#X connect 19 0 11 0;
 #X restore 11 355 pd voice.allocate;
 #X obj 251 363 table \$0.note.voice 128;
 #X obj 11 326 t a a, f 8;
