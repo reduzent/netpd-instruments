@@ -1,37 +1,37 @@
-#N struct 1586.button float posx float posy float color;
-#N struct 1586.cursor float cx float cy float cy2;
-#N struct 1517-automation float yshift array variy 1517-automation-element
+#N struct 38832.button float posx float posy float color;
+#N struct 38832.cursor float cx float cy float cy2;
+#N struct 38763-automation float yshift array variy 38763-automation-element
 ;
-#N struct 1517-automation-element float y;
-#N struct 1516.autolabel float x float y symbol lbl float color float
+#N struct 38763-automation-element float y;
+#N struct 38762.autolabel float x float y symbol lbl float color float
 track;
-#N struct 1778.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1660.button float posx float posy float color;
-#N struct 1660.cursor float cx float cy float cy2;
-#N struct 1591-automation float yshift array variy 1591-automation-element
+#N struct 39517.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 38906.button float posx float posy float color;
+#N struct 38906.cursor float cx float cy float cy2;
+#N struct 38837-automation float yshift array variy 38837-automation-element
 ;
-#N struct 1591-automation-element float y;
-#N struct 1590.autolabel float x float y symbol lbl float color float
+#N struct 38837-automation-element float y;
+#N struct 38836.autolabel float x float y symbol lbl float color float
 track;
-#N struct 1775.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1731.button float posx float posy float color;
-#N struct 1731.cursor float cx float cy float cy2;
-#N struct 1662-automation float yshift array variy 1662-automation-element
+#N struct 39514.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
+#N struct 38977.button float posx float posy float color;
+#N struct 38977.cursor float cx float cy float cy2;
+#N struct 38908-automation float yshift array variy 38908-automation-element
 ;
-#N struct 1662-automation-element float y;
-#N struct 1661.autolabel float x float y symbol lbl float color float
+#N struct 38908-automation-element float y;
+#N struct 38907.autolabel float x float y symbol lbl float color float
 track;
-#N struct 1772.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
+#N struct 39511.rectangle float id float x float y float w float h
+float txtclr float boxclr float bgclr symbol label;
 #N canvas 707 130 523 608 10;
 #N canvas 624 75 434 290 NETPD 0;
 #N canvas 1134 428 473 287 abslist 0;
 #X msg 25 26 i2mx;
 #X msg 25 51 mkmr_marimba~;
 #X restore 11 62 pd abslist;
-#X msg 12 8 version 0 0 2;
+#X msg 12 8 version 0 0 3;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 11 66 netpd_head \$1 mmmarimba;
 #N canvas 862 531 296 124 \$1-mmmarimba 1;

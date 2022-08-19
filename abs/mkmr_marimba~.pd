@@ -15,7 +15,7 @@
 #X obj 12 554 outlet~;
 #X obj 81 145 clip 0 127;
 #N canvas 0 0 450 300 NETPD 0;
-#X msg 28 6 version 0 0 1;
+#X msg 28 6 version 0 0 2;
 #X restore 23 611 pd NETPD 2 0;
 #X text 174 568 Email: mianmogra94@gmail.com;
 #X text 174 583 GitHub: github.com/MikeMorenoAudio;
@@ -234,6 +234,7 @@
 #X msg 318 399 stop;
 #X obj 153 369 line~;
 #X msg 153 346 \$1 \, 0 4000;
+#X msg 379 382 stop;
 #X connect 0 0 12 0;
 #X connect 0 1 40 0;
 #X connect 1 0 34 0;
@@ -250,6 +251,7 @@
 #X connect 8 0 9 0;
 #X connect 9 0 47 0;
 #X connect 9 0 48 0;
+#X connect 9 0 52 0;
 #X connect 10 0 25 0;
 #X connect 12 0 39 0;
 #X connect 14 0 2 0;
@@ -283,3 +285,4 @@
 #X connect 49 0 48 0;
 #X connect 50 0 6 1;
 #X connect 51 0 50 0;
+#X connect 52 0 45 0;
