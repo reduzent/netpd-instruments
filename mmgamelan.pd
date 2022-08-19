@@ -1,29 +1,29 @@
-#N struct 47709.button float posx float posy float color;
-#N struct 47709.cursor float cx float cy float cy2;
-#N struct 47640-automation float yshift array variy 47640-automation-element
+#N struct 58104.button float posx float posy float color;
+#N struct 58104.cursor float cx float cy float cy2;
+#N struct 58035-automation float yshift array variy 58035-automation-element
 ;
-#N struct 47640-automation-element float y;
-#N struct 47639.autolabel float x float y symbol lbl float color float
+#N struct 58035-automation-element float y;
+#N struct 58034.autolabel float x float y symbol lbl float color float
 track;
-#N struct 47892.rectangle float id float x float y float w float h
+#N struct 58296.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
-#N struct 47783.button float posx float posy float color;
-#N struct 47783.cursor float cx float cy float cy2;
-#N struct 47714-automation float yshift array variy 47714-automation-element
+#N struct 58178.button float posx float posy float color;
+#N struct 58178.cursor float cx float cy float cy2;
+#N struct 58109-automation float yshift array variy 58109-automation-element
 ;
-#N struct 47714-automation-element float y;
-#N struct 47713.autolabel float x float y symbol lbl float color float
+#N struct 58109-automation-element float y;
+#N struct 58108.autolabel float x float y symbol lbl float color float
 track;
-#N struct 47889.rectangle float id float x float y float w float h
+#N struct 58293.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
-#N struct 47854.button float posx float posy float color;
-#N struct 47854.cursor float cx float cy float cy2;
-#N struct 47785-automation float yshift array variy 47785-automation-element
+#N struct 58249.button float posx float posy float color;
+#N struct 58249.cursor float cx float cy float cy2;
+#N struct 58180-automation float yshift array variy 58180-automation-element
 ;
-#N struct 47785-automation-element float y;
-#N struct 47784.autolabel float x float y symbol lbl float color float
+#N struct 58180-automation-element float y;
+#N struct 58179.autolabel float x float y symbol lbl float color float
 track;
-#N struct 47886.rectangle float id float x float y float w float h
+#N struct 58290.rectangle float id float x float y float w float h
 float txtclr float boxclr float bgclr symbol label;
 #N canvas 707 130 523 608 10;
 #N canvas 624 75 434 290 NETPD 0;
@@ -139,8 +139,8 @@ float txtclr float boxclr float bgclr symbol label;
 #X obj 292 330 s \$0.note.voice;
 #X obj 11 409 clone mkmr_gamelan~ 30 \$1 \$0;
 #X obj 166 324 noise~;
-#X obj 166 345 hip~ 8000;
-#X obj 166 366 hip~ 8000;
+#X obj 166 345 hip~ 6000;
+#X obj 166 366 hip~ 6000;
 #X connect 3 0 28 0;
 #X connect 4 0 11 0;
 #X connect 5 0 31 0;
