@@ -324,6 +324,10 @@
 #X connect 35 0 7 1;
 #X connect 35 0 9 1;
 #X restore 550 491 pd MAIN OSC;
+#X text 678 496 gamelan model using additive synthesis borrowed from
+Mike Moreno.;
+#X msg 684 537 browse https://github.com/MikeMorenoDSP/pd-mkmr;
+#X obj 684 560 pdcontrol;
 #X connect 0 0 79 0;
 #X connect 1 0 17 0;
 #X connect 1 1 18 0;
@@ -427,3 +431,4 @@
 #X connect 92 0 86 0;
 #X connect 93 0 31 0;
 #X connect 94 0 31 0;
+#X connect 96 0 97 0;
