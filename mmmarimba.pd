@@ -1,30 +1,3 @@
-#N struct 41152.button float posx float posy float color;
-#N struct 41152.cursor float cx float cy float cy2;
-#N struct 41083-automation float yshift array variy 41083-automation-element
-;
-#N struct 41083-automation-element float y;
-#N struct 41082.autolabel float x float y symbol lbl float color float
-track;
-#N struct 41344.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 41226.button float posx float posy float color;
-#N struct 41226.cursor float cx float cy float cy2;
-#N struct 41157-automation float yshift array variy 41157-automation-element
-;
-#N struct 41157-automation-element float y;
-#N struct 41156.autolabel float x float y symbol lbl float color float
-track;
-#N struct 41341.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 41297.button float posx float posy float color;
-#N struct 41297.cursor float cx float cy float cy2;
-#N struct 41228-automation float yshift array variy 41228-automation-element
-;
-#N struct 41228-automation-element float y;
-#N struct 41227.autolabel float x float y symbol lbl float color float
-track;
-#N struct 41338.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
 #N canvas 707 130 523 608 10;
 #N canvas 624 75 434 290 NETPD 0;
 #N canvas 1134 428 473 287 abslist 0;
