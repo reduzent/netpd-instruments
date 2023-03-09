@@ -1,8 +1,3 @@
-#N struct 2826.button float posx float posy float color;
-#N struct 2826.cursor float cx float cy float cy2;
-#N struct 2773-automation float yshift array variy 2773-automation-element
-;
-#N struct 2773-automation-element float y;
 #N canvas 530 376 450 386 10;
 #N canvas 545 184 450 563 dsp-guts 0;
 #N canvas 989 64 450 300 simplepoly 0;
