@@ -1,15 +1,3 @@
-#N struct 55653.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 55654.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 55655.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 55656.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 55657.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
-#N struct 55658.rectangle float id float x float y float w float h
-float txtclr float boxclr float bgclr symbol label;
 #N canvas 630 103 390 484 10;
 #X text 9 12 Set of abstractions dealing with chords;
 #X text 11 37 Chords consist either of lists of (pitch function) tuples

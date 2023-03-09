@@ -1,6 +1,3 @@
-#N struct 2199.filterplot float y array filterplot-array 2199.filterplot-element
-;
-#N struct 2199.filterplot-element float y;
 #N canvas 406 374 693 394 10;
 #N canvas 1064 337 231 103 NETPD 0;
 #X msg 6 10 version 0 1 1;

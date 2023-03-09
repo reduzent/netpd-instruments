@@ -1,17 +1,3 @@
-#N struct 124014.button float posx float posy float color;
-#N struct 124014.cursor float cx float cy float cy2;
-#N struct 123967-automation float yshift array variy 123967-automation-element
-;
-#N struct 123967-automation-element float y;
-#N struct 123966.autolabel float x float y symbol lbl float color float
-track;
-#N struct 124063.button float posx float posy float color;
-#N struct 124063.cursor float cx float cy float cy2;
-#N struct 124016-automation float yshift array variy 124016-automation-element
-;
-#N struct 124016-automation-element float y;
-#N struct 124015.autolabel float x float y symbol lbl float color float
-track;
 #N canvas 591 225 460 561 10;
 #N canvas 624 75 312 87 NETPD 0;
 #N canvas 315 75 328 115 abslist 0;

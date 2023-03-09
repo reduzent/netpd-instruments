@@ -1,21 +1,3 @@
-#N struct 9603.seg.range float posy float bgclr;
-#N struct 9603.seg.solo float posy float bgclr;
-#N struct 9603.seg.mute float posy float fgclr float bgclr;
-#N struct 9603.seg.row float posy float width float offset float fgclr
-float bgclr float vis;
-#N struct 9603.seg.length float bgclr float fgclr float length;
-#N struct 9603.seg.count float bgclr float fgclr float count;
-#N struct 9603.seg.width float bgclr float fgclr float default;
-#N struct 9603.seg.del float bgclr float fgclr symbol label;
-#N struct 9603.seg.add float bgclr float fgclr symbol label;
-#N struct 9603.set.selector float posy float number symbol label float
-fgclr float bgclr float vis float offset float length float vis2;
-#N struct 9603.set.default float bgclr float fgclr symbol selector
-float number;
-#N struct 9603.set.default_length float bgclr float fgclr float default
-;
-#N struct 9603.set.del float bgclr float fgclr symbol label;
-#N struct 9603.set.add float bgclr float fgclr symbol label;
 #N canvas 521 106 417 637 10;
 #N canvas 614 106 396 76 NETPD 0;
 #N canvas 305 106 381 123 abslist 0;

@@ -1,5 +1,3 @@
-#N struct 1003.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
 #N canvas 418 352 320 305 10;
 #N canvas 500 103 409 218 NETPD 0;
 #X msg 25 19 version 0 0 9;

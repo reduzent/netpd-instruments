@@ -1,15 +1,3 @@
-#N struct 1215.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1216.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1217.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1218.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1219.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
-#N struct 1220.rectangle float id float x float y float w float h float
-txtclr float boxclr float bgclr symbol label;
 #N canvas 489 59 540 320 10;
 #X obj 222 27 r \$0.chord;
 #X obj 222 71 symbol;

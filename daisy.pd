@@ -1,10 +1,3 @@
-#N struct 2070.button float posx float posy float color;
-#N struct 2070.cursor float cx float cy float cy2;
-#N struct 2012-automation float yshift array variy 2012-automation-element
-;
-#N struct 2012-automation-element float y;
-#N struct 2011.autolabel float x float y symbol lbl float color float
-track;
 #N canvas 957 531 218 159 10;
 #N canvas 338 195 497 490 daisy.code 0;
 #X obj 228 60 *~;
