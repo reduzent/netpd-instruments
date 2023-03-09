@@ -1,10 +1,3 @@
-#N struct 2167.button float posx float posy float color;
-#N struct 2167.cursor float cx float cy float cy2;
-#N struct 2120-automation float yshift array variy 2120-automation-element
-;
-#N struct 2120-automation-element float y;
-#N struct 2119.autolabel float x float y symbol lbl float color float
-track;
 #N canvas 629 542 248 272 10;
 #N canvas 0 76 623 696 dsp 0;
 #X obj 22 561 *~;
