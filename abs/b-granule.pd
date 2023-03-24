@@ -505,8 +505,8 @@
 #X obj 171 130 t b b b b;
 #X obj 67 294 throw~ \$2-Left;
 #X obj 174 288 throw~ \$2-Right;
-#N canvas 0 23 450 300 NETPD 0;
-#X msg 38 30 version 0 0 3;
+#N canvas 0 23 450 300 NETPD 1;
+#X msg 38 30 version 0 0 4;
 #X restore 316 52 pd NETPD 2 0;
 #X connect 0 0 6 0;
 #X connect 1 0 0 0;
