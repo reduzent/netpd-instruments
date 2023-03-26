@@ -1,4 +1,4 @@
-#N canvas 700 149 543 405 10;
+#N canvas 1034 146 543 405 10;
 #N canvas 837 301 372 305 bytes.gui 0;
 #X obj 35 229 s \$0.16bit.r;
 #X msg 35 204 color -1 0 \$1;
@@ -473,17 +473,16 @@
 #X obj 601 107 sel 1;
 #X obj 573 227 r \$0.state;
 #X obj 573 249 sel 3 1;
-#X obj 330 39 r master;
-#X obj 330 61 route switch;
 #X obj 330 83 sel 1;
 #X obj 345 126 r \$0.state;
 #X obj 330 147 f;
 #X obj 330 169 sel 2;
 #X obj 330 220 spigot 0;
 #X obj 193 152 s \$0.recheck.mx;
+#X obj 330 58 master-param switch;
 #X connect 0 0 15 0;
 #X connect 1 0 23 0;
-#X connect 3 0 35 1;
+#X connect 3 0 33 1;
 #X connect 4 0 13 0;
 #X connect 6 0 5 0;
 #X connect 7 0 5 0;
@@ -495,7 +494,7 @@
 #X connect 13 0 14 0;
 #X connect 14 1 16 0;
 #X connect 14 2 7 0;
-#X connect 14 3 36 0;
+#X connect 14 3 34 0;
 #X connect 15 0 8 0;
 #X connect 15 1 9 0;
 #X connect 17 0 18 0;
@@ -512,59 +511,41 @@
 #X connect 27 0 28 0;
 #X connect 28 0 10 0;
 #X connect 28 1 11 0;
-#X connect 29 0 30 0;
-#X connect 30 0 31 0;
-#X connect 31 0 33 0;
-#X connect 32 0 33 1;
-#X connect 33 0 34 0;
-#X connect 34 0 35 0;
-#X connect 35 0 7 0;
+#X connect 29 0 31 0;
+#X connect 30 0 31 1;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 7 0;
+#X connect 35 0 29 0;
 #X restore 189 189 pd logic;
-#N canvas 830 402 252 48 NETPD 0;
-#X msg 19 9 version 0 0 1;
+#N canvas 830 402 252 91 NETPD 0;
+#X msg 19 9 version 0 0 2;
+#N canvas 893 253 378 56 ablist 0;
+#X msg 25 10 master-param;
+#X restore 24 38 pd ablist;
 #X restore 184 19 pd NETPD 2 0;
-#N canvas 1062 44 327 56 \$1-mx-recorder 1;
-#X obj 5 7 cnv 15 311 38 empty empty empty 20 12 0 14 -4034 -66577
-0;
-#X obj 7 9 cnv 15 307 34 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 45 28 hsl 55 12 0 1 0 0 \$0.autostart.s \$0.autostart.r empty
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 41 27 cnv 12 62 14 empty empty empty 20 12 0 14 -4034 -66577
-0;
-#X obj 42 28 cnv 12 60 12 empty \$0.autostart.label autostart 3 6 0
-10 -1 -2049 0;
-#X obj 9 11 bng 30 250 50 0 \$0.rec.s empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 9 11 cnv 12 30 30 empty empty empty 20 12 0 14 -4034 -66577
-0;
-#X obj 10 12 cnv 15 28 28 empty \$0.rec.label ● 3 11 0 39 -1 -2049
-0;
-#X obj 108 28 hsl 104 12 0 2.9999 0 0 \$0.bitrate.s empty empty -2
--8 0 10 -262144 -1 -1 0 0;
-#X obj 105 27 cnv 12 109 14 empty empty empty 20 12 0 14 -4034 -66577
-0;
-#X obj 106 28 cnv 12 35 12 empty \$0.16bit.r 16bit 3 6 0 10 -1 -2049
-0;
-#X obj 142 28 cnv 12 35 12 empty \$0.24bit.r 24bit 3 6 0 10 -1 -4033
-0;
-#X obj 178 28 cnv 12 35 12 empty \$0.32bit.r 32bit 3 6 0 10 -1 -2049
-0;
-#X obj 44 11 hsl 266 14 0 1 0 0 \$0.file.s \$0.file.r empty -2 -8 0
-10 -262144 -1 -1 0 1;
-#X obj 41 11 cnv 12 271 14 empty empty empty 20 12 0 14 -4034 -66577
-0;
-#X obj 42 12 cnv 12 269 12 empty \$0.file.label <select_file> 3 6 0
-10 -1 -2049 0;
-#X obj 216 27 cnv 12 80 14 empty empty empty 20 12 0 14 -4034 -66577
-0;
-#X obj 217 28 cnv 12 78 12 empty \$0.clock.label 00:00:00.000 3 6 0
-10 -1 -2049 0;
-#X obj 298 27 cnv 12 14 14 empty empty empty 20 12 0 14 -4034 -66577
-0;
-#X obj 299 28 cnv 12 12 12 empty \$0.indicator ● 2 5 0 15 -1 -1 0
-;
-#X coords 0 56 1 55 311 38 0;
-#X restore 23 21 pd \$1-mx-recorder;
+#N canvas 1076 0 342 56 \$1-mx-recorder 1;
+#X obj 5 8 cnv 15 311 38 empty empty sdafdsafdsa 20 12 0 14 #00fc04 #404040 0;
+#X obj 7 10 cnv 15 307 34 empty empty empty 20 12 0 14 #000000 #404040 0;
+#X obj 45 29 hsl 55 12 0 1 0 0 \$0.autostart.s \$0.autostart.r empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 41 28 cnv 12 62 14 empty empty empty 20 12 0 14 #00fc04 #404040 0;
+#X obj 42 29 cnv 12 60 12 empty \$0.autostart.label autostart 3 6 0 10 #000000 #008000 0;
+#X obj 9 12 bng 30 250 50 0 \$0.rec.s empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 9 12 cnv 12 30 30 empty empty empty 20 12 0 14 #00fc04 #404040 0;
+#X obj 10 13 cnv 15 28 28 empty \$0.rec.label ● 3 11 0 39 #000000 #008000 0;
+#X obj 108 29 hsl 104 12 0 2.9999 0 0 \$0.bitrate.s empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 0;
+#X obj 105 28 cnv 12 109 14 empty empty empty 20 12 0 14 #00fc04 #404040 0;
+#X obj 106 29 cnv 12 35 12 empty \$0.16bit.r 16bit 3 6 0 10 #000000 #008000 0;
+#X obj 142 29 cnv 12 35 12 empty \$0.24bit.r 24bit 3 6 0 10 #000000 #00ff00 0;
+#X obj 178 29 cnv 12 35 12 empty \$0.32bit.r 32bit 3 6 0 10 #000000 #008000 0;
+#X obj 44 12 hsl 266 14 0 1 0 0 \$0.file.s \$0.file.r empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 41 12 cnv 12 271 14 empty empty empty 20 12 0 14 #00fc04 #404040 0;
+#X obj 42 13 cnv 12 269 12 empty \$0.file.label <select_file> 3 6 0 10 #000000 #008000 0;
+#X obj 216 28 cnv 12 80 14 empty empty empty 20 12 0 14 #00fc04 #404040 0;
+#X obj 217 29 cnv 12 78 12 empty \$0.clock.label 00:00:00.000 3 6 0 10 #000000 #008000 0;
+#X obj 298 28 cnv 12 14 14 empty empty empty 20 12 0 14 #00fc04 #404040 0;
+#X obj 299 29 cnv 12 12 12 empty \$0.indicator ● 2 5 0 15 #000000 #000000 0;
+#X restore 24 26 pd \$1-mx-recorder;
 #X connect 8 0 9 0;
 #X connect 9 0 13 0;
 #X connect 9 1 12 0;
