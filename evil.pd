@@ -4,46 +4,28 @@
 #X msg 12 65 master-param;
 #X msg 12 89 i2mx;
 #X restore 12 34 pd abslist;
-#X msg 11 10 version 0 1 5;
+#X msg 11 10 version 0 1 6;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 evil;
 #N canvas 597 252 167 186 \$1-evil 1;
-#X obj 6 4 cnv 15 145 93 empty empty send 3 8 0 14 #b8b8b8 #000000
-0;
-#X obj 50 20 hsl 57 16 0 127 0 0 empty \$0.master.display master 2
-8 0 14 #000000 #000000 #14e814 0 1;
-#X obj 115 20 hsl 31 16 0 127 0 0 empty \$0.dsp.display dsp 2 8 0 14
-#000000 #000000 #14e814 0 1;
-#X obj 50 39 hsl 96 16 0 127 0 0 \$0.owner.button \$0.owner.display
-owner:0 2 8 0 14 #000000 #000000 #bcbcbc 0 1;
-#X obj 8 58 nbx 7 16 8 128 0 0 \$1-delay \$1-delay empty 0 -8 0 10
-#fcfcfc #000000 #b8b8b8 0 256;
-#X obj 12 58 hsl 73 16 0 127 0 0 empty \$0.delay.display delay:16 2
-8 0 14 #000000 #000000 #b8b8b8 0 1;
-#X obj 6 105 cnv 15 145 67 empty empty receive 2 8 0 14 #b8b8b8 #000000
-0;
-#X obj 12 122 hsl 134 22 0 127 0 0 empty empty buffer 0 8 0 14 #000000
-#000000 #b8b8b8 0 1;
-#X obj 9 140 cnv 4 4 4 empty \$0.buffer.meter empty 20 12 0 14 #14e814
-#000000 0;
-#X obj 12 147 hsl 134 22 0 127 0 0 empty \$0.playback.display playback
-0 8 0 14 #000000 #000000 #bcbcbc 0 1;
-#X obj 9 165 cnv 4 4 4 empty \$0.playback.meter empty 20 12 0 14 #fc8000
-#404040 0;
-#X obj 9 22 vsl 35 30 0 127 0 0 \$0.switch.button empty empty 0 -9
-0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 9 20 cnv 15 35 35 empty \$0.switch.display empty 20 12 0 14
-#000000 #000000 0;
-#X obj 10 77 nbx 5 16 1 64 0 0 \$1-adc \$1-adc empty 0 -8 0 10 #fcfcfc
-#000000 #b8b8b8 0 256;
-#X obj 12 77 hsl 53 16 0 127 0 0 empty \$0.adc.display adc:1 2 8 0
-14 #000000 #000000 #b8b8b8 0 1;
-#X obj 70 77 cnv 10 78 16 empty \$0.peak.display empty 20 12 0 14 #000000
-#000000 0;
-#X obj 93 58 hsl 53 16 0 127 0 0 \$0.help.button empty empty -2 -8
-0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 93 58 hsl 53 16 0 127 0 0 empty \$0.help.label help 2 8 0 14
-#000000 #000000 #b8b8b8 0 1;
+#X obj 6 4 cnv 15 145 93 empty empty send 3 8 0 14 #b8b8b8 #000000 0;
+#X obj 50 20 hsl 57 16 0 127 0 0 empty \$0.master.display master 2 8 0 14 #000000 #000000 #14e814 0 1;
+#X obj 115 20 hsl 31 16 0 127 0 0 empty \$0.dsp.display dsp 2 8 0 14 #000000 #000000 #14e814 0 1;
+#X obj 50 39 hsl 96 16 0 127 0 0 \$0.owner.button \$0.owner.display owner:0 2 8 0 14 #000000 #000000 #bcbcbc 0 1;
+#X obj 8 58 nbx 7 16 8 128 0 0 \$1-delay \$1-delay empty 0 -8 0 10 #fcfcfc #000000 #b8b8b8 0 256;
+#X obj 12 58 hsl 73 16 0 127 0 0 empty \$0.delay.display delay:16 2 8 0 14 #000000 #000000 #b8b8b8 0 1;
+#X obj 6 105 cnv 15 145 67 empty empty receive 2 8 0 14 #b8b8b8 #000000 0;
+#X obj 12 122 hsl 134 22 0 127 0 0 empty empty buffer 0 8 0 14 #000000 #000000 #b8b8b8 0 1;
+#X obj 9 140 cnv 4 4 4 empty \$0.buffer.meter empty 20 12 0 14 #14e814 #000000 0;
+#X obj 12 147 hsl 134 22 0 127 0 0 empty \$0.playback.display playback 0 8 0 14 #000000 #000000 #bcbcbc 0 1;
+#X obj 9 165 cnv 4 4 4 empty \$0.playback.meter empty 20 12 0 14 #fc8000 #404040 0;
+#X obj 9 22 vsl 35 30 0 127 0 0 \$0.switch.button empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 9 20 cnv 15 35 35 empty \$0.switch.display empty 20 12 0 14 #000000 #000000 0;
+#X obj 10 77 nbx 5 16 1 64 0 0 \$1-adc \$1-adc empty 0 -8 0 10 #fcfcfc #000000 #b8b8b8 0 256;
+#X obj 12 77 hsl 53 16 0 127 0 0 empty \$0.adc.display adc:1 2 8 0 14 #000000 #000000 #b8b8b8 0 1;
+#X obj 70 77 cnv 10 78 16 empty \$0.peak.display empty 20 12 0 14 #000000 #000000 0;
+#X obj 93 58 hsl 53 16 0 127 0 0 \$0.help.button empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 93 58 hsl 53 16 0 127 0 0 empty \$0.help.label help 2 8 0 14 #000000 #000000 #b8b8b8 0 1;
 #X restore 10 42 pd \$1-evil;
 #N canvas 533 79 462 464 send-signal 0;
 #X obj 29 218 tabwrite~ \$0.msb.send;
@@ -320,8 +302,7 @@ owner:0 2 8 0 14 #000000 #000000 #bcbcbc 0 1;
 #X obj 16 199 outlet;
 #X obj 68 200 s \$0.latency.compensation;
 #X obj 16 134 t a a;
-#N canvas 423 209 301 243 add_latency_introduced_by_tx/rx_buffers 0
-;
+#N canvas 423 209 301 243 add_latency_introduced_by_tx/rx_buffers 0;
 #X obj 111 27 loadbang;
 #X msg 111 49 1024;
 #X obj 111 71 * 2;
@@ -346,12 +327,16 @@ owner:0 2 8 0 14 #000000 #000000 #bcbcbc 0 1;
 #X connect 10 0 9 0;
 #X restore 16 87 pd add_latency_introduced_by_tx/rx_buffers;
 #X msg 68 165 label \$1ms;
-#X obj 16 26 netpd-pref-get pd-audio-latency 1;
+#X obj 16 45 netpd-pref-get pd-audio-latency 1;
+#X obj 182 140 print evil_latency;
+#X obj 16 13 loadbang;
 #X connect 2 0 0 0;
 #X connect 2 1 4 0;
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
 #X connect 5 0 3 0;
+#X connect 5 0 6 0;
+#X connect 7 0 5 0;
 #X restore 183 98 pd calculate_real_latency;
 #X obj 150 196 *;
 #X obj 150 218 -;
@@ -615,11 +600,8 @@ owner:0 2 8 0 14 #000000 #000000 #bcbcbc 0 1;
 #X obj 14 114 change -1;
 #X obj 14 17 inlet, f 6;
 #X obj 14 137 outlet;
-#X text 93 24 Let's delay the DSP check so that evil is not turned
-off on a DSP 0 \, 1 toggly cycle. Otherwise loading instruments or
-effects turns evil off.;
-#X msg 113 92 browse https://github.com/reduzent/netpd-instruments/issues/39
-;
+#X text 93 24 Let's delay the DSP check so that evil is not turned off on a DSP 0 \, 1 toggly cycle. Otherwise loading instruments or effects turns evil off.;
+#X msg 113 92 browse https://github.com/reduzent/netpd-instruments/issues/39;
 #X obj 113 128 pdcontrol;
 #X connect 0 0 1 0;
 #X connect 0 1 2 1;
@@ -697,9 +679,7 @@ effects turns evil off.;
 #X obj 100 323 * 2;
 #X text 128 323 samps * 2 -> bytes;
 #X obj 100 350 * 0.8;
-#X text 10 8 We monitor the send buffer to check whether we have a
-fast enough uplink for sending live audio. If the network send buffer
-exceeds 80% of the audio buffer \, we stop sending audio.;
+#X text 10 8 We monitor the send buffer to check whether we have a fast enough uplink for sending live audio. If the network send buffer exceeds 80% of the audio buffer \, we stop sending audio.;
 #X text 143 351 80% buffer fill;
 #X obj 63 205 spigot 0;
 #X obj 63 380 >;
@@ -798,23 +778,14 @@ exceeds 80% of the audio buffer \, we stop sending audio.;
 #N canvas 764 147 380 366 \$1-evil-help 0;
 #X text 11 8 evil - send live audio with netpd;
 #X text 11 20 ---------------------------------;
-#X text 11 37 evil broadcasts an uncompressed 16-bit audio stream to
-all clients. By pre-defining a desired delay \, live audio is in time
-with generated sound.;
+#X text 11 37 evil broadcasts an uncompressed 16-bit audio stream to all clients. By pre-defining a desired delay \, live audio is in time with generated sound.;
 #X text 22 139 * DSP needs to be turned on;
-#X text 23 157 * You are owner of this evil instance (click on owner)
-;
-#X text 22 121 * master needs to be loaded and running (for time sync)
-;
-#X text 12 87 Three conditions need to be met before you can stream
-audio and the corresponding labels need to be green:;
-#X text 14 181 If two or more clients desire to send live audio \,
-more instances of evil need to be loaded. Beware that each instance
-requires 100kB/s download bandwidth for each client.;
-#X text 14 246 NOTE: If a buffer underrun is detected on any receiving
-client \, the sending instance immediately stops sending.;
-#X text 14 289 TIP: Make sure you configured a correct value for pd-audio-latency
-in netpd-preferences. This allows for precise timing.;
+#X text 23 157 * You are owner of this evil instance (click on owner);
+#X text 22 121 * master needs to be loaded and running (for time sync);
+#X text 12 87 Three conditions need to be met before you can stream audio and the corresponding labels need to be green:;
+#X text 14 181 If two or more clients desire to send live audio \, more instances of evil need to be loaded. Beware that each instance requires 100kB/s download bandwidth for each client.;
+#X text 14 246 NOTE: If a buffer underrun is detected on any receiving client \, the sending instance immediately stops sending.;
+#X text 14 289 TIP: Make sure you configured a correct value for pd-audio-latency in netpd-preferences. This allows for precise timing.;
 #X restore 15 171 pd \$1-evil-help;
 #X obj 16 74 r \$0.help.button;
 #X obj 16 94 sel 0;
