@@ -7,36 +7,28 @@
 #X msg 18 112 qseq3-instr-list;
 #X msg 189 49 roman_helpers;
 #X restore 12 34 pd abslist;
-#X msg 12 8 version 0 0 10;
+#X msg 12 8 version 0 0 11;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 68 netpd_head \$1 simplesample;
-#N canvas 492 215 323 299 \$1-simplesample 1;
+#N canvas 1400 458 323 299 \$1-simplesample 1;
 #X obj 4 80 simplesample-section \$1 1;
-#X obj 4 16 cnv 15 303 30 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#X obj 4 16 cnv 15 303 30 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0.sample 466 float 2;
 #X coords 0 1 466 -1 233 30 1 0 0;
 #X restore 19 16 graph;
-#X obj 21 61 hsl 230 15 0 1 0 0 \$0.playback.cursor \$0.playback.cursor.r
-empty -2 -8 0 10 -225271 -225271 -1 0 1;
-#X obj 4 61 tgl 15 0 \$1-playback \$1-playback playback 20 8 0 10 -4034
--1 -1 0 1;
-#X obj 21 46 hsl 230 15 0 1 0 0 \$0.record.cursor \$0.record.cursor.r
-empty -2 -8 0 10 -261689 -261689 -1 22900 1;
-#X obj 4 46 bng 15 250 50 0 \$0.record \$0.bli record 20 8 0 10 -258113
--1 -1;
-#X obj 252 46 nbx 5 15 1 99 0 0 \$1-adc \$1-adc adc -33 8 0 10 -191407
--1 -1 1 256;
-#X obj 252 61 nbx 5 15 1 999 0 0 \$1-length \$1-length length -50 8
-0 10 -191407 -1 -1 16 256;
+#X obj 21 61 hsl 230 15 0 1 0 0 \$0.playback.cursor \$0.playback.cursor.r empty -2 -8 0 10 #d8fcd8 #d8fcd8 #000000 0 1;
+#X obj 4 61 tgl 15 0 \$1-playback \$1-playback playback 20 8 0 10 #00fc04 #000000 #000000 0 1;
+#X obj 21 46 hsl 230 15 0 1 0 0 \$0.record.cursor \$0.record.cursor.r empty -2 -8 0 10 #fce0e0 #fce0e0 #000000 0 1;
+#X obj 4 46 bng 15 250 50 0 \$0.record \$0.bli record 20 8 0 10 #fc0400 #000000 #000000;
+#X obj 252 46 nbx 5 15 1 99 0 0 \$1-adc \$1-adc adc -33 8 0 10 #b8b8b8 #000000 #000000 0 256;
+#X obj 252 61 nbx 5 15 1 999 0 0 \$1-length \$1-length length -50 8 0 10 #b8b8b8 #000000 #000000 0 256;
 #X obj 4 146 simplesample-section \$1 3;
 #X obj 4 113 simplesample-section \$1 2;
 #X obj 4 179 simplesample-section \$1 4;
 #X obj 4 212 simplesample-section \$1 5;
 #X obj 4 245 simplesample-section \$1 6;
-#X obj 4 18 vsl 15 25 1 100 1 0 \$0.wave.scale \$0.bli empty 0 -9 0
-10 -191407 -1 -1 0 1;
+#X obj 4 18 vsl 15 25 1 100 1 0 \$0.wave.scale \$0.bli empty 0 -9 0 10 #b8b8b8 #000000 #000000 0 1;
 #X restore 10 42 pd \$1-simplesample;
 #X obj 14 293 i2mx \$1 simplesample;
 #X obj 11 116 master-param step;
@@ -190,6 +182,7 @@ empty -2 -8 0 10 -261689 -261689 -1 22900 1;
 #X obj 219 139 netpd-pref-get pd-audio-latency 1;
 #X obj 44 283 delay;
 #X obj 157 190 +;
+#X obj 219 112 loadbang;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
@@ -220,20 +213,19 @@ empty -2 -8 0 10 -261689 -261689 -1 22900 1;
 #X connect 24 0 23 0;
 #X connect 25 0 19 0;
 #X connect 26 0 9 1;
+#X connect 27 0 24 0;
 #X restore 188 177 pd recorder;
 #N canvas 943 415 449 196 force_trigger_dsp 0;
 #N canvas 0 240 256 177 \$0.deleteme 0;
 #X restore 20 15 pd \$0.deleteme;
 #X obj 27 58 loadbang;
 #X obj 27 134 s pd-\$0.deleteme;
-#X msg 27 87 obj 10 10 osc~ 200 \, obj 10 30 s~ 10002.blu \, connect
-0 0 1 0 \, clear;
+#X msg 27 87 obj 10 10 osc~ 200 \, obj 10 30 s~ 10002.blu \, connect 0 0 1 0 \, clear;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
 #X restore 115 13 pd force_trigger_dsp;
 #X obj 270 86 s \$1.length(ms);
-#X obj 16 364 qseq3-instr-list \$1 simplesample sample1 sample2 sample3
-sample4 sample5 sample6;
+#X obj 16 364 qseq3-instr-list \$1 simplesample sample1 sample2 sample3 sample4 sample5 sample6;
 #X obj 11 221 throw~ \$1.ss.sumL;
 #X obj 19 199 throw~ \$1.ss.sumR;
 #X obj 14 247 catch~ \$1.ss.sumL;
