@@ -9,7 +9,7 @@
 #X obj 9 69 netpd_head \$1 evil;
 #N canvas 597 252 167 186 \$1-evil 1;
 #X obj 6 4 cnv 15 145 93 empty empty send 3 8 0 14 #b8b8b8 #000000 0;
-#X obj 50 20 hsl 57 16 0 127 0 0 empty \$0.master.display master 2 8 0 14 #000000 #000000 #14e814 0 1;
+#X obj 50 20 hsl 57 16 0 127 0 0 empty \$0.master.display master 2 8 0 14 #000000 #000000 #bcbcbc 0 1;
 #X obj 115 20 hsl 31 16 0 127 0 0 empty \$0.dsp.display dsp 2 8 0 14 #000000 #000000 #14e814 0 1;
 #X obj 50 39 hsl 96 16 0 127 0 0 \$0.owner.button \$0.owner.display owner:0 2 8 0 14 #000000 #000000 #bcbcbc 0 1;
 #X obj 8 58 nbx 7 16 8 128 0 0 \$1-delay \$1-delay empty 0 -8 0 10 #fcfcfc #000000 #b8b8b8 0 256;
@@ -328,15 +328,13 @@
 #X restore 16 87 pd add_latency_introduced_by_tx/rx_buffers;
 #X msg 68 165 label \$1ms;
 #X obj 16 45 netpd-pref-get pd-audio-latency 1;
-#X obj 182 140 print evil_latency;
 #X obj 16 13 loadbang;
 #X connect 2 0 0 0;
 #X connect 2 1 4 0;
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
 #X connect 5 0 3 0;
-#X connect 5 0 6 0;
-#X connect 7 0 5 0;
+#X connect 6 0 5 0;
 #X restore 183 98 pd calculate_real_latency;
 #X obj 150 196 *;
 #X obj 150 218 -;
