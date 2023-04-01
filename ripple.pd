@@ -756,14 +756,6 @@ empty -2 -8 0 10 -241536 -241536 -1 0 0;
 #X coords 0 1 1200 -1 600 80 1 0 0;
 #X restore 10 20 graph;
 #N canvas 598 479 677 501 \$0.gop 0;
-#X scalar 2840.window-frame -1 1 \;;
-#X scalar 2840.zero-line 600 \;;
-#X scalar 2840.cue-marker 0 500 0 \;;
-#X scalar 2840.cue-dtl 0 500 0 1 \;;
-#X scalar 2840.cue-marker 0 50 1 \;;
-#X scalar 2840.cue-dtl 0 50 1 1 \;;
-#X scalar 2840.cue-marker 0 5 2 \;;
-#X scalar 2840.cue-dtl 0 5 2 1 \;;
 #X coords 0 0 599 199 600 200 2 20 20;
 #X restore 10 20 pd \$0.gop;
 #X obj 10 4 cnv 15 100 15 empty empty empty 20 12 0 14 -262144 -66577
