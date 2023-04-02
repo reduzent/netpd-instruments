@@ -1,18 +1,11 @@
 #N canvas 291 106 573 306 10;
-#X obj 20 20 nbx 9 20 -1 1 0 0 \$0.meta.set.nb \$0.meta.set.nb empty
-0 10 0 10 -262144 -1 -1 1 256;
-#X obj 111 20 nbx 9 20 0 9999 0 0 \$0.meta.offset.nb \$0.meta.offset.nb
-empty 0 10 0 10 -262144 -1 -1 0 256;
-#X obj 202 20 nbx 9 20 1 9999 0 0 \$0.meta.length.nb \$0.meta.length.nb
-empty 0 10 0 10 -262144 -1 -1 32 256;
-#X obj 20 20 cnv 15 273 20 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 22 22 cnv 10 87 16 empty \$0.meta.set.label empty 3 8 0 12 -228856
--1 0;
-#X obj 112 22 cnv 10 88 16 empty \$0.meta.offset.label empty 4 8 0
-12 -228856 -1 0;
-#X obj 203 22 cnv 10 88 16 empty \$0.meta.length.label empty 4 8 0
-12 -228856 -1 0;
+#X obj 20 20 nbx 9 20 -1 -1 0 0 \$0.meta.set.nb \$0.meta.set.nb empty 0 10 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 111 20 nbx 9 20 0 9999 0 0 \$0.meta.offset.nb \$0.meta.offset.nb empty 0 10 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 202 20 nbx 9 20 1 9999 0 0 \$0.meta.length.nb \$0.meta.length.nb empty 0 10 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 20 20 cnv 15 273 20 empty empty empty 20 12 0 14 #000000 #404040 0;
+#X obj 22 22 cnv 10 87 16 empty \$0.meta.set.label empty 3 8 0 12 #dcdcdc #000000 0;
+#X obj 112 22 cnv 10 88 16 empty \$0.meta.offset.label empty 4 8 0 12 #dcdcdc #000000 0;
+#X obj 203 22 cnv 10 88 16 empty \$0.meta.length.label empty 4 8 0 12 #dcdcdc #000000 0;
 #N canvas 0 44 875 442 gui.interfacing 0;
 #X obj 10 26 r \$0.meta.set;
 #X obj 10 48 sel -1;
@@ -129,8 +122,7 @@ empty 0 10 0 10 -262144 -1 -1 32 256;
 #N canvas 356 139 352 73 NETPD 0;
 #X msg 19 13 version 0 0 2;
 #X restore 429 19 pd NETPD 2 0;
-#X obj 307 14 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 307 14 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 328 13 <-before save;
 #N canvas 281 178 557 343 netpdization 0;
 #X obj 18 95 r \$0.meta.set.nb;
