@@ -18,8 +18,7 @@
 #X obj 193 30 route 0;
 #X obj 193 100 outlet;
 #X obj 193 52 b;
-#X msg 166 207 obj 19 5 r \$1.get \, obj 19 27 list append \$2 \, obj
-19 49 s \$1.set \, connect 0 0 1 0 \, connect 1 0 2 0;
+#X msg 166 207 obj 19 5 r \$1.get \, obj 19 27 list append \$2 \, obj 19 49 s \$1.set \, connect 0 0 1 0 \, connect 1 0 2 0;
 #X msg 166 160 symbol \$1\$2;
 #X msg 166 138 list $ \$1;
 #X obj 256 51 list prepend;
