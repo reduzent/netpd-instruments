@@ -23,8 +23,7 @@
 #X obj 15 100 b;
 #X obj 15 143 list trim;
 #X obj 15 165 s \$1.qseq3;
-#X obj 15 121 list append seq.self.create \$2 \$4 \$5 \$6 \$7 \$8 \$9
-;
+#X obj 15 121 list append seq.self.create \$2 \$4 \$5 \$6 \$7 \$8 \$9;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
