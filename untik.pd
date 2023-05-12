@@ -3,6 +3,7 @@
 #X msg 12 8 version 0 0 0;
 #N canvas 315 75 403 152 abslist 0;
 #X msg 6 10 untik-pattern-player;
+#X msg 6 33 untik-pattern-editor;
 #X restore 12 38 pd abslist;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 69 netpd_head \$1 untik;
@@ -10,6 +11,7 @@
 #X text 21 36 [ PUT YOUR GUI STUFF HERE ... ];
 #X text 26 88 To see the main patch use the menu:;
 #X text 47 112 'Window' -> 'Parent Window';
+#X obj 115 249 untik-pattern-editor;
 #X restore 10 42 pd \$1-untik;
 #X obj 184 44 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
 #X msg 239 106 tempo \$1 permin;
