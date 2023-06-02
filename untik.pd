@@ -7,7 +7,7 @@
 #X restore 12 38 pd abslist;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 69 netpd_head \$1 untik;
-#N canvas 594 44 450 300 \$1-untik 1;
+#N canvas 594 44 761 319 \$1-untik 1;
 #X text 21 36 [ PUT YOUR GUI STUFF HERE ... ];
 #X text 26 88 To see the main patch use the menu:;
 #X text 47 112 'Window' -> 'Parent Window';
