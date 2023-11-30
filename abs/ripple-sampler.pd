@@ -3,7 +3,7 @@
 #N canvas 177 253 384 73 abslist 0;
 #X msg 14 19 ripple-sampler-param;
 #X restore 136 20 pd abslist;
-#X msg 10 20 version 0 1 4;
+#X msg 10 20 version 0 1 5;
 #X restore 11 130 pd NETPD 2 0;
 #N canvas 246 346 510 389 gui.stuff 0;
 #X obj 39 32 loadbang;
@@ -21,8 +21,7 @@
 #X obj 315 111 s \$1.selected.instance;
 #X obj 315 86 f \$2;
 #X obj 162 94 == \$2;
-#X obj 97 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 97 82 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 196 143 20;
 #X msg 162 143 10;
 #X connect 0 0 1 0;
@@ -44,9 +43,9 @@
 #X restore 12 99 pd gui.stuff;
 #X obj 170 18 r \$1.sample.control;
 #X obj 170 41 route \$2;
-#X obj 11 161 table \$1-\$2/overview 1200;
-#X obj 245 261 list prepend \$2;
-#X obj 245 284 s \$1.sample.info;
+#X obj 11 171 table \$1-\$2/overview 1200;
+#X obj 245 301 list prepend \$2;
+#X obj 245 324 s \$1.sample.info;
 #N canvas 0 106 636 388 display.stuff 0;
 #X msg 82 235 update \$1 \$2;
 #X obj 82 104 unpack f f;
@@ -67,12 +66,9 @@
 #X obj 298 131 r \$1.scale.ov;
 #X obj 298 179 spigot;
 #X obj 298 202 list prepend \$1 \$2;
-#X msg 298 225 display \$1.wav.ov \, scale \$3 \, display \$1-\$2/overview
-;
-#X obj 51 298 rh_wavedisplay \$1-\$2/sample/l-table \$1-\$2/preview
-;
-#X obj 24 332 rh_wavedisplay \$1-\$2/sample/l-table \$1-\$2/overview
-;
+#X msg 298 225 display \$1.wav.ov \, scale \$3 \, display \$1-\$2/overview;
+#X obj 51 298 rh_wavedisplay \$1-\$2/sample/l-table \$1-\$2/preview;
+#X obj 24 332 rh_wavedisplay \$1-\$2/sample/l-table \$1-\$2/overview;
 #X obj 196 216 inlet;
 #X msg 196 239 update;
 #X connect 0 0 9 0;
@@ -101,30 +97,26 @@
 #X connect 22 0 23 0;
 #X connect 23 0 9 0;
 #X restore 11 223 pd display.stuff;
-#X obj 170 91 t a a a, f 13;
-#X obj 207 147 route length;
-#X obj 170 117 route updated;
-#X obj 170 176 +;
-#X obj 170 200 sel;
-#X msg 170 225 done;
-#X obj 13 20 hsl 95 60 0 127 0 0 \$0.button empty empty -2 -8 0 10
--262144 -1 -1 0 1;
-#X obj 10 21 cnv 15 100 50 empty \$0.background.hl empty 20 12 0 14
--195568 -1 0;
+#X obj 170 131 t a a a, f 13;
+#X obj 207 187 route length;
+#X obj 170 157 route updated;
+#X obj 170 216 +;
+#X obj 170 240 sel;
+#X msg 170 265 done;
+#X obj 13 20 hsl 95 60 0 127 0 0 \$0.button empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 10 21 cnv 15 100 50 empty \$0.background.hl empty 20 12 0 14 #bcbcbc #000000 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$1-\$2/preview 200 float 2;
 #X coords 0 1 200 -1 100 50 1 0 0;
 #X restore 10 20 graph;
-#X obj 13 70 hsl 95 10 0 127 0 0 \$0.bla \$0.background empty -2 -8
-0 10 -261689 -261689 -1 0 1;
-#X obj 170 68 netpd_sample \$1 \$2/sample/l;
-#X obj 330 39 r~ \$1.audio.in.l;
+#X obj 13 70 hsl 95 10 0 127 0 0 \$0.bla \$0.background empty -2 -8 0 10 #fce0e0 #fce0e0 #000000 0 1;
+#X obj 170 108 netpd_sample \$1 \$2/sample/l;
+#X obj 330 79 r~ \$1.audio.in.l;
 #X obj 450 18 r \$1.sample.control;
 #X obj 450 121 route \$2;
 #X obj 450 218 netpd_sample \$1 \$2/sample/r;
 #X obj 610 189 r~ \$1.audio.in.r;
-#X obj 11 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 11 198 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 31 195 refresh;
 #N canvas 0 139 473 441 params 0;
 #X obj 8 12 ripple-sampler-param \$1 \$2 adsr/a 0;
@@ -169,8 +161,36 @@
 #X obj 574 96 table \$0.silence 10;
 #X obj 522 117 \$0;
 #X msg 522 140 loadtable \$1.silence 0 10;
+#N canvas 1013 469 450 300 load_from_cache 0;
+#X obj 31 53 inlet;
+#X obj 31 209 outlet;
+#X obj 31 81 route load_from_cache;
+#X obj 31 108 list prepend \$1;
+#X msg 31 135 loadtable \$1.load.cache.l \$2 \$3;
+#X obj 31 165 t a;
+#X connect 0 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 18 0;
+#X connect 2 1 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X restore 170 73 pd load_from_cache;
+#N canvas 1013 469 450 300 load_from_cache 0;
+#X obj 31 53 inlet;
+#X obj 31 196 outlet;
+#X obj 31 81 route load_from_cache;
+#X obj 31 108 list prepend \$1;
+#X obj 31 165 t a;
+#X msg 31 135 loadtable \$1.load.cache.r \$2 \$3;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;
+#X restore 450 168 pd load_from_cache;
+#X connect 2 0 3 0;
+#X connect 3 0 34 0;
 #X connect 5 0 6 0;
 #X connect 8 0 10 0;
 #X connect 8 1 9 0;
@@ -183,7 +203,7 @@
 #X connect 18 0 8 0;
 #X connect 19 0 18 1;
 #X connect 20 0 28 0;
-#X connect 21 0 22 0;
+#X connect 21 0 35 0;
 #X connect 23 0 22 1;
 #X connect 24 0 7 0;
 #X connect 27 0 29 0;
@@ -193,4 +213,6 @@
 #X connect 30 0 32 0;
 #X connect 32 0 33 0;
 #X connect 33 0 22 0;
+#X connect 34 0 18 0;
+#X connect 35 0 22 0;
 #X coords 0 -1 1 1 100 60 2 10 20;
