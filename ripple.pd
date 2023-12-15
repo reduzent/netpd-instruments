@@ -777,7 +777,7 @@
 #X msg 11 108 ripple-sampler;
 #X msg 108 108 ripple-sample-player;
 #X restore 112 20 pd abslist;
-#X msg 11 19 version 0 1 7;
+#X msg 11 19 version 0 1 8;
 #X restore 20 70 pd NETPD 2 0;
 #X obj 195 52 sel;
 #X obj 226 53 t a;
