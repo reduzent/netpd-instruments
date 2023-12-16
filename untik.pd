@@ -11,9 +11,13 @@
 #X text 21 36 [ PUT YOUR GUI STUFF HERE ... ];
 #X text 26 88 To see the main patch use the menu:;
 #X text 47 112 'Window' -> 'Parent Window';
-#X obj 82 179 untik-pattern-editor;
+#X obj 82 227 untik-pattern-editor;
 #X floatatom 82 148 5 1 32 0 - - - 0;
-#X connect 4 0 3 0;
+#X obj 82 174 pack f 5;
+#X floatatom 137 150 5 0 0 0 - - - 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 1;
 #X restore 10 42 pd \$1-untik;
 #X obj 184 44 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
 #X msg 239 106 tempo \$1 permin;
