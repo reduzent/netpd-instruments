@@ -1,3 +1,6 @@
+#N struct 1358.refrule float x float y float label;
+#N struct 1358.rule float x float y float label;
+#N struct 1358.mark float x float y float pos float id;
 #N canvas 637 252 1220 423 10;
 #N canvas 624 75 434 119 NETPD 0;
 #X msg 12 8 version 0 0 0;
@@ -191,6 +194,7 @@
 #X obj 111 336 del 10;
 #X obj 111 359 print -------------------------------;
 #X msg 711 99 0;
+#X obj 525 302 print;
 #X connect 3 0 8 0;
 #X connect 4 0 7 0;
 #X connect 5 0 6 0;
@@ -211,7 +215,6 @@
 #X connect 20 2 11 1;
 #X connect 21 0 24 0;
 #X connect 22 0 23 0;
-#X connect 23 0 74 0;
 #X connect 24 0 22 0;
 #X connect 25 0 29 0;
 #X connect 26 0 29 1;
@@ -227,6 +230,7 @@
 #X connect 33 0 27 0;
 #X connect 33 0 28 0;
 #X connect 35 0 34 0;
+#X connect 35 0 77 0;
 #X connect 36 0 33 0;
 #X connect 38 0 39 0;
 #X connect 39 0 40 0;
