@@ -96,7 +96,7 @@
 #X obj 387 617 list prepend pattern;
 #X obj 387 663 s \$1;
 #X obj 387 640 list trim;
-#X obj 20 20 cnv 18 600 40 empty empty empty 20 12 0 10 #000000 #404040 0;
+#X obj 20 20 cnv 18 600 40 empty empty empty 20 12 0 10 #303050 #404040 0;
 #X obj 20 20 untik-pattern-editor-display \$0.display;
 #X connect 1 0 2 0;
 #X connect 2 0 6 0;
