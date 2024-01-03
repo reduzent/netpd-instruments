@@ -1,6 +1,6 @@
-#N canvas 1020 388 557 528 10;
+#N canvas 928 309 534 528 10;
 #X obj 23 20 hsl 70 24 0 127 0 0 \$0.click empty empty -2 -10 0 12 #fcfcfc #000000 #000000 0 1;
-#X obj 20 20 cnv 20 75 24 empty \$0.label 2on3 4 12 0 14 #8080a0 #efefff 0;
+#X obj 20 20 cnv 20 75 24 empty \$0.label empty 4 12 0 14 #8080a0 #bcbcdc 0;
 #X obj 31 68 r \$0.click;
 #X obj 31 91 sel 0;
 #X obj 71 92 t a;
@@ -34,6 +34,9 @@
 #X obj 95 271 t b b;
 #X obj 189 276 t b b;
 #X msg 411 327 #efefff;
+#N canvas 1344 307 406 49 NETPD 0;
+#X msg 23 21 version 0 0 0;
+#X restore 424 18 pd NETPD 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
 #X connect 3 1 4 0;
