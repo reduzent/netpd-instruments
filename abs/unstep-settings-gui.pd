@@ -1,81 +1,36 @@
+#N struct 1844.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 1846.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 259 135 516 549 10;
 #N canvas 619 400 356 36 NETPD 0;
-#X msg 15 12 version 0 0 3;
+#X msg 15 12 version 0 2 0;
 #X restore 122 28 pd NETPD 2 0;
-#X obj 20 20 cnv 4 67 400 empty empty empty 20 12 0 14 #b8b8b8 #404040
-0;
-#X obj 25 38 nbx 7 15 1 999 0 0 \$3.xsize \$3.xsize.r empty 40 10 0
-8 #fcfcfc #000000 #000000 0 256;
-#X obj 25 55 nbx 7 15 1 999 0 0 \$3.ysize \$3.ysize.r empty 40 10 0
-8 #fcfcfc #000000 #000000 0 256;
-#X obj 21 21 bng 15 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 24 93 nbx 7 15 -12 12 0 0 \$1-unstep/\$2/semitone \$1-unstep/\$2/semitone
-empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
-#X obj 25 76 nbx 7 15 -8 8 0 0 \$1-unstep/\$2/octave \$1-unstep/\$2/octave
-empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
-#X obj 24 203 nbx 7 15 1 999 0 0 \$1-unstep/\$2/repeat \$1-unstep/\$2/repeat
-empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
-#X obj 27 186 nbx 7 15 0 32 0 0 \$1-unstep/\$2/offset \$1-unstep/\$2/offset
-empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
-#X obj 27 220 nbx 7 15 -999 999 0 0 \$1-unstep/\$2/shift \$1-unstep/\$2/shift
-empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
-#X obj 53 21 bng 15 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 21 38 cnv 15 65 15 empty \$3.xsize.label cols:\ \ \ 32 2 7 0
-10 #ffe0ff #800084 0;
-#X obj 21 55 cnv 15 65 15 empty \$3.ysize.label rows:\ \ \ 40 2 7 0
-10 #ffe0ff #800084 0;
-#X obj 21 76 cnv 15 65 15 empty \$3.oct.label oct:\ \ \ \ \ 0 2 7 0
-10 #ffe0ff #800084 0;
-#X obj 21 93 cnv 15 65 15 empty \$3.semi.label semi:\ \ \ \ 0 2 7 0
-10 #ffe0ff #800084 0;
-#X obj 21 186 cnv 15 65 15 empty \$3.offset.label offset:\ \ 0 2 7
-0 10 #ffe0ff #800084 0;
-#X obj 21 203 cnv 15 65 15 empty \$3.repeat.label repeat:\ 32 2 7 0
-10 #ffe0ff #800084 0;
-#X obj 21 220 cnv 15 65 15 empty \$3.shift.label shift:\ \ \ 0 2 7
-0 10 #ffe0ff #800084 0;
-#X obj 21 148 tgl 15 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
-empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 26 148 tgl 15 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
-empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 52 148 tgl 15 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
-empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 21 165 nbx 3 14 1 999 0 0 \$1-unstep/\$2/polyrhythm/dividend
-\$1-unstep/\$2/polyrhythm/dividend empty 40 10 0 8 #fcfcfc #000000
-#000000 0 256;
-#X obj 55 166 nbx 3 14 1 999 0 0 \$1-unstep/\$2/polyrhythm/divisor
-\$1-unstep/\$2/polyrhythm/divisor empty 40 10 0 8 #fcfcfc #000000 #000000
-0 256;
-#X obj 21 165 cnv 15 31 15 empty \$3.dividend.label \ \ 4 3 7 0 10
-#fff0f0 #e0e0e0 0;
-#X obj 53 165 cnv 2 2 15 empty \$3.colon.label : -1 7 0 10 #ffe0ff
-#e0e0e0 0;
-#X obj 55 165 cnv 15 31 15 empty \$3.divisor.label \ \ 4 2 7 0 10 #ffe0ff
-#e0e0e0 0;
-#X obj 37 21 bng 15 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 41 148 tgl 15 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
-empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 61 148 tgl 15 0 \$1-unstep/\$2/polyrhythm/switch \$1-unstep/\$2/polyrhythm/switch
-empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 21 148 cnv 15 65 15 empty \$3.switch.label polyrhythm 2 7 0
-10 #fff0f0 #e0e0e0 0;
-#X obj 23 114 nbx 7 15 -1 -1 0 0 \$1-unstep/\$2/metaseq/set \$1-unstep/\$2/metaseq/set
-empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
-#X obj 21 114 cnv 15 65 15 empty \$3.meta.set.label master 2 7 0 10
-#ffe0ff #800084 0;
-#X obj 23 131 nbx 7 15 1 999 0 0 \$1-unstep/\$2/metaseq/divisor \$1-unstep/\$2/metaseq/divisor
-empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
-#X obj 21 131 cnv 15 65 15 empty \$3.meta.divisor.label div:\ \ \ \ \ 1
-2 7 0 10 #ffe0ff #e0e0e0 0;
-#X obj 69 21 bng 15 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 #fcfcfc
-#000000 #000000;
-#X obj 21 21 cnv 15 65 15 empty \$3.doit.label redim 2 7 0 10 #ffe0ff
-#800080 0;
-#X obj 21 241 cnv 15 65 15 empty empty source: 2 7 0 10 #ffe0ff #800084
-0;
-#X obj 21 258 netpd-gui-dropdown \$3.source.selector 65 15 10;
+#X obj 20 20 cnv 4 67 400 empty empty empty 20 12 0 14 #b8b8b8 #404040 0;
+#X obj 25 38 nbx 7 15 1 999 0 0 \$3.xsize \$3.xsize.r empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
+#X obj 25 55 nbx 7 15 1 999 0 0 \$3.ysize \$3.ysize.r empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
+#X obj 21 21 bng 15 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 #fcfcfc #000000 #000000;
+#X obj 24 102 nbx 7 15 -12 12 0 0 \$1-unstep/\$2/semitone \$1-unstep/\$2/semitone empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
+#X obj 25 85 nbx 7 15 -8 8 0 0 \$1-unstep/\$2/octave \$1-unstep/\$2/octave empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
+#X obj 53 21 bng 15 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 #fcfcfc #000000 #000000;
+#X obj 21 38 cnv 15 65 15 empty \$3.xsize.label cols:\ \ \ 32 2 7 0 10 #ffe0ff #800084 0;
+#X obj 21 55 cnv 15 65 15 empty \$3.ysize.label rows:\ \ \ 40 2 7 0 10 #ffe0ff #800084 0;
+#X obj 21 85 cnv 15 65 15 empty \$3.oct.label oct:\ \ \ \ \ 0 2 7 0 10 #ffe0ff #800084 0;
+#X obj 21 102 cnv 15 65 15 empty \$3.semi.label semi:\ \ \ \ 0 2 7 0 10 #ffe0ff #800084 0;
+#X obj 37 21 bng 15 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 #fcfcfc #000000 #000000;
+#X obj 69 21 bng 15 250 50 0 \$3.doit \$3.doit.r empty 16 7 0 10 #fcfcfc #000000 #000000;
+#X obj 21 21 cnv 15 65 15 empty \$3.doit.label redim 2 7 0 10 #ffe0ff #800080 0;
 #X obj 206 28 namecanvas \$3-unstep-settings-gui;
+#X obj 20 229 netpd-gui-dropdown \$3.clockname 67 17 10 404 666 878 0 666 887;
+#X obj 24 150 nbx 7 15 1 999 0 0 \$1-unstep/\$2/repeat \$1-unstep/\$2/repeat empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
+#X obj 27 133 nbx 7 15 0 32 0 0 \$1-unstep/\$2/offset \$1-unstep/\$2/offset empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
+#X obj 27 167 nbx 7 15 -999 999 0 0 \$1-unstep/\$2/shift \$1-unstep/\$2/shift empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
+#X obj 21 133 cnv 15 65 15 empty \$3.offset.label offset:\ \ 0 2 7 0 10 #ffe0ff #800084 0;
+#X obj 21 150 cnv 15 65 15 empty \$3.repeat.label repeat:\ 32 2 7 0 10 #ffe0ff #800084 0;
+#X obj 21 167 cnv 15 65 15 empty \$3.shift.label shift:\ \ \ 0 2 7 0 10 #ffe0ff #800084 0;
+#X obj 23 247 nbx 7 15 1 999 0 0 \$1-unstep/\$2/metaseq/divisor \$1-unstep/\$2/metaseq/divisor empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
+#X obj 21 247 cnv 15 65 15 empty \$3.meta.divisor.label div:\ \ \ \ \ 1 2 7 0 10 #ffe0ff #b0b0b0 0;
+#X obj 21 198 netpd-gui-dropdown \$3.source.selector 65 15 10;
+#X obj 21 215 cnv 13 65 13 empty empty clock 2 7 0 10 #bbbbbb #404040 0;
+#X obj 21 184 cnv 13 65 13 empty empty chords 2 7 0 10 #bbbbbb #404040 0;
+#X obj 21 71 cnv 13 65 13 empty empty pitch 2 7 0 10 #bbbbbb #404040 0;
+#X obj 21 119 cnv 13 65 13 empty empty loop 2 7 0 10 #bbbbbb #404040 0;
 #X coords 0 -1 1 1 67 400 2 20 20;
