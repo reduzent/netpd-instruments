@@ -1,4 +1,4 @@
-#N canvas 1030 182 400 389 10;
+#N canvas 1030 182 400 415 10;
 #N canvas 1285 179 464 235 NETPD 0;
 #X msg 13 8 version 0 0 1;
 #N canvas 1496 140 460 69 abs 0;
@@ -18,8 +18,9 @@
 #X msg 224 140 0;
 #X obj 11 252 spigot 0;
 #X obj 11 277 list prepend _;
-#X obj 11 300 list trim;
-#X obj 11 323 s UNTIK;
+#X obj 11 323 list trim;
+#X obj 11 300 list prepend clock;
+#X obj 11 345 s \$1.untik;
 #X connect 1 0 12 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
@@ -35,5 +36,6 @@
 #X connect 10 0 12 1;
 #X connect 11 0 12 1;
 #X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 14 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
