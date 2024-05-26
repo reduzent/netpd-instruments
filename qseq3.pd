@@ -1,4 +1,4 @@
-#N canvas 732 103 632 669 10;
+#N canvas 968 234 632 669 10;
 #N canvas 637 374 450 300 NETPD 0;
 #X msg 14 38 singleton;
 #N canvas 530 99 450 300 abslist 0;
@@ -10,7 +10,7 @@
 #X msg 10 124 qseq3-set-ui;
 #X msg 10 146 qseq3-set-metaseq;
 #X restore 14 63 pd abslist;
-#X msg 15 15 version 0 0 10;
+#X msg 15 15 version 0 0 11;
 #X restore 12 10 pd NETPD 2 0;
 #X obj 451 87 table \$1.set/id 10000;
 #X obj 451 108 table \$1.seq/id 10000;
@@ -447,21 +447,21 @@
 #X obj 270 52 qseq3-containers \$1;
 #X obj 272 385 s pd-\$1.set.displays;
 #X obj 282 405 s pd-\$1.set.containers;
-#N canvas 547 466 267 307 create.new.sets 0;
+#N canvas 547 466 267 307 create.new.sets 1;
 #X obj 12 12 inlet;
 #X obj 55 12 r \$0.reset;
 #X obj 12 55 f;
 #X obj 12 77 + 1;
 #X msg 55 34 0;
 #X text 42 78 set id;
-#N canvas 575 177 606 268 create.containers 0;
+#N canvas 1190 342 611 291 create.containers 0;
 #X obj 11 123 list prepend \$1;
 #X obj 11 32 t a a;
 #X obj 38 53 * 20;
 #X obj 38 75 + 5;
 #X obj 11 97 list append;
 #X obj 11 8 inlet;
-#X msg 11 147 \; pd-\$1.set.displays obj 5 \$3 pd \$1-set-\$2 \; pd-\$1-set-\$2 vis 0 \; pd-\$1.set.containers obj 5 \$3 pd \$1-container-\$2 \; pd-\$1-container-\$2 vis 0 \; pd-\$1-set-\$2 obj 3 3 qseq3-set-metaseq \$1/2 \$2 \; pd-\$1-set-\$2 loadbang \;;
+#X msg 11 147 \; pd-\$1.set.displays obj 5 \$3 pd \$1-set-\$2 \; pd-\$1-set-\$2 vis 0 \; pd-\$1.set.containers obj 5 \$3 pd \$1-container-\$2 \; pd-\$1-container-\$2 vis 0 \; pd-\$1-set-\$2 obj 3 3 qseq3-set-metaseq \$1/2 \$2 \; pd-\$1-set-\$2 obj 4 4 netpd-gui-dropdown \$1/2.\$2.clocksel 89 18 12 0 0 777 0 555 887 \; pd-\$1-set-\$2 loadbang \;;
 #X connect 0 0 6 0;
 #X connect 1 0 4 0;
 #X connect 1 1 2 0;
@@ -470,7 +470,7 @@
 #X connect 4 0 0 0;
 #X connect 5 0 1 0;
 #X restore 51 123 pd create.containers;
-#N canvas 35 292 220 208 create.set.ui 0;
+#N canvas 1110 324 326 236 create.set.ui 0;
 #X obj 16 -29 inlet;
 #X obj 16 138 s pd-\$1-qseq3;
 #X obj 16 -4 t a a;
