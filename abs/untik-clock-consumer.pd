@@ -2,7 +2,7 @@
 #N canvas 1473 663 341 97 NETPD 0;
 #X msg 6 12 version 0 0 0;
 #X restore 8 5 pd NETPD 2 0;
-#N canvas 1109 466 550 486 get.clocklist 0;
+#N canvas 1109 466 550 541 get.clocklist 0;
 #X obj 15 18 r untik;
 #X obj 15 41 route update_available_clocklist;
 #X obj 15 64 b;
@@ -19,7 +19,7 @@
 #X obj 112 325 list trim;
 #X obj 42 413 list store;
 #X obj 15 358 t b b;
-#X obj 42 441 outlet;
+#X obj 57 494 outlet;
 #X obj 144 142 text delete \$0.shortcuts;
 #X msg 144 120 -1;
 #X msg 105 365 1e+15;
@@ -32,6 +32,7 @@
 #X msg 296 381 list u:main;
 #X obj 311 448 s \$3;
 #X msg 311 418 setlabel \$1;
+#X obj 42 436 route bang;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -50,7 +51,7 @@
 #X connect 11 1 12 0;
 #X connect 12 0 13 0;
 #X connect 13 0 14 0;
-#X connect 14 0 16 0;
+#X connect 14 0 29 0;
 #X connect 15 0 14 1;
 #X connect 15 1 14 0;
 #X connect 18 0 17 0;
@@ -62,9 +63,9 @@
 #X connect 25 0 3 0;
 #X connect 25 1 26 0;
 #X connect 26 0 16 0;
-#X connect 26 0 14 1;
 #X connect 26 0 28 0;
 #X connect 28 0 27 0;
+#X connect 29 1 16 0;
 #X restore 7 36 pd get.clocklist;
 #X obj 234 8 text define \$0.shortcuts;
 #X obj 7 341 outlet;
@@ -108,9 +109,12 @@
 #X obj 7 246 list;
 #X obj 7 269 t a a;
 #X msg 48 270 setlabel \$1;
-#X obj 144 134 loadbang;
+#X obj 144 116 loadbang;
 #X msg 144 160 symbol u:main;
 #X msg 144 183 set \$1;
+#X obj 234 158 text set \$0.shortcuts;
+#X msg 234 136 list untik u;
+#X obj 144 139 t b b;
 #X connect 1 0 6 0;
 #X connect 4 0 3 0;
 #X connect 6 0 7 0;
@@ -123,6 +127,9 @@
 #X connect 14 0 4 0;
 #X connect 14 1 15 0;
 #X connect 15 0 8 0;
-#X connect 16 0 17 0;
+#X connect 16 0 21 0;
 #X connect 17 0 18 0;
 #X connect 18 0 11 0;
+#X connect 20 0 19 0;
+#X connect 21 0 17 0;
+#X connect 21 1 20 0;
