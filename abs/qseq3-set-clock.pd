@@ -120,9 +120,6 @@
 #X obj 23 81 list prepend clock;
 #X obj 23 104 list trim;
 #X obj 23 56 untik-clock-consumer \$1 \$2/clocksource \$1.\$2.clocksel;
-#X obj 266 199 route clock;
-#X obj 266 222 route pos;
-#X obj 266 245 print DEBUG_POS;
 #X connect 7 0 5 0;
 #X connect 11 0 10 0;
 #X connect 12 0 14 0;
@@ -132,8 +129,5 @@
 #X connect 16 0 11 0;
 #X connect 17 0 18 0;
 #X connect 18 0 16 0;
-#X connect 18 0 20 0;
 #X connect 19 0 17 0;
-#X connect 20 0 21 0;
-#X connect 21 0 22 0;
 #X coords 0 -1 1 1 273 20 2 20 20;
