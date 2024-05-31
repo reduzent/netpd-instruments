@@ -9,6 +9,7 @@
 #X msg 243 11 untik-clock-provider;
 #X msg 244 36 untik-clock-consumer;
 #X restore 12 38 pd abslist;
+#X msg 11 63 singleton;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 44 netpd_head \$1 untik;
 #N canvas 607 19 805 62 \$1-untik 1;
@@ -17,9 +18,9 @@
 #X obj 583 7 hsl 33 39 0 127 0 0 \$0.beatbar.display.click empty empty -2 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 429 7 hsl 75 39 0 127 0 0 \$0.step.display.click empty empty -2 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 513 7 hsl 61 39 0 127 0 0 \$0.bar.display.click empty empty -2 -9 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 426 14 cnv 18 80 32 empty \$0.step.display 54 5 16 0 24 #404060 #ccffcc 0;
-#X obj 622 14 cnv 18 38 32 empty \$0.stepbeat.display 01 5 16 0 24 #404060 #ccffcc 0;
-#X obj 580 14 cnv 18 38 32 empty \$0.beatbar.display 01 5 16 0 24 #404060 #ccffcc 0;
+#X obj 426 14 cnv 18 80 32 empty \$0.step.display 00223 5 16 0 24 #404060 #ccffcc 0;
+#X obj 622 14 cnv 18 38 32 empty \$0.stepbeat.display 04 5 16 0 24 #404060 #ccffcc 0;
+#X obj 580 14 cnv 18 38 32 empty \$0.beatbar.display 04 5 16 0 24 #404060 #ccffcc 0;
 #X obj 510 14 cnv 18 66 32 empty \$0.bar.display 0001 5 16 0 24 #404060 #ccffcc 0;
 #X obj 426 7 cnv 10 80 10 empty \$0.step.label pos 4 5 0 10 #404060 #ccffcc 0;
 #X obj 622 7 cnv 10 38 10 empty \$0.stepbeat.label tick 4 5 0 10 #404060 #ccffcc 0;
@@ -47,7 +48,7 @@
 #X obj 40 4 cnv 10 10 45 empty empty empty 2 12 0 10 #8080a0 #00ff00 0;
 #X obj 8 7 tgl 39 0 \$1-run \$1-run empty 0 -10 0 12 #ffffff #000000 #000000 0 1;
 #X obj 8 7 cnv 12 39 39 empty empty empty 20 12 0 10 #404060 #404040 0;
-#X obj 11 10 cnv 12 33 33 empty \$0.run.button.front empty 20 12 0 10 #8080a0 #8080a0 0;
+#X obj 11 10 cnv 12 33 33 empty \$0.run.button.front empty 20 12 0 10 #00ff00 #00ff00 0;
 #X obj 668 4 cnv 3 126 45 empty empty empty 2 12 0 10 #8080a0 #00ff00 0;
 #X obj 674 7 hsl 115 18 0 127 0 0 \$0.pattern.editor.click empty empty -2 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 674 28 hsl 115 18 0 127 0 0 \$0.loop.editor.click empty empty -2 -9 0 10 #fcfcfc #000000 #000000 0 1;
