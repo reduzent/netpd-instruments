@@ -1,10 +1,3 @@
-#N struct 4038.button float posx float posy float color;
-#N struct 4038.cursor float cx float cy float cy2;
-#N struct 3991-automation float yshift array variy 3991-automation-element;
-#N struct 3991-automation-element float y;
-#N struct 3990.autolabel float x float y symbol lbl float color float track;
-#N struct 4185.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 4187.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 765 182 554 465 10;
 #X obj 368 137 s \$0.ungrid;
 #X obj 94 182 s \$0.ungrid.r;
