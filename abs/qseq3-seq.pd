@@ -55,7 +55,7 @@
 #N canvas 648 402 172 152 NETPD 0;
 #X msg 9 13 version 0 0 7;
 #X restore 12 7 pd NETPD 2 0;
-#N canvas 432 287 377 427 cursor 0;
+#N canvas 432 287 377 427 cursor 1;
 #X obj 23 32 list prepend \$1 \$2 \$3;
 #N canvas 703 409 269 367 resolve.global.uid 0;
 #X obj 88 101 s \$1.seq.block;
@@ -103,11 +103,11 @@
 #X msg 74 248 stop;
 #X obj 191 191 t a;
 #X obj 23 123 t b b a b b;
-#X obj 251 132 r \$1/2.qseq3;
-#X obj 251 155 route \$2;
-#X obj 251 178 route tempo;
-#X obj 251 201 list prepend tempo;
-#X obj 251 224 list trim;
+#X obj 258 145 r \$1/2.qseq3;
+#X obj 258 168 route \$2;
+#X obj 258 191 route tempo;
+#X obj 258 214 list prepend tempo;
+#X obj 258 237 list trim;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
@@ -134,7 +134,7 @@
 #X connect 19 0 20 0;
 #X connect 20 0 21 0;
 #X connect 21 0 22 0;
-#X connect 22 0 6 1;
+#X connect 22 0 6 0;
 #X restore 43 213 pd cursor;
 #X obj 16 187 t a a;
 #X obj 16 38 r \$1/2.qseq3;
