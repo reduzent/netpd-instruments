@@ -1,4 +1,4 @@
-#N struct 11945.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 14013.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 692 254 455 449 10;
 #X obj 59 242 master-param switch;
 #X obj 59 265 sel 0;
@@ -24,9 +24,9 @@
 #X obj 12 322 unpunch-netpd \$1 \$2/seq pd-\$0.seq;
 #N canvas 815 217 1009 791 \$1-\$2/unpunch 1;
 #X obj 32 8 cnv 15 960 24 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
-#X obj 34 10 unpunch-plus-param \$1 \$2 repeat 64 1 999 1;
-#X obj 137 10 unpunch-plus-param \$1 \$2 offset 0 0 999 1;
-#X obj 240 10 unpunch-plus-param \$1 \$2 shift 0 -999 999 1;
+#X obj 250 10 unpunch-plus-param \$1 \$2 repeat 64 1 999 1;
+#X obj 353 10 unpunch-plus-param \$1 \$2 offset 0 0 999 1;
+#X obj 147 10 unpunch-plus-param \$1 \$2 shift 0 -999 999 1;
 #X obj 787 10 unpunch-plus-param2 \$1 \$2 grid 4 1 20;
 #X obj 890 10 unpunch-plus-param2 \$1 \$2 subgrid 4 1 20;
 #N canvas 1294 395 356 211 redraw 0;
@@ -49,8 +49,7 @@
 #X connect 8 0 6 0;
 #X coords 0 -1 1 1 20 20 2 20 20;
 #X restore 764 10 pd redraw;
-#X obj 343 10 unpunch-plus-poly \$1 \$2;
-#X obj 456 10 netpd-gui-dropdown \$0.clockname 110 20 12 0 777 777 0 666 887;
+#X obj 34 10 netpd-gui-dropdown \$0.clockname 110 20 12 0 777 777 0 666 887;
 #X obj 2 33 unpunch-plus-gop1000x740 \$0.seq;
 #X restore 272 16 pd \$1-\$2/unpunch;
 #N canvas 0 106 450 300 NETPD 0;
