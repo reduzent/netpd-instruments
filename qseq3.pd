@@ -1,4 +1,5 @@
-#N struct 20572.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 1802.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 1828.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 964 243 632 669 10;
 #N canvas 637 374 450 300 NETPD 0;
 #X msg 14 38 singleton;
@@ -447,7 +448,7 @@
 #X obj 38 75 + 5;
 #X obj 11 97 list append;
 #X obj 11 8 inlet;
-#X msg 11 147 \; pd-\$1.set.displays obj 5 \$3 pd \$1-set-\$2 \; pd-\$1-set-\$2 vis 0 \; pd-\$1.set.containers obj 5 \$3 pd \$1-container-\$2 \; pd-\$1-container-\$2 vis 0 \; pd-\$1-set-\$2 obj 3 3 qseq3-set-clock \$1/2 \$2 \; pd-\$1-set-\$2 obj 4 4 netpd-gui-dropdown \$1/2.\$2.clocksel 89 18 12 0 0 777 0 555 887 \; pd-\$1-set-\$2 loadbang \; \$1.NETPD init \;;
+#X msg 11 147 \; pd-\$1.set.displays obj 5 \$3 pd \$1-set-\$2 \; pd-\$1-set-\$2 vis 0 \; pd-\$1.set.containers obj 5 \$3 pd \$1-container-\$2 \; pd-\$1-container-\$2 vis 0 \; pd-\$1-set-\$2 obj 3 3 qseq3-set-clock \$1/2 \$2 \; pd-\$1-set-\$2 obj 4 4 netpd-gui-dropdown \$1/2.\$2.clocksel 89 18 12 0 0 777 0 555 887 \; pd-\$1-set-\$2 loadbang \;;
 #X connect 0 0 6 0;
 #X connect 1 0 4 0;
 #X connect 1 1 2 0;
