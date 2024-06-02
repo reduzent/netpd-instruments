@@ -1,13 +1,10 @@
-#N canvas 398 366 447 236 10;
-#N canvas 0 91 450 300 NETPD 0;
-#X msg 4 14 version 0 1 0;
+#N canvas 398 366 623 240 10;
+#N canvas 0 91 332 172 NETPD 0;
+#X msg 4 14 version 0 1 1;
 #X restore 316 17 pd NETPD 2 0;
-#X obj 20 20 nbx 10 20 1 999 0 0 \$1-\$2/\$3 \$1-\$2/\$3 empty 0 8
-0 10 -262144 -1 -1 64 256;
-#X obj 20 20 cnv 15 60 20 empty \$0.param.label \$3: 3 10 0 12 -233017
--1 0;
-#X obj 80 20 cnv 15 40 20 empty \$0.value.label 64 12 10 0 12 -233017
--1 0;
+#X obj 20 20 nbx 10 20 -999 999 0 0 \$1-\$2/\$3 \$1-\$2/\$3 empty 0 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 20 20 cnv 15 60 20 empty \$1-\$2/\$3.label \$3: 3 10 0 12 #e0e0e0 #000000 0;
+#X obj 80 20 cnv 15 40 20 empty \$1-\$2/\$3.value \ \ 0 12 10 0 12 #e0e0e0 #000000 0;
 #X obj 26 88 loadbang;
 #X msg 26 134 set \$1;
 #X obj 141 105 route float set;
@@ -21,7 +18,6 @@
 #X obj 276 145 list append \$5 \$6;
 #X obj 276 191 s \$1-\$2/\$3;
 #X obj 26 111 \$4;
-#X obj 141 194 s \$0.value.label;
 #N canvas 252 521 328 230 color 0;
 #X obj 22 189 s \$0.param.label;
 #X obj 42 168 s \$0.value.label;
@@ -40,15 +36,21 @@
 #X connect 6 0 7 0;
 #X connect 7 0 3 0;
 #X restore 276 64 pd color;
+#X obj 141 194 s \$1-\$2/\$3.value;
+#X obj 413 193 s \$1-\$2/\$3.label;
+#X obj 419 172 s \$1-\$2/\$3.value;
+#X obj 413 150 r \$1-\$2/\$3.color;
 #X connect 4 0 16 0;
 #X connect 5 0 11 0;
 #X connect 6 0 7 0;
 #X connect 6 1 7 0;
 #X connect 7 0 8 0;
-#X connect 8 0 17 0;
+#X connect 8 0 18 0;
 #X connect 9 0 14 0;
 #X connect 10 0 15 0;
 #X connect 13 0 6 0;
 #X connect 14 0 10 0;
 #X connect 16 0 5 0;
+#X connect 21 0 19 0;
+#X connect 21 0 20 0;
 #X coords 0 -1 1 1 100 20 2 20 20;
