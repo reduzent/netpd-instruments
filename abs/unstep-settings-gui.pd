@@ -1,5 +1,5 @@
-#N struct 19171.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 19173.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 1817.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 1819.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 259 135 516 549 10;
 #N canvas 619 400 356 36 NETPD 0;
 #X msg 15 12 version 0 2 0;
@@ -21,15 +21,16 @@
 #X obj 206 28 namecanvas \$3-unstep-settings-gui;
 #X obj 20 163 netpd-gui-dropdown \$3.clockname 67 17 10 404 666 878 0 666 887;
 #X obj 24 215 nbx 7 15 0 999 0 0 \$1-unstep/\$2/repeat \$1-unstep/\$2/repeat empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
-#X obj 26 232 nbx 7 15 0 0 0 0 \$1-unstep/\$2/offset \$1-unstep/\$2/offset empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
+#X obj 26 232 nbx 7 15 0 16 0 0 \$1-unstep/\$2/offset \$1-unstep/\$2/offset empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
 #X obj 23 198 nbx 7 15 -999 999 0 0 \$1-unstep/\$2/shift \$1-unstep/\$2/shift empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
 #X obj 21 232 cnv 15 65 15 empty \$3.offset.label offset:\ \ 0 2 7 0 10 #ffe0ff #800084 0;
-#X obj 21 215 cnv 15 65 15 empty \$3.repeat.label repeat:\ \ 0 2 7 0 10 #ffe0ff #800084 0;
-#X obj 21 198 cnv 15 65 15 empty \$3.shift.label shift:\ -28 2 7 0 10 #ffe0ff #800084 0;
+#X obj 21 215 cnv 15 65 15 empty \$3.repeat.label repeat:\ 16 2 7 0 10 #ffe0ff #800084 0;
+#X obj 21 198 cnv 15 65 15 empty \$3.shift.label shift:\ \ -4 2 7 0 10 #ffe0ff #800084 0;
 #X obj 21 181 nbx 7 15 1 999 0 0 \$1-unstep/\$2/divide \$1-unstep/\$2/divide empty 40 10 0 8 #fcfcfc #000000 #000000 0 256;
 #X obj 21 181 cnv 15 65 15 empty \$3.divide.label div:\ \ \ \ \ 1 2 7 0 10 #ffe0ff #800084 0;
 #X obj 21 132 netpd-gui-dropdown \$3.source.selector 65 15 10;
 #X obj 21 149 cnv 13 65 13 empty empty clock 2 7 0 10 #bbbbbb #404040 0;
 #X obj 21 118 cnv 13 65 13 empty empty chords 2 7 0 10 #bbbbbb #404040 0;
 #X obj 21 71 cnv 13 65 13 empty empty pitch 2 7 0 10 #bbbbbb #404040 0;
+#X obj 21 249 cnv 15 65 15 empty \$3.cursor.label 99999 32 7 0 10 #fcfcfc #7c7c7c 0;
 #X coords 0 -1 1 1 67 400 2 20 20;
