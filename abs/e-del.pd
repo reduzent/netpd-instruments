@@ -1,13 +1,37 @@
+#N struct 2191.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 590 106 451 568 10;
-#N canvas 1237 103 324 263 delay.time 0;
+#N canvas 1237 103 411 339 delay.time 0;
 #X obj 26 57 t b f;
-#X obj 49 131 t b f;
-#X obj 18 173 * 125;
+#X obj 49 201 t b f;
+#X obj 18 243 * 125;
 #X obj 18 77 + 0;
-#X obj 18 193 s \$0-del.time;
-#X obj 18 17 netpd_f \$1 \$2/dp.16 1;
+#X obj 18 263 s \$0-del.time;
+#X obj 18 15 netpd_f \$1 \$2/dp.16 1;
 #X obj 26 37 netpd_f \$1 \$2/dp.time 0;
-#X obj 49 104 master-param 16th;
+#N canvas 1090 432 421 315 select.clock 0;
+#X obj 25 26 untik-clock-consumer \$1 \$2/clock \$0.clock.select;
+#X obj 68 82 list;
+#X msg 68 105 \$2 \$1;
+#X obj 68 128 route permin;
+#X msg 68 151 60000 \$1;
+#X obj 68 174 /;
+#X obj 25 263 outlet;
+#X obj 25 78 b;
+#X obj 25 230 change -1;
+#X obj 25 200 f;
+#X obj 25 55 route pos tempo;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 9 1;
+#X connect 7 0 9 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 0;
+#X connect 10 0 7 0;
+#X connect 10 1 1 0;
+#X restore 49 143 pd select.clock;
 #X connect 0 0 3 0;
 #X connect 0 1 3 1;
 #X connect 1 0 2 0;
@@ -256,7 +280,7 @@
 #X obj 177 270 outlet;
 #X obj 151 240 netpd_a \$1 \$2/dp.rep;
 #X obj 288 51 netpd_r \$1 \$2/dp.rep;
-#X floatatom 370 151 5 0 0 0 - - -;
+#X floatatom 370 151 5 0 0 0 - - - 0;
 #X obj 288 166 route float;
 #X connect 0 0 7 0;
 #X connect 1 0 11 0;
@@ -284,27 +308,22 @@
 #X text 16 21 by Enrique Erne;
 #N canvas 341 468 288 126 NETPD 0;
 #N canvas 416 215 227 69 ablist 0;
-#X msg 7 9 master-param;
+#X msg 7 9 untik-clock-consumer;
 #X restore 22 37 pd ablist;
-#X msg 16 12 version 0 2 4;
+#X msg 16 12 version 0 3 0;
 #X restore 13 43 pd NETPD 2 0;
 #X obj 89 530 outlet~;
 #X obj 250 532 outlet~;
 #X obj 132 367 inlet~;
 #X obj 289 366 inlet~;
-#N canvas 914 245 167 104 \$3-\$2 1;
-#X obj 16 58 hsl 130 15 0 0.99 0 0 \$1-\$2/dp.feed \$1-\$2/dp.feed
-___feedback 7 7 1 9 -262144 -1 -183085 8470 0;
-#X obj 16 26 hsl 130 15 0 1 0 0 \$1-\$2/dp.time \$1-\$2/dp.time _+_16th
-7 7 1 9 -262144 -1 -183085 0 0;
-#X obj 13 12 hradio 15 1 0 9 \$1-\$2/dp.16 \$1-\$2/dp.16 empty 10 -7
-1 9 -262144 -1 -183085 1;
-#X obj 88 42 hradio 15 1 0 4 \$0_rep-radio \$0_rep-radio-r empty 0
--6 1 9 -262144 -1 -1 0;
-#X obj 16 74 hsl 130 15 0 1 0 0 \$1-\$2/dp.mix \$1-\$2/dp.mix _original_|><|_d-play_
-7 7 1 9 -262144 -1 -183085 6450 0;
-#X obj 16 42 hsl 70 15 0 3 0 0 \$0_rep-slider \$0_rep-slider-r ___repeat
-7 7 1 9 -262144 -1 -183085 0 0;
+#N canvas 914 245 179 130 \$3-\$2 0;
+#X obj 13 17 netpd-gui-dropdown \$0.clock.select 135 15 10 0 0 888 0 555 887;
+#X obj 16 78 hsl 130 15 0 0.99 0 0 \$1-\$2/dp.feed \$1-\$2/dp.feed ___feedback 7 7 1 9 #fcfcfc #000000 #b0b0b0 0 0;
+#X obj 16 46 hsl 130 15 0 1 0 0 \$1-\$2/dp.time \$1-\$2/dp.time _+_16th 7 7 1 9 #fcfcfc #000000 #b0b0b0 0 0;
+#X obj 13 32 hradio 15 1 0 9 \$1-\$2/dp.16 \$1-\$2/dp.16 empty 10 -7 1 9 #fcfcfc #000000 #b0b0b0 0;
+#X obj 88 62 hradio 15 1 0 4 \$0_rep-radio \$0_rep-radio-r empty 0 -6 1 9 #fcfcfc #000000 #000000 0;
+#X obj 16 94 hsl 130 15 0 1 0 0 \$1-\$2/dp.mix \$1-\$2/dp.mix _original_|><|_d-play_ 7 7 1 9 #fcfcfc #000000 #b0b0b0 0 0;
+#X obj 16 62 hsl 70 15 0 3 0 0 \$0_rep-slider \$0_rep-slider-r ___repeat 7 7 1 9 #fcfcfc #000000 #b0b0b0 0 0;
 #X restore 297 25 pd \$3-\$2;
 #X connect 1 0 8 0;
 #X connect 1 0 30 0;
