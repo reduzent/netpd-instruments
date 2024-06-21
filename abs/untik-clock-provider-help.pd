@@ -24,6 +24,9 @@
 #X text 187 457 clock <clockname> <paramname> <paramvalue>;
 #X obj 32 111 loadbang;
 #X text 10 36 Clock generators may make their clock infomration available with [untik-clock-provider] so that all clock consumers can access it through the client-side inteface called [untik-clock-consumer].;
+#N canvas 1039 483 389 64 NETPD 0;
+#X msg 19 14 version 0 1 0;
+#X restore 559 19 pd NETPD 2 0;
 #X connect 1 0 0 0;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
