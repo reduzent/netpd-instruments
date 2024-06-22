@@ -1,4 +1,4 @@
-#N struct 2633.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 1460.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 881 256 532 533 10;
 #N canvas 624 71 293 96 NETPD 0;
 #N canvas 483 312 318 115 abslist 0;
@@ -12,10 +12,10 @@
 #X obj 6 4 cnv 15 145 93 empty empty send 3 8 0 14 #b8b8b8 #000000 0;
 #X obj 115 20 hsl 31 16 0 127 0 0 empty \$0.dsp.display dsp 2 8 0 14 #000000 #000000 #14e814 0 1;
 #X obj 9 22 vsl 35 30 0 127 0 0 \$0.switch.button empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 9 20 cnv 15 35 35 empty \$0.switch.display empty 20 12 0 14 #285014 #000000 0;
+#X obj 9 20 cnv 15 35 35 empty \$0.switch.display empty 20 12 0 14 #000000 #000000 0;
 #X obj 70 77 cnv 10 78 16 empty \$0.peak.display empty 20 12 0 14 #000000 #000000 0;
 #X obj 47 20 netpd-gui-dropdown \$0.clock.select 62 16 12 666 0 0 0 555 887;
-#X obj 50 39 hsl 96 16 0 127 0 0 \$0.owner.button \$0.owner.display owner:you 2 8 0 14 #000000 #000000 #14e814 0 1;
+#X obj 50 39 hsl 96 16 0 127 0 0 \$0.owner.button \$0.owner.display owner:0 2 8 0 14 #000000 #000000 #bcbcbc 0 1;
 #X obj 8 58 nbx 7 16 8 128 0 0 \$1-delay \$1-delay empty 0 -8 0 10 #fcfcfc #000000 #b8b8b8 0 256;
 #X obj 12 58 hsl 73 16 0 127 0 0 empty \$0.delay.display delay:16 2 8 0 14 #000000 #000000 #b8b8b8 0 1;
 #X obj 6 105 cnv 15 145 67 empty empty receive 2 8 0 14 #b8b8b8 #000000 0;
@@ -851,7 +851,6 @@
 #X connect 14 0 11 0;
 #X connect 15 0 9 0;
 #X restore 30 165 pd input.level;
-#X obj 159 122 untik-clock-consumer \$1 \$2/clock \$0.clock.select;
 #X obj 222 168 s \$0.untik;
 #X obj 159 146 route tempo;
 #N canvas 1181 237 299 195 tempo2ms 0;
@@ -868,6 +867,10 @@
 #X connect 5 0 1 0;
 #X restore 159 189 pd tempo2ms;
 #X obj 159 212 s \$0.interval;
+#X obj 159 122 untik-clock-consumer \$1 clock \$0.clock.select;
+#X msg 325 36 refresh tempo;
+#X msg 333 60 refresh run;
+#X msg 343 89 refresh;
 #X connect 4 0 10 0;
 #X connect 4 0 10 1;
 #X connect 6 0 11 0;
@@ -879,7 +882,10 @@
 #X connect 12 0 4 0;
 #X connect 12 1 13 0;
 #X connect 15 0 9 0;
-#X connect 17 0 19 0;
+#X connect 18 0 19 0;
+#X connect 18 1 17 0;
 #X connect 19 0 20 0;
-#X connect 19 1 18 0;
-#X connect 20 0 21 0;
+#X connect 21 0 18 0;
+#X connect 22 0 21 0;
+#X connect 23 0 21 0;
+#X connect 24 0 21 0;
