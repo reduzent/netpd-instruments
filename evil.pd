@@ -1,4 +1,4 @@
-#N struct 3270.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 1770.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 593 262 532 533 10;
 #N canvas 624 71 293 96 NETPD 0;
 #N canvas 483 312 318 115 abslist 0;
@@ -8,11 +8,11 @@
 #X msg 11 10 version 0 2 0;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 evil;
-#N canvas 476 302 165 185 \$1-evil 1;
+#N canvas 636 250 165 185 \$1-evil 1;
 #X obj 6 4 cnv 15 145 93 empty empty send 3 8 0 14 #b8b8b8 #000000 0;
 #X obj 115 20 hsl 31 16 0 127 0 0 empty \$0.dsp.display dsp 2 8 0 14 #000000 #000000 #14e814 0 1;
 #X obj 9 22 vsl 35 30 0 127 0 0 \$0.switch.button empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 9 20 cnv 15 35 35 empty \$0.switch.display empty 20 12 0 14 #000000 #000000 0;
+#X obj 9 20 cnv 15 35 35 empty \$0.switch.display empty 20 12 0 14 #285014 #000000 0;
 #X obj 70 77 cnv 10 78 16 empty \$0.peak.display empty 20 12 0 14 #000000 #000000 0;
 #X obj 47 20 netpd-gui-dropdown \$0.clock.select 62 16 12 666 0 0 0 555 887;
 #X obj 50 39 hsl 96 16 0 127 0 0 \$0.owner.button \$0.owner.display owner:you 2 8 0 14 #000000 #000000 #14e814 0 1;
@@ -21,7 +21,7 @@
 #X obj 6 105 cnv 15 145 67 empty empty receive 2 8 0 14 #b8b8b8 #000000 0;
 #X obj 12 122 hsl 134 22 0 127 0 0 empty empty buffer 0 8 0 14 #000000 #000000 #b8b8b8 0 1;
 #X obj 9 140 cnv 4 4 4 empty \$0.buffer.meter empty 20 12 0 14 #14e814 #000000 0;
-#X obj 12 147 hsl 134 22 0 127 0 0 empty \$0.playback.display playback 0 8 0 14 #000000 #000000 #bcbcbc 0 1;
+#X obj 12 147 hsl 134 22 0 127 0 0 empty \$0.playback.display playback 0 8 0 14 #000000 #000000 #14e814 0 1;
 #X obj 9 165 cnv 4 4 4 empty \$0.playback.meter empty 20 12 0 14 #fc8000 #404040 0;
 #X obj 10 77 nbx 5 16 1 64 0 0 \$1-adc \$1-adc empty 0 -8 0 10 #fcfcfc #000000 #b8b8b8 0 256;
 #X obj 12 77 hsl 53 16 0 127 0 0 empty \$0.adc.display adc:1 2 8 0 14 #000000 #000000 #b8b8b8 0 1;
@@ -856,6 +856,10 @@
 #X obj 159 212 s \$0.interval;
 #X obj 159 122 untik-clock-consumer \$1 clock \$0.clock.select;
 #X obj 159 98 r \$0.to.untik;
+#X obj 281 337 loadbang;
+#X msg 281 394 get tempo \, get pos \, get run;
+#X obj 281 417 s \$0.to.untik;
+#X obj 281 366 del 0;
 #X connect 4 0 10 0;
 #X connect 4 0 10 1;
 #X connect 6 0 11 0;
@@ -872,3 +876,6 @@
 #X connect 19 0 20 0;
 #X connect 21 0 18 0;
 #X connect 22 0 21 0;
+#X connect 23 0 26 0;
+#X connect 24 0 25 0;
+#X connect 26 0 24 0;
