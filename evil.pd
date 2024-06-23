@@ -1,4 +1,3 @@
-#N struct 2706.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 638 318 532 533 10;
 #N canvas 624 71 293 96 NETPD 0;
 #N canvas 483 312 318 115 abslist 0;
