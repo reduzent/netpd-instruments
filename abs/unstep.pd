@@ -1,3 +1,10 @@
+#N struct 3502.button float posx float posy float color;
+#N struct 3502.cursor float cx float cy float cy2 float show;
+#N struct 3467-automation float yshift array variy 3467-automation-element;
+#N struct 3467-automation-element float y;
+#N struct 3466.autolabel float x float y symbol lbl float color float track;
+#N struct 3666.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 3668.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 1018 171 560 470 10;
 #X obj 368 137 s \$0.ungrid;
 #X obj 94 182 s \$0.ungrid.r;
@@ -362,7 +369,6 @@
 #X msg 14 8 ungrid;
 #X msg 14 30 unrail;
 #X msg 14 51 unstep-gui;
-#X msg 14 72 master-poly;
 #X msg 111 8 unstep-settings-gui;
 #X msg 111 29 unstep-midi-control;
 #X msg 111 52 untik-clock-consumer;
@@ -486,7 +492,7 @@
 #X msg 39 168 add2 \$1;
 #N canvas 293 171 466 266 messagebox 0;
 #X obj 41 36 inlet;
-#X msg 41 58 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X msg 41 58 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X obj 41 230 outlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -858,7 +864,7 @@
 #X obj 368 115 ungrid pd-\$1-\$2-unstep 77 5;
 #X obj 11 84 t b a a;
 #X obj 11 389 s \$0.post.reinit;
-#N canvas 677 315 676 546 clock->ungrid 1;
+#N canvas 677 315 676 546 clock->ungrid 0;
 #X obj 20 490 s \$0.ungrid.r;
 #N canvas 745 312 311 155 limit.to.available.cols 0;
 #X obj 15 95 moses 32;
