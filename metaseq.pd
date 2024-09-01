@@ -1,18 +1,50 @@
-#N canvas 521 106 417 637 10;
+#N struct 2917.seg.range float posy float bgclr;
+#N struct 2917.seg.solo float posy float bgclr;
+#N struct 2917.seg.mute float posy float fgclr float bgclr;
+#N struct 2917.seg.row float posy float width float offset float fgclr float bgclr float vis;
+#N struct 2917.seg.length float bgclr float fgclr float length;
+#N struct 2917.seg.count float bgclr float fgclr float count;
+#N struct 2917.seg.width float bgclr float fgclr float default;
+#N struct 2917.seg.del float bgclr float fgclr symbol label;
+#N struct 2917.seg.add float bgclr float fgclr symbol label;
+#N struct 2971.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 2973.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 2975.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 2977.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 2979.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 2981.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 2983.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 2985.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N canvas 521 106 404 461 10;
 #N canvas 614 106 396 76 NETPD 0;
 #N canvas 305 106 381 123 abslist 0;
 #X msg 17 15 metaseq-segmenter-netpd;
-#X msg 15 45 metaseq-router-netpd;
 #X msg 28 78 metaseq-gop157x177;
-#X msg 228 29 master-param;
+#X msg 38 49 metaseq-set-instance;
+#X msg 198 45 untik-clock-provider;
 #X restore 12 33 pd abslist;
 #X msg 109 20 singleton;
-#X msg 11 8 version 0 1 3;
+#X msg 11 8 version 0 2 0;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 metaseq;
-#N canvas 230 473 352 203 \$1-metaseq 1;
-#X obj 178 9 metaseq-gop157x177 \$0.segments.gop;
-#X obj 10 9 metaseq-gop157x177 \$0.sets.gop;
+#N canvas 230 473 410 235 \$1-metaseq 1;
+#X obj 224 12 metaseq-gop157x177 \$0.segments.gop;
+#X obj 12 32 metaseq-set-instance \$1 \$0 1;
+#X obj 12 52 metaseq-set-instance \$1 \$0 2;
+#X obj 12 72 metaseq-set-instance \$1 \$0 3;
+#X obj 12 92 metaseq-set-instance \$1 \$0 4;
+#X obj 12 112 metaseq-set-instance \$1 \$0 5;
+#X obj 12 132 metaseq-set-instance \$1 \$0 6;
+#X obj 12 152 metaseq-set-instance \$1 \$0 7;
+#X obj 12 172 metaseq-set-instance \$1 \$0 8;
+#X obj 26 32 netpd-gui-dropdown \$0.1.clockname 67 16 10 888 54 54 0 666 887;
+#X obj 26 52 netpd-gui-dropdown \$0.2.clockname 67 16 10 888 54 54 0 666 887;
+#X obj 26 72 netpd-gui-dropdown \$0.3.clockname 67 16 10 888 54 54 0 666 887;
+#X obj 26 92 netpd-gui-dropdown \$0.4.clockname 67 16 10 888 54 54 0 666 887;
+#X obj 26 112 netpd-gui-dropdown \$0.5.clockname 67 16 10 888 54 54 0 666 887;
+#X obj 26 132 netpd-gui-dropdown \$0.6.clockname 67 16 10 888 54 54 0 666 887;
+#X obj 26 152 netpd-gui-dropdown \$0.7.clockname 67 16 10 888 54 54 0 666 887;
+#X obj 26 172 netpd-gui-dropdown \$0.8.clockname 67 16 10 888 54 54 0 666 887;
 #X restore 10 42 pd \$1-metaseq;
 #N canvas 459 235 705 291 set.editor.gui.code 0;
 #N canvas 324 204 947 696 create_rows 0;
@@ -23,11 +55,9 @@
 #X obj 78 396 f;
 #X obj 78 372 t b p;
 #X obj 21 306 t a a;
-#X obj 31 198 filledpolygon bgclr bgclr 0 40 posy 40 posy(0:1000)(16:1016)
-136 posy(0:1000)(16:1016) 136 posy;
+#X obj 31 198 filledpolygon bgclr bgclr 0 40 posy 40 posy(0:1000)(16:1016) 136 posy(0:1000)(16:1016) 136 posy;
 #X obj 37 72 s pd-\$0.segments.gop;
-#X obj 21 267 struct \$0.seg.row float posy float width float offset
-float fgclr float bgclr float vis;
+#X obj 21 267 struct \$0.seg.row float posy float width float offset float fgclr float bgclr float vis;
 #X obj 139 373 get \$0.seg.row posy;
 #X obj 78 421 set \$0.seg.row posy;
 #X obj 288 393 get \$0.seg.row width;
@@ -40,10 +70,8 @@ float fgclr float bgclr float vis;
 #X obj 430 389 get \$0.seg.row offset;
 #X obj 430 436 set \$0.seg.row offset;
 #X obj 430 411 max 0;
-#X obj 31 113 drawnumber -v vis width 84 posy(0:1000)(1:1001) fgclr
-;
-#X obj 29 151 drawnumber -v vis offset 44 posy(0:1000)(1:1001) fgclr
-;
+#X obj 31 113 drawnumber -v vis width 84 posy(0:1000)(1:1001) fgclr;
+#X obj 29 151 drawnumber -v vis offset 44 posy(0:1000)(1:1001) fgclr;
 #X connect 1 0 7 0;
 #X connect 2 0 4 0;
 #X connect 2 1 9 0;
@@ -75,15 +103,11 @@ float fgclr float bgclr float vis;
 #X obj 97 363 f;
 #X obj 97 339 t b p;
 #X obj 37 72 s pd-\$0.segments.gop;
-#X obj 30 263 struct \$0.seg.mute float posy float fgclr float bgclr
-;
+#X obj 30 263 struct \$0.seg.mute float posy float fgclr float bgclr;
 #X obj 158 340 get \$0.seg.mute posy;
 #X obj 97 388 set \$0.seg.mute posy;
-#X obj 31 179 filledpolygon bgclr bgclr 0 27 posy 27 posy(0:1000)(16:1016)
-36 posy(0:1000)(16:1016) 36 posy;
-#X obj 29 120 filledpolygon fgclr fgclr 0 27 posy(0:1000)(3:1003) 27
-posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
-;
+#X obj 31 179 filledpolygon bgclr bgclr 0 27 posy 27 posy(0:1000)(16:1016) 36 posy(0:1000)(16:1016) 36 posy;
+#X obj 29 120 filledpolygon fgclr fgclr 0 27 posy(0:1000)(3:1003) 27 posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003);
 #X connect 1 0 6 0;
 #X connect 2 0 0 0;
 #X connect 2 1 3 0;
@@ -127,8 +151,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X obj 30 258 struct \$0.seg.range float posy float bgclr;
 #X obj 158 340 get \$0.seg.range posy;
 #X obj 97 388 set \$0.seg.range posy;
-#X obj 37 115 filledpolygon bgclr bgclr 0 0 posy 0 posy(0:1000)(16:1016)
-10 posy(0:1000)(16:1016) 10 posy;
+#X obj 37 115 filledpolygon bgclr bgclr 0 0 posy 0 posy(0:1000)(16:1016) 10 posy(0:1000)(16:1016) 10 posy;
 #X connect 1 0 6 0;
 #X connect 2 0 0 0;
 #X connect 2 1 3 0;
@@ -180,8 +203,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X obj 158 340 get \$0.seg.solo posy;
 #X obj 97 388 set \$0.seg.solo posy;
 #X obj 30 263 struct \$0.seg.solo float posy float bgclr;
-#X obj 31 179 filledpolygon bgclr bgclr 0 14 posy 14 posy(0:1000)(16:1016)
-23 posy(0:1000)(16:1016) 23 posy;
+#X obj 31 179 filledpolygon bgclr bgclr 0 14 posy 14 posy(0:1000)(16:1016) 23 posy(0:1000)(16:1016) 23 posy;
 #X connect 1 0 6 0;
 #X connect 2 0 0 0;
 #X connect 2 1 3 0;
@@ -441,8 +463,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X obj 37 106 filledpolygon bgclr bgclr 0 0 0 0 16 16 16 16 0;
 #X obj 36 136 drawsymbol label 4 1 fgclr;
 #X obj 37 77 s pd-\$0.segments.gop;
-#X obj 32 183 struct \$0.seg.add float bgclr float fgclr symbol label
-;
+#X obj 32 183 struct \$0.seg.add float bgclr float fgclr symbol label;
 #X obj 37 29 list prepend \$0;
 #X msg 37 51 scalar \$1.seg.add \$2 \$3 \$4;
 #X msg 32 250 add;
@@ -463,8 +484,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X obj 36 151 drawsymbol label 24 1 fgclr;
 #X obj 37 92 s pd-\$0.segments.gop;
 #X obj 37 46 list prepend \$0;
-#X obj 32 203 struct \$0.seg.del float bgclr float fgclr symbol label
-;
+#X obj 32 203 struct \$0.seg.del float bgclr float fgclr symbol label;
 #X msg 37 66 scalar \$1.seg.del \$2 \$3 \$4;
 #X obj 32 270 s \$0.from.seg.gui;
 #X msg 32 248 del;
@@ -481,8 +501,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X obj 34 151 drawnumber count 84 1 fgclr;
 #X obj 37 92 s pd-\$0.segments.gop;
 #X obj 37 46 list prepend \$0;
-#X obj 32 203 struct \$0.seg.count float bgclr float fgclr float count
-;
+#X obj 32 203 struct \$0.seg.count float bgclr float fgclr float count;
 #X msg 37 66 scalar \$1.seg.count \$2 \$3 \$4;
 #X obj 570 165 pointer;
 #X msg 570 114 next;
@@ -528,14 +547,12 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X restore 315 208 pd struct_count;
 #N canvas 66 324 887 288 struct_length 0;
 #X obj 37 24 inlet;
-#X obj 37 121 filledpolygon bgclr bgclr 0 120 0 120 16 156 16 156 0
-;
+#X obj 37 121 filledpolygon bgclr bgclr 0 120 0 120 16 156 16 156 0;
 #X obj 34 151 drawnumber length 124 1 fgclr;
 #X obj 37 92 s pd-\$0.segments.gop;
 #X obj 37 46 list prepend \$0;
 #X msg 37 66 scalar \$1.seg.length \$2 \$3 \$4;
-#X obj 32 203 struct \$0.seg.length float bgclr float fgclr float length
-;
+#X obj 32 203 struct \$0.seg.length float bgclr float fgclr float length;
 #X obj 570 165 pointer;
 #X msg 570 114 next;
 #X msg 629 122 traverse \$1;
@@ -636,8 +653,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X obj 215 43 loadbang;
 #X obj 215 85 s \$0.done.create;
 #X obj 215 65 t b b;
-#X obj 269 43 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 269 43 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 31 173 \$1 \$3 +;
 #X msg 118 174 \$1 \$3 -;
 #X msg 206 174 \$1 \$3 16;
@@ -647,17 +663,14 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #N canvas 622 106 943 658 scrollbar 0;
 #X obj 9 10 inlet;
 #X obj 9 226 s pd-\$0.segments.gop;
-#X msg 28 151 obj 0 0 cnv 15 157 177 empty empty empty 20 12 0 14 -262144
--66577;
+#X msg 28 151 obj 0 0 cnv 15 157 177 empty empty empty 20 12 0 14 -262144 -66577;
 #X obj 9 35 f \$0;
 #X obj 9 60 t a a a;
 #X obj 414 503 s \$0.scrollbar.display;
 #X msg 414 420 pos 140 \$1;
 #X msg 430 472 vis_size 17 \$1;
-#X msg 9 186 obj 140 20 cnv 0 17 157 empty \$1.scrollbar.display empty
-20 12 0 14 -67105 -66577;
-#X msg 48 113 obj 140 22 vsl 17 152 1 0 0 0 \$1.scrollbar.handle.s
-\$1.scrollbar.handle.r empty 0 -9 0 10 -262144 -1 -1 0 1;
+#X msg 9 186 obj 140 20 cnv 0 17 157 empty \$1.scrollbar.display empty 20 12 0 14 -67105 -66577;
+#X msg 48 113 obj 140 22 vsl 17 152 1 0 0 0 \$1.scrollbar.handle.s \$1.scrollbar.handle.r empty 0 -9 0 10 -262144 -1 -1 0 1;
 #X obj 414 278 * 152;
 #X obj 414 302 + 20;
 #X obj 488 289 t a a;
@@ -809,8 +822,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X obj 32 225 route change;
 #X obj 37 92 s pd-\$0.segments.gop;
 #X obj 37 46 list prepend \$0;
-#X obj 32 203 struct \$0.seg.width float bgclr float fgclr float default
-;
+#X obj 32 203 struct \$0.seg.width float bgclr float fgclr float default;
 #X msg 37 66 scalar \$1.seg.width \$2 \$3 \$4;
 #X obj 32 384 s \$0.from.seg.gui;
 #X msg 32 361 default_width \$1;
@@ -1109,8 +1121,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X obj 36 136 drawsymbol label 4 1 fgclr;
 #X obj 37 29 list prepend \$0;
 #X msg 32 250 add;
-#X obj 32 183 struct \$0.set.add float bgclr float fgclr symbol label
-;
+#X obj 32 183 struct \$0.set.add float bgclr float fgclr symbol label;
 #X msg 37 51 scalar \$1.set.add \$2 \$3 \$4;
 #X obj 37 77 s pd-\$0.sets.gop;
 #X obj 32 272 s \$0.from.set.gui;
@@ -1131,8 +1142,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X msg 32 248 del;
 #X msg 37 66 scalar \$1.set.del \$2 \$3 \$4;
 #X obj 37 92 s pd-\$0.sets.gop;
-#X obj 32 203 struct \$0.set.del float bgclr float fgclr symbol label
-;
+#X obj 32 203 struct \$0.set.del float bgclr float fgclr symbol label;
 #X obj 32 270 s \$0.from.set.gui;
 #X connect 0 0 4 0;
 #X connect 1 0 5 0;
@@ -1147,8 +1157,7 @@ posy(0:1000)(13:1013) 36 posy(0:1000)(13:1013) 36 posy(0:1000)(3:1003)
 #X obj 39 8 inlet;
 #X obj 66 52 list prepend \$0;
 #X obj 66 98 s pd-\$0.sets.gop;
-#X obj 32 141 struct \$0.set.default float bgclr float fgclr symbol
-selector float number;
+#X obj 32 141 struct \$0.set.default float bgclr float fgclr symbol selector float number;
 #X obj 463 38 drawnumber number 40 0 fgclr;
 #X obj 462 61 filledpolygon 234 234 0 40 0 40 16 50 16 50 0;
 #X obj 461 88 filledpolygon 345 345 0 40 2 40 14 50 14 50 2;
@@ -1236,8 +1245,7 @@ selector float number;
 #X obj 32 291 t a a;
 #X obj 32 244 min 10;
 #X obj 117 344 + 1;
-#X obj 459 164 filledpolygon bgclr bgclr 0 50 0 50 16 116 16 116 0
-;
+#X obj 459 164 filledpolygon bgclr bgclr 0 50 0 50 16 116 16 116 0;
 #X obj 458 195 drawsymbol selector 54 0 fgclr;
 #X msg 66 72 scalar \$1.set.default \$2 \$3 \$4 5;
 #X connect 0 0 18 0;
@@ -1275,8 +1283,7 @@ selector float number;
 #X obj 306 101 s pd-\$0.sets.gop;
 #N canvas 124 60 1062 581 scrollbar 0;
 #X obj 9 10 inlet;
-#X msg 28 151 obj 0 0 cnv 15 157 177 empty empty empty 20 12 0 14 -262144
--66577;
+#X msg 28 151 obj 0 0 cnv 15 157 177 empty empty empty 20 12 0 14 -262144 -66577;
 #X obj 9 35 f \$0;
 #X obj 9 60 t a a a;
 #X msg 628 353 pos 140 \$1;
@@ -1326,10 +1333,8 @@ selector float number;
 #X obj 487 165 max 0;
 #X obj 418 264 min;
 #X obj 9 226 s pd-\$0.sets.gop;
-#X msg 48 113 obj 140 22 vsl 17 152 1 0 0 0 \$1.scrollbar2.handle.s
-\$1.scrollbar2.handle.r empty 0 -9 0 10 -262144 -1 -1 0 1;
-#X msg 9 186 obj 140 20 cnv 0 17 157 empty \$1.scrollbar2.display empty
-20 12 0 14 -67105 -66577;
+#X msg 48 113 obj 140 22 vsl 17 152 1 0 0 0 \$1.scrollbar2.handle.s \$1.scrollbar2.handle.r empty 0 -9 0 10 -262144 -1 -1 0 1;
+#X msg 9 186 obj 140 20 cnv 0 17 157 empty \$1.scrollbar2.display empty 20 12 0 14 -67105 -66577;
 #X obj 628 121 r \$0.scrollbar2.handle.s;
 #X obj 628 436 s \$0.scrollbar2.display;
 #X obj 772 509 s \$0.scrollbar2.handle.r;
@@ -1422,14 +1427,10 @@ selector float number;
 #X text 499 8 == selector ===============================;
 #X text 492 305 == offset ===============================;
 #X text 493 408 == length ===============================;
-#X obj 466 354 filledpolygon bgclr bgclr 0 68 posy 68 posy(0:1000)(16:1016)
-100 posy(0:1000)(16:1016) 100 posy;
-#X obj 463 328 drawnumber -v vis offset 70 posy(0:1000)(1:1001) fgclr
-;
-#X obj 464 461 filledpolygon bgclr bgclr 0 104 posy 104 posy(0:1000)(16:1016)
-136 posy(0:1000)(16:1016) 136 posy;
-#X obj 462 435 drawnumber -v vis length 106 posy(0:1000)(1:1001) fgclr
-;
+#X obj 466 354 filledpolygon bgclr bgclr 0 68 posy 68 posy(0:1000)(16:1016) 100 posy(0:1000)(16:1016) 100 posy;
+#X obj 463 328 drawnumber -v vis offset 70 posy(0:1000)(1:1001) fgclr;
+#X obj 464 461 filledpolygon bgclr bgclr 0 104 posy 104 posy(0:1000)(16:1016) 136 posy(0:1000)(16:1016) 136 posy;
+#X obj 462 435 drawnumber -v vis length 106 posy(0:1000)(1:1001) fgclr;
 #X obj 49 408 route change click;
 #X obj 49 456 f;
 #X obj 49 432 t b p;
@@ -1446,20 +1447,13 @@ selector float number;
 #X obj 205 276 set \$0.set.selector length;
 #X obj 25 168 t a a a a;
 #X obj 111 340 max 0;
-#X obj 25 106 struct \$0.set.selector float posy float number symbol
-label float fgclr float bgclr float vis float offset float length float
-vis2;
+#X obj 25 106 struct \$0.set.selector float posy float number symbol label float fgclr float bgclr float vis float offset float length float vis2;
 #X obj 486 31 drawnumber -v vis2 number 0 posy(0:1000)(1:1001) 0;
-#X obj 484 53 filledpolygon 234 234 0 0 posy 0 posy(0:1000)(16:1016)
-10 posy(0:1000)(16:1016) 10 posy;
-#X obj 482 89 filledpolygon 345 345 0 0 posy(0:1000)(2:1002) 0 posy(0:1000)(14:1014)
-10 posy(0:1000)(14:1014) 10 posy(0:1000)(2:1002);
-#X obj 482 138 filledpolygon 456 456 0 0 posy(0:1000)(4:1004) 0 posy(0:1000)(12:1012)
-10 posy(0:1000)(12:1012) 10 posy(0:1000)(4:1004);
-#X obj 482 187 filledpolygon 567 567 0 0 posy(0:1000)(6:1006) 0 posy(0:1000)(10:1010)
-10 posy(0:1000)(10:1010) 10 posy(0:1000)(6:1006);
-#X obj 483 237 filledpolygon bgclr bgclr 0 10 posy 10 posy(0:1000)(16:1016)
-64 posy(0:1000)(16:1016) 64 posy;
+#X obj 484 53 filledpolygon 234 234 0 0 posy 0 posy(0:1000)(16:1016) 10 posy(0:1000)(16:1016) 10 posy;
+#X obj 482 89 filledpolygon 345 345 0 0 posy(0:1000)(2:1002) 0 posy(0:1000)(14:1014) 10 posy(0:1000)(14:1014) 10 posy(0:1000)(2:1002);
+#X obj 482 138 filledpolygon 456 456 0 0 posy(0:1000)(4:1004) 0 posy(0:1000)(12:1012) 10 posy(0:1000)(12:1012) 10 posy(0:1000)(4:1004);
+#X obj 482 187 filledpolygon 567 567 0 0 posy(0:1000)(6:1006) 0 posy(0:1000)(10:1010) 10 posy(0:1000)(10:1010) 10 posy(0:1000)(6:1006);
+#X obj 483 237 filledpolygon bgclr bgclr 0 10 posy 10 posy(0:1000)(16:1016) 64 posy(0:1000)(16:1016) 64 posy;
 #X obj 483 277 drawsymbol label 14 posy(0:1000)(1:1001) fgclr;
 #X connect 0 0 2 0;
 #X connect 10 0 12 0;
@@ -1545,8 +1539,7 @@ vis2;
 #X msg 512 574 raw \$2 set \$1;
 #X msg 287 565 raw \$2 offset \$1;
 #X msg 49 532 raw \$2 length \$1;
-#X msg 48 230 scalar \$1.set.selector \$2 9 \$3 999 234 0 128 16 0
-;
+#X msg 48 230 scalar \$1.set.selector \$2 9 \$3 999 234 0 128 16 0;
 #X obj 638 183 r \$0.from.set.gui;
 #X obj 638 205 route scrollpos;
 #X obj 637 309 +;
@@ -1724,8 +1717,7 @@ vis2;
 #X msg 208 156 456;
 #X msg 239 156 234;
 #X obj 11 199 t a a a a;
-#X obj 28 246 set \$0.set.selector vis vis2 number offset length bgclr
-;
+#X obj 28 246 set \$0.set.selector vis vis2 number offset length bgclr;
 #N canvas 379 255 450 300 step.wise 0;
 #X obj 26 27 inlet;
 #X obj 79 212 outlet;
@@ -1808,12 +1800,10 @@ vis2;
 #X obj 32 316 t a a;
 #X obj 32 338 change;
 #X obj 37 92 s pd-\$0.sets.gop;
-#X obj 37 121 filledpolygon bgclr bgclr 0 120 0 120 16 156 16 156 0
-;
+#X obj 37 121 filledpolygon bgclr bgclr 0 120 0 120 16 156 16 156 0;
 #X obj 32 384 s \$0.from.set.gui;
 #X msg 37 66 scalar \$1.set.default_length \$2 \$3 \$4;
-#X obj 32 187 struct \$0.set.default_length float bgclr float fgclr
-float default;
+#X obj 32 187 struct \$0.set.default_length float bgclr float fgclr float default;
 #X obj 32 273 get \$0.set.default_length default;
 #X obj 95 313 set \$0.set.default_length default;
 #X msg 32 361 default_length \$1;
@@ -1846,9 +1836,6 @@ float default;
 #X connect 13 0 6 0;
 #X connect 14 0 15 0;
 #X restore 11 155 pd set.manager.gui.code;
-#X obj 22 484 metaseq-router-netpd \$1 router;
-#X obj 199 532 s \$0.from.set;
-#X obj 199 438 r \$0.to.set;
 #N canvas 353 44 982 456 set.manager.gui.interfacing 0;
 #X obj 20 5 r \$0.from.set.gui;
 #X obj 20 234 b;
@@ -2250,22 +2237,23 @@ float default;
 #X obj 24 309 r \$0.to.seq;
 #X obj 24 393 s \$0.from.seq;
 #X text 107 257 <- interesting stuff;
-#X obj 22 440 r \$0.to.router;
-#X obj 22 525 s \$0.from.router;
 #X obj 254 112 netpd-dump \$1;
 #X obj 254 135 t b b b;
 #X obj 293 159 s \$1.dump.sets;
 #X obj 254 206 s \$1.dump.router;
 #X obj 273 183 s \$1.dump.segmenter;
-#X connect 5 0 16 1;
-#X connect 8 0 22 0;
-#X connect 8 1 9 0;
-#X connect 10 0 8 1;
-#X connect 16 0 19 0;
-#X connect 16 1 4 0;
-#X connect 18 0 16 0;
-#X connect 21 0 8 0;
-#X connect 23 0 24 0;
-#X connect 24 0 26 0;
-#X connect 24 1 27 0;
-#X connect 24 2 25 0;
+#N canvas 1216 360 611 397 untik.clock 0;
+#X obj 23 166 untik-clock-provider metaseq ms;
+#X obj 23 28 loadbang;
+#X msg 23 51 clocklist set1 set2 set3 set4 set5 set6 set set8;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X restore 23 237 pd untik.clock;
+#X connect 5 0 13 1;
+#X connect 13 0 16 0;
+#X connect 13 1 4 0;
+#X connect 15 0 13 0;
+#X connect 18 0 19 0;
+#X connect 19 0 21 0;
+#X connect 19 1 22 0;
+#X connect 19 2 20 0;
