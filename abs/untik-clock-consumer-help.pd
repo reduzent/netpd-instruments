@@ -1,4 +1,4 @@
-#N struct 1617.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 5701.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 603 95 635 712 10;
 #X declare -path ../../includes;
 #N canvas 1473 663 341 97 NETPD 0;
@@ -22,14 +22,14 @@
 #X msg 254 87 select u:main;
 #X text 351 86 select a clock;
 #X obj 254 341 untik-clock-consumer \$1 myclock \$0.clock.select;
-#X msg 289 166 get tempo;
-#X msg 282 143 get run;
-#X msg 302 203 get timestamp;
-#X msg 275 121 get pos;
-#X text 332 121 get current position;
-#X text 341 142 are we running now?;
-#X text 359 166 get current tempo;
-#X text 389 203 get current precise timestamp;
+#X msg 282 156 get tempo;
+#X msg 275 133 get run;
+#X msg 300 185 get timestamp;
+#X msg 268 111 get pos;
+#X text 325 111 get current position;
+#X text 334 132 are we running now?;
+#X text 352 156 get current tempo;
+#X text 387 185 get current precise timestamp;
 #X floatatom 272 509 14 0 0 0 - - - 0;
 #X msg 313 253 schedule 89.093 some message with args;
 #X text 314 271 schedule <timestamp> <arbitrary message>;
@@ -48,6 +48,8 @@
 #X listbox 270 606 37 0 0 0 - - - 0;
 #X obj 408 486 list;
 #X obj 270 580 list;
+#X text 377 209 get current precise timestamp;
+#X msg 311 211 get clock;
 #X connect 4 0 5 0;
 #X connect 4 1 6 0;
 #X connect 4 2 7 0;
@@ -66,3 +68,4 @@
 #X connect 39 0 43 0;
 #X connect 42 0 30 0;
 #X connect 43 0 41 0;
+#X connect 45 0 17 0;
