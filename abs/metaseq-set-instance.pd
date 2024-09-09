@@ -96,7 +96,7 @@
 #X connect 16 0 1 0;
 #X restore 412 295 pd tempo.div.adjust;
 #X obj 412 392 t a;
-#N canvas 2797 645 463 598 div.shift.length 0;
+#N canvas 941 417 427 449 div.shift.length 0;
 #X obj 26 29 inlet;
 #X obj 26 354 outlet;
 #X obj 71 56 netpd_r \$1 set/\$3/div;
@@ -222,7 +222,7 @@
 #X restore 317 88 pd escalate.requests;
 #X obj 240 168 route pos tick beat bar clock tempo;
 #X obj 378 216 s \$0.current.clock;
-#X obj 217 20 cnv 16 40 16 empty \$0.cursor.label \ \ \ 21 2 10 0 10 #fcfcc8 #000000 0;
+#X obj 217 20 cnv 16 40 16 empty \$0.cursor.label empty 2 10 0 10 #fcfcc8 #000000 0;
 #X msg 59 285 symbol #406080;
 #X msg 48 310 symbol #80a0c0;
 #N canvas 219 523 450 300 \$0.link 0;
@@ -243,6 +243,10 @@
 #X obj 639 104 route select;
 #X obj 639 131 sel \$3;
 #X obj 674 163 moses \$3;
+#X msg 19 510 label \$1;
+#X obj 19 535 s \$0.cursor.label;
+#X msg 19 485 symbol;
+#X obj 19 460 loadbang;
 #X connect 1 0 52 0;
 #X connect 8 0 11 0;
 #X connect 10 0 9 0;
@@ -297,4 +301,7 @@
 #X connect 65 1 66 0;
 #X connect 66 0 61 0;
 #X connect 66 1 59 0;
+#X connect 67 0 68 0;
+#X connect 69 0 67 0;
+#X connect 70 0 69 0;
 #X coords 0 -1 1 1 247 19 2 20 20;
