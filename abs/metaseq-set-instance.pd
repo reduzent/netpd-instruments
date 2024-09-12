@@ -1,7 +1,4 @@
-#N struct 4315.number float x float y float number float fclr float bgclr float w float h;
-#N struct 4325.number float x float y float number float fclr float bgclr float w float h;
-#N struct 4335.number float x float y float number float fclr float bgclr float w float h;
-#N canvas 297 238 836 750 10;
+#N canvas 297 238 841 754 10;
 #N canvas 1256 286 389 60 NETPD 0;
 #N canvas 1378 429 413 42 abslist 0;
 #X msg 16 10 untik-clock-consumer;
@@ -11,7 +8,7 @@
 #X obj 240 137 untik-clock-consumer \$1 set/\$3/clocksource \$2.\$3.clockname;
 #X obj 20 20 bng 16 250 50 0 \$0.click empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
 #X obj 20 20 cnv 7 237 19 empty empty empty 2 8 0 12 #ffffff #ffffff 0;
-#X obj 20 20 cnv 16 234 16 empty \$0.bg \$3 2 8 0 12 #80a0c0 #b6cee0 0;
+#X obj 20 20 cnv 16 234 16 empty \$0.bg \$3 2 8 0 12 #406080 #b6cee0 0;
 #X obj 20 83 r \$0.click;
 #X obj 48 352 s \$0.bg;
 #X obj 20 105 f \$3;
@@ -231,7 +228,7 @@
 #X obj 26 40 cnv 4 4 10 empty empty empty 20 12 0 10 #b6cee0 #404040 0;
 #X obj 21 46 cnv 4 4 4 empty empty empty 20 12 0 10 #b6cee0 #404040 0;
 #X obj 20 60 cnv 5 10 19 empty empty empty 20 12 0 10 #ffffff #404040 0;
-#X coords 0 -1 1 1 10 19 2 20 40;
+#X coords 0 -1 1 1 10 19 2 20 20;
 #X restore 257 20 pd \$0.link;
 #X msg 628 250 coords 0 -1 1 1 10 19 2 20 \$1;
 #X msg 639 207 20;
@@ -247,9 +244,9 @@
 #X msg 19 485 symbol;
 #X obj 19 460 loadbang;
 #X msg 48 331 color \$1 0 #b6cee0;
-#X obj 112 20 netpd-gui-number \$1-set/\$3/div 34 16 12 0 99 234 888;
-#X obj 147 20 netpd-gui-number \$1-set/\$3/shift 34 16 12 0 99 234 888;
-#X obj 182 20 netpd-gui-number \$1-set/\$3/length 34 16 12 0 99 234 888;
+#X obj 112 20 netpd-gui-number \$1-set/\$3/div 34 16 12 1 99 234 888;
+#X obj 147 20 netpd-gui-number \$1-set/\$3/shift 34 16 12 -999 9999 234 888;
+#X obj 182 20 netpd-gui-number \$1-set/\$3/length 34 16 12 0 9999 234 888;
 #X obj 208 676 s \$1-set/\$3/div;
 #X obj 198 699 s \$1-set/\$3/shift;
 #X obj 188 724 s \$1-set/\$3/length;
@@ -262,6 +259,14 @@
 #X msg 265 587 selected_box_color \$1 \, selected_background_color \$1;
 #X obj 170 618 t a a;
 #X obj 265 611 s \$2.\$3.clockname;
+#X obj 398 514 netpd_r \$1 set/\$3/length;
+#X obj 403 675 s \$1-set/\$3/shift;
+#X obj 393 700 s \$1-set/\$3/length;
+#X msg 393 649 text_color \$1;
+#X obj 398 537 > 0;
+#X obj 398 560 sel 0 1;
+#X msg 424 624 888;
+#X msg 398 623 567;
 #X connect 1 0 48 0;
 #X connect 5 0 7 0;
 #X connect 7 0 8 0;
@@ -331,4 +336,12 @@
 #X connect 80 0 82 0;
 #X connect 81 0 74 0;
 #X connect 81 1 80 0;
+#X connect 83 0 87 0;
+#X connect 86 0 85 0;
+#X connect 86 0 84 0;
+#X connect 87 0 88 0;
+#X connect 88 0 90 0;
+#X connect 88 1 89 0;
+#X connect 89 0 86 0;
+#X connect 90 0 86 0;
 #X coords 0 -1 1 1 247 19 2 20 20;
