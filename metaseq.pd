@@ -28,11 +28,11 @@
 #X obj 20 128 netpd-gui-dropdown \$0.6.clockname 67 16 10 888 234 234 0 666 887;
 #X obj 20 148 netpd-gui-dropdown \$0.7.clockname 67 16 10 888 234 234 0 666 887;
 #X obj 20 168 netpd-gui-dropdown \$0.8.clockname 67 16 10 888 234 234 0 666 887;
-#X obj 92 8 cnv 16 26 16 empty empty div 2 8 0 12 #80a0c0 #ffffff 0;
-#X obj 119 8 cnv 16 38 16 empty empty shift 2 8 0 12 #80a0c0 #ffffff 0;
-#X obj 158 8 cnv 16 44 16 empty empty length 2 8 0 12 #80a0c0 #ffffff 0;
+#X obj 92 8 cnv 16 26 16 empty empty div 2 8 0 10 #80a0c0 #ffffff 0;
+#X obj 119 8 cnv 16 38 16 empty empty shift 2 8 0 10 #80a0c0 #ffffff 0;
+#X obj 158 8 cnv 16 44 16 empty empty length 2 8 0 10 #80a0c0 #ffffff 0;
 #X obj 6 8 cnv 16 85 16 empty empty metaseq 2 8 0 18 #80a0c0 #b6cee0 0;
-#X obj 202 8 cnv 16 41 16 empty empty pos 4 8 0 12 #80a0c0 #ffffff 0;
+#X obj 202 8 cnv 16 41 16 empty empty pos 4 8 0 10 #80a0c0 #ffffff 0;
 #X obj 254 14 cnv 4 4 4 empty empty empty 20 12 0 10 #b6cee0 #404040 0;
 #X obj 249 14 cnv 4 4 14 empty empty empty 20 12 0 10 #b6cee0 #404040 0;
 #X restore 10 42 pd \$1-metaseq;
