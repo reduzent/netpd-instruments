@@ -245,7 +245,7 @@
 #X obj 19 460 loadbang;
 #X msg 48 331 color \$1 0 #b6cee0;
 #X obj 112 20 netpd-gui-number \$1-set/\$3/div 34 16 12 1 99 234 888;
-#X obj 147 20 netpd-gui-number \$1-set/\$3/shift 34 16 12 -999 9999 234 888;
+#X obj 147 20 netpd-gui-number \$1-set/\$3/shift 34 16 12 0 9999 234 888;
 #X obj 182 20 netpd-gui-number \$1-set/\$3/length 34 16 12 0 9999 234 888;
 #X obj 208 676 s \$1-set/\$3/div;
 #X obj 198 699 s \$1-set/\$3/shift;
