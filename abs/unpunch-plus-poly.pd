@@ -1,6 +1,5 @@
 #N canvas 141 212 511 345 12;
-#X obj 64 20 nbx 2 20 1 99 0 0 \$1-\$2/poly/dend \$1-\$2/poly/dend
-empty 0 8 0 10 -262144 -1 -1 4 256;
+#X obj 64 20 nbx 2 20 1 99 0 0 \$1-\$2/poly/dend \$1-\$2/poly/dend empty 0 8 0 10 #fcfcfc #000000 #000000 0 256;
 #N canvas 0 99 450 300 NETPD 0;
 #X msg 4 14 version 0 1 0;
 #X restore 312 18 pd NETPD 2 0;
@@ -16,16 +15,11 @@ empty 0 8 0 10 -262144 -1 -1 4 256;
 #X obj 170 152 makefilename %2d;
 #X obj 170 92 r \$1-\$2/poly/sor;
 #X obj 170 206 s \$0.sor.label;
-#X obj 99 20 nbx 2 20 1 99 0 0 \$1-\$2/poly/sor \$1-\$2/poly/sor empty
-0 8 0 10 -262144 -1 -1 4 256;
-#X obj 20 20 cnv 15 46 20 empty \$0.poly.label poly: 3 10 0 12 -233017
--1 0;
-#X obj 67 20 cnv 10 26 20 empty \$0.dend.label  4 6 10 0 12 -233017
--1 0;
-#X obj 104 20 cnv 10 26 20 empty \$0.sor.label  4 6 10 0 12 -233017
--1 0;
-#X obj 94 20 cnv 10 10 20 empty \$0.op.label / 2 10 0 12 -233017 -1
-0;
+#X obj 99 20 nbx 2 20 1 99 0 0 \$1-\$2/poly/sor \$1-\$2/poly/sor empty 0 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 20 20 cnv 15 46 20 empty \$0.poly.label poly: 3 10 0 12 #e0e0e0 #000000 0;
+#X obj 67 20 cnv 10 26 20 empty \$0.dend.label 4 6 10 0 12 #e0e0e0 #000000 0;
+#X obj 104 20 cnv 10 26 20 empty \$0.sor.label 4 6 10 0 12 #e0e0e0 #000000 0;
+#X obj 94 20 cnv 10 10 20 empty \$0.op.label / 2 10 0 12 #e0e0e0 #000000 0;
 #N canvas 517 304 541 388 color 0;
 #X msg 22 231 color 10 10 \$1;
 #X msg 22 189 -1;

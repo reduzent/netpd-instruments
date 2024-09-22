@@ -7,10 +7,8 @@
 #X text 175 209 inlet0: list;
 #X text 175 194 inlet0: list;
 #X msg 26 92 3 12 8 4;
-#X text 21 13 [rh_list_prod_sort_by_distsance] - sort the cartesian
-product by distance;
-#X text 169 224 outlet0: cartesian product as list of tuples sorted
-by distance;
+#X text 21 13 [rh_list_prod_sort_by_distsance] - sort the cartesian product by distance;
+#X text 169 224 outlet0: cartesian product as list of tuples sorted by distance;
 #X obj 26 158 rh_list_prod_sort_by_distance;
 #X connect 2 0 8 1;
 #X connect 5 0 8 0;

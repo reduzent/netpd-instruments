@@ -3,15 +3,14 @@
 #N canvas 887 304 302 60 NETPD 0;
 #X msg 7 12 version 0 0 0;
 #X restore 565 682 pd NETPD 2 0;
-#X floatatom 28 41 5 0 0 0 - - -, f 5;
-#X floatatom 28 559 5 0 0 0 - - -, f 5;
+#X floatatom 28 41 5 0 0 0 - - - 0;
+#X floatatom 28 559 5 0 0 0 - - - 0;
 #X msg 198 77 quantity;
 #X msg 198 98 length;
 #X obj 127 648 print metaseq-segmenter;
 #X msg 198 248 get \$1;
-#X floatatom 198 227 5 0 0 0 - - -, f 5;
-#X obj 31 675 hsl 256 15 0 255 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 20500 1;
+#X floatatom 198 227 5 0 0 0 - - - 0;
+#X obj 31 675 hsl 256 15 0 255 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 198 293 update_offset 1 90;
 #X msg 198 271 update_width 1 8;
 #X msg 198 337 clear;
@@ -19,23 +18,19 @@
 #X msg 198 34 add 50 50 0;
 #X msg 198 56 add 50 200 0;
 #X msg 198 315 update_mute 0 1;
-#X floatatom 198 427 5 0 0 0 - - -, f 5;
-#X floatatom 40 84 5 0 0 0 - - -, f 5;
+#X floatatom 198 427 5 0 0 0 - - - 0;
+#X floatatom 40 84 5 0 0 0 - - - 0;
 #X text 62 41 song position;
-#X text 282 46 --------add segment with [width] [offset] [mute:0|1]
-;
+#X text 282 46 --------add segment with [width] [offset] [mute:0|1];
 #X text 257 77 ------------report number of segments;
-#X text 245 97 --------------report total length of set (all segments)
-;
+#X text 245 97 --------------report total length of set (all segments);
 #X text 245 249 --------------report parameters of given segment;
 #X text 303 272 ----update width of segment;
 #X text 315 292 --update offset of segment;
 #X text 298 315 -----update mute status of segment;
 #X text 237 337 ---------------delete all segments of current set;
-#X text 197 10 === set specific methods ===================================
-;
-#X text 197 386 === manage sets ============================================
-;
+#X text 197 10 === set specific methods ===================================;
+#X text 197 386 === manage sets ============================================;
 #X msg 198 445 set \$1;
 #X msg 40 113 set \$1;
 #X text 248 404 -------------add new set;
@@ -45,8 +40,7 @@
 #X text 243 358 --------------remove last segment;
 #X msg 198 491 set_count;
 #X text 259 491 -----------report number of sets;
-#X text 197 556 === general methods ========================================
-;
+#X text 197 556 === general methods ========================================;
 #X msg 199 582 dump_all;
 #X msg 197 607 clear_all;
 #X text 254 581 ------------dump complete state;
@@ -54,22 +48,19 @@
 #X msg 198 404 set_add;
 #X text 421 682 2016 \, Roman Haefeli;
 #X msg 198 139 solo \$1;
-#X floatatom 198 121 5 0 0 0 - - -, f 5;
+#X floatatom 198 121 5 0 0 0 - - - 0;
 #X msg 233 119 -1;
 #X msg 251 139 solo;
-#X floatatom 198 161 5 1 999 0 - - -, f 5;
+#X floatatom 198 161 5 1 999 0 - - - 0;
 #X msg 198 179 range \$1;
 #X msg 261 179 range;
 #X msg 198 203 range_length;
-#X text 301 179 ---- set range of to be played segments \, report range
-;
+#X text 301 179 ---- set range of to be played segments \, report range;
 #X text 277 203 -------- report length of range;
 #X msg 198 515 set_restore 1 -1 2 50 50 0 50 200 0;
 #X text 419 514 restore set;
-#X text 261 534 <id> <solo> <range> <segment 1 data> <segment 2 data>
-...;
-#X text 284 141 ------- set segment solo (-1=off) \; report solo state
-;
+#X text 261 534 <id> <solo> <range> <segment 1 data> <segment 2 data> ...;
+#X text 284 141 ------- set segment solo (-1=off) \; report solo state;
 #X connect 0 0 3 0;
 #X connect 0 1 6 0;
 #X connect 2 0 0 0;

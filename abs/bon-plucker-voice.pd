@@ -83,8 +83,7 @@
 #X obj 346 279 * 64000;
 #X obj 281 226 * 8;
 #X obj 627 107 / 16;
-#X obj 324 266 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 324 266 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 242 351 max 0;
 #X obj 339 341 min 0;
 #X obj 332 396 +;
@@ -102,8 +101,7 @@
 #X obj 258 541 / 350;
 #X obj 616 691 change;
 #X obj 506 641 > -90;
-#X text 763 367 corrected switch~ing part and added version tag. by
-roman;
+#X text 763 367 corrected switch~ing part and added version tag. by roman;
 #N canvas 962 400 284 91 NETPD 0;
 #X msg 62 23 version 0 0 3;
 #X restore 821 249 pd NETPD 2 0;

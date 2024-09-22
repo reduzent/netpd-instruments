@@ -14,9 +14,7 @@
 #N canvas 463 372 446 55 NETPD 0;
 #X msg 19 16 version 0 1 0;
 #X restore 511 15 pd NETPD 2 0;
-#X text 210 66 This converts a0 \, a1 \, a2 \, b0 \, b1 \, b2 parameters
-from audio eq cookbook to the 5 parameters Pd's [biquad] expects \,
-where a0 is assumed to be always 1;
+#X text 210 66 This converts a0 \, a1 \, a2 \, b0 \, b1 \, b2 parameters from audio eq cookbook to the 5 parameters Pd's [biquad] expects \, where a0 is assumed to be always 1;
 #X text 209 120 biquad wants: fb1 fb2 ff1 ff2 ff3;
 #X text 261 20 borrowed from mmb. Thanks!;
 #X connect 0 0 1 0;

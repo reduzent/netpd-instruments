@@ -145,8 +145,7 @@
 #X text 251 29 0: NORMAL;
 #X text 252 72 1: ONESHOT;
 #X text 252 85 2: LOOP;
-#X text 268 44 noteon: play from cue0 to cue1 \, then loop cue1-cue2
-;
+#X text 268 44 noteon: play from cue0 to cue1 \, then loop cue1-cue2;
 #X text 268 55 noteoff: play tail from cue2 to sample end;
 #X text 323 70 play from cue0 to sample-end;
 #X text 322 84 loop between cue1-cue2;

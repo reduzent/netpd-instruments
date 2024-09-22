@@ -16,12 +16,10 @@
 #N canvas 842 220 444 258 \$1-dirtlib 0;
 #X text 7 12 Library of effects that add dirt;
 #X text 7 24 ================================;
-#X text 7 53 wobble - messes with pitch by slightly modulating a delay
-;
+#X text 7 53 wobble - messes with pitch by slightly modulating a delay;
 #X text 7 68 tramp - emulates crudely amp&speaker in overdrive;
 #X text 7 83 leslie - emulates a rotating speaker;
 #X text 7 98 mp33 - washes sounds like bad compression;
 #X text 7 113 spicy - adds dirt applying the fourth power;
 #X restore 16 39 pd \$1-dirtlib;
-#X obj 16 60 mx-fx-list \$1 dirtlib wobble tramp leslie mp33 spicy
-asy fifty;
+#X obj 16 60 mx-fx-list \$1 dirtlib wobble tramp leslie mp33 spicy asy fifty;

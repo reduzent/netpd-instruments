@@ -1,4 +1,3 @@
-#N struct 3875.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 794 395 788 344 10;
 #X text 167 19 by Enrique Erne;
 #N canvas 1062 308 224 98 NETPD 0;
@@ -27,7 +26,7 @@
 #X obj 26 98 inlet~;
 #X obj 59 59 netpd_f \$1 \$2/f 0;
 #X obj 251 208 s \$1-\$2/f;
-#N canvas 509 532 179 103 \$3-\$2 1;
+#N canvas 509 532 179 103 \$3-\$2 0;
 #X obj 10 37 netpd-gui-dropdown \$0.clock.select 135 16 10 0 0 777 0 555 887;
 #X obj 13 53 hsl 130 15 0 10 0 0 \$1-\$2/f \$1-\$2/f amplitude-modulation 15 7 1 9 #fcfcfc #000000 #000000 0 0;
 #X obj 10 67 hradio 15 1 0 9 \$0-eam \$0-eam-r empty 0 -6 0 8 #fcfcfc #000000 #000000 0;

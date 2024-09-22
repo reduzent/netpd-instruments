@@ -2,7 +2,7 @@
 #N canvas 0 91 332 172 NETPD 0;
 #X msg 4 14 version 0 1 1;
 #X restore 316 17 pd NETPD 2 0;
-#X obj 20 20 nbx 10 20 -999 999 0 0 \$1-\$2/\$3 \$1-\$2/\$3 empty 0 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 20 20 nbx 10 20 0 0 0 0 \$1-\$2/\$3 \$1-\$2/\$3 empty 0 8 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 20 20 cnv 15 60 20 empty \$1-\$2/\$3.label \$3: 3 10 0 12 #e0e0e0 #000000 0;
 #X obj 80 20 cnv 15 40 20 empty \$1-\$2/\$3.value \ \ 0 12 10 0 12 #e0e0e0 #000000 0;
 #X obj 26 88 loadbang;

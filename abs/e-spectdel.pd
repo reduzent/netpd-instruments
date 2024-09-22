@@ -105,8 +105,7 @@
 #X obj 56 202 / 512;
 #X text 104 220 period 512;
 #X obj 41 65 loadbang;
-#X text 40 27 The Hann window is now recomputed on 'loadbang' to make
-the file smaller (it doesn't have to be saved with the array.);
+#X text 40 27 The Hann window is now recomputed on 'loadbang' to make the file smaller (it doesn't have to be saved with the array.);
 #X text 414 315 511;
 #X text 67 131 recalculate Hann window table;
 #X obj 41 150 b;
@@ -205,9 +204,7 @@ the file smaller (it doesn't have to be saved with the array.);
 #X connect 14 0 15 0;
 #X connect 15 0 12 1;
 #X restore 19 89 pd feedback-const;
-#X text 18 125 code borrowed from spectral_delay.pd by Johannes Kreidler
-and Orm Finnendahl 2006 slightly corrected by Roman Haefeli addapted
-for netpd by Enrique Erne;
+#X text 18 125 code borrowed from spectral_delay.pd by Johannes Kreidler and Orm Finnendahl 2006 slightly corrected by Roman Haefeli addapted for netpd by Enrique Erne;
 #N canvas 945 311 292 252 NETPD 0;
 #X msg 19 10 version 0 1 11;
 #X restore 299 42 pd NETPD 2 0;
@@ -227,15 +224,11 @@ for netpd by Enrique Erne;
 #X connect 1 0 2 0;
 #X connect 4 0 3 0;
 #X restore 225 23 pd INIT;
-#N canvas 590 311 299 166 \$3-\$2 1;
-#X obj 261 20 vsl 15 55 0 128 0 0 \$0-delay-const \$0-delay-const-r
-empty 0 -8 0 8 -262130 -1 -1 0 0;
-#X obj 261 96 vsl 15 55 0 1 0 0 \$0-feedback-const \$0-feedback-const-r
-empty 0 -8 0 8 -262130 -1 -1 0 0;
-#X obj 5 18 cnv 15 256 60 empty empty empty 20 12 0 14 -262139 -66577
-0;
-#X obj 5 94 cnv 15 256 60 empty empty empty 20 12 0 14 -262139 -66577
-0;
+#N canvas 590 311 299 166 \$3-\$2 0;
+#X obj 261 20 vsl 15 55 0 128 0 0 \$0-delay-const \$0-delay-const-r empty 0 -8 0 8 #fcfcc4 #000000 #000000 0 0;
+#X obj 261 96 vsl 15 55 0 1 0 0 \$0-feedback-const \$0-feedback-const-r empty 0 -8 0 8 #fcfcc4 #000000 #000000 0 0;
+#X obj 5 18 cnv 15 256 60 empty empty empty 20 12 0 14 #fcfce8 #404040 0;
+#X obj 5 94 cnv 15 256 60 empty empty empty 20 12 0 14 #fcfce8 #404040 0;
 #N canvas 0 22 454 304 (subpatch) 0;
 #X array \$1-\$2/delay 256 float 0;
 #X coords 0 134 255 -6 256 60 1 0 0;

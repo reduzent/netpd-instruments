@@ -7,8 +7,7 @@
 #X text 205 74 inlet0: number to check;
 #X text 198 92 outlet0: 0|1;
 #X obj 26 158 rh_isint;
-#X obj 26 246 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 26 246 tgl 30 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 26 73 2;
 #X msg 47 100 0;
 #X msg 81 93 2.12;

@@ -2,23 +2,20 @@
 #N canvas 659 72 327 81 NETPD 0;
 #X msg 15 16 version 0 1 0;
 #X restore 295 254 pd NETPD 2 0;
-#X obj 25 43 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 25 43 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 26 212 dac~;
 #X text 287 286 2022 \, Roman Haefeli;
 #X text 239 48 inlet0: signal;
 #X obj 167 254 table \$0.IR 1024;
 #X obj 26 158 rh_convolve~ \$0.IR 128;
 #X msg 142 119 analyze;
-#X text 21 13 [rh_convolve~] - convolute a signal with an impulse response
-;
+#X text 21 13 [rh_convolve~] - convolute a signal with an impulse response;
 #X text 232 66 outlet0: convoluted signal;
 #X obj 230 121 openpanel;
 #X obj 230 189 soundfiler;
 #X obj 230 144 list append \$0.IR;
 #X msg 230 166 read -resize \$1 \$2;
-#X obj 230 99 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 230 99 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 25 67 rh_impulse~;
 #X text 25 282 borrowed from ???;
 #N canvas 501 169 420 156 NETPD 0;

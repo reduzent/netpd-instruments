@@ -4,8 +4,7 @@
 #X obj 225 115 list prepend \$1;
 #X msg 225 137 \; \$1-\$2 bang;
 #X obj 225 93 route \$1-oxylong;
-#X obj 17 20 qseq3-instr-list \$1 oxylong oxy1 oxy2 oxy3 oxy4 oxy5
-oxy6;
+#X obj 17 20 qseq3-instr-list \$1 oxylong oxy1 oxy2 oxy3 oxy4 oxy5 oxy6;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;
@@ -397,35 +396,7 @@ oxy6;
 #X connect 5 0 4 0;
 #X restore 269 124 pd prelisten;
 #N canvas 565 106 503 480 loaddefault 0;
-#X msg 9 34 /oxy/rel/6 50 \, /oxy/rel/5 699.902 \, /oxy/rel/4 815.771
-\, /oxy/rel/3 50 \, /oxy/rel/2 50 \, /oxy/rel/1 817.435 \, /oxy/sus/6
-1 \, /oxy/sus/5 0.483146 \, /oxy/sus/4 0.505618 \, /oxy/sus/3 1 \,
-/oxy/sus/2 1 \, /oxy/sus/1 0.617977 \, /oxy/dec/6 10 \, /oxy/dec/5
-42.5808 \, /oxy/dec/4 44.842 \, /oxy/dec/3 10 \, /oxy/dec/2 10 \, /oxy/dec/1
-223.005 \, /oxy/att/6 3 \, /oxy/att/5 3 \, /oxy/att/4 3 \, /oxy/att/3
-300 \, /oxy/att/2 3 \, /oxy/att/1 3 \, /oxy/dur/6 4000 \, /oxy/dur/5
-69.2398 \, /oxy/dur/4 59.3569 \, /oxy/dur/3 920.346 \, /oxy/dur/2 50.7603
-\, /oxy/dur/1 20 \, /oxy/pik/6 0.269663 \, /oxy/pik/5 1 \, /oxy/pik/4
-1 \, /oxy/pik/3 0.984252 \, /oxy/pik/2 0.460674 \, /oxy/pik/1 0.719101
-\, /oxy/aph/6 1.67772 \, /oxy/aph/5 1.36405 \, /oxy/aph/4 1.95945 \,
-/oxy/aph/3 1.36405 \, /oxy/aph/2 2.06351 \, /oxy/aph/1 1.29527 \, /oxy/fqu/6
-2.01081 \, /oxy/fqu/5 2.06351 \, /oxy/fqu/3 4.4842 \, /oxy/fqu/2 3.37357
-\, /oxy/fqu/1 2.4732 \, /oxy/ffr/6 1322.07 \, /oxy/ffr/5 969.222 \,
-/oxy/ffr/4 520.907 \, /oxy/ffr/3 562.948 \, /oxy/ffr/2 6243.27 \, /oxy/ffr/1
-279.961 \, /oxy/oc4/6 6 \, /oxy/oc4/5 4 \, /oxy/oc4/4 3 \, /oxy/oc4/3
-2 \, /oxy/oc4/2 6 \, /oxy/oc4/1 5 \, /oxy/oc3/6 4 \, /oxy/oc3/5 3 \,
-/oxy/oc3/4 3 \, /oxy/oc3/3 2 \, /oxy/oc3/2 6 \, /oxy/oc3/1 5 \, /oxy/oc2/6
-2 \, /oxy/oc2/5 3 \, /oxy/oc2/4 3 \, /oxy/oc2/3 2 \, /oxy/oc2/2 5 \,
-/oxy/oc2/1 5 \, /oxy/oc1/6 2 \, /oxy/oc1/5 3 \, /oxy/oc1/4 3 \, /oxy/oc1/3
-2 \, /oxy/oc1/2 5 \, /oxy/oc1/1 5 \, /oxy/setfx/6 0 \, /oxy/setfx/5
-0 \, /oxy/setfx/4 0 \, /oxy/setfx/3 0 \, /oxy/setfx/2 0 \, /oxy/setfx/1
-0 \, /oxy/fxl/6 0 \, /oxy/fxl/5 0 \, /oxy/fxl/4 0 \, /oxy/fxl/3 0 \,
-/oxy/fxl/2 0 \, /oxy/fxl/1 0 \, /oxy/fr4/6 3 \, /oxy/fr4/5 9 \, /oxy/fr4/4
-11 \, /oxy/fr4/3 10 \, /oxy/fr4/2 11 \, /oxy/fr4/1 1 \, /oxy/fr3/6
-7 \, /oxy/fr3/5 1 \, /oxy/fr3/4 3 \, /oxy/fr3/3 1 \, /oxy/fr3/2 7 \,
-/oxy/fr3/1 5 \, /oxy/fr2/6 7 \, /oxy/fr2/5 2 \, /oxy/fr2/4 4 \, /oxy/fr2/3
-6 \, /oxy/fr2/2 4 \, /oxy/fr2/1 6 \, /oxy/fr1/6 4 \, /oxy/fr1/5 6 \,
-/oxy/fr1/4 8 \, /oxy/fr1/3 7 \, /oxy/fr1/2 0 \, /oxy/fr1/1 10 \,;
+#X msg 9 34 /oxy/rel/6 50 \, /oxy/rel/5 699.902 \, /oxy/rel/4 815.771 \, /oxy/rel/3 50 \, /oxy/rel/2 50 \, /oxy/rel/1 817.435 \, /oxy/sus/6 1 \, /oxy/sus/5 0.483146 \, /oxy/sus/4 0.505618 \, /oxy/sus/3 1 \, /oxy/sus/2 1 \, /oxy/sus/1 0.617977 \, /oxy/dec/6 10 \, /oxy/dec/5 42.5808 \, /oxy/dec/4 44.842 \, /oxy/dec/3 10 \, /oxy/dec/2 10 \, /oxy/dec/1 223.005 \, /oxy/att/6 3 \, /oxy/att/5 3 \, /oxy/att/4 3 \, /oxy/att/3 300 \, /oxy/att/2 3 \, /oxy/att/1 3 \, /oxy/dur/6 4000 \, /oxy/dur/5 69.2398 \, /oxy/dur/4 59.3569 \, /oxy/dur/3 920.346 \, /oxy/dur/2 50.7603 \, /oxy/dur/1 20 \, /oxy/pik/6 0.269663 \, /oxy/pik/5 1 \, /oxy/pik/4 1 \, /oxy/pik/3 0.984252 \, /oxy/pik/2 0.460674 \, /oxy/pik/1 0.719101 \, /oxy/aph/6 1.67772 \, /oxy/aph/5 1.36405 \, /oxy/aph/4 1.95945 \, /oxy/aph/3 1.36405 \, /oxy/aph/2 2.06351 \, /oxy/aph/1 1.29527 \, /oxy/fqu/6 2.01081 \, /oxy/fqu/5 2.06351 \, /oxy/fqu/3 4.4842 \, /oxy/fqu/2 3.37357 \, /oxy/fqu/1 2.4732 \, /oxy/ffr/6 1322.07 \, /oxy/ffr/5 969.222 \, /oxy/ffr/4 520.907 \, /oxy/ffr/3 562.948 \, /oxy/ffr/2 6243.27 \, /oxy/ffr/1 279.961 \, /oxy/oc4/6 6 \, /oxy/oc4/5 4 \, /oxy/oc4/4 3 \, /oxy/oc4/3 2 \, /oxy/oc4/2 6 \, /oxy/oc4/1 5 \, /oxy/oc3/6 4 \, /oxy/oc3/5 3 \, /oxy/oc3/4 3 \, /oxy/oc3/3 2 \, /oxy/oc3/2 6 \, /oxy/oc3/1 5 \, /oxy/oc2/6 2 \, /oxy/oc2/5 3 \, /oxy/oc2/4 3 \, /oxy/oc2/3 2 \, /oxy/oc2/2 5 \, /oxy/oc2/1 5 \, /oxy/oc1/6 2 \, /oxy/oc1/5 3 \, /oxy/oc1/4 3 \, /oxy/oc1/3 2 \, /oxy/oc1/2 5 \, /oxy/oc1/1 5 \, /oxy/setfx/6 0 \, /oxy/setfx/5 0 \, /oxy/setfx/4 0 \, /oxy/setfx/3 0 \, /oxy/setfx/2 0 \, /oxy/setfx/1 0 \, /oxy/fxl/6 0 \, /oxy/fxl/5 0 \, /oxy/fxl/4 0 \, /oxy/fxl/3 0 \, /oxy/fxl/2 0 \, /oxy/fxl/1 0 \, /oxy/fr4/6 3 \, /oxy/fr4/5 9 \, /oxy/fr4/4 11 \, /oxy/fr4/3 10 \, /oxy/fr4/2 11 \, /oxy/fr4/1 1 \, /oxy/fr3/6 7 \, /oxy/fr3/5 1 \, /oxy/fr3/4 3 \, /oxy/fr3/3 1 \, /oxy/fr3/2 7 \, /oxy/fr3/1 5 \, /oxy/fr2/6 7 \, /oxy/fr2/5 2 \, /oxy/fr2/4 4 \, /oxy/fr2/3 6 \, /oxy/fr2/2 4 \, /oxy/fr2/1 6 \, /oxy/fr1/6 4 \, /oxy/fr1/5 6 \, /oxy/fr1/4 8 \, /oxy/fr1/3 7 \, /oxy/fr1/2 0 \, /oxy/fr1/1 10 \,;
 #X obj 387 437 s \$1.NETPD;
 #X obj 387 394 list prepend send;
 #X obj 387 416 list trim;
@@ -859,38 +830,23 @@ oxy6;
 #X connect 37 0 7 0;
 #X restore 17 77 pd dsp;
 #X obj 19 195 s \$0-resetlabels;
-#X obj 19 172 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 19 172 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X text 45 174 before saving;
-#N canvas 890 592 167 326 \$1-oxylong 1;
-#X obj 7 7 cnv 15 150 305 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 17 15 hsl 129 10 1 100 1 0 \$1-oxy-aph-s \$1-oxy-aph-r giftig\ 1.2
--1 6 1 10 -262144 -1 -4160 719 0;
-#X obj 17 61 hsl 129 10 0 1 0 0 \$1-oxy-pik-s \$1-oxy-pik-r level\ 0.71
--1 6 1 10 -262144 -1 -4160 9204 0;
-#X obj 17 74 hsl 129 10 20 300000 1 0 \$1-oxy-dur-s \$1-oxy-dur-r duration\ 20ms
--1 6 1 10 -262144 -1 -4160 0 0;
-#X obj 17 100 hsl 129 10 10 300000 1 0 \$1-oxy-dec-s \$1-oxy-dec-r
-decay\ 223ms -1 6 1 10 -262144 -1 -4160 3855 0;
-#X obj 17 87 hsl 129 10 3 300000 1 0 \$1-oxy-att-s \$1-oxy-att-r attack\ 3ms
--1 6 1 10 -262144 -1 -4160 0 0;
-#X obj 17 126 hsl 129 10 50 300000 1 0 \$1-oxy-rel-s \$1-oxy-rel-r
-release\ 817ms -1 6 1 10 -262144 -1 -4160 4111 0;
-#X obj 17 113 hsl 129 10 0 1 0 0 \$1-oxy-sus-s \$1-oxy-sus-r sustain\ 0.61
--1 6 1 10 -262144 -1 -4160 7910 0;
-#X obj 14 146 vradio 10 1 0 12 \$1-oxy-fr1-s \$1-oxy-fr1-r empty 0
--6 0 8 -262144 -1 -1 10;
-#X obj 24 146 vradio 15 1 0 8 \$1-oxy-oc1-s \$1-oxy-oc1-r empty 0 -6
-0 8 -262144 -1 -1 5;
-#X obj 58 286 hradio 15 1 0 6 \$1-oxy-instance \$1-oxy-instance-r instance
-0 -6 1 10 -262144 -1 -1 0;
-#X obj 17 28 hsl 129 10 1 10 1 0 \$1-oxy-fqu-s \$1-oxy-fqu-r filter_q\ 2.4
--1 6 1 10 -262144 -1 -4160 5034 0;
-#X obj 17 41 hsl 129 10 20 20000 1 0 \$1-oxy-ffr-s \$1-oxy-ffr-r filter_frequency\ 279Hz
--1 6 1 10 -262144 -1 -4160 4890 0;
-#X obj 14 287 bng 14 250 50 0 \$1-oxy-prelisten \$0-bli play 0 -6 1
-10 -262144 -1 -1;
+#N canvas 890 592 167 326 \$1-oxylong 0;
+#X obj 7 7 cnv 15 150 305 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 17 15 hsl 129 10 1 100 1 0 \$1-oxy-aph-s \$1-oxy-aph-r giftig\ 1.2 -1 6 1 10 #fcfcfc #000000 #0400fc 0 0;
+#X obj 17 61 hsl 129 10 0 1 0 0 \$1-oxy-pik-s \$1-oxy-pik-r level\ 0.71 -1 6 1 10 #fcfcfc #000000 #0400fc 0 0;
+#X obj 17 74 hsl 129 10 20 300000 1 0 \$1-oxy-dur-s \$1-oxy-dur-r duration\ 20ms -1 6 1 10 #fcfcfc #000000 #0400fc 0 0;
+#X obj 17 100 hsl 129 10 10 300000 1 0 \$1-oxy-dec-s \$1-oxy-dec-r decay\ 223ms -1 6 1 10 #fcfcfc #000000 #0400fc 0 0;
+#X obj 17 87 hsl 129 10 3 300000 1 0 \$1-oxy-att-s \$1-oxy-att-r attack\ 3ms -1 6 1 10 #fcfcfc #000000 #0400fc 0 0;
+#X obj 17 126 hsl 129 10 50 300000 1 0 \$1-oxy-rel-s \$1-oxy-rel-r release\ 817ms -1 6 1 10 #fcfcfc #000000 #0400fc 0 0;
+#X obj 17 113 hsl 129 10 0 1 0 0 \$1-oxy-sus-s \$1-oxy-sus-r sustain\ 0.61 -1 6 1 10 #fcfcfc #000000 #0400fc 0 0;
+#X obj 14 146 vradio 10 1 0 12 \$1-oxy-fr1-s \$1-oxy-fr1-r empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
+#X obj 24 146 vradio 15 1 0 8 \$1-oxy-oc1-s \$1-oxy-oc1-r empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
+#X obj 58 286 hradio 15 1 0 6 \$1-oxy-instance \$1-oxy-instance-r instance 0 -6 1 10 #fcfcfc #000000 #000000 0;
+#X obj 17 28 hsl 129 10 1 10 1 0 \$1-oxy-fqu-s \$1-oxy-fqu-r filter_q\ 2.4 -1 6 1 10 #fcfcfc #000000 #0400fc 0 0;
+#X obj 17 41 hsl 129 10 20 20000 1 0 \$1-oxy-ffr-s \$1-oxy-ffr-r filter_frequency\ 279Hz -1 6 1 10 #fcfcfc #000000 #0400fc 0 0;
+#X obj 14 287 bng 14 250 50 0 \$1-oxy-prelisten \$0-bli play 0 -6 1 10 #fcfcfc #000000 #000000;
 #X text 15 251 c;
 #X text 15 232 d;
 #X text 15 211 e;
@@ -900,10 +856,8 @@ release\ 817ms -1 6 1 10 -262144 -1 -4160 4111 0;
 #X text 15 142 h;
 #X text 27 144 +;
 #X text 28 249 -;
-#X obj 50 146 vradio 10 1 0 12 \$1-oxy-fr2-s \$1-oxy-fr2-r empty 0
--6 0 8 -262144 -1 -1 6;
-#X obj 60 146 vradio 15 1 0 8 \$1-oxy-oc2-s \$1-oxy-oc2-r empty 0 -6
-0 8 -262144 -1 -1 5;
+#X obj 50 146 vradio 10 1 0 12 \$1-oxy-fr2-s \$1-oxy-fr2-r empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
+#X obj 60 146 vradio 15 1 0 8 \$1-oxy-oc2-s \$1-oxy-oc2-r empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
 #X text 51 251 c;
 #X text 51 232 d;
 #X text 51 211 e;
@@ -913,10 +867,8 @@ release\ 817ms -1 6 1 10 -262144 -1 -4160 4111 0;
 #X text 51 142 h;
 #X text 63 144 +;
 #X text 64 249 -;
-#X obj 87 146 vradio 10 1 0 12 \$1-oxy-fr3-s \$1-oxy-fr3-r empty 0
--6 0 8 -262144 -1 -1 5;
-#X obj 97 146 vradio 15 1 0 8 \$1-oxy-oc3-s \$1-oxy-oc3-r empty 0 -6
-0 8 -262144 -1 -1 5;
+#X obj 87 146 vradio 10 1 0 12 \$1-oxy-fr3-s \$1-oxy-fr3-r empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
+#X obj 97 146 vradio 15 1 0 8 \$1-oxy-oc3-s \$1-oxy-oc3-r empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
 #X text 88 251 c;
 #X text 88 232 d;
 #X text 88 211 e;
@@ -926,10 +878,8 @@ release\ 817ms -1 6 1 10 -262144 -1 -4160 4111 0;
 #X text 88 142 h;
 #X text 100 144 +;
 #X text 101 249 -;
-#X obj 123 146 vradio 10 1 0 12 \$1-oxy-fr4-s \$1-oxy-fr4-r empty 0
--6 0 8 -262144 -1 -1 1;
-#X obj 133 146 vradio 15 1 0 8 \$1-oxy-oc4-s \$1-oxy-oc4-r empty 0
--6 0 8 -262144 -1 -1 5;
+#X obj 123 146 vradio 10 1 0 12 \$1-oxy-fr4-s \$1-oxy-fr4-r empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
+#X obj 133 146 vradio 15 1 0 8 \$1-oxy-oc4-s \$1-oxy-oc4-r empty 0 -6 0 8 #fcfcfc #000000 #000000 0;
 #X text 124 251 c;
 #X text 124 232 d;
 #X text 124 211 e;

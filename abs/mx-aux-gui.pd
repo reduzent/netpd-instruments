@@ -1,15 +1,11 @@
 #N canvas 469 319 257 238 10;
-#X obj 23 32 hsl 35 10 0 1 0 0 \$1-mx/aux/\$2/level \$1-mx/aux/\$2/level
-empty -2 -8 0 10 -99865 -99865 -1 0 1;
-#X obj 23 20 hsl 15 12 0 1 0 0 \$0.pp.s \$0.pp.r pst 0 6 1 10 -99865
--99865 -4034 0 1;
+#X obj 23 32 hsl 35 10 0 1 0 0 \$1-mx/aux/\$2/level \$1-mx/aux/\$2/level empty -2 -8 0 10 #606060 #606060 #000000 0 1;
+#X obj 23 20 hsl 15 12 0 1 0 0 \$0.pp.s \$0.pp.r pst 0 6 1 10 #606060 #606060 #00fc04 0 1;
 #N canvas 831 133 261 231 NETPD 0;
 #X msg 18 12 version 0 0 3;
 #X restore 90 21 pd NETPD 2 0;
-#X obj 40 20 nbx 3 12 0 0 0 0 \$0.ch.ns \$0.ch.nr empty 0 -8 0 4 -262144
--1 -1 0 256;
-#X obj 43 20 hsl 15 12 1 1 0 0 \$1-mx/aux/\$2/ch \$0.ch.r empty 2 7
-1 9 -99865 -99865 -4034 0 1;
+#X obj 40 20 nbx 3 12 0 0 0 0 \$0.ch.ns \$0.ch.nr empty 0 -8 0 4 #fcfcfc #000000 #000000 0 256;
+#X obj 43 20 hsl 15 12 1 1 0 0 \$1-mx/aux/\$2/ch \$0.ch.r empty 2 7 1 9 #606060 #606060 #00fc04 0 1;
 #N canvas 751 291 349 501 aux.ch 0;
 #X obj 10 419 s \$0.ch.r;
 #X msg 10 394 label \$1;
@@ -107,8 +103,7 @@ empty -2 -8 0 10 -99865 -99865 -1 0 1;
 #X connect 16 0 17 1;
 #X connect 17 0 8 0;
 #X restore 90 67 pd aux.pp;
-#X obj 21 33 cnv 1 1 8 empty \$0.level.r empty 20 12 0 14 -4034 -1
-0;
+#X obj 21 33 cnv 1 1 8 empty \$0.level.r empty 20 12 0 14 #00fc04 #000000 0;
 #N canvas 693 339 399 250 aux.level 0;
 #X obj 20 86 route float set;
 #X obj 20 14 r \$1-mx/aux/\$2/level;

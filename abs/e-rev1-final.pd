@@ -6,17 +6,16 @@
 #X obj 52 437 outlet~;
 #X obj 409 96 pow;
 #X obj 372 118 *;
-#X floatatom 372 159 0 0 0 0 - - -;
+#X floatatom 372 159 0 0 0 0 - - - 0;
 #X obj 82 264 *~ 0;
 #X obj 177 175 pow;
 #X text 386 140 delay \, msec;
-#X floatatom 201 237 0 0 0 0 - - -;
+#X floatatom 201 237 0 0 0 0 - - - 0;
 #X obj 190 150 * 0.001;
 #X text 206 220 gain for this stage;
 #X obj 103 327 *~ 0;
 #X obj 201 202 *;
-#X text 25 13 Allpass filter for mono reverberator. Arg 1 = delay name
-\, arg2 = stage number \, arg 3 = delay time;
+#X text 25 13 Allpass filter for mono reverberator. Arg 1 = delay name \, arg2 = stage number \, arg 3 = delay time;
 #X obj 373 76 8;
 #X obj 409 75 1.79;
 #X obj 114 175 0.7;

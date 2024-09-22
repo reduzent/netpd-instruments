@@ -1,6 +1,5 @@
 #N canvas 391 249 458 314 10;
-#X obj 278 240 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 278 240 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 278 259 s \$0-resetlabels;
 #X text 297 238 before saving;
 #N canvas 407 94 519 654 kick-dsp 0;
@@ -11,8 +10,7 @@
 #X obj 104 213 f;
 #X obj 79 248 pack;
 #X obj 104 350 mtof~;
-#X obj 79 70 bng 50 250 50 0 empty empty hier_druecken 52 35 0 25 -241291
--260818 -258699;
+#X obj 79 70 bng 50 250 50 0 empty empty hier_druecken 52 35 0 25 #e8e828 #fcac44 #fc2828;
 #X obj 117 191 ftom;
 #X obj 19 191 ftom;
 #X obj 102 409 *~;
@@ -138,8 +136,7 @@
 #X obj 31 256 line~;
 #X obj 31 279 dbtorms~;
 #X obj 18 309 *~;
-#X obj 215 85 bng 25 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 215 85 bng 25 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X msg 31 234 \$2 \, 0 \$1;
 #X obj 215 147 noise~;
 #X obj 228 301 line~;
@@ -373,9 +370,7 @@
 #X obj 363 138 r \$1-hihat-pan;
 #X obj 218 238 loadbang;
 #X obj 218 266 \$1;
-#X msg 218 296 \; \$1-table24 sinesum 256 1 1 1 1 0 0 0 0 1 0 0 0 0
-0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 \,
-normalize 1;
+#X msg 218 296 \; \$1-table24 sinesum 256 1 1 1 1 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 \, normalize 1;
 #X obj 150 84 tabosc4~ \$1-table24;
 #X obj 18 85 tabosc4~ \$1-table24;
 #X obj 217 362 table \$1-table24 259;
@@ -423,8 +418,7 @@ normalize 1;
 #X connect 37 0 24 0;
 #X restore 22 90 pd hihat-dsp;
 #N canvas 0 542 408 203 qseq.list 0;
-#X obj 17 20 qseq3-instr-list \$1 drum-delta kick1 kick2 kick3 kick4
-snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
+#X obj 17 20 qseq3-instr-list \$1 drum-delta kick1 kick2 kick3 kick4 snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X obj 225 71 r qseq3;
 #X obj 225 93 route \$1-drum-delta;
 #X obj 225 115 list prepend \$1;
@@ -440,37 +434,7 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X obj 393 44 spigot 1;
 #X obj 393 66 t b b;
 #X msg 468 55 0;
-#X msg 13 17 /hihat/setfx/4 0 \, /hihat/setfx/3 0 \, /hihat/setfx/2
-0 \, /hihat/setfx/1 0 \, /hihat/fxl/4 0 \, /hihat/fxl/3 0 \, /hihat/fxl/2
-0 \, /hihat/fxl/1 0 \, /hihat/pan/4 0.487395 \, /hihat/pan/3 0.605042
-\, /hihat/pan/2 0.344538 \, /hihat/pan/1 0.344538 \, /hihat/dec/4 595.114
-\, /hihat/dec/3 1241.45 \, /hihat/dec/2 89.3451 \, /hihat/dec/1 121.766
-\, /hihat/crh/4 509.669 \, /hihat/crh/3 7496.47 \, /hihat/crh/2 4528.32
-\, /hihat/crh/1 220 \, /hihat/vol/4 0.705882 \, /hihat/vol/3 0.697479
-\, /hihat/vol/2 1 \, /hihat/vol/1 1 \, /snare/setfx/4 0 \, /snare/setfx/3
-0 \, /snare/setfx/2 0 \, /snare/setfx/1 0 \, /snare/fxl/4 0 \, /snare/fxl/3
-0 \, /snare/fxl/2 0 \, /snare/fxl/1 0 \, /snare/vol/4 1 \, /snare/vol/3
-1 \, /snare/vol/2 1 \, /snare/vol/1 1 \, /snare/pan/4 0.630252 \, /snare/pan/3
-0.462185 \, /snare/pan/2 0.579832 \, /snare/pan/1 0.453782 \, /snare/dec/4
-508.403 \, /snare/dec/3 205.882 \, /snare/dec/2 243.697 \, /snare/dec/1
-568.908 \, /snare/mix/4 0.890756 \, /snare/mix/3 0.689076 \, /snare/mix/2
-0.672269 \, /snare/mix/1 0.268908 \, /snare/nos/4 4.20588 \, /snare/nos/3
-4.11345 \, /snare/nos/2 2.4958 \, /snare/nos/1 2.44958 \, /snare/tun/4
-1837.52 \, /snare/tun/3 746.068 \, /snare/tun/2 511.235 \, /snare/tun/1
-371.294 \, /kick/setfx/4 0 \, /kick/setfx/3 0 \, /kick/setfx/2 0 \,
-/kick/setfx/1 0 \, /kick/fxl/4 0 \, /kick/fxl/3 0 \, /kick/fxl/2 0
-\, /kick/fxl/1 0 \, /kick/vol/4 1 \, /kick/vol/3 1 \, /kick/vol/2 1
-\, /kick/vol/1 1 \, /kick/lop/4 20000 \, /kick/lop/3 288.864 \, /kick/lop/2
-18872.1 \, /kick/lop/1 18872.1 \, /kick/dis/4 1 \, /kick/dis/3 4.53675
-\, /kick/dis/2 1 \, /kick/dis/1 1 \, /kick/cur/1 0 \, /kick/cur/2 0
-\, /kick/cur/3 0 \, /kick/cur/4 0 \, /kick/dec/4 28.4303 \, /kick/dec/3
-461.175 \, /kick/dec/2 40.2756 \, /kick/dec/1 653.32 \, /kick/att/4
-1.19023 \, /kick/att/3 1 \, /kick/att/2 1.1231 \, /kick/att/1 1.05977
-\, /kick/tim/4 5.70562 \, /kick/tim/3 6.408 \, /kick/tim/2 20.4609
-\, /kick/tim/1 10.8047 \, /kick/efq/4 1555.2 \, /kick/efq/3 63.8604
-\, /kick/efq/2 76.0085 \, /kick/efq/1 50.6281 \, /kick/afq/4 15855.9
-\, /kick/afq/3 3307.63 \, /kick/afq/2 1467.49 \, /kick/afq/1 516.172
-;
+#X msg 13 17 /hihat/setfx/4 0 \, /hihat/setfx/3 0 \, /hihat/setfx/2 0 \, /hihat/setfx/1 0 \, /hihat/fxl/4 0 \, /hihat/fxl/3 0 \, /hihat/fxl/2 0 \, /hihat/fxl/1 0 \, /hihat/pan/4 0.487395 \, /hihat/pan/3 0.605042 \, /hihat/pan/2 0.344538 \, /hihat/pan/1 0.344538 \, /hihat/dec/4 595.114 \, /hihat/dec/3 1241.45 \, /hihat/dec/2 89.3451 \, /hihat/dec/1 121.766 \, /hihat/crh/4 509.669 \, /hihat/crh/3 7496.47 \, /hihat/crh/2 4528.32 \, /hihat/crh/1 220 \, /hihat/vol/4 0.705882 \, /hihat/vol/3 0.697479 \, /hihat/vol/2 1 \, /hihat/vol/1 1 \, /snare/setfx/4 0 \, /snare/setfx/3 0 \, /snare/setfx/2 0 \, /snare/setfx/1 0 \, /snare/fxl/4 0 \, /snare/fxl/3 0 \, /snare/fxl/2 0 \, /snare/fxl/1 0 \, /snare/vol/4 1 \, /snare/vol/3 1 \, /snare/vol/2 1 \, /snare/vol/1 1 \, /snare/pan/4 0.630252 \, /snare/pan/3 0.462185 \, /snare/pan/2 0.579832 \, /snare/pan/1 0.453782 \, /snare/dec/4 508.403 \, /snare/dec/3 205.882 \, /snare/dec/2 243.697 \, /snare/dec/1 568.908 \, /snare/mix/4 0.890756 \, /snare/mix/3 0.689076 \, /snare/mix/2 0.672269 \, /snare/mix/1 0.268908 \, /snare/nos/4 4.20588 \, /snare/nos/3 4.11345 \, /snare/nos/2 2.4958 \, /snare/nos/1 2.44958 \, /snare/tun/4 1837.52 \, /snare/tun/3 746.068 \, /snare/tun/2 511.235 \, /snare/tun/1 371.294 \, /kick/setfx/4 0 \, /kick/setfx/3 0 \, /kick/setfx/2 0 \, /kick/setfx/1 0 \, /kick/fxl/4 0 \, /kick/fxl/3 0 \, /kick/fxl/2 0 \, /kick/fxl/1 0 \, /kick/vol/4 1 \, /kick/vol/3 1 \, /kick/vol/2 1 \, /kick/vol/1 1 \, /kick/lop/4 20000 \, /kick/lop/3 288.864 \, /kick/lop/2 18872.1 \, /kick/lop/1 18872.1 \, /kick/dis/4 1 \, /kick/dis/3 4.53675 \, /kick/dis/2 1 \, /kick/dis/1 1 \, /kick/cur/1 0 \, /kick/cur/2 0 \, /kick/cur/3 0 \, /kick/cur/4 0 \, /kick/dec/4 28.4303 \, /kick/dec/3 461.175 \, /kick/dec/2 40.2756 \, /kick/dec/1 653.32 \, /kick/att/4 1.19023 \, /kick/att/3 1 \, /kick/att/2 1.1231 \, /kick/att/1 1.05977 \, /kick/tim/4 5.70562 \, /kick/tim/3 6.408 \, /kick/tim/2 20.4609 \, /kick/tim/1 10.8047 \, /kick/efq/4 1555.2 \, /kick/efq/3 63.8604 \, /kick/efq/2 76.0085 \, /kick/efq/1 50.6281 \, /kick/afq/4 15855.9 \, /kick/afq/3 3307.63 \, /kick/afq/2 1467.49 \, /kick/afq/1 516.172;
 #X obj 393 17 netpd-dump \$1;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
@@ -1644,65 +1608,36 @@ snare1 snare2 snare3 snare4 hihat1 hihat2 hihat3 hihat4;
 #X connect 4 0 0 1;
 #X connect 9 0 10 0;
 #X restore 122 90 pd hihat-datactrl;
-#N canvas 955 172 147 455 \$1-drum-delta 1;
-#X obj 10 3 cnv 7 119 438 empty empty empty 20 12 0 14 -99865 -66577
-0;
-#X obj 12 5 cnv 15 115 165 empty empty k_i_c_k___________ 4 8 1 10
--244200 -184581 0;
-#X obj 20 23 hsl 100 14 20 20000 1 0 \$1-kick-afq-s \$1-kick-afq-r
-a-frequenz\ 516Hz 4 8 1 10 -261689 -258699 -1 4659 1;
-#X obj 20 37 hsl 100 14 20 20000 1 0 \$1-kick-efq-s \$1-kick-efq-r
-e-frequenz\ 50Hz 4 8 1 10 -261689 -258699 -1 1331 1;
-#X obj 20 51 hsl 100 14 1 1000 1 0 \$1-kick-tim-s \$1-kick-tim-r zeit\ 10ms
-4 8 1 10 -261689 -258699 -1 3411 1;
-#X obj 20 65 hsl 100 14 1 1000 1 0 \$1-kick-att-s \$1-kick-att-r angriff\ 1ms
-4 8 1 10 -261689 -258699 -1 83 1;
-#X obj 20 79 hsl 60 14 10 10000 1 0 \$1-kick-dec-s \$1-kick-dec-r los\ 653ms
-4 8 1 10 -261689 -258699 -1 3570 1;
-#X obj 20 93 hsl 100 14 1 50 1 0 \$1-kick-dis-s \$1-kick-dis-r verzerr\ 10$
-4 8 1 10 -261689 -258699 -1 0 1;
-#X obj 20 107 hsl 100 14 20000 20 1 0 \$1-kick-lop-s \$1-kick-lop-r
-tiefpass\ 18872Hz 4 8 1 10 -261689 -258699 -1 83 1;
-#X obj 20 121 hsl 100 14 0 1 0 0 \$1-kick-vol-s \$1-kick-vol-r lautstaerke\ 1
-4 8 1 10 -261689 -258699 -1 9900 1;
-#X obj 66 150 hradio 14 1 0 4 \$1-kick-instance \$1-kick-instance-r
-instance 0 -6 1 10 -261689 -244200 -1 0;
-#X obj 17 149 bng 14 250 50 0 \$1-kick-prelisten \$1-kick-prelisten-r
-play 0 -6 1 10 -261689 -244200 -1;
-#X obj 12 181 cnv 15 115 137 empty empty s_n_a_r_e_________ 4 8 1 10
--130593 -10435 0;
-#X obj 20 199 hsl 100 14 220 7000 1 0 \$1-snare-tun-s \$1-snare-tun-r
-tonhoehe\ 371Hz 4 8 1 10 -225271 -258699 -1 1497 1;
-#X obj 20 213 hsl 100 14 0 5.5 0 0 \$1-snare-nos-s \$1-snare-nos-r
-knack\ 2.4 4 8 1 10 -225271 -258699 -1 4409 1;
-#X obj 20 227 hsl 100 14 0 1 0 0 \$1-snare-mix-s \$1-snare-mix-r fell<>kette\ 74:26
-4 8 1 10 -225271 -258699 -1 2662 1;
-#X obj 20 241 hsl 100 14 100 1000 0 0 \$1-snare-dec-s \$1-snare-dec-r
-loslass\ 568ms 4 8 1 10 -225271 -258699 -1 5158 1;
-#X obj 20 255 hsl 100 14 0 1 0 0 \$1-snare-pan-s \$1-snare-pan-r panorama\ 0.1L
-4 8 1 10 -225271 -258699 -1 4492 1;
-#X obj 66 297 hradio 14 1 0 4 \$1-snare-instance \$1-snare-instance-r
-instance 0 -6 1 10 -225271 -130593 -1 0;
-#X obj 17 297 bng 14 250 50 0 \$1-snare-prelisten \$1-snare-prelisten-r
-play 0 -6 1 10 -225271 -130593 -1;
-#X obj 20 269 hsl 100 14 0 1 0 0 \$1-snare-vol-s \$1-snare-vol-r lautstaerke\ 1
-4 8 1 10 -225271 -258699 -1 9900 1;
-#X obj 12 329 cnv 15 115 110 empty empty h_i_h_a_t__________ 4 8 1
-10 -20025 -10143 0;
-#X obj 20 347 hsl 100 14 220 12000 1 0 \$1-hihat-crh-s \$1-hihat-crh-r
-schaerfe\ 220Hz 4 8 1 10 -225280 -258699 -1 0 1;
-#X obj 20 361 hsl 100 14 50 5000 1 0 \$1-hihat-dec-s \$1-hihat-dec-r
-loslass\ 121ms 4 8 1 10 -225280 -258699 -1 1913 1;
-#X obj 20 375 hsl 100 14 0 1 0 0 \$1-hihat-pan-s \$1-hihat-pan-r panorama\ 0.4L
-4 8 1 10 -225280 -258699 -1 3411 1;
-#X obj 66 417 hradio 14 1 0 4 \$1-hihat-instance \$1-hihat-instance-r
-instance 0 -6 1 10 -225280 -20025 -1 0;
-#X obj 17 417 bng 14 250 50 0 \$1-hihat-prelisten \$1-hihat-prelisten-r
-play 0 -6 1 10 -225280 -20025 -1;
-#X obj 20 389 hsl 100 14 0 1 0 0 \$1-hihat-vol-s \$1-hihat-vol-r lautstaerke\ 1
-4 8 1 10 -225280 -258699 -1 9900 1;
-#X obj 85 79 hsl 35 14 0 1 0 0 \$1-kick-cur-s \$1-kick-cur-r log/lin
-4 8 1 10 -261689 -258699 -1 0 1;
+#N canvas 955 172 147 455 \$1-drum-delta 0;
+#X obj 10 3 cnv 7 119 438 empty empty empty 20 12 0 14 #606060 #404040 0;
+#X obj 12 5 cnv 15 115 165 empty empty k_i_c_k___________ 4 8 1 10 #ec9c9c #b41010 0;
+#X obj 20 23 hsl 100 14 20 20000 1 0 \$1-kick-afq-s \$1-kick-afq-r a-frequenz\ 516Hz 4 8 1 10 #fce0e0 #fc2828 #000000 0 1;
+#X obj 20 37 hsl 100 14 20 20000 1 0 \$1-kick-efq-s \$1-kick-efq-r e-frequenz\ 50Hz 4 8 1 10 #fce0e0 #fc2828 #000000 0 1;
+#X obj 20 51 hsl 100 14 1 1000 1 0 \$1-kick-tim-s \$1-kick-tim-r zeit\ 10ms 4 8 1 10 #fce0e0 #fc2828 #000000 0 1;
+#X obj 20 65 hsl 100 14 1 1000 1 0 \$1-kick-att-s \$1-kick-att-r angriff\ 1ms 4 8 1 10 #fce0e0 #fc2828 #000000 0 1;
+#X obj 20 79 hsl 60 14 10 10000 1 0 \$1-kick-dec-s \$1-kick-dec-r los\ 653ms 4 8 1 10 #fce0e0 #fc2828 #000000 0 1;
+#X obj 20 93 hsl 100 14 1 50 1 0 \$1-kick-dis-s \$1-kick-dis-r verzerr\ 10$ 4 8 1 10 #fce0e0 #fc2828 #000000 0 1;
+#X obj 20 107 hsl 100 14 20000 20 1 0 \$1-kick-lop-s \$1-kick-lop-r tiefpass\ 18872Hz 4 8 1 10 #fce0e0 #fc2828 #000000 0 1;
+#X obj 20 121 hsl 100 14 0 1 0 0 \$1-kick-vol-s \$1-kick-vol-r lautstaerke\ 1 4 8 1 10 #fce0e0 #fc2828 #000000 0 1;
+#X obj 66 150 hradio 14 1 0 4 \$1-kick-instance \$1-kick-instance-r instance 0 -6 1 10 #fce0e0 #ec9c9c #000000 0;
+#X obj 17 149 bng 14 250 50 0 \$1-kick-prelisten \$1-kick-prelisten-r play 0 -6 1 10 #fce0e0 #ec9c9c #000000;
+#X obj 12 181 cnv 15 115 137 empty empty s_n_a_r_e_________ 4 8 1 10 #7ce080 #088c08 0;
+#X obj 20 199 hsl 100 14 220 7000 1 0 \$1-snare-tun-s \$1-snare-tun-r tonhoehe\ 371Hz 4 8 1 10 #d8fcd8 #fc2828 #000000 0 1;
+#X obj 20 213 hsl 100 14 0 5.5 0 0 \$1-snare-nos-s \$1-snare-nos-r knack\ 2.4 4 8 1 10 #d8fcd8 #fc2828 #000000 0 1;
+#X obj 20 227 hsl 100 14 0 1 0 0 \$1-snare-mix-s \$1-snare-mix-r fell<>kette\ 74:26 4 8 1 10 #d8fcd8 #fc2828 #000000 0 1;
+#X obj 20 241 hsl 100 14 100 1000 0 0 \$1-snare-dec-s \$1-snare-dec-r loslass\ 568ms 4 8 1 10 #d8fcd8 #fc2828 #000000 0 1;
+#X obj 20 255 hsl 100 14 0 1 0 0 \$1-snare-pan-s \$1-snare-pan-r panorama\ 0.1L 4 8 1 10 #d8fcd8 #fc2828 #000000 0 1;
+#X obj 66 297 hradio 14 1 0 4 \$1-snare-instance \$1-snare-instance-r instance 0 -6 1 10 #d8fcd8 #7ce080 #000000 0;
+#X obj 17 297 bng 14 250 50 0 \$1-snare-prelisten \$1-snare-prelisten-r play 0 -6 1 10 #d8fcd8 #7ce080 #000000;
+#X obj 20 269 hsl 100 14 0 1 0 0 \$1-snare-vol-s \$1-snare-vol-r lautstaerke\ 1 4 8 1 10 #d8fcd8 #fc2828 #000000 0 1;
+#X obj 12 329 cnv 15 115 110 empty empty h_i_h_a_t__________ 4 8 1 10 #10e0e0 #087878 0;
+#X obj 20 347 hsl 100 14 220 12000 1 0 \$1-hihat-crh-s \$1-hihat-crh-r schaerfe\ 220Hz 4 8 1 10 #d8fcfc #fc2828 #000000 0 1;
+#X obj 20 361 hsl 100 14 50 5000 1 0 \$1-hihat-dec-s \$1-hihat-dec-r loslass\ 121ms 4 8 1 10 #d8fcfc #fc2828 #000000 0 1;
+#X obj 20 375 hsl 100 14 0 1 0 0 \$1-hihat-pan-s \$1-hihat-pan-r panorama\ 0.4L 4 8 1 10 #d8fcfc #fc2828 #000000 0 1;
+#X obj 66 417 hradio 14 1 0 4 \$1-hihat-instance \$1-hihat-instance-r instance 0 -6 1 10 #d8fcfc #10e0e0 #000000 0;
+#X obj 17 417 bng 14 250 50 0 \$1-hihat-prelisten \$1-hihat-prelisten-r play 0 -6 1 10 #d8fcfc #10e0e0 #000000;
+#X obj 20 389 hsl 100 14 0 1 0 0 \$1-hihat-vol-s \$1-hihat-vol-r lautstaerke\ 1 4 8 1 10 #d8fcfc #fc2828 #000000 0 1;
+#X obj 85 79 hsl 35 14 0 1 0 0 \$1-kick-cur-s \$1-kick-cur-r log/lin 4 8 1 10 #fce0e0 #fc2828 #000000 0 1;
 #X restore 285 49 pd \$1-drum-delta;
 #X obj 284 184 netpd_head \$1 drum-delta;
 #N canvas 575 106 450 300 NETPD 0;

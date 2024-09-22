@@ -37,8 +37,7 @@
 #X connect 15 0 3 0;
 #X restore 315 20 pd com;
 #X msg 81 138 note \$2;
-#X obj 37 21 nbx 10 14 1 40 0 0 \$0.select.nbx.s \$0.select.nbx.r empty
-0 -8 0 10 -262144 -1 -1 1 256;
+#X obj 37 21 nbx 10 14 1 40 0 0 \$0.select.nbx.s \$0.select.nbx.r empty 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
 #N canvas 705 211 442 509 gui 0;
 #X obj 136 28 inlet;
 #X obj 136 50 t a a;
@@ -98,12 +97,10 @@
 #X connect 26 1 9 0;
 #X connect 27 1 24 0;
 #X restore 315 42 pd gui;
-#X obj 37 21 cnv 14 97 14 empty \$0.select.label empty 4 7 0 12 -233017
--1 0;
+#X obj 37 21 cnv 14 97 14 empty \$0.select.label empty 4 7 0 12 #e0e0e0 #000000 0;
 #X obj 81 171 list prepend;
 #X obj 81 193 list trim;
-#X obj 20 20 tgl 16 0 \$0.record.s \$0.record.r r 4 7 0 12 -262144
--262144 -1 0 1;
+#X obj 20 20 tgl 16 0 \$0.record.s \$0.record.r r 4 7 0 12 #fcfcfc #fcfcfc #000000 0 1;
 #X obj 146 116 r \$0.record.s;
 #X msg 146 138 record \$1;
 #N canvas 668 293 307 51 NETPD 0;

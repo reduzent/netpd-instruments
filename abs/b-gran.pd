@@ -1,11 +1,11 @@
 #N canvas 55 30 1227 747 10;
-#N canvas 624 75 434 290 NETPD 1;
+#N canvas 624 75 434 290 NETPD 0;
 #N canvas 315 75 473 287 abslist 0;
 #X msg 35 21 b-granule;
 #X restore 13 52 pd abslist;
 #X msg 11 6 version 0 0 6;
 #X restore 10 14 pd NETPD 2 0;
-#N canvas 637 23 549 163 \$3-\$2 1;
+#N canvas 637 23 549 163 \$3-\$2 0;
 #X obj 31 5 cnv 15 510 150 empty empty value 100 13 0 11 #ffffff #000000 0;
 #X obj 73 30 hsl 100 12 0 1 0 0 \$1-\$2/pitch \$1-\$2/pitch pitch -45 7 0 11 #0c4044 #fcfcfc #0400fc 0 1;
 #X obj 182 30 hsl 100 12 0 1 0 0 \$1-\$2/pitch-rnd \$1-\$2/pitch-rnd random/jitter -4 -12 0 11 #0e4345 #fcfcfc #000000 0 1;

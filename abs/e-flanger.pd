@@ -1,4 +1,3 @@
-#N struct 3786.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 734 106 767 563 10;
 #X obj 138 332 line~;
 #X obj 127 436 line~;

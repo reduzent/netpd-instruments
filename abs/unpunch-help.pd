@@ -1,11 +1,22 @@
+#N struct 1004.vertgrid float x float y float w float h;
+#N struct 1004.horizgrid float x float y float w float h float c symbol note float notevis;
+#N struct 1004.vertline float x float y float h float c float n float nvis;
+#N struct 1004.guibar float x float y float w;
+#N struct 1004.gid.button float x float y float clr float gid;
+#N struct 1004.vel float x float y float value;
+#N struct 1004.dur float x float y float value;
+#N struct 1004.mode.button float x float y float w float c symbol param;
+#N struct 1004.show.selector float x float y float w float hilite float id symbol label;
+#N struct 1004.cursor float x float y float h float vis;
+#N struct 1004.pager float x float y float c float dir float num float nvis;
+#N struct 1004.scroller float x float y float c float dir;
+#N struct 1004.keyboard.toggle float x float y symbol label float hilite float ihilite;
 #N canvas 0 99 703 414 10;
 #X msg 530 92 vis \$1;
-#X obj 530 65 tgl 20 0 empty empty empty 17 7 0 10 -204800 -1 -1 1
-1;
+#X obj 530 65 tgl 20 0 empty empty empty 17 7 0 10 #c4fcfc #000000 #000000 0 1;
 #X text 561 65 show GUI;
 #X obj 185 346 spigot;
-#X obj 231 345 tgl 20 0 empty empty empty 17 7 0 10 -204800 -1 -1 0
-1;
+#X obj 231 345 tgl 20 0 empty empty empty 17 7 0 10 #c4fcfc #000000 #000000 0 1;
 #X text 254 347 print editor messages;
 #X obj 530 39 loadbang;
 #N canvas 0 99 454 259 counter 0;
@@ -18,11 +29,9 @@
 #X obj 21 160 outlet;
 #X obj 21 58 metro 150;
 #X obj 21 104 mod 128;
-#X obj 201 101 cnv 12 90 12 empty empty empty 20 12 0 14 -261682 -66577
-0;
+#X obj 201 101 cnv 12 90 12 empty empty empty 20 12 0 14 #fce0c4 #404040 0;
 #X text 201 99 loop-length=;
-#X obj 275 100 nbx 3 14 1 999 0 0 empty empty empty 0 -8 0 10 -261682
--1 -1 64 256;
+#X obj 275 100 nbx 3 14 1 999 0 0 empty empty empty 0 -8 0 10 #fce0c4 #000000 #000000 0 256;
 #X obj 275 28 loadbang;
 #X msg 275 51 64;
 #X connect 0 0 7 0;
@@ -39,16 +48,13 @@
 #X connect 13 0 11 0;
 #X coords 0 -1 1 1 111 14 2 200 100;
 #X restore 20 195 pd counter;
-#X obj 20 212 nbx 3 18 0 9999 0 0 empty empty empty 0 -8 0 10 -204786
--1 -1 0 256;
-#X obj 20 171 tgl 20 0 empty empty empty 17 7 0 10 -261682 -1 -1 0
-1;
+#X obj 20 212 nbx 3 18 0 9999 0 0 empty empty empty 0 -8 0 10 #c4fcc4 #000000 #000000 0 256;
+#X obj 20 171 tgl 20 0 empty empty empty 17 7 0 10 #fce0c4 #000000 #000000 0 1;
 #X text 43 171 turn on/off clock;
 #X obj 185 375 print EDITOR;
 #X obj 20 375 print NOTES;
 #X obj 20 346 spigot;
-#X obj 66 345 tgl 20 0 empty empty empty 17 7 0 10 -204800 -1 -1 0
-1;
+#X obj 66 345 tgl 20 0 empty empty empty 17 7 0 10 #c4fcfc #000000 #000000 0 1;
 #X text 89 348 print notes;
 #N canvas 318 287 538 414 synth 0;
 #N canvas 0 99 623 536 voice 0;
@@ -158,8 +164,7 @@
 #X restore 13 120 pd voice;
 #X obj 13 18 inlet;
 #X obj 13 66 pack f f f;
-#X obj 33 220 hsl 100 15 0 1 0 0 \$0.bli \$0.bla empty -2 -8 0 10 -261682
--1 -1 0 1;
+#X obj 33 220 hsl 100 15 0 1 0 0 \$0.bli \$0.bla empty -2 -8 0 10 #fce0c4 #000000 #000000 0 1;
 #X obj 58 248 t a a;
 #X msg 58 294 \$1 50;
 #X obj 58 317 line~;
@@ -168,8 +173,7 @@
 #X obj 58 271 *;
 #X obj 13 89 route 1 2 3 4 5 6, f 61;
 #X obj 13 43 poly 6 1, f 10;
-#X obj 135 220 tgl 15 0 \$0.bli \$0.bla empty 17 7 0 10 -261682 -1
--1 0 1;
+#X obj 135 220 tgl 15 0 \$0.bli \$0.bla empty 17 7 0 10 #fce0c4 #000000 #000000 0 1;
 #X msg 147 261 dsp \$1;
 #X obj 147 284 s pd;
 #X obj 52 348 *~;
@@ -740,34 +744,17 @@
 #X restore 31 297 pd synth;
 #X obj 185 201 r \$0.to;
 #X text 410 206 arg1: name of canvas to draw interface;
-#X obj 2 2 cnv 15 700 24 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 17 258 cnv 15 360 24 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#X obj 2 2 cnv 15 700 24 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 17 258 cnv 15 360 24 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #N canvas 6 101 404 447 about 0;
 #X text 17 15 unpunch - a configurable matrix sequencer;
-#X text 17 45 [unpunch] is a sequencer that allows to graphically edit
-MIDI-like scores on a timeline \, a.k.a piano roll sequencer. Notes
-can be created and deleted \, velocity and duration can be changed
-with mouse actions. Some actions are triggered by key commands. [unpunch]
-has a configurable interface to make it suitable for various time signatures
-and display resolutions. The complete state can be dumped for later
-restoration. Thus \, it should integrates well into existing state
-saving systems. It is designed for real-time synchronisation (if needed)
-and can also be used in systems like netpd.;
+#X text 17 45 [unpunch] is a sequencer that allows to graphically edit MIDI-like scores on a timeline \, a.k.a piano roll sequencer. Notes can be created and deleted \, velocity and duration can be changed with mouse actions. Some actions are triggered by key commands. [unpunch] has a configurable interface to make it suitable for various time signatures and display resolutions. The complete state can be dumped for later restoration. Thus \, it should integrates well into existing state saving systems. It is designed for real-time synchronisation (if needed) and can also be used in systems like netpd.;
 #X text 17 205 Display;
 #X text 17 215 -------;
 #X text 15 321 Clock;
 #X text 15 331 -----;
-#X text 15 237 [unpunch] draws its graphical interface to an empty(!)
-canvas whose name is specified as first argument to [unpunch]. The
-visual representation and the internal state are decoupled \, so the
-representation can be changed while keeping existing notes intact.
-;
-#X text 14 350 For most flexible use \, [unpunch] requires an external
-clock to drive the internal sequencer. Note that all active notes are
-muted when a jump in the clock occurs \, in order to avoid hanging
-notes.;
+#X text 15 237 [unpunch] draws its graphical interface to an empty(!) canvas whose name is specified as first argument to [unpunch]. The visual representation and the internal state are decoupled \, so the representation can be changed while keeping existing notes intact.;
+#X text 14 350 For most flexible use \, [unpunch] requires an external clock to drive the internal sequencer. Note that all active notes are muted when a jump in the clock occurs \, in order to avoid hanging notes.;
 #X text 17 25 -----------------------------------------;
 #X restore 20 39 pd about;
 #X text 12 5 unpunch - a configurable matrix sequencer;
@@ -778,14 +765,11 @@ notes.;
 #X obj 18 300 s \$0.to;
 #X text 229 89 set step height (pixel;
 #X text 229 59 set step width (pixel);
-#X text 229 119 set the number of steps displayed in a single page
-;
+#X text 229 119 set the number of steps displayed in a single page;
 #X text 229 149 set the vertical number of steps;
 #X text 229 239 redraw display after having changed configuration;
-#X text 229 179 set the nuumber of subdivision that fit into a division
-;
-#X text 229 209 set the number of steps that fit into a subdivision
-;
+#X text 229 179 set the nuumber of subdivision that fit into a division;
+#X text 229 209 set the number of steps that fit into a subdivision;
 #X msg 78 119 set stepsperpage 64;
 #X msg 78 149 set pitchrange 48;
 #X text 78 21 INTERFACE CONFIGURATION (sent to right inlet);
@@ -810,152 +794,261 @@ notes.;
 #X text 8 77 <Ctrl_L>+<Click> (on note): delete note;
 #X text 7 296 NOTE SELECTION;
 #X text 7 306 --------------;
-#X text 8 384 NOTE: Marking many regions adds notes to selection instead
-of replacing current selection;
+#X text 8 384 NOTE: Marking many regions adds notes to selection instead of replacing current selection;
 #X text 7 146 NOTE MANIPULATION;
 #X text 7 156 -----------------;
 #X text 8 177 Drag right end of note: change duration;
-#X text 8 197 Switch property selector in top section to 'velocity'
-\, 'duration' \, or 'gid'. Value appears as number on each note. Numbers
-can be manipulated.;
-#X text 8 97 NOTE: Defaults are set in top section (velocity \, duration
-\, gid);
+#X text 8 197 Switch property selector in top section to 'velocity' \, 'duration' \, or 'gid'. Value appears as number on each note. Numbers can be manipulated.;
+#X text 8 97 NOTE: Defaults are set in top section (velocity \, duration \, gid);
 #X text 417 6 NOTE SELECTION MANIPULATION;
 #X text 417 16 ---------------------------;
-#X text 417 36 NOTE: Key commands require 'keyboard' to be toggled
-on;
+#X text 417 36 NOTE: Key commands require 'keyboard' to be toggled on;
 #X text 417 56 <ArrowKey>: Move selection to given direction;
-#X text 417 96 <Ctrl_L>+<ArrowKey>: Make a copy while moving selection
-;
-#X text 417 116 NOTE: <Shift> and <Ctlr_L> modifiers can be combined
-;
+#X text 417 96 <Ctrl_L>+<ArrowKey>: Make a copy while moving selection;
+#X text 417 116 NOTE: <Shift> and <Ctlr_L> modifiers can be combined;
 #X text 417 136 <Delete>: Delete selected notes;
 #X text 417 156 <Escape>: Unselect all notes;
-#X text 417 176 Toggle the grey bar above any default selector (velocity
-\, duration \, gid) to red. Subsequent default changes are applied
-immediately to the whole selection.;
-#X text 8 247 Toggle the grey bar above any default selector. <Click>
-on note immediately applies default value to note.;
+#X text 417 176 Toggle the grey bar above any default selector (velocity \, duration \, gid) to red. Subsequent default changes are applied immediately to the whole selection.;
+#X text 8 247 Toggle the grey bar above any default selector. <Click> on note immediately applies default value to note.;
 #X text 417 326 NOTE ABOUT KEYBOARD TOGGLE;
 #X text 417 336 --------------------------;
-#X text 417 356 When using keyboard \, key events are received when
-any Pd window has grab. In order to avoid unwanted edits and to allow
-many instances of unpatch \, the keyboard toggle makes sure that at
-most one instance receives key events.;
+#X text 417 356 When using keyboard \, key events are received when any Pd window has grab. In order to avoid unwanted edits and to allow many instances of unpatch \, the keyboard toggle makes sure that at most one instance receives key events.;
 #X text 417 246 NAVIGATION;
 #X text 417 256 ----------;
 #X text 417 276 <PgUp>/<PgDn>: switch view by one page;
-#X text 417 296 <Shift_L>+<PgUp>/<PgDn>: switch view by one octave
-;
-#X text 417 76 <Shift_L>+<ArrowKey>: Increase step size to 1 octave
-/ 1 bar;
+#X text 417 296 <Shift_L>+<PgUp>/<PgDn>: switch view by one octave;
+#X text 417 76 <Shift_L>+<ArrowKey>: Increase step size to 1 octave / 1 bar;
 #X text 8 327 <Shift_L>+<Click> (on note): toggle selection;
-#X text 8 347 <Shift_L>+(<Click> \, <Click>) (twice on empty space):
-mark a region to select all notes within region;
-#X text 203 436 NOTE: Some modifier keys do not work reliably on some
-platforms. That's why the used keys are limited to Shift_L and Ctrl_L
-;
+#X text 8 347 <Shift_L>+(<Click> \, <Click>) (twice on empty space): mark a region to select all notes within region;
+#X text 203 436 NOTE: Some modifier keys do not work reliably on some platforms. That's why the used keys are limited to Shift_L and Ctrl_L;
 #X restore 20 99 pd editing;
 #N canvas 170 116 568 256 state 0;
 #X obj 18 140 s \$0.to;
 #X msg 78 88 dump;
 #X msg 78 48 clear \, redraw;
-#X text 179 88 Dump complete state as a set of messages. If the set
-of messages is later sent back to [unpunch] in the same order \, the
-complete state is restored;
-#X text 179 48 Clear all notes ('clear' alone only deletes all notes
-internally without updating visual representation);
+#X text 179 88 Dump complete state as a set of messages. If the set of messages is later sent back to [unpunch] in the same order \, the complete state is restored;
+#X text 179 48 Clear all notes ('clear' alone only deletes all notes internally without updating visual representation);
 #X text 77 14 STATE MANAGEMENT;
 #X text 77 24 ----------------;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X restore 20 129 pd state management;
-#N canvas 704 117 1006 749 example-sequencer 1;
+#N canvas 704 117 1006 749 example-sequencer 0;
+#X scalar 1004.vertgrid 30 53 14 671 \;;
+#X scalar 1004.vertgrid 45 53 14 671 \;;
+#X scalar 1004.vertgrid 60 53 14 671 \;;
+#X scalar 1004.vertgrid 75 53 14 671 \;;
+#X scalar 1004.vertgrid 90 53 14 671 \;;
+#X scalar 1004.vertgrid 105 53 14 671 \;;
+#X scalar 1004.vertgrid 120 53 14 671 \;;
+#X scalar 1004.vertgrid 135 53 14 671 \;;
+#X scalar 1004.vertgrid 150 53 14 671 \;;
+#X scalar 1004.vertgrid 165 53 14 671 \;;
+#X scalar 1004.vertgrid 180 53 14 671 \;;
+#X scalar 1004.vertgrid 195 53 14 671 \;;
+#X scalar 1004.vertgrid 210 53 14 671 \;;
+#X scalar 1004.vertgrid 225 53 14 671 \;;
+#X scalar 1004.vertgrid 240 53 14 671 \;;
+#X scalar 1004.vertgrid 255 53 14 671 \;;
+#X scalar 1004.vertgrid 270 53 14 671 \;;
+#X scalar 1004.vertgrid 285 53 14 671 \;;
+#X scalar 1004.vertgrid 300 53 14 671 \;;
+#X scalar 1004.vertgrid 315 53 14 671 \;;
+#X scalar 1004.vertgrid 330 53 14 671 \;;
+#X scalar 1004.vertgrid 345 53 14 671 \;;
+#X scalar 1004.vertgrid 360 53 14 671 \;;
+#X scalar 1004.vertgrid 375 53 14 671 \;;
+#X scalar 1004.vertgrid 390 53 14 671 \;;
+#X scalar 1004.vertgrid 405 53 14 671 \;;
+#X scalar 1004.vertgrid 420 53 14 671 \;;
+#X scalar 1004.vertgrid 435 53 14 671 \;;
+#X scalar 1004.vertgrid 450 53 14 671 \;;
+#X scalar 1004.vertgrid 465 53 14 671 \;;
+#X scalar 1004.vertgrid 480 53 14 671 \;;
+#X scalar 1004.vertgrid 495 53 14 671 \;;
+#X scalar 1004.vertgrid 510 53 14 671 \;;
+#X scalar 1004.vertgrid 525 53 14 671 \;;
+#X scalar 1004.vertgrid 540 53 14 671 \;;
+#X scalar 1004.vertgrid 555 53 14 671 \;;
+#X scalar 1004.vertgrid 570 53 14 671 \;;
+#X scalar 1004.vertgrid 585 53 14 671 \;;
+#X scalar 1004.vertgrid 600 53 14 671 \;;
+#X scalar 1004.vertgrid 615 53 14 671 \;;
+#X scalar 1004.vertgrid 630 53 14 671 \;;
+#X scalar 1004.vertgrid 645 53 14 671 \;;
+#X scalar 1004.vertgrid 660 53 14 671 \;;
+#X scalar 1004.vertgrid 675 53 14 671 \;;
+#X scalar 1004.vertgrid 690 53 14 671 \;;
+#X scalar 1004.vertgrid 705 53 14 671 \;;
+#X scalar 1004.vertgrid 720 53 14 671 \;;
+#X scalar 1004.vertgrid 735 53 14 671 \;;
+#X scalar 1004.vertgrid 750 53 14 671 \;;
+#X scalar 1004.vertgrid 765 53 14 671 \;;
+#X scalar 1004.vertgrid 780 53 14 671 \;;
+#X scalar 1004.vertgrid 795 53 14 671 \;;
+#X scalar 1004.vertgrid 810 53 14 671 \;;
+#X scalar 1004.vertgrid 825 53 14 671 \;;
+#X scalar 1004.vertgrid 840 53 14 671 \;;
+#X scalar 1004.vertgrid 855 53 14 671 \;;
+#X scalar 1004.vertgrid 870 53 14 671 \;;
+#X scalar 1004.vertgrid 885 53 14 671 \;;
+#X scalar 1004.vertgrid 900 53 14 671 \;;
+#X scalar 1004.vertgrid 915 53 14 671 \;;
+#X scalar 1004.vertgrid 930 53 14 671 \;;
+#X scalar 1004.vertgrid 945 53 14 671 \;;
+#X scalar 1004.vertgrid 960 53 14 671 \;;
+#X scalar 1004.vertgrid 975 53 14 671 \;;
+#X scalar 1004.horizgrid 30 53 960 13 887 C5 0 \;;
+#X scalar 1004.horizgrid 30 67 960 13 777 C5 0 \;;
+#X scalar 1004.horizgrid 30 81 960 13 887 C5 0 \;;
+#X scalar 1004.horizgrid 30 95 960 13 777 C5 0 \;;
+#X scalar 1004.horizgrid 30 109 960 13 887 C5 0 \;;
+#X scalar 1004.horizgrid 30 123 960 13 777 C5 0 \;;
+#X scalar 1004.horizgrid 30 137 960 13 887 C5 0 \;;
+#X scalar 1004.horizgrid 30 151 960 13 887 C5 0 \;;
+#X scalar 1004.horizgrid 30 165 960 13 777 C5 0 \;;
+#X scalar 1004.horizgrid 30 179 960 13 887 C5 0 \;;
+#X scalar 1004.horizgrid 30 193 960 13 777 C5 0 \;;
+#X scalar 1004.horizgrid 30 207 960 13 887 C5 1 \;;
+#X scalar 1004.horizgrid 30 221 960 13 887 C4 0 \;;
+#X scalar 1004.horizgrid 30 235 960 13 777 C4 0 \;;
+#X scalar 1004.horizgrid 30 249 960 13 887 C4 0 \;;
+#X scalar 1004.horizgrid 30 263 960 13 777 C4 0 \;;
+#X scalar 1004.horizgrid 30 277 960 13 887 C4 0 \;;
+#X scalar 1004.horizgrid 30 291 960 13 777 C4 0 \;;
+#X scalar 1004.horizgrid 30 305 960 13 887 C4 0 \;;
+#X scalar 1004.horizgrid 30 319 960 13 887 C4 0 \;;
+#X scalar 1004.horizgrid 30 333 960 13 777 C4 0 \;;
+#X scalar 1004.horizgrid 30 347 960 13 887 C4 0 \;;
+#X scalar 1004.horizgrid 30 361 960 13 777 C4 0 \;;
+#X scalar 1004.horizgrid 30 375 960 13 887 C4 1 \;;
+#X scalar 1004.horizgrid 30 389 960 13 887 C3 0 \;;
+#X scalar 1004.horizgrid 30 403 960 13 777 C3 0 \;;
+#X scalar 1004.horizgrid 30 417 960 13 887 C3 0 \;;
+#X scalar 1004.horizgrid 30 431 960 13 777 C3 0 \;;
+#X scalar 1004.horizgrid 30 445 960 13 887 C3 0 \;;
+#X scalar 1004.horizgrid 30 459 960 13 777 C3 0 \;;
+#X scalar 1004.horizgrid 30 473 960 13 887 C3 0 \;;
+#X scalar 1004.horizgrid 30 487 960 13 887 C3 0 \;;
+#X scalar 1004.horizgrid 30 501 960 13 777 C3 0 \;;
+#X scalar 1004.horizgrid 30 515 960 13 887 C3 0 \;;
+#X scalar 1004.horizgrid 30 529 960 13 777 C3 0 \;;
+#X scalar 1004.horizgrid 30 543 960 13 887 C3 1 \;;
+#X scalar 1004.horizgrid 30 557 960 13 887 C2 0 \;;
+#X scalar 1004.horizgrid 30 571 960 13 777 C2 0 \;;
+#X scalar 1004.horizgrid 30 585 960 13 887 C2 0 \;;
+#X scalar 1004.horizgrid 30 599 960 13 777 C2 0 \;;
+#X scalar 1004.horizgrid 30 613 960 13 887 C2 0 \;;
+#X scalar 1004.horizgrid 30 627 960 13 777 C2 0 \;;
+#X scalar 1004.horizgrid 30 641 960 13 887 C2 0 \;;
+#X scalar 1004.horizgrid 30 655 960 13 887 C2 0 \;;
+#X scalar 1004.horizgrid 30 669 960 13 777 C2 0 \;;
+#X scalar 1004.horizgrid 30 683 960 13 887 C2 0 \;;
+#X scalar 1004.horizgrid 30 697 960 13 777 C2 0 \;;
+#X scalar 1004.horizgrid 30 711 960 13 887 C2 1 \;;
+#X scalar 1004.vertline 30 53 672 0 1 1 \;;
+#X scalar 1004.vertline 45 53 672 888 1 0 \;;
+#X scalar 1004.vertline 60 53 672 888 1 0 \;;
+#X scalar 1004.vertline 75 53 672 888 1 0 \;;
+#X scalar 1004.vertline 90 53 672 666 1 0 \;;
+#X scalar 1004.vertline 105 53 672 888 1 0 \;;
+#X scalar 1004.vertline 120 53 672 888 1 0 \;;
+#X scalar 1004.vertline 135 53 672 888 1 0 \;;
+#X scalar 1004.vertline 150 53 672 666 1 0 \;;
+#X scalar 1004.vertline 165 53 672 888 1 0 \;;
+#X scalar 1004.vertline 180 53 672 888 1 0 \;;
+#X scalar 1004.vertline 195 53 672 888 1 0 \;;
+#X scalar 1004.vertline 210 53 672 666 1 0 \;;
+#X scalar 1004.vertline 225 53 672 888 1 0 \;;
+#X scalar 1004.vertline 240 53 672 888 1 0 \;;
+#X scalar 1004.vertline 255 53 672 888 1 0 \;;
+#X scalar 1004.vertline 270 53 672 0 2 1 \;;
+#X scalar 1004.vertline 285 53 672 888 2 0 \;;
+#X scalar 1004.vertline 300 53 672 888 2 0 \;;
+#X scalar 1004.vertline 315 53 672 888 2 0 \;;
+#X scalar 1004.vertline 330 53 672 666 2 0 \;;
+#X scalar 1004.vertline 345 53 672 888 2 0 \;;
+#X scalar 1004.vertline 360 53 672 888 2 0 \;;
+#X scalar 1004.vertline 375 53 672 888 2 0 \;;
+#X scalar 1004.vertline 390 53 672 666 2 0 \;;
+#X scalar 1004.vertline 405 53 672 888 2 0 \;;
+#X scalar 1004.vertline 420 53 672 888 2 0 \;;
+#X scalar 1004.vertline 435 53 672 888 2 0 \;;
+#X scalar 1004.vertline 450 53 672 666 2 0 \;;
+#X scalar 1004.vertline 465 53 672 888 2 0 \;;
+#X scalar 1004.vertline 480 53 672 888 2 0 \;;
+#X scalar 1004.vertline 495 53 672 888 2 0 \;;
+#X scalar 1004.vertline 510 53 672 0 3 1 \;;
+#X scalar 1004.vertline 525 53 672 888 3 0 \;;
+#X scalar 1004.vertline 540 53 672 888 3 0 \;;
+#X scalar 1004.vertline 555 53 672 888 3 0 \;;
+#X scalar 1004.vertline 570 53 672 666 3 0 \;;
+#X scalar 1004.vertline 585 53 672 888 3 0 \;;
+#X scalar 1004.vertline 600 53 672 888 3 0 \;;
+#X scalar 1004.vertline 615 53 672 888 3 0 \;;
+#X scalar 1004.vertline 630 53 672 666 3 0 \;;
+#X scalar 1004.vertline 645 53 672 888 3 0 \;;
+#X scalar 1004.vertline 660 53 672 888 3 0 \;;
+#X scalar 1004.vertline 675 53 672 888 3 0 \;;
+#X scalar 1004.vertline 690 53 672 666 3 0 \;;
+#X scalar 1004.vertline 705 53 672 888 3 0 \;;
+#X scalar 1004.vertline 720 53 672 888 3 0 \;;
+#X scalar 1004.vertline 735 53 672 888 3 0 \;;
+#X scalar 1004.vertline 750 53 672 0 4 1 \;;
+#X scalar 1004.vertline 765 53 672 888 4 0 \;;
+#X scalar 1004.vertline 780 53 672 888 4 0 \;;
+#X scalar 1004.vertline 795 53 672 888 4 0 \;;
+#X scalar 1004.vertline 810 53 672 666 4 0 \;;
+#X scalar 1004.vertline 825 53 672 888 4 0 \;;
+#X scalar 1004.vertline 840 53 672 888 4 0 \;;
+#X scalar 1004.vertline 855 53 672 888 4 0 \;;
+#X scalar 1004.vertline 870 53 672 666 4 0 \;;
+#X scalar 1004.vertline 885 53 672 888 4 0 \;;
+#X scalar 1004.vertline 900 53 672 888 4 0 \;;
+#X scalar 1004.vertline 915 53 672 888 4 0 \;;
+#X scalar 1004.vertline 930 53 672 666 4 0 \;;
+#X scalar 1004.vertline 945 53 672 888 4 0 \;;
+#X scalar 1004.vertline 960 53 672 888 4 0 \;;
+#X scalar 1004.vertline 975 53 672 888 4 0 \;;
+#X scalar 1004.vertline 990 53 672 0 5 0 \;;
+#X scalar 1004.guibar 30 11 960 \;;
+#X scalar 1004.gid.button 281 20 800 0 \;;
+#X scalar 1004.gid.button 297 20 310 1 \;;
+#X scalar 1004.gid.button 313 20 30 2 \;;
+#X scalar 1004.gid.button 329 20 23 3 \;;
+#X scalar 1004.gid.button 345 20 103 4 \;;
+#X scalar 1004.gid.button 361 20 303 5 \;;
+#X scalar 1004.vel 115 20 64 \;;
+#X scalar 1004.dur 198 20 4 \;;
+#X scalar 1004.mode.button 115 11 72 666 velocity \;;
+#X scalar 1004.mode.button 198 11 72 666 duration \;;
+#X scalar 1004.mode.button 281 11 95 666 gid \;;
+#X scalar 1004.show.selector 387 20 31 0 0 none \;;
+#X scalar 1004.show.selector 418 20 55 555 1 velocity \;;
+#X scalar 1004.show.selector 473 20 55 555 2 duration \;;
+#X scalar 1004.show.selector 528 20 37 555 3 gid \;;
+#X scalar 1004.cursor 30 53 672 1 \;;
+#X scalar 1004.pager 40 20 666 0 1 1 \;;
+#X scalar 1004.pager 80 20 444 24 0 0 \;;
+#X scalar 1004.scroller 10 22 444 -10 \;;
+#X scalar 1004.scroller 10 25 444 10 \;;
+#X scalar 1004.keyboard.toggle 575 20 keyboard 0 666 \;;
 #X restore 242 261 pd example-sequencer;
 #X obj 20 261 unpunch pd-example-sequencer;
 #X text 397 236 inlet0: sequencer input (clock);
 #X text 397 256 inlet1: editor commands and configuration;
-#X text 392 286 outlet0: notes ([pitch \, velocity \, channel] tuples)
-;
+#X text 392 286 outlet0: notes ([pitch \, velocity \, channel] tuples);
 #X text 392 306 outlet1: dump of internal state;
 #X obj 530 120 s pd-example-sequencer;
 #X obj 240 99 s \$0.to;
 #N canvas 0 99 449 442 song-data-in-a-messagebox 0;
 #X obj 16 22 inlet;
 #X obj 16 1027 outlet;
-#X msg 16 48 clear \, set stepviswidth 15 \, set stepvisheight 14 \,
-set stepsperpage 64 \, set pitchrange 48 \, set gridsubdivision 4 \,
-set griddivision 4 \, note restore 0 0 46 68 2 0 \, note restore 1
-3 53 65 1 0 \, note restore 2 4 53 68 2 0 \, note restore 3 7 46 65
-1 0 \, note restore 4 8 47 68 2 0 \, note restore 5 11 54 65 1 0 \,
-note restore 6 12 54 68 2 0 \, note restore 7 15 47 65 1 0 \, note
-restore 8 48 51 68 2 0 \, note restore 9 51 58 65 1 0 \, note restore
-10 52 58 68 2 0 \, note restore 11 55 51 65 1 0 \, note restore 12
-56 51 68 2 0 \, note restore 13 59 58 65 1 0 \, note restore 14 60
-58 68 2 0 \, note restore 15 63 51 68 1 0 \, note restore 16 0 68 64
-1 2 \, note restore 17 2 68 64 1 2 \, note restore 18 5 68 64 1 2 \,
-note restore 19 7 70 64 1 2 \, note restore 20 9 70 64 1 2 \, note
-restore 21 11 70 64 2 2 \, note restore 22 14 70 64 1 2 \, note restore
-23 48 68 64 1 2 \, note restore 24 50 68 64 1 2 \, note restore 25
-53 68 64 1 2 \, note restore 26 55 66 64 1 2 \, note restore 27 57
-66 61 1 2 \, note restore 28 59 68 64 2 2 \, note restore 29 62 66
-64 1 2 \, note restore 30 0 61 64 1 2 \, note restore 31 2 61 64 1
-2 \, note restore 32 5 61 64 1 2 \, note restore 33 7 63 64 1 2 \,
-note restore 34 9 63 64 1 2 \, note restore 35 11 63 64 2 2 \, note
-restore 36 14 63 64 1 2 \, note restore 37 48 61 64 1 2 \, note restore
-38 50 61 64 1 2 \, note restore 39 53 61 64 1 2 \, note restore 40
-55 61 64 1 2 \, note restore 41 57 61 64 1 2 \, note restore 42 59
-61 64 2 2 \, note restore 43 50 65 64 1 2 \, note restore 44 0 65 64
-1 2 \, note restore 45 2 65 64 1 2 \, note restore 46 5 65 64 1 2 \,
-note restore 47 9 66 64 1 2 \, note restore 48 7 66 64 1 2 \, note
-restore 49 11 66 64 2 2 \, note restore 50 14 66 64 1 2 \, note restore
-51 48 65 64 1 2 \, note restore 52 53 65 64 1 2 \, note restore 53
-55 65 64 1 2 \, note restore 54 57 65 64 1 2 \, note restore 55 59
-65 64 2 2 \, note restore 56 62 65 64 1 2 \, note restore 57 62 61
-64 1 2 \, note restore 58 16 44 68 2 0 \, note restore 59 19 51 65
-1 0 \, note restore 60 20 51 68 2 0 \, note restore 61 23 44 65 1 0
-\, note restore 62 24 49 68 2 0 \, note restore 63 27 56 65 1 0 \,
-note restore 64 28 56 68 2 0 \, note restore 65 31 49 65 1 0 \, note
-restore 66 32 51 68 2 0 \, note restore 67 35 58 65 1 0 \, note restore
-68 36 58 68 2 0 \, note restore 69 39 51 65 1 0 \, note restore 70
-40 51 68 2 0 \, note restore 71 43 58 65 1 0 \, note restore 72 44
-58 68 2 0 \, note restore 73 47 51 65 1 0 \, note restore 74 16 70
-64 1 2 \, note restore 75 18 70 64 1 2 \, note restore 76 21 70 64
-1 2 \, note restore 77 23 68 64 1 2 \, note restore 78 25 68 61 1 2
-\, note restore 79 27 68 64 2 2 \, note restore 80 30 68 64 1 2 \,
-note restore 81 16 63 64 1 2 \, note restore 82 18 63 64 1 2 \, note
-restore 83 21 63 64 1 2 \, note restore 84 23 63 64 1 2 \, note restore
-85 25 63 64 1 2 \, note restore 86 27 63 64 2 2 \, note restore 87
-18 66 64 1 2 \, note restore 88 16 66 64 1 2 \, note restore 89 21
-66 64 1 2 \, note restore 90 23 65 64 1 2 \, note restore 91 25 65
-64 1 2 \, note restore 92 27 65 64 2 2 \, note restore 93 30 65 64
-1 2 \, note restore 94 30 63 64 1 2 \, note restore 95 32 68 64 1 2
-\, note restore 96 34 68 64 1 2 \, note restore 97 37 68 64 1 2 \,
-note restore 98 39 66 64 1 2 \, note restore 99 41 66 61 1 2 \, note
-restore 100 43 66 64 2 2 \, note restore 101 46 66 64 1 2 \, note restore
-102 32 61 64 1 2 \, note restore 103 34 61 64 1 2 \, note restore 104
-37 61 64 1 2 \, note restore 105 39 61 64 1 2 \, note restore 106 41
-61 64 1 2 \, note restore 107 43 61 64 2 2 \, note restore 108 34 65
-64 1 2 \, note restore 109 32 65 64 1 2 \, note restore 110 37 65 64
-1 2 \, note restore 111 39 65 64 1 2 \, note restore 112 41 65 64 1
-2 \, note restore 113 43 65 64 2 2 \, note restore 114 46 65 64 1 2
-\, note restore 115 46 61 64 1 2 \, note restore 116 48 87 58 3 4 \,
-note restore 117 51 80 58 1 4 \, note restore 118 53 82 58 2 4 \, note
-restore 119 55 75 58 5 4 \, note restore 120 60 80 58 2 4 \, note restore
-121 62 82 58 1 4 \, note restore 122 0 87 58 3 4 \, note restore 123
-3 80 58 1 4 \, note restore 124 5 82 58 2 4 \, note restore 125 7 75
-58 5 4 \, note restore 126 12 80 58 2 4 \, note restore 127 14 82 58
-1 4 \, note restore 128 16 87 58 3 4 \, note restore 129 19 80 58 1
-4 \, note restore 130 21 82 58 2 4 \, note restore 131 23 75 58 5 4
-\, note restore 132 28 80 58 2 4 \, note restore 133 30 82 58 1 4 \,
-note restore 134 32 87 58 3 4 \, note restore 135 35 80 58 1 4 \, note
-restore 136 37 82 58 2 4 \, note restore 137 39 75 58 5 4 \, note restore
-138 44 80 58 2 4 \, note restore 139 46 82 58 1 4 \, page 1 \,;
+#X msg 16 48 clear \, set stepviswidth 15 \, set stepvisheight 14 \, set stepsperpage 64 \, set pitchrange 48 \, set gridsubdivision 4 \, set griddivision 4 \, note restore 0 0 46 68 2 0 \, note restore 1 3 53 65 1 0 \, note restore 2 4 53 68 2 0 \, note restore 3 7 46 65 1 0 \, note restore 4 8 47 68 2 0 \, note restore 5 11 54 65 1 0 \, note restore 6 12 54 68 2 0 \, note restore 7 15 47 65 1 0 \, note restore 8 48 51 68 2 0 \, note restore 9 51 58 65 1 0 \, note restore 10 52 58 68 2 0 \, note restore 11 55 51 65 1 0 \, note restore 12 56 51 68 2 0 \, note restore 13 59 58 65 1 0 \, note restore 14 60 58 68 2 0 \, note restore 15 63 51 68 1 0 \, note restore 16 0 68 64 1 2 \, note restore 17 2 68 64 1 2 \, note restore 18 5 68 64 1 2 \, note restore 19 7 70 64 1 2 \, note restore 20 9 70 64 1 2 \, note restore 21 11 70 64 2 2 \, note restore 22 14 70 64 1 2 \, note restore 23 48 68 64 1 2 \, note restore 24 50 68 64 1 2 \, note restore 25 53 68 64 1 2 \, note restore 26 55 66 64 1 2 \, note restore 27 57 66 61 1 2 \, note restore 28 59 68 64 2 2 \, note restore 29 62 66 64 1 2 \, note restore 30 0 61 64 1 2 \, note restore 31 2 61 64 1 2 \, note restore 32 5 61 64 1 2 \, note restore 33 7 63 64 1 2 \, note restore 34 9 63 64 1 2 \, note restore 35 11 63 64 2 2 \, note restore 36 14 63 64 1 2 \, note restore 37 48 61 64 1 2 \, note restore 38 50 61 64 1 2 \, note restore 39 53 61 64 1 2 \, note restore 40 55 61 64 1 2 \, note restore 41 57 61 64 1 2 \, note restore 42 59 61 64 2 2 \, note restore 43 50 65 64 1 2 \, note restore 44 0 65 64 1 2 \, note restore 45 2 65 64 1 2 \, note restore 46 5 65 64 1 2 \, note restore 47 9 66 64 1 2 \, note restore 48 7 66 64 1 2 \, note restore 49 11 66 64 2 2 \, note restore 50 14 66 64 1 2 \, note restore 51 48 65 64 1 2 \, note restore 52 53 65 64 1 2 \, note restore 53 55 65 64 1 2 \, note restore 54 57 65 64 1 2 \, note restore 55 59 65 64 2 2 \, note restore 56 62 65 64 1 2 \, note restore 57 62 61 64 1 2 \, note restore 58 16 44 68 2 0 \, note restore 59 19 51 65 1 0 \, note restore 60 20 51 68 2 0 \, note restore 61 23 44 65 1 0 \, note restore 62 24 49 68 2 0 \, note restore 63 27 56 65 1 0 \, note restore 64 28 56 68 2 0 \, note restore 65 31 49 65 1 0 \, note restore 66 32 51 68 2 0 \, note restore 67 35 58 65 1 0 \, note restore 68 36 58 68 2 0 \, note restore 69 39 51 65 1 0 \, note restore 70 40 51 68 2 0 \, note restore 71 43 58 65 1 0 \, note restore 72 44 58 68 2 0 \, note restore 73 47 51 65 1 0 \, note restore 74 16 70 64 1 2 \, note restore 75 18 70 64 1 2 \, note restore 76 21 70 64 1 2 \, note restore 77 23 68 64 1 2 \, note restore 78 25 68 61 1 2 \, note restore 79 27 68 64 2 2 \, note restore 80 30 68 64 1 2 \, note restore 81 16 63 64 1 2 \, note restore 82 18 63 64 1 2 \, note restore 83 21 63 64 1 2 \, note restore 84 23 63 64 1 2 \, note restore 85 25 63 64 1 2 \, note restore 86 27 63 64 2 2 \, note restore 87 18 66 64 1 2 \, note restore 88 16 66 64 1 2 \, note restore 89 21 66 64 1 2 \, note restore 90 23 65 64 1 2 \, note restore 91 25 65 64 1 2 \, note restore 92 27 65 64 2 2 \, note restore 93 30 65 64 1 2 \, note restore 94 30 63 64 1 2 \, note restore 95 32 68 64 1 2 \, note restore 96 34 68 64 1 2 \, note restore 97 37 68 64 1 2 \, note restore 98 39 66 64 1 2 \, note restore 99 41 66 61 1 2 \, note restore 100 43 66 64 2 2 \, note restore 101 46 66 64 1 2 \, note restore 102 32 61 64 1 2 \, note restore 103 34 61 64 1 2 \, note restore 104 37 61 64 1 2 \, note restore 105 39 61 64 1 2 \, note restore 106 41 61 64 1 2 \, note restore 107 43 61 64 2 2 \, note restore 108 34 65 64 1 2 \, note restore 109 32 65 64 1 2 \, note restore 110 37 65 64 1 2 \, note restore 111 39 65 64 1 2 \, note restore 112 41 65 64 1 2 \, note restore 113 43 65 64 2 2 \, note restore 114 46 65 64 1 2 \, note restore 115 46 61 64 1 2 \, note restore 116 48 87 58 3 4 \, note restore 117 51 80 58 1 4 \, note restore 118 53 82 58 2 4 \, note restore 119 55 75 58 5 4 \, note restore 120 60 80 58 2 4 \, note restore 121 62 82 58 1 4 \, note restore 122 0 87 58 3 4 \, note restore 123 3 80 58 1 4 \, note restore 124 5 82 58 2 4 \, note restore 125 7 75 58 5 4 \, note restore 126 12 80 58 2 4 \, note restore 127 14 82 58 1 4 \, note restore 128 16 87 58 3 4 \, note restore 129 19 80 58 1 4 \, note restore 130 21 82 58 2 4 \, note restore 131 23 75 58 5 4 \, note restore 132 28 80 58 2 4 \, note restore 133 30 82 58 1 4 \, note restore 134 32 87 58 3 4 \, note restore 135 35 80 58 1 4 \, note restore 136 37 82 58 2 4 \, note restore 137 39 75 58 5 4 \, note restore 138 44 80 58 2 4 \, note restore 139 46 82 58 1 4 \, page 1 \,;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore 240 69 pd song-data-in-a-messagebox;
-#X obj 240 39 bng 20 250 50 0 empty empty empty 17 7 0 10 -204786 -1
--1;
+#X obj 240 39 bng 20 250 50 0 empty empty empty 17 7 0 10 #c4fcc4 #000000 #000000;
 #X text 263 40 load example song;
 #X text 222 240 Container for the GUI:;
 #N canvas 0 99 475 61 NETPD 0;

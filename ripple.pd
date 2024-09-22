@@ -1,3 +1,7 @@
+#N struct 1003.window-frame float x float w;
+#N struct 1003.zero-line float w;
+#N struct 1003.cue-marker float x float clr float id;
+#N struct 1003.cue-dtl float x float clr float id float vis;
 #N canvas 508 266 602 571 10;
 #X obj 47 112 loadbang;
 #X obj 20 112 bng 17 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
@@ -724,7 +728,7 @@
 #X connect 11 0 10 0;
 #X connect 11 1 12 0;
 #X restore 457 80 pd recording;
-#N canvas 564 211 629 334 \$1-ripple 1;
+#N canvas 564 211 629 334 \$1-ripple 0;
 #X obj 10 184 cnv 15 100 15 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 13 200 hsl 595 120 0 1 0 0 \$0.position.in.window \$0.position.in.window.r ripple 120 60 0 90 #ececec #ececec #dcdcdc 0 0;
 #N canvas 0 106 450 250 (subpatch) 0;
@@ -739,11 +743,19 @@
 #X coords 0 1 1200 -1 600 80 1 0 0;
 #X restore 10 120 graph;
 #N canvas 598 479 677 501 \$0.gop 0;
+#X scalar 1003.window-frame -1 1 \;;
+#X scalar 1003.zero-line 600 \;;
+#X scalar 1003.cue-marker 0 500 0 \;;
+#X scalar 1003.cue-dtl 0 500 0 0 \;;
+#X scalar 1003.cue-marker 0 50 1 \;;
+#X scalar 1003.cue-dtl 0 50 1 0 \;;
+#X scalar 1003.cue-marker 0 5 2 \;;
+#X scalar 1003.cue-dtl 0 5 2 0 \;;
 #X coords 0 0 599 199 600 200 2 20 20;
 #X restore 10 120 pd \$0.gop;
 #X obj 10 74 cnv 15 100 15 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 478 105 hsl 130 15 0 1 0 0 \$0.zoom \$0.zoom.r empty 2 8 0 10 #fcfcfc #9c9c9c #000000 0 1;
-#X obj 13 105 hsl 60 15 1 20 1 0 \$0.length.sld \$0.length.sld.r 1.75s 4 8 0 12 #fcfcfc #b8b8b8 #404040 0 1;
+#X obj 13 105 hsl 60 15 1 20 1 0 \$0.length.sld \$0.length.sld.r 2.00s 4 8 0 12 #fcfcfc #b8b8b8 #404040 0 1;
 #X obj 133 105 hsl 23 15 0 1 0 0 \$0.rec.btn \$1.rec.btn.r ● 7 7 0 12 #fff0f0 #fff0f0 #fc0400 0 1;
 #X obj 285 90 hsl 77 15 0 1 0 0 \$1.adsr/a \$1.adsr/a.r A 4 8 0 12 #fcfcfc #b8b8b8 #404040 0 1;
 #X obj 367 90 hsl 77 15 0 1 0 0 \$1.adsr/d \$1.adsr/d.r D 4 8 0 12 #fcfcfc #b8b8b8 #404040 0 1;

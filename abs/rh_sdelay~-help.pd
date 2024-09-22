@@ -2,8 +2,7 @@
 #N canvas 659 72 327 81 NETPD 0;
 #X msg 15 16 version 0 1 0;
 #X restore 304 186 pd NETPD 2 0;
-#X obj 26 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 26 74 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 273 258 2018 \, Roman Haefeli;
 #X obj 26 216 dac~;
 #X text 21 13 [rh_sdelay~] - sample-wise delay;
@@ -11,7 +10,7 @@
 #X text 199 114 outlet0: delayed signal;
 #X text 205 94 inlet1: delay (samples);
 #X obj 26 112 rh_impulse~;
-#X floatatom 129 123 5 0 0 0 - - -, f 5;
+#X floatatom 129 123 5 0 0 0 - - - 0;
 #X obj 48 159 rh_sdelay~ 200;
 #X text 217 134 arg1: delay (samples);
 #X connect 1 0 8 0;

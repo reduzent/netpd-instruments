@@ -1,5 +1,5 @@
 #N canvas 590 192 405 94 10;
-#N canvas 668 482 164 92 NETPD 1;
+#N canvas 668 482 164 92 NETPD 0;
 #N canvas 813 537 236 466 abslist 0;
 #X msg 15 75 rcomp;
 #X msg 15 95 rlimit;
@@ -22,8 +22,7 @@
 #X restore 14 12 pd NETPD 2 0;
 #N canvas 618 339 496 187 \$1-dynlib 0;
 #X text 21 6 DYNLIB;
-#X text 23 24 a collection of dynamic processing effects to be used
-with mx.;
+#X text 23 24 a collection of dynamic processing effects to be used with mx.;
 #X text 23 94 http://www.netpd.org/dynlib;
 #X text 23 109 http://www.netpd.org/mx;
 #X text 22 60 Author: Roman Haefeli;

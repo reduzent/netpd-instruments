@@ -9,8 +9,7 @@
 #X text 463 100 outlet1: audio-out right;
 #X obj 23 504 dac~;
 #X text 469 60 inlet2: controls;
-#X text 16 13 [dynlib_4mbc~] - stereo 4-band multi-band compressor
-;
+#X text 16 13 [dynlib_4mbc~] - stereo 4-band multi-band compressor;
 #X text 463 120 outlet2: levels;
 #X obj 24 96 dynlib_4mbc~;
 #X obj 93 71 r \$0.controls;
@@ -29,24 +28,15 @@
 #X msg 201 32 2;
 #X msg 232 33 30;
 #X msg 265 34 60;
-#X obj 30 70 cnv 15 110 200 empty empty band1 5 10 0 10 -233017 -1
-0;
-#X obj 33 93 nbx 4 14 -40 0 0 0 empty empty threshold 48 8 0 10 -204800
--1 -1 0 256;
-#X obj 33 111 nbx 4 14 1 100 1 0 empty empty ratio 48 8 0 10 -204786
--1 -1 2 256;
-#X obj 34 129 nbx 4 14 1 1000 1 0 empty empty attack 48 8 0 10 -262130
--1 -1 30 256;
-#X obj 34 147 nbx 4 14 10 9999 1 0 empty empty release 48 8 0 10 -261682
--1 -1 60 256;
-#X obj 34 165 nbx 4 14 -24 24 0 0 empty empty gain 48 8 0 10 -261234
--1 -1 0 256;
-#X obj 34 183 tgl 30 0 empty empty solo 48 8 0 10 -203904 -1 -1 0 1
-;
-#X obj 37 225 hsl 96 15 60 100 0 0 empty empty empty -2 -8 0 10 -257985
--1 -1 5782 1;
-#X obj 37 245 hsl 96 15 -40 0 0 0 empty empty empty -2 -8 0 10 -258113
--1 -1 9500 1;
+#X obj 30 70 cnv 15 110 200 empty empty band1 5 10 0 10 #e0e0e0 #000000 0;
+#X obj 33 93 nbx 4 14 -40 0 0 0 empty empty threshold 48 8 0 10 #c4fcfc #000000 #000000 0 256;
+#X obj 33 111 nbx 4 14 1 100 1 0 empty empty ratio 48 8 0 10 #c4fcc4 #000000 #000000 0 256;
+#X obj 34 129 nbx 4 14 1 1000 1 0 empty empty attack 48 8 0 10 #fcfcc4 #000000 #000000 0 256;
+#X obj 34 147 nbx 4 14 10 9999 1 0 empty empty release 48 8 0 10 #fce0c4 #000000 #000000 0 256;
+#X obj 34 165 nbx 4 14 -24 24 0 0 empty empty gain 48 8 0 10 #fcc4c4 #000000 #000000 0 256;
+#X obj 34 183 tgl 30 0 empty empty solo 48 8 0 10 #c4c4fc #000000 #000000 0 1;
+#X obj 37 225 hsl 96 15 60 100 0 0 empty empty empty -2 -8 0 10 #f8fc00 #000000 #000000 0 1;
+#X obj 37 245 hsl 96 15 -40 0 0 0 empty empty empty -2 -8 0 10 #fc0400 #000000 #000000 0 1;
 #X obj 94 328 r \$0.levels;
 #X obj 94 349 route rms1 atten1;
 #X connect 0 0 6 0;
@@ -75,8 +65,7 @@
 #X connect 22 1 20 0;
 #X coords 0 -1 1 1 110 200 2 30 70;
 #X restore 80 212 pd band1;
-#X obj 109 437 tgl 30 0 empty empty empty 17 7 0 10 -261234 -1 -1 1
-1;
+#X obj 109 437 tgl 30 0 empty empty empty 17 7 0 10 #fcc4c4 #000000 #000000 0 1;
 #X msg 109 472 \$1 50;
 #X obj 109 493 line~;
 #X obj 24 456 *~;
@@ -87,24 +76,15 @@
 #X msg 169 32 0;
 #X msg 201 32 2;
 #X msg 265 34 60;
-#X obj 30 70 cnv 15 110 200 empty empty band2 5 10 0 10 -233017 -1
-0;
-#X obj 33 93 nbx 4 14 -40 0 0 0 empty empty threshold 48 8 0 10 -204800
--1 -1 0 256;
-#X obj 33 111 nbx 4 14 1 100 1 0 empty empty ratio 48 8 0 10 -204786
--1 -1 2 256;
-#X obj 34 129 nbx 4 14 1 1000 1 0 empty empty attack 48 8 0 10 -262130
--1 -1 15 256;
-#X obj 34 147 nbx 4 14 10 9999 1 0 empty empty release 48 8 0 10 -261682
--1 -1 60 256;
-#X obj 34 165 nbx 4 14 -24 24 0 0 empty empty gain 48 8 0 10 -261234
--1 -1 0 256;
-#X obj 34 183 tgl 30 0 empty empty solo 48 8 0 10 -203904 -1 -1 0 1
-;
-#X obj 37 225 hsl 96 15 60 100 0 0 empty empty empty -2 -8 0 10 -257985
--1 -1 669 1;
-#X obj 37 245 hsl 96 15 -40 0 0 0 empty empty empty -2 -8 0 10 -258113
--1 -1 9500 1;
+#X obj 30 70 cnv 15 110 200 empty empty band2 5 10 0 10 #e0e0e0 #000000 0;
+#X obj 33 93 nbx 4 14 -40 0 0 0 empty empty threshold 48 8 0 10 #c4fcfc #000000 #000000 0 256;
+#X obj 33 111 nbx 4 14 1 100 1 0 empty empty ratio 48 8 0 10 #c4fcc4 #000000 #000000 0 256;
+#X obj 34 129 nbx 4 14 1 1000 1 0 empty empty attack 48 8 0 10 #fcfcc4 #000000 #000000 0 256;
+#X obj 34 147 nbx 4 14 10 9999 1 0 empty empty release 48 8 0 10 #fce0c4 #000000 #000000 0 256;
+#X obj 34 165 nbx 4 14 -24 24 0 0 empty empty gain 48 8 0 10 #fcc4c4 #000000 #000000 0 256;
+#X obj 34 183 tgl 30 0 empty empty solo 48 8 0 10 #c4c4fc #000000 #000000 0 1;
+#X obj 37 225 hsl 96 15 60 100 0 0 empty empty empty -2 -8 0 10 #f8fc00 #000000 #000000 0 1;
+#X obj 37 245 hsl 96 15 -40 0 0 0 empty empty empty -2 -8 0 10 #fc0400 #000000 #000000 0 1;
 #X obj 94 328 r \$0.levels;
 #X msg 176 113 threshold2 \$1;
 #X msg 176 133 ratio2 \$1;
@@ -145,24 +125,15 @@
 #X obj 169 11 loadbang;
 #X msg 169 32 0;
 #X msg 201 32 2;
-#X obj 30 70 cnv 15 110 200 empty empty band3 5 10 0 10 -233017 -1
-0;
-#X obj 33 93 nbx 4 14 -40 0 0 0 empty empty threshold 48 8 0 10 -204800
--1 -1 0 256;
-#X obj 33 111 nbx 4 14 1 100 1 0 empty empty ratio 48 8 0 10 -204786
--1 -1 2 256;
-#X obj 34 129 nbx 4 14 1 1000 1 0 empty empty attack 48 8 0 10 -262130
--1 -1 8 256;
-#X obj 34 147 nbx 4 14 10 9999 1 0 empty empty release 48 8 0 10 -261682
--1 -1 40 256;
-#X obj 34 165 nbx 4 14 -24 24 0 0 empty empty gain 48 8 0 10 -261234
--1 -1 0 256;
-#X obj 34 183 tgl 30 0 empty empty solo 48 8 0 10 -203904 -1 -1 0 1
-;
-#X obj 37 225 hsl 96 15 60 100 0 0 empty empty empty -2 -8 0 10 -257985
--1 -1 669 1;
-#X obj 37 245 hsl 96 15 -40 0 0 0 empty empty empty -2 -8 0 10 -258113
--1 -1 9500 1;
+#X obj 30 70 cnv 15 110 200 empty empty band3 5 10 0 10 #e0e0e0 #000000 0;
+#X obj 33 93 nbx 4 14 -40 0 0 0 empty empty threshold 48 8 0 10 #c4fcfc #000000 #000000 0 256;
+#X obj 33 111 nbx 4 14 1 100 1 0 empty empty ratio 48 8 0 10 #c4fcc4 #000000 #000000 0 256;
+#X obj 34 129 nbx 4 14 1 1000 1 0 empty empty attack 48 8 0 10 #fcfcc4 #000000 #000000 0 256;
+#X obj 34 147 nbx 4 14 10 9999 1 0 empty empty release 48 8 0 10 #fce0c4 #000000 #000000 0 256;
+#X obj 34 165 nbx 4 14 -24 24 0 0 empty empty gain 48 8 0 10 #fcc4c4 #000000 #000000 0 256;
+#X obj 34 183 tgl 30 0 empty empty solo 48 8 0 10 #c4c4fc #000000 #000000 0 1;
+#X obj 37 225 hsl 96 15 60 100 0 0 empty empty empty -2 -8 0 10 #f8fc00 #000000 #000000 0 1;
+#X obj 37 245 hsl 96 15 -40 0 0 0 empty empty empty -2 -8 0 10 #fc0400 #000000 #000000 0 1;
 #X obj 94 328 r \$0.levels;
 #X msg 232 33 8;
 #X msg 265 34 40;
@@ -204,24 +175,15 @@
 #X obj 169 11 loadbang;
 #X msg 169 32 0;
 #X msg 201 32 2;
-#X obj 30 70 cnv 15 110 200 empty empty band4 5 10 0 10 -233017 -1
-0;
-#X obj 33 93 nbx 4 14 -40 0 0 0 empty empty threshold 48 8 0 10 -204800
--1 -1 0 256;
-#X obj 33 111 nbx 4 14 1 100 1 0 empty empty ratio 48 8 0 10 -204786
--1 -1 2 256;
-#X obj 34 129 nbx 4 14 1 1000 1 0 empty empty attack 48 8 0 10 -262130
--1 -1 4 256;
-#X obj 34 147 nbx 4 14 10 9999 1 0 empty empty release 48 8 0 10 -261682
--1 -1 40 256;
-#X obj 34 165 nbx 4 14 -24 24 0 0 empty empty gain 48 8 0 10 -261234
--1 -1 0 256;
-#X obj 34 183 tgl 30 0 empty empty solo 48 8 0 10 -203904 -1 -1 0 1
-;
-#X obj 37 225 hsl 96 15 60 100 0 0 empty empty empty -2 -8 0 10 -257985
--1 -1 2981 1;
-#X obj 37 245 hsl 96 15 -40 0 0 0 empty empty empty -2 -8 0 10 -258113
--1 -1 9500 1;
+#X obj 30 70 cnv 15 110 200 empty empty band4 5 10 0 10 #e0e0e0 #000000 0;
+#X obj 33 93 nbx 4 14 -40 0 0 0 empty empty threshold 48 8 0 10 #c4fcfc #000000 #000000 0 256;
+#X obj 33 111 nbx 4 14 1 100 1 0 empty empty ratio 48 8 0 10 #c4fcc4 #000000 #000000 0 256;
+#X obj 34 129 nbx 4 14 1 1000 1 0 empty empty attack 48 8 0 10 #fcfcc4 #000000 #000000 0 256;
+#X obj 34 147 nbx 4 14 10 9999 1 0 empty empty release 48 8 0 10 #fce0c4 #000000 #000000 0 256;
+#X obj 34 165 nbx 4 14 -24 24 0 0 empty empty gain 48 8 0 10 #fcc4c4 #000000 #000000 0 256;
+#X obj 34 183 tgl 30 0 empty empty solo 48 8 0 10 #c4c4fc #000000 #000000 0 1;
+#X obj 37 225 hsl 96 15 60 100 0 0 empty empty empty -2 -8 0 10 #f8fc00 #000000 #000000 0 1;
+#X obj 37 245 hsl 96 15 -40 0 0 0 empty empty empty -2 -8 0 10 #fc0400 #000000 #000000 0 1;
 #X obj 94 328 r \$0.levels;
 #X msg 232 33 4;
 #X msg 265 34 40;
@@ -275,14 +237,10 @@
 #X obj 276 11 / 2;
 #X msg 276 32 range 46 \$1;
 #X obj 182 31 t b b b;
-#X obj 100 100 cnv 14 449 14 empty empty empty 20 12 0 10 -191407 -66577
-0;
-#X obj 182 100 nbx 5 14 46 381.5 1 0 empty empty Hz 56 8 0 10 -228856
--1 -1 123 256;
-#X obj 421 100 nbx 5 14 1526 10000 1 0 empty empty Hz 56 8 0 10 -228856
--1 -1 4712 256;
-#X obj 304 100 nbx 5 14 246 2356 1 0 empty empty Hz 56 8 0 10 -228856
--1 -1 763 256;
+#X obj 100 100 cnv 14 449 14 empty empty empty 20 12 0 10 #b8b8b8 #404040 0;
+#X obj 182 100 nbx 5 14 46 381.5 1 0 empty empty Hz 56 8 0 10 #dcdcdc #000000 #000000 0 256;
+#X obj 421 100 nbx 5 14 1526 10000 1 0 empty empty Hz 56 8 0 10 #dcdcdc #000000 #000000 0 256;
+#X obj 304 100 nbx 5 14 246 2356 1 0 empty empty Hz 56 8 0 10 #dcdcdc #000000 #000000 0 256;
 #X obj 304 308 s \$0.controls;
 #X msg 182 268 xfreq1 \$1;
 #X msg 304 267 xfreq2 \$1;

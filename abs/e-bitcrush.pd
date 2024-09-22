@@ -25,8 +25,7 @@
 #X obj 124 239 outlet~;
 #X obj 199 88 netpd_f \$1 \$2/bit 1;
 #N canvas 629 400 188 74 \$3-\$2 0;
-#X obj 24 27 hsl 128 15 1 0 0 0 \$1-\$2/bit \$1-\$2/bit bitcrush -2
--6 1 9 -262144 -1 -1 0 0;
+#X obj 24 27 hsl 128 15 1 0 0 0 \$1-\$2/bit \$1-\$2/bit bitcrush -2 -6 1 9 #fcfcfc #000000 #000000 0 0;
 #X restore 16 18 pd \$3-\$2;
 #X connect 2 0 5 0;
 #X connect 3 0 12 0;

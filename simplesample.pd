@@ -1,4 +1,3 @@
-#N struct 3950.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 447 548 751 442 10;
 #N canvas 618 56 332 68 NETPD 0;
 #N canvas 312 66 336 156 abslist 0;
@@ -11,7 +10,7 @@
 #X msg 12 8 version 0 1 0;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 68 netpd_head \$1 simplesample;
-#N canvas 1235 507 315 283 \$1-simplesample 1;
+#N canvas 1235 507 315 283 \$1-simplesample 0;
 #X obj 4 16 cnv 15 303 30 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0.sample 466 float 2;

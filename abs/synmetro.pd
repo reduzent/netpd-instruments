@@ -117,8 +117,7 @@
 #X restore 11 164 pd count;
 #X text 145 68 <- measure round trip time (rtt);
 #X text 72 215 <- collect three valid samples;
-#X text 94 94 <- restart taking samples if max deviation is exceeded
-;
+#X text 94 94 <- restart taking samples if max deviation is exceeded;
 #X text 132 189 <- sum up all samples;
 #X text 84 294 <- calculate average;
 #X obj 11 9 inlet;
@@ -426,7 +425,7 @@
 #X connect 17 0 2 0;
 #X connect 18 0 1 0;
 #X restore 345 431 pd update_state;
-#X floatatom 383 325 10 0 0 0 - - -;
+#X floatatom 383 325 10 0 0 0 - - - 0;
 #N canvas 232 428 262 339 measure_deviation 0;
 #X obj 19 37 metro 50;
 #X obj 19 140 realtime;
@@ -464,8 +463,7 @@
 #X connect 13 0 11 1;
 #X connect 14 0 8 0;
 #X restore 383 295 pd measure_deviation;
-#X obj 383 267 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 383 267 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 251 301 r \$1.NETPD;
 #N canvas 805 96 176 114 once 0;
 #X obj 13 12 inlet;

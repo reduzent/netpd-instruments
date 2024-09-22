@@ -2,8 +2,7 @@
 #N canvas 659 72 327 81 NETPD 0;
 #X msg 15 16 version 0 1 0;
 #X restore 374 372 pd NETPD 2 0;
-#X obj 19 38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 19 38 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 334 402 2018 \, Roman Haefeli;
 #X obj 49 97 rh_impulse~;
 #X obj 49 119 *~ 0.7;
@@ -24,14 +23,12 @@
 #X obj 72 145 dynlib_peakenvelope~;
 #X text 285 74 inlet1: decay (log) (rt60 samples);
 #X text 285 94 inlet1: decay (lin) (samples);
-#X floatatom 130 69 7 0 0 0 - - -, f 7;
-#X floatatom 189 112 7 0 0 0 - - -, f 7;
+#X floatatom 130 69 7 0 0 0 - - - 0;
+#X floatatom 189 112 7 0 0 0 - - - 0;
 #X text 236 114 log;
 #X text 177 71 lin;
-#X text 120 257 NOTE: you can disable either log or linear decay by
-setting its value to 0;
-#X text 16 13 [dynlib_peakenvelope~] - follows peaks and decays slowly
-;
+#X text 120 257 NOTE: you can disable either log or linear decay by setting its value to 0;
+#X text 16 13 [dynlib_peakenvelope~] - follows peaks and decays slowly;
 #X connect 1 0 8 0;
 #X connect 1 0 11 0;
 #X connect 3 0 4 0;

@@ -1,9 +1,9 @@
 #N canvas 512 43 368 245 10;
 #X text 11 6 rh_samp2ms - convert samples to milliseconds;
-#X floatatom 42 72 5 0 0 0 - - -, f 5;
+#X floatatom 42 72 5 0 0 0 - - - 0;
 #X obj 42 108 rh_samp2ms;
 #X text 81 73 samples;
-#X floatatom 42 148 5 0 0 0 - - -, f 5;
+#X floatatom 42 148 5 0 0 0 - - - 0;
 #X text 83 148 milliseconds;
 #N canvas 916 304 340 91 NETPD 0;
 #X msg 6 11 version 0 0 1;

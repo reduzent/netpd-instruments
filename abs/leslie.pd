@@ -6,9 +6,8 @@
 #X obj 152 81 inlet~;
 #X obj 28 488 outlet~;
 #X obj 153 484 outlet~;
-#N canvas 1341 636 230 65 \$3-\$2 1;
-#X obj 13 13 hsl 200 30 0 1 0 0 \$1-\$2/speed \$1-\$2/speed SPEED 10
-16 0 28 -109301 -258113 -262144 12400 1;
+#N canvas 1341 636 230 65 \$3-\$2 0;
+#X obj 13 13 hsl 200 30 0 1 0 0 \$1-\$2/speed \$1-\$2/speed SPEED 10 16 0 28 #68acd0 #fc0400 #fcfcfc 0 1;
 #X text 175 27 LESLIE;
 #X restore 7 12 pd \$3-\$2;
 #X obj 262 48 netpd_f \$1 \$2/speed 0.1;
@@ -37,7 +36,7 @@
 #X restore 29 127 pd lesl;
 #X obj 262 177 phasor~;
 #X obj 239 225 cos~;
-#X floatatom 262 111 5 0 0 0 - - -;
+#X floatatom 262 111 5 0 0 0 - - - 0;
 #X obj 239 248 +~ 1;
 #X obj 239 271 *~ 0.5;
 #X msg 333 159 \$1 343;

@@ -1,11 +1,11 @@
 #N canvas 455 43 420 287 10;
 #X obj 26 145 rh_abs~;
 #X obj 26 108 sig~;
-#X floatatom 26 77 5 0 0 0 - - -, f 5;
+#X floatatom 26 77 5 0 0 0 - - - 0;
 #X obj 27 214 snapshot~;
 #X obj 66 168 loadbang;
 #X obj 66 188 metro 50;
-#X floatatom 27 234 5 0 0 0 - - -, f 5;
+#X floatatom 27 234 5 0 0 0 - - - 0;
 #X text 16 7 rh_abs~ - get absolute value of incoming signal;
 #N canvas 597 136 308 61 NETPD 0;
 #X msg 17 19 version 0 0 1;

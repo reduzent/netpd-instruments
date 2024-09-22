@@ -355,23 +355,15 @@
 #X connect 35 2 33 0;
 #X connect 36 0 32 1;
 #X restore 111 88 pd rwo-2;
-#N canvas 423 262 413 92 \$2-e-rwo-gui 1;
-#X obj 19 14 hsl 128 15 0 1000 0 0 \$2_1-rwo.l-slider \$2_1-rwo.l-slider-r
-rec-length 7 7 1 9 -262144 -1 -1 4013 0;
-#X floatatom 151 14 5 0 0 0 - #2_1-rwo.l-number-r #2_1-rwo.l-number
-;
-#X obj 199 14 hsl 128 15 -500 1000 0 0 \$2_1-rwo.s-slider \$2_1-rwo.s-slider-r
-speed 7 7 1 9 -262144 -1 -1 10964 0;
-#X floatatom 331 14 5 0 0 0 - #2_1-rwo.s-number-r #2_1-rwo.s-number
-;
-#X obj 19 34 hsl 128 15 0 1000 0 0 \$2_2-rwo.l-slider \$2_2-rwo.l-slider-r
-rec-length 7 7 1 9 -262144 -1 -1 4102 0;
-#X floatatom 151 34 5 0 0 0 - #2_2-rwo.l-number-r #2_2-rwo.l-number
-;
-#X obj 199 34 hsl 128 15 -500 1000 0 0 \$2_2-rwo.s-slider \$2_2-rwo.s-slider-r
-speed 7 7 1 9 -262144 -1 -1 9305 0;
-#X floatatom 331 34 5 0 0 0 - #2_2-rwo.s-number-r #2_2-rwo.s-number
-;
+#N canvas 423 262 413 92 \$2-e-rwo-gui 0;
+#X obj 19 14 hsl 128 15 0 1000 0 0 \$2_1-rwo.l-slider \$2_1-rwo.l-slider-r rec-length 7 7 1 9 #fcfcfc #000000 #000000 0 0;
+#X floatatom 151 14 5 0 0 0 - \$2_1-rwo.l-number-r \$2_1-rwo.l-number 0;
+#X obj 199 14 hsl 128 15 -500 1000 0 0 \$2_1-rwo.s-slider \$2_1-rwo.s-slider-r speed 7 7 1 9 #fcfcfc #000000 #000000 0 0;
+#X floatatom 331 14 5 0 0 0 - \$2_1-rwo.s-number-r \$2_1-rwo.s-number 0;
+#X obj 19 34 hsl 128 15 0 1000 0 0 \$2_2-rwo.l-slider \$2_2-rwo.l-slider-r rec-length 7 7 1 9 #fcfcfc #000000 #000000 0 0;
+#X floatatom 151 34 5 0 0 0 - \$2_2-rwo.l-number-r \$2_2-rwo.l-number 0;
+#X obj 199 34 hsl 128 15 -500 1000 0 0 \$2_2-rwo.s-slider \$2_2-rwo.s-slider-r speed 7 7 1 9 #fcfcfc #000000 #000000 0 0;
+#X floatatom 331 34 5 0 0 0 - \$2_2-rwo.s-number-r \$2_2-rwo.s-number 0;
 #X restore 21 21 pd \$2-e-rwo-gui;
 #X msg 261 21 version 0.1.1;
 #X connect 0 0 4 0;

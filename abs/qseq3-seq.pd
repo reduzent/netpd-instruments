@@ -55,7 +55,7 @@
 #N canvas 648 402 172 152 NETPD 0;
 #X msg 9 13 version 0 0 7;
 #X restore 12 7 pd NETPD 2 0;
-#N canvas 993 377 462 421 cursor 1;
+#N canvas 993 377 462 421 cursor 0;
 #X obj 23 32 list prepend \$1 \$2 \$3;
 #N canvas 703 409 269 367 resolve.global.uid 0;
 #X obj 88 101 s \$1.seq.block;

@@ -249,14 +249,10 @@
 #X obj 288 176 netpd_f \$1 \$2/hfdamp 20;
 #X obj 249 156 netpd_f \$1 \$2/xfreq 3000;
 #N canvas 558 246 232 105 \$3-\$2 0;
-#X obj 9 13 nbx 5 14 0 99 0 0 \$1-\$2/level \$1-\$2/level level(dB)
-60 8 0 10 -262144 -1 -1 0 256;
-#X obj 9 33 nbx 5 14 0 100 0 0 \$1-\$2/liveness \$1-\$2/liveness liveness_0-100
-60 8 0 10 -262144 -1 -1 0 256;
-#X obj 9 53 nbx 5 14 30 8000 1 0 \$1-\$2/xfreq \$1-\$2/xfreq crossover_frequency(Hz)
-60 8 0 10 -262144 -1 -1 30 256;
-#X obj 9 73 nbx 5 14 0 100 0 0 \$1-\$2/hfdamp \$1-\$2/hfdamp HF_damp(%)
-60 8 0 10 -262144 -1 -1 0 256;
+#X obj 9 13 nbx 5 14 0 99 0 0 \$1-\$2/level \$1-\$2/level level(dB) 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 9 33 nbx 5 14 0 100 0 0 \$1-\$2/liveness \$1-\$2/liveness liveness_0-100 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 9 53 nbx 5 14 30 8000 1 0 \$1-\$2/xfreq \$1-\$2/xfreq crossover_frequency(Hz) 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 9 73 nbx 5 14 0 100 0 0 \$1-\$2/hfdamp \$1-\$2/hfdamp HF_damp(%) 60 8 0 10 #fcfcfc #000000 #000000 0 256;
 #X restore 11 8 pd \$3-\$2;
 #X connect 1 0 4 0;
 #X connect 1 1 5 0;

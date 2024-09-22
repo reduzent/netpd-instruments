@@ -243,7 +243,7 @@
 #X obj 9 286 pack f f;
 #X obj 9 308 t a b;
 #X msg 48 309 0;
-#N canvas 613 40 469 56 \$1-master 1;
+#N canvas 613 40 469 56 \$1-master 0;
 #X obj 9 2 cnv 15 450 42 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
 #X obj 11 4 cnv 15 446 38 empty empty empty 20 12 0 14 #b8b8b8 #404040 0;
 #X obj 13 6 cnv 15 442 34 empty empty empty 20 12 0 14 #606060 #404040 0;
@@ -255,7 +255,7 @@
 #X obj 322 23 nbx 5 15 50 75 0 0 \$1-shuffle \$1-shuffle % 49 8 0 11 #000000 #00fc04 #00fc04 0 256;
 #X obj 322 8 cnv 8 8 30 empty empty empty 20 12 0 14 #000000 #404040 0;
 #X obj 15 8 cnv 14 55 15 empty \$1-switch-top MASTER 3 8 0 11 #000000 #00ff00 0;
-#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000093 3 7 0 11 #000000 #00ff00 0;
+#X obj 15 24 cnv 14 55 14 empty \$1-switch-bottom 0000000 3 7 0 11 #000000 #00ff00 0;
 #X obj 71 10 vsl 18 25 0 1 0 0 \$1-mode-sl \$1-mode-sl empty 0 9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 71 8 cnv 15 18 30 empty \$1-mode-cover R 5 15 0 11 #000000 #00ff00 0;
 #X obj 90 8 cnv 15 26 30 empty empty empty 20 12 0 14 #000000 #404040 0;

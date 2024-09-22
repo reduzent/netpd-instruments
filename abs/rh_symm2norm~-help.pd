@@ -1,20 +1,17 @@
 #N canvas 452 43 397 294 10;
 #X obj 26 138 sig~;
-#X floatatom 26 107 5 0 0 0 - - -, f 5;
+#X floatatom 26 107 5 0 0 0 - - - 0;
 #X obj 27 244 snapshot~;
 #X obj 66 198 loadbang;
 #X obj 66 218 metro 50;
-#X floatatom 27 264 10 0 0 0 - - -, f 10;
+#X floatatom 27 264 10 0 0 0 - - - 0;
 #N canvas 594 125 308 61 NETPD 0;
 #X msg 17 19 version 0 0 1;
 #X restore 308 266 pd NETPD 2 0;
-#X text 19 65 Note: this abstraction suppresses DC with an interl hipass
-filter;
-#X text 16 7 rh_symm2norm~ - convert from symmetric to normalized range
-;
+#X text 19 65 Note: this abstraction suppresses DC with an interl hipass filter;
+#X text 16 7 rh_symm2norm~ - convert from symmetric to normalized range;
 #X obj 26 171 rh_symm2norm~;
-#X text 18 46 rh_norm2symm~ converts the range -1 to 1 to the range
-0 to 1;
+#X text 18 46 rh_norm2symm~ converts the range -1 to 1 to the range 0 to 1;
 #X text 115 263 see also:;
 #X obj 185 262 rh_norm2symm~;
 #X connect 0 0 9 0;

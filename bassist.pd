@@ -364,8 +364,7 @@
 #X obj 180 96 +~ 1;
 #X text 103 95 *;
 #X text 210 98 *;
-#X text 54 210 *) [+~ 1] is there because 4-point interpolation table
-read starts at index 1;
+#X text 54 210 *) [+~ 1] is there because 4-point interpolation table read starts at index 1;
 #X obj 394 141 tabwrite \$1-_;
 #X obj 159 120 tabread4~ \$1-_;
 #X obj 39 118 tabread4~ \$1-_;
@@ -525,27 +524,19 @@ read starts at index 1;
 #X connect 5 0 0 2;
 #X restore 33 339 pd dsp_________________;
 #X obj 118 195 * 200;
-#N canvas 590 416 166 122 \$1-bassist 1;
-#X obj 3 2 cnv 15 151 99 empty empty empty 20 12 0 14 #a8a8fc #404040
-0;
-#X obj 5 4 cnv 15 147 95 empty empty empty 15 38 1 12 #4848fc #d0d0fc
-0;
-#X obj 10 8 hsl 95 20 0 1 0 0 \$1-volume \$1-volume volume 0 7 1 10
-#ccccf8 #000000 #000000 0 1;
-#X obj 10 52 hsl 95 20 0 1 0 0 \$1-boes \$1-boes boesartigkeit 0 7
-1 10 #ccccfc #000000 #000000 0 1;
-#X obj 109 8 cnv 4 40 42 empty empty empty 20 12 0 14 #d4d4fc #404040
-0;
+#N canvas 590 416 166 122 \$1-bassist 0;
+#X obj 3 2 cnv 15 151 99 empty empty empty 20 12 0 14 #a8a8fc #404040 0;
+#X obj 5 4 cnv 15 147 95 empty empty empty 15 38 1 12 #4848fc #d0d0fc 0;
+#X obj 10 8 hsl 95 20 0 1 0 0 \$1-volume \$1-volume volume 0 7 1 10 #ccccf8 #000000 #000000 0 1;
+#X obj 10 52 hsl 95 20 0 1 0 0 \$1-boes \$1-boes boesartigkeit 0 7 1 10 #ccccfc #000000 #000000 0 1;
+#X obj 109 8 cnv 4 40 42 empty empty empty 20 12 0 14 #d4d4fc #404040 0;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$1-_ 61 float 0;
 #X coords 0 1 60 0 40 42 1;
 #X restore 109 8 graph;
-#X obj 10 30 hsl 95 20 0 1 0 0 \$1-detune \$1-detune detune 0 7 1 10
-#ccccfc #000000 #000000 0 1;
-#X obj 7 75 hradio 20 1 0 5 \$1-dwnsmpl \$1-dwnsmpl downsampling 2
-7 1 10 #ccccfc #000000 #000000 0;
-#X obj 112 52 hsl 35 20 0 1 0 0 \$0.unstep \$0.bla unstep 0 7 1 10
-#ccccfc #c4c4fc #000000 0 1;
+#X obj 10 30 hsl 95 20 0 1 0 0 \$1-detune \$1-detune detune 0 7 1 10 #ccccfc #000000 #000000 0 1;
+#X obj 7 75 hradio 20 1 0 5 \$1-dwnsmpl \$1-dwnsmpl downsampling 2 7 1 10 #ccccfc #000000 #000000 0;
+#X obj 112 52 hsl 35 20 0 1 0 0 \$0.unstep \$0.bla unstep 0 7 1 10 #ccccfc #c4c4fc #000000 0 1;
 #X restore 266 117 pd \$1-bassist;
 #X obj 264 21 netpd_head \$1 bassist;
 #X obj 221 213 netpd_f \$1 dwnsmpl 0;

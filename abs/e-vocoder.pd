@@ -1,10 +1,7 @@
 #N canvas 738 288 196 184 10;
 #N canvas 680 22 450 300 \$2-e-vocoder-gui 0;
-#X text 22 24 this is a port of the pdmtl fx.vocoder~ implemented for
-xi0n0ix. as far as i see there is no interesting parameter to control.
-therefore the gui is empty :);
-#X text 26 103 mabye we should start a mtllib to port some more of
-these great abs?;
+#X text 22 24 this is a port of the pdmtl fx.vocoder~ implemented for xi0n0ix. as far as i see there is no interesting parameter to control. therefore the gui is empty :);
+#X text 26 103 mabye we should start a mtllib to port some more of these great abs?;
 #X restore 21 20 pd \$2-e-vocoder-gui;
 #N canvas 384 25 332 271 e-vocoder 0;
 #X obj 59 69 r~ \$2-l;
@@ -51,12 +48,7 @@ these great abs?;
 #X text 115 159 filter input;
 #X text 438 282 control source;
 #X text 434 332 Fourier transform;
-#X text 28 17 Internal workings of the timbre stamping algorithm. First
-the "filter input" is treated as in the compressor patch \, multiplying
-each channel amplitude by one over its modulus (but limited by the
-"squelch" parameter.) It is then multiplied by the modulus of the channel
-amplitude for the control source (which is Fourier analyzed in parallel
-with the filter input.);
+#X text 28 17 Internal workings of the timbre stamping algorithm. First the "filter input" is treated as in the compressor patch \, multiplying each channel amplitude by one over its modulus (but limited by the "squelch" parameter.) It is then multiplied by the modulus of the channel amplitude for the control source (which is Fourier analyzed in parallel with the filter input.);
 #X text 145 422 multiply the two amplitude;
 #X text 143 439 factors (for compression;
 #X text 145 455 and to apply new timbre);
@@ -129,9 +121,7 @@ with the filter input.);
 #X obj 330 105 r window-hz;
 #X msg 382 130 0;
 #X obj 330 131 t f b;
-#X text 15 8 calculate Hann window table (variable window size) and
-constants window-hz (fundamental frequency of analysis) \, window-sec
-and window-msec (analysis window size in seconds and msec).;
+#X text 15 8 calculate Hann window table (variable window size) and constants window-hz (fundamental frequency of analysis) \, window-sec and window-msec (analysis window size in seconds and msec).;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -178,11 +168,9 @@ and window-msec (analysis window size in seconds and msec).;
 #X obj 122 417 +;
 #X obj 122 449 outlet;
 #X obj 301 263 f 12;
-#X text 301 113 minimum ( Each of the notes in the scale - the current
-input note );
+#X text 301 113 minimum ( Each of the notes in the scale - the current input note );
 #X text 239 417 + the current input note;
-#X text 47 491 Need abs() to make it more accurate (such as rint()
-but for floats);
+#X text 47 491 Need abs() to make it more accurate (such as rint() but for floats);
 #X text 317 298 Differences;
 #X obj 218 449 outlet;
 #X obj 173 223 expr fmod($f1 \, 12);

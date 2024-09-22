@@ -149,32 +149,23 @@
 #X obj 298 200 t b a;
 #X obj 298 226 list append;
 #X obj 298 319 fl_filterplot pd-\$0.plot.display 403 181 68;
-#N canvas 878 300 478 96 \$3-\$2 1;
-#X obj 8 9 cnv 15 460 72 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 21 11 hsl 180 20 0 1 0 0 \$1-\$2/frequency \$1-\$2/frequency
-frequency 0 11 0 12 -98321 -258113 -261241 0 1;
-#X obj 21 35 hsl 180 20 0 1 0 0 \$1-\$2/slope \$1-\$2/slope slope 0
-11 0 12 -98321 -258113 -261241 0 1;
-#X obj 203 36 cnv 15 60 18 empty \$0.slope.display 90% 4 10 0 12 -98321
--261241 0;
-#X obj 203 10 cnv 18 60 20 empty \$0.frequency.display 432Hz 4 10 0
-12 -98321 -261241 0;
-#X obj 21 59 hsl 180 20 0 1 0 0 \$1-\$2/gain \$1-\$2/gain gain 0 11
-0 12 -98321 -258113 -261241 0 1;
-#X obj 203 60 cnv 14 60 18 empty \$0.gain.display 6dB 4 10 0 12 -98321
--261241 0;
-#X obj 8 60 cnv 10 10 18 empty empty empty 4 10 0 12 -98321 -1 0;
+#N canvas 878 300 478 96 \$3-\$2 0;
+#X obj 8 9 cnv 15 460 72 empty empty empty 20 12 0 14 #000000 #404040 0;
+#X obj 21 11 hsl 180 20 0 1 0 0 \$1-\$2/frequency \$1-\$2/frequency frequency 0 11 0 12 #600040 #fc0400 #fcc4e0 0 1;
+#X obj 21 35 hsl 180 20 0 1 0 0 \$1-\$2/slope \$1-\$2/slope slope 0 11 0 12 #600040 #fc0400 #fcc4e0 0 1;
+#X obj 203 36 cnv 15 60 18 empty \$0.slope.display 90% 4 10 0 12 #600040 #fcc4e0 0;
+#X obj 203 10 cnv 18 60 20 empty \$0.frequency.display 432Hz 4 10 0 12 #600040 #fcc4e0 0;
+#X obj 21 59 hsl 180 20 0 1 0 0 \$1-\$2/gain \$1-\$2/gain gain 0 11 0 12 #600040 #fc0400 #fcc4e0 0 1;
+#X obj 203 60 cnv 14 60 18 empty \$0.gain.display 6dB 4 10 0 12 #600040 #fcc4e0 0;
+#X obj 8 60 cnv 10 10 18 empty empty empty 4 10 0 12 #600040 #000000 0;
 #N canvas 860 465 450 300 \$0.plot.display 0;
 #X coords 0 0 180 68 180 68 2 30 30;
 #X restore 287 11 pd \$0.plot.display;
-#X obj 265 12 vsl 20 29 0 127 0 0 \$0.mode.switch \$0.mode.switch.r
-fr 3 15 0 12 -98321 -65561 -261241 0 1;
-#X obj 265 48 vsl 20 29 0 127 0 0 \$0.plot.switch \$0.plot.switch.r
-⊟ 3 15 0 24 -98321 -65561 -261241 0 1;
-#X obj 287 11 cnv 15 180 68 empty empty fl-loshv 4 16 0 28 -261241
--219567 0;
-#X obj 8 36 cnv 10 10 18 empty empty empty 4 10 0 12 -98321 -1 0;
-#X obj 8 12 cnv 10 10 18 empty empty empty 4 10 0 12 -98321 -1 0;
+#X obj 265 12 vsl 20 29 0 127 0 0 \$0.mode.switch \$0.mode.switch.r fr 3 15 0 12 #600040 #400060 #fcc4e0 0 1;
+#X obj 265 48 vsl 20 29 0 127 0 0 \$0.plot.switch \$0.plot.switch.r ⊟ 3 15 0 24 #600040 #400060 #fcc4e0 0 1;
+#X obj 287 11 cnv 15 180 68 empty empty fl-loshv 4 16 0 28 #fcc4e0 #d498b8 0;
+#X obj 8 36 cnv 10 10 18 empty empty empty 4 10 0 12 #600040 #000000 0;
+#X obj 8 12 cnv 10 10 18 empty empty empty 4 10 0 12 #600040 #000000 0;
 #X restore 7 12 pd \$3-\$2;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;

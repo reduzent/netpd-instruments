@@ -1,19 +1,18 @@
 #N canvas 359 43 433 333 10;
-#X floatatom 21 99 5 0 0 0 - - -, f 5;
+#X floatatom 21 99 5 0 0 0 - - - 0;
 #X obj 21 116 sig~;
-#X floatatom 90 99 5 0 0 0 - - -, f 5;
+#X floatatom 90 99 5 0 0 0 - - - 0;
 #X obj 90 116 sig~;
 #X obj 132 176 loadbang;
 #X obj 132 196 metro 50;
 #X obj 20 234 snapshot~;
 #X obj 90 234 snapshot~;
-#X floatatom 20 254 5 0 0 0 - - -, f 5;
-#X floatatom 90 254 5 0 0 0 - - -, f 5;
+#X floatatom 20 254 5 0 0 0 - - - 0;
+#X floatatom 90 254 5 0 0 0 - - - 0;
 #N canvas 517 230 322 63 NETPD 0;
 #X msg 15 15 version 0 0 1;
 #X restore 332 301 pd NETPD 2 0;
-#X text 10 10 rh_pol2cart~ - polar to cartesian coordinates converter
-(signal version);
+#X text 10 10 rh_pol2cart~ - polar to cartesian coordinates converter (signal version);
 #X text 57 99 mag;
 #X text 127 99 rho;
 #X text 55 254 x;

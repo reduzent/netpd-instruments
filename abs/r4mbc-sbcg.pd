@@ -77,55 +77,31 @@
 #X msg 518 432 label \$1;
 #X obj 518 408 makefilename %4ddB;
 #X obj 518 454 s \$0.damp.display;
-#X obj 52 147 tgl 20 0 \$1-\$2/solo\$4 \$1-\$2/solo\$4 empty 17 7 0
-10 -262144 -1 -1 0 1;
-#X obj 72 147 tgl 20 0 \$1-\$2/solo\$4 \$1-\$2/solo\$4 empty 17 7 0
-10 -262144 -1 -1 0 1;
-#X obj 82 147 tgl 20 0 \$1-\$2/solo\$4 \$1-\$2/solo\$4 empty 17 7 0
-10 -262144 -1 -1 0 1;
-#X obj 53 47 nbx 5 18 -60 0 0 0 \$1-\$2/threshold\$4 \$1-\$2/threshold\$4
-empty 0 -8 0 9 -262144 -1 -1 -15.126 256;
-#X obj 53 67 nbx 5 18 1 100 1 0 \$1-\$2/ratio\$4 \$1-\$2/ratio\$4 empty
-0 -8 0 9 -262144 -1 -1 2 200;
-#X obj 53 87 nbx 5 18 1 1000 1 0 \$1-\$2/attack\$4 \$1-\$2/attack\$4
-empty 0 -8 0 9 -262144 -1 -1 30 256;
-#X obj 53 107 nbx 5 18 10 9999 1 0 \$1-\$2/release\$4 \$1-\$2/release\$4
-empty 0 -8 0 9 -262144 -1 -1 60 256;
-#X obj 53 127 nbx 5 18 -24 24 0 0 \$1-\$2/gain\$4 \$1-\$2/gain\$4 empty
-0 -8 0 9 -262144 -1 -1 0 256;
-#X obj 31 46 vsl 10 120 -60 0 0 0 \$1-\$2/threshold\$4 \$1-\$2/threshold\$4
-empty 0 -9 0 10 -262144 -1 -1 8900 1;
-#X obj 30 30 cnv 6 74 154 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 42 47 cnv 3 3 120 empty empty empty 20 12 0 14 -261057 -66577
-0;
-#X obj 42 43 cnv 3 3 90 empty \$0.level.gui empty 20 12 0 14 -66577
--66577 0;
-#X obj 47 47 cnv 3 3 120 empty empty empty 20 12 0 14 -66577 -66577
-0;
-#X obj 47 43 cnv 3 3 3 empty \$0.damp.gui empty 20 12 0 14 -258113
--66577 0;
-#X obj 32 169 cnv 5 70 13 empty \$0.level.display empty 0 7 0 10 -66577
--261441 0;
-#X obj 32 47 cnv 3 8 120 empty empty empty 20 12 0 14 -4034 -66577
-0;
-#X obj 32 43 cnv 3 8 33 empty \$0.threshold.gui empty 20 12 0 14 -66577
--66577 0;
-#X obj 32 43 cnv 3 18 3 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 32 32 cnv 5 70 13 empty \$0.damp.display    0dB 0 7 0 10 -66577
--258113 0;
-#X obj 52 47 cnv 5 50 18 empty \$0.threshold.display  -15dB 4 9 0 10
--66577 -4034 0;
-#X obj 52 67 cnv 5 50 18 empty \$0.ratio.display 1:2 4 9 0 10 -66577
--4034 0;
-#X obj 52 87 cnv 5 50 18 empty \$0.attack.display   30ms 4 9 0 10 -66577
--4034 0;
-#X obj 52 107 cnv 5 50 18 empty \$0.release.display   60ms 4 9 0 10
--66577 -4034 0;
-#X obj 52 127 cnv 5 50 18 empty \$0.gain.display    0dB 4 9 0 10 -66577
--4034 0;
-#X obj 52 147 cnv 5 50 20 empty \$0.solo.display S 21 9 0 10 -66577
--249601 0;
+#X obj 52 147 tgl 20 0 \$1-\$2/solo\$4 \$1-\$2/solo\$4 empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 72 147 tgl 20 0 \$1-\$2/solo\$4 \$1-\$2/solo\$4 empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 82 147 tgl 20 0 \$1-\$2/solo\$4 \$1-\$2/solo\$4 empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 53 47 nbx 5 18 -60 0 0 0 \$1-\$2/threshold\$4 \$1-\$2/threshold\$4 empty 0 -8 0 9 #fcfcfc #000000 #000000 0 256;
+#X obj 53 67 nbx 5 18 1 100 1 0 \$1-\$2/ratio\$4 \$1-\$2/ratio\$4 empty 0 -8 0 9 #fcfcfc #000000 #000000 0 200;
+#X obj 53 87 nbx 5 18 1 1000 1 0 \$1-\$2/attack\$4 \$1-\$2/attack\$4 empty 0 -8 0 9 #fcfcfc #000000 #000000 0 256;
+#X obj 53 107 nbx 5 18 10 9999 1 0 \$1-\$2/release\$4 \$1-\$2/release\$4 empty 0 -8 0 9 #fcfcfc #000000 #000000 0 256;
+#X obj 53 127 nbx 5 18 -24 24 0 0 \$1-\$2/gain\$4 \$1-\$2/gain\$4 empty 0 -8 0 9 #fcfcfc #000000 #000000 0 256;
+#X obj 31 46 vsl 10 120 -60 0 0 0 \$1-\$2/threshold\$4 \$1-\$2/threshold\$4 empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 30 30 cnv 6 74 154 empty empty empty 20 12 0 14 #000000 #404040 0;
+#X obj 42 47 cnv 3 3 120 empty empty empty 20 12 0 14 #fcbc00 #404040 0;
+#X obj 42 43 cnv 3 3 90 empty \$0.level.gui empty 20 12 0 14 #404040 #404040 0;
+#X obj 47 47 cnv 3 3 120 empty empty empty 20 12 0 14 #404040 #404040 0;
+#X obj 47 43 cnv 3 3 3 empty \$0.damp.gui empty 20 12 0 14 #fc0400 #404040 0;
+#X obj 32 169 cnv 5 70 13 empty \$0.level.display empty 0 7 0 10 #404040 #fcd400 0;
+#X obj 32 47 cnv 3 8 120 empty empty empty 20 12 0 14 #00fc04 #404040 0;
+#X obj 32 43 cnv 3 8 33 empty \$0.threshold.gui empty 20 12 0 14 #404040 #404040 0;
+#X obj 32 43 cnv 3 18 3 empty empty empty 20 12 0 14 #000000 #404040 0;
+#X obj 32 32 cnv 5 70 13 empty \$0.damp.display 0dB 0 7 0 10 #404040 #fc0400 0;
+#X obj 52 47 cnv 5 50 18 empty \$0.threshold.display -15dB 4 9 0 10 #404040 #00fc04 0;
+#X obj 52 67 cnv 5 50 18 empty \$0.ratio.display 1:2 4 9 0 10 #404040 #00fc04 0;
+#X obj 52 87 cnv 5 50 18 empty \$0.attack.display 30ms 4 9 0 10 #404040 #00fc04 0;
+#X obj 52 107 cnv 5 50 18 empty \$0.release.display 60ms 4 9 0 10 #404040 #00fc04 0;
+#X obj 52 127 cnv 5 50 18 empty \$0.gain.display 0dB 4 9 0 10 #404040 #00fc04 0;
+#X obj 52 147 cnv 5 50 20 empty \$0.solo.display S 21 9 0 10 #404040 #f0f000 0;
 #X obj 28 253 route float set;
 #X obj 28 231 r \$1-\$2/solo\$4;
 #X obj 28 458 s \$0.solo.display;
@@ -146,8 +122,7 @@ empty 0 -9 0 10 -262144 -1 -1 8900 1;
 #X msg 726 212 symbol \$1\$1-∞dB;
 #X obj 726 191 makefilename %c;
 #X msg 726 169 32;
-#X obj 513 209 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 513 209 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 513 229 label empty;
 #X text 534 208 <- before save;
 #X obj 396 259 + 100;

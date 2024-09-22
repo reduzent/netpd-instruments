@@ -128,22 +128,13 @@
 #X restore 288 159 pd NETPD 2 0;
 #X obj 51 194 outlet~;
 #N canvas 836 538 566 120 \$3-\$2 0;
-#X obj 4 13 cnv 15 137 46 empty empty empty 20 -3 0 14 #000000 #3c50fc
-0;
-#X obj 9 29 hsl 128 14 -30 0 0 0 \$1-\$2/level \$1-\$2/level out\ ceiling:\ 0dB
-8 7 1 8 #d0bc44 #000000 #fcfcfc 0 1;
-#X obj 9 15 hsl 128 14 -30 0 0 0 \$1-\$2/threshold \$1-\$2/threshold
-threshold:\ 0dB 8 7 1 8 #bca844 #000000 #fcfcfc 0 1;
-#X obj 49 44 cnv 1 1 12 empty \$0-dumping empty 20 12 0 14 #dcdc78
-#404040 0;
-#X obj 6 43 tgl 14 0 \$0-vissw-s \$0-vissw-r empty 16 7 1 7 #dcdc78
-#000000 #fcfcfc 0 1;
-#X text 169 11 NOTE: this used to be a limiter based on zexy's [limiter~]
-external. I decided to get rid of the zexy dependency for netpd. Now
-\, this is just a plain copy of rlimit. It uses the same params \,
-thus is largely compatible.;
-#X text 169 70 Don't use it. Use rlimit instead. This will be removed
-in the future.;
+#X obj 4 13 cnv 15 137 46 empty empty empty 20 -3 0 14 #000000 #3c50fc 0;
+#X obj 9 29 hsl 128 14 -30 0 0 0 \$1-\$2/level \$1-\$2/level out\ ceiling:\ 0dB 8 7 1 8 #d0bc44 #000000 #fcfcfc 0 1;
+#X obj 9 15 hsl 128 14 -30 0 0 0 \$1-\$2/threshold \$1-\$2/threshold threshold:\ 0dB 8 7 1 8 #bca844 #000000 #fcfcfc 0 1;
+#X obj 49 44 cnv 1 1 12 empty \$0-dumping empty 20 12 0 14 #dcdc78 #404040 0;
+#X obj 6 43 tgl 14 0 \$0-vissw-s \$0-vissw-r empty 16 7 1 7 #dcdc78 #000000 #fcfcfc 0 1;
+#X text 169 11 NOTE: this used to be a limiter based on zexy's [limiter~] external. I decided to get rid of the zexy dependency for netpd. Now \, this is just a plain copy of rlimit. It uses the same params \, thus is largely compatible.;
+#X text 169 70 Don't use it. Use rlimit instead. This will be removed in the future.;
 #X restore 288 136 pd \$3-\$2;
 #X msg 87 86 threshold \$1;
 #X msg 145 113 outceiling \$1;

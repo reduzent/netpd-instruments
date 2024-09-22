@@ -79,8 +79,7 @@
 #X connect 25 0 26 0;
 #X connect 26 0 4 0;
 #X restore 22 344 pd bandlimited_triangle_sinesum;
-#X text 215 17 for synthesizing a triangle only odd numbered of harmonics
-;
+#X text 215 17 for synthesizing a triangle only odd numbered of harmonics;
 #X obj 87 312 s pd-lookup-tables-ntriangle;
 #X obj 138 220 makefilename NBLTRIANGLE%d;
 #X obj 22 33 r \$0-create_tables;

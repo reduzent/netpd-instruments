@@ -1,5 +1,5 @@
 #N canvas 450 387 587 154 10;
-#N canvas 1064 282 185 109 NETPD 1;
+#N canvas 1064 282 185 109 NETPD 0;
 #N canvas 1037 327 359 288 abslist 0;
 #X msg 6 9 mx-fx-list;
 #X msg 8 40 fl-ap;
@@ -30,8 +30,6 @@
 #X text 23 89 for a more detailed description visit:;
 #X text 27 111 http://www.netpd.org/filtlib;
 #X text 29 18 A suite of filters based on the Audio-EQ-Cookbook:;
-#X text 24 39 http://shepazu.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html
-;
+#X text 24 39 http://shepazu.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html;
 #X restore 16 39 pd \$1-filtlib;
-#X obj 16 61 mx-fx-list \$1 filtlib fl-ap fl-bp fl-hishv fl-loshv fl-notch
-fl-peak fl-rhip fl-rlop fl-res;
+#X obj 16 61 mx-fx-list \$1 filtlib fl-ap fl-bp fl-hishv fl-loshv fl-notch fl-peak fl-rhip fl-rlop fl-res;

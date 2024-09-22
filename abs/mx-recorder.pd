@@ -526,7 +526,7 @@
 #X restore 24 38 pd ablist;
 #X msg 19 9 version 0 1 0;
 #X restore 184 19 pd NETPD 2 0;
-#N canvas 1355 28 393 57 \$1-mx-recorder 1;
+#N canvas 1355 28 393 57 \$1-mx-recorder 0;
 #X obj 5 8 cnv 15 381 38 empty empty sdafdsafdsa 20 12 0 14 #00fc04 #404040 0;
 #X obj 7 10 cnv 15 377 34 empty empty empty 20 12 0 14 #000000 #404040 0;
 #X obj 115 29 hsl 55 12 0 1 0 0 \$0.autostart.s \$0.autostart.r empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
@@ -544,7 +544,7 @@
 #X obj 41 12 cnv 12 341 14 empty empty empty 20 12 0 14 #00fc04 #404040 0;
 #X obj 42 13 cnv 12 339 12 empty \$0.file.label <select_file> 3 6 0 10 #000000 #008000 0;
 #X obj 286 28 cnv 12 80 14 empty empty empty 20 12 0 14 #00fc04 #404040 0;
-#X obj 287 29 cnv 12 78 12 empty \$0.clock.label 00:00:06.783 3 6 0 10 #000000 #008000 0;
+#X obj 287 29 cnv 12 78 12 empty \$0.clock.label 00:00:00.000 3 6 0 10 #000000 #008000 0;
 #X obj 368 28 cnv 12 14 14 empty empty empty 20 12 0 14 #00fc04 #404040 0;
 #X obj 369 29 cnv 12 12 12 empty \$0.indicator ● 2 5 0 15 #000000 #000000 0;
 #X obj 41 28 netpd-gui-dropdown \$0.clock.select 68 14 10 80 80 0 0 555 887;

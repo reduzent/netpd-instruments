@@ -2,10 +2,7 @@
 #N canvas 624 75 228 103 NETPD 0;
 #X msg 12 8 version 0 0 4;
 #X restore 10 14 pd NETPD 2 0;
-#X text 101 11 copied from jon~ - Reverb abstraction based on "Simplified
-plate-class reverberation topology in the style of Griesinger" from
-the article "Effect Design \, Part 1: Reverberator and Other Filters"
-by Jon Dattorro.;
+#X text 101 11 copied from jon~ - Reverb abstraction based on "Simplified plate-class reverberation topology in the style of Griesinger" from the article "Effect Design \, Part 1: Reverberator and Other Filters" by Jon Dattorro.;
 #N canvas 190 423 608 330 output 0;
 #X obj 349 170 pack 0 100;
 #X obj 349 193 line~;
@@ -87,8 +84,7 @@ by Jon Dattorro.;
 #X msg 33 238 decay \$1;
 #X msg 125 533 excursion \$1;
 #X obj 33 547 outlet;
-#X obj 257 201 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
-#fcfcfc #000000 #000000 0 256;
+#X obj 257 201 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 39 82 netpd_f \$1 \$2/bandwidth 0.5;
 #X obj 45 145 netpd_f \$1 \$2/damping 0.5;
 #X obj 33 213 netpd_f \$1 \$2/decay 0.5;
@@ -140,10 +136,8 @@ by Jon Dattorro.;
 #X connect 5 0 3 0;
 #X connect 5 1 3 1;
 #X restore 343 258 pd dry;
-#X obj 343 237 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
-#X obj 343 293 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#X obj 343 237 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 1 1;
+#X obj 343 293 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 1 1;
 #N canvas 0 50 470 319 wet 0;
 #X obj 75 73 inlet;
 #X obj 162 43 inlet;
@@ -158,12 +152,9 @@ by Jon Dattorro.;
 #X connect 5 0 2 0;
 #X connect 5 1 2 1;
 #X restore 343 313 pd wet;
-#X obj 386 237 nbx 3 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
-#fcfcfc #000000 #000000 100 256;
-#X obj 386 293 nbx 3 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
-#fcfcfc #000000 #000000 100 256;
-#X obj 109 290 nbx 3 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
-#fcfcfc #000000 #000000 100 256;
+#X obj 386 237 nbx 3 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 100 256;
+#X obj 386 293 nbx 3 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 100 256;
+#X obj 109 290 nbx 3 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 100 256;
 #N canvas 103 292 479 374 jon 0;
 #X obj 24 32 inlet~;
 #X obj 27 282 outlet~;
@@ -856,8 +847,7 @@ by Jon Dattorro.;
 #X obj 44 29 inlet;
 #X obj 44 158 s \$0-predelay;
 #X obj 161 158 s \$0-bandwidth;
-#X obj 44 205 route input_diffusion1 input_diffusion2 decay_diffusion1
-decay_diffusion2;
+#X obj 44 205 route input_diffusion1 input_diffusion2 decay_diffusion1 decay_diffusion2;
 #X obj 44 65 route predelay bandwidth damping decay;
 #X obj 285 157 s \$0-damping;
 #X obj 398 158 s \$0-decay;
@@ -1085,29 +1075,18 @@ decay_diffusion2;
 #X obj 57 89 inlet~;
 #X obj 52 346 outlet~;
 #X obj 104 345 outlet~;
-#N canvas 642 23 161 187 \$3-\$2 1;
-#X obj 5 5 cnv 15 150 175 empty empty empty 20 12 0 14 #dcdcdc #404040
-0;
-#X obj 16 59 hsl 128 15 0.01 1 1 0 \$1-\$2/damping \$1-\$2/damping
-damping -2 8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 16 74 hsl 128 15 0 1 0 0 \$1-\$2/decay \$1-\$2/decay decay -2
-8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 16 29 hsl 128 15 0 1 0 0 \$1-\$2/predelay \$1-\$2/predelay predelay
--2 8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 16 44 hsl 128 15 0.01 1 1 0 \$1-\$2/bandwidth \$1-\$2/bandwidth
-bandwidth -2 8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 16 104 hsl 128 15 0 1 0 0 \$1-\$2/input_diffusion_2 \$1-\$2/input_diffusion_2
-input_diffusion_2 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 16 89 hsl 128 15 0 1 0 0 \$1-\$2/input_diffusion_1 \$1-\$2/input_diffusion_1
-input_diffusion_1 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 16 134 hsl 128 15 0 1 0 0 \$1-\$2/decay_diffusion_2 \$1-\$2/decay_diffusion_2
-decay_diffusion_2 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 16 119 hsl 128 15 0 1 0 0 \$1-\$2/decay_diffusion_1 \$1-\$2/decay_diffusion_1
-decay_diffusion_1 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 16 149 hsl 128 15 0 1 0 0 \$1-\$2/excursion \$1-\$2/excursion
-excursion -2 8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 16 14 hsl 128 15 0 1 0 0 \$1-\$2/drywet \$1-\$2/drywet dry_wet
--2 8 0 10 #fcfcfc #000000 #000000 0 1;
+#N canvas 642 23 161 187 \$3-\$2 0;
+#X obj 5 5 cnv 15 150 175 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
+#X obj 16 59 hsl 128 15 0.01 1 1 0 \$1-\$2/damping \$1-\$2/damping damping -2 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 16 74 hsl 128 15 0 1 0 0 \$1-\$2/decay \$1-\$2/decay decay -2 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 16 29 hsl 128 15 0 1 0 0 \$1-\$2/predelay \$1-\$2/predelay predelay -2 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 16 44 hsl 128 15 0.01 1 1 0 \$1-\$2/bandwidth \$1-\$2/bandwidth bandwidth -2 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 16 104 hsl 128 15 0 1 0 0 \$1-\$2/input_diffusion_2 \$1-\$2/input_diffusion_2 input_diffusion_2 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 16 89 hsl 128 15 0 1 0 0 \$1-\$2/input_diffusion_1 \$1-\$2/input_diffusion_1 input_diffusion_1 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 16 134 hsl 128 15 0 1 0 0 \$1-\$2/decay_diffusion_2 \$1-\$2/decay_diffusion_2 decay_diffusion_2 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 16 119 hsl 128 15 0 1 0 0 \$1-\$2/decay_diffusion_1 \$1-\$2/decay_diffusion_1 decay_diffusion_1 -2 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 16 149 hsl 128 15 0 1 0 0 \$1-\$2/excursion \$1-\$2/excursion excursion -2 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 16 14 hsl 128 15 0 1 0 0 \$1-\$2/drywet \$1-\$2/drywet dry_wet -2 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X restore 10 33 pd \$3-\$2;
 #X connect 2 0 16 0;
 #X connect 2 1 17 0;

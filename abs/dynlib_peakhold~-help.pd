@@ -2,15 +2,13 @@
 #N canvas 659 72 327 81 NETPD 0;
 #X msg 15 16 version 0 1 0;
 #X restore 270 187 pd NETPD 2 0;
-#X obj 19 38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 19 38 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 230 217 2018 \, Roman Haefeli;
 #X obj 72 145 dynlib_peakhold~;
 #X obj 49 97 rh_impulse~;
 #X obj 49 119 *~ 0.7;
 #X obj 47 222 tabwrite~ \$0.graph1;
-#X text 16 13 [dynlib_peakhold~] - holds peak for specified duration
-;
+#X text 16 13 [dynlib_peakhold~] - holds peak for specified duration;
 #X text 142 27 given in samples;
 #X text 205 74 inlet0: signal;
 #X text 199 114 outlet0: peakholded signal;
@@ -25,7 +23,7 @@
 #X array \$0.graph2 300 float 0;
 #X coords 0 1 300 0 300 50 1 0 0;
 #X restore 24 314 graph;
-#X floatatom 165 97 5 0 0 0 - - -, f 5;
+#X floatatom 165 97 5 0 0 0 - - - 0;
 #X obj 49 70 del 0.5;
 #X text 188 232 Code from Dario Sanfilippo;
 #X connect 1 0 13 0;

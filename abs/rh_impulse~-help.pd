@@ -3,8 +3,7 @@
 #X msg 15 16 version 0 1 0;
 #X restore 304 186 pd NETPD 2 0;
 #X obj 26 158 rh_impulse~;
-#X obj 26 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 26 74 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 205 74 inlet0: bang;
 #X text 287 286 2018 \, Roman Haefeli;
 #X obj 26 212 dac~;

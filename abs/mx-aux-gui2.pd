@@ -2,8 +2,7 @@
 #N canvas 831 123 261 231 NETPD 0;
 #X msg 18 12 version 0 0 1;
 #X restore 121 29 pd NETPD 2 0;
-#X obj 20 20 nbx 3 11 0 32 0 0 \$0.ch.ns \$0.ch.nr empty 0 -8 0 4 -262144
--1 -1 0 256;
+#X obj 20 20 nbx 3 11 0 32 0 0 \$0.ch.ns \$0.ch.nr empty 0 -8 0 4 #fcfcfc #000000 #000000 0 256;
 #N canvas 968 379 335 467 aux.ch 0;
 #X obj 10 439 s \$0.ch.r;
 #X msg 10 414 label \$1;
@@ -77,10 +76,7 @@
 #X connect 4 0 1 0;
 #X connect 5 0 0 0;
 #X restore 121 87 pd aux.level;
-#X obj 42 20 hsl 35 11 0 1 0 0 \$1-\$2/level \$1-\$2/level empty -2
--8 0 10 -99865 -99865 -1 0 1;
-#X obj 23 20 hsl 14 11 1 1 0 0 \$1-NULL \$0.ch.r empty 2 6 1 9 -99865
--99865 -4034 0 1;
-#X obj 40 21 cnv 1 1 9 empty \$0.level.r empty 20 12 0 14 -4034 -1
-0;
+#X obj 42 20 hsl 35 11 0 1 0 0 \$1-\$2/level \$1-\$2/level empty -2 -8 0 10 #606060 #606060 #000000 0 1;
+#X obj 23 20 hsl 14 11 1 1 0 0 \$1-NULL \$0.ch.r empty 2 6 1 9 #606060 #606060 #00fc04 0 1;
+#X obj 40 21 cnv 1 1 9 empty \$0.level.r empty 20 12 0 14 #00fc04 #000000 0;
 #X coords 0 -1 1 1 59 11 2 20 20;

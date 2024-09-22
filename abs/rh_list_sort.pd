@@ -24,17 +24,12 @@
 #X obj 290 283 * 2;
 #X msg 290 305 resize \$1;
 #X obj 290 327 s \$0-queue-table;
-#X text 401 327 <== resize list table so that it can hold the lists.
-Size of queue table needs to be about 2 times this in the worst case
-(2 values for each partition \, with a worst case of n-1 partitions
-for a list of size n). This could be more conservative since the size
-is based on the list before the floats were filtered out.;
+#X text 401 327 <== resize list table so that it can hold the lists. Size of queue table needs to be about 2 times this in the worst case (2 values for each partition \, with a worst case of n-1 partitions for a list of size n). This could be more conservative since the size is based on the list before the floats were filtered out.;
 #N canvas 0 22 583 323 \$0-filter-write 0;
 #X text 20 20 Filter non-floats quicker than [list-filter];
 #X obj 109 69 inlet;
 #X obj 201 204 print;
-#X msg 201 174 list-quicksort: Warning: dropped a non-number from list
-;
+#X msg 201 174 list-quicksort: Warning: dropped a non-number from list;
 #X obj 158 238 outlet;
 #X obj 121 207 f;
 #X obj 149 207 + 1;
@@ -149,15 +144,10 @@ is based on the list before the floats were filtered out.;
 #X obj 246 398 r \$0-logic-spigots;
 #X msg 185 398 0;
 #X msg 105 398 0;
-#X text 376 396 <== if median is doubled \, only bang out one of them.
-;
+#X text 376 396 <== if median is doubled \, only bang out one of them.;
 #X obj 368 314 t b b;
 #X obj 368 493 outlet;
-#X text 396 177 <== First "sort" right and center \, then "sort" left
-and right \, then "sort" left and center. Median will be sent to the
-trigger. Another option might be to actually sort them in the table
-\, but this probably takes more steps in Pd since reading a table requires
-an object.;
+#X text 396 177 <== First "sort" right and center \, then "sort" left and right \, then "sort" left and center. Median will be sent to the trigger. Another option might be to actually sort them in the table \, but this probably takes more steps in Pd since reading a table requires an object.;
 #X connect 0 0 18 0;
 #X connect 1 0 5 0;
 #X connect 1 0 6 0;
@@ -242,19 +232,9 @@ an object.;
 #X obj 137 340 pack 0 0;
 #X obj 38 290 sel 0;
 #X obj 137 361 s \$0-swap;
-#X text 215 289 <== If the median is the right element \, do nothing
-\, otherwise swap the median element with the right element.;
-#X text 36 15 Quicksort algorithm runs quicker on average (with evenly
-distributed lists) if pivot is chosen as the median of three elements
-of a partition to be sorted. The upshot is that the same method can
-be used to manually sort partitions of 3 elements or less. This step
-isn't needed for partitions of size four \, since the next round will
-be manually sorted no matter what. This step can be sabotaged with
-specialized "median-of-three killer" lists \, which don't arise in
-everyday circumstances.;
-#X text 235 212 <== Find the median of the left \, middle \, and right
-elements and pass the index. Any three indices will do \, but using
-these three might lead to fewer total swaps.;
+#X text 215 289 <== If the median is the right element \, do nothing \, otherwise swap the median element with the right element.;
+#X text 36 15 Quicksort algorithm runs quicker on average (with evenly distributed lists) if pivot is chosen as the median of three elements of a partition to be sorted. The upshot is that the same method can be used to manually sort partitions of 3 elements or less. This step isn't needed for partitions of size four \, since the next round will be manually sorted no matter what. This step can be sabotaged with specialized "median-of-three killer" lists \, which don't arise in everyday circumstances.;
+#X text 235 212 <== Find the median of the left \, middle \, and right elements and pass the index. Any three indices will do \, but using these three might lead to fewer total swaps.;
 #X connect 0 0 3 0;
 #X connect 1 0 5 0;
 #X connect 2 0 4 1;
@@ -295,8 +275,7 @@ these three might lead to fewer total swaps.;
 #X obj 169 196 t f f f;
 #X obj 289 263 <;
 #X obj 304 235 + 1;
-#X text 275 45 This decrements a pointer from the right side until
-it finds a value less than the pivot.;
+#X text 275 45 This decrements a pointer from the right side until it finds a value less than the pivot.;
 #X obj 38 305 <;
 #N canvas 547 408 584 529 >or<? 0;
 #X obj 40 52 inlet;
@@ -394,8 +373,7 @@ it finds a value less than the pivot.;
 #X obj 304 212 - 1;
 #X obj 289 253 >=;
 #X text 338 256 <== insulate against a runaway "pointer.";
-#X text 289 22 This increments a "pointer" from the left side until
-it finds a value that is greater than the pivot.;
+#X text 289 22 This increments a "pointer" from the left side until it finds a value that is greater than the pivot.;
 #X obj 38 315 >;
 #N canvas 547 408 584 529 >or<? 0;
 #X obj 40 52 inlet;
@@ -485,18 +463,8 @@ it finds a value that is greater than the pivot.;
 #X obj 79 548 r \$0-right-pointer;
 #X obj 91 508 s \$0-left-pointer;
 #X obj 114 382 r \$0-left-pointer;
-#X text 123 33 This partitions a portion of the table (from the "left"
-to the "right" indices given) based on the pivot \, which will be the
-right index value. If we're sorting in ascending order \, all values
-less than the pivot will be moved to the left and the values greater
-than the pivot will be moved to the right. The two loops find indices
-to swap values that are on the wrong side. At the end of the loop \,
-the right value will be swapped to the middle \; it is now in its proper
-location in the table. New partition boundaries based on this location
-are sent to the schedule queue.;
-#X text 371 551 <== if the pointers have not met \, then we've found
-values to swap. If they have met or passed each other \, then all values
-are in place \, and we should break the loop.;
+#X text 123 33 This partitions a portion of the table (from the "left" to the "right" indices given) based on the pivot \, which will be the right index value. If we're sorting in ascending order \, all values less than the pivot will be moved to the left and the values greater than the pivot will be moved to the right. The two loops find indices to swap values that are on the wrong side. At the end of the loop \, the right value will be swapped to the middle \; it is now in its proper location in the table. New partition boundaries based on this location are sent to the schedule queue.;
+#X text 371 551 <== if the pointers have not met \, then we've found values to swap. If they have met or passed each other \, then all values are in place \, and we should break the loop.;
 #X text 430 461 <== Run the two loops to find values to swap.;
 #X obj 354 394 s \$0-right-index;
 #N canvas 86 406 953 398 \$0-tail 0;
@@ -525,13 +493,8 @@ are in place \, and we should break the loop.;
 #X obj 73 286 t b;
 #X obj 46 336 s \$0-schedule;
 #X obj 85 115 t b b b;
-#X text 28 24 This schedules the next partitions to be sorted. After
-the pivot is replaced to its proper location \, the new partitions
-should be [left \, pivotindex-1] and [pivotindex+1 \, right].;
-#X text 277 230 <== If the values within a pair are the same \, they
-point to one element of the table which is in its proper location.
-So we don't schedule it. Note the spooky arithmetic \, necessary because
-[moses] is >= at the right outlet.;
+#X text 28 24 This schedules the next partitions to be sorted. After the pivot is replaced to its proper location \, the new partitions should be [left \, pivotindex-1] and [pivotindex+1 \, right].;
+#X text 277 230 <== If the values within a pair are the same \, they point to one element of the table which is in its proper location. So we don't schedule it. Note the spooky arithmetic \, necessary because [moses] is >= at the right outlet.;
 #X connect 0 0 15 0;
 #X connect 1 0 2 1;
 #X connect 1 0 11 1;
@@ -641,11 +604,8 @@ So we don't schedule it. Note the spooky arithmetic \, necessary because
 #X connect 9 0 1 0;
 #X restore 235 231 pd \$0-pivot-order?;
 #X obj 280 264 r \$0-right-index;
-#X text 502 225 <== Don't swap if the last left pointer points to a
-value that is already in order with the pivot.;
-#X text 539 310 <== When the last left pointer is adjacent to the pivot
-(on the right) \, schedule the left pointer for the next partition.
-;
+#X text 502 225 <== Don't swap if the last left pointer points to a value that is already in order with the pivot.;
+#X text 539 310 <== When the last left pointer is adjacent to the pivot (on the right) \, schedule the left pointer for the next partition.;
 #X connect 0 0 4 0;
 #X connect 1 0 9 0;
 #X connect 3 0 7 0;
@@ -954,8 +914,7 @@ value that is already in order with the pivot.;
 #X connect 24 1 13 0;
 #X restore 66 120 pd \$0-sort-3;
 #X obj 27 92 moses 2;
-#X text 24 19 Here we manually sort partitions of size 2 or 3 This
-should be more efficient than scheduling extra partitioning.;
+#X text 24 19 Here we manually sort partitions of size 2 or 3 This should be more efficient than scheduling extra partitioning.;
 #X connect 0 0 3 0;
 #X connect 3 0 1 0;
 #X connect 3 1 2 0;
@@ -966,9 +925,7 @@ should be more efficient than scheduling extra partitioning.;
 #X obj 148 380 t b b;
 #X obj 109 380 t b;
 #X text 501 460 <== swapping engine;
-#X text 172 346 <== no need to find pivot for partitions of size 4
-\, since both partitions of the next round will be sorted manually.
-;
+#X text 172 346 <== no need to find pivot for partitions of size 4 \, since both partitions of the next round will be sorted manually.;
 #X msg 89 63 0 \$1;
 #X obj 401 437 unpack 0 0;
 #X obj 203 34 r \$0-schedule;
@@ -978,8 +935,7 @@ should be more efficient than scheduling extra partitioning.;
 #X obj 70 498 s \$0-schedule;
 #X obj 70 170 t b b;
 #X obj 70 263 swap;
-#X text 131 317 <== more efficient to manually sort partitions of size
-3 or smaller (especially for larger lists).;
+#X text 131 317 <== more efficient to manually sort partitions of size 3 or smaller (especially for larger lists).;
 #N canvas 464 376 995 572 \$0-queue 0;
 #X obj 47 109 inlet;
 #X obj 47 510 outlet;
@@ -1013,28 +969,16 @@ should be more efficient than scheduling extra partitioning.;
 #X text 583 156 |;
 #X text 581 170 [outlet];
 #X obj 584 138 t b;
-#X text 624 93 <== this is an equivalent construction using a [list]
-sequence.;
-#X text 370 378 <== after the index for the current partition is passed
-\, grab the two adjacent values and pass them out.;
+#X text 624 93 <== this is an equivalent construction using a [list] sequence.;
+#X text 370 378 <== after the index for the current partition is passed \, grab the two adjacent values and pass them out.;
 #X obj 211 510 outlet;
 #X obj 495 200 unpack 0 0;
 #X text 550 216 |;
 #X text 548 230 [outlet];
-#X text 292 276 <== Two counters \, one to supply partition boundary
-locations for writing (right) \, and one for reading (left).;
-#X text 111 312 <== (no trigger needed as both sides lead to cold inlets)
-;
-#X text 308 429 <== as long as there is a partition \, the right value
-should never == 0... if it does \, the table is sorted \, so we stop
-the main loop and send out the list.;
-#X text 49 11 This is the schedule queue for partitions. It would take
-much less code to do this with a [list] sequence instead of a table
-\, but the table is faster. The [list] sequence is also easier to understand
-at first. The size of the table needs to be \, in the worst case \,
-2(n-1) where n is the size of the list to be sorted. In this case we
-simply use 2n \, as we need some zeroes at the end. This could probably
-be done better.;
+#X text 292 276 <== Two counters \, one to supply partition boundary locations for writing (right) \, and one for reading (left).;
+#X text 111 312 <== (no trigger needed as both sides lead to cold inlets);
+#X text 308 429 <== as long as there is a partition \, the right value should never == 0... if it does \, the table is sorted \, so we stop the main loop and send out the list.;
+#X text 49 11 This is the schedule queue for partitions. It would take much less code to do this with a [list] sequence instead of a table \, but the table is faster. The [list] sequence is also easier to understand at first. The size of the table needs to be \, in the worst case \, 2(n-1) where n is the size of the list to be sorted. In this case we simply use 2n \, as we need some zeroes at the end. This could probably be done better.;
 #X obj 47 188 list length;
 #X connect 0 0 5 0;
 #X connect 4 0 3 0;
@@ -1069,11 +1013,8 @@ be done better.;
 #X connect 22 0 21 0;
 #X connect 42 0 20 0;
 #X restore 203 80 pd \$0-queue;
-#X text 216 229 <== values used in each partition and every loop --
-easier to store a value than to send it.;
-#X text 166 500 <== send a bang to the scheduler if we've just manually
-sorted something. A bang will not add a partition to the queue \, but
-will increment the index to grab the next partition.;
+#X text 216 229 <== values used in each partition and every loop -- easier to store a value than to send it.;
+#X text 166 500 <== send a bang to the scheduler if we've just manually sorted something. A bang will not add a partition to the queue \, but will increment the index to grab the next partition.;
 #X text 284 80 <== the "queue" for scheduling partitions.;
 #X connect 0 0 18 0;
 #X connect 1 0 23 0;

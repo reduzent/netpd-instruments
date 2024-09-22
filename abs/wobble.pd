@@ -6,21 +6,14 @@
 #X obj 154 137 inlet~;
 #X obj 20 247 outlet~;
 #X obj 155 249 outlet~;
-#N canvas 698 340 223 120 \$3-\$2 1;
-#X obj 10 20 hsl 200 15 0 1 0 0 \$1-\$2/frequency \$1-\$2/frequency
-FREQUENCY 10 8 0 14 -228856 -1 -128992 0 1;
-#X obj 10 35 hsl 200 15 0 1 0 0 \$1-\$2/modfreq \$1-\$2/modfreq MODFREQ
-10 8 0 14 -241339 -1 -128992 6800 1;
-#X obj 10 50 hsl 200 15 0 1 0 0 \$1-\$2/modamp \$1-\$2/modamp MODAMP
-10 8 0 14 -249661 -1 -128992 6100 1;
-#X obj 10 65 hsl 200 15 0 1 0 0 \$1-\$2/modfloor \$1-\$2/modfloor MODFLOOR
-10 8 0 14 -262144 -1 -128992 4000 1;
-#X obj 10 95 hsl 200 15 0 60 0 0 empty \$0.index empty 10 8 0 14 -1
--228856 -1 0 1;
-#X obj 10 5 hsl 200 15 0 60 0 0 empty empty WOBBLE 10 8 0 14 -1 -1
--228856 0 1;
-#X obj 10 80 hsl 200 15 0 1 0 0 \$1-\$2/lrphase \$1-\$2/lrphase LRPHASE
-10 8 0 14 -262144 -1 -128992 16000 1;
+#N canvas 698 340 223 120 \$3-\$2 0;
+#X obj 10 20 hsl 200 15 0 1 0 0 \$1-\$2/frequency \$1-\$2/frequency FREQUENCY 10 8 0 14 #dcdcdc #000000 #7c7c7c 0 1;
+#X obj 10 35 hsl 200 15 0 1 0 0 \$1-\$2/modfreq \$1-\$2/modfreq MODFREQ 10 8 0 14 #e8e8e8 #000000 #7c7c7c 0 1;
+#X obj 10 50 hsl 200 15 0 1 0 0 \$1-\$2/modamp \$1-\$2/modamp MODAMP 10 8 0 14 #f0f0f0 #000000 #7c7c7c 0 1;
+#X obj 10 65 hsl 200 15 0 1 0 0 \$1-\$2/modfloor \$1-\$2/modfloor MODFLOOR 10 8 0 14 #fcfcfc #000000 #7c7c7c 0 1;
+#X obj 10 95 hsl 200 15 0 60 0 0 empty \$0.index empty 10 8 0 14 #000000 #dcdcdc #000000 0 1;
+#X obj 10 5 hsl 200 15 0 60 0 0 empty empty WOBBLE 10 8 0 14 #000000 #000000 #dcdcdc 0 1;
+#X obj 10 80 hsl 200 15 0 1 0 0 \$1-\$2/lrphase \$1-\$2/lrphase LRPHASE 10 8 0 14 #fcfcfc #000000 #7c7c7c 0 1;
 #X restore 7 12 pd \$3-\$2;
 #N canvas 0 103 397 241 left 0;
 #X obj 15 53 delwrite~ \$0.left 100;

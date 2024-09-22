@@ -3,14 +3,10 @@
 #X text 20 7 list of note tuples representing a F♯m⁷ chord;
 #X listbox 21 192 21 0 0 0 - - - 0;
 #X msg 21 33 37 7 40 10 42 0 45 3;
-#X text 170 135 NOTE: the meaning of the numbers in the argument differs
-from [chord-pick];
-#X text 172 188 The arguments given represent their musical function
-and match a range of values:;
-#X text 171 224 3: matches minor third \, major third \, sus and sus4
-;
-#X text 171 241 5: matches diminished \, perfect \, and augmented fifth
-;
+#X text 170 135 NOTE: the meaning of the numbers in the argument differs from [chord-pick];
+#X text 172 188 The arguments given represent their musical function and match a range of values:;
+#X text 171 224 3: matches minor third \, major third \, sus and sus4;
+#X text 171 241 5: matches diminished \, perfect \, and augmented fifth;
 #X text 170 259 7: matches major sixth \, minor and major seven;
 #X text 20 286 see also:;
 #X text 157 113 <- only pass unison and (any) fifth;

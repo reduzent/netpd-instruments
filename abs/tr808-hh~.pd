@@ -207,21 +207,11 @@
 #X restore 889 37 pd defaults;
 #X obj 702 40 inlet control;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
-#X text 57 88 This program is free software: you can redistribute it
-and/or modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation \, either version 3 of
-the License \, or (at your option) any later version.;
-#X text 58 168 This program is distributed in the hope that it will
-be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
-of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-General Public License for more details.;
-#X text 57 261 You should have received a copy of the GNU General Public
-License along with this program. If not \, see <http://www.gnu.org/licenses/>.
-;
-#X text 60 325 See the file LICENSE.txt for the full license text.
-;
-#X text 56 54 Copyright (C) 2009 \, 2013 Dan Wilcox <danomatika@gmail.com>
-;
+#X text 57 88 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation \, either version 3 of the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public License along with this program. If not \, see <http://www.gnu.org/licenses/>.;
+#X text 60 325 See the file LICENSE.txt for the full license text.;
+#X text 56 54 Copyright (C) 2009 \, 2013 Dan Wilcox <danomatika@gmail.com>;
 #X restore 550 372 pd LICENSE-GPL;
 #X obj 892 129 s \$0-decay;
 #X obj 939 109 s \$0-tune;
@@ -230,7 +220,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X msg 38 20 version 0 0 2;
 #X restore 739 372 pd NETPD 2 0;
 #X obj 188 376 outlet~;
-#N canvas 0 22 303 363 closed 1;
+#N canvas 0 22 303 363 closed 0;
 #X obj 27 -2 inlet;
 #X obj 42 93 inlet~;
 #X obj 27 213 outlet~;
@@ -270,12 +260,8 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 280 392 *~;
 #X obj 281 369 *~;
 #N canvas 228 198 627 317 LICENSE-BSD 0;
-#X text 121 56 This software is copyrighted by Miller Puckette \, Reality
-Jockey Ltd. and others. The terms (the "Standard Improved BSD License")
-apply to all files associated with the software unless explicitly disclaimed
-in individual files.;
-#X text 123 148 See the file LICENSE.txt for the full license text.
-;
+#X text 121 56 This software is copyrighted by Miller Puckette \, Reality Jockey Ltd. and others. The terms (the "Standard Improved BSD License") apply to all files associated with the software unless explicitly disclaimed in individual files.;
+#X text 123 148 See the file LICENSE.txt for the full license text.;
 #X restore 463 60 pd LICENSE-BSD;
 #X obj 251 127 f 1;
 #X obj 325 126 f 100;
@@ -341,8 +327,7 @@ in individual files.;
 #X obj 23 263 inlet~;
 #X obj 23 368 outlet~;
 #X obj 23 337 *~ 2.5;
-#X obj 199 310 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 199 310 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 187 338 r \$0.stop;
 #X obj 187 361 t b b;
 #X msg 126 359 0 50;
@@ -380,8 +365,7 @@ in individual files.;
 #X restore 261 246 pd open hihat;
 #X obj 64 319 *~ 0.5;
 #X obj 844 151 s \$0-gain-c;
-#X obj 702 75 route trigger_o trigger_c gain_o gain_c decay tune reset
-;
+#X obj 702 75 route trigger_o trigger_c gain_o gain_c decay tune reset;
 #X obj 702 218 s \$0-trigger-o;
 #X obj 749 169 b;
 #X obj 749 195 s \$0-trigger-c;

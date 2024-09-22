@@ -8,27 +8,17 @@
 #X msg 12 8 version 0 1 1;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 67 netpd_head \$1 sine;
-#N canvas 702 112 295 133 \$1-sine 1;
-#X obj 7 7 hsl 183 17 0 1 0 0 \$1-volume \$1-volume volume 100 8 0
-13 -66577 -4032 -262144 0 1;
-#X obj 7 27 hsl 183 17 0 1 0 0 \$1-glide \$1-glide glide 100 8 0 13
--66577 -4032 -262144 400 1;
-#X obj 7 47 hsl 260 17 0 1 0 0 \$1-attack \$1-attack attack 100 8 0
-13 -66577 -4032 -262144 1295 1;
-#X obj 7 67 hsl 260 17 0 1 0 0 \$1-hold \$1-hold hold 100 8 0 13 -66577
--4032 -262144 0 1;
-#X obj 7 87 hsl 260 17 0 1 0 0 \$1-decay \$1-decay decay 100 8 0 13
--66577 -4032 -262144 12950 1;
-#X obj 7 107 hsl 81 17 0 1 0 0 \$0.unstep1 \$0.bli unstep1 10 8 0 13
--66577 -66577 -262144 0 1;
-#X obj 96 107 hsl 81 17 0 1 0 0 \$0.unstep2 \$0.bli unstep2 10 8 0
-13 -66577 -66577 -262144 0 1;
-#X obj 185 107 hsl 82 17 0 1 0 0 \$0.unstep3 \$0.bli unstep3 10 8 0
-13 -66577 -66577 -262144 0 1;
-#X obj 195 7 nbx 6 17 1 36 0 0 \$1-voices \$1-voices voices 28 9 0
-12 -66577 -4032 -262144 1 256;
-#X obj 198 27 hsl 69 17 0 1 0 0 \$1-stereo \$1-stereo stereo 20 8 0
-13 -66577 -4032 -262144 0 1;
+#N canvas 702 112 295 133 \$1-sine 0;
+#X obj 7 7 hsl 183 17 0 1 0 0 \$1-volume \$1-volume volume 100 8 0 13 #404040 #00f8fc #fcfcfc 0 1;
+#X obj 7 27 hsl 183 17 0 1 0 0 \$1-glide \$1-glide glide 100 8 0 13 #404040 #00f8fc #fcfcfc 0 1;
+#X obj 7 47 hsl 260 17 0 1 0 0 \$1-attack \$1-attack attack 100 8 0 13 #404040 #00f8fc #fcfcfc 0 1;
+#X obj 7 67 hsl 260 17 0 1 0 0 \$1-hold \$1-hold hold 100 8 0 13 #404040 #00f8fc #fcfcfc 0 1;
+#X obj 7 87 hsl 260 17 0 1 0 0 \$1-decay \$1-decay decay 100 8 0 13 #404040 #00f8fc #fcfcfc 0 1;
+#X obj 7 107 hsl 81 17 0 1 0 0 \$0.unstep1 \$0.bli unstep1 10 8 0 13 #404040 #404040 #fcfcfc 0 1;
+#X obj 96 107 hsl 81 17 0 1 0 0 \$0.unstep2 \$0.bli unstep2 10 8 0 13 #404040 #404040 #fcfcfc 0 1;
+#X obj 185 107 hsl 82 17 0 1 0 0 \$0.unstep3 \$0.bli unstep3 10 8 0 13 #404040 #404040 #fcfcfc 0 1;
+#X obj 195 7 nbx 6 17 1 36 0 0 \$1-voices \$1-voices voices 28 9 0 12 #404040 #00f8fc #fcfcfc 0 256;
+#X obj 198 27 hsl 69 17 0 1 0 0 \$1-stereo \$1-stereo stereo 20 8 0 13 #404040 #00f8fc #fcfcfc 0 1;
 #X restore 10 42 pd \$1-sine;
 #X obj 15 489 i2mx \$1 sine;
 #N canvas 517 370 185 142 attack 0;
@@ -221,7 +211,7 @@
 #X connect 7 0 1 0;
 #X restore 14 307 pd voice.assign;
 #X obj 14 356 s \$1-sine/notes;
-#N canvas 0 44 450 300 voices 1;
+#N canvas 0 44 450 300 voices 0;
 #X obj 14 16 sine-voice \$1 0;
 #X obj 14 36 sine-voice \$1 1;
 #X obj 14 56 sine-voice \$1 2;

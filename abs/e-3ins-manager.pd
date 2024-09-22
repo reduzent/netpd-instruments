@@ -15,8 +15,7 @@
 #X obj 129 185 t b b b s s b b;
 #X text 11 9 [mx_manager \$0 <name>];
 #X msg 332 143 label \$1;
-#X obj 166 40 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 166 40 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X text 182 38 <-before save;
 #X obj 34 370 symbol;
 #X obj 477 289 symbol \$2;
@@ -142,9 +141,9 @@
 #X obj 668 247 symbol;
 #X obj 102 279 makefilename pd-%s-rebuild;
 #X obj 138 298 makefilename pd-%s-container;
-#N canvas 844 66 387 275 4_fx.w2-container 0;
+#N canvas 844 66 387 275 \$2-container 0;
 #X restore 572 14 pd \$2-container;
-#N canvas 0 22 470 320 4_fx.w2-rebuild 0;
+#N canvas 0 22 470 320 \$2-rebuild 0;
 #X restore 572 34 pd \$2-rebuild;
 #X msg 525 162 set empty;
 #X obj 445 57 symbol empty;

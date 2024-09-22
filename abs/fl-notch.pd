@@ -125,28 +125,21 @@
 #X connect 12 0 13 0;
 #X connect 13 0 6 0;
 #X restore 264 79 pd param;
-#N canvas 858 713 479 95 \$3-\$2 1;
-#X obj 8 9 cnv 15 460 72 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 21 11 hsl 180 20 0 1 0 0 \$1-\$2/frequency \$1-\$2/frequency
-frequency 0 11 0 12 -99329 -258113 -261682 0 1;
-#X obj 21 59 hsl 180 20 0 1 0 0 \$1-\$2/bandwidth \$1-\$2/bandwidth
-bandwidth 0 11 0 12 -99329 -258113 -261682 0 1;
-#X obj 203 12 cnv 18 60 18 empty \$0.frequency.display 1457Hz 4 10
-0 12 -99329 -261682 0;
-#X obj 8 12 cnv 10 10 18 empty empty empty 4 10 0 12 -99329 -1 0;
-#X obj 8 36 cnv 10 255 18 empty empty empty 4 10 0 12 -99329 -1 0;
-#X obj 203 60 cnv 14 60 18 empty \$0.bandwidth.display 1.21 4 10 0
-12 -99329 -261682 0;
-#X obj 8 60 cnv 10 10 18 empty empty empty 4 10 0 12 -99329 -1 0;
+#N canvas 858 713 479 95 \$3-\$2 0;
+#X obj 8 9 cnv 15 460 72 empty empty empty 20 12 0 14 #000000 #404040 0;
+#X obj 21 11 hsl 180 20 0 1 0 0 \$1-\$2/frequency \$1-\$2/frequency frequency 0 11 0 12 #604000 #fc0400 #fce0c4 0 1;
+#X obj 21 59 hsl 180 20 0 1 0 0 \$1-\$2/bandwidth \$1-\$2/bandwidth bandwidth 0 11 0 12 #604000 #fc0400 #fce0c4 0 1;
+#X obj 203 12 cnv 18 60 18 empty \$0.frequency.display 1457Hz 4 10 0 12 #604000 #fce0c4 0;
+#X obj 8 12 cnv 10 10 18 empty empty empty 4 10 0 12 #604000 #000000 0;
+#X obj 8 36 cnv 10 255 18 empty empty empty 4 10 0 12 #604000 #000000 0;
+#X obj 203 60 cnv 14 60 18 empty \$0.bandwidth.display 1.21 4 10 0 12 #604000 #fce0c4 0;
+#X obj 8 60 cnv 10 10 18 empty empty empty 4 10 0 12 #604000 #000000 0;
 #N canvas 860 465 450 300 \$0.plot.display 0;
 #X coords 0 0 180 68 180 68 2 30 30;
 #X restore 287 11 pd \$0.plot.display;
-#X obj 265 12 vsl 20 29 0 127 0 0 \$0.mode.switch \$0.mode.switch.r
-fr 3 15 0 12 -99329 -99329 -261682 0 1;
-#X obj 265 48 vsl 20 29 0 127 0 0 \$0.plot.switch \$0.plot.switch.r
-⊟ 3 15 0 24 -99329 -99329 -261682 0 1;
-#X obj 287 11 cnv 15 180 68 empty empty fl-notch 4 16 0 28 -261682
--220071 0;
+#X obj 265 12 vsl 20 29 0 127 0 0 \$0.mode.switch \$0.mode.switch.r fr 3 15 0 12 #604000 #604000 #fce0c4 0 1;
+#X obj 265 48 vsl 20 29 0 127 0 0 \$0.plot.switch \$0.plot.switch.r ⊟ 3 15 0 24 #604000 #604000 #fce0c4 0 1;
+#X obj 287 11 cnv 15 180 68 empty empty fl-notch 4 16 0 28 #fce0c4 #d4b898 0;
 #X restore 7 12 pd \$3-\$2;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;

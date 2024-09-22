@@ -1,4 +1,4 @@
-#N struct 5701.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
+#N struct 1004.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 603 95 635 712 10;
 #X declare -path ../../includes;
 #N canvas 1473 663 341 97 NETPD 0;

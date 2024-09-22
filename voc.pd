@@ -1,48 +1,31 @@
 #N canvas 152 386 512 225 10;
 #N canvas 624 75 434 290 NETPD 0;
 #N canvas 387 317 473 287 abslist 0;
-#X text 7 13 Put a message box containing the name of the abstraction
-(without the .pd suffix) for each dependency.;
+#X text 7 13 Put a message box containing the name of the abstraction (without the .pd suffix) for each dependency.;
 #X msg 116 52 unstep;
 #X msg 116 74 i2mx;
 #X restore 12 178 pd abslist;
 #X text 111 179 <- add dependencies of your netpd instrument;
-#X text 18 32 A 'version' meta tag is mandatory. unpatch uses this
-information to make sure that all clients load the same version of
-the instrument.;
-#X text 19 78 Whenever you make changes to your instrument \, make
-sure to bump the version.;
-#X text 18 118 There is no predefined meaning of the three version
-fields. Use them at your own will.;
-#X text 16 211 The [pd abslist] tag container is optional and is used
-to specify dependencies (abstractions in netpd/abs) of your instrument.
-;
+#X text 18 32 A 'version' meta tag is mandatory. unpatch uses this information to make sure that all clients load the same version of the instrument.;
+#X text 19 78 Whenever you make changes to your instrument \, make sure to bump the version.;
+#X text 18 118 There is no predefined meaning of the three version fields. Use them at your own will.;
+#X text 16 211 The [pd abslist] tag container is optional and is used to specify dependencies (abstractions in netpd/abs) of your instrument.;
 #X text 107 7 <- update the version of this netpd instrument;
 #X msg 12 8 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 79 netpd_head \$1 voc;
-#N canvas 867 124 93 199 \$1-voc 1;
-#X obj 9 59 hsl 75 15 0 1 0 0 \$1-a-level \$1-a-level volume 3 8 0
-10 -261682 -1 -1 7400 1;
-#X obj 9 74 hsl 75 15 0 1 0 1 \$1-a-attack \$1-a-attack attack 3 8
-0 10 -261682 -1 -1 1000 1;
-#X obj 9 89 hsl 75 15 0 1 0 1 \$1-a-hold \$1-a-hold hold 3 8 0 10 -261682
--1 -1 1600 1;
-#X obj 9 104 hsl 75 15 0 1 0 0 \$1-a-release \$1-a-release release
-3 8 0 10 -261682 -1 -1 2300 1;
-#X obj 9 24 hsl 75 15 0 1 0 0 \$1-vow \$1-vow vowel 3 8 0 10 -261682
--1 -1 3400 1;
-#X obj 9 174 hsl 75 15 0 0 0 0 \$0-unstep-gui \$0.bli unstep 3 8 0
-10 -228856 -228856 -1 0 1;
+#N canvas 867 124 93 199 \$1-voc 0;
+#X obj 9 59 hsl 75 15 0 1 0 0 \$1-a-level \$1-a-level volume 3 8 0 10 #fce0c4 #000000 #000000 0 1;
+#X obj 9 74 hsl 75 15 0 1 0 1 \$1-a-attack \$1-a-attack attack 3 8 0 10 #fce0c4 #000000 #000000 1000 1;
+#X obj 9 89 hsl 75 15 0 1 0 1 \$1-a-hold \$1-a-hold hold 3 8 0 10 #fce0c4 #000000 #000000 1600 1;
+#X obj 9 104 hsl 75 15 0 1 0 0 \$1-a-release \$1-a-release release 3 8 0 10 #fce0c4 #000000 #000000 0 1;
+#X obj 9 24 hsl 75 15 0 1 0 0 \$1-vow \$1-vow vowel 3 8 0 10 #fce0c4 #000000 #000000 0 1;
+#X obj 9 174 hsl 75 15 0 0 0 0 \$0-unstep-gui \$0.bli unstep 3 8 0 10 #dcdcdc #dcdcdc #000000 0 1;
 #X text 6 5 VOCAL VOWELS;
-#X obj 9 139 hsl 75 15 0 1 0 0 \$1-lfor \$1-lfor lfo_rate 3 8 0 10
--261682 -1 -1 5700 1;
-#X obj 9 154 hsl 75 15 0 1 0 1 \$1-lfod \$1-lfod lfo_depth 3 8 0 10
--261682 -1 -1 1200 1;
-#X obj 9 39 hsl 75 15 0 1 0 1 \$1-glide \$1-glide transition 3 8 0
-10 -261682 -1 -1 2800 1;
-#X obj 9 124 hsl 75 15 0 1 0 0 \$1-noteglide \$1-noteglide note_glide
-3 8 0 10 -261682 -1 -1 5500 1;
+#X obj 9 139 hsl 75 15 0 1 0 0 \$1-lfor \$1-lfor lfo_rate 3 8 0 10 #fce0c4 #000000 #000000 0 1;
+#X obj 9 154 hsl 75 15 0 1 0 1 \$1-lfod \$1-lfod lfo_depth 3 8 0 10 #fce0c4 #000000 #000000 1200 1;
+#X obj 9 39 hsl 75 15 0 1 0 1 \$1-glide \$1-glide transition 3 8 0 10 #fce0c4 #000000 #000000 2800 1;
+#X obj 9 124 hsl 75 15 0 1 0 0 \$1-noteglide \$1-noteglide note_glide 3 8 0 10 #fce0c4 #000000 #000000 0 1;
 #X restore 10 42 pd \$1-voc;
 #N canvas 100 23 837 755 dsp 0;
 #X obj 31 293 phasor~;
@@ -211,7 +194,7 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X connect 7 0 5 0;
 #X connect 8 0 7 0;
 #X restore 264 654 pd a-release;
-#X floatatom 112 644 5 0 0 0 - - -;
+#X floatatom 112 644 5 0 0 0 - - - 0;
 #X obj 28 776 i2mx \$1 voc;
 #N canvas 35 69 342 234 vow 0;
 #X obj 35 206 outlet;

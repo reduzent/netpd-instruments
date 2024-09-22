@@ -15,8 +15,7 @@
 #X msg 109 89 563727;
 #X msg 112 114 1.11111e+08;
 #X obj 26 173 rh_prime_factors;
-#X text 16 12 [rh_prime_factors] - perform a prime factorization on
-number;
+#X text 16 12 [rh_prime_factors] - perform a prime factorization on number;
 #X connect 5 0 13 0;
 #X connect 6 0 13 0;
 #X connect 7 0 13 0;

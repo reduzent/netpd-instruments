@@ -76,9 +76,8 @@
 #X obj 32 174 outlet~;
 #X obj 83 175 outlet~;
 #X obj 155 91 netpd_f \$1 \$2/rev1 30;
-#N canvas 558 335 190 108 \$3-\$2 1;
-#X obj 31 45 nbx 3 14 0 99 0 0 \$1-\$2/rev1 \$1-\$2/rev1 db_after_1sec
-40 8 0 10 -262144 -1 -1 0 256;
+#N canvas 558 335 190 108 \$3-\$2 0;
+#X obj 31 45 nbx 3 14 0 99 0 0 \$1-\$2/rev1 \$1-\$2/rev1 db_after_1sec 40 8 0 10 #fcfcfc #000000 #000000 0 256;
 #X restore 23 15 pd \$3-\$2;
 #X connect 1 0 4 0;
 #X connect 1 0 5 0;

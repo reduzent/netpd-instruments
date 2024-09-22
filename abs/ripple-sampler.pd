@@ -109,7 +109,7 @@
 #X array \$1-\$2/preview 200 float 2;
 #X coords 0 1 200 -1 100 50 1 0 0;
 #X restore 10 20 graph;
-#X obj 13 70 hsl 95 10 0 127 0 0 \$0.bla \$0.background empty -2 -8 0 10 #fce0e0 #fce0e0 #000000 0 1;
+#X obj 13 70 hsl 95 10 0 127 0 0 \$0.bla \$0.background empty -2 -8 0 10 #404040 #404040 #000000 0 1;
 #X obj 170 108 netpd_sample \$1 \$2/sample/l;
 #X obj 330 79 r~ \$1.audio.in.l;
 #X obj 450 18 r \$1.sample.control;

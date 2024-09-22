@@ -9,9 +9,8 @@
 #X obj 154 137 inlet~;
 #X obj 46 568 outlet~;
 #X obj 181 570 outlet~;
-#N canvas 666 463 159 154 \$3-\$2 1;
-#X obj 8 7 cnv 15 124 134 empty empty fifty 28 120 0 20 #ff04ff #ffffff
-0;
+#N canvas 666 463 159 154 \$3-\$2 0;
+#X obj 8 7 cnv 15 124 134 empty empty fifty 28 120 0 20 #ff04ff #ffffff 0;
 #X obj 10 9 fifty-button \$1 \$2 hum 1 #cc5533 #ff9977;
 #X obj 10 36 fifty-button \$1 \$2 hiss 1 #55bb33 #99ff77;
 #X obj 10 90 fifty-button \$1 \$2 tiptouch 0 #5533cc #9977ff;

@@ -197,11 +197,10 @@
 #X connect 30 0 0 1;
 #X connect 31 0 28 0;
 #X restore 324 129 pd samples-onset;
-#X floatatom 417 155 5 0 0 0 - - -;
-#X floatatom 335 153 5 0 0 0 - - -;
+#X floatatom 417 155 5 0 0 0 - - - 0;
+#X floatatom 335 153 5 0 0 0 - - - 0;
 #X obj 324 269 tabreceive~ \$0-square;
-#X text 372 581 \$1 clone-instance \, \$2 parrent \$0 \, \$3 min blocksize
-;
+#X text 372 581 \$1 clone-instance \, \$2 parrent \$0 \, \$3 min blocksize;
 #X obj 350 223 r \$2-set-imp;
 #X obj 723 258 + 0.5;
 #X obj 723 279 i;

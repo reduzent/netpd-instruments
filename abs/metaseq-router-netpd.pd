@@ -43,8 +43,7 @@
 #X connect 3 0 5 0;
 #X connect 4 0 5 0;
 #X restore 20 102 pd open.out.gate;
-#X text 18 289 any reporting methods don't need to be transmitted over
-network. Their result should be passed through outlet.;
+#X text 18 289 any reporting methods don't need to be transmitted over network. Their result should be passed through outlet.;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 3 0 2 0;

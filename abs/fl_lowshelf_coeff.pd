@@ -2,15 +2,12 @@
 #X obj 104 35 inlet;
 #X text 357 538 a0 a1 a2 b0 b1 b2;
 #X obj 254 538 pack f f f f f f;
-#X obj 312 381 expr $f3*(($f3+1) - ($f3-1)*$f1 + $f2) \; 2*$f3*(($f3-1)
-- ($f3+1)*$f1) \; $f3*(($f3+1) - ($f3-1)*$f1 - $f2);
+#X obj 312 381 expr $f3*(($f3+1) - ($f3-1)*$f1 + $f2) \; 2*$f3*(($f3-1) - ($f3+1)*$f1) \; $f3*(($f3+1) - ($f3-1)*$f1 - $f2);
 #X obj 104 322 t f f;
-#X obj 90 382 expr ($f3+1) + ($f3-1)*$f1 + $f2 \; -2*(($f3-1) + ($f3+1)*$f1)
-\; ($f3+1) + ($f3-1)*$f1 -$f2;
+#X obj 90 382 expr ($f3+1) + ($f3-1)*$f1 + $f2 \; -2*(($f3-1) + ($f3+1)*$f1) \; ($f3+1) + ($f3-1)*$f1 -$f2;
 #X obj 407 246 expr pow(10 \, $f1/40);
 #X msg 407 224 \$3;
-#X obj 104 269 expr cos($f1) \; sin($f1) * sqrt(($f3*$f3 + 1)*(1/$f2
-- 1) + 2*$f3) \; $f3;
+#X obj 104 269 expr cos($f1) \; sin($f1) * sqrt(($f3*$f3 + 1)*(1/$f2 - 1) + 2*$f3) \; $f3;
 #X msg 104 243 \$1;
 #X text 523 60 borrowed from mmb. Thanks!;
 #N canvas 0 106 450 61 NETPD 0;

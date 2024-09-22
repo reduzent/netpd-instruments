@@ -1,4 +1,3 @@
-#N struct 2191.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 590 106 451 568 10;
 #N canvas 1237 103 411 339 delay.time 0;
 #X obj 26 57 t b f;

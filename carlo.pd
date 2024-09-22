@@ -1,13 +1,3 @@
-#N struct 4423.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 4424.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 4425.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 4426.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 4427.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 4428.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 4429.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 4430.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 4633.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
-#N struct 4409.selector float x float y float w float h float vis;
 #N canvas 441 308 453 339 10;
 #N canvas 624 75 412 134 NETPD 0;
 #N canvas 315 75 411 213 abslist 0;
@@ -19,7 +9,7 @@
 #X msg 12 8 version 0 1 0;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 71 netpd_head \$1 carlo;
-#N canvas 640 378 713 184 \$1-carlo 1;
+#N canvas 640 378 713 184 \$1-carlo 0;
 #X obj 31 35 chord-selector \$0.chord;
 #X obj 176 35 cnv 15 54 76 empty empty empty 20 12 0 14 #aee0e0 #404040 0;
 #X obj 178 37 netpd-gui-vmenu \$0.action 50 18 12 0 888 888 555 888 888;

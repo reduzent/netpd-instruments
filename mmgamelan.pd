@@ -7,15 +7,11 @@
 #X msg 12 8 version 0 0 3;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 11 66 netpd_head \$1 mmgamelan;
-#N canvas 862 531 296 124 \$1-mmgamelan 1;
-#X obj 15 8 hsl 220 27 0 127 0 0 \$0.unstep-1 \$0.bla mmgamelan\ unstep\ 1
-2 13 0 20 #e4e6f6 #e4e6f6 #000000 0 1;
-#X obj 15 41 hsl 220 27 0 127 0 0 \$0.unstep-2 \$0.bla mmgamelan\ unstep\ 2
-2 13 0 20 #e4e6f6 #e4e6f6 #000000 0 1;
-#X obj 15 74 hsl 220 27 0 127 0 0 \$0.unstep-3 \$0.bla mmgamelan\ unstep\ 3
-2 13 0 20 #e4e6f6 #e4e6f6 #000000 0 1;
-#X obj 242 9 vsl 27 89 0 1 0 0 \$1-vel \$1-vel empty 0 10 0 10 #e3eef1
-#c1b09b #000000 0 1;
+#N canvas 862 531 296 124 \$1-mmgamelan 0;
+#X obj 15 8 hsl 220 27 0 127 0 0 \$0.unstep-1 \$0.bla mmgamelan\ unstep\ 1 2 13 0 20 #e4e6f6 #e4e6f6 #000000 0 1;
+#X obj 15 41 hsl 220 27 0 127 0 0 \$0.unstep-2 \$0.bla mmgamelan\ unstep\ 2 2 13 0 20 #e4e6f6 #e4e6f6 #000000 0 1;
+#X obj 15 74 hsl 220 27 0 127 0 0 \$0.unstep-3 \$0.bla mmgamelan\ unstep\ 3 2 13 0 20 #e4e6f6 #e4e6f6 #000000 0 1;
+#X obj 242 9 vsl 27 89 0 1 0 0 \$1-vel \$1-vel empty 0 10 0 10 #e3eef1 #c1b09b #000000 0 1;
 #X restore 10 42 pd \$1-mmgamelan;
 #X obj 12 490 i2mx \$1 mmgamelan;
 #X msg 11 152 vis 1;

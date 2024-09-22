@@ -1,3 +1,4 @@
+#N struct 1003.cursor float cx float cy float cy2 float vis float clr;
 #N canvas 690 448 494 495 10;
 #N canvas 147 165 378 137 NETPD 0;
 #N canvas 0 106 400 121 abslist 0;
@@ -472,11 +473,12 @@
 #N canvas 990 418 554 408 \$0.gui.canvas 0;
 #X obj 62 20 nbx 3 20 2 999 0 0 \$1-\$2/length \$1-\$2/length empty 0 10 0 6 #fcfcfc #000000 #000000 0 256;
 #X obj 93 20 cnv 20 200 20 empty \$0.param.display empty 5 11 0 12 #9c9c9c #fcfcfc 0;
-#X obj 62 20 cnv 20 30 20 empty \$0.length.display 016 5 11 0 12 #9c9c9c #fcfcfc 0;
+#X obj 62 20 cnv 20 30 20 empty \$0.length.display 16 5 11 0 12 #9c9c9c #fcfcfc 0;
 #X obj 20 20 bng 20 250 50 0 \$0.record empty empty 17 10 0 10 #fcfcfc #000000 #000000;
 #X obj 41 20 bng 20 250 50 0 \$0.play empty empty 17 10 0 10 #fcfcfc #000000 #000000;
 #X obj 41 20 cnv 20 20 20 empty \$0.play.display ▶ 3 9 0 24 #a0a0a0 #285014 0;
 #X obj 20 20 cnv 20 20 20 empty \$0.record.display ● 3 9 0 24 #a0a0a0 #8c0808 0;
+#X scalar 1003.cursor 0 0 21 0 0 \;;
 #X coords 0 0 273 20 273 20 2 20 20;
 #X restore 20 20 pd \$0.gui.canvas;
 #N canvas 553 228 447 447 cursor.structure 0;

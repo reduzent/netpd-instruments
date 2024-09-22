@@ -176,45 +176,27 @@
 #X connect 10 0 8 0;
 #X connect 10 1 7 0;
 #X restore 17 58 pd e-3ins-x;
-#N canvas 600 347 123 114 mx.amp-e-3ins-gui 0;
-#X obj 7 8 cnv 15 100 89 empty empty empty 0 0 0 9 -133153 -66577 0
-;
-#X obj 9 21 cnv 12 96 74 empty empty empty 20 12 0 9 -233017 -66577
-0;
-#X obj 9 10 cnv 9 96 11 empty empty 3-ins 1 5 1 9 -262144 -66577 0
-;
-#X obj 9 35 cnv 9 96 11 empty \$2.w1_insert empty 1 5 1 9 -262144 -66577
-0;
-#X obj 9 23 bng 10 250 50 0 \$2.w1_insert.choose empty empty 0 -6 0
-9 -183104 -99865 -1;
-#X obj 18 23 bng 10 250 50 0 \$2.w1_insert.vis empty empty 11 5 1 9
--262144 -99865 -1;
-#X obj 27 23 tgl 10 0 \$2.w1.bypass \$2.w1.bypass-r empty 0 6 1 7 -262144
--33289 -53310 0 1;
-#X obj 9 59 cnv 9 96 11 empty \$2.w2_insert empty 1 5 1 9 -262144 -66577
-0;
-#X obj 9 47 bng 10 250 50 0 \$2.w2_insert.choose empty empty 0 -6 0
-9 -183104 -99865 -1;
-#X obj 18 47 bng 10 250 50 0 \$2.w2_insert.vis empty empty 11 5 1 9
--262144 -99865 -1;
-#X obj 27 47 tgl 10 0 \$2.w2.bypass \$2.w2.bypass-r empty 0 6 1 7 -262144
--33289 -53310 0 1;
-#X obj 9 83 cnv 9 96 11 empty \$2.w3_insert empty 1 5 1 9 -262144 -66577
-0;
-#X obj 9 71 bng 10 250 50 0 \$2.w3_insert.choose empty empty 0 -6 0
-9 -183104 -99865 -1;
-#X obj 18 71 bng 10 250 50 0 \$2.w3_insert.vis empty empty 11 5 1 9
--262144 -99865 -1;
-#X obj 27 71 tgl 10 0 \$2.w3.bypass \$2.w3.bypass-r empty 0 6 1 7 -262144
--33289 -53310 0 1;
-#X obj 54 9 hsl 50 11 -1 1 0 0 mx.insert.select mx.insert.preview-r
-empty -1 6 1 9 -262144 -262144 -66577 0 0;
+#N canvas 600 347 123 114 \$2-e-3ins-gui 0;
+#X obj 7 8 cnv 15 100 89 empty empty empty 0 0 0 9 #808080 #404040 0;
+#X obj 9 21 cnv 12 96 74 empty empty empty 20 12 0 9 #e0e0e0 #404040 0;
+#X obj 9 10 cnv 9 96 11 empty empty 3-ins 1 5 1 9 #fcfcfc #404040 0;
+#X obj 9 35 cnv 9 96 11 empty \$2.w1_insert empty 1 5 1 9 #fcfcfc #404040 0;
+#X obj 9 23 bng 10 250 50 0 \$2.w1_insert.choose empty empty 0 -6 0 9 #b0b0fc #606060 #000000;
+#X obj 18 23 bng 10 250 50 0 \$2.w1_insert.vis empty empty 11 5 1 9 #fcfcfc #606060 #000000;
+#X obj 27 23 tgl 10 0 \$2.w1.bypass \$2.w1.bypass-r empty 0 6 1 7 #fcfcfc #202020 #3400f4 0 1;
+#X obj 9 59 cnv 9 96 11 empty \$2.w2_insert empty 1 5 1 9 #fcfcfc #404040 0;
+#X obj 9 47 bng 10 250 50 0 \$2.w2_insert.choose empty empty 0 -6 0 9 #b0b0fc #606060 #000000;
+#X obj 18 47 bng 10 250 50 0 \$2.w2_insert.vis empty empty 11 5 1 9 #fcfcfc #606060 #000000;
+#X obj 27 47 tgl 10 0 \$2.w2.bypass \$2.w2.bypass-r empty 0 6 1 7 #fcfcfc #202020 #3400f4 0 1;
+#X obj 9 83 cnv 9 96 11 empty \$2.w3_insert empty 1 5 1 9 #fcfcfc #404040 0;
+#X obj 9 71 bng 10 250 50 0 \$2.w3_insert.choose empty empty 0 -6 0 9 #b0b0fc #606060 #000000;
+#X obj 18 71 bng 10 250 50 0 \$2.w3_insert.vis empty empty 11 5 1 9 #fcfcfc #606060 #000000;
+#X obj 27 71 tgl 10 0 \$2.w3.bypass \$2.w3.bypass-r empty 0 6 1 7 #fcfcfc #202020 #3400f4 0 1;
+#X obj 54 9 hsl 50 11 -1 1 0 0 mx.insert.select mx.insert.preview-r empty -1 6 1 9 #fcfcfc #fcfcfc #404040 0 0;
 #X restore 17 18 pd \$2-e-3ins-gui;
-#X obj 17 119 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
--1;
+#X obj 17 119 bng 15 250 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000 #000000;
 #X obj 17 137 symbol \$2;
-#X msg 17 157 \; \$1.w1_insert label empty \; \$1.w2_insert label empty
-\; \$1.w3_insert label empty \; mx.insert.preview-r label empty;
+#X msg 17 157 \; \$1.w1_insert label empty \; \$1.w2_insert label empty \; \$1.w3_insert label empty \; mx.insert.preview-r label empty;
 #X msg 17 78 version 0.1.2;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;

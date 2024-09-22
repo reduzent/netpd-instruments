@@ -387,8 +387,7 @@
 #X obj 523 134 s \$1-syncphase;
 #X obj 18 19 r \$0-unstep-gui;
 #X msg 18 41 vis 1;
-#X obj 18 65 unstep \$1 lilacid a_att a_hold a_rel f_ceil f_att f_hold
-f_rel;
+#X obj 18 65 unstep \$1 lilacid a_att a_hold a_rel f_ceil f_att f_hold f_rel;
 #X obj 18 108 s \$0-lilacid;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
@@ -416,44 +415,26 @@ f_rel;
 #X restore 7 48 pd guistuff;
 #X text 62 224 http://www.netpd.org/lilacid;
 #X obj 103 48 netpd_head \$1 lilacid;
-#N canvas 952 314 98 304 \$1-lilacid 1;
-#X obj 9 20 hsl 75 15 0 1 0 0 \$1-a-level \$1-a-level volume 3 8 0
-10 -250685 -1 -1 4440 1;
-#X obj 9 50 hsl 75 15 0 1 0 0 \$1-a-attack \$1-a-attack attack 3 8
-0 10 -250685 -1 -1 74 1;
-#X obj 9 65 hsl 75 15 0 1 0 0 \$1-a-hold \$1-a-hold hold 3 8 0 10 -250685
--1 -1 74 1;
-#X obj 9 80 hsl 75 15 0 1 0 0 \$1-a-release \$1-a-release release 3
-8 0 10 -250685 -1 -1 3774 1;
-#X obj 9 113 hsl 75 15 0 1 0 0 \$1-f-ceil \$1-f-ceil env_ceiling 3
-8 0 10 -250685 -1 -1 5920 1;
-#X obj 9 128 hsl 75 15 0 1 0 0 \$1-f-floor \$1-f-floor env_floor 3
-8 0 10 -250685 -1 -1 1480 1;
-#X obj 9 158 hsl 75 15 0 1 0 0 \$1-f-attack \$1-f-attack attack 3 8
-0 10 -250685 -1 -1 74 1;
-#X obj 9 173 hsl 75 15 0 1 0 0 \$1-f-hold \$1-f-hold hold 3 8 0 10
--250685 -1 -1 74 1;
-#X obj 9 188 hsl 75 15 0 1 0 0 \$1-f-release \$1-f-release release
-3 8 0 10 -250685 -1 -1 3774 1;
-#X obj 9 143 hsl 75 15 0 1 0 0 \$1-filterq \$1-filterq q 3 8 0 10 -250685
--1 -1 4440 1;
-#X obj 9 35 hsl 75 15 0 1 0 0 \$1-overdrive \$1-overdrive overdrive
-3 8 0 10 -250685 -1 -1 3774 1;
-#X obj 6 5 cnv 15 80 15 empty empty amplitude 3 8 0 10 -1 -250685 0
-;
-#X obj 9 269 hsl 75 15 0 0 0 0 \$0-unstep-gui \$0.bli unstep 3 8 0
-10 -250685 -250685 -1 0 1;
-#X obj 9 221 hsl 75 15 1 1 0 0 \$0-wf \$0-wf-r waveform 3 8 0 10 -250685
--250685 -1 0 1;
-#X obj 9 236 hsl 75 15 0 0 0 0 \$0-syph \$0-syph-r sync_phase 3 8 0
-10 -250685 -250685 -1 0 1;
-#X obj 6 98 cnv 15 80 15 empty empty filter 3 8 0 10 -1 -250685 0;
-#X obj 6 206 cnv 15 80 15 empty empty oscillator 3 8 0 10 -1 -250685
-0;
-#X obj 6 251 cnv 15 40 15 empty \$0-display-wf square 3 8 0 10 -1 -250685
-0;
-#X obj 46 251 cnv 15 40 15 empty \$0-display-syph |off 3 8 0 10 -1
--250685 0;
+#N canvas 952 314 98 304 \$1-lilacid 0;
+#X obj 9 20 hsl 75 15 0 1 0 0 \$1-a-level \$1-a-level volume 3 8 0 10 #f430f0 #000000 #000000 0 1;
+#X obj 9 50 hsl 75 15 0 1 0 0 \$1-a-attack \$1-a-attack attack 3 8 0 10 #f430f0 #000000 #000000 0 1;
+#X obj 9 65 hsl 75 15 0 1 0 0 \$1-a-hold \$1-a-hold hold 3 8 0 10 #f430f0 #000000 #000000 0 1;
+#X obj 9 80 hsl 75 15 0 1 0 0 \$1-a-release \$1-a-release release 3 8 0 10 #f430f0 #000000 #000000 0 1;
+#X obj 9 113 hsl 75 15 0 1 0 0 \$1-f-ceil \$1-f-ceil env_ceiling 3 8 0 10 #f430f0 #000000 #000000 0 1;
+#X obj 9 128 hsl 75 15 0 1 0 0 \$1-f-floor \$1-f-floor env_floor 3 8 0 10 #f430f0 #000000 #000000 0 1;
+#X obj 9 158 hsl 75 15 0 1 0 0 \$1-f-attack \$1-f-attack attack 3 8 0 10 #f430f0 #000000 #000000 0 1;
+#X obj 9 173 hsl 75 15 0 1 0 0 \$1-f-hold \$1-f-hold hold 3 8 0 10 #f430f0 #000000 #000000 0 1;
+#X obj 9 188 hsl 75 15 0 1 0 0 \$1-f-release \$1-f-release release 3 8 0 10 #f430f0 #000000 #000000 0 1;
+#X obj 9 143 hsl 75 15 0 1 0 0 \$1-filterq \$1-filterq q 3 8 0 10 #f430f0 #000000 #000000 0 1;
+#X obj 9 35 hsl 75 15 0 1 0 0 \$1-overdrive \$1-overdrive overdrive 3 8 0 10 #f430f0 #000000 #000000 0 1;
+#X obj 6 5 cnv 15 80 15 empty empty amplitude 3 8 0 10 #000000 #f430f0 0;
+#X obj 9 269 hsl 75 15 0 0 0 0 \$0-unstep-gui \$0.bli unstep 3 8 0 10 #f430f0 #f430f0 #000000 0 1;
+#X obj 9 221 hsl 75 15 1 1 0 0 \$0-wf \$0-wf-r waveform 3 8 0 10 #f430f0 #f430f0 #000000 0 1;
+#X obj 9 236 hsl 75 15 0 0 0 0 \$0-syph \$0-syph-r sync_phase 3 8 0 10 #f430f0 #f430f0 #000000 0 1;
+#X obj 6 98 cnv 15 80 15 empty empty filter 3 8 0 10 #000000 #f430f0 0;
+#X obj 6 206 cnv 15 80 15 empty empty oscillator 3 8 0 10 #000000 #f430f0 0;
+#X obj 6 251 cnv 15 40 15 empty \$0-display-wf square 3 8 0 10 #000000 #f430f0 0;
+#X obj 46 251 cnv 15 40 15 empty \$0-display-syph |off 3 8 0 10 #000000 #f430f0 0;
 #X restore 103 25 pd \$1-lilacid;
 #N canvas 702 298 178 164 NETPD 0;
 #N canvas 644 305 310 195 abslist 0;

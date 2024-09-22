@@ -50,8 +50,7 @@
 #X obj 378 48 r \$0.margin;
 #X obj 148 116 r \$0.margin;
 #X obj 719 59 \$0;
-#X obj 796 30 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 796 30 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 719 81 \; \$1.margin 52 \;;
 #X obj 480 90 min 376;
 #X obj 20 64 max 20;
@@ -337,68 +336,49 @@
 #X obj 659 385 netpd_f \$1 \$2/solo4 0;
 #X msg 659 406 solo4 \$1;
 #X msg 459 406 solo3 \$1;
-#N canvas 603 457 427 215 \$3-\$2 1;
-#X obj 2 2 cnv 15 410 202 empty empty sdfdsaf 20 12 0 14 -33295 -66577
-0;
-#X obj 5 5 cnv 14 404 14 empty empty empty 20 12 0 14 -1 -66577 0;
+#N canvas 603 457 427 215 \$3-\$2 0;
+#X obj 2 2 cnv 15 410 202 empty empty sdfdsaf 20 12 0 14 #202038 #404040 0;
+#X obj 5 5 cnv 14 404 14 empty empty empty 20 12 0 14 #000000 #404040 0;
 #X obj 5 47 r4mbc-sbcg \$1 \$2 \$0 1;
 #X obj 90 47 r4mbc-sbcg \$1 \$2 \$0 2;
 #X obj 175 47 r4mbc-sbcg \$1 \$2 \$0 3;
 #X obj 260 47 r4mbc-sbcg \$1 \$2 \$0 4;
 #N canvas 546 121 434 65 frequency.separator 0;
-#X obj 13 10 hsl 83 10 1 83.5576 0 0 \$0.slider1 \$0.slider1.r sdfa
--2 5 0 10 -262144 -1 -1 0 1;
-#X obj 13 10 hsl 203 10 1 203.924 0 0 \$0.slider2 \$0.slider2.r sdfa
--2 5 0 10 -262144 -1 -1 0 1;
-#X obj 14 10 hsl 323 10 1 323.997 0 0 \$0.slider3 \$0.slider3.r sdfa
--2 5 0 10 -262144 -1 -1 0 1;
-#X obj 10 10 cnv 10 400 10 empty \$0.segment4 empty 20 12 0 14 -261056
--66577 0;
-#X obj 10 10 cnv 10 323 10 empty \$0.segment3 empty 20 12 0 14 -235706
--66577 0;
-#X obj 10 10 cnv 10 203 10 empty \$0.segment2 empty 20 12 0 14 -198129
--66577 0;
-#X obj 10 10 cnv 10 83 10 empty \$0.segment1 empty 20 0 0 14 -144676
--66577 0;
+#X obj 13 10 hsl 83 10 1 83.5576 0 0 \$0.slider1 \$0.slider1.r sdfa -2 5 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 13 10 hsl 203 10 1 203.924 0 0 \$0.slider2 \$0.slider2.r sdfa -2 5 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 14 10 hsl 323 10 1 323.997 0 0 \$0.slider3 \$0.slider3.r sdfa -2 5 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 10 10 cnv 10 400 10 empty \$0.segment4 empty 20 12 0 14 #fcb8fc #404040 0;
+#X obj 10 10 cnv 10 323 10 empty \$0.segment3 empty 20 12 0 14 #e488e4 #404040 0;
+#X obj 10 10 cnv 10 203 10 empty \$0.segment2 empty 20 12 0 14 #c05cc0 #404040 0;
+#X obj 10 10 cnv 10 83 10 empty \$0.segment1 empty 20 0 0 14 #8c508c #404040 0;
 #X coords 0 -1 1 1 400 10 2 10 10;
 #X restore 7 7 pd frequency.separator;
-#X obj 335 65 cnv 15 74 16 empty empty --threshold 2 7 0 10 -86853
--257025 0;
-#X obj 335 85 cnv 15 74 16 empty empty ------ratio 2 7 0 10 -86853
--257025 0;
-#X obj 335 105 cnv 15 74 16 empty empty -----attack 2 7 0 10 -86853
--257025 0;
-#X obj 335 125 cnv 15 74 16 empty empty ----release 2 7 0 10 -86853
--257025 0;
-#X obj 335 145 cnv 15 74 16 empty empty -------gain 2 7 0 10 -86853
--257025 0;
-#X obj 50 24 cnv 15 60 15 empty \$0.xfreq1.display 123Hz 2 7 0 10 -66577
--259712 0;
-#X obj 136 24 cnv 15 60 15 empty \$0.xfreq2.display 763Hz 2 7 0 10
--66577 -259712 0;
-#X obj 223 24 cnv 15 60 15 empty \$0.xfreq3.display 4712Hz 2 7 0 10
--66577 -259712 0;
-#X obj 80 65 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 80 85 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 80 105 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 80 125 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 80 145 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 165 65 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 165 85 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 165 105 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 165 125 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 165 145 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 250 65 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 250 85 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 250 105 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 250 125 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 250 145 cnv 9 9 16 empty empty - 2 7 0 10 -86853 -257025 0;
-#X obj 338 35 cnv 15 15 15 empty empty r4mbc 3 8 0 20 -33295 -165824
-0;
-#X obj 338 52 cnv 3 3 3 empty empty _____ 3 -10 0 20 -33295 -165824
-0;
-#X obj 341 27 cnv 3 3 3 empty empty _____ 0 -5 0 20 -33295 -165824
-0;
+#X obj 335 65 cnv 15 74 16 empty empty --threshold 2 7 0 10 #543410 #f8c000 0;
+#X obj 335 85 cnv 15 74 16 empty empty ------ratio 2 7 0 10 #543410 #f8c000 0;
+#X obj 335 105 cnv 15 74 16 empty empty -----attack 2 7 0 10 #543410 #f8c000 0;
+#X obj 335 125 cnv 15 74 16 empty empty ----release 2 7 0 10 #543410 #f8c000 0;
+#X obj 335 145 cnv 15 74 16 empty empty -------gain 2 7 0 10 #543410 #f8c000 0;
+#X obj 50 24 cnv 15 60 15 empty \$0.xfreq1.display 123Hz 2 7 0 10 #404040 #fc64fc 0;
+#X obj 136 24 cnv 15 60 15 empty \$0.xfreq2.display 763Hz 2 7 0 10 #404040 #fc64fc 0;
+#X obj 223 24 cnv 15 60 15 empty \$0.xfreq3.display 4712Hz 2 7 0 10 #404040 #fc64fc 0;
+#X obj 80 65 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 80 85 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 80 105 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 80 125 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 80 145 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 165 65 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 165 85 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 165 105 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 165 125 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 165 145 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 250 65 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 250 85 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 250 105 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 250 125 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 250 145 cnv 9 9 16 empty empty - 2 7 0 10 #543410 #f8c000 0;
+#X obj 338 35 cnv 15 15 15 empty empty r4mbc 3 8 0 20 #202038 #a078fc 0;
+#X obj 338 52 cnv 3 3 3 empty empty _____ 3 -10 0 20 #202038 #a078fc 0;
+#X obj 341 27 cnv 3 3 3 empty empty _____ 0 -5 0 20 #202038 #a078fc 0;
 #X restore 837 12 pd \$3-\$2;
 #X connect 0 0 18 0;
 #X connect 4 0 18 1;

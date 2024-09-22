@@ -1,4 +1,3 @@
-#N struct 3275.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 568 203 1048 665 10;
 #X obj 36 582 *~;
 #X obj 197 583 *~;
@@ -71,7 +70,7 @@
 #X obj 514 167 s \$0_el.del-l;
 #X obj 440 479 mod 4;
 #X obj 254 134 netpd_f \$1 \$2/speed -1;
-#N canvas 86 439 320 169 \$3-\$2 1;
+#N canvas 86 439 320 169 \$3-\$2 0;
 #X obj 14 4 nbx 2 16 1 20 0 0 \$1-\$2/unit \$1-\$2/unit time-unit_(16th) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 14 22 nbx 2 16 0 20 0 0 \$1-\$2/length \$1-\$2/length loop-length_(unit) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 14 76 nbx 2 16 0 100 0 0 \$1-\$2/roffset \$1-\$2/roffset rec-offset_(unit) 32 9 0 10 #fcfcfc #000000 #000000 0 256;

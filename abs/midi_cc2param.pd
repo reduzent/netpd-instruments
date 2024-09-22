@@ -1,10 +1,8 @@
 #N canvas 605 227 482 436 10;
 #X obj 167 290 list prepend;
 #X obj 285 180 r \$0.address;
-#X obj 23 22 hsl 280 15 0 127 0 0 \$0.slider empty empty -2 8 0 10
--262144 -1 -1 0 1;
-#X obj 80 21 cnv 15 225 15 empty \$0.path <unset> 5 7 0 10 -262144
--1 0;
+#X obj 23 22 hsl 280 15 0 127 0 0 \$0.slider empty empty -2 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 80 21 cnv 15 225 15 empty \$0.path <unset> 5 7 0 10 #fcfcfc #000000 0;
 #X obj 167 241 change -1;
 #X obj 167 131 / 127;
 #N canvas 617 97 456 502 learn 0;
@@ -287,10 +285,8 @@
 #X msg 342 278 1;
 #X obj 209 132 s \$0.receiving;
 #X obj 167 159 * 1;
-#X obj 20 21 cnv 15 50 15 empty \$0.label \$2 5 7 0 10 -262144 -1 0
-;
-#X obj 71 21 cnv 8 8 15 empty \$0.indicator ● 2 7 0 10 -262144 -262144
-0;
+#X obj 20 21 cnv 15 50 15 empty \$0.label \$2 5 7 0 10 #fcfcfc #000000 0;
+#X obj 71 21 cnv 8 8 15 empty \$0.indicator ● 2 7 0 10 #fcfcfc #fcfcfc 0;
 #N canvas 454 68 381 120 NETPD 0;
 #X msg 17 15 version 0 0 5;
 #X restore 22 213 pd NETPD 2 0;

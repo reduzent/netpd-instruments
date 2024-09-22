@@ -1,80 +1,46 @@
 #N canvas 297 349 555 447 10;
-#N canvas 842 307 198 598 \$1-tr808 1;
-#X obj 39 209 hsl 128 15 0 1 0 0 \$1-clap/gain \$1-clap/gain gain 2
-7 0 10 #c4fcc4 #0f4710 #000000 0 1;
-#X obj 39 24 hsl 128 15 0 1 0 0 \$1-bassdrum/gain \$1-bassdrum/gain
-gain 2 7 0 10 #fcfcc4 #ff8300 #000000 0 1;
-#X obj 39 39 hsl 128 15 0 1 0 0 \$1-bassdrum/click \$1-bassdrum/click
-click 2 7 0 10 #fcfcc4 #ff8300 #000000 0 1;
-#X obj 39 54 hsl 128 15 0 1 0 0 \$1-bassdrum/decay \$1-bassdrum/decay
-decay 2 7 0 10 #fcfcc4 #ff8300 #000000 0 1;
+#N canvas 842 307 198 598 \$1-tr808 0;
+#X obj 39 209 hsl 128 15 0 1 0 0 \$1-clap/gain \$1-clap/gain gain 2 7 0 10 #c4fcc4 #0f4710 #000000 0 1;
+#X obj 39 24 hsl 128 15 0 1 0 0 \$1-bassdrum/gain \$1-bassdrum/gain gain 2 7 0 10 #fcfcc4 #ff8300 #000000 0 1;
+#X obj 39 39 hsl 128 15 0 1 0 0 \$1-bassdrum/click \$1-bassdrum/click click 2 7 0 10 #fcfcc4 #ff8300 #000000 0 1;
+#X obj 39 54 hsl 128 15 0 1 0 0 \$1-bassdrum/decay \$1-bassdrum/decay decay 2 7 0 10 #fcfcc4 #ff8300 #000000 0 1;
 #X text 34 8 bassdrum;
 #X text 34 193 clap;
-#X obj 39 109 hsl 128 15 0 1 0 0 \$1-snare/gain \$1-snare/gain gain
-2 7 0 10 #c6feff #0400ff #000000 0 1;
-#X obj 39 124 hsl 128 15 0 1 0 0 \$1-snare/tone \$1-snare/tone tone
-2 7 0 10 #c6feff #0400ff #000000 0 1;
+#X obj 39 109 hsl 128 15 0 1 0 0 \$1-snare/gain \$1-snare/gain gain 2 7 0 10 #c6feff #0400ff #000000 0 1;
+#X obj 39 124 hsl 128 15 0 1 0 0 \$1-snare/tone \$1-snare/tone tone 2 7 0 10 #c6feff #0400ff #000000 0 1;
 #X text 34 93 snare;
-#X obj 39 139 hsl 128 15 0 1 0 0 \$1-snare/snappy \$1-snare/snappy
-snappy 2 7 0 10 #c6feff #0400ff #000000 0 1;
-#X obj 39 154 hsl 128 15 0 1 0 0 \$1-snare/tune \$1-snare/tune tune
-2 7 0 10 #c6feff #0400ff #000000 0 1;
-#X obj 21 26 vsl 15 55 0 127 0 0 \$0.bassdrum.s \$0.bassdrum.r empty
-0 -9 0 10 #feffc6 #feffc6 #000000 0 1;
-#X obj 21 111 vsl 15 70 0 127 0 0 \$0.snare.s \$0.snare.r empty 0 -9
-0 10 #c6feff #c6feff #000000 0 1;
-#X obj 21 211 vsl 15 25 0 127 0 0 \$0.clap.s \$0.clap.r empty 0 -9
-0 10 #c6ffc7 #c6ffc7 #000000 0 1;
-#X obj 39 264 hsl 128 15 0 1 0 0 \$1-rim/gain \$1-rim/gain gain 2 7
-0 10 #c7c6ff #0400ff #000000 0 1;
-#X obj 21 266 vsl 15 25 0 127 0 0 \$0.rim.s \$0.rim.r empty 0 -9 0
-10 #c7c6ff #c7c6ff #000000 0 1;
+#X obj 39 139 hsl 128 15 0 1 0 0 \$1-snare/snappy \$1-snare/snappy snappy 2 7 0 10 #c6feff #0400ff #000000 0 1;
+#X obj 39 154 hsl 128 15 0 1 0 0 \$1-snare/tune \$1-snare/tune tune 2 7 0 10 #c6feff #0400ff #000000 0 1;
+#X obj 21 26 vsl 15 55 0 127 0 0 \$0.bassdrum.s \$0.bassdrum.r empty 0 -9 0 10 #feffc6 #feffc6 #000000 0 1;
+#X obj 21 111 vsl 15 70 0 127 0 0 \$0.snare.s \$0.snare.r empty 0 -9 0 10 #c6feff #c6feff #000000 0 1;
+#X obj 21 211 vsl 15 25 0 127 0 0 \$0.clap.s \$0.clap.r empty 0 -9 0 10 #c6ffc7 #c6ffc7 #000000 0 1;
+#X obj 39 264 hsl 128 15 0 1 0 0 \$1-rim/gain \$1-rim/gain gain 2 7 0 10 #c7c6ff #0400ff #000000 0 1;
+#X obj 21 266 vsl 15 25 0 127 0 0 \$0.rim.s \$0.rim.r empty 0 -9 0 10 #c7c6ff #c7c6ff #000000 0 1;
 #X text 34 248 rimshot;
-#X obj 39 319 hsl 128 15 0 1 0 0 \$1-ohh/gain \$1-ohh/gain gain(open)
-2 7 0 10 #ffe3c6 #ff8300 #000000 0 1;
-#X obj 21 321 vsl 15 25 0 127 0 0 \$0.ohh.s \$0.ohh.r empty 0 -9 0
-10 #ffe3c6 #ffe3c6 #000000 0 1;
+#X obj 39 319 hsl 128 15 0 1 0 0 \$1-ohh/gain \$1-ohh/gain gain(open) 2 7 0 10 #ffe3c6 #ff8300 #000000 0 1;
+#X obj 21 321 vsl 15 25 0 127 0 0 \$0.ohh.s \$0.ohh.r empty 0 -9 0 10 #ffe3c6 #ffe3c6 #000000 0 1;
 #X text 34 303 hihat1;
-#X obj 39 334 hsl 128 15 0 1 0 0 \$1-ohh/decay \$1-ohh/decay decay(open)
-2 7 0 10 #ffe3c6 #ff8300 #000000 0 1;
-#X obj 39 364 hsl 128 15 0 1 0 0 \$1-hh/tune \$1-hh/tune tune(both)
-2 7 0 10 #ffe3c6 #ff8300 #000000 0 1;
-#X obj 39 349 hsl 128 15 0 1 0 0 \$1-chh/gain \$1-chh/gain gain(closed)
-2 7 0 10 #ffe3c6 #ff8300 #000000 0 1;
-#X obj 21 351 vsl 15 40 0 127 0 0 \$0.chh.s \$0.chh.r empty 0 -9 0
-10 #ffe3c6 #ffe3c6 #000000 0 1;
-#X obj 39 414 hsl 128 15 0 1 0 0 \$1-cymbal/gain \$1-cymbal/gain gain
-2 7 0 10 #ffc7c6 #ff0400 #000000 0 1;
-#X obj 39 429 hsl 128 15 0 1 0 0 \$1-cymbal/tone \$1-cymbal/tone tone
-2 7 0 10 #ffc7c6 #ff0400 #000000 0 1;
-#X obj 39 444 hsl 128 15 0 1 0 0 \$1-cymbal/decay \$1-cymbal/decay
-decay 2 7 0 10 #ffc7c6 #ff0400 #000000 0 1;
-#X obj 39 459 hsl 128 15 0 1 0 0 \$1-cymbal/tune \$1-cymbal/tune tune
-2 7 0 10 #ffc7c6 #ff0400 #000000 0 1;
-#X obj 21 416 vsl 15 70 0 127 0 0 \$0.cymbal.s \$0.cymbal.r empty 0
--9 0 10 #ffc7c6 #ffc7c6 #000000 0 1;
+#X obj 39 334 hsl 128 15 0 1 0 0 \$1-ohh/decay \$1-ohh/decay decay(open) 2 7 0 10 #ffe3c6 #ff8300 #000000 0 1;
+#X obj 39 364 hsl 128 15 0 1 0 0 \$1-hh/tune \$1-hh/tune tune(both) 2 7 0 10 #ffe3c6 #ff8300 #000000 0 1;
+#X obj 39 349 hsl 128 15 0 1 0 0 \$1-chh/gain \$1-chh/gain gain(closed) 2 7 0 10 #ffe3c6 #ff8300 #000000 0 1;
+#X obj 21 351 vsl 15 40 0 127 0 0 \$0.chh.s \$0.chh.r empty 0 -9 0 10 #ffe3c6 #ffe3c6 #000000 0 1;
+#X obj 39 414 hsl 128 15 0 1 0 0 \$1-cymbal/gain \$1-cymbal/gain gain 2 7 0 10 #ffc7c6 #ff0400 #000000 0 1;
+#X obj 39 429 hsl 128 15 0 1 0 0 \$1-cymbal/tone \$1-cymbal/tone tone 2 7 0 10 #ffc7c6 #ff0400 #000000 0 1;
+#X obj 39 444 hsl 128 15 0 1 0 0 \$1-cymbal/decay \$1-cymbal/decay decay 2 7 0 10 #ffc7c6 #ff0400 #000000 0 1;
+#X obj 39 459 hsl 128 15 0 1 0 0 \$1-cymbal/tune \$1-cymbal/tune tune 2 7 0 10 #ffc7c6 #ff0400 #000000 0 1;
+#X obj 21 416 vsl 15 70 0 127 0 0 \$0.cymbal.s \$0.cymbal.r empty 0 -9 0 10 #ffc7c6 #ffc7c6 #000000 0 1;
 #X text 34 398 cymbal;
-#X obj 39 529 hsl 128 15 0 1 0 0 \$1-bl/tune \$1-bl/tune tune 2 7 0
-10 #e3c6ff #9c00ff #000000 0 1;
-#X obj 39 514 hsl 128 15 0 1 0 0 \$1-bl/gain \$1-bl/gain gain 2 7 0
-10 #e3c6ff #9c00ff #000000 0 1;
-#X obj 21 516 vsl 15 40 0 127 0 0 \$0.bell.s \$0.bell.r empty 0 -9
-0 10 #e3c6ff #e3c6ff #000000 0 1;
+#X obj 39 529 hsl 128 15 0 1 0 0 \$1-bl/tune \$1-bl/tune tune 2 7 0 10 #e3c6ff #9c00ff #000000 0 1;
+#X obj 39 514 hsl 128 15 0 1 0 0 \$1-bl/gain \$1-bl/gain gain 2 7 0 10 #e3c6ff #9c00ff #000000 0 1;
+#X obj 21 516 vsl 15 40 0 127 0 0 \$0.bell.s \$0.bell.r empty 0 -9 0 10 #e3c6ff #e3c6ff #000000 0 1;
 #X text 34 498 bell;
-#X obj 39 69 hsl 128 15 0 1 0 0 \$1-bassdrum/pan \$1-bassdrum/pan pan
-2 7 0 10 #fcfcc4 #ff8300 #000000 0 1;
-#X obj 39 169 hsl 128 15 0 1 0 0 \$1-snare/pan \$1-snare/pan pan 2
-7 0 10 #c6feff #0400ff #000000 0 1;
-#X obj 39 224 hsl 128 15 0 1 0 0 \$1-clap/pan \$1-clap/pan pan 2 7
-0 10 #c4fcc4 #0f4710 #000000 0 1;
-#X obj 39 279 hsl 128 15 0 1 0 0 \$1-rim/pan \$1-rim/pan pan 2 7 0
-10 #c7c6ff #0400ff #000000 0 1;
-#X obj 39 379 hsl 128 15 0 1 0 0 \$1-hh/pan \$1-hh/pan pan(both) 2
-7 0 10 #ffe3c6 #ff8300 #000000 0 1;
-#X obj 39 474 hsl 128 15 0 1 0 0 \$1-cymbal/pan \$1-cymbal/pan pan
-2 7 0 10 #ffc7c6 #ff0400 #000000 0 1;
-#X obj 39 544 hsl 128 15 0 1 0 0 \$1-bl/pan \$1-bl/pan pan 2 7 0 10
-#e3c6ff #9c00ff #000000 0 1;
+#X obj 39 69 hsl 128 15 0 1 0 0 \$1-bassdrum/pan \$1-bassdrum/pan pan 2 7 0 10 #fcfcc4 #ff8300 #000000 0 1;
+#X obj 39 169 hsl 128 15 0 1 0 0 \$1-snare/pan \$1-snare/pan pan 2 7 0 10 #c6feff #0400ff #000000 0 1;
+#X obj 39 224 hsl 128 15 0 1 0 0 \$1-clap/pan \$1-clap/pan pan 2 7 0 10 #c4fcc4 #0f4710 #000000 0 1;
+#X obj 39 279 hsl 128 15 0 1 0 0 \$1-rim/pan \$1-rim/pan pan 2 7 0 10 #c7c6ff #0400ff #000000 0 1;
+#X obj 39 379 hsl 128 15 0 1 0 0 \$1-hh/pan \$1-hh/pan pan(both) 2 7 0 10 #ffe3c6 #ff8300 #000000 0 1;
+#X obj 39 474 hsl 128 15 0 1 0 0 \$1-cymbal/pan \$1-cymbal/pan pan 2 7 0 10 #ffc7c6 #ff0400 #000000 0 1;
+#X obj 39 544 hsl 128 15 0 1 0 0 \$1-bl/pan \$1-bl/pan pan 2 7 0 10 #e3c6ff #9c00ff #000000 0 1;
 #X restore 14 12 pd \$1-tr808;
 #N canvas 509 502 298 114 NETPD 0;
 #N canvas 509 660 240 194 abslist 0;
@@ -719,8 +685,7 @@ decay 2 7 0 10 #ffc7c6 #ff0400 #000000 0 1;
 #X connect 4 0 3 0;
 #X connect 4 1 3 1;
 #X restore 231 329 pd OR;
-#X obj 14 54 qseq3-instr-list \$1 tr808 bassdrum snare clap rimshot
-ohihat chihat cymbal bell;
+#X obj 14 54 qseq3-instr-list \$1 tr808 bassdrum snare clap rimshot ohihat chihat cymbal bell;
 #X connect 3 0 4 0;
 #X connect 3 1 4 1;
 #X connect 3 2 8 0;

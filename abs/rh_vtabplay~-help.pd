@@ -5,8 +5,7 @@
 #X restore 16 279 graph;
 #X obj 16 225 tabwrite~ \$0.delay;
 #X obj 204 182 rh_vtabplay~ \$0.delay;
-#X obj 16 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 16 117 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 16 92 loadbang;
 #X obj 35 189 vline~;
 #N canvas 0 0 450 300 (subpatch) 0;
@@ -21,11 +20,9 @@
 #X restore 406 15 pd NETPD 2 0;
 #X msg 35 153 -1 \, 1 5;
 #X msg 177 97 0.9384;
-#X floatatom 240 97 5 0 0 0 - - -, f 5;
-#X text 14 13 rh_vtabplay~ - a sample precise [tabplay~] replacement
-;
-#X text 15 49 While [tabplay~] starts playing only on block boundaries
-\, [rh_vtabplay~] is sample-precise.;
+#X floatatom 240 97 5 0 0 0 - - - 0;
+#X text 14 13 rh_vtabplay~ - a sample precise [tabplay~] replacement;
+#X text 15 49 While [tabplay~] starts playing only on block boundaries \, [rh_vtabplay~] is sample-precise.;
 #X connect 2 0 7 0;
 #X connect 3 0 11 0;
 #X connect 3 0 1 0;

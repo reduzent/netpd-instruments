@@ -1,26 +1,19 @@
+#N struct 1007.button float posx float posy float color;
+#N struct 1007.cursor float cx float cy float cy2 float show;
 #N canvas 1100 84 1419 774 10;
 #N canvas 624 75 434 290 NETPD 0;
 #N canvas 315 75 473 287 abslist 0;
-#X text 7 13 Put a message box containing the name of the abstraction
-(without the .pd suffix) for each dependency.;
+#X text 7 13 Put a message box containing the name of the abstraction (without the .pd suffix) for each dependency.;
 #X text 6 55 For instance:;
 #X text 23 84 [mysynth-voice(;
-#X text 13 130 NOTE: abstractions of instruments also use netpd meta
-tags and may also specify their own dependencies. unpatch resolves
-dependency trees recursively.;
+#X text 13 130 NOTE: abstractions of instruments also use netpd meta tags and may also specify their own dependencies. unpatch resolves dependency trees recursively.;
 #X msg 28 104 unstep;
 #X restore 12 178 pd abslist;
 #X text 111 179 <- add dependencies of your netpd instrument;
-#X text 18 32 A 'version' meta tag is mandatory. unpatch uses this
-information to make sure that all clients load the same version of
-the instrument.;
-#X text 19 78 Whenever you make changes to your instrument \, make
-sure to bump the version.;
-#X text 18 118 There is no predefined meaning of the three version
-fields. Use them at your own will.;
-#X text 16 211 The [pd abslist] tag container is optional and is used
-to specify dependencies (abstractions in netpd/abs) of your instrument.
-;
+#X text 18 32 A 'version' meta tag is mandatory. unpatch uses this information to make sure that all clients load the same version of the instrument.;
+#X text 19 78 Whenever you make changes to your instrument \, make sure to bump the version.;
+#X text 18 118 There is no predefined meaning of the three version fields. Use them at your own will.;
+#X text 16 211 The [pd abslist] tag container is optional and is used to specify dependencies (abstractions in netpd/abs) of your instrument.;
 #X text 107 7 <- update the version of this netpd instrument;
 #X msg 12 8 version 0 0 2;
 #X restore 6 8 pd NETPD 2 0;
@@ -182,39 +175,23 @@ to specify dependencies (abstractions in netpd/abs) of your instrument.
 #X obj 254 539 netpd_f \$1 \$2/vol1 0.5;
 #X obj 519 661 *~;
 #X obj 706 665 *~;
-#N canvas 1793 460 385 155 \$3-\$2 1;
-#X obj 11 126 hsl 75 15 0 0 0 0 \$0-unstep-gui \$0.bli unstep 3 8 0
-10 #fcfcfc #fcfcfc #000000 0 1;
-#X obj 8 17 nbx 5 14 -12 12 0 0 \$1-\$2/trans1 \$1-\$2/trans1 trans1
-60 8 0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 8 35 nbx 5 14 0 127 0 0 \$1-\$2/win1 \$1-\$2/win1 win1 60 8
-0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 8 53 nbx 5 14 0 1000 0 0 \$1-\$2/del1 \$1-\$2/del1 del1 60 8
-0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 11 71 hsl 95 15 0 1 0 0 \$1-\$2/vol1 \$1-\$2/vol1 vol1 7 8 0
-10 #fcfcfc #000000 #000000 0 1;
-#X obj 128 17 nbx 5 14 -12 12 0 0 \$1-\$2/trans2 \$1-\$2/trans2 trans2
-60 8 0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 128 35 nbx 5 14 0 127 0 0 \$1-\$2/win2 \$1-\$2/win2 win2 60
-8 0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 128 53 nbx 5 14 0 1000 0 0 \$1-\$2/del2 \$1-\$2/del2 del2 60
-8 0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 131 71 hsl 95 15 0 1 0 0 \$1-\$2/vol2 \$1-\$2/vol2 vol2 7 8
-0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 248 17 nbx 5 14 -12 12 0 0 \$1-\$2/trans3 \$1-\$2/trans3 trans3
-60 8 0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 248 35 nbx 5 14 0 127 0 0 \$1-\$2/win3 \$1-\$2/win3 win3 60
-8 0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 248 53 nbx 5 14 0 1000 0 0 \$1-\$2/del3 \$1-\$2/del3 del3 60
-8 0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 251 71 hsl 95 15 0 1 0 0 \$1-\$2/vol3 \$1-\$2/vol3 vol3 7 8
-0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 11 91 hsl 95 15 0 1 0 0 \$1-\$2/pan1 \$1-\$2/pan1 pan1 7 8 0
-10 #fcfcfc #000000 #000000 0 1;
-#X obj 131 91 hsl 95 15 0 1 0 0 \$1-\$2/pan2 \$1-\$2/pan2 pan2 7 8
-0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 251 91 hsl 95 15 0 1 0 0 \$1-\$2/pan3 \$1-\$2/pan3 pan3 7 8
-0 10 #fcfcfc #000000 #000000 0 1;
+#N canvas 1793 460 385 155 \$3-\$2 0;
+#X obj 11 126 hsl 75 15 0 0 0 0 \$0-unstep-gui \$0.bli unstep 3 8 0 10 #fcfcfc #fcfcfc #000000 0 1;
+#X obj 8 17 nbx 5 14 -12 12 0 0 \$1-\$2/trans1 \$1-\$2/trans1 trans1 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 8 35 nbx 5 14 0 127 0 0 \$1-\$2/win1 \$1-\$2/win1 win1 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 8 53 nbx 5 14 0 1000 0 0 \$1-\$2/del1 \$1-\$2/del1 del1 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 11 71 hsl 95 15 0 1 0 0 \$1-\$2/vol1 \$1-\$2/vol1 vol1 7 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 128 17 nbx 5 14 -12 12 0 0 \$1-\$2/trans2 \$1-\$2/trans2 trans2 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 128 35 nbx 5 14 0 127 0 0 \$1-\$2/win2 \$1-\$2/win2 win2 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 128 53 nbx 5 14 0 1000 0 0 \$1-\$2/del2 \$1-\$2/del2 del2 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 131 71 hsl 95 15 0 1 0 0 \$1-\$2/vol2 \$1-\$2/vol2 vol2 7 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 248 17 nbx 5 14 -12 12 0 0 \$1-\$2/trans3 \$1-\$2/trans3 trans3 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 248 35 nbx 5 14 0 127 0 0 \$1-\$2/win3 \$1-\$2/win3 win3 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 248 53 nbx 5 14 0 1000 0 0 \$1-\$2/del3 \$1-\$2/del3 del3 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 251 71 hsl 95 15 0 1 0 0 \$1-\$2/vol3 \$1-\$2/vol3 vol3 7 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 11 91 hsl 95 15 0 1 0 0 \$1-\$2/pan1 \$1-\$2/pan1 pan1 7 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 131 91 hsl 95 15 0 1 0 0 \$1-\$2/pan2 \$1-\$2/pan2 pan2 7 8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 251 91 hsl 95 15 0 1 0 0 \$1-\$2/pan3 \$1-\$2/pan3 pan3 7 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X restore 6 29 pd \$3-\$2;
 #X obj 383 77 netpd_f \$1 \$2/win1 25;
 #X obj 567 78 netpd_f \$1 \$2/win2 25;

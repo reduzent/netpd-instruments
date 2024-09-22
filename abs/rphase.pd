@@ -126,17 +126,12 @@
 #X obj 79 138 outlet~;
 #X obj 199 27 netpd_f \$1 \$2/freq 0.1;
 #X obj 292 49 netpd_f \$1 \$2/wd 1;
-#N canvas 608 342 328 62 \$3-\$2 1;
-#X obj 2 5 cnv 10 282 18 empty empty empty 330 10 1 8 -3521 -250685
-0;
-#X obj 3 6 cnv 10 280 16 empty empty rphase 230 8 1 8 -229368 -3201
-0;
-#X obj 10 9 hsl 100 10 0 1 0 0 \$1-\$2/freq \$1-\$2/freq empty 15 5
-1 7 -44941 -1 -1 0 1;
-#X obj 117 9 hsl 100 10 0 1 0 0 \$1-\$2/wd \$1-\$2/wd empty 15 5 1
-7 -44941 -1 -1 0 1;
-#X obj 31 33 cnv 15 15 15 empty empty works_only_as_insert!!! 0 3 1
-14 -262144 -66577 0;
+#N canvas 608 342 328 62 \$3-\$2 0;
+#X obj 2 5 cnv 10 282 18 empty empty empty 330 10 1 8 #00dc00 #f430f0 0;
+#X obj 3 6 cnv 10 280 16 empty empty rphase 230 8 1 8 #dcfcdc #00c800 0;
+#X obj 10 9 hsl 100 10 0 1 0 0 \$1-\$2/freq \$1-\$2/freq empty 15 5 1 7 #28f830 #000000 #000000 0 1;
+#X obj 117 9 hsl 100 10 0 1 0 0 \$1-\$2/wd \$1-\$2/wd empty 15 5 1 7 #28f830 #000000 #000000 0 1;
+#X obj 31 33 cnv 15 15 15 empty empty works_only_as_insert!!! 0 3 1 14 #fcfcfc #404040 0;
 #X restore 347 86 pd \$3-\$2;
 #X connect 0 0 6 0;
 #X connect 1 0 7 0;

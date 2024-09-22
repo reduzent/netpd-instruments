@@ -6,12 +6,10 @@
 #X obj 218 92 inlet~;
 #X obj 26 360 outlet~;
 #X obj 170 372 outlet~;
-#N canvas 692 534 219 73 \$3-\$2 1;
-#X obj 9 5 hsl 200 20 0 1 0 0 \$1-\$2/gain \$1-\$2/gain GAIN 10 11
-0 18 #9c00fc #fc0400 #fcfcfc 0 1;
+#N canvas 692 534 219 73 \$3-\$2 0;
+#X obj 9 5 hsl 200 20 0 1 0 0 \$1-\$2/gain \$1-\$2/gain GAIN 10 11 0 18 #9c00fc #fc0400 #fcfcfc 0 1;
 #X text 176 50 TRAMP;
-#X obj 9 28 hsl 200 20 0 1 0 0 \$1-\$2/level \$1-\$2/level LEVEL 10
-11 0 18 #b014ff #fc0400 #fcfcfc 0 1;
+#X obj 9 28 hsl 200 20 0 1 0 0 \$1-\$2/level \$1-\$2/level LEVEL 10 11 0 18 #b014ff #fc0400 #fcfcfc 0 1;
 #X restore 7 12 pd \$3-\$2;
 #X obj 82 180 bp~ 1000 0.629;
 #X obj 82 155 clip~ -0.45 0.45;

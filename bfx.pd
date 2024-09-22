@@ -1,5 +1,5 @@
 #N canvas 472 118 460 561 10;
-#N canvas 624 75 434 290 NETPD 1;
+#N canvas 624 75 434 290 NETPD 0;
 #N canvas 813 293 194 120 abslist 0;
 #X msg 65 12 mx-fx-list;
 #X msg 4 11 b-uneven;
@@ -11,7 +11,7 @@
 #X msg 11 67 singleton;
 #X msg 11 16 version 0 0 8;
 #X restore 10 14 pd NETPD 2 0;
-#N canvas 656 85 426 339 \$1-bfx 1;
+#N canvas 656 85 426 339 \$1-bfx 0;
 #X text 96 145 BFX;
 #X text 96 165 b-jon plate reverb;
 #X text 96 185 b-uneven harmoniser;

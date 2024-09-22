@@ -7,7 +7,7 @@
 #X obj 161 166 outlet~;
 #N canvas 573 99 450 300 \$0-clone 0;
 #X obj 300 50 inlet~;
-#X obj 100 100 clone rh_convolve-part~ 2 3830 1024 0;
+#X obj 100 100 clone rh_convolve-part~ 2 1003 1024 0;
 #X obj 100 200 outlet~;
 #X connect 0 0 1 1;
 #X connect 1 0 2 0;
@@ -28,8 +28,7 @@
 #X obj 214 186 == 1;
 #X obj 184 76 t f f;
 #X obj 184 212 spigot;
-#X text 249 141 prevent setting blocksizes that are not a power of
-2;
+#X text 249 141 prevent setting blocksizes that are not a power of 2;
 #X msg 244 244 blocksize is not a power of 2;
 #X obj 184 294 outlet;
 #X obj 244 222 sel 0;
@@ -186,9 +185,7 @@
 #X obj 68 223 min 44100;
 #X obj 68 266 + 2;
 #X obj 68 306 s \$0-nparts;
-#X msg 209 336 clear \, obj 300 50 inlet~ \, obj 100 100 clone rh_convolve-part~
-\$1 \$2 \$3 \$4 \, obj 100 200 outlet~ \, connect 0 0 1 1 \, connect
-1 0 2 0;
+#X msg 209 336 clear \, obj 300 50 inlet~ \, obj 100 100 clone rh_convolve-part~ \$1 \$2 \$3 \$4 \, obj 100 200 outlet~ \, connect 0 0 1 1 \, connect 1 0 2 0;
 #X obj 170 258 pack 0 \$0 0;
 #X obj 170 281 list append \$1;
 #X connect 0 0 11 0;

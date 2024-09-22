@@ -1,17 +1,12 @@
 #N canvas 611 248 188 150 10;
 #X text 13 78 by Enrique Erne;
-#N canvas 467 95 173 128 \$2-e-vamp-gui 1;
-#X obj 13 45 hsl 130 15 0 1 0 0 \$2_evamp.d \$2_evamp.d-r decay 15
-7 1 9 -262144 -1 -1 5100 0;
-#X floatatom 93 6 5 1 64 0 - #2_evamp.mod-r #2_evamp.mod;
-#X obj 13 25 hsl 130 15 0 1 0 0 \$2_evamp.a \$2_evamp.a-r attack 15
-7 1 9 -262144 -1 -1 2700 0;
-#X obj 13 65 hsl 130 15 0 1 0 0 \$2_evamp.s \$2_evamp.s-r sustain 15
-7 1 9 -262144 -1 -1 12900 0;
-#X obj 13 85 hsl 130 15 0 1 0 0 \$2_evamp.r \$2_evamp.r-r release 15
-7 1 9 -262144 -1 -1 7100 0;
-#X obj 27 6 hsl 65 14 -1 1 0 0 \$2_evamp.yo \$2_evamp.yo-r yo 15 7
-1 9 -262144 -1 -1 3200 0;
+#N canvas 467 95 173 128 \$2-e-vamp-gui 0;
+#X obj 13 45 hsl 130 15 0 1 0 0 \$2_evamp.d \$2_evamp.d-r decay 15 7 1 9 #fcfcfc #000000 #000000 0 0;
+#X floatatom 93 6 5 1 64 0 - \$2_evamp.mod-r \$2_evamp.mod 0;
+#X obj 13 25 hsl 130 15 0 1 0 0 \$2_evamp.a \$2_evamp.a-r attack 15 7 1 9 #fcfcfc #000000 #000000 0 0;
+#X obj 13 65 hsl 130 15 0 1 0 0 \$2_evamp.s \$2_evamp.s-r sustain 15 7 1 9 #fcfcfc #000000 #000000 0 0;
+#X obj 13 85 hsl 130 15 0 1 0 0 \$2_evamp.r \$2_evamp.r-r release 15 7 1 9 #fcfcfc #000000 #000000 0 0;
+#X obj 27 6 hsl 65 14 -1 1 0 0 \$2_evamp.yo \$2_evamp.yo-r yo 15 7 1 9 #fcfcfc #000000 #000000 0 0;
 #X restore 14 17 pd \$2-e-vamp-gui;
 #N canvas 132 301 582 415 e-vamp 0;
 #X obj 20 22 r~ \$2-l;

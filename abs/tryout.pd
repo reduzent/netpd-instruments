@@ -6,7 +6,7 @@
 #N canvas 780 254 225 147 NETPD 0;
 #X msg 24 13 version 0 0 2;
 #X restore 275 32 pd NETPD 2 0;
-#N canvas 780 515 364 340 \$3-\$2 1;
+#N canvas 780 515 364 340 \$3-\$2 0;
 #X obj 17 28 inlet~;
 #X obj 208 22 inlet~;
 #X obj 17 235 outlet~;

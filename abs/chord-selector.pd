@@ -1,16 +1,10 @@
 #N canvas 646 60 863 246 10;
-#X obj 20 20 cnv 15 140 130 empty empty empty 20 12 0 14 #e0e0e0 #404040
-0;
-#X obj 92 22 netpd-gui-vmenu \$0.fifth 20 18 12 0 888 888 555 888 888
-;
-#X obj 22 22 netpd-gui-vmenu \$0.key 14 18 12 0 888 888 555 888 888
-;
-#X obj 39 22 netpd-gui-vmenu \$0.shift 14 18 12 0 888 888 555 888 888
-;
-#X obj 56 22 netpd-gui-vmenu \$0.third 33 18 12 0 888 888 555 888 888
-;
-#X obj 115 22 netpd-gui-vmenu \$0.seventh 20 18 12 0 888 888 555 888
-888;
+#X obj 20 20 cnv 15 140 130 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 92 22 netpd-gui-vmenu \$0.fifth 20 18 12 0 888 888 555 888 888;
+#X obj 22 22 netpd-gui-vmenu \$0.key 14 18 12 0 888 888 555 888 888;
+#X obj 39 22 netpd-gui-vmenu \$0.shift 14 18 12 0 888 888 555 888 888;
+#X obj 56 22 netpd-gui-vmenu \$0.third 33 18 12 0 888 888 555 888 888;
+#X obj 115 22 netpd-gui-vmenu \$0.seventh 20 18 12 0 888 888 555 888 888;
 #N canvas 340 285 955 424 label 0;
 #X obj 16 37 r \$0.key;
 #X obj 16 60 route selected;
@@ -157,19 +151,15 @@
 #X msg 32 14 chord-selector-help;
 #X restore 14 42 pd abslist;
 #X restore 323 20 pd NETPD 2 0;
-#X obj 42 124 hsl 114 24 0 127 0 0 \$0.chord.confirm empty empty -2
--8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 39 124 cnv 15 119 24 empty \$0.chord.label empty 4 14 2 20 #ffffff
-#000000 0;
+#X obj 42 124 hsl 114 24 0 127 0 0 \$0.chord.confirm empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 39 124 cnv 15 119 24 empty \$0.chord.label empty 4 14 2 20 #ffffff #000000 0;
 #X obj 172 50 r \$0.chord.confirm;
 #X obj 172 73 sel;
 #X obj 201 74 t a;
 #X obj 172 97 symbol, f 14;
-#X obj 138 22 netpd-gui-vmenu \$0.ninth 20 18 12 0 888 888 555 888
-888;
+#X obj 138 22 netpd-gui-vmenu \$0.ninth 20 18 12 0 888 888 555 888 888;
 #X obj 460 77 pdcontrol;
-#X msg 460 20 browse https://en.wikipedia.org/wiki/Chord_names_and_symbols_(popular_music)#Extended_tertian_chords
-;
+#X msg 460 20 browse https://en.wikipedia.org/wiki/Chord_names_and_symbols_(popular_music)#Extended_tertian_chords;
 #N canvas 702 313 450 300 init.menus 0;
 #X obj 23 18 loadbang;
 #X msg 23 41 items _ +5 -5;

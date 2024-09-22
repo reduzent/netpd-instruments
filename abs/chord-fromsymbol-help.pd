@@ -1,9 +1,7 @@
 #N canvas 489 59 540 320 10;
 #X obj 222 27 r \$0.chord;
 #X obj 222 71 symbol;
-#X text 34 216 Each tuple (two consecutive numbers) consists of an
-octave neutral note value (0=C \, 1=C# \, etc.) and the function of
-the note (0=base \, 2=major second \, 3=minor third \, etc.).;
+#X text 34 216 Each tuple (two consecutive numbers) consists of an octave neutral note value (0=C \, 1=C# \, etc.) and the function of the note (0=base \, 2=major second \, 3=minor third \, etc.).;
 #X obj 222 95 chord-fromsymbol;
 #X obj 34 6 chord-selector \$0.chord;
 #X listbox 222 118 34 0 0 0 - - - 0;

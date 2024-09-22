@@ -2,23 +2,20 @@
 #X obj 25 264 rh_trline;
 #X obj 25 175 metro 100;
 #X msg 175 103 127 3000;
-#X obj 28 297 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11618 1;
-#X obj 25 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 28 297 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 25 125 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 174 127 0 1000;
 #X msg 175 152 64;
 #X msg 175 178 stop;
 #X obj 25 64 loadbang;
 #X obj 25 84 t b b;
 #X msg 76 119 100;
-#X floatatom 76 139 5 0 0 0 - - -, f 5;
+#X floatatom 76 139 5 0 0 0 - - - 0;
 #X text 241 104 ramp to 127 in 3000 ms;
 #X text 241 129 ramp to 0 in 1000 ms;
 #X text 242 154 jump to 64;
 #X text 241 179 stop at current position;
-#X text 13 5 rh_trline - line variant that outputs values only on trigger
-;
+#X text 13 5 rh_trline - line variant that outputs values only on trigger;
 #N canvas 520 262 308 63 NETPD 0;
 #X msg 10 14 version 0 0 1;
 #X restore 357 299 pd NETPD 2 0;

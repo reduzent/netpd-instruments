@@ -395,8 +395,7 @@
 #X obj 222 255 inlet~;
 #X obj 520 241 s \$0-fb;
 #X obj 705 290 s \$0-damp;
-#X text 57 490 rev3 - 16-delay reverberator. Like rev2~ but presumably
-higher-quality and takes two audio inputs.;
+#X text 57 490 rev3 - 16-delay reverberator. Like rev2~ but presumably higher-quality and takes two audio inputs.;
 #X obj 520 187 / 400;
 #X obj 452 137 f 100;
 #X obj 520 138 f 90;
@@ -453,17 +452,12 @@ higher-quality and takes two audio inputs.;
 #X obj 175 102 netpd_f \$1 \$2/lp 12000;
 #X obj 182 217 netpd_f \$1 \$2/xfreq 8000;
 #X obj 209 243 netpd_f \$1 \$2/hfdamp 20;
-#N canvas 608 395 309 112 \$3-\$2 1;
-#X obj 8 29 nbx 5 14 30 12000 1 0 \$1-\$2/lp \$1-\$2/lp lowpass(Hz)
-60 8 0 10 -262144 -1 -1 30 256;
-#X obj 8 49 nbx 5 14 0 100 0 0 \$1-\$2/liveness \$1-\$2/liveness liveness_0-100
-60 8 0 10 -262144 -1 -1 0 256;
-#X obj 8 69 nbx 5 14 30 8000 1 0 \$1-\$2/xfreq \$1-\$2/xfreq crossover_frequency(Hz)
-60 8 0 10 -262144 -1 -1 30 256;
-#X obj 8 89 nbx 5 14 0 100 0 0 \$1-\$2/hfdamp \$1-\$2/hfdamp HF_damp(%)
-60 8 0 10 -262144 -1 -1 0 256;
-#X obj 8 9 nbx 5 14 0 99 0 0 \$1-\$2/level \$1-\$2/level level(dB)
-60 8 0 10 -262144 -1 -1 0 256;
+#N canvas 608 395 309 112 \$3-\$2 0;
+#X obj 8 29 nbx 5 14 30 12000 1 0 \$1-\$2/lp \$1-\$2/lp lowpass(Hz) 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 8 49 nbx 5 14 0 100 0 0 \$1-\$2/liveness \$1-\$2/liveness liveness_0-100 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 8 69 nbx 5 14 30 8000 1 0 \$1-\$2/xfreq \$1-\$2/xfreq crossover_frequency(Hz) 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 8 89 nbx 5 14 0 100 0 0 \$1-\$2/hfdamp \$1-\$2/hfdamp HF_damp(%) 60 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 8 9 nbx 5 14 0 99 0 0 \$1-\$2/level \$1-\$2/level level(dB) 60 8 0 10 #fcfcfc #000000 #000000 0 256;
 #X restore 16 18 pd \$3-\$2;
 #X connect 1 0 6 0;
 #X connect 1 1 7 0;

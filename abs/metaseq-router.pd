@@ -38,7 +38,7 @@
 #X connect 13 1 8 0;
 #X restore 24 91 pd add.method;
 #X obj 211 138 r \$0.count;
-#X floatatom 210 164 5 0 0 0 - - -, f 5;
+#X floatatom 210 164 5 0 0 0 - - - 0;
 #N canvas 334 206 280 420 remove.method 0;
 #X obj 6 8 r \$0.in.1;
 #X obj 34 58 r \$0.count;
@@ -105,17 +105,16 @@
 #X connect 6 0 3 1;
 #X restore 23 160 pd count.method;
 #X obj 170 328 tabread \$0.dst.count;
-#X floatatom 170 350 5 0 0 0 - - -, f 5;
-#X floatatom 170 286 5 0 0 0 - - -, f 5;
-#X floatatom 301 349 5 0 0 0 - - -, f 5;
-#X floatatom 301 281 5 0 0 0 - - -, f 5;
+#X floatatom 170 350 5 0 0 0 - - - 0;
+#X floatatom 170 286 5 0 0 0 - - - 0;
+#X floatatom 301 349 5 0 0 0 - - - 0;
+#X floatatom 301 281 5 0 0 0 - - - 0;
 #X obj 301 327 tabread \$0.dst.map.index;
-#X floatatom 454 349 5 0 0 0 - - -, f 5;
-#X floatatom 454 305 5 0 0 0 - - -, f 5;
+#X floatatom 454 349 5 0 0 0 - - - 0;
+#X floatatom 454 305 5 0 0 0 - - - 0;
 #X obj 454 327 tabread \$0.dst.map;
 #N canvas 613 191 370 357 router 0;
-#X text 15 11 we regard the id=-1 as the master. It can have no source
-;
+#X text 15 11 we regard the id=-1 as the master. It can have no source;
 #X obj 16 44 r \$0.in.0;
 #X obj 16 98 mod 1025;
 #X obj 16 72 unpack;

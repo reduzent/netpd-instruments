@@ -6,7 +6,7 @@
 #X msg 25 81 singleton;
 #X msg 20 14 version 0 0 2;
 #X restore 19 16 pd NETPD 2 0;
-#N canvas 1200 81 633 546 \$1-korgs_wide 1;
+#N canvas 1200 81 633 546 \$1-korgs_wide 0;
 #X obj 11 513 midi_cc2param \$1 10-1 10 1;
 #X obj 11 496 midi_cc2param \$1 20-1 20 1;
 #X obj 11 479 midi_cc2param \$1 30-1 30 1;
@@ -61,10 +61,8 @@
 #X obj 11 62 midi_cc2param \$1 70-3 70 3;
 #X obj 11 45 midi_cc2param \$1 80-3 80 3;
 #X obj 11 28 midi_cc2param \$1 90-3 90 3;
-#X obj 92 8 hsl 55 14 0 127 0 0 \$0.enable.button empty empty -2 20
-0 10 -262144 -1 -1 0 1;
-#X obj 89 8 cnv 14 60 14 empty \$0.enable.display DISABLED 2 8 0 10
--262140 -195568 0;
+#X obj 92 8 hsl 55 14 0 127 0 0 \$0.enable.button empty empty -2 20 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 89 8 cnv 14 60 14 empty \$0.enable.display DISABLED 2 8 0 10 #ffffef #bcbcbc 0;
 #X text 12 8 KORGS_WIDE;
 #X restore 18 42 pd \$1-korgs_wide;
 #X obj 19 70 netpd_head \$1 korgs_wide;

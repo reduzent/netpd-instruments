@@ -8,41 +8,26 @@
 #X restore 12 33 pd abslist;
 #X msg 12 8 version 0 0 9;
 #X restore 10 14 pd NETPD 2 0;
-#N canvas 798 177 146 420 \$1-rtfm 1;
-#X obj 9 205 cnv 15 107 66 empty empty amplitude 6 8 1 12 -258113 -1
-0;
-#X obj 17 222 hsl 93 13 0 1 0 0 \$1-attack \$1-attack attack 0 7 1
-12 -1 -258113 -258113 920 1;
-#X obj 17 254 hsl 93 13 0 1 0 0 \$1-decay \$1-decay decay 0 7 1 12
--1 -258113 -258113 2760 1;
-#X obj 17 238 hsl 93 13 0 1 0 0 \$1-amplitude \$1-amplitude amplitude
-0 7 1 12 -1 -258113 -258113 7360 1;
-#X obj 9 272 cnv 15 107 98 empty empty modindex 6 8 1 12 -159808 -1
-0;
-#X obj 16 305 hsl 93 13 0 1 0 0 \$1-i-attack \$1-i-attack i-attack
-0 7 1 12 -1 -159808 -159808 920 1;
-#X obj 16 337 hsl 93 13 0 1 0 0 \$1-i-decay \$1-i-decay i-decay 0 7
-1 12 -1 -159808 -159808 2760 1;
-#X obj 16 289 hsl 93 13 0 1 0 0 \$1-index1 \$1-index1 index1 0 7 1
-12 -1 -159808 -159808 920 1;
-#X obj 16 321 hsl 93 13 0 1 0 0 \$1-index2 \$1-index2 index2 0 7 1
-12 -1 -159808 -159808 920 1;
-#X obj 16 353 hsl 93 13 0 1 0 0 \$1-index3 \$1-index3 index3 0 7 0
-12 -1 -159808 -159808 920 1;
-#X obj 9 154 cnv 15 107 50 empty empty fm 6 8 1 12 -260097 -1 0;
-#X obj 17 187 hsl 93 13 0 1 0 0 \$1-stereo \$1-stereo stereo 0 7 1
-12 -1 -260097 -260097 0 1;
-#X obj 17 171 hsl 93 13 0 1 0 0 \$1-phasemod \$1-phasemod phasemod
-0 7 1 12 -1 -260097 -260097 0 1;
-#X obj 9 29 cnv 15 107 124 empty empty carrier:modulator 6 8 1 12 -257985
--1 0;
+#N canvas 798 177 146 420 \$1-rtfm 0;
+#X obj 9 205 cnv 15 107 66 empty empty amplitude 6 8 1 12 #fc0400 #000000 0;
+#X obj 17 222 hsl 93 13 0 1 0 0 \$1-attack \$1-attack attack 0 7 1 12 #000000 #fc0400 #fc0400 0 1;
+#X obj 17 254 hsl 93 13 0 1 0 0 \$1-decay \$1-decay decay 0 7 1 12 #000000 #fc0400 #fc0400 0 1;
+#X obj 17 238 hsl 93 13 0 1 0 0 \$1-amplitude \$1-amplitude amplitude 0 7 1 12 #000000 #fc0400 #fc0400 0 1;
+#X obj 9 272 cnv 15 107 98 empty empty modindex 6 8 1 12 #9c00fc #000000 0;
+#X obj 16 305 hsl 93 13 0 1 0 0 \$1-i-attack \$1-i-attack i-attack 0 7 1 12 #000000 #9c00fc #9c00fc 0 1;
+#X obj 16 337 hsl 93 13 0 1 0 0 \$1-i-decay \$1-i-decay i-decay 0 7 1 12 #000000 #9c00fc #9c00fc 0 1;
+#X obj 16 289 hsl 93 13 0 1 0 0 \$1-index1 \$1-index1 index1 0 7 1 12 #000000 #9c00fc #9c00fc 0 1;
+#X obj 16 321 hsl 93 13 0 1 0 0 \$1-index2 \$1-index2 index2 0 7 1 12 #000000 #9c00fc #9c00fc 0 1;
+#X obj 16 353 hsl 93 13 0 1 0 0 \$1-index3 \$1-index3 index3 0 7 0 12 #000000 #9c00fc #9c00fc 0 1;
+#X obj 9 154 cnv 15 107 50 empty empty fm 6 8 1 12 #fc8000 #000000 0;
+#X obj 17 187 hsl 93 13 0 1 0 0 \$1-stereo \$1-stereo stereo 0 7 1 12 #000000 #fc8000 #fc8000 0 1;
+#X obj 17 171 hsl 93 13 0 1 0 0 \$1-phasemod \$1-phasemod phasemod 0 7 1 12 #000000 #fc8000 #fc8000 0 1;
+#X obj 9 29 cnv 15 107 124 empty empty carrier:modulator 6 8 1 12 #f8fc00 #000000 0;
 #X obj 13 49 unradio \$0.x1-x2 0 990;
-#X obj 9 371 cnv 15 107 36 empty empty unstep 6 8 1 12 -4160 -1 0;
-#X obj 17 388 hsl 42 13 0 1 0 0 \$0.unstep.1 \$0.unste rtfm1 0 7 1
-12 -1 -1 -4160 0 1;
-#X obj 67 388 hsl 42 13 0 1 0 0 \$0.unstep.2 \$0.unste rtfm2 0 7 1
-12 -1 -1 -4160 0 1;
-#X obj 9 5 cnv 15 107 23 empty empty rtfm 6 14 1 20 -257985 -1 0;
+#X obj 9 371 cnv 15 107 36 empty empty unstep 6 8 1 12 #0400fc #000000 0;
+#X obj 17 388 hsl 42 13 0 1 0 0 \$0.unstep.1 \$0.unste rtfm1 0 7 1 12 #000000 #000000 #0400fc 0 1;
+#X obj 67 388 hsl 42 13 0 1 0 0 \$0.unstep.2 \$0.unste rtfm2 0 7 1 12 #000000 #000000 #0400fc 0 1;
+#X obj 9 5 cnv 15 107 23 empty empty rtfm 6 14 1 20 #f8fc00 #000000 0;
 #X restore 10 66 pd \$1-rtfm;
 #X obj 10 40 netpd_head \$1 rtfm;
 #N canvas 469 109 355 497 dsp 0;

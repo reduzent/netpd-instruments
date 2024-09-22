@@ -124,14 +124,10 @@
 #N canvas 589 302 204 76 \$3-\$2 0;
 #X obj 5 14 mx-fx-sc-gui \$1 \$2/sc;
 #X text 58 13 side channel;
-#X obj 8 26 hsl 20 12 0 127 0 0 \$0.bli \$0.indicator.l empty -2 -8
-0 10 -1 -1 -1 0 1;
-#X obj 33 26 hsl 20 12 0 127 0 0 \$0.bli \$0.indicator.r empty -2 -8
-0 10 -1 -1 -1 0 1;
-#X obj 8 50 hsl 45 12 0 1 0 0 \$1-\$2/direct \$1-\$2/direct empty -2
--8 0 10 -228856 -1 -1 0 1;
-#X obj 8 38 hsl 45 12 0 1 0 0 \$1-\$2/amp \$1-\$2/amp empty -2 -8 0
-10 -228856 -1 -1 0 1;
+#X obj 8 26 hsl 20 12 0 127 0 0 \$0.bli \$0.indicator.l empty -2 -8 0 10 #000000 #000000 #000000 0 1;
+#X obj 33 26 hsl 20 12 0 127 0 0 \$0.bli \$0.indicator.r empty -2 -8 0 10 #000000 #000000 #000000 0 1;
+#X obj 8 50 hsl 45 12 0 1 0 0 \$1-\$2/direct \$1-\$2/direct empty -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 8 38 hsl 45 12 0 1 0 0 \$1-\$2/amp \$1-\$2/amp empty -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
 #X text 58 37 level side channel;
 #X text 58 49 level direct;
 #X restore 10 9 pd \$3-\$2;

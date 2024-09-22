@@ -227,9 +227,7 @@
 #X restore 7 205 pd predelay;
 #X obj 438 79 loadbang;
 #X obj 438 100 f \$0;
-#X msg 438 121 \; \$1.methods target -3 \; \$1.methods maxgain 12 \;
-\$1.methods attack 1000 \; \$1.methods hold 10000 \; \$1.methods release
-10000 \; \$1.methods predelay 700 \;;
+#X msg 438 121 \; \$1.methods target -3 \; \$1.methods maxgain 12 \; \$1.methods attack 1000 \; \$1.methods hold 10000 \; \$1.methods release 10000 \; \$1.methods predelay 700 \;;
 #X text 479 101 default settings;
 #X obj 147 234 +;
 #X connect 1 0 3 0;

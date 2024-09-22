@@ -92,8 +92,7 @@
 #X obj 54 416 + 1;
 #N canvas 520 248 442 244 \$0-automation-element 0;
 #X obj 19 11 struct \$0-automation-element float y;
-#X obj 14 70 filledpolygon 868 868 0 0 y(0:100)(100:0) 0 0 8 0 8 y(0:100)(100:0)
-;
+#X obj 14 70 filledpolygon 868 868 0 0 y(0:100)(100:0) 0 0 8 0 8 y(0:100)(100:0);
 #X restore 35 14 pd \$0-automation-element;
 #N canvas 623 540 452 244 \$0-automation 0;
 #X obj 70 62 route click;
@@ -102,8 +101,7 @@
 #X obj 70 106 del 5000;
 #X msg 70 128 0;
 #X obj 70 150 outlet;
-#X obj 70 27 struct \$0-automation float yshift array variy \$0-automation-element
-;
+#X obj 70 27 struct \$0-automation float yshift array variy \$0-automation-element;
 #X obj 15 33 inlet;
 #X obj 167 107 plot -y y(0:100)(0:100) variy 0 0 77 yshift 10;
 #X connect 0 0 1 0;

@@ -52,9 +52,8 @@
 #X obj 20 297 outlet~;
 #X obj 155 299 outlet~;
 #X obj 36 100 netpd_f \$1 \$2/amount 1;
-#N canvas 422 455 163 50 \$3-\$2 1;
-#X obj 13 13 hsl 128 15 1 0.001 0 0 \$1-\$2/amount \$1-\$2/amount to_rectangle
-15 7 1 9 #fcfcfc #000000 #000000 0 1;
+#N canvas 422 455 163 50 \$3-\$2 0;
+#X obj 13 13 hsl 128 15 1 0.001 0 0 \$1-\$2/amount \$1-\$2/amount to_rectangle 15 7 1 9 #fcfcfc #000000 #000000 0 1;
 #X restore 7 12 pd \$3-\$2;
 #X obj 238 192 clip~ -1 1;
 #X obj 238 169 *~ 3.4e+38;

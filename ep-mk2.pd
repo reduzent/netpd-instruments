@@ -27,19 +27,13 @@
 #X msg 17 72 i2mx;
 #X restore 8 52 pd abslist;
 #X restore 28 12 pd NETPD 2 0;
-#N canvas 610 335 183 220 \$1-ep-mk2 1;
-#X obj 11 9 cnv 15 144 175 empty empty ▬▬▬EP-MK2▬▬▬ 0 16
-0 20 -261234 -66577 0;
-#X obj 14 47 hsl 139 20 0 127 0 0 \$0.unpunch \$0.bli UNPUNCH 2 10
-0 14 -33289 -1 -261234 8900 1;
-#X obj 14 83 hsl 139 20 0 1 0 1 \$1-decay-time \$1-decay-time DECAY TIME
-2 10 0 14 -1 -261234 -261234 13800 1;
-#X obj 14 119 hsl 139 20 0 1 0 1 \$1-release-time \$1-release-time
-RELEASE TIME 2 10 0 14 -1 -261234 -261234 2300 1;
-#X obj 14 155 hsl 139 20 0 1 0 1 \$1-tine-decay \$1-tine-decay TINE DECAY
-2 10 0 14 -1 -261234 -261234 0 1;
-#X obj 11 185 cnv 15 144 18 empty empty © Mike Moreno 4 10 0 12
--261234 -66577 0;
+#N canvas 610 335 183 220 \$1-ep-mk2 0;
+#X obj 11 9 cnv 15 144 175 empty empty ▬▬▬EP-MK2▬▬▬ 0 16 0 20 #fcc4c4 #404040 0;
+#X obj 14 47 hsl 139 20 0 127 0 0 \$0.unpunch \$0.bli UNPUNCH 2 10 0 14 #202020 #000000 #fcc4c4 0 1;
+#X obj 14 83 hsl 139 20 0 1 0 1 \$1-decay-time \$1-decay-time DECAY TIME 2 10 0 14 #000000 #fcc4c4 #fcc4c4 13800 1;
+#X obj 14 119 hsl 139 20 0 1 0 1 \$1-release-time \$1-release-time RELEASE TIME 2 10 0 14 #000000 #fcc4c4 #fcc4c4 2300 1;
+#X obj 14 155 hsl 139 20 0 1 0 1 \$1-tine-decay \$1-tine-decay TINE DECAY 2 10 0 14 #000000 #fcc4c4 #fcc4c4 0 1;
+#X obj 11 185 cnv 15 144 18 empty empty © Mike Moreno 4 10 0 12 #fcc4c4 #404040 0;
 #X restore 28 44 pd \$1-ep-mk2;
 #X obj 28 71 netpd_head \$1 ep-mk2;
 #X obj 28 152 unpunch-plus \$1 ep-mk2;
@@ -52,11 +46,9 @@ RELEASE TIME 2 10 0 14 -1 -261234 -261234 2300 1;
 #X obj 254 18 netpd_f \$1 decay-time 0.8;
 #X obj 414 16 netpd_f \$1 release-time 0.3;
 #X obj 594 24 netpd_f \$1 tine-decay 1;
-#X text 413 273 Sources from https://github.com/MikeMorenoDSP/EP-MK1
-;
+#X text 413 273 Sources from https://github.com/MikeMorenoDSP/EP-MK1;
 #X text 413 295 netpd-ified by Roman Haefeli in 2020;
-#X text 413 239 Original EP-MK2 is written by Mike Moreno \, licensed
-under the "Standard Improved BSD License".;
+#X text 413 239 Original EP-MK2 is written by Mike Moreno \, licensed under the "Standard Improved BSD License".;
 #X obj 28 203 poly 16 1;
 #X obj 28 245 clone -s 1 ep-mk2-voice 16 \$0;
 #X obj 78 319 *~ 0.9;

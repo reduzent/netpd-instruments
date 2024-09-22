@@ -42,10 +42,8 @@
 #X msg 337 468 set \$1;
 #X obj 47 212 t a a;
 #X obj 101 180 netpd_r \$1 mx/\$2/load;
-#X text 235 178 <- for backwards compatibility in loading presets.
-;
-#X msg 552 178 browse https://github.com/reduzent/netpd-instruments/issues/43
-;
+#X text 235 178 <- for backwards compatibility in loading presets.;
+#X msg 552 178 browse https://github.com/reduzent/netpd-instruments/issues/43;
 #X obj 552 214 pdcontrol;
 #X obj 558 245 netpd_r \$1 mx/\$2/bypass 0;
 #X obj 101 203 t a a;
