@@ -1,5 +1,5 @@
-#N canvas 1131 572 450 300 10;
-#N canvas 1073 373 754 635 two.level.dropdown 0;
+#N canvas 974 332 450 300 10;
+#N canvas 1073 373 754 635 two.level.dropdown 1;
 #N canvas 546 307 426 268 get.fx.list 0;
 #X obj 13 37 inlet;
 #X obj 49 205 outlet;
@@ -89,6 +89,8 @@
 #X obj 9 10 inlet;
 #X obj 9 294 outlet;
 #X obj 67 162 text get mx-fxlist;
+#X obj 187 45 r mx;
+#X obj 187 68 route fxlistupdated;
 #X connect 0 0 3 1;
 #X connect 1 0 9 0;
 #X connect 2 0 3 0;
@@ -107,6 +109,8 @@
 #X connect 11 0 10 0;
 #X connect 13 0 1 0;
 #X connect 13 1 0 0;
+#X connect 14 0 15 0;
+#X connect 15 0 10 0;
 #X restore 419 241 pd get.lib.list;
 #X obj 419 270 list prepend;
 #X msg 530 243 symbol;
@@ -254,7 +258,7 @@
 #X connect 76 2 24 0;
 #X restore 23 104 pd two.level.dropdown;
 #N canvas 1161 620 392 83 NETPD 0;
-#X msg 15 20 version 0 2 0;
+#X msg 15 20 version 0 2 1;
 #X restore 21 14 pd NETPD 2 0;
 #X text 164 106 <- MEAT;
 #X obj 23 76 inlet;
