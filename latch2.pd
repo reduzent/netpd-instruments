@@ -4,10 +4,10 @@
 #X msg 13 14 latch2-instance;
 #X msg 13 35 latch2-configure;
 #X restore 12 33 pd abslist;
-#X msg 13 8 version 0 0 5;
 #X msg 15 54 singleton;
+#X msg 13 8 version 0 0 6;
 #X restore 11 13 pd NETPD 2 0;
-#N canvas 641 446 274 425 \$1-latch2 0;
+#N canvas 641 446 270 411 \$1-latch2 1;
 #X obj 12 19 latch2-instance \$1 1;
 #X obj 12 35 latch2-instance \$1 2;
 #X obj 12 51 latch2-instance \$1 3;
