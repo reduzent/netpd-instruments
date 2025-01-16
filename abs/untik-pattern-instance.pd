@@ -1,9 +1,9 @@
 #N canvas 1044 414 638 462 10;
 #N canvas 1285 179 464 235 NETPD 0;
-#X msg 13 8 version 0 0 1;
 #N canvas 1496 140 460 69 abs 0;
 #X msg 11 10 untik-pattern-player;
 #X restore 13 36 pd abs;
+#X msg 13 8 version 0 0 2;
 #X restore 12 10 pd NETPD 2 0;
 #X obj 11 208 untik-pattern-player;
 #X obj 11 49 r \$1.untik;
