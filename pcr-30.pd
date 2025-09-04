@@ -1,5 +1,5 @@
 #N canvas 591 220 409 276 10;
-#N canvas 1294 44 306 614 \$1-pcr-30 0;
+#N canvas 1294 44 306 614 \$1-pcr-30 1;
 #X text 12 32 SLIDERS;
 #X obj 11 51 midi_cc2param \$1 S1 1 1;
 #X obj 11 68 midi_cc2param \$1 S2 2 1;
@@ -41,7 +41,7 @@
 #X msg 14 12 midi_cc2param;
 #X msg 14 36 midi_keyboard2unstep;
 #X restore 14 47 pd abslist;
-#X msg 13 20 version 0 0 3;
+#X msg 13 20 version 0 0 4;
 #X restore 12 19 pd NETPD 2 0;
 #X obj 12 64 netpd_head \$1 pcr-30;
 #X obj 12 91 r \$0.enable.button;
@@ -58,8 +58,8 @@
 #X msg 288 168 13;
 #X msg 257 167 20;
 #X text 223 92 enable only locally;
-#X msg 256 189 color -1.67772e+07 \$1;
 #X obj 275 131 loadbang;
+#X msg 256 189 color -1.67772e+07 0 \$1;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
 #X connect 4 1 5 0;
@@ -74,7 +74,7 @@
 #X connect 10 1 14 0;
 #X connect 11 0 13 0;
 #X connect 12 0 13 0;
-#X connect 14 0 17 0;
-#X connect 15 0 17 0;
-#X connect 17 0 13 0;
-#X connect 18 0 15 0;
+#X connect 14 0 18 0;
+#X connect 15 0 18 0;
+#X connect 17 0 15 0;
+#X connect 18 0 13 0;
