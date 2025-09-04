@@ -170,10 +170,10 @@
 #X obj 654 280 +~;
 #X obj 908 166 *~ -6;
 #N canvas 0 106 395 83 NETPD 0;
-#X msg 14 13 version 0 0 1;
 #N canvas 162 247 450 99 abslist 0;
 #X msg 9 13 mkmr.lib;
 #X restore 14 38 pd abslist;
+#X msg 15 13 version 0 0 2;
 #X restore 16 8 pd NETPD 2 0;
 #X obj 909 192 mkmr.ma.tanh~;
 #X obj 908 141 mkmr.fi.lowpass 500 0.7;
@@ -263,8 +263,8 @@
 #X connect 2 0 1 0;
 #X connect 3 0 5 0;
 #X connect 4 0 0 0;
-#X restore 147 69 pd humanize;
-#X connect 0 0 101 0;
+#X restore 206 68 pd humanize;
+#X connect 0 0 37 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 1;
 #X connect 4 0 5 0;
@@ -356,5 +356,4 @@
 #X connect 99 0 35 0;
 #X connect 99 1 96 0;
 #X connect 100 0 95 0;
-#X connect 101 0 37 0;
 #X coords 0 657 1 656 566 325 0;
