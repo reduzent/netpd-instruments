@@ -36,7 +36,6 @@
 #X obj 26 17 inlet;
 #X obj 26 178 outlet;
 #X obj 45 86 routeOSC /master/rqpt /untik/ntp/rqpt;
-#X obj 179 147 print YOYO;
 #X connect 0 0 8 0;
 #X connect 1 0 3 0;
 #X connect 1 1 0 0;
@@ -48,7 +47,6 @@
 #X connect 6 0 1 0;
 #X connect 8 0 2 0;
 #X connect 8 1 2 0;
-#X connect 8 1 9 0;
 #X restore 19 226 pd block_master_offset;
 #X obj 19 109 route to receiver;
 #X obj 94 132 list;
