@@ -5,8 +5,11 @@
 #X obj 413 13 inlet release;
 #X obj 16 14 inlet trigger;
 #X obj 39 432 outlet~;
-#N canvas 902 328 336 56 NETPD 0;
+#N canvas 902 328 336 92 NETPD 0;
 #X msg 17 10 version 0 1 0;
+#N canvas 1234 208 422 63 abslist 0;
+#X msg 15 14 rh_adsr~-help;
+#X restore 18 38 pd abslist;
 #X restore 593 13 pd NETPD 2 0;
 #X obj 16 37 s \$0.trigger;
 #X obj 110 66 f \$1;
