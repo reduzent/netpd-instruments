@@ -52,6 +52,9 @@
 #X obj 386 365 tgl 18 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 483 356 tgl 18 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 674 359 golana-vcf \$1 vcf2;
+#X obj 340 459 golana-vca \$1 vca2;
+#X obj 366 14 golana-from-seq \$1 fromseq2 \$0;
+#X obj 574 52 golana-trig-range \$1 trigrange1;
 #X connect 2 0 12 1;
 #X connect 2 1 13 0;
 #X connect 3 0 11 1;
