@@ -27,12 +27,12 @@
 #X msg 31 51 i2mx;
 #X msg 111 23 unstep;
 #X msg 81 56 roman_helpers;
-#X msg 39 92 golana-adsr;
 #X msg 34 119 golana-from-seq;
 #X msg 40 147 golana-vco;
 #X msg 141 147 golana-vcf;
 #X msg 38 173 golana-vca;
 #X msg 150 171 golana-cv-map;
+#X msg 39 92 golana-eg;
 #X restore 16 49 pd abslist;
 #X msg 12 8 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
