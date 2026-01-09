@@ -20,6 +20,7 @@
 #N struct \$0.pager float x float y float c float dir float num float nvis;
 #N struct \$0.scroller float x float y float c float dir;
 #N struct \$0.keyboard.toggle float x float y symbol label float hilite float ihilite;
+#N struct \$0.note float x float y float w float h float id float gid float vel float dur float c float vis float mrk;
 #N canvas 624 75 368 139 NETPD 0;
 #N canvas 315 75 308 198 abslist 0;
 #X msg 24 22 unpunch-plus;
@@ -31,6 +32,7 @@
 #X msg 40 147 golana-vco;
 #X msg 141 147 golana-vcf;
 #X msg 38 173 golana-vca;
+#X msg 150 171 golana-cv-map;
 #X restore 16 49 pd abslist;
 #X msg 12 8 version 0 0 1;
 #X restore 10 14 pd NETPD 2 0;
@@ -47,7 +49,7 @@
 #X obj 158 227 golana-vco \$1 vco2;
 #X obj 581 175 golana-vco \$1 vco3;
 #X obj 700 179 golana-vco \$1 vco4;
-#X obj 158 340 golana-vcf \$1 vcf1;
+#X obj 154 336 golana-vcf \$1 vcf1;
 #X obj 158 454 golana-vca \$1 vca1;
 #X obj 386 365 tgl 18 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 483 356 tgl 18 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
@@ -55,6 +57,11 @@
 #X obj 340 459 golana-vca \$1 vca2;
 #X obj 366 14 golana-from-seq \$1 fromseq2 \$0;
 #X obj 574 52 golana-trig-range \$1 trigrange1;
+#X obj 542 552 env~ 2048 2048;
+#X obj 542 576 dbtorms;
+#X floatatom 542 599 5 0 0 0 - - - 0;
+#X obj 530 328 hsl 153 18 0 1 0 0 empty empty empty -2 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 514 449 golana-cv-map \$1 cvmap1;
 #X connect 2 0 12 1;
 #X connect 2 1 13 0;
 #X connect 3 0 11 1;
@@ -69,6 +76,10 @@
 #X connect 11 0 12 0;
 #X connect 12 0 4 0;
 #X connect 12 0 4 1;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 22 0 23 0;
+#X connect 23 0 19 0;
 #X restore 10 42 pd \$1-golana;
 #X obj 35 199 unstep \$1 unstep p1 p2 p3 p4 p5 p6;
 #X obj 28 313 unpunch-plus \$1 unpunch;
