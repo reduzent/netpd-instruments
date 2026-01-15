@@ -7,8 +7,8 @@
 #X obj 209 136 t b a;
 #X obj 231 192 -, f 7;
 #X obj 23 20 hsl 75 18 0 127 0 0 \$0.blu \$0.bli trig-range 0 10 0 12 #e3c6ff #e3c6ff #2f004d 0 1;
-#X obj 23 38 hsl 75 18 0 1 0 0 \$1-\$2/floor \$1-\$2/floor floor 2 9 0 12 #000000 #ffc7c6 #ffc7c6 0 1;
-#X obj 23 56 hsl 75 18 0 1 0 0 \$1-\$2/ceiling \$1-\$2/ceiling ceiling 2 9 0 12 #000000 #ffe3c6 #ffe3c6 0 1;
+#X obj 23 38 hsl 75 18 0 1 0 0 \$1-\$2/floor \$1-\$2/floor floor 2 9 0 12 #000000 #feffc6 #feffc6 0 1;
+#X obj 23 56 hsl 75 18 0 1 0 0 \$1-\$2/ceiling \$1-\$2/ceiling ceiling 2 9 0 12 #000000 #c6ffc7 #c6ffc7 0 1;
 #X obj 27 90 inlet;
 #X obj 27 204 outlet;
 #X obj 76 142 * 1;
