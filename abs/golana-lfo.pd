@@ -123,9 +123,9 @@
 #X obj 349 343 makefilename %6.2f;
 #X obj 39 104 sig~;
 #X obj 300 38 cnv 15 26 26 empty \$0.sin.label sin 1 13 0 14 #000000 #886666 0;
-#X obj 326 38 cnv 15 26 26 empty \$0.tri.label tri 1 13 0 14 #000000 #ffddcc 0;
+#X obj 326 38 cnv 15 26 26 empty \$0.tri.label tri 1 13 0 14 #000000 #887766 0;
 #X obj 352 38 cnv 15 26 26 empty \$0.sqr.label sqr 1 13 0 14 #000000 #888866 0;
-#X obj 378 38 cnv 15 26 26 empty \$0.saw.label saw 1 13 0 14 #000000 #668866 0;
+#X obj 378 38 cnv 15 26 26 empty \$0.saw.label saw 1 13 0 14 #000000 #ccffcc 0;
 #X obj 404 38 cnv 15 26 26 empty \$0.s&h.label s&h 1 13 0 14 #000000 #668888 0;
 #X msg 942 506 color -1 -1 \$1;
 #X obj 942 484 symbol;
@@ -157,8 +157,8 @@
 #X connect 9 0 10 0;
 #X connect 10 0 7 0;
 #X restore 319 216 pd s&h;
-#X obj 303 73 hsl 125 18 0 1 0 0 \$1-\$2/rate \$1-\$2/rate rate 2 9 0 12 #000000 #ffe3c6 #ffe3c6 0 1;
-#X obj 303 64 hsl 125 8 0 1 0 0 \$0.blu \$0.pos empty -2 -9 0 10 #000000 #ffc7c6 #000000 0 1;
+#X obj 303 64 hsl 125 18 0 1 0 0 \$1-\$2/rate \$1-\$2/rate rate 2 9 0 12 #000000 #ffc7c6 #ffc7c6 0 1;
+#X obj 303 82 hsl 125 8 0 1 0 0 \$0.blu \$0.pos empty -2 -9 0 10 #000000 #ffe3c6 #000000 0 1;
 #X obj 12 510 dbtorms;
 #X obj 12 533 s \$0.pos;
 #X obj 12 487 env~ 1024 1024;
@@ -174,8 +174,8 @@
 #X connect 2 0 4 0;
 #X connect 3 0 0 0;
 #X restore 39 63 pd scale;
-#X obj 303 91 hsl 125 18 0 1 0 0 \$1-\$2/floor \$1-\$2/floor floor 2 9 0 12 #000000 #feffc6 #feffc6 0 1;
-#X obj 303 109 hsl 125 18 0 1 0 0 \$1-\$2/ceiling \$1-\$2/ceiling ceiling 2 9 0 12 #000000 #c6ffc7 #c6ffc7 0 1;
+#X obj 303 90 hsl 125 18 0 1 0 0 \$1-\$2/floor \$1-\$2/floor floor 2 9 0 12 #000000 #feffc6 #feffc6 0 1;
+#X obj 303 108 hsl 125 18 0 1 0 0 \$1-\$2/ceiling \$1-\$2/ceiling ceiling 2 9 0 12 #000000 #c6ffc7 #c6ffc7 0 1;
 #X obj 112 280 netpd_f \$1 \$2/floor 0;
 #X obj 180 311 netpd_f \$1 \$2/ceiling 1;
 #X obj 112 319 t b a;
@@ -186,9 +186,9 @@
 #X msg 78 386 \$1 50;
 #X obj 78 409 line~;
 #X obj 38 335 +~;
-#X obj 303 128 hsl 107 18 0 1 0 0 \$1-\$2/phase \$1-\$2/phase phase 2 9 0 12 #000000 #c6feff #c6feff 0 1;
+#X obj 303 127 hsl 107 18 0 1 0 0 \$1-\$2/phase \$1-\$2/phase phase 2 9 0 12 #000000 #c6feff #c6feff 0 1;
 #X obj 522 134 netpd_f \$1 \$2/phase;
-#X obj 415 128 hsl 13 18 0 1 0 0 \$0.trig.s \$0.trig.r empty 2 9 0 12 #668888 #668888 #668888 0 1;
+#X obj 415 127 hsl 13 18 0 1 0 0 \$0.trig.s \$0.trig.r empty 2 9 0 12 #ccffff #ccffff #ccffff 0 1;
 #X obj 729 87 rh_slider_click \$0.trig.s;
 #X obj 729 110 == 0;
 #X obj 729 134 t a a;
@@ -314,4 +314,4 @@
 #X connect 99 0 3 1;
 #X connect 99 0 57 1;
 #X connect 100 0 97 0;
-#X coords 0 -1 1 1 130 126 2 300 20;
+#X coords 0 -1 1 1 130 125 2 300 20;
