@@ -2,7 +2,7 @@
 #N canvas 35 77 504 68 NETPD 0;
 #X msg 10 8 version 0 0 1;
 #X restore 367 10 pd NETPD 2 0;
-#X obj 27 95 inlet~;
+#X obj 27 165 inlet~;
 #X obj 107 96 inlet~;
 #X obj 25 262 outlet~;
 #X obj 159 75 netpd_f \$1 \$2/floor 0;
@@ -11,10 +11,15 @@
 #X obj 108 181 +~ 0;
 #X obj 159 137 t b a;
 #X obj 175 168 -, f 7;
-#X obj 23 20 hsl 75 18 0 127 0 0 \$0.blu \$0.bli VCA 0 10 0 14 #e3c6ff #e3c6ff #2f004d 0 1;
-#X obj 23 38 hsl 75 18 0 1 0 0 \$1-\$2/floor \$1-\$2/floor floor 2 9 0 12 #000000 #ffc7c6 #ffc7c6 0 1;
-#X obj 23 56 hsl 75 18 0 1 0 0 \$1-\$2/ceiling \$1-\$2/ceiling ceiling 2 9 0 12 #000000 #ffe3c6 #ffe3c6 0 1;
+#X obj 23 37 hsl 75 18 0 127 0 0 \$0.blu \$0.bli VCA 0 10 0 14 #e3c6ff #e3c6ff #2f004d 0 1;
+#X obj 23 55 hsl 75 18 0 1 0 0 \$1-\$2/floor \$1-\$2/floor floor 2 9 0 12 #000000 #ffc7c6 #ffc7c6 0 1;
+#X obj 23 73 hsl 75 18 0 1 0 0 \$1-\$2/ceiling \$1-\$2/ceiling ceiling 2 9 0 12 #000000 #ffe3c6 #ffe3c6 0 1;
 #X obj 26 211 *~;
+#X obj 20 20 golana-module-label 80 23;
+#X obj 20 92 golana-module-label 80 23;
+#X obj 20 20 golana-module-in sig;
+#X obj 80 20 golana-module-in CV;
+#X obj 20 92 golana-module-out sig;
 #X connect 1 0 13 0;
 #X connect 2 0 6 0;
 #X connect 4 0 8 0;
@@ -26,4 +31,4 @@
 #X connect 8 1 9 1;
 #X connect 9 0 6 1;
 #X connect 13 0 3 0;
-#X coords 0 -1 1 1 80 54 2 20 20;
+#X coords 0 -1 1 1 80 88 2 20 20;

@@ -1,4 +1,4 @@
-#N canvas 586 104 1175 649 10;
+#N canvas 588 92 1159 649 10;
 #X obj 237 114 r \$3.unstep;
 #X obj 237 234 / 127;
 #X obj 57 496 outlet~;
@@ -111,7 +111,7 @@
 #X obj 311 406 s \$0.trigger;
 #X obj 187 443 r \$0.trigger;
 #X obj 81 30 vsl 18 51 0 1 0 0 \$1-\$2/hold \$1-\$2/hold empty 0 -9 0 10 #000000 #feffc6 #feffc6 0 1;
-#X obj 10 66 cnv 10 70 18 empty \$0.value \ \ \ \ 1.00 0 9 0 12 #000000 #feffc6 0;
+#X obj 10 66 cnv 10 70 18 empty \$0.value \ \ \ 50.99 0 9 0 12 #000000 #feffc6 0;
 #X obj 373 132 netpd_f \$1 \$2/hold 0.1;
 #X obj 373 155 pow 2;
 #X obj 373 178 * 4999;
@@ -129,7 +129,7 @@
 #X obj 28 28 tgl 18 0 \$1-\$2/unstep \$1-\$2/unstep empty 18 -9 0 10 #000000 #000000 #886666 0 1;
 #X obj 44 28 tgl 18 0 \$1-\$2/unstep \$1-\$2/unstep empty 0 -9 0 10 #000000 #000000 #886666 0 1;
 #X obj 62 28 tgl 18 0 \$1-\$2/unstep \$1-\$2/unstep empty 0 -9 0 10 #000000 #000000 #886666 0 1;
-#X obj 13 28 hsl 65 18 0 127 0 0 empty \$0.unstep.label unstep 12 9 0 12 #000000 #000000 #ffcccc 0 1;
+#X obj 13 28 hsl 65 18 0 127 0 0 empty \$0.unstep.label unstep 12 9 0 12 #000000 #000000 #886666 0 1;
 #X obj 10 47 tgl 18 0 \$1-\$2/unpunch \$1-\$2/unpunch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 28 47 tgl 18 0 \$1-\$2/unpunch \$1-\$2/unpunch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 46 47 tgl 18 0 \$1-\$2/unpunch \$1-\$2/unpunch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
@@ -224,6 +224,9 @@
 #X restore 120 347 pd unpunch.indicator;
 #X obj 312 327 t a a;
 #X obj 462 188 route float set;
+#X obj 10 85 golana-module-label 89 29;
+#X obj 10 85 golana-module-out CV;
+#X obj 79 85 golana-module-out trg;
 #X connect 0 0 68 0;
 #X connect 1 0 14 0;
 #X connect 4 0 5 0;
@@ -285,4 +288,4 @@
 #X connect 75 1 73 0;
 #X connect 76 0 34 0;
 #X connect 76 1 34 0;
-#X coords 0 -1 1 1 89 74 2 10 10;
+#X coords 0 -1 1 1 89 91 2 10 10;
