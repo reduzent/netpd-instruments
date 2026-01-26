@@ -5,12 +5,12 @@
 #X obj 32 63 loadbang;
 #X obj 251 125 list append \$2 \$3;
 #X msg 251 150 color \$1 \$1 \$2;
-#X obj 20 20 cnv 18 80 24 empty \$0.bg empty 2 10 0 14 #bbbbbb #000000 0;
+#X obj 20 20 cnv 18 80 24 empty \$0.bg empty 2 10 0 14 #f9fbfc #000000 0;
 #X obj 141 118 symbol \$4;
 #X msg 141 141 color \$1 -1 -1;
 #X obj 251 175 s \$0.fg;
 #X obj 141 164 s \$0.bg;
-#X obj 22 22 cnv 18 78 20 empty \$0.fg \$1 2 10 0 14 #ffddcc #887766 0;
+#X obj 20 22 cnv 18 80 20 empty \$0.fg \$1 2 10 0 14 #ffcccc #886666 0;
 #X obj 32 159 pdcontrol;
 #X msg 32 133 args 2;
 #X obj 32 207 list append \$1;
