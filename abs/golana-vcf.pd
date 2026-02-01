@@ -54,8 +54,8 @@
 #X obj 282 79 netpd_f \$1 \$2/ceiling 1;
 #X obj 23 91 hsl 75 18 0 1 0 0 \$1-\$2/q \$1-\$2/q Q 2 9 0 12 #000000 #feffc6 #feffc6 0 1;
 #X obj 190 241 netpd_f \$1 \$2/q 0.2;
-#X obj 124 132 *~ 1;
-#X obj 124 154 +~ 0;
+#X obj 123 97 *~ 1;
+#X obj 123 119 +~ 0;
 #N canvas 35 77 442 244 param 0;
 #X obj 17 162 change;
 #X msg 17 117 \$1 50;
@@ -88,13 +88,14 @@
 #X obj 9 148 catch~ \$1-sig-\$2;
 #X obj 123 65 catch~ \$1-CV-\$2;
 #X obj 11 308 send~ \$1-sig-\$2;
+#X obj 124 149 clip~ 0 1;
 #X connect 0 0 23 0;
 #X connect 4 0 11 0;
 #X connect 4 0 9 1;
 #X connect 5 0 12 0;
 #X connect 7 0 10 0;
 #X connect 8 0 9 0;
-#X connect 9 0 13 0;
+#X connect 9 0 24 0;
 #X connect 10 0 0 2;
 #X connect 11 0 12 0;
 #X connect 11 1 12 1;
@@ -103,4 +104,5 @@
 #X connect 14 0 0 1;
 #X connect 21 0 0 0;
 #X connect 22 0 8 0;
+#X connect 24 0 13 0;
 #X coords 0 -1 1 1 80 106 2 20 20;
