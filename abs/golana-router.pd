@@ -1,6 +1,13 @@
 #N canvas 831 82 950 557 10;
-#N canvas 912 398 429 80 NETPD 0;
+#N canvas 912 398 429 80 NETPD 1;
 #X msg 28 13 version 0 0 2;
+#N canvas 35 77 406 180 abslist 0;
+#X msg 28 49 golana-hlabel;
+#X msg 29 71 golana-link;
+#X msg 30 91 golana-link-trg;
+#X msg 30 111 golana-router-gop;
+#X msg 28 26 golana-vlabel;
+#X restore 181 23 pd abslist;
 #X restore 12 16 pd NETPD 2 0;
 #N canvas 473 40 593 960 create 0;
 #X obj 39 71 pdcontrol;
