@@ -43,7 +43,7 @@
 #X msg 173 88 golana-trig-range;
 #X msg 110 198 golana-lfo;
 #X restore 16 49 pd abslist;
-#X msg 12 8 version 0 0 3;
+#X msg 12 8 version 0 0 4;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 68 netpd_head \$1 golana;
 #N canvas 1379 66 618 807 \$1-golana 1;

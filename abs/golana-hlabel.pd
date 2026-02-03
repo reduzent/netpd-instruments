@@ -1,6 +1,6 @@
 #N canvas 1302 225 484 445 10;
 #N canvas 1666 742 403 65 NETPD 0;
-#X msg 7 14 version 0 0 1;
+#X msg 7 14 version 0 0 2;
 #X restore 353 15 pd NETPD 2 0;
 #X obj 32 63 loadbang;
 #X obj 251 125 list append \$2 \$3;

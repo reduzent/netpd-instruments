@@ -45,7 +45,7 @@
 #X connect 6 2 1 0;
 #X restore 746 22 pd waveforms;
 #N canvas 35 77 440 66 NETPD 0;
-#X msg 21 21 version 0 1 0;
+#X msg 21 21 version 0 1 1;
 #X restore 751 175 pd NETPD 2 0;
 #N canvas 687 416 450 300 gui 0;
 #X obj 19 8 r \$0.type;

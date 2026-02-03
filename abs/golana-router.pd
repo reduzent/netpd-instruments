@@ -1,6 +1,6 @@
 #N canvas 831 82 950 557 10;
 #N canvas 912 398 429 80 NETPD 0;
-#X msg 28 13 version 0 0 1;
+#X msg 28 13 version 0 0 2;
 #X restore 12 16 pd NETPD 2 0;
 #N canvas 473 40 593 960 create 0;
 #X obj 39 71 pdcontrol;

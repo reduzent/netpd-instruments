@@ -113,7 +113,7 @@
 #X msg 612 458 #ffddcc;
 #X msg 664 459 #887766;
 #N canvas 35 77 396 61 NETPD 0;
-#X msg 21 12 version 0 1 0;
+#X msg 21 12 version 0 1 1;
 #X restore 998 24 pd NETPD 2 0;
 #X obj 345 253 r \$1-\$2/pitch;
 #X obj 346 279 route float set;

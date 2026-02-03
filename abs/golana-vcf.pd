@@ -78,7 +78,7 @@
 #X obj 124 180 *~ 127;
 #X obj 124 203 mtof~;
 #N canvas 35 77 450 300 NETPD 0;
-#X msg 15 15 version 0 0 1;
+#X msg 15 15 version 0 0 2;
 #X restore 523 11 pd NETPD 2 0;
 #X obj 20 20 golana-module-label 80 23;
 #X obj 20 110 golana-module-label 80 23;

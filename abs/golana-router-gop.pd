@@ -3,7 +3,7 @@
 #X coords 0 -1 1 1 296 312 2 40 40;
 #X restore 200 20 pd \$1;
 #N canvas 84 126 409 115 NETPD 0;
-#X msg 20 26 version 0 0 1;
+#X msg 20 26 version 0 0 2;
 #X restore 29 23 pd NETPD 2 0;
 #N canvas 995 603 472 238 adjust.dimen 0;
 #X obj 54 14 r \$1.dimen;

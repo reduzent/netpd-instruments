@@ -88,7 +88,7 @@
 #X msg 544 276 #ffddcc;
 #X msg 596 277 #887766;
 #N canvas 35 77 396 61 NETPD 0;
-#X msg 21 12 version 0 1 0;
+#X msg 21 12 version 0 1 1;
 #X restore 808 15 pd NETPD 2 0;
 #X obj 300 81 nbx 5 18 -24 24 0 0 \$1-\$2/pitch \$1-\$2/pitch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 97 48 netpd_f \$1 \$2/pitch 0;
