@@ -2,11 +2,10 @@
 #X obj 134 30 r \$1-\$2/attack;
 #X obj 134 55 route float;
 #N canvas 912 398 429 80 NETPD 0;
-#X msg 28 13 version 0 0 2;
 #N canvas 711 246 418 43 abslist 0;
-#X msg 16 8 roman_helpers;
 #X msg 113 9 golana-eg-type-selector;
 #X restore 27 55 pd abslist;
+#X msg 28 13 version 0 0 2;
 #X restore 753 346 pd NETPD 2 0;
 #X obj 134 101 * 999;
 #X obj 134 124 + 1;
