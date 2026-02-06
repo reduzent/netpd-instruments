@@ -1,4 +1,4 @@
-#N canvas 680 208 504 573 10;
+#N canvas 649 204 504 573 10;
 #N struct \$0.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N struct \$0.vertgrid float x float y float w float h;
 #N struct \$0.horizgrid float x float y float w float h float c symbol note float notevis;
@@ -54,7 +54,7 @@
 #X msg 12 8 version 0 0 3;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 68 netpd_head \$1 golana;
-#N canvas 1319 94 620 804 \$1-golana 1;
+#N canvas 1284 88 620 804 \$1-golana 1;
 #X obj 1 1 cnv 18 614 800 empty empty modules 8 18 0 26 #e6f0ff #c4d8e8 0;
 #X obj 6 43 hsl 65 18 0 127 0 0 \$0.show.unstep1 empty unstep1 0 10 0 15 #000000 #000000 #e3c6ff 0 1;
 #X obj 6 88 hsl 65 18 0 127 0 0 \$0.show.unpunch empty unpunch 0 10 0 15 #000000 #000000 #c6feff 0 1;
@@ -62,9 +62,9 @@
 #X obj 118 169 golana-vco \$1 vco2;
 #X obj 233 169 golana-vco \$1 vco3;
 #X obj 348 169 golana-vco \$1 vco4;
-#X obj 12 637 golana-vca \$1 vca1;
+#X obj 12 647 golana-vca \$1 vca1;
 #X obj 105 518 golana-vcf \$1 vcf2;
-#X obj 103 637 golana-vca \$1 vca2;
+#X obj 103 647 golana-vca \$1 vca2;
 #X obj 193 477 golana-lfo \$1 lfo1;
 #X obj 334 477 golana-lfo \$1 lfo2;
 #X obj 475 477 golana-lfo \$1 lfo3;
@@ -88,8 +88,8 @@
 #X obj 377 702 golana-out \$1 out1;
 #X obj 468 702 golana-out \$1 out2;
 #X obj 396 288 golana-eg \$1 eg3;
-#X obj 194 637 golana-vca \$1 vca1;
-#X obj 285 637 golana-vca \$1 vca2;
+#X obj 194 647 golana-vca \$1 vca3;
+#X obj 285 647 golana-vca \$1 vca4;
 #X restore 10 42 pd \$1-golana;
 #X obj 28 313 unpunch-plus \$1 unpunch;
 #X msg 35 174 vis 1;
@@ -97,11 +97,11 @@
 #X obj 35 223 s \$0.unstep;
 #X obj 28 336 s \$0.unpunch;
 #X obj 28 267 rh_slider_click \$0.show.unpunch;
-#N canvas 929 54 389 983 \$1-golana-matrix-router 1;
-#X obj 1 1 cnv 18 386 980 empty empty matrix\ router 8 18 0 26 #131255 #464888 0;
-#X obj 10 731 golana-router \$1 sig vco1 vco2 vco3 vco4 noi1 noi2 vcf1 vcf2 vca1 vca2 | vcf1 vcf2 vca1 vca2 out1 out2;
+#N canvas 894 50 389 1079 \$1-golana-matrix-router 1;
+#X obj 1 1 cnv 18 386 1076 empty empty matrix\ router 8 18 0 26 #131255 #464888 0;
 #X obj 10 37 golana-router \$1 trg seq1 seq2 tr1 tr2 | tr1 tr2 eg1 eg2 eg3 lfo1 lfo2 lfo3;
-#X obj 10 336 golana-router \$1 CV seq1 seq2 cm1 cm2 cm3 cm4 eg1 eg2 eg3 lfo1 lfo2 lfo3 | cm1 cm2 cm3 cm4 vco1 vco2 vco3 vco4 vcf1 vcf2 vca1 vca2;
+#X obj 10 336 golana-router \$1 CV seq1 seq2 cm1 cm2 cm3 cm4 eg1 eg2 eg3 lfo1 lfo2 lfo3 | cm1 cm2 cm3 cm4 vco1 vco2 vco3 vco4 vcf1 vcf2 vca1 vca2 vca3 vca4;
+#X obj 10 779 golana-router \$1 sig vco1 vco2 vco3 vco4 noi1 noi2 vcf1 vcf2 vca1 vca2 vca3 vca4 | vcf1 vcf2 vca1 vca2 vca3 vca4 out1 out2;
 #X restore 228 12 pd \$1-golana-matrix-router;
 #X obj 35 151 rh_slider_click \$0.show.unstep1;
 #X obj 35 199 unstep \$1 unstep1 vel;
