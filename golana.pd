@@ -83,8 +83,8 @@
 #X obj 10 394 golana-cv-map \$1 cm3;
 #X obj 105 398 golana-cv-map \$1 cm4;
 #X obj 462 375 golana-presets;
-#X obj 486 175 golana-noise \$1 noi1;
-#X obj 492 233 golana-noise \$1 noi2;
+#X obj 463 186 golana-noise \$1 noi1;
+#X obj 526 186 golana-noise \$1 noi2;
 #X obj 186 714 golana-out \$1 out1;
 #X obj 279 716 golana-out \$1 out2;
 #X restore 10 42 pd \$1-golana;
@@ -94,7 +94,7 @@
 #X obj 35 223 s \$0.unstep;
 #X obj 28 336 s \$0.unpunch;
 #X obj 28 267 rh_slider_click \$0.show.unpunch;
-#N canvas 1014 40 366 962 \$1-golana-matrix-router 1;
+#N canvas 1014 40 366 962 \$1-golana-matrix-router 0;
 #X obj 1 1 cnv 18 363 959 empty empty matrix\ router 8 18 0 26 #131255 #464888 0;
 #X obj 10 37 golana-router \$1 trg seq1 seq2 tr1 tr2 | tr1 tr2 eg1 eg2 lfo1 lfo2 lfo3;
 #X obj 10 315 golana-router \$1 CV seq1 seq2 cm1 cm2 cm3 cm4 eg1 eg2 lfo1 lfo2 lfo3 | cm1 cm2 cm3 cm4 vco1 vco2 vco3 vco4 vcf1 vcf2 vca1 vca2;
