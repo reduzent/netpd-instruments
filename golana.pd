@@ -54,7 +54,7 @@
 #X msg 12 8 version 0 0 3;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 68 netpd_head \$1 golana;
-#N canvas 1284 88 620 804 \$1-golana 1;
+#N canvas 1284 88 618 804 \$1-golana 1;
 #X obj 1 1 cnv 18 614 800 empty empty modules 8 18 0 26 #e6f0ff #c4d8e8 0;
 #X obj 6 43 hsl 65 18 0 127 0 0 \$0.show.unstep1 empty unstep1 0 10 0 15 #000000 #000000 #e3c6ff 0 1;
 #X obj 6 88 hsl 65 18 0 127 0 0 \$0.show.unpunch empty unpunch 0 10 0 15 #000000 #000000 #c6feff 0 1;
@@ -82,7 +82,7 @@
 #X obj 6 110 hsl 65 18 0 127 0 0 \$0.show.router empty matrix 0 12 0 15 #000000 #000000 #c6ffc7 0 1;
 #X obj 10 394 golana-cv-map \$1 cm3;
 #X obj 101 394 golana-cv-map \$1 cm4;
-#X obj 502 329 golana-presets;
+#X obj 513 11 golana-presets;
 #X obj 463 186 golana-noise \$1 noi1;
 #X obj 526 186 golana-noise \$1 noi2;
 #X obj 377 702 golana-out \$1 out1;
