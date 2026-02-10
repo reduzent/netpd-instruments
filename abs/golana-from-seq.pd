@@ -1,8 +1,8 @@
 #N canvas 588 92 1159 649 10;
-#X obj 237 114 r \$3.unstep;
+#X obj 237 75 r \$3.unstep;
 #X obj 237 234 / 127;
 #N canvas 35 77 398 107 NETPD 0;
-#X msg 24 22 version 0 0 2;
+#X msg 24 22 version 0 0 3;
 #X restore 591 105 pd NETPD 2 0;
 #X obj 237 203 t a b;
 #X obj 312 231 f;
@@ -126,12 +126,12 @@
 #X obj 28 28 tgl 18 0 \$1-\$2/unstep \$1-\$2/unstep empty 18 -9 0 10 #000000 #000000 #886666 0 1;
 #X obj 44 28 tgl 18 0 \$1-\$2/unstep \$1-\$2/unstep empty 0 -9 0 10 #000000 #000000 #886666 0 1;
 #X obj 62 28 tgl 18 0 \$1-\$2/unstep \$1-\$2/unstep empty 0 -9 0 10 #000000 #000000 #886666 0 1;
-#X obj 13 28 hsl 65 18 0 127 0 0 empty \$0.unstep.label unstep 12 9 0 12 #000000 #000000 #886666 0 1;
+#X obj 13 28 hsl 65 18 0 127 0 0 empty \$0.unstep.label unstep 12 9 0 12 #000000 #000000 #ffcccc 0 1;
 #X obj 10 47 tgl 18 0 \$1-\$2/unpunch \$1-\$2/unpunch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 28 47 tgl 18 0 \$1-\$2/unpunch \$1-\$2/unpunch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 46 47 tgl 18 0 \$1-\$2/unpunch \$1-\$2/unpunch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 62 47 tgl 18 0 \$1-\$2/unpunch \$1-\$2/unpunch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 13 47 hsl 65 18 0 127 0 0 empty \$0.unpunch.label unpunch 12 9 0 12 #000000 #000000 #887766 0 1;
+#X obj 13 47 hsl 65 18 0 127 0 0 empty \$0.unpunch.label unpunch 12 9 0 12 #000000 #000000 #ffddcc 0 1;
 #X obj 716 91 r \$1-\$2/unstep;
 #X obj 716 114 route float set;
 #X msg 716 247 color -1 -1 \$1;
@@ -148,7 +148,7 @@
 #X msg 847 168 #ffddcc;
 #X msg 828 191 #887766;
 #X obj 828 268 s \$0.unpunch.label;
-#X obj 237 154 spigot;
+#X obj 237 115 spigot;
 #X obj 48 166 spigot;
 #X obj 13 10 hsl 84 18 0 127 0 0 \$0.blu \$0.bli seq>CV/trig 0 10 0 12 #e3c6ff #e3c6ff #2f004d 0 1;
 #X obj 10 47 cnv 10 12 18 empty \$0.unpunch.indicator ⬤ 2 9 0 14 #000000 #000000 0;
@@ -224,9 +224,11 @@
 #X obj 10 85 golana-module-label 89 29;
 #X obj 10 85 golana-module-out CV;
 #X obj 79 85 golana-module-out trg;
-#X obj 237 180 route note vel;
+#X obj 237 141 route note vel;
 #X obj 57 496 s~ \$1-CV-\$2;
 #X obj 187 496 s \$1-trg-\$2-out;
+#X obj 319 201 + 0.01;
+#X obj 319 178 * 0.99;
 #X connect 0 0 65 0;
 #X connect 1 0 11 0;
 #X connect 3 0 1 0;
@@ -287,5 +289,7 @@
 #X connect 73 0 31 0;
 #X connect 73 1 31 0;
 #X connect 77 0 3 0;
-#X connect 77 1 4 1;
+#X connect 77 1 81 0;
+#X connect 80 0 4 1;
+#X connect 81 0 80 0;
 #X coords 0 -1 1 1 89 91 2 10 10;
