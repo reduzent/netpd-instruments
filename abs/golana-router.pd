@@ -1,6 +1,5 @@
 #N canvas 831 82 950 557 10;
-#N canvas 912 398 429 80 NETPD 1;
-#X msg 28 13 version 0 0 2;
+#N canvas 912 398 429 80 NETPD 0;
 #N canvas 35 77 406 180 abslist 0;
 #X msg 28 49 golana-hlabel;
 #X msg 29 71 golana-link;
@@ -8,8 +7,9 @@
 #X msg 30 111 golana-router-gop;
 #X msg 28 26 golana-vlabel;
 #X restore 181 23 pd abslist;
+#X msg 28 13 version 0 0 3;
 #X restore 12 16 pd NETPD 2 0;
-#N canvas 473 40 593 960 create 0;
+#N canvas 473 40 673 960 create 0;
 #X obj 39 71 pdcontrol;
 #X msg 39 44 args 0;
 #X obj 39 94 list split 2;
@@ -510,9 +510,9 @@
 #X connect 35 0 21 1;
 #X connect 36 0 30 1;
 #X restore 266 402 pd vlabels;
-#X msg 358 270 goprect 160 20 \$1 \$2;
-#X obj 358 293 s \$0.top;
-#X obj 358 238 r \$0.gop.dimen;
+#X msg 286 246 goprect 160 20 \$1 \$2;
+#X obj 286 289 s \$0.top;
+#X obj 286 214 r \$0.gop.dimen;
 #X obj 107 619 list prepend \$1 \$2;
 #X obj 107 641 list prepend golana-link;
 #X obj 375 472 r \$0.size;
@@ -521,6 +521,9 @@
 #X obj 375 541 sel trg;
 #X msg 375 592 symbol golana-link-trg;
 #X msg 414 566 symbol golana-link;
+#X msg 286 268 coords 0 0 \$3 \$4 \$3 \$4 2 \$1 \$2;
+#X text 475 266 <- old school compatible way;
+#X text 472 243 <- nice way (>= 0.56.0);
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 2 1 5 0;
@@ -579,7 +582,7 @@
 #X connect 47 0 12 0;
 #X connect 47 1 10 0;
 #X connect 47 2 48 0;
-#X connect 49 0 50 0;
+#X connect 49 0 60 0;
 #X connect 51 0 49 0;
 #X connect 52 0 53 0;
 #X connect 53 0 20 0;
@@ -590,7 +593,8 @@
 #X connect 57 1 59 0;
 #X connect 58 0 53 1;
 #X connect 59 0 53 1;
+#X connect 60 0 50 0;
 #X restore 12 44 pd create;
 #X obj 160 20 golana-router-gop \$0.gop;
 #X obj 12 74 namecanvas \$0.top;
-#X coords 0 -1 1 1 176 264 2 160 20;
+#X coords 0 -1 1 1 176 288 2 160 20;

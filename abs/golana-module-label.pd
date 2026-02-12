@@ -1,7 +1,7 @@
-#N canvas 730 130 824 343 10;
-#X obj 20 20 cnv 14 89 16 empty \$0.label seq2 29 9 0 14 #ffffff #7c7c7c 0;
+#N canvas 728 112 824 343 10;
+#X obj 20 20 cnv 14 80 16 empty \$0.label tr1 30 9 0 14 #ffffff #7c7c7c 0;
 #N canvas 35 77 436 84 NETPD 0;
-#X msg 23 26 version 0 0 2;
+#X msg 23 26 version 0 0 3;
 #X restore 17 60 pd NETPD 2 0;
 #X obj 331 147 s \$0.label;
 #X msg 331 115 label_pos \$1 9;
@@ -9,7 +9,7 @@
 #X obj 227 199 s \$0.label;
 #X msg 338 178 goprect 20 20 \$1 16;
 #X obj 15 94 namecanvas \$0.main;
-#X obj 338 201 s \$0.main;
+#X obj 338 227 s \$0.main;
 #X obj 227 44 loadbang;
 #X obj 227 67 list append \$1 \$2;
 #X obj 227 90 unpack f f;
@@ -18,9 +18,12 @@
 #X obj 521 98 pdcontrol;
 #X obj 521 145 s \$0.label;
 #X msg 521 121 label \$2;
+#X msg 338 203 coords 0 0 \$3 \$4 \$3 \$4 2 \$1 \$2;
+#X text 527 201 <- old school compatible way;
+#X text 524 178 <- nice way (>= 0.56.0);
 #X connect 3 0 2 0;
 #X connect 4 0 5 0;
-#X connect 6 0 8 0;
+#X connect 6 0 17 0;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 4 0;
@@ -30,4 +33,5 @@
 #X connect 13 0 14 0;
 #X connect 14 0 16 0;
 #X connect 16 0 15 0;
-#X coords 0 -1 1 1 89 16 2 20 20;
+#X connect 17 0 8 0;
+#X coords 0 -1 1 1 80 16 2 20 20;
