@@ -2,7 +2,7 @@
 #X obj 237 75 r \$3.unstep;
 #X obj 237 234 / 127;
 #N canvas 35 77 398 107 NETPD 0;
-#X msg 24 22 version 0 0 3;
+#X msg 24 22 version 0 0 4;
 #X restore 591 105 pd NETPD 2 0;
 #X obj 237 203 t a b;
 #X obj 312 231 f;
@@ -226,9 +226,10 @@
 #X obj 79 85 golana-module-out trg;
 #X obj 237 141 route note vel;
 #X obj 57 496 s~ \$1-CV-\$2;
-#X obj 187 496 s \$1-trg-\$2-out;
+#X obj 187 518 s \$1-trg-\$2-out;
 #X obj 319 201 + 0.01;
 #X obj 319 178 * 0.99;
+#X msg 187 494 trg \$1;
 #X connect 0 0 65 0;
 #X connect 1 0 11 0;
 #X connect 3 0 1 0;
@@ -248,7 +249,7 @@
 #X connect 15 1 19 0;
 #X connect 15 1 71 0;
 #X connect 16 0 17 0;
-#X connect 18 0 79 0;
+#X connect 18 0 82 0;
 #X connect 19 0 21 0;
 #X connect 20 0 22 0;
 #X connect 23 0 18 0;
@@ -292,4 +293,5 @@
 #X connect 77 1 81 0;
 #X connect 80 0 4 1;
 #X connect 81 0 80 0;
+#X connect 82 0 79 0;
 #X coords 0 -1 1 1 89 91 2 10 10;
