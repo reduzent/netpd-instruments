@@ -18,8 +18,8 @@
 #X connect 0 0 2 0;
 #X connect 3 0 1 0;
 #X restore 12 190 pd white;
-#X obj 12 135 netpd_f \$1 \$2/type;
-#X obj 12 164 == 0;
+#X obj 12 125 netpd_f \$1 \$2/type;
+#X obj 70 158 == 0;
 #X obj 20 38 hradio 26 1 0 2 \$1-\$2/type \$1-\$2/type empty 0 -9 0 10 #fcfcfc #000000 #000000 0;
 #X obj 23 20 hsl 47 18 0 127 0 0 \$0.blu \$0.bli noise 0 10 0 14 #e3c6ff #e3c6ff #2f004d 0 1;
 #X obj 20 38 cnv 15 26 26 empty \$0.pnk.label pnk 1 13 0 14 #000000 #ffcccc 0;
@@ -49,10 +49,11 @@
 #X obj 20 83 golana-module-label 52 20;
 #X obj 12 335 send~ \$1-sig-\$2;
 #X obj 20 83 golana-module-out sig;
+#X connect 1 0 29 0;
 #X connect 2 0 29 0;
+#X connect 3 0 2 0;
 #X connect 3 0 4 0;
-#X connect 3 0 1 0;
-#X connect 4 0 2 0;
+#X connect 4 0 1 0;
 #X connect 9 0 16 0;
 #X connect 9 1 17 0;
 #X connect 10 0 24 0;
