@@ -157,7 +157,7 @@
 #X connect 10 0 7 0;
 #X restore 319 226 pd s&h;
 #X obj 303 81 hsl 125 18 0 1 0 0 \$1-\$2/rate \$1-\$2/rate rate 2 9 0 12 #000000 #ffc7c6 #ffc7c6 0 1;
-#X obj 303 99 hsl 125 8 0 1 0 0 \$0.pos.s \$0.pos empty -2 -9 0 10 #000000 #887766 #000000 0 1;
+#X obj 303 99 hsl 125 8 0 1 0 0 \$0.pos.s \$0.pos empty -2 -9 0 10 #000000 #ffddcc #000000 0 1;
 #X obj 13 558 dbtorms;
 #X obj 59 674 s \$0.pos;
 #X obj 12 487 env~ 1024 1024;
