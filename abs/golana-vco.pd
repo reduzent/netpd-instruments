@@ -51,9 +51,9 @@
 #X restore 268 166 pd saw;
 #X obj 300 55 hradio 26 1 0 4 \$1-\$2/waveform \$1-\$2/waveform empty 0 -9 0 10 #fcfcfc #000000 #000000 0;
 #X obj 247 126 netpd_f \$1 \$2/waveform 0;
-#X obj 300 55 cnv 15 26 26 empty \$0.sin.label sin 1 13 0 14 #000000 #ffcccc 0;
+#X obj 300 55 cnv 15 26 26 empty \$0.sin.label sin 1 13 0 14 #000000 #886666 0;
 #X obj 326 55 cnv 15 26 26 empty \$0.tri.label tri 1 13 0 14 #000000 #887766 0;
-#X obj 352 55 cnv 15 26 26 empty \$0.sqr.label sqr 1 13 0 14 #000000 #888866 0;
+#X obj 352 55 cnv 15 26 26 empty \$0.sqr.label sqr 1 13 0 14 #000000 #ffffcc 0;
 #X obj 378 55 cnv 15 26 26 empty \$0.saw.label saw 1 13 0 14 #000000 #668866 0;
 #X obj 303 37 hsl 99 18 0 127 0 0 \$0.blu \$0.bli VCO 0 10 0 14 #e3c6ff #e3c6ff #2f004d 0 1;
 #X obj 39 80 +~ 0;
@@ -92,7 +92,7 @@
 #X restore 808 15 pd NETPD 2 0;
 #X obj 300 81 nbx 5 18 -24 24 0 0 \$1-\$2/pitch \$1-\$2/pitch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 97 48 netpd_f \$1 \$2/pitch 0;
-#X obj 300 81 cnv 18 104 18 empty \$0.pitch.label \ \ 0.00 2 10 0 14 #000000 #c6feff 0;
+#X obj 300 81 cnv 18 104 18 empty \$0.pitch.label \ \ 0.03 2 10 0 14 #000000 #c6feff 0;
 #X obj 210 285 r \$1-\$2/pitch;
 #X obj 210 308 route float set;
 #X msg 213 395 label \$1;
@@ -134,6 +134,9 @@
 #X obj 187 343 outlet;
 #X obj 187 309 &&, f 5;
 #X obj 187 278 t b a;
+#X obj 212 225 s golana-com;
+#X obj 212 178 list prepend \$1 \$2;
+#X msg 212 202 \$1-\$2-label dsp \$3;
 #X connect 1 0 2 0;
 #X connect 1 1 12 0;
 #X connect 2 0 12 0;
@@ -167,10 +170,13 @@
 #X connect 23 0 13 0;
 #X connect 24 0 25 0;
 #X connect 27 0 26 0;
+#X connect 27 0 30 0;
 #X connect 28 0 27 0;
 #X connect 28 1 27 1;
-#X restore 903 96 pd link.detection;
-#X obj 903 119 switch~;
+#X connect 30 0 31 0;
+#X connect 31 0 29 0;
+#X restore 776 83 pd link.detection;
+#X obj 776 132 switch~;
 #X connect 0 0 58 0;
 #X connect 1 0 13 0;
 #X connect 2 0 0 0;

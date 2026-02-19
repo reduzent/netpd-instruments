@@ -63,6 +63,9 @@
 #X obj 387 181 change 0;
 #X msg 387 258 uplink \$1;
 #X obj 387 284 s \$1-sig-\$2-in;
+#X obj 126 171 s golana-com;
+#X obj 126 124 list prepend \$1 \$2;
+#X msg 126 148 \$1-\$2-label dsp \$3;
 #X connect 0 0 1 0;
 #X connect 0 1 2 1;
 #X connect 1 0 2 0;
@@ -105,6 +108,7 @@
 #X connect 30 0 20 0;
 #X connect 31 0 32 0;
 #X connect 34 0 33 0;
+#X connect 34 0 42 0;
 #X connect 35 0 34 0;
 #X connect 35 1 34 1;
 #X connect 36 0 37 0;
@@ -112,6 +116,8 @@
 #X connect 37 0 39 0;
 #X connect 38 0 36 0;
 #X connect 39 0 40 0;
+#X connect 42 0 43 0;
+#X connect 43 0 41 0;
 #X restore 397 223 pd link.detection;
 #X connect 1 0 5 0;
 #X connect 1 0 4 1;

@@ -48,6 +48,11 @@
 #X obj 8 298 s \$1-trg-\$2-out;
 #X obj 203 299 s \$1-trg-\$2-in;
 #X obj 203 9 r \$1-trg-\$2-out;
+#X obj 356 222 s golana-com;
+#X obj 356 175 list prepend \$1 \$2;
+#X msg 356 199 \$1-\$2-label dsp \$3;
+#X obj 356 142 &&, f 7;
+#X obj 356 108 t b a, f 7;
 #X connect 0 0 1 0;
 #X connect 0 1 2 1;
 #X connect 1 0 2 0;
@@ -60,6 +65,7 @@
 #X connect 6 0 10 0;
 #X connect 7 0 5 0;
 #X connect 8 0 7 0;
+#X connect 8 1 29 0;
 #X connect 9 0 0 0;
 #X connect 10 0 23 0;
 #X connect 11 0 12 0;
@@ -74,10 +80,16 @@
 #X connect 17 0 21 0;
 #X connect 18 0 16 0;
 #X connect 19 0 18 0;
+#X connect 19 1 30 0;
 #X connect 20 0 11 0;
 #X connect 21 0 24 0;
 #X connect 22 0 9 0;
 #X connect 25 0 20 0;
+#X connect 27 0 28 0;
+#X connect 28 0 26 0;
+#X connect 29 0 27 0;
+#X connect 30 0 29 0;
+#X connect 30 1 29 1;
 #X restore 255 253 pd link.detection;
 #X connect 1 0 3 0;
 #X connect 1 0 9 1;

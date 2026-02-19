@@ -131,7 +131,7 @@
 #X obj 28 47 tgl 18 0 \$1-\$2/unpunch \$1-\$2/unpunch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 46 47 tgl 18 0 \$1-\$2/unpunch \$1-\$2/unpunch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 62 47 tgl 18 0 \$1-\$2/unpunch \$1-\$2/unpunch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 13 47 hsl 65 18 0 127 0 0 empty \$0.unpunch.label unpunch 12 9 0 12 #000000 #000000 #ffddcc 0 1;
+#X obj 13 47 hsl 65 18 0 127 0 0 empty \$0.unpunch.label unpunch 12 9 0 12 #000000 #000000 #887766 0 1;
 #X obj 616 11 r \$1-\$2/unstep;
 #X obj 616 34 route float set;
 #X msg 616 167 color -1 -1 \$1;
@@ -265,6 +265,9 @@
 #X obj 321 195 &&;
 #X obj 321 14 r \$1-trg-\$2-out;
 #X obj 321 360 s \$1-trg-\$2-out;
+#X obj 183 316 s golana-com;
+#X obj 183 269 list prepend \$1 \$2;
+#X msg 183 293 \$1-\$2-label dsp \$3;
 #X connect 0 0 1 0;
 #X connect 0 1 2 1;
 #X connect 1 0 2 0;
@@ -277,6 +280,7 @@
 #X connect 6 0 11 0;
 #X connect 7 0 5 0;
 #X connect 7 1 10 0;
+#X connect 7 1 35 0;
 #X connect 8 0 7 0;
 #X connect 9 0 0 0;
 #X connect 11 0 13 0;
@@ -307,6 +311,8 @@
 #X connect 30 0 33 0;
 #X connect 31 0 28 0;
 #X connect 32 0 29 0;
+#X connect 35 0 36 0;
+#X connect 36 0 34 0;
 #X restore 484 350 pd link.detection;
 #X obj 484 377 switch~;
 #X connect 0 0 65 0;

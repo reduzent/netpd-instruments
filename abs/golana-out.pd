@@ -58,7 +58,7 @@
 #X obj 23 366 throw~ \$1-golana-to-mx-l;
 #X obj 61 335 throw~ \$1-golana-to-mx-r;
 #X obj 25 121 catch~ \$1-sig-\$2;
-#N canvas 453 439 488 314 link.detection 1;
+#N canvas 453 439 488 314 link.detection 0;
 #X obj 22 142 sel 0;
 #X msg 22 165 -1;
 #X obj 22 116 change 0;
@@ -76,6 +76,9 @@
 #X obj 274 155 > 0;
 #X obj 274 16 r \$1-sig-\$2-in;
 #X obj 274 39 route downlink;
+#X obj 138 130 s golana-com;
+#X obj 138 83 list prepend \$1 \$2;
+#X msg 138 107 \$1-\$2-label dsp \$3;
 #X connect 0 0 1 0;
 #X connect 0 1 9 0;
 #X connect 1 0 9 0;
@@ -92,8 +95,11 @@
 #X connect 13 0 14 0;
 #X connect 13 1 11 1;
 #X connect 14 0 7 0;
+#X connect 14 0 18 0;
 #X connect 15 0 16 0;
 #X connect 16 0 10 0;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;
 #X restore 272 279 pd link.detection;
 #X obj 272 302 switch~;
 #X obj 39 249 line~;
