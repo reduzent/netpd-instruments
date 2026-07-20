@@ -1,5 +1,5 @@
 #N canvas 286 40 633 177 10;
-#N canvas 624 75 376 135 NETPD 1;
+#N canvas 624 75 376 135 NETPD 0;
 #N canvas 315 75 366 164 abslist 0;
 #X msg 14 13 tr909-bd;
 #X msg 18 39 tr909-sd;
@@ -9,9 +9,15 @@
 #X msg 12 8 version 0 0 3;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 11 74 netpd_head \$1 tr909;
-#N canvas 641 277 1133 270 \$1-tr909 1;
+#N canvas 787 368 1133 426 \$1-tr909 1;
 #X obj 26 21 tr909-bd \$1;
 #X obj 25 46 tr909-sd \$1;
 #X obj 26 73 tr909-hc \$1;
-#X obj 28 101 tr909-lt \$1;
+#X obj 124 265 tr909-lt \$1;
+#X obj 32 125 tr909-ch;
+#X obj 36 149 tr909-oh;
+#X obj 36 178 tr909-rs;
+#X obj 32 208 tr909-rd;
+#X obj 36 238 tr909-cs;
+#X obj 106 289 tr909-mt;
 #X restore 10 42 pd \$1-tr909;
