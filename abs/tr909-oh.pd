@@ -5,7 +5,10 @@
 #X obj 118 185 f;
 #X obj 12 300 *~;
 #N canvas 35 77 449 109 NETPD 0;
-#X msg 10 9 version 0 0 1;
+#N canvas 275 174 410 70 abslist 0;
+#X msg 13 14 tr909-oh-help;
+#X restore 106 9 pd abslist;
+#X msg 10 9 version 0 0 2;
 #X restore 8 12 pd NETPD 2 0;
 #X msg 13 189 0 \, 22932 520;
 #X obj 12 252 tabread~ \$0.oh;
