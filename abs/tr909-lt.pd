@@ -142,7 +142,7 @@
 #X obj 14 129 route trigger;
 #X obj 342 187 r \$0.inlet;
 #X obj 342 210 route decay;
-#X obj 14 195 1, f 7;
+#X obj 14 195 f, f 7;
 #X obj 14 218 t a a a, f 39;
 #X obj 141 434 r \$0.inlet;
 #X obj 141 457 route gain;
