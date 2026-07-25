@@ -12,8 +12,11 @@
 #X msg 100 67 tr909-cs;
 #X msg 196 40 tr909-mt;
 #X msg 200 68 tr909-ht;
+#X msg 257 126 roman_helpers;
+#X msg 104 126 i2mx;
+#X msg 148 125 qseq3-instr-list;
 #X restore 11 37 pd abslist;
-#X msg 12 8 version 0 0 0;
+#X msg 12 8 version 0 0 4;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 67 netpd_head \$1 tr909;
 #N canvas 1386 308 304 428 \$1-tr909 1;
