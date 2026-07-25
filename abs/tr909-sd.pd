@@ -124,7 +124,7 @@
 #X connect 11 1 9 1;
 #X connect 11 2 12 0;
 #X connect 12 0 9 1;
-#X restore 140 568 pd gain;
+#X restore 172 559 pd gain;
 #X msg 320 37 tune 0.5 \, snappy 0.5 \, tune 0.5 \, gain 0.804896;
 #X connect 0 0 18 0;
 #X connect 1 0 9 1;
@@ -183,5 +183,5 @@
 #X connect 53 1 50 0;
 #X connect 53 2 51 0;
 #X connect 54 0 41 0;
-#X connect 55 0 37 0;
+#X connect 55 0 37 1;
 #X connect 56 0 39 0;
