@@ -16,7 +16,7 @@
 #X msg 12 8 version 0 0 0;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 10 67 netpd_head \$1 tr909;
-#N canvas 714 511 304 428 \$1-tr909 1;
+#N canvas 1386 308 304 428 \$1-tr909 1;
 #X obj 3 3 cnv 10 293 52 empty empty empty 20 12 0 10 #f9f1d1 #404040 0;
 #X obj 12 14 cnv 3 40 4 empty empty empty 20 12 0 10 #606060 #404040 0;
 #X obj 29 18 cnv 3 6 25 empty empty empty 20 12 0 10 #606060 #404040 0;
@@ -91,7 +91,7 @@
 #X obj 176 56 cnv 10 120 364 empty empty empty 20 12 0 10 #fffceb #404040 0;
 #X obj 180 69 hsl 100 12 0 1 0 0 \$1-rimshot/gain \$1-rimshot/gain gain 2 6 0 10 #f9f1d1 #ff8300 #606060 0 1;
 #X obj 151 71 vsl 24 21 0 127 0 0 \$0.rimshot.s \$0.rimshot.r rs 2 11 0 16 #606060 #606060 #ffab00 0 1;
-#X obj 180 83 hsl 100 12 0 1 0 0 \$1-hightom/pan \$1-hightom/pan pan 2 6 0 10 #f9f1d1 #ff8300 #606060 0 1;
+#X obj 180 83 hsl 100 12 0 1 0 0 \$1-rimshot/pan \$1-rimshot/pan pan 2 6 0 10 #f9f1d1 #ff8300 #606060 0 1;
 #X obj 180 105 hsl 100 12 0 1 0 0 \$1-handclap/gain \$1-handclap/gain gain 2 6 0 10 #f9f1d1 #ff8300 #606060 0 1;
 #X obj 151 107 vsl 24 21 0 127 0 0 \$0.handclap.s \$0.handclap.r hc 2 11 0 16 #606060 #606060 #ffab00 0 1;
 #X obj 180 119 hsl 100 12 0 1 0 0 \$1-handclap/pan \$1-handclap/pan pan 2 6 0 10 #f9f1d1 #ff8300 #606060 0 1;
