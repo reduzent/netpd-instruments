@@ -187,7 +187,7 @@
 #X obj 9 55 inlet;
 #X obj 9 78 s \$0.inlet;
 #X obj 80 636 outlet~;
-#X obj 399 287 r \$0.inlet;
+#X obj 399 257 r \$0.inlet;
 #X obj 454 388 + 2;
 #X msg 399 465 1;
 #X obj 439 441 del;
@@ -197,8 +197,8 @@
 #X obj 399 514 outlet;
 #X obj 399 387 t b b b;
 #X msg 438 411 stop;
-#X obj 399 310 route trigger decay;
-#X obj 454 335 rh_scalelog 70 2000;
+#X obj 399 280 route trigger decay;
+#X obj 454 305 rh_scalelog 70 2000;
 #X obj 454 360 min 618.345;
 #N canvas 1062 158 308 342 gain&punch 0;
 #X obj 112 154 *;
@@ -262,6 +262,7 @@
 #X connect 13 0 5 0;
 #X restore 81 602 pd gain&punch;
 #X msg 124 41 tune 0.5 \, decay 0.5 \, attack 0 \, gain 0.840896 \, punch 0;
+#X obj 454 333 + 55;
 #X connect 6 0 17 1;
 #X connect 7 0 8 0;
 #X connect 8 0 6 0;
@@ -317,7 +318,8 @@
 #X connect 54 0 48 0;
 #X connect 55 0 53 0;
 #X connect 55 1 56 0;
-#X connect 56 0 57 0;
+#X connect 56 0 60 0;
 #X connect 57 0 46 0;
 #X connect 58 0 44 0;
 #X connect 59 0 41 0;
+#X connect 60 0 57 0;
