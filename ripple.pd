@@ -761,7 +761,7 @@
 #X obj 367 90 hsl 77 15 0 1 0 0 \$1.adsr/d \$1.adsr/d.r D 4 8 0 12 #fcfcfc #b8b8b8 #404040 0 1;
 #X obj 449 90 hsl 77 15 0 1 0 0 \$1.adsr/s \$1.adsr/s.r S 4 8 0 12 #fcfcfc #b8b8b8 #404040 0 1;
 #X obj 531 90 hsl 77 15 0 1 0 0 \$1.adsr/r \$1.adsr/r.r R 4 8 0 12 #fcfcfc #b8b8b8 #404040 0 1;
-#X obj 236 90 nbx 4 14 0 127 0 0 \$1.pitchoffset \$1.pitchoffset.r empty 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 236 90 nbx 6 14 0 127 0 0 \$1.pitchoffset \$1.pitchoffset.r empty 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 238 90 hsl 42 15 0 1 0 0 \$1.pitchoffset.label \$1.pitchoffset.label.r C4 4 8 0 12 #fcfcfc #fcfcfc #404040 0 1;
 #X obj 78 90 hsl 155 15 0 1 0 0 \$1.pan \$1.pan.r PAN 4 8 0 12 #fcfcfc #b8b8b8 #404040 0 1;
 #X obj 13 90 hsl 60 15 0 1 0 0 \$1.mode.click \$1.mode.label NORMAL 4 8 0 12 #fcfcfc #fcfcfc #404040 0 1;
@@ -789,7 +789,7 @@
 #X msg 11 108 ripple-sampler;
 #X msg 108 108 ripple-sample-player;
 #X restore 112 20 pd abslist;
-#X msg 11 19 version 0 1 8;
+#X msg 11 19 version 0 1 9;
 #X restore 20 70 pd NETPD 2 0;
 #X obj 195 52 sel;
 #X obj 226 53 t a;
