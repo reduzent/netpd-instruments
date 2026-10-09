@@ -2,15 +2,15 @@
 #X obj 10 10 cnv 15 302 15 empty empty sample\$2 4 8 0 10 #dcdcdc #606060 0;
 #X obj 27 25 hsl 230 15 0 1 0 0 \$1-\$2/start \$1-\$2/start cue 105 8 0 10 #b8b8b8 #000000 #000000 0 1;
 #X obj 10 25 bng 15 70 50 0 \$0.prelisten \$0.prelisten.r prelisten 20 8 0 10 #b8b8b8 #000000 #000000;
-#X obj 258 25 nbx 5 15 1 9999 0 0 \$1-\$2/length \$1-\$2/length length -50 8 0 10 #b8b8b8 #000000 #000000 0 256;
+#X obj 258 25 nbx 7 15 1 9999 0 0 \$1-\$2/length \$1-\$2/length length -50 8 0 10 #b8b8b8 #000000 #000000 0 256;
 #X obj 261 10 hsl 49 15 0 127 0 0 \$0.length.unit \$0.length.unit.r steps 1 8 0 10 #dcdcdc #dcdcdc #000000 0 1;
-#X obj 222 10 nbx 3 15 -96 96 0 0 \$1-\$2/pitch \$1-\$2/pitch empty 39 8 0 10 #dcdcdc #000000 #000000 0 256;
+#X obj 222 10 nbx 5 15 -96 96 0 0 \$1-\$2/pitch \$1-\$2/pitch empty 39 8 0 10 #dcdcdc #000000 #000000 0 256;
 #X obj 156 10 hsl 39 15 0 1 0 0 \$1-\$2/fadetime \$1-\$2/fadetime fade 1 8 0 10 #dcdcdc #000000 #000000 0 1;
 #X obj 200 10 hsl 20 15 0 127 0 0 \$0.direction \$0.direction.r >>> 1 8 0 10 #dcdcdc #dcdcdc #000000 0 1;
 #N canvas 930 319 204 64 NETPD 0;
 #N canvas 862 414 329 97 abslist 0;
 #X restore 15 35 pd abslist;
-#X msg 15 10 version 0 1 0;
+#X msg 15 10 version 0 1 1;
 #X restore 343 9 pd NETPD 2 0;
 #N canvas 136 124 209 177 ms2samples 0;
 #X obj 17 36 t a b;

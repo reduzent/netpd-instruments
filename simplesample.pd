@@ -7,7 +7,7 @@
 #X msg 189 49 roman_helpers;
 #X msg 16 42 untik-clock-consumer;
 #X restore 12 34 pd abslist;
-#X msg 12 8 version 0 1 0;
+#X msg 12 8 version 0 1 1;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 68 netpd_head \$1 simplesample;
 #N canvas 1235 507 315 283 \$1-simplesample 0;
@@ -29,8 +29,8 @@
 #X obj 4 61 tgl 15 0 \$1-playback \$1-playback playback 20 8 0 10 #00fc04 #000000 #000000 0 1;
 #X obj 21 46 hsl 230 15 0 1 0 0 \$0.record.cursor \$0.record.cursor.r empty -2 -8 0 10 #fce0e0 #fce0e0 #000000 0 1;
 #X obj 4 46 bng 15 250 50 0 \$0.record \$0.bli record 20 8 0 10 #fc0400 #000000 #000000;
-#X obj 252 46 nbx 5 15 1 99 0 0 \$1-adc \$1-adc adc -33 8 0 10 #b8b8b8 #000000 #000000 0 256;
-#X obj 252 61 nbx 5 15 1 999 0 0 \$1-length \$1-length length -50 8 0 10 #b8b8b8 #000000 #000000 0 256;
+#X obj 252 46 nbx 7 15 1 99 0 0 \$1-adc \$1-adc adc -33 8 0 10 #b8b8b8 #000000 #000000 0 256;
+#X obj 252 61 nbx 7 15 1 999 0 0 \$1-length \$1-length length -50 8 0 10 #b8b8b8 #000000 #000000 0 256;
 #X restore 10 42 pd \$1-simplesample;
 #X obj 14 293 i2mx \$1 simplesample;
 #X obj 11 138 t a a;
