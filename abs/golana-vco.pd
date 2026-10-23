@@ -51,9 +51,9 @@
 #X restore 268 166 pd saw;
 #X obj 300 55 hradio 26 1 0 4 \$1-\$2/waveform \$1-\$2/waveform empty 0 -9 0 10 #fcfcfc #000000 #000000 0;
 #X obj 247 126 netpd_f \$1 \$2/waveform 0;
-#X obj 300 55 cnv 15 26 26 empty \$0.sin.label sin 1 13 0 14 #000000 #886666 0;
+#X obj 300 55 cnv 15 26 26 empty \$0.sin.label sin 1 13 0 14 #000000 #ffcccc 0;
 #X obj 326 55 cnv 15 26 26 empty \$0.tri.label tri 1 13 0 14 #000000 #887766 0;
-#X obj 352 55 cnv 15 26 26 empty \$0.sqr.label sqr 1 13 0 14 #000000 #ffffcc 0;
+#X obj 352 55 cnv 15 26 26 empty \$0.sqr.label sqr 1 13 0 14 #000000 #888866 0;
 #X obj 378 55 cnv 15 26 26 empty \$0.saw.label saw 1 13 0 14 #000000 #668866 0;
 #X obj 303 37 hsl 99 18 0 127 0 0 \$0.blu \$0.bli VCO 0 10 0 14 #e3c6ff #e3c6ff #2f004d 0 1;
 #X obj 39 80 +~ 0;
@@ -88,11 +88,11 @@
 #X msg 544 276 #ffddcc;
 #X msg 596 277 #887766;
 #N canvas 35 77 396 61 NETPD 0;
-#X msg 25 14 version 0 1 3;
+#X msg 25 14 version 0 1 4;
 #X restore 808 15 pd NETPD 2 0;
-#X obj 300 81 nbx 5 18 -24 24 0 0 \$1-\$2/pitch \$1-\$2/pitch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 301 81 nbx 7 18 -24 24 0 0 \$1-\$2/pitch \$1-\$2/pitch empty 0 -9 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 97 48 netpd_f \$1 \$2/pitch 0;
-#X obj 300 81 cnv 18 104 18 empty \$0.pitch.label \ \ 0.03 2 10 0 14 #000000 #c6feff 0;
+#X obj 300 81 cnv 18 104 18 empty \$0.pitch.label \ 13.00 2 10 0 14 #000000 #c6feff 0;
 #X obj 210 285 r \$1-\$2/pitch;
 #X obj 210 308 route float set;
 #X msg 213 395 label \$1;
