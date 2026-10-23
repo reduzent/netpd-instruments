@@ -1,6 +1,6 @@
-#N canvas 494 319 888 399 10;
-#N canvas 0 139 369 108 NETPD 0;
-#X msg 9 6 version 0 1 4;
+#N canvas 1497 508 888 399 10;
+#N canvas 1790 246 369 108 NETPD 0;
+#X msg 9 6 version 0 1 5;
 #X restore 347 9 pd NETPD 2 0;
 #X obj 224 200 netpd_f \$1 \$2/\$3/fb 0;
 #X obj 139 87 netpd_f \$1 \$2/\$3/pitch 0;
@@ -38,6 +38,9 @@
 #X obj 612 218 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 596 278 print \$4/e-pong;
 #X obj 33 120 route \$4-\$2;
+#X obj 155 21 cnv 10 10 12 empty empty empty 20 12 0 10 #fcfcc4 #404040 0;
+#X obj 113 21 cnv 10 10 12 empty empty empty 20 12 0 10 #fcfcc4 #404040 0;
+#X obj 71 21 cnv 10 10 12 empty empty empty 20 12 0 10 #fcfcc4 #404040 0;
 #X connect 1 0 11 5;
 #X connect 2 0 9 1;
 #X connect 4 0 11 1;
