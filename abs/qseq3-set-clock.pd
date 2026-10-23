@@ -1,7 +1,7 @@
 #N canvas 769 269 676 620 10;
-#X obj 112 20 nbx 5 20 1 100 0 0 \$1-\$2/div \$1-\$2/div empty 0 10 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 113 21 nbx 7 19 1 100 0 0 \$1-\$2/div \$1-\$2/div empty 0 10 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 20 20 cnv 15 365 20 empty empty empty 20 12 0 14 #000000 #404040 0;
-#X obj 112 22 cnv 10 58 16 empty \$0.div.label div:\ \ 1 4 8 0 12 #dcdcdc #000000 0;
+#X obj 112 22 cnv 10 58 16 empty \$0.div.label div:\ 42 4 8 0 12 #dcdcdc #000000 0;
 #N canvas 1194 447 748 286 gui.interfacing 0;
 #X obj 17 138 s \$0.div.label;
 #X msg 17 114 label \$1;
@@ -42,7 +42,7 @@
 #X connect 19 0 6 0;
 #X restore 352 105 pd gui.interfacing;
 #N canvas 356 139 352 73 NETPD 0;
-#X msg 19 13 version 0 1 0;
+#X msg 19 13 version 0 1 1;
 #X restore 479 104 pd NETPD 2 0;
 #N canvas 965 168 557 366 netpdization 0;
 #X obj 6 97 netpd_f \$1 \$2/length 0;
@@ -76,9 +76,9 @@
 #X connect 7 0 3 1;
 #X connect 7 0 4 1;
 #X restore 22 103 pd div;
-#X obj 178 22 nbx 7 16 0 9999 0 0 \$1-\$2/shift \$1-\$2/shift empty 0 10 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 176 22 nbx 10 17 0 9999 0 0 \$1-\$2/shift \$1-\$2/shift empty 0 10 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 173 22 cnv 10 78 16 empty \$0.shift.label shift:\ \ \ 0 4 8 0 12 #e0e0e0 #7c7c7c 0;
-#X obj 258 22 nbx 8 16 0 9999 0 0 \$1-\$2/length \$1-\$2/length empty 0 10 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 257 22 nbx 11 17 0 9999 0 0 \$1-\$2/length \$1-\$2/length empty 0 10 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 254 22 cnv 10 84 16 empty \$0.length.label length:\ \ \ 0 4 8 0 12 #e0e0e0 #7c7c7c 0;
 #X obj 22 266 moses 0;
 #X obj 61 321 moses 0;
@@ -92,7 +92,7 @@
 #X msg 61 184 \$2;
 #X obj 22 139 list prepend 0;
 #X obj 332 334 t a;
-#X obj 341 22 cnv 10 42 16 empty \$0.cursor.label \ \ \ \ 0 4 8 0 12 #fcfcfc #7c7c7c 0;
+#X obj 341 22 cnv 10 42 16 empty \$0.cursor.label \ \ \ 43 4 8 0 12 #fcfcc8 #000000 0;
 #X obj 396 442 makefilename %5d;
 #X msg 396 465 label \$1;
 #X obj 396 488 s \$0.cursor.label;
