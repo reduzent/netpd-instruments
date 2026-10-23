@@ -1,13 +1,10 @@
 #N canvas 398 366 501 277 10;
-#N canvas 0 106 450 300 NETPD 1;
-#X msg 4 14 version 0 1 0;
+#N canvas 0 106 450 300 NETPD 0;
+#X msg 4 14 version 0 1 1;
 #X restore 316 17 pd NETPD 2 0;
-#X obj 20 20 nbx 10 20 1 20 0 0 \$0.number \$0.number.r empty 0 8 0
-10 -262144 -1 -1 20 256;
-#X obj 20 20 cnv 15 60 20 empty \$0.param.label \$3: 3 10 0 12 -233017
--1 0;
-#X obj 80 20 cnv 15 40 20 empty \$0.value.label \ 29 12 10 0 12 -233017
--1 0;
+#X obj 21 21 nbx 14 19 1 20 0 0 \$0.number \$0.number.r empty 0 8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 20 20 cnv 15 60 20 empty \$0.param.label \$3: 3 10 0 12 #e0e0e0 #000000 0;
+#X obj 80 20 cnv 15 40 20 empty \$0.value.label \ 11 12 10 0 12 #e0e0e0 #000000 0;
 #X obj 200 14 loadbang;
 #X obj 187 157 makefilename %3d;
 #X msg 187 180 label \$1;
