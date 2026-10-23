@@ -4,7 +4,7 @@
 #X msg 12 89 i2mx;
 #X msg 13 20 untik-clock-consumer;
 #X restore 12 34 pd abslist;
-#X msg 11 10 version 0 2 0;
+#X msg 11 10 version 0 2 1;
 #X restore 10 14 pd NETPD 2 0;
 #X obj 9 69 netpd_head \$1 evil;
 #N canvas 636 250 162 182 \$1-evil 1;
@@ -14,15 +14,15 @@
 #X obj 9 20 cnv 15 35 35 empty \$0.switch.display empty 20 12 0 14 #000000 #000000 0;
 #X obj 70 77 cnv 10 78 16 empty \$0.peak.display empty 20 12 0 14 #000000 #000000 0;
 #X obj 47 20 netpd-gui-dropdown \$0.clock.select 62 16 12 666 0 0 0 555 887;
-#X obj 50 39 hsl 96 16 0 127 0 0 \$0.owner.button \$0.owner.display owner:0 2 8 0 14 #000000 #000000 #bcbcbc 0 1;
-#X obj 8 58 nbx 7 16 8 128 0 0 \$1-delay \$1-delay empty 0 -8 0 10 #fcfcfc #000000 #b8b8b8 0 256;
-#X obj 12 58 hsl 73 16 0 127 0 0 empty \$0.delay.display delay:16 2 8 0 14 #000000 #000000 #b8b8b8 0 1;
+#X obj 50 39 hsl 96 16 0 127 0 0 \$0.owner.button \$0.owner.display owner:you 2 8 0 14 #000000 #000000 #14e814 0 1;
+#X obj 8 58 nbx 11 16 8 128 0 0 \$1-delay \$1-delay empty 0 -8 0 10 #fcfcfc #000000 #b8b8b8 0 256;
+#X obj 12 58 hsl 73 16 0 127 0 0 empty \$0.delay.display delay:19 2 8 0 14 #000000 #000000 #b8b8b8 0 1;
 #X obj 6 105 cnv 15 145 67 empty empty receive 2 8 0 14 #b8b8b8 #000000 0;
 #X obj 12 122 hsl 134 22 0 127 0 0 empty empty buffer 0 8 0 14 #000000 #000000 #b8b8b8 0 1;
 #X obj 9 140 cnv 4 4 4 empty \$0.buffer.meter empty 20 12 0 14 #14e814 #000000 0;
 #X obj 12 147 hsl 134 22 0 127 0 0 empty \$0.playback.display playback 0 8 0 14 #000000 #000000 #bcbcbc 0 1;
 #X obj 9 165 cnv 4 4 4 empty \$0.playback.meter empty 20 12 0 14 #fc8000 #404040 0;
-#X obj 10 77 nbx 5 16 1 64 0 0 \$1-adc \$1-adc empty 0 -8 0 10 #fcfcfc #000000 #b8b8b8 0 256;
+#X obj 10 77 nbx 7 16 1 64 0 0 \$1-adc \$1-adc empty 0 -8 0 10 #fcfcfc #000000 #b8b8b8 0 256;
 #X obj 12 77 hsl 53 16 0 127 0 0 empty \$0.adc.display adc:1 2 8 0 14 #000000 #000000 #b8b8b8 0 1;
 #X obj 93 58 hsl 53 16 0 127 0 0 \$0.help.button empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 93 58 hsl 53 16 0 127 0 0 empty \$0.help.label help 2 8 0 14 #000000 #000000 #b8b8b8 0 1;
