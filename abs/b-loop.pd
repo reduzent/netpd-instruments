@@ -1,4 +1,3 @@
-#N struct 3070.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 0 40 1192 686 12;
 #X obj 36 582 *~;
 #X obj 197 583 *~;
@@ -48,7 +47,7 @@
 #N canvas 333 173 286 107 abslist 0;
 #X msg 9 7 untik-clock-consumer;
 #X restore 15 37 pd abslist;
-#X msg 13 11 version 0 2 0;
+#X msg 13 11 version 0 2 1;
 #X restore 18 42 pd NETPD 2 0;
 #X obj 514 27 netpd_f \$1 \$2/length 1;
 #X obj 548 272 netpd_f \$2 \$2/unit 16;
@@ -74,10 +73,10 @@
 #N canvas 848 125 265 177 \$3-\$2 1;
 #X obj 14 4 nbx 2 16 0.1 20 0 0 \$1-\$2/unit \$1-\$2/unit time-unit_(16th) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 14 22 nbx 2 16 0 20 0 0 \$1-\$2/length \$1-\$2/length loop-length_(unit) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 14 76 nbx 2 16 0 100 0 0 \$1-\$2/roffset \$1-\$2/roffset rec-offset_(unit) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 14 112 nbx 2 16 1 100 0 0 \$1-\$2/loop \$1-\$2/loop play-loop_(>=1) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 14 130 nbx 2 16 0 100 0 0 \$1-\$2/original \$1-\$2/original mix_original_(db) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
-#X obj 14 94 nbx 2 16 0 100 0 0 \$1-\$2/offset \$1-\$2/offset play-offset_(unit) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 14 76 nbx 3 16 0 100 0 0 \$1-\$2/roffset \$1-\$2/roffset rec-offset_(unit) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 14 112 nbx 3 16 1 100 0 0 \$1-\$2/loop \$1-\$2/loop play-loop_(>=1) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 14 130 nbx 3 16 0 100 0 0 \$1-\$2/original \$1-\$2/original mix_original_(db) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 14 94 nbx 3 16 0 100 0 0 \$1-\$2/offset \$1-\$2/offset play-offset_(unit) 32 9 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 163 8 netpd-gui-dropdown \$0.clock.select 70 16 10 0 0 777 0 555 887;
 #X obj 17 56 hsl 187 18 -2 2 0 0 \$1-\$2/speed \$1-\$2/speed speed_(-2_-_+2) -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X restore 17 21 pd \$3-\$2;
