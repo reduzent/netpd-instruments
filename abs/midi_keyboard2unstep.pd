@@ -37,7 +37,7 @@
 #X connect 15 0 3 0;
 #X restore 315 20 pd com;
 #X msg 81 138 note \$2;
-#X obj 37 21 nbx 10 14 1 40 0 0 \$0.select.nbx.s \$0.select.nbx.r empty 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj 37 22 nbx 14 14 1 30 0 0 \$0.select.nbx.s \$0.select.nbx.r empty 0 -8 0 10 #fcfcfc #000000 #000000 0 256;
 #N canvas 705 211 442 509 gui 0;
 #X obj 136 28 inlet;
 #X obj 136 50 t a a;
@@ -104,7 +104,7 @@
 #X obj 146 116 r \$0.record.s;
 #X msg 146 138 record \$1;
 #N canvas 668 293 307 51 NETPD 0;
-#X msg 16 16 version 0 0 2;
+#X msg 16 16 version 0 0 3;
 #X restore 282 213 pd NETPD 2 0;
 #X obj 81 215 s midi2unstep;
 #X connect 0 0 1 0;
