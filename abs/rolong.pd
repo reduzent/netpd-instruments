@@ -1,4 +1,3 @@
-#N struct 2177.rectangle float id float x float y float w float h float txtclr float boxclr float bgclr symbol label;
 #N canvas 747 225 596 593 10;
 #X obj 10 158 delread~ \$0-fildell;
 #X obj 77 185 delread~ \$0-fildelr;
@@ -112,7 +111,7 @@
 #N canvas 640 338 411 84 abslist 0;
 #X msg 16 3 untik-clock-consumer;
 #X restore 33 31 pd abslist;
-#X msg 34 7 version 0 0 8;
+#X msg 34 7 version 0 0 9;
 #X restore 411 271 pd NETPD 2 0;
 #X msg 308 317 \$1 300;
 #X msg 321 375 \$1 300;
@@ -194,8 +193,8 @@
 #X obj 190 4 cnv 15 45 106 empty empty empty 20 12 0 14 #9cacfc #404040 0;
 #X obj 51 4 cnv 10 137 106 empty empty empty 20 12 0 14 #001488 #404040 0;
 #X obj 68 49 cnv 10 50 12 empty \$0-routetype straight 1 6 0 10 #9cacfc #000000 0;
-#X obj 52 10 nbx 5 14 0 99 0 0 \$1-\$2/til \$1-\$2/til 3/16 142 8 0 10 #c4c4fc #000000 #000000 0 256;
-#X obj 52 28 nbx 5 14 0 99 0 0 \$1-\$2/tir \$1-\$2/tir 3/16 142 8 0 10 #c4c4fc #000000 #000000 0 256;
+#X obj 52 10 nbx 7 14 0 99 0 0 \$1-\$2/til \$1-\$2/til 3/16 142 8 0 10 #c4c4fc #000000 #000000 0 256;
+#X obj 52 28 nbx 7 14 0 99 0 0 \$1-\$2/tir \$1-\$2/tir 3/16 142 8 0 10 #c4c4fc #000000 #000000 0 256;
 #X obj 123 8 hradio 20 1 0 3 \$1-\$2/filtertype \$1-\$2/filtertype empty 0 10 0 10 #c4c4fc #000000 #000000 0;
 #X text 125 10 LP;
 #X text 145 10 BP;
