@@ -1,8 +1,8 @@
 #N canvas 734 435 256 174 10;
 #N canvas 831 123 261 231 NETPD 0;
-#X msg 18 12 version 0 0 1;
+#X msg 18 12 version 0 0 2;
 #X restore 121 29 pd NETPD 2 0;
-#X obj 20 20 nbx 3 11 0 32 0 0 \$0.ch.ns \$0.ch.nr empty 0 -8 0 4 #fcfcfc #000000 #000000 0 256;
+#X obj 21 21 nbx 3 10 0 168 0 0 \$0.ch.ns \$0.ch.nr empty 0 -8 0 4 #fcfcfc #000000 #000000 0 256;
 #N canvas 968 379 335 467 aux.ch 0;
 #X obj 10 439 s \$0.ch.r;
 #X msg 10 414 label \$1;
